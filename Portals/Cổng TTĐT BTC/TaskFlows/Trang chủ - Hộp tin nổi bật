@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <input-parameter-definition id="__2">
+         <name id="__3">zdataSource</name>
+         <value>#{pageFlowScope.zdataSource}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <input-parameter-definition id="__4">
+         <name id="__5">zmaxResults</name>
+         <value>#{pageFlowScope.zmaxResults}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <input-parameter-definition id="__6">
+         <name id="__7">zdetailPrettyLink</name>
+         <value>#{pageFlowScope.zdetailPrettyLink}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <input-parameter-definition id="__8">
+         <name id="__9">ztextHeader</name>
+         <value>#{pageFlowScope.ztextHeader}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <input-parameter-definition id="__10">
+         <name id="__11">zmaxLengthComments</name>
+         <value>#{pageFlowScope.zmaxLengthComments}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/taskFlow/gsrea857561_89e5_4070_9017_22c41c943725/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+   </task-flow-definition>
+</adfc-config>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript">
+        var intervalId;
+        var slidetime = 30000; // Thời gian tự động chuyển giữa các tin
+
+        $(document).ready(function() {
+
+        // Rào đoạn này lại để tắt chức năng tự động chuyển ảnh
+        intervalID = setInterval(cycleImage, slidetime);
+
+        $(".main_image .desc").show(); // Show Banner
+        $(".main_image .desc").animate({opacity: 0.75}, 1); // Set Opacity
+
+        // Sự kiện click và hover trên thumbnails
+        $(".image_thumb ul li:first").addClass('active');
+        $(".image_thumb ul li:first span:first").addClass('active_arr');
+        $(".image_thumb ul li").hover(function(){
+        // Set Variables
+        var imgAlt = $(this).find('img').attr("alt"); //  Get Alt Tag of Image
+        var altT = $(this).find('a').attr('class'); // Get Main Image URL
+        altT=altT.substring(0,altT.indexOf(' '));
+        var title = "
+      <h2>" + $(this).find('.block').html() + "</h2>
+";
+
+        var blockcm ='
+      <div class="block-desc">'+$(this).find('div.block-desc').html()+'</div>
+';
+        var contentBlock =title+blockcm;
+        
+        var imgDescHeight = $(".main_image").find('.block').height(); // Tính độ cao của khối mô tả
+
+        if ($(this).is(".active")) {  // Nếu thumbnail đang active
+        return false; // Không cho click
+        } else {
+        // Animate the Teaser
+        $(".main_image .block").stop().animate({opacity: 0, marginBottom: -imgDescHeight }, 250, function() {
+        $(".main_image .block").html(contentBlock).animate({opacity: 1, marginBottom: "0"}, 250);
+        $(".main_image img").css({'display':'none'});
+        showimage(altT);
+        });
+        }
+        $(".image_thumb ul li").removeClass('active'); // Remove class of 'active' on all lists
+        $(this).addClass('active');  // add class of 'active' on this list only
+        $(".image_thumb ul li").find('span').removeClass('active_arr');
+        $(this).find('span:first').addClass('active_arr');
+        return false;
+
+        });
+
+        // Toggle Teaser
+        //    $("a.collapse").click(function(){
+        //        $(".main_image .block").slideToggle();
+        //        $("a.collapse").toggleClass("show");
+        //    });
+
+        // Function to autoplay cycling of images
+        // Source: http://stackoverflow.com/a/9259171/477958
+        
+        
+        
+        
+        
+        function cycleImage(){
+        var onLastLi = $(".image_thumb ul li:last").hasClass("active");
+        var currentImage = $(".image_thumb ul li.active");
+
+        if(onLastLi){
+        var nextImage = $(".image_thumb ul li:first");
+        } else {
+        var nextImage = $(".image_thumb ul li.active").next();
+        }
+
+        $(currentImage).removeClass("active");
+        $(nextImage).addClass("active");
+         $(currentImage).find('span').removeClass('active_arr');
+        $(nextImage).find('span:first').addClass('active_arr');
+        // Duplicate code for animation
+        var imgAlt = $(nextImage).find('img').attr("alt");
+      
+         var altT = $(nextImage).find('a').attr('class'); // Get Main Image URL
+        altT=altT.substring(0,altT.indexOf(' '));
+
+      
+        var title = "
+      <h2>" + $(nextImage).find('.block').html() + "</h2>
+";
+        var blockcm ='
+      <div class="block-desc">' + $(nextImage).find('div.block-desc').html()+'</div>
+';
+        var contentBlock =title+blockcm;
+
+        var imgDescHeight = $(".main_image").find('.block').height();
+        $(".main_image .block").animate({opacity: 0, marginBottom: -imgDescHeight}, 250, function(){
+        $(".main_image .block").html(contentBlock).animate({ opacity: 1, marginBottom: "0"}, 250);
+       // $(".main_image img").attr({ src: imgTitle , alt: imgAlt});
+//        $(".main_image img").remove();
+       $(".main_image img").css({'display':'none'});
+        showimage(altT);
+        });
+        };
+
+        });// Close Function
+        function showimage(title){
+            $('.'+title).each(function(){
+                $(this).css('display','block');
+            });
+        }
+   </af:resource>
+   <h:panelGroup layout="block" style="height:325px; float:left;">
+      <table cellpadding="0" cellspacing="0">
+         <tr>
+            <td style="vertical-align:top;">
+               <div class="left">
+                  <div class="main_image">
+                     <af:iterator var="node" value="#{datatablecashtime.lstThumnailItem}" varStatus="vs">
+                        <af:image rendered="#{node.flagAnhMota}" styleClass="sliderimage#{vs.index}" visible="#{vs.first}" source="/image/cs/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i6"/>
+                        <af:image rendered="#{!node.flagAnhMota}" styleClass="sliderimage#{vs.index}" visible="#{vs.first}" source="/image/cs/idcplg?IdcService=GET_FILE&amp;dDocName=BTC196264&amp;dID=197057&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i2"/>
+                     </af:iterator>
+                     <af:iterator var="node" value="#{datatablecashtime.lstThumnailItem}" rows="1" varStatus="vs" id="i3">
+                        <div class="desc">
+                           <div class="block">
+                              <h2>
+                                 <af:goLink text="" id="pt_gl3" destination="#{node.linkChitiet}">
+                                    <af:outputText value="#{node.title} " id="pt_of1"/>
+                                 </af:goLink>
+                                 <span style="color:#676767;font-size: 11px; font-weight:normal;">
+                                    <af:outputText value="#{node.ngayXuatban}" id="ot5">
+                                       <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                                    </af:outputText>
+                                 </span>
+                              </h2>
+                              <div class="block-desc">
+                                 <af:outputText value="#{node.comment} " id="ot2"/>
+                              </div>
+                           </div>
+                        </div>
+                     </af:iterator>
+                  </div>
+               </div>
+            </td>
+            <td valign="top">
+               <div class="image_thumb">
+                  <div class="head">
+                     <af:goLink text="Tin tức - sự kiện" destination="/portal/tttc/r/o/ttsk" id="pt_gl4"/>
+                     <af:outputText value="|" inlineStyle="font-size:15px; color:#1c64a1;"/>
+                     <af:goLink text="Tin video" destination="/portal/tttc/r/o/audio-video" id="gl3"/>
+                     <af:outputText value="|" inlineStyle="font-size:15px; color:#1c64a1;"/>
+                     <af:goLink text="Tin địa phương" destination="/portal/tttc/r/o/tcdiaphuong" id="gl4"/>
+                  </div>
+                  <ul style="padding-top:0; margin-top:0;">
+                     <af:iterator var="node" value="#{datatablecashtime.lstThumnailItem}" id="i1" varStatus="vs">
+                        <li>
+                           <af:outputLabel styleClass="arr_imp" inlineStyle="display:none;" id="ol1"/>
+                           <af:goLink destination="#{node.linkChitiet}" styleClass="sliderimage#{vs.index}" id="gl1">
+                              <af:image rendered="#{node.flagAnhMota}" source="/image/cs/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="i2"/>
+                              <af:image rendered="#{!node.flagAnhMota}" source="/image/cs/idcplg?IdcService=GET_FILE&amp;dDocName=BTC196264&amp;dID=197057&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i3"/>
+                           </af:goLink>
+                           <div class="block">
+                              <af:goLink text="#{node.title} " destination="#{node.linkChitiet}" id="gl2"/>
+                              <span style="color:#6099C6;font-size: 11px; font-weight:normal;">
+                                 <af:outputText value="#{node.ngayXuatban}" id="ot1">
+                                    <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                                 </af:outputText>
+                              </span>
+                              <div class="block-desc" style="display:none;">
+                                 <af:outputText value="#{node.comment} " id="ot3"/>
+                              </div>
+                           </div>
+                        </li>
+                     </af:iterator>
+                  </ul>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </h:panelGroup>
+</jsp:root>

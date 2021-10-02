@@ -1,0 +1,44 @@
+ttcg1
+TTCG r
+	Link trang chủ 	l_link	/webcenter/portal/ttcg1/r/h/trangchu
+	Trang chủ Home Page Home
+	Menu m menu
+		Cỏng TTĐT Bộ Tài Chính
+		Trang chủ	menu trangchu
+		Sản phẩm dịch vụ
+		Sản phẩm dịch vụ (page)		San-pham-dich-vu
+			Kế toán hành chính sự nghiệp (IMAS)		Ke-toan-hanh-chinh-su-nghiep-IMAS
+			Kế toán ngân sách xã và Tài chính xã (KTXA)		Ke-toan-ngan-sach-xa-va-Tai-chinh-xa-KTXA
+			Phần mềm quản lý ngân sách (QLNS)		Phan-mem-quan-ly-ngan-sach-QLNS
+			Quản lý & tổng hợp tài sản cố định khối đảng (THTS)		Quan-ly-tong-hop-tai-san-co-dinh-khoi-dang-THTS
+			Tổng hợp thu nộp đảng phí (TNDP)	Tong-hop-thu-nop-dang-phi-TNDP
+			Tổng hợp dự toán quyết toán (THBC)	Tong-hop-du-toan-quyet-toan-THBC
+		Tải xuống 	Tai-xuong
+		Tin tức 	l_tintuc
+		Giới thiệu 	lk_gioithieu
+		Tin tức		
+			Tin tức - Sự kiện	Tin-tuc-Su-kien
+			Tin triển khai		Tin-trien-khai
+			Văn bản quy phạm pháp luật	Van-ban-quy-pham-phap-luat
+			Lịch trình kế hoạch		Lich-trinh-ke-hoach
+		Giới thiệu
+			Giới thiệu TTCG		Gioi-thieu-TTCG
+			Lãnh đạo TT			Lanh-dao-TT
+			Nhiệm vụ - Quyền hạn	Nhiem-vu-Quyen-han
+			Cơ cấu tổ chức	Co-cau-to-chuc
+		Liên hệ		Lien-he
+	footer f footer
+		Trang chủ	
+		Sản phẩm dịch vụ	lk_spdv		/webcenter/portal/ttcg/r/h/spdvl
+		Tải xuống	lk_tx	/webcenter/portal/ttcg/r/h/tx
+		Tin tức		lk_tx3	/webcenter/portal/ttcg/r/h/l_tintuc
+		Giới thiệu		l_gioithieu
+		Liên hệ		lk_tx31	/webcenter/portal/ttcg/r/h/lh
+	Link l 
+		Chi tiết tin 	Chi-tiet-tin
+		Chi tiết hỏi đáp 	 Chi-tiet-hoi-dap
+		3501	cm3501
+		3523	cm3523
+		3524	cm3524
+		3525	cm3525
+		3526	cm3526

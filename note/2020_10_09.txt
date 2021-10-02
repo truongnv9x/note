@@ -1,0 +1,42 @@
+Trịnh Hoàng Yến
+
+-Fix search Lịch sử phê duyệt (by Người duyệt)
+-Fix save nhansuedit ( khi ko chọn dịch vụ)
+-Fix nhansuedit/nhansuadd/codongctckadd/codongctckedit : fix Ngày sinh + ngày Cấp : check k cho nhập lớn hơn ngày hiện tại
+-Add TraCuuVanBanPhapLuat and phan quyen cho thanh vien
+-Hỗ trợ cục cntt bên UBCKNN
+
+- sort in quasar
+
+2 chức năng 
+sử dụng cùng 1 api
+admin: cho phép
+thành viên: ko cho phép
+
+Lý lịch cổ đông fix :(Ngày cấp) nhập ngày hiện tại hoặc lớn hơn ngày hiện tại ko cho lưu
+
+:rules="[ 
+	  val => val && val.length > 0 || 'Ngày chào bán không được để trống',
+	  val => val.match(/^\s*(3[01]|[12][0-9]|0?[1-9])\/(1[012]|0?[1-9])\/((?:19|20)\d{2})\s*$/g) || 'Ngày chào bán đang nhập sai định dạng',
+	  ,val => ngayChaoBanValidate1 || 'Ngày chào bán phải nhỏ hơn ngày hiện tại',
+	  ,val => ngayChaoBanValidate2 || 'Ngày chào bán phải nhỏ hơn ngày kết thúc']"
+	  
+	  
+computed: {
+    ngayChaoBanValidate1() {
+      var today = this.getToDayTypeInt();
+      var ngayCB = this.dateToInt(this.NgayChaoBan);
+
+      return ngayCB <= today;
+    },
+    ngayChaoBanValidate2() {
+      var ngayCB = this.dateToInt(this.NgayChaoBan);
+      var ngayKT = this.dateToInt(this.NgayKetThuc);
+
+      if (ngayKT != "NaN") {
+        if (ngayCB > ngayKT) {
+          return false;
+        }
+      }
+      return true;
+    },

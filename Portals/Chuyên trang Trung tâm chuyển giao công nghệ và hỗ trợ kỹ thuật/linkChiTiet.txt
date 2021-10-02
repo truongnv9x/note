@@ -1,0 +1,136 @@
+
+dDocName
+${param.dDocName}
+
+hoptinnoibatcongthanhphan
+chitiettinfull
+hopthongbaocongthanhphan
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1725')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+http://mof.tinhvan.com/api/linux/images/TTCG/logo_header.png
+http://mof.tinhvan.com/api/linux/images/TTCG/banner_header.png
+
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-1.jpg
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-2.jpg
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-3.jpg
+
+
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-4.jpg
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-5.jpg
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-6.jpg
+
+<div class="main">
+  <a href="/webcenter/portal/ttcg/r/h/spdv1/spdv51959"><div class="main_left1"></div></a>
+  <a href="/webcenter/portal/ttcg/r/h/spdv1/spdv519"><div class="main_center1"></div></a>
+  <a href="/webcenter/portal/ttcg/r/h/spdv1/spdv519595"><div class=" main_right1"></div></a>
+</div>
+
+margin-left: 5px;
+    background-repeat: no-repeat;
+    width: 312px;
+    float: left;
+    margin-right: 10px;
+	
+.main {
+    float: left;
+}
+.main_left1 {
+    height: 106px!important;
+    background-color: #E9F0F6!important;
+    background-image: url("http://mof.tinhvan.com/api/linux/images/TTCG/hinh-4.jpg")!important;
+	}
+
+.main_center1 {
+    height: 106px!important;
+    background-color: #E9F0F6!important;
+    background-image: url("http://mof.tinhvan.com/api/linux/images/TTCG/hinh-5.jpg")!important;
+}
+
+.main_right1 {
+    height: 106px!important;
+    background-color: #E9F0F6!important;
+    background-image: url("http://mof.tinhvan.com/api/linux/images/TTCG/hinh-6.jpg")!important;
+}
+
+
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-7.jpg
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-8.jpg 
+http://mof.tinhvan.com/api/linux/images/TTCG/hinh-9.jpg
+  
+  SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+  oracle.webcenter.content.templates.default.category
+  chitiettin
+  
+  oracle.webcenter.content.templates.default.category
+danhsachtinbai
+dstinbai_phantrang
+hoptinnho1
+
+startNode=/pages_r, includeStartNode=false
+
+startNode=/pages_r/h/tintc1, includeStartNode=false
+
+/portal/ttcg/pages_r/h/tintc1
+xem_tiep
+/webcenter/portal/ttcg/pages_r/trangchu
+
+/portal/ttcg/pages_r/l/chitittin
+
+Tin tức sự kiện
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('3523')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttcg/pages_r/h/tintc1
+/portal/ttcg/pages_r/h/tintc1/tintc-skin
+
+Tin triển khai
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('3524')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttcg/pages_r/h/tintc1/tintrinkhai
+
+Văn bản quy phạm páp luật
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('3525')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttcg/pages_r/h/tintc1/vnbnquyphmphplut
+
+/portal/ttcg/pages_r/h/tintc1/lchtrnhkhoch
+
+
+Gioi thieu
+/portal/ttcg/pages_r/h/giithiu1
+
+/portal/ttcg/pages_r/h/giithiu1/giithiuttcg
+
+/portal/ttcg/pages_r/h/giithiu1/lnhott
+
+/portal/ttcg/pages_r/h/giithiu1/nhimv-quynhn
+
+/portal/ttcg/pages_r/h/giithiu1/ccutchc
+Phần mềm Kế toán hành chính sự nghiệp (IMAS)
+less than 16
+ttcg
+greater than 14
+----------------
+Kế toán ngân sách xã và Tài chính xã (KTXA)
+less than 17 
+ttcg
+greater than 15
+-----------------
+Phần mềm quản lý ngân sách (QLNS)
+less than 18 
+ttcg
+greater than 16
+-----------------
+Phần mềm Quản lý & tổng hợp tài sản cố định khối đảng (THTS)
+less than 19
+ttcg
+greater than 17
+-----------------
+Phần mềm Tổng hợp thu nộp đảng phí (TNDP)
+less than 20
+ttcg
+greater than 18
+-----------------
+Tổng hợp dự toán quyết toán (THBC)
+ttcg
+greater than 19
+
+
+
+/webcenter/image/idcplg?IdcService=GET_FILE&dID=8430&dDocName=MOFUCM008423&allowInterrupt=1

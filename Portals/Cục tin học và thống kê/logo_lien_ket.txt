@@ -1,0 +1,40 @@
+<div style="width: 100%; float: left">
+  <a href="https://www.mof.gov.vn/webcenter/portal/thtk">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9311&dDocName=MOFUCM009309&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9312&dDocName=MOFUCM009310&allowInterrupt=1">
+   </a>
+</div>
+
+<div style="width: 100%; float: left">
+  <a href="https://www.mof.gov.vn/webcenter/portal/thtk">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9313&dDocName=MOFUCM009311&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/thtk">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9314&dDocName=MOFUCM009312&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/ctc/ubck">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9315&dDocName=MOFUCM009313&allowInterrupt=1">
+   </a>
+</div>

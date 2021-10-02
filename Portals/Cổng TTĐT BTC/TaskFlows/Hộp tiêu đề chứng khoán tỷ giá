@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/taskFlow/gsr5b998598_a8e1_49f5_b178_7a4a2b009e94/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+      <input-parameter-definition id="__1">
+         <name id="__2">iconStyle</name>
+         <value>#{pageFlowScope.iconStyle}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <input-parameter-definition id="__3">
+         <name id="__4">textHeader</name>
+         <value>#{pageFlowScope.textHeader}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+   </task-flow-definition>
+</adfc-config>
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <h:panelGroup id="danhmuc-tintuc" styleClass="danhmuc-tintuc" layout="block">
+      <div id="header-tintuc">
+         <af:panelGroupLayout styleClass="#{pageFlowScope.iconStyle}" layout="vertical" id="pgl1">
+            <h:panelGroup layout="span" id="pg1">
+               <af:outputText value="#{pageFlowScope.textHeader}" id="ot15"/>
+            </h:panelGroup>
+         </af:panelGroupLayout>
+      </div>
+   </h:panelGroup>
+</jsp:root>

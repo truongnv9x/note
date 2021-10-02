@@ -1,0 +1,97 @@
+<div style="width: 100%; float: left">
+<div style="background-color: #c7ceda; border: 1px solid white">
+ <a href="http://ssc.gov.vn/ssc/faces/en/enmenu/enpages_home" >
+  	<img 
+		style=" background-repeat: no-repeat;
+             	     float: left !important;
+					clear: both;
+					width: 50px;
+					padding-right: 10px;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9349&dDocName=MOFUCM009347&allowInterrupt=1">	
+   </a>
+   <a style="    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2772ab;
+    padding: 10px 5px;
+    text-transform: uppercase;">STATE SECURITIES COMMISSION OF VIETNAM</a>
+	</div>
+	<div style="background-color: #c7ceda; border: 1px solid white">
+   <a href="http://vst.mof.gov.vn">
+   <img 
+		style=" background-repeat: no-repeat;
+             	 float: left !important;
+					clear: both;
+					width: 50px;
+					padding-right: 10px;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9350&dDocName=MOFUCM009348&allowInterrupt=1">	
+		 <a style="    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2772ab;
+    padding: 10px 5px;
+    text-transform: uppercase;">VIETNAM STATE TREASURY</a>
+   </a>
+   </div>
+   <div style="background-color: #c7ceda; border: 1px solid white">
+    <a href="http://gdsr.gov.vn/Pages/Home.aspx">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  float: left !important;
+					clear: both;
+					width: 50px;
+					padding-right: 10px;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9351&dDocName=MOFUCM009349&allowInterrupt=1">
+   </a>
+    <a style="    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2772ab;
+    padding: 10px 5px;
+    text-transform: uppercase;">GENERAL DEPARTMENT OF STATE RESERVES</a>
+	</div>
+	<div style="background-color: #c7ceda; border: 1px solid white">
+   <a href="https://www.customs.gov.vn/home.aspx?language=en-US">
+   <img 
+		style=" background-repeat: no-repeat;
+             	 float: left !important;
+					clear: both;
+					width: 50px;
+					padding-right: 10px;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9352&dDocName=MOFUCM009350&allowInterrupt=1">
+   </a>
+       <a style="    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2772ab;
+    padding: 10px 5px;
+    text-transform: uppercase;">GENERAL DEPARTMENT OF VIETNAM CUSTOMS</a>
+	</div>
+	<div style="background-color: #c7ceda; border: 1px solid white">
+   <a  href="http://gdt.gov.vn/wps/portal/english">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	 float: left !important;
+					clear: both;
+					width: 50px;
+					padding-right: 10px;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9353&dDocName=MOFUCM009351&allowInterrupt=1">
+   </a>
+          <a style="    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2772ab;
+    padding: 10px 5px;
+    text-transform: uppercase;">GENERAL DEPARTMENT OF TAXATION</a>
+	</div>
+</div>

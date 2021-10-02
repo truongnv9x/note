@@ -1,0 +1,112 @@
+<div style="width: 100%; float: left">
+  <a href="http://www.mof.gov.vn/">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9317&dDocName=MOFUCM009315&allowInterrupt=1">
+   </a>
+   <a href="http://www.congdoanvn.org.vn/">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9318&dDocName=MOFUCM009316&allowInterrupt=1">
+   </a>
+   <a href="http://www.congdoanvienchucvn.org.vn/">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9319&dDocName=MOFUCM009317&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9320&dDocName=MOFUCM009318&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9321&dDocName=MOFUCM009319&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9322&dDocName=MOFUCM009320&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9323&dDocName=MOFUCM009321&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9324&dDocName=MOFUCM009322&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9325&dDocName=MOFUCM009323&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9326&dDocName=MOFUCM009324&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9327&dDocName=MOFUCM009325&allowInterrupt=1">
+   </a>
+   <a href="https://www.mof.gov.vn/webcenter/portal/cd">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9328&dDocName=MOFUCM009326&allowInterrupt=1">
+   </a>
+</div>
+
+
+
+<div style="width: 100%; float: left">
+   <a href="">
+   <img 
+		style=" background-repeat: no-repeat;
+             	  width: 100%;
+    		background-color: #E9F0F6!important;" 
+		src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9329&dDocName=MOFUCM009327&allowInterrupt=1">
+   </a>
+</div>
+x
+/oracle/webcenter/page/scopedMD/s3262accd_6313_4457_bfbc_72b700002020/Page9e3357e9_d1d5_42fb_803a_fba68d8723f3.jspx
+
+/oracle/webcenter/page/scopedMD/se52de4e5_eaa5_4515_9166_5d9c404f519f/Pagebd182a38_3bab_47b0_9918_15e2a843e0e1.jspx
+
+/oracle/webcenter/page/scopedMD/s3262accd_6313_4457_bfbc_72b700002020/Page9e3357e9_d1d5_42fb_803a_fba68d8723f3.jspx
+
+/oracle/webcenter/page/scopedMD/se52de4e5_eaa5_4515_9166_5d9c404f519f/Pageb5e84c09_504e_4fc7_b02f_0340e8451a28.jspx
+
+/oracle/webcenter/page/scopedMD/se52de4e5_eaa5_4515_9166_5d9c404f519f/Pagebd182a38_3bab_47b0_9918_15e2a843e0e1.jspx
+
+
+
+danhsachtinbaicongthanhphan

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            var x = document.getElementById("TreeGroup").getElementsByTagName("a");
+            document.getElementById("T\:inputsearch\:\:content").style.display = 'none';
+            document.getElementById("T\:cil1").style.display = 'none';
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.color = '#333';
+                x[i].style.fontSize = '14px';
+                x[i].style.fontFamily = 'Arial'
+                x[i].style.textDecoration = 'none';
+            }
+            var y = document.getElementById("TreeGroup").getElementsByTagName("li")
+            for (var o = 0; o < y.length; o++) {
+                y[o].style.listStyleType = 'none';
+            }
+        });
+
+        function searchtctt() {
+            var input = document.getElementById("input").value;
+            var btn = document.getElementById("T\:cil1");
+			var rootURL = "https://www.mof.gov.vn/webcenter/portal/btc/r/search";
+            var url = rootURL + "?SearchInput=" + input;
+            window.location.href = url;
+        }
+
+        function TreeGroup(value){
+            var TreeGroup = document.getElementById("TreeGroup");
+            if(value =="on"){
+                TreeGroup.style.display = "";
+            }else{
+                TreeGroup.style.display = "none";
+            }
+        }
+    </script>
+	
+	<link rel="stylesheet" href="/webcenter/oracle/webcenter/siteresources/scopedMD/shared/css/csstree.css">
+    <div style="background: url('/webcenter/oracle/webcenter/siteresources/scopedMD/shared/images/trongdong-tctt.jpg')0px 5px no-repeat !important;background-size: 100% !important;background-position-x: -200px !important;background-position-y: -350px !important;">
+        <div>
+            <article style="width: 70%; float: left;">
+                <center >
+                    <h1 style="
+    font-weight: bold;display: block;font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;">
+                        DANH MỤC THÔNG TIN CÔNG KHAI
+                    </h1>
+                </center>
+                <div id=" form" style="margin-bottom:30px;">
+
+
+                    <label style="margin-bottom:25px;">Từ Khóa 
+					<input id="input" type="text" style="width: 450px;margin-left: 25px;margin-right: 10px;font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: normal;border-color: #9297A6;border-style: solid;border-width: 1px;border-top-color: #aeb4bd;border-left-color: #aeb4bd;border-bottom-color: #e0e3e8;border-right-color: #e0e3e8;background-image: url(/webcenter/afr/fusion/inputText_bg.png);background-repeat: repeat-x;color: #333333;padding: 2px 2px 3px 3px;overflow-x: hidden;overflow-y: auto;"> 
+					<button type="button" onclick="searchtctt()" style="font-family: Arial,Tahoma,Verdana,Helvetica,sans-serif;font-weight: normal;font-size: 12px;color: #003D5B;border-style: solid;border-width: 1px;border-top-color: #E0E3E8;border-right-color: #606974;border-bottom-color: #606974;border-left-color: #E0E3E8;text-decoration: none;white-space: nowrap;background-image: url(/webcenter/afr/fusion/button_bg_ena.png);background-position: top;background-repeat: repeat-x;margin: 0px;padding-top: 3px;padding-bottom: 3px;background-color: #CCD6E8;padding-left: 9px;padding-right: 9px;">Tìm Kiếm</button></label>
+
+                    <div style="margin-top: 30px;" >
+                        <div id="treecontrol" class="treeTool">
+                            <a title="Đóng tất cả các nhánh" href="#" class="collapse" onclick="TreeGroup('on')" >Mở tất cả</a> 
+                            <a title="Mở tất cả các nhánh" href="#" class="expand" onclick="TreeGroup('off')">Đóng tất cả</a>
+                        </div>
+                        <ul id="TreeGroup" class="filetree treeview" style="margin-left: 25px;">
+                            <li class="unselect"><span class="file">
+                                    <a href="http://vbpq.mof.gov.vn">Văn bản quy phạm pháp luật</a></span>
+                                </span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a
+                                        href="https://www.mof.gov.vn/webcenter/portal/dvc_btc">Thủ
+                                        tục hành chính, quy trình giải quyết công việc của cơ quan nhà nước</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://nif.mof.gov.vn/webcenter/portal/vclvcstc/r/m/clcs">Chiến lược và
+                                        kế hoạch hành
+                                        động ngành
+                                        tài chính</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/ttpltc/r/m/dcvbpl">Thông tin phổ
+                                        biến, hướng
+                                        dẫn
+                                        thực hiện
+                                        pháp luật</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/cd/dtvb">Dự thảo văn bản quy
+                                        phạm pháp
+                                        luật
+                                        theo quy
+                                        định của pháp luật về ban hành văn bản quy phạm pháp luật</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="">Thông tin về quy hoạch ngành, lĩnh vực và phương thức, kết quả thực
+                                        hiện</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/slnsnn/sltn">Công khai
+                                        ngân
+                                        sách</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/dautu">Thông tin về đầu
+                                        tư, đấu
+                                        thầu</a></span>
+                            </li>
+
+                            <li class="unselect"><span class="file">
+                                    <a
+                                        href="https://www.mof.gov.vn/webcenter/portal/btc/r/m/gioithieu/nhiemvuquyenhan">Thông
+                                        tin
+                                        về
+                                        chức năng,
+                                        nhiệm vụ, quyền hạn của cán bộ, công chức của cơ quan và của đơn vị trực
+                                        thuộc</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/cddh/sltk">Thống kê tài
+                                        chính</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/cddh/tb58">Thông tin tuyển
+                                        dụng</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://nif.mof.gov.vn/webcenter/portal/vclvcstc/r/m/nckh">Thông tin về
+                                        danh mục và
+                                        kết
+                                        quả chương
+                                        trình, đề tài khoa học</a></span>
+                            </li>
+
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/qln">Thông tin về nợ
+                                        công</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/dn/tcdn">Thông tin về quản
+                                        lý tài chính,
+                                        doanh
+                                        nghiệp</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="">Các Hiệp định, công ước quốc tế về lĩnh vực Hải quan</a></span>
+                            </li>
+
+                            <li class="unselect"><span class="file">
+                                    <a href="">Các Hiệp định, công ước quốc tế về lĩnh vực Thuế</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="">Thông tin về thuế, phí, lệ phí</a></span>
+                            </li>
+                            <li class="unselect"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/tpcp">Thông tin về Thị trường trái
+                                        phiếu</a></span>
+                            </li>
+							<li class="unselect last"><span class="file">
+                                    <a href="https://www.mof.gov.vn/webcenter/portal/btc/r/k/o/ttvctncdtkh08">Danh mục chế độ báo cáo định kỳ</a></span>
+                            </li>
+                        </ul>
+                    </div>
+            </article>
+            <div style="width:25%;float: right;">
+				<img src="/webcenter/oracle/webcenter/siteresources/scopedMD/shared/images/daumoi-2.png">
+                <img src="/webcenter/oracle/webcenter/siteresources/scopedMD/shared/images/danh muc thong tin-2.png"
+                    alt="https://moj.gov.vn/tctt/Pages/thong-tin-tiep-can-co-dieu-kien.aspx?ItemID=1" style="margin-top:-1px">
+                <a href="/webcenter/portal/btc/r/k/o/ttvctncdtkh0"><img src="/webcenter/oracle/webcenter/siteresources/scopedMD/shared/images/phi-2.png" alt="https://moj.gov.vn/tctt/Pages/phi.aspx?ItemID=2" style="margin-top:-1px"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

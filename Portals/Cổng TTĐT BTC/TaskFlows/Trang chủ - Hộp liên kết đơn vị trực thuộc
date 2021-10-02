@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <input-parameter-definition id="__2">
+         <name id="__3">zdataSource</name>
+         <value>#{pageFlowScope.zdataSource}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <input-parameter-definition id="__4">
+         <name id="__5">zmaxResults</name>
+         <value>#{pageFlowScope.zmaxResults}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/taskFlow/gsrfcb1f5cb_c98f_4732_b721_8ecb3ddd2ff9/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+   </task-flow-definition>
+</adfc-config>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <af:outputLabel value="#{datatable.loadThumnailContentItems}" visible="false" id="ol3"/>
+   <h:panelGroup id="pbl-lienket-donvi-doc" layout="block">
+      <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">
+         <af:iterator var="node" value="#{datatable.lstThumnailItem}" id="i1" varStatus="vs">
+            <h:panelGroup styleClass="donvi-tructhuoc-cover" layout="block">
+               <div class="header-cover">
+                  <af:goLink destination="#{node.xmLienketweb}" id="pt_gl11">
+                     <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.docName}&amp;dID=#{node.DID}&amp;RevisionSelectionMethod=LatestReleased&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i15"/>
+                  </af:goLink>
+               </div>
+               <div class="link-cover">
+                  <af:goLink text="#{node.title}" destination="#{node.xmLienketweb}" id="pt_gl12"/>
+               </div>
+            </h:panelGroup>
+         </af:iterator>
+      </af:panelList>
+   </h:panelGroup>
+</jsp:root>

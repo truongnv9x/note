@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="box-container">
+            <div class="box-site-link">
+               <div class="ads">
+                  <af:panelList id="pl1" listStyle="list-style:none; padding-left:0;">
+                     <af:goLink destination="http://www.mof.gov.vn" id="pt_gl43">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+                     </af:goLink>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+.ads .x3q .x1m1 .xeb{
+	width:100%;
+}
+
+.ads .x3q .x1m1{
+	margin-top: -10px;
+}
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="box-container">
+            <div class="lkweb-container">
+				<div class="lkweb-ads">
+                  <af:panelList listStyle="list-style:none; padding-left:0;">
+                     <af:goLink destination="http://mefin.org">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-1.png" />
+					</af:goLink> 
+					<af:goLink destination="http://www.inclusiveinsuranceasia.com">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-2.jpg" />
+					</af:goLink>
+					<af:goLink destination="http://www.mof.gov.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-3.png"/>
+					</af:goLink>
+					<af:goLink destination="http://www.gdt.gov.vn/wps/portal">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-4.jpg" />
+					</af:goLink>
+					<af:goLink destination="https://ssc.gov.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-4.jpg" />
+					</af:goLink>
+					<af:goLink destination="https://qlg.mof.gov.vn/portal/page/portal/qlg">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-6.jpg"/>
+					</af:goLink>		
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+//loogo liên kết ngang
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup layout="block" styleClass="lienketngang-cover" id="pg1">
+         <trh:tableLayout>
+            <trh:rowLayout>
+               <af:iterator var="node" value="#{nodes}" id="i1" varStatus="vs">
+                  <trh:cellFormat>
+                     <af:goImageLink icon="/ShowProperty?nodeId=%2F#{commonbean.connectionName}%2F#{node.propertyMap['dDocName'].value}%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1" destination="#{node.propertyMap['xmLienketweb'].value}"/>
+                  </trh:cellFormat>
+               </af:iterator>
+            </trh:rowLayout>
+         </trh:tableLayout>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup layout="block" styleClass="lienketngang-cover" id="pg1">
+		<div class="lkweb-container">
+			<div class="lkweb-ads">
+               <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="http://mefin.org">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-1.jpg"/>
+					</af:goLink> 
+					<af:goLink destination="http://www.inclusiveinsuranceasia.com" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-2.jpg"/>
+					</af:goLink>
+					<af:goLink destination="http://www.mof.gov.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-3.png"/>
+					</af:goLink>
+					<af:goLink destination="http://www.gdt.gov.vn/wps/portal">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-4.jpg"/>
+					</af:goLink>
+               </af:panelList>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+
+// liên kết dọc
+BH
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="lkweb-container">
+            <div class="lkweb-ads">
+               <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+					</af:goLink>             
+               </af:panelList>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="lkweb-container">
+            <div class="lkweb-ads">
+               <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="http://mefin.org" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-1.jpg" id="pt_i27"/>
+					</af:goLink> 
+					<af:goLink destination="http://www.inclusiveinsuranceasia.com" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-2.jpg" id="pt_i27"/>
+					</af:goLink>
+					<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-3.png" id="pt_i27"/>
+					</af:goLink>
+					<af:goLink destination="http://www.gdt.gov.vn/wps/portal" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-4.jpg" id="pt_i27"/>
+					</af:goLink>
+					<af:goLink destination="https://ssc.gov.vn" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-4.jpg" id="pt_i27"/>
+					</af:goLink>
+					<af:goLink destination="https://qlg.mof.gov.vn/portal/page/portal/qlg" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-6.jpg" id="pt_i27"/>
+					</af:goLink>					
+               </af:panelList>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+          <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                   <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/slhtvpt6">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-7.png"/>
+					</af:goLink> 
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/btttbh">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-8.jpg" />
+					</af:goLink>
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/ngttbh">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-9.png"/>
+					</af:goLink>					
+               </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+          <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                   <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/ttncdtbh">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-10.png" />
+					</af:goLink>
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/lhnht">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-11.jpg" />
+					</af:goLink>
+					<af:goLink destination="https://avi.org.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-12.jpg" />
+					</af:goLink>	
+					<af:goLink destination="http://www.iaisweb.org">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-13.jpg" />
+					</af:goLink>
+					<af:goLink destination="http://www.naic.org" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-14.jpg"/>
+					</af:goLink>
+					<af:goLink destination="https://www.ccir-ccrra.org" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-15.jpg"/>
+					</af:goLink>					
+               </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+//--- phải
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="lkweb-container">
+            <div class="lkweb-ads">
+               <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/slhtvpt6" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-7.png" id="pt_i27"/>
+					</af:goLink> 
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/btttbh" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-8.jpg" id="pt_i27"/>
+					</af:goLink>
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/ngttbh" id="pt_gl11">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-9.png" id="pt_i27"/>
+					</af:goLink>					
+               </af:panelList>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="box-container">
+            <div class="lkweb-container">
+				<div class="lkweb-ads">
+                  <af:panelList listStyle="list-style:none; padding-left:0;">
+                    <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/slhtvpt6" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-7.png" />
+					</af:goLink> 
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/btttbh" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-8.jpg"/>
+					</af:goLink>
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/ngttbh" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-9.png"/>
+					</af:goLink>				
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="box-container">
+            <div class="lkweb-container">
+				<div class="lkweb-ads">
+                  <af:panelList listStyle="list-style:none; padding-left:0;">
+                    <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/ttncdtbh">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-10.png" />
+					</af:goLink>
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/lhnht">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-11.jpg" />
+					</af:goLink>
+					<af:goLink destination="https://avi.org.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-12.jpg" />
+					</af:goLink>	
+					<af:goLink destination="http://www.iaisweb.org">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-13.jpg" />
+					</af:goLink>
+					<af:goLink destination="http://www.naic.org" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-14.jpg"/>
+					</af:goLink>
+					<af:goLink destination="https://www.ccir-ccrra.org" >
+						<af:image source="http://mof.tinhvan.com/api/linux/images/BH/anh-15.jpg"/>
+					</af:goLink>							
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.easing-1.3.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.mousewheel-3.1.12.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.jcarousellite.js"/>
+   <af:resource type="css" source="/oracle/webcenter/siteresources/scopedMD/shared/css/font-awesome.css"/>
+   <af:resource type="javascript">
+         $(function() {
+            $(".lienketngang_slider").jCarouselLite({
+                btnNext: " .img_bt_next",
+                btnPrev: " .img_bt_prev",
+                mouseWheel: true,
+                vertical: false,
+                circular: false,
+                 visible: 4
+
+            });
+
+        });
+    </af:resource>
+   <dt:contentListTemplateDef var="nodes">
+      <af:panelGroupLayout layout="vertical" styleClass="img_box" id="pgl1">
+         <af:panelGroupLayout styleClass="img_prev img_bt_prev" id="pgl2"/>
+         <af:panelGroupLayout styleClass="img_next img_bt_next" id="pgl3"/>
+         <af:panelGroupLayout layout="vertical" id="pgl4">
+            <af:panelList styleClass="lienketngang-cover lienketngang_slider" id="pl1">
+                <af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+				<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+				<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+				<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+				<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+				<af:goLink destination="http://www.mof.gov.vn" id="pt_gl11">
+					<af:image source="http://mof.tinhvan.com/api/linux/images/CQLG/anh-1.png" id="pt_i27"/>
+				</af:goLink>
+            </af:panelList>
+         </af:panelGroupLayout>
+      </af:panelGroupLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.easing-1.3.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.mousewheel-3.1.12.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.jcarousellite.js"/>
+   <af:resource type="css" source="/oracle/webcenter/siteresources/scopedMD/shared/css/font-awesome.css"/>
+   <af:resource type="javascript">
+         $(function() {
+            $(".lienketngang_slider").jCarouselLite({
+                btnNext: " .img_bt_next",
+                btnPrev: " .img_bt_prev",
+                mouseWheel: true,
+                vertical: false,
+                circular: false,
+                 visible: 4
+
+            });
+
+        });
+    </af:resource>
+   <dt:contentListTemplateDef var="nodes">
+      <af:panelGroupLayout layout="vertical" styleClass="img_box" id="pgl1">
+         <af:panelGroupLayout styleClass="img_prev img_bt_prev" id="pgl2"/>
+         <af:panelGroupLayout styleClass="img_next img_bt_next" id="pgl3"/>
+         <af:panelGroupLayout layout="vertical" id="pgl4">
+            <af:panelList styleClass="lienketngang-cover lienketngang_slider" id="pl1">
+               <af:iterator var="node" value="#{nodes}" id="i1" varStatus="vs">
+                  <h:panelGroup layout="block" id="pg1">
+                     <af:goImageLink icon="/ShowProperty?nodeId=%2F#{commonbean.connectionName}%2F#{node.propertyMap['dDocName'].value}%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1" destination="#{node.propertyMap['xmLienketweb'].value}" id="gil1"/>
+                  </h:panelGroup>
+               </af:iterator>
+            </af:panelList>
+         </af:panelGroupLayout>
+      </af:panelGroupLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+         <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                  <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">
+                     <af:goLink destination="http://mefin.org" id="pt_gl43">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9251&amp;dDocName=MOFUCM009250&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.inclusiveinsuranceasia.com">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9252&amp;dDocName=MOFUCM009251&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.mof.gov.vn">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9253&amp;dDocName=MOFUCM009252&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.gdt.gov.vn/wps/portal">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9254&amp;dDocName=MOFUCM009253&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://ssc.gov.vn">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9255&amp;dDocName=MOFUCM009254&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://qlg.mof.gov.vn/portal/page/portal/qlg">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9256&amp;dDocName=MOFUCM009255&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+         <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                  <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">
+                     <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/slhtvpt6">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9257&amp;dDocName=MOFUCM009256&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/btttbh">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9258&amp;dDocName=MOFUCM009257&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/m/ngttbh">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9259&amp;dDocName=MOFUCM009258&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+         <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                  <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">
+                     <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/ttncdtbh">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9260&amp;dDocName=MOFUCM009259&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://www.mof.gov.vn/webcenter/portal/BH/r/lhnht">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9261&amp;dDocName=MOFUCM009260&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://avi.org.vn">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9262&amp;dDocName=MOFUCM009261&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.iaisweb.org">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9263&amp;dDocName=MOFUCM009262&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.naic.org">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9264&amp;dDocName=MOFUCM009263&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                     <af:goLink destination="https://www.ccir-ccrra.org">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dID=9265&amp;dDocName=MOFUCM009264&amp;allowInterrupt=1"/>
+                     </af:goLink>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+

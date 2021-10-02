@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup layout="block" styleClass="lienketngang-cover" id="pg1">
+         <trh:tableLayout>
+            <trh:rowLayout>
+               <af:iterator var="node" value="#{nodes}" id="i1" varStatus="vs">
+                  <trh:cellFormat>
+                     <af:goImageLink icon="/ShowProperty?nodeId=%2F#{commonbean.connectionName}%2F#{node.propertyMap['dDocName'].value}%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1" destination="#{node.propertyMap['xmLienketweb'].value}"/>
+                  </trh:cellFormat>
+               </af:iterator>
+            </trh:rowLayout>
+         </trh:tableLayout>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

@@ -1,0 +1,160 @@
+dDocName
+${param.dDocName}
+
+hoptinnoibatcongthanhphan
+chitiettinfull
+hopthongbaocongthanhphan
+/oracle/webcenter/page/scopedMD/sb2bda88f_edeb_4030_a5c5_743341016d27/Page65580d8b_25a7_4d47_afe2_4b4e523f93f6.jspx
+
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+newforcate
+mostview
+videointros
+hlkwsttbt
+
+AlbumAnh
+apec
+danhsachalbumanh
+
+startNode=/pages_r, includeStartNode=false
+startNode=/o, includeStartNode=false
+
+/portal/apec/pages_r/o/tinnibt
+
+startNode=/portal/apec/pages_r/o, includeStartNode=false
+
+xem_tiep
+
+/portal/ttncdtbh/pages_r/m/hotngilbohim
+/portal/ttncdtbh/pages_r/m/hptcnghincuoto
+
+
+Tin nổi bật
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('34000')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/apec/pages_r/o/tinnibt
+/webcenter/portal/apec/pages_r/o/tinnibt/chitiet34000?dDocName=${param.dDocName}
+
+Tin ảnh
+/portal/apec/pages_r/o/tinnh
+
+Tin video
+/portal/apec/pages_r/o/tinvideo
+
+Thông cáo báo chí
+/portal/apec/pages_r/o/thngcoboch
+
+		
+Tài liệu tiến trình hợp tác tài chính APEC 2017	
+/portal/apec/pages_r/o/tiliutintrnhhptctichnhapec2017
+
+	
+Chương trình nghị sự hợp tác tài chính APEC 2017	
+/portal/apec/pages_r/o/chngtrnhnghshptctichnhapec2017
+
+	
+Hình ảnh địa phương	
+/portal/apec/pages_r/o/hnhnhaphng
+
+Các nội dung, chuyên mục thông tin tuyên truyền khác có liên quan	
+/portal/apec/pages_r/o/ccnidungchuynmcthngtintuyntruynkhcclinquan
+
+Hợp tác tài chính
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1913')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/apec/pages_r/m/hptctichnhasean-asean3
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1834')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1906')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('35005')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Chương trình họp Asean
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('35009')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/apec/pages_r/m/chngtrnhhp
+/webcenter/portal/apec/pages_r/m/chngtrnhhp/chitiet35009dDocName=${param.dDocName}
+
+
+Thông cáo báo chí
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('35002')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/apec/pages_r/m/thngcobochasean-asean3
+/webcenter//portal/apec/pages_r/m/thngcobochasean-asean3/chitiet35002?dDocName=${param.dDocName}
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('2004')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1913,2004')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinVideo WHERE ANY ora:p:xmMuchienthi IN ('ttbt')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('ttbt')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ANY ora:p:xmChuyenmucanh IN ('apec')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <trh:script id="s1">
+        $(function () {
+            $('.ad-gallery').adGallery();
+        });
+      </trh:script>
+      <af:outputText value="#{datatable.loadLstItems}" visible="false"/>
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <h:panelGroup id="pg1" layout="block" styleClass="box-container">
+            <h:panelGroup id="pg2" layout="block" styleClass="layouts-video-ads">
+               <h:panelGroup id="pg3" layout="block" styleClass="video-ads">
+                  <h:panelGroup id="pg4" layout="block" styleClass="box-image-left">
+                     <div class="header">
+                        <div class="title">
+                           <h:panelGroup id="pbl2" styleClass="#{pageFlowScope.ziconStyle}" layout="block">
+                              <af:panelGroupLayout styleClass="haps_arr_icon" id="pgl1"/>
+                              <af:goLink text="#{pageFlowScope.ztextHeader}" destination="#{pageFlowScope.zlinkHeader}" id="gl1"/>
+                           </h:panelGroup>
+                        </div>
+                     </div>
+                     <h:panelGroup id="pg5" layout="block" styleClass="image-news">
+                        <h:panelGroup id="gallery" layout="block" styleClass="ad-gallery">
+                           <h:panelGroup id="pg6" layout="block" styleClass="ad-image-wrapper"/>
+                           <div class="ad-nav">
+                              <div class="ad-thumbs">
+                                 <af:panelList id="pl1" listStyle="list-style:none; padding:0; margin:0; float:left; width:9000px;">
+                                    <af:iterator var="node" value="#{datatable.lstContentItems}" id="i2" varStatus="vs">
+                                       <af:goLink destination="#{pageFlowScope.zlinkHeader}?dID=#{node.DID}" id="pt_gl25">
+                                          <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=specific&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i15" shortDesc="#{node.title}" styleClass="image#{vs.index}"/>
+                                       </af:goLink>
+                                    </af:iterator>
+                                 </af:panelList>
+                              </div>
+                           </div>
+                        </h:panelGroup>
+                     </h:panelGroup>
+                  </h:panelGroup>
+               </h:panelGroup>
+            </h:panelGroup>
+         </h:panelGroup>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block" styleClass="banner-vertical-box">
+          <div class="box-container">
+            <div class="lkweb-container">
+               <div class="ads">
+                   <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">               
+					<af:goLink destination="https://asean2020.vn">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/APEC/logo_3.jpg"/>
+					</af:goLink> 
+					<af:goLink destination="https://www.mof.gov.vn/webcenter/portal/apec">
+						<af:image source="http://mof.tinhvan.com/api/linux/images/APEC/logo_4.jpg" />
+					</af:goLink>				
+               </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

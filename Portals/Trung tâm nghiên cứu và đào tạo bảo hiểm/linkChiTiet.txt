@@ -1,0 +1,111 @@
+dDocName
+${param.dDocName}
+
+hoptinnoibatcongthanhphan
+chitiettinfull
+hopthongbaocongthanhphan
+/oracle/webcenter/page/scopedMD/s0075f9c0_89bd_4a6b_83d9_7acf6d8a27f0/Paged7772dbd_e275_4d3d_9e1a_665c279a5bdc.jspx
+/oracle/webcenter/page/scopedMD/s0075f9c0_89bd_4a6b_83d9_7acf6d8a27f0/Paged7772dbd_e275_4d3d_9e1a_665c279a5bdc.jspx
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+
+startNode=/pages_r, includeStartNode=false
+xem_tiep
+
+/portal/ttncdtbh/pages_r/m/hotngilbohim
+/portal/ttncdtbh/pages_r/m/hptcnghincuoto
+
+Tin quản lý, giám sát
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1721')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/gimstbohim/tinqunlgimst
+/webcenter/portal/ttncdtbh/pages_r/m/gimstbohim/tinqunlgimst/chitiet1721?dDocName=${param.dDocName}
+
+Tin thị trường
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1724')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/gimstbohim/tinthtrng
+/webcenter/portal/ttncdtbh/pages_r/m/gimstbohim/tinthtrng/chitiet1724?dDocName=${param.dDocName}
+
+Đề tài khoa học
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1706')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/nghincukhoahc/tikhoahc
+/webcenter/portal/ttncdtbh/pages_r/m/nghincukhoahc/tikhoahc/chitiet1706?dDocName=${param.dDocName}
+
+Nghiên cứu trao đổi
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1714')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/nghincukhoahc/nghincutraoi
+/webcenter/portal/ttncdtbh/pages_r/m/nghincukhoahc/nghincutraoi/chitiet1714?dDocName=${param.dDocName}
+
+Hợp tác trong nước
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1710')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/hptcnghincuoto/hptctrongnc
+/webcenter/portal/ttncdtbh/pages_r/m/hptcnghincuoto/hptctrongnc/chitiet1710?dDocName=${param.dDocName}
+
+Hợp tác quốc tế
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1709')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/hptcnghincuoto/hptcquct
+/webcenter/portal/ttncdtbh/pages_r/m/hptcnghincuoto/hptcquct/chitiet1709?dDocName=${param.dDocName}
+
+Tin kinh tế tài chính
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1720')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/tinkinhttichnh
+/webcenter/portal/ttncdtbh/pages_r/m/tinkinhttichnh/chitiet1720?dDocName=${param.dDocName}
+
+Điểm tin thị trường bảo hiểm
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1707')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/imtinthtrngbohim
+/webcenter/portal/ttncdtbh/pages_r/m/imtinthtrngbohim/chitiet1707?dDocName=${param.dDocName}
+
+Tin tức - sự kiện
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1725')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/tintc-skin
+/webcenter/portal/ttncdtbh/pages_r/m/tintc-skin/chitiet1725?dDocName=${param.dDocName}
+
+Tin quốc tế
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1722')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/m/tinquct
+/webcenter/portal/ttncdtbh/pages_r/m/tinquct/chitiet1722?dDocName=${param.dDocName}
+
+----------------------------
+Tình hình hoạt động đào tạo
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1741')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/oto/tnhhnhhotngoto
+/webcenter/portal/ttncdtbh/pages_r/h/oto/tnhhnhhotngoto/chitiet1741?dDocName=${param.dDocName}
+
+Folder	/UCM56/Contribution Folders/Kho nội dung/BTC/TT Nghiên Cứu Và ĐàoTạo Bảo Hiểm/Việt Nam/Đào tạo/Tình hình hoạt động đào tạo
+Nội dung dưới thư mục (Dạng combobox)
+
+Chương trình đào tạo
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1744')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/oto/chngtrnhoto
+/webcenter/portal/ttncdtbh/pages_r/h/oto/chngtrnhoto/chitiet1744?dDocName=${param.dDocName}
+
+Kế hoạch đào tạo
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1743')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/oto/khochoto
+/webcenter/portal/ttncdtbh/pages_r/h/oto/khochoto/chitiet1743?dDocName=${param.dDocName}
+/UCM56/Contribution Folders/Kho nội dung/BTC/TT Nghiên Cứu Và ĐàoTạo Bảo Hiểm/Việt Nam/Đào tạo/Kế hoạch đào tạo
+
+Tin thi trực tuyến
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1742')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/oto/tinthitrctuyn
+/webcenter/portal/ttncdtbh/pages_r/h/oto/tinthitrctuyn/chitiet1742?dDocName=${param.dDocName}
+
+Luật kinh doanh bảo hiểm
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1738')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/vnbnphpquy/lutkinhdoanhbohim
+/webcenter/portal/ttncdtbh/pages_r/h/vnbnphpquy/lutkinhdoanhbohim/chitiet1738?dDocName=${param.dDocName}
+
+
+Văn bản luật liên quan
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1730')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttncdtbh/pages_r/h/vnbnphpquy/vnbnlutlinquan
+/webcenter/portal/ttncdtbh/pages_r/h/vnbnphpquy/vnbnlutlinquan/chitiet1730?dDocName=${param.dDocName}
+
+danhsachtinbaicongthanhphan
+dstinbai_phantrang
+ttncdtbh
+oracle.webcenter.content.templates.default.category
+
+ttncdtbh
+
+

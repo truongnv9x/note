@@ -1,0 +1,99 @@
+<div>
+<div>
+<div style="background-color:transparent;">
+
+
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <title></title>
+	
+<style>
+
+.products{width:100%;height:180px; background: url() repeat-x bottom;}
+.products .title{color: #fff;font-weight: normal;text-transform: uppercase;font-size: 15px;padding: 10px 0px 10px 15px;margin: 0px;
+background: url(/webcenter/image/idcplg?IdcService=GET_FILE&dID=9233&dDocName=MOFUCM009232&allowInterrupt=1) no-repeat top left;}
+.product-item{width:950px;}
+.product-item {width: 33.33%;float: left}
+.product-item .item-top {padding:10px 0px 0px 20px;font-size:14px}
+.product-item .item-top p {color: #2479c1;text-transform: uppercase;margin: 0px;}
+.product-item .item-top p span{color: #2479c1;font-weight: bold;}
+.product-item .item-left{width: 40%}
+.product-item .item-left ul{margin: 0px;padding:10px 0px 0px;}
+.product-item .item-left ul li{list-style: none;padding-left:20px;cursor: pointer;float: left;width: 100%;}
+.product-item .item-left ul li:first-child{background: transparent!important;}
+.product-item .item-left ul li p{background: url() no-repeat scroll 12px 12px}") no-repeat;margin: 0px;padding:6px 0 0;font-size: 14px;float: left;width: 100%;}
+.product-item .item-left ul li:first-child p{background:none  }
+.product-item .item-left ul li a{color: #2479c1}
+.product-item .item-right {float: left;padding: 10px 0 0 8px; text-align: left;}
+</style>
+
+
+
+<div class="content" style="width:950px">
+    
+    <div class="products">
+        <div class="product-top">
+            <h2 class="title">Sản phẩm khác</h2>
+        </div>
+        <div class="product-item">
+            <div class="item">
+                <div class="item-top">
+                    <p>Phần Mềm<br><span>Quản lý ngân sách</span></p>
+                </div>
+                <div class="clear"></div>
+                <div class="item-left fl">
+                    <ul>
+                        <li><p><a href="/webcenter/portal/ttcg/r/h/tx">Tải xuống</a></p></li>
+                        <li><p><a>Xem demo</a></p></li>
+                        <li><p><a>Chi tiết</a></p></li>
+                    </ul>
+                </div>
+                <div class="item-right fr"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9234&dDocName=MOFUCM009233&allowInterrupt=1"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="item">
+                <div class="item-top">
+                    <p>Phần Mềm<br><span>Quản lý ngân sách</span></p>
+                </div>
+                <div class="clear"></div>
+                <div class="item-left fl">
+                    <ul>
+                        <li><p><a href="/webcenter/portal/ttcg/r/h/tx">Tải xuống</a></p></li>
+                        <li><p><a>Xem demo</a></p></li>
+                        <li><p><a>Chi tiết</a></p></li>
+                    </ul>
+                </div>
+                <div class="item-right fr"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9235&dDocName=MOFUCM009234&allowInterrupt=1"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="item">
+                <div class="item-top">
+                    <p>Phần Mềm<br><span>Quản lý ngân sách</span></p>
+                </div>
+                <div class="clear"></div>
+                <div class="item-left fl">
+                    <ul>
+                        <li><p><a href="/webcenter/portal/ttcg/r/h/tx">Tải xuống</a></p></li>
+                        <li><p><a>Xem demo</a></p></li>
+                        <li><p><a>Chi tiết</a></p></li>
+                    </ul>
+                </div>
+                <div class="item-right fr"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9236&dDocName=MOFUCM009235&allowInterrupt=1"></div>
+                <div class="clear"></div>
+            </div>
+        </div> 
+
+
+    </div>
+
+</div>
+
+
+</div></div></div>

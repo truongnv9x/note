@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+   <dt:contentListTemplateDef var="nodes">
+      <af:outputText visible="false" value="#{contentunderfolder.initSubFolderReverse}" id="ot1"/>
+      <af:panelBorderLayout styleClass="">
+         <af:panelBorderLayout styleClass="sltn-cover" id="pbl2">
+            <af:panelBorderLayout styleClass="sltn-header">
+               <af:goLink text="#{pageFlowScope.ztextHeader}" destination="#{pageFlowScope.zlinkHeader}"/>
+            </af:panelBorderLayout>
+            <af:panelBorderLayout styleClass="sltn-content">
+               <af:iterator var="node" value="#{contentunderfolder.listSubFolderReverse}" id="i1">
+                  <af:panelBorderLayout styleClass="sltn-item" id="pbl1">
+                     <af:goLink text="#{node.folderName}" destination="#{pageFlowScope.zlinkHeader}?collectionID=#{node.folderId}" id="gl1"/>
+                  </af:panelBorderLayout>
+               </af:iterator>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/taskFlow/gsrb82bc3ae_5520_4265_a8b8_00d70ac2afbf/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+   </task-flow-definition>
+</adfc-config>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:pe="http://xmlns.oracle.com/adf/pageeditor" xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <af:panelGroupLayout id="pgl1">
+      <cust:panelCustomizable id="pc1" inlineStyle="padding:0px;background-color:transparent;margin-bottom:0px;">
+         <showDetailFrame id="sdf_for_oc_3816525389region1" text="Chuyên mục khác" stretchContent="auto" showResizer="never" xmlns="http://xmlns.oracle.com/adf/faces/customizable" inlineStyle="margin-bottom:0px;" contentStyle="background-color:transparent;" displayHeader="false">
+            <af:region xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="oc_3816525389region1" value="#{bindings.rbAadxLZ_Nm1.regionModel}"/>
+         </showDetailFrame>
+         <showDetailFrame id="sdf_for_oc_8217582606region1" text="listMenuRight" stretchContent="auto" showResizer="never" xmlns="http://xmlns.oracle.com/adf/faces/customizable" inlineStyle="margin-bottom:0px;" contentStyle="background-color:transparent;" displayHeader="false">
+            <af:region xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="oc_8217582606region1" value="#{bindings.rbdImRCYp7X1.regionModel}"/>
+         </showDetailFrame>
+         <showDetailFrame id="sdf_for_oc_4071644169region1" text="listMenuRight" stretchContent="auto" showResizer="never" xmlns="http://xmlns.oracle.com/adf/faces/customizable" inlineStyle="margin-bottom:0px;" contentStyle="background-color:transparent;" displayHeader="false">
+            <af:region xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="oc_4071644169region1" value="#{bindings.rb3w6ueloK71.regionModel}"/>
+         </showDetailFrame>
+         <showDetailFrame id="sdf_for_oc_2074943741region1" text="listMenuRight" stretchContent="auto" showResizer="never" xmlns="http://xmlns.oracle.com/adf/faces/customizable" contentStyle="background-color:transparent;" inlineStyle="margin-bottom:0px;" displayHeader="false">
+            <af:region xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="oc_2074943741region1" value="#{bindings.rbr9DqHdutD1.regionModel}"/>
+         </showDetailFrame>
+         <showDetailFrame id="sdf_for_oc_7300352740region1" text="listMenuRight" stretchContent="auto" showResizer="never" xmlns="http://xmlns.oracle.com/adf/faces/customizable" inlineStyle="margin-bottom:0px;" contentStyle="background-color:transparent;border-bottom:0px;" displayHeader="false">
+            <af:region xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="oc_7300352740region1" value="#{bindings.rbn1MntnQxB1.regionModel}"/>
+         </showDetailFrame>
+      </cust:panelCustomizable>
+   </af:panelGroupLayout>
+</jsp:root>
+
+startNode=/pages_r/cddh, includeStartNode=true
+startNode=/pages_r/cd, includeStartNode=true
+startNode=/pages_r/dn, includeStartNode=true
+startNode=/pages_r/k/o, includeStartNode=true

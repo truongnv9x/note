@@ -1,0 +1,39 @@
+Apec r
+	Trang chủ Home Page trangchu	
+	Menu m menu
+		Cổng TTĐT BTC
+		Trang chủ	des.. T
+		Chương trình họp		Chuong-trinh-hop
+		Thông cáo báo chí Asean - Asean + 3		Thong-cao-bao-chi-Asean-Asean-3
+		Hợp tác tài chính Asean - Asean + 3		Hop-tac-tai-chinh-Asean-Asean-3
+	Menu top h Menu top
+	Link l 
+		Chi tiết tin  Chi-tiet-tin
+		34000	cm34000
+		35001	cm35001
+		35002	cm35002
+		35003	cm35003
+		35004	cm35004
+		35005	cm35005
+		35006	cm35006
+		35007	cm35007
+		35008	cm35008
+		35009	cm35009
+		35010	cm35010
+		35011	cm35011
+		35012	cm35012
+		35100	cm35100
+	Chuyên mục khác o !menu
+		Tin nổi bật !menu Tin-noi-bat
+		Kết quả tiến trình Hội nghị Bộ trưởng Tài chính APEC 2017		Ket-qua-tien-trinh-Hoi-nghi-Bo-truong-Tai-chinh-APEC-2017
+		Tin ảnh !menu	Tin-anh
+		Tin video !menu		Tin-video
+		Thông cáo báo chí		Thong-cao-bao-chi
+		Tài liệu tiến trình hợp tác tài chính APEC 2017 !menu		Tai-lieu-tien-trinh-hop-tac-tai-chinh-APEC-2017
+		Chương trình nghị sự hợp tác tài chính APEC 2017		Chuong-trinh-nghi-su-hop-tac-tai-chinh-APEC-2017
+		Hình ảnh địa phương !menu		Hinh-anh-dia-phuong
+		Các nội dung, chuyên mục thông tin tuyên truyền khác có liên quan menu		Cac-noi-dung-chuyen-muc-thong-tin-tuyen-truyen-khac-co-lien-quan
+
+
+dDocName
+${param.dDocName}

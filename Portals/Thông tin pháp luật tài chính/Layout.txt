@@ -1,0 +1,75 @@
+
+dDocName
+${param.dDocName}
+
+hoptinnoibatcongthanhphan
+chitiettinfull
+hopthongbaocongthanhphan
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1725')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   <af:componentDef var="attrs" componentVar="comp">
+      <af:xmlContent>
+         <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+            <display-name>TwoColumnNarrowRight1</display-name>
+            <facet>
+               <facet-name>area1</facet-name>
+            </facet>
+            <facet>
+               <facet-name>area2</facet-name>
+            </facet>
+            <facet>
+               <facet-name>area3</facet-name>
+            </facet>
+            <facet>
+               <facet-name>area4</facet-name>
+            </facet>
+			<facet>
+               <facet-name>area5</facet-name>
+            </facet>
+         </component>
+      </af:xmlContent>
+      <af:group id="twoColumnNarrowRight1">
+         <af:resource type="css" source="${pageDocBean.layoutCssPath}"/>
+         <div class="area1">
+            <af:facetRef facetName="area1"/>
+         </div>
+         <div class="area2">
+            <af:facetRef facetName="area2"/>
+         </div>
+         <div class="area3">
+            <af:facetRef facetName="area3"/>
+         </div>
+         <div class="area4">
+            <af:facetRef facetName="area4"/>
+         </div>
+		 <div class="area5">
+            <af:facetRef facetName="area5"/>
+         </div>
+      </af:group>
+   </af:componentDef>
+</jsp:root>
+
+.area1{
+	float:left;
+	width: 75%;
+}
+.area2{
+	float:left;
+	width: 75%;
+}
+.area3{
+	clear: both;
+	float:left;
+	width: 25%;
+}
+.area4{
+	float:left;
+	width: 50%;
+}
+.area4{
+	float:left;
+	width: 25%;
+}

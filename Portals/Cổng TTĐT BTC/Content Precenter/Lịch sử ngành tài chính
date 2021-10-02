@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core">
+   <dt:contentListTemplateDef var="nodes">
+      <af:outputText visible="false" value="#{historyOfMof.initPage}" id="ot1"/>
+      <af:panelBorderLayout styleClass="lichsu-taichinh-cover">
+         <ul>
+            <li>
+               <af:goLink text="Bộ trưởng tài chính qua các thời kỳ" destination="/portal/#{spaceContext.currentSpaceName}/r/m/gioithieu/lstaichinhvn/bttcqctk"/>
+            </li>
+            <af:iterator value="#{historyOfMof.mapEntries}" var="row">
+               <li>
+                  <af:outputText value="#{row.key}"/>
+                  <ul>
+                     <af:iterator value="#{row.value}" var="child">
+                        <li>
+                           <af:goLink text="#{child.title}" destination="#{child.linkChitiet}"/>
+                        </li>
+                     </af:iterator>
+                  </ul>
+               </li>
+            </af:iterator>
+         </ul>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

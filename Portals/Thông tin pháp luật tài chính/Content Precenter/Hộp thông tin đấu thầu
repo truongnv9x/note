@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <af:outputText value="#{thongtindauthau.initContent}" visible="false"/>
+      <af:panelBorderLayout styleClass="ttdt-cover" id="pbl2">
+         <af:panelBorderLayout styleClass="ttdt-header">
+            <af:goLink text="#{datatable.currentPathTitle}" destination="#{datatable.linkHeader}" disabled="#{!datatable.flagDisableHeaderLink}"/>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout styleClass="ttdt-form" id="pbl3">
+            <af:panelFormLayout maxColumns="2" fieldWidth="160" rows="2" styleClass="ttdt-form-table" labelWidth="140" labelAlignment="start">
+               <af:inputText binding="#{thongtindauthau.MRITTenBenMoiThau}" label="Tên bên mời thầu" id="it1"/>
+               <af:inputDate value="#{thongtindauthau.tungay}" label="Ngày xuất bản Từ ngày" id="id1">
+                  <af:convertDateTime hintDate="dd/mm/yyyy"/>
+               </af:inputDate>
+               <af:inputText binding="#{thongtindauthau.MRITTenGoiThau}" label="Tên gói thầu" id="it2"/>
+               <af:inputDate value="#{thongtindauthau.denngay}" label="Đến ngày" id="id2">
+                  <af:convertDateTime hintDate="dd/mm/yyyy"/>
+               </af:inputDate>
+            </af:panelFormLayout>
+            <af:panelBorderLayout inlineStyle="text-align:center;margin-top:10px;">
+               <af:commandButton text="Tìm kiếm" action="#{thongtindauthau.searchActionEvent}" id="cb1"/>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout styleClass="ttdt-body" id="pbl1">
+            <af:outputLabel value="Kết quả tìm kiếm"/>
+            <af:panelBorderLayout styleClass="ttdt-table" binding="#{thongtindauthau.panelBoderLayoutContent}">
+               <trh:tableLayout>
+                  <trh:rowLayout>
+                     <trh:cellFormat>
+                        <af:outputLabel value="Tiêu đề"/>
+                     </trh:cellFormat>
+                     <trh:cellFormat>
+                        <af:outputLabel value="Tên bên mời thầu"/>
+                     </trh:cellFormat>
+                     <trh:cellFormat>
+                        <af:outputLabel value="Tên gói thầu"/>
+                     </trh:cellFormat>
+                     <trh:cellFormat>
+                        <af:outputLabel value="Ngày xuất bản"/>
+                     </trh:cellFormat>
+                  </trh:rowLayout>
+                  <af:iterator value="#{thongtindauthau.lstContentItems}" var="node" varStatus="vs">
+                     <trh:rowLayout>
+                        <trh:cellFormat>
+                           <af:goLink destination="#{node.linkChitiet}" text="#{node.title}"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputText value="#{node.tenBenMoiThau}"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputText value="#{node.tenGoiThau}"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputText value="#{node.ngayXuatban}"/>
+                        </trh:cellFormat>
+                     </trh:rowLayout>
+                  </af:iterator>
+               </trh:tableLayout>
+            </af:panelBorderLayout>
+            <af:panelBorderLayout styleClass="searchcontentPagination-pageNumber" binding="#{thongtindauthau.pagingPanel}"/>
+         </af:panelBorderLayout>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

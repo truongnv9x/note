@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pg1" layout="block">
+         <h:panelGroup styleClass="#{pageFlowScope.ziconStyle}" layout="block">
+            <af:outputText value="#{pageFlowScope.ztextHeader}" id="ot13"/>
+         </h:panelGroup>
+         <div class="box-nho">&amp;nbsp;</div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

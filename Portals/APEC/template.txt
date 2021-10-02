@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript">
+     $(document).ready(function () {
+         startTime();
+          $('.backToTop').click(function(){
+               jQuery('html, body').animate({scrollTop: 0}, 500);
+            });
+            $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+            $('.backToTop').fadeIn(500);
+            } else {
+            $('.backToTop').fadeOut(500);
+            }
+            });
+     });
+
+     function startTime() {
+         var today = new Date();
+         var h = today.getHours();
+         var m = today.getMinutes();
+         var s = today.getSeconds();
+         m = checkTime(m);
+         months = ['01','02','3','4','5','6','7','8','9','10','11','12'],
+         days = ['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+         var qqqq = days[today.getDay()] + ', ' + today.getDate() + '/' + months[today.getMonth()] + '/' + today.getFullYear() + ' ';
+         document.getElementById('datetime').innerHTML =' 
+      <b> ' +qqqq + h+":"+m +' </b>
+ ';
+         var t = setTimeout(function () {
+             startTime()
+         },
+500);
+     }
+
+     function checkTime(i) {
+         if (10 > i) {
+             i = "0" + i
+         };
+         return i;
+     }
+
+     function notmatch(str) {
+            var mikExp = /[$\\@\\\#%\^\&amp;\*\(\)\[\]\+\_\{\}\`\~\=\|]/;
+            var check=0;
+            do{
+                check=str.search(mikExp);
+                str=str.substring(0,check)+str.substring(check+1,str.length);
+            }
+            while(check!=-1);
+            return str;
+
+        }
+
+     function redirectURLKey(event){
+
+     if(event.getKeyCode()==13){
+          var searchText = event.getSource().findComponent("inputsearch");
+
+            var rootURL=$(".contexRoot").text();
+            var text=searchText.getValue() == null?"":searchText.getValue();
+            text=encodeURIComponent(text);
+            var url="/webcenter/portal/"+rootURL+"/pages_r/search?SearchInput="+text;
+            window.location.href = url;
+            return false;
+     }else{
+         var searchText = document.getElementById("T:inputsearch::content").value;
+         var truetext=notmatch(searchText);
+         document.getElementById("T:inputsearch::content").value=truetext;
+     }
+
+
+
+     }
+     function redirectURL(event){
+
+            var searchText = event.getSource().findComponent("inputsearch");
+            var rootURL=$(".contexRoot").text();
+            var text=searchText.getValue() == null?"":searchText.getValue();
+            text=encodeURIComponent(text);
+            var url="/webcenter/portal/"+rootURL+"/pages_r/search?SearchInput="+text;
+            window.location.href = url;
+            return false;
+
+
+     }
+
+   </af:resource>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76455638-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+   <af:pageTemplateDef var="attrs">
+      <af:outputText styleClass="contexRoot" value="#{spaceContext.currentSpaceName}" inlineStyle="display:none;"/>
+      <h:panelGroup layout="block" styleClass="main" id="pt_pg1">
+         <div id="header" class="header">
+            <div id="banner" class="banner">
+               <div id="logo" class="logo">
+                  <af:goImageLink destination="https://asean2020.mof.gov.vn/" icon="http://mof.tinhvan.com/api/linux/images/APEC/logo_1.jpg" id="gil2" styleClass="logoapec2020"/>
+                  <af:goImageLink destination="https://asean2020.mof.gov.vn/" icon="http://mof.tinhvan.com/api/linux/images/APEC/logo_2.png" id="gil21" styleClass="banner2020"/>
+               </div>
+               <div id="logo-text" class="logo-text">
+                  <af:goImageLink destination="#" icon="" id="pt_gil1"/>
+                  <af:goImageLink styleClass="logoapec" destination="#" icon="" id="pt_gil122"/>
+               </div>
+               <div class="header-link">
+                  <ul class="datetime">
+                     <li>
+                        <a id="datetime"/>
+                     </li>
+                     <li class="lang-link">
+                        <af:goLink disabled="true" id="pt_gl1"/>
+                     </li>
+                  </ul>
+                  <div class="search">
+                     <af:inputText id="inputsearch" maximumLength="300" simple="true" placeholder="Tìm kiếm">
+                        <af:clientListener method="redirectURLKey" type="keyUp"/>
+                     </af:inputText>
+                     <af:commandImageLink text="" id="cil1" icon="/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/search-icon.png">
+                        <af:clientListener method="redirectURL" type="click"/>
+                     </af:commandImageLink>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <af:panelGroupLayout styleClass="tt-top-menu" id="pt_pgl1"/>
+         <div id="top-menu" class="top-menu">
+            <div id="menu" class="menu">
+               <div class="block">
+                  <af:panelList id="pl1" styleClass="ul1">
+                     <af:forEach var="node" varStatus="vs" items="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/m, includeStartNode=false']}">
+                        <h:panelGroup id="pt_pg3" layout="block" styleClass="#{node.selected || node.onSelectedPath ? 'active' : 'list'}">
+                           <af:goLink id="pt_gl3" text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.prettyUrl}" targetFrame="#{node.attributes['Target']}"/>
+                        </h:panelGroup>
+                     </af:forEach>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+         <div class="content">
+            <af:facetRef facetName="content"/>
+         </div>
+         <div id="pbl-footer" class="footer">
+            <div id="pbl8" class="block">
+               <div class="logo-footer">&amp;nbsp;</div>
+               <div id="pbl10" class="info">
+                  <div id="pbl13" class="text-info">
+                     <af:outputText value="Cổng thông tin điện tử Bộ Tài Chính" id="ot3"/>
+                  </div>
+                  <div id="menu-footer" class="menu-footer">
+                     <af:panelList id="pt_pl2">
+                        <af:forEach var="node" varStatus="vs" items="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/f, includeStartNode=false']}">
+                           <h:panelGroup layout="span" id="pt_pg2">
+                              <af:goLink text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.PrettyUrl}" id="gl5"/>
+                           </h:panelGroup>
+                           <af:spacer width="1" height="12" id="s4" rendered="#{!vs.last}"/>
+                        </af:forEach>
+                     </af:panelList>
+                  </div>
+                  <div id="pgl3">
+                     <table>
+                        <tr>
+                           <td style="padding-right:10px; vertical-align:top; font-size:11px">
+                              <div id="pbl15">
+                                 <af:outputText value="Cơ quan chủ quản: Bộ Tài chính" id="ot5"/>
+                                 <br/>
+                                 <af:outputText value="Người chịu trách nhiệm: Thứ trưởng Vũ Thị Mai"/>
+                                 <br/>
+                                 <af:outputText value="Địa chỉ: Số 28 Trần Hưng Đạo - Quận Hoàn Kiếm - Hà Nội" id="ot6"/>
+                                 <br/>
+                                 <af:outputText value="Điện thoại Cổng thông tin điện tử: (84-24)2220.2828-2888 Fax:(84-24)2220.8091 Email: support@mof.gov.vn" id="ot7"/>
+                              </div>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <af:panelGroupLayout styleClass="backToTop btt" inlineStyle="position:fixed;right:0px;bottom:10px;display:none;opacity:0.8;" id="pt_pgl2">
+            <af:image inlineStyle="width:35px;" source="/oracle/webcenter/siteresources/scopedMD/shared/images/go-to-top.png" id="pt_i2"/>
+         </af:panelGroupLayout>
+      </h:panelGroup>
+      <af:xmlContent>
+         <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+            <display-name>pageTemplate_home</display-name>
+            <facet>
+               <description>Nội dung chính</description>
+               <facet-name>content</facet-name>
+            </facet>
+         </component>
+      </af:xmlContent>
+   </af:pageTemplateDef>
+</jsp:root>

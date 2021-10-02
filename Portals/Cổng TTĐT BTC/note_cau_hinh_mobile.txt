@@ -1,0 +1,992 @@
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1913`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33003`
+
+dDocType <matches> `Tinbai` <AND> xmMuchienthi <contains> `33009` <AND> xmTrangthai <matches> `2` 
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33009`
+
+33042
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33042`
+
+dDocType <contains> `TinVideo` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <matches> `mbtc`
+
+dDocType <contains> `TinVideo` <AND> xmTrangthai <matches> `2` <AND> xmChuyenmucvideo <contains> `tttc` 
+
+dDocType <contains> `AlbumAnh` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <contains> `tttc`
+
+16165
+
+
+xCollectionID
+
+dDocType <contains> `collectionID ` <AND> xCollectionID <contains> `721746990333009594`
+
+xCollectionID = `721746990333009594`
+
+
+dDocType <contains> `AlbumAnh` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <contains> 'tttc'
+
+
+dDocType <contains> `AlbumAnh` <AND> xmTrangthai <matches> `2` <AND> xmNgonngu <matches> `vi`
+
+dDocType <contains> `TinAnh` <AND> xmTrangthai <matches> `2` <AND> xmNgonngu <matches> `vi`
+
+dDocType <contains> `TinAnh` <AND> dDocName <matches> `MOFUCM020618`
+
+----
+dDocType <contains> `ThongTinDauThau`
+
+MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Contact points(16040)
+
+dDocType <contains> `ThongTinDauThau` <AND> xmChuyenmuc <contains> `33080`
+
+
+dDocType <contains> `ThongTinDauThau` <AND> xmChuyenmuc <contains> `33075`
+----
+
+dDocType <contains> `TinAnh` <AND> xmDonvi <contains> `tttc`
+
+dDocType <contains> `TinAnh` <AND> xmMuchienthi <contains> `MOFUCM020611`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33075`
+
+SELECT * FROM ora:t:IDC:Profile:ThongTinDauThau WHERE ANY ora:p:xmMuchienthi IN ('33079','33076','33077','33078')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33075,33076,33077,33078,33079`
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33076`
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33075`
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33068`
+
+20829
+MOFUCM020611
+
+dDocType <contains> `TinVideo` <AND> xmChuyenmuc <contains> `tttc`
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33042`
+
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33042`
+33039
+
+dDocType <matches> `AlbumAnh` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <contains> 'ttbt'
+dDocType <matches> `AlbumAnh` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <matches> `ttbt`
+dDocType <matches> `TinVideo` <AND> xmTrangthai <matches> `2` <AND> xmDonvi <matches> `ttbt`
+dDocType <matches> `AlbumAnh` <AND> xmDonvi <matches> `ttbt`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33042`
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33042`
+
+dDocType <matches> `Tinbai` <AND> xmMuchienthi <contains> `2004` <AND> xmTrangthai <matches> `2` 
+
+
+
+dDocType <matches> `Tinbai` <AND> xmMuchienthi <contains> `1913` <AND> xmTrangthai <matches> `2` 
+
+MOFUCM020580
+
+MOFUCM020580
+
+root  like '%botaichinhvoidoanhnghiep%'
+
+root  like 'home/menu/chidaodieuhanh%'
+root  like 'home/menu/botaichinhvoidoanhnghiep%'
+
+root  like 'home/menu/thongketaichinh%'
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33014`
+
+https://dongphym.co/movie/tap-27-thuyet-minh-mong-hoi-dai-thanh-mong-hoi-dreaming-back-to-the-qing-dynasty_tXPc8w5z.html
+
+https://www.mof.gov.vn/webcenter/portal/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc
+
+https://www.mof.gov.vn/webcenter/portal/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc
+
+//dự toán quốc hội quyết định
+xCollectionID = `721746990333019612`
+//dự toán quốc hội quyết định
+xCollectionID = `721746990333019612`
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33322`
+
+root  like 'home/menu/linhvuctaichinh/hoptacquocte%'
+-----------------------------------------------------------------------------------------------
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh%'
+-----------------------------------------------------------------------------------------------
+Tin tức chung
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/tintucchung%'
+-----------------------------------------------------------------------------------------------
+WTO
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto%'
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33090`
+----
+Giới thiệu chung - /mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pwt/pgithch
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/gioithieuchung
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33091`
+	WTO là gì ? -
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/gioithieuchung/wtolagi
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33238`
+	
+	Tiến trình Việt Nam gia nhập WTO - 
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/gioithieuchung/tientrinhvietnamgianhapwto
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33239`
+------------
+Các Thoả thuận - Hiệp định - /mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pwt/pcathththd
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/cacthoathuanhiepdinh
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33092`
+	Hệ thống các văn bản quy định hiệp định
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/cacthoathuanhiepdinh/hethongcacvanbanquydinhhiepdinh
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33236`
+	
+	Link các văn bản hiệp định của WTO
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/cacthoathuanhiepdinh/linkcacvanbanhiepdinhcuawto
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33235`
+------------
+Các cam kết của VN - /mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pwt/pcacakecuv
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/caccamketcuavn
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33093`
+	Báo cáo gia nhập
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/caccamketcuavn/baocaogianhap
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33250`
+	
+	Cam kết thương mại hàng hóa
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/caccamketcuavn/camketthuongmaihanghoa
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33251`
+	
+	Cam kết thương mại dịch vụ
+	home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/caccamketcuavn/camketthuongmaidichvu
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33252`
+------------
+Câu hỏi thường gặp - /mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pwt/pcahothga
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/cauhoithuonggap
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33094`
+------------
+Đầu mối liên hệ - /mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pwt/pdamolihe
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/wto/daumoilienhe
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33095`
+-----------------------------------------------------------------------------------------------
+FTA
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta%'
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33097`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33014`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33097`
+--------------
+1.ASEAN(AFTA)------------aseanafta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pas
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33098`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33098`
+
+Giới thiệu chung------------/gioithieuchung-aseanafta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pas/pgithcha
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta/gioithieuchung-aseanafta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33224`
+------------
+Các văn bản pháp lý của Việt Nam------------cacvanbanphaplycuavietnam-aseanafta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pas/pcavabaphlcvn
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta/cacvanbanphaplycuavietnam-aseanafta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33222`
+------------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam------------bieuthuenhapkhauuudaidacbietcuavietnam-aseanafta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pas/pbithnhkhuddbcvn
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta/bieuthuenhapkhauuudaidacbietcuavietnam-aseanafta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33221`
+------------
+Đầu mối liên hệ------------daumoilienhe-aseanafta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pas/pdamolihea
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanafta/daumoilienhe-aseanafta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33218`
+
+--------------------
+2.ASEAN-Trung Quốc (ACFTA)------------aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33099`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33099`
+
+Giới thiệu chung-----gioithieuchung-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/gioithieuchung-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pgithchaa
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33100`
+---------------
+Các Thoả thuận - Hiệp định-----cacthoathuanhiepdinh-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/cacthoathuanhiepdinh-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pcathththdaa
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33101`
+---------------
+Các văn bản pháp lý của Việt Nam-----cacvanbanphaplycuavietnam-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/cacvanbanphaplycuavietnam-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pcavabaphlcvna
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33102`
+---------------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----bieuthuenhapkhauuudaidacbietcuavietnam-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/bieuthuenhapkhauuudaidacbietcuavietnam-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pbithnhkhuddbcvna
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33103`
+---------------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của các nước-----bieuthuenhapkhauuudaidacbietcuacacnuoc-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/bieuthuenhapkhauuudaidacbietcuacacnuoc-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pbithnhkhuddbccna
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33104`
+---------------
+Đầu mối liên hệ-----daumoilienhe-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/daumoilienhe-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/pdamoliheaa
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33106`
+---------------
+Tra cứu mức thuế suất ưu đãi đặc biệt-----tracuumucthuesuatuudaidacbiet-aseantrungquocacfta
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseantrungquocacfta/tracuumucthuesuatuudaidacbiet-aseantrungquocacfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasqunta/ptrcumuthsuddba
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33227`
+
+-----------------------------------
+3.ASEAN - Hàn Quốc(AKFTA)------------aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33107`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33107`
+
+Giới thiệu chung-----gioithieuchung-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pgithchaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/gioithieuchung-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33108`
+
+Các Thoả thuận - Hiệp định-----cacthoathuanhiepdinh-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pcathththdaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/cacthoathuanhiepdinh-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33109`
+
+Các văn bản pháp lý của Việt Nam-----cacvanbanphaplycuavietnam-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pcavabaphlcvnaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/cacvanbanphaplycuavietnam-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33110`
+
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----bieuthuenhapkhauuudaidacbietcuavietnam-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pbithnhkhuddbcvnaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/bieuthuenhapkhauuudaidacbietcuavietnam-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33111`
+
+Các câu hỏi thường gặp-----caccauhoithuonggap-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pcacahothgaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/caccauhoithuonggap-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33112`
+
+Đầu mối liên hệ-----daumoilienhe-aseanhanquocakfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasthaqu/pdamoliheaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanhanquocakfta/daumoilienhe-aseanhanquocakfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33114`
+
+-----------------------------------
+
+4.ASEAN-Nhật Bản (AJCEP)------------aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33115`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33115`
+
+Giới thiệu chung-----gioithieuchung-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/pgithchaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/gioithieuchung-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33116`
+-------------
+Các Thoả thuận - Hiệp định-----cacthoathuanhiepdinh-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/pcathththdaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/cacthoathuanhiepdinh-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33117`
+-------------
+Các văn bản pháp lý của Việt Nam-----cacvanbanphaplycuavietnam-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/pcavabaphlcvnaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/cacvanbanphaplycuavietnam-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33118`
+-------------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----bieuthuenhapkhauuudaidacbietcuavietnam-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/pbithnhkhuddbcvnaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/bieuthuenhapkhauuudaidacbietcuavietnam-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33119`
+-------------
+Đầu mối liên hệ-----daumoilienhe-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/pdamoliheaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/daumoilienhe-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33122`
+-------------
+Tra cứu mức thuế suất ưu đãi đặc biệt-----tracuumucthuesuatuudaidacbiet-aseannhatbanajcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasbanta/ptrcumuthsuddbaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseannhatbanajcep/tracuumucthuesuatuudaidacbiet-aseannhatbanajcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33229`
+
+-----------------------------------
+
+5.ASEAN-Ấn Độ (AIFTA)------------aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33123`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33123`
+
+Giới thiệu chung-----gioithieuchung-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pgithchaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/gioithieuchung-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33124`
+-----------
+Các Thoả thuận - Hiệp định-----cacthoathuanhiepdinh-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pcathththdaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/cacthoathuanhiepdinh-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33125`
+-----------
+Các văn bản pháp lý của Việt Nam-----cacvanbanphaplycuavietnam-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pcavabaphlcvnaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/cacvanbanphaplycuavietnam-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33126`
+-----------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----bieuthuenhapkhauuudaidacbietcuavietnam-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pbithnhkhuddbcvnaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/bieuthuenhapkhauuudaidacbietcuavietnam-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33127`
+-----------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của các nước-----bieuthuenhapkhauuudaidacbietcuacacnuoc-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pbithnhkhuddbccnaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/bieuthuenhapkhauuudaidacbietcuacacnuoc-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33128`
+-----------
+Đầu mối liên hệ-----daumoilienhe-aseanandoaifta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasdonta/pdamoliheaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanandoaifta/daumoilienhe-aseanandoaifta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33130`
+
+-----------------------------------
+
+6.ASEAN-Úc-NewZealand(AANZFTA)------------aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33131`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33131`
+
+Giới thiệu chung-----/gioithieuchung-aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa/pgithchaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta/gioithieuchung-aseanucnewzealandaanzfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33132`
+-------
+Các văn bản pháp lý của Việt Nam-----/cacvanbanphaplycuavietnam-aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa/pcavabaphlcvnaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta/cacvanbanphaplycuavietnam-aseanucnewzealandaanzfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33134`
+-------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----/bieuthuenhapkhauuudaidacbietcuavietnam-aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa/pbithnhkhuddbcvnaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta/bieuthuenhapkhauuudaidacbietcuavietnam-aseanucnewzealandaanzfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33135`
+-------
+Đầu mối liên hệ-----/daumoilienhe-aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa/pdamoliheaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta/daumoilienhe-aseanucnewzealandaanzfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33138`
+-------
+Tra cứu mức thuế suất ưu đãi đặc biệt-----/tracuumucthuesuatuudaidacbiet-aseanucnewzealandaanzfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pasa/ptrcumuthsuddbaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/aseanucnewzealandaanzfta/tracuumucthuesuatuudaidacbiet-aseanucnewzealandaanzfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33231`
+
+-----------------------------------
+
+7.Việt Nam - Nhật Bản------------vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33139`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33139`
+
+Giới thiệu chung-----/gioithieuchung-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/pgithchaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/gioithieuchung-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33140`
+-----
+Các văn bản pháp lý của Việt Nam-----/cacvanbanphaplycuavietnam-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/pcavabaphlcvnaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/cacvanbanphaplycuavietnam-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33142`
+-----
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----/bieuthuenhapkhauuudaidacbietcuavietnam-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/pbithnhkhuddbcvnaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/bieuthuenhapkhauuudaidacbietcuavietnam-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33143`
+-----
+Biểu thuế nhập khẩu ưu đãi đặc biệt của các nước-----/bieuthuenhapkhauuudaidacbietcuacacnuoc-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/pbithnhkhuddbccnaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/bieuthuenhapkhauuudaidacbietcuacacnuoc-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33144`
+-----
+Đầu mối liên hệ-----/daumoilienhe-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/pdamoliheaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/daumoilienhe-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33146`
+-----
+Tra cứu mức thuế suất ưu đãi đặc biệt-----/tracuumucthuesuatuudaidacbiet-vietnamnhatban
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatnhb/ptrcumuthsuddbaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamnhatban/tracuumucthuesuatuudaidacbiet-vietnamnhatban
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33232`
+
+-----------------------------------
+
+8.Việt Nam - Chi Lê (VCFTA)------------vietnamchilevcfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatchlnt
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33194`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33194`
+
+Giới thiệu chung-----/gioithieuchung-vietnamchilevcfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatchlnt/pgithchaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta/gioithieuchung-vietnamchilevcfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33193`
+------
+Các văn bản pháp lý của Việt Nam-----/cacvanbanphaplycuavietnam-vietnamchilevcfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatchlnt/pcavabaphlcvnaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta/cacvanbanphaplycuavietnam-vietnamchilevcfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33191`
+------
+Biểu thuế nhập khẩu ưu đãi đặc biệt của Việt Nam-----/bieuthuenhapkhauuudaidacbietcuavietnam-vietnamchilevcfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatchlnt/pbithnhkhuddbcvnaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta/bieuthuenhapkhauuudaidacbietcuavietnam-vietnamchilevcfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33190`
+------
+Đầu mối liên hệ-----/daumoilienhe-vietnamchilevcfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatchlnt/pdamoliheaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamchilevcfta/daumoilienhe-vietnamchilevcfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33187`
+-----------------------------------
+
+9.Việt Nam - Hàn Quốc (VKFTA)------------vietnamhanquocvkfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinathaqnt
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamhanquocvkfta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamhanquocvkfta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33196`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33196`
+
+Giới thiệu chung-----/gioithieuchung-vietnamhanquocvkfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinathaqnt/pgithchaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamhanquocvkfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33198`
+-----
+Đầu mối liên hệ-----/daumoilienhe-vietnamhanquocvkfta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinathaqnt/pdamoliheaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamhanquocvkfta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33187`
+
+-----------------------------------
+
+10.Việt Nam - Liên minh kinh tế Á Âu (VCUFTA)------------vietnamlienminhkinhteaauvcufta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatlimktaant
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamlienminhkinhteaauvcufta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamlienminhkinhteaauvcufta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33199`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33199`
+
+Giới thiệu chung-----/gioithieuchung-vietnamlienminhkinhteaauvcufta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinatlimktaant/pgithchaaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamlienminhkinhteaauvcufta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33200`
+-----------------------------------
+
+11.Hiệp định đối tác Xuyên Thái Bình Dương TPP------------hiepdinhdoitacxuyenthaibinhduongtpp
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/phididotaxtbdt
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/hiepdinhdoitacxuyenthaibinhduongtpp%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/hiepdinhdoitacxuyenthaibinhduongtpp
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33202`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33202`
+
+Giới thiệu chung-----/gioithieuchung-hiepdinhdoitacxuyenthaibinhduongtpp
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/phididotaxtbdt/pgithchaaaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/hiepdinhdoitacxuyenthaibinhduongtpp
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33203`
+-----
+Tiến trình đàm phán-----/tientrinhdamphan-hiepdinhdoitacxuyenthaibinhduongtpp
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/phididotaxtbdt/ptitrdaph
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/hiepdinhdoitacxuyenthaibinhduongtpp
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33205`
+
+-----------------------------------
+
+12.Việt Nam - EU------------vietnameu
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinateu
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnameu%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnameu
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33206`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33206`
+
+Giới thiệu chung-----/gioithieuchung-vietnameu
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinateu/pgithchaaaaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnameu
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33207`
+-----------------------------------
+
+13.Việt Nam - EFTA------------vietnamefta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinateu2
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamefta%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamefta
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33210`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33210`
+
+Giới thiệu chung-----/gioithieuchung-vietnamefta
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/pvinateu2/pgithchaaaaaaaaaaaa2
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/vietnamefta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33211`
+
+-----------------------------------
+
+14.RCEP------------rcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/prc
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/rcep%'
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/rcep
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33214`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33214`
+
+Giới thiệu chung-----/gioithieuchung-rcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/prc/pgithchaaaaaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/rcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33215`
+-----
+
+Đầu mối liên hệ-----/daumoilienhe-rcep
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pft/prc/pdamoliheaaaaaaaaaaaaa
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/fta/rcep
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33216`
+
+-----------------------------------------------------------------------------------------------
+
+
+Tin tức các hội nghị
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/tintuccachoinghi%'
+-----------------------------------------------------------------------------------------------
+Hợp tác tài chính ASEAN
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatacha
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhasean%'
+
+Hội nhập tài chính - tiền tệ ASEAN 
+hoinhaptaichinhtienteasean
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhasean/hoinhaptaichinhtienteasean
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatacha/phonhtachttta
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33149`
+-----
+Hợp tác ASEAN khác
+hoptacaseankhac
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhasean/hoptacaseankhac
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatacha/photaaskh
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33151`
+
+-----------------------------------------------------------------------------------------------
+Hợp tác tài chính ASEAN+3
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhasean3%'
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatachaa
+
+Hợp tác phát triển thị trường trái phiếu khu vực
+hoptacphattrienthitruongtraiphieukhuvuc
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhasean3/hoptacphattrienthitruongtraiphieukhuvuc
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatachaa/photaphtrtttpkv
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33154`
+
+
+
+-----------------------------------------------------------------------------------------------
+Hợp tác tài chính G20
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/hoptactaichinhg20%'
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/photatachg
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33162`
+-----------------------------------------------------------------------------------------------
+Thông tin đối ngoại
+thongtindoingoai
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/thongtindoingoai%'
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pthtidong
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33163`
+
+Tin tức làm việc của Lãnh đạo Bộ với đối tác nước ngoài
+tintuclamvieccualanhdaobovoidoitacnuocngoai
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/thongtindoingoai/tintuclamvieccualanhdaobovoidoitacnuocngoai
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pthtidong/ptitulavicldbvdtnn
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33164`
+-----
+Thông tin Hội thảo quốc tế
+thongtinhoithaoquocte
+home/menu/linhvuctaichinh/hoptacquocte/hoinhapvahoptactaichinh/thongtindoingoai/thongtinhoithaoquocte
+/mbtc/r/m/fd_lvtc/photaqute/phonhvahottc/pthtidong/pthtihothqt
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33165`
+-----------------------------------------------------------------------------------------------
+
+-------------------------
+root  like 'home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong%'
+
+
+
+--------------------------------
+1.Thông tin về các hoạt động/sự kiện Tài chính công
+thongtinvecachoatdongsukientaichinhcong
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvecachoatdongsukientaichinhcong
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33169`
+/portal/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivecahdktcc
+-------------------------------------
+2.Kế hoạch Nhóm đối tác Tài chính công
+kehoachnhomdoitactaichinhcong
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/kehoachnhomdoitactaichinhcong
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33170`
+/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pkehonhdottcc
+----------------------------------
+3.Tài liệu Nhóm đối tác Tài chính công
+tailieunhomdoitactaichinhcong
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/tailieunhomdoitactaichinhcong
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33171`
+/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/ptalinhdottcc
+------------------------------
+4.Thông tin về hoạt động của các chương trình, dự án
+thongtinvehoatdongcuacacchuongtrinhduan
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvehoatdongcuacacchuongtrinhduan
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33172`
+/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivehodccctda
+
+a.Tình hình thực hiện các chương trình, dự án
+tinhhinhthuchiencacchuongtrinhduan
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvehoatdongcuacacchuongtrinhduan/tinhhinhthuchiencacchuongtrinhduan
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33173`
+/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivehodccctda/ptihithhicctda
+
+	I.Báo cáo tổng hợp tình hình thực hiện của Bộ
+	baocaotonghoptinhhinhthuchiencuabo
+	home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvehoatdongcuacacchuongtrinhduan/tinhhinhthuchiencacchuongtrinhduan/baocaotonghoptinhhinhthuchiencuabo
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33024`
+	/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivehodccctda/ptihithhicctda/pbacatohoththcb
+	-
+	
+	II.Báo cáo tình hình thực hiện chương trình, dự án ODA của Bộ
+	baocaotinhhinhthuchienchuongtrinhduanodacuabo
+	home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvehoatdongcuacacchuongtrinhduan/tinhhinhthuchiencacchuongtrinhduan/baocaotinhhinhthuchienchuongtrinhduanodacuabo
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33025`
+	/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivehodccctda/ptihithhicctda/pbacatihithctdaocb
+	
+----
+b.Các văn bản pháp quy liên quan
+cacvanbanphapquylienquan
+home/menu/linhvuctaichinh/hoptacquocte/nhomdoitactaichinhcong/thongtinvehoatdongcuacacchuongtrinhduan/cacvanbanphapquylienquan
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33175`
+/mbtc/r/m/fd_lvtc/photaqute/pnhdotatacc/pthtivehodccctda/pcavabaphqlq
+
+
+
+------------------------------------
+Đầu tư
+
+
+root like 'home/menu/gioithieubo%'
+
+//thị trường trái phiếu
+root like 'home/menu/linhvuctaichinh/thitruongtraiphieu%'
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1429`
+
+Tin nổi bật
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1443`
+THÔNG BÁO
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1430`
+CHÍNH SÁCH, VĂN BẢN QUY PHẠM PHÁP LUẬT
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1402`
+	--
+	TPCP,TP được CPBL, TPCQĐP
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1404`
+	Trái phiếu doanh nghiệp
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1405`
+	--
+THỊ TRƯỜNG SƠ CẤP TPCP
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1442`
+	---
+	Lịch biểu đấu thầu
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1409`
+	Quy trình đấu thầu TPCP
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1438`
+	Thông báo kết quả đấu thầu TPCP
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1431`
+	Kết quả đấu thầu
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1434`
+	---
+THÀNH VIÊN ĐẤU THẦU TPCP
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1439`
+
+dDocType <contains> `Tinbai` <AND> xmChuyenmuc <contains> `33009` 
+
+dDocType <contains> `Tinbai` <AND> xmMuchienthi <contains> `33009` 
+
+
+dDocType <contains> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmChuyenmuc <contains> `33009` 
+
+dDocType <contains> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33009` 
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmChuyenmuc <contains> `33009`
+
+
+GIỚI THIỆU
+dID = ``
+CHỨC NĂNG NHIỆM VỤ
+dID = ``
+THỊ TRƯỜNG THỨ CẤP TPCP
+null
+TIN TỨC - SỰ KIỆN
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1441`
+
+---------------
+//QUẢN LÝ GIÁ
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1138`
+THÔNG BÁO
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1136`
+TIN TỨC HOẠT ĐỘNG
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1137`
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1137')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+------------------
+//Bảo hiểm
+THÔNG BÁO
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413042`
+HOẠT ĐỘNG QUẢN LÝ GIÁM SÁT BẢO HIỂM
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413017`
+THÔNG TIN VỀ THỊ TRƯỜNG
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413007`
+TIN QUỐC TẾ
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413026`
+	---
+	Cơ chế chính sách
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413028`
+	Thống kê và xếp hạng
+	dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413027`
+	---
+HỢP TÁC QUỐC TẾ
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413035`
+---
+Các cam kết hội nhập quốc tế
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413037`
+Hợp tác quốc tế đa phương
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413036`
+Hợp tác quốc tế song phương
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `413038`
+---
+
+
+//Kế toán kiểm toán
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33010`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33011`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33012`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33179`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33180`
+
+//ĐẦU TƯ
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33039`
+
+//THANH TRA TAI CHÍNH
+TIN NỔI BẬT
+THÔNG BÁO
+HOẠT ĐỘNG THANH TRA
+CHỈ ĐẠO ĐIỀU HÀNH
+THÔNG TIN TỔNG HỢP
+GIỚI THIỆU CHUNG
+THÔNG TIN CÔNG TÁC GIẢI QUYẾT KHIẾU NẠI TỐ CÁO, THỰC HÀNH TIẾT KIỆM PHÒNG, CHỐNG THAM NHŨNG, CHỐNG LÃNH PHÍ
+NGHIÊN CỨU TRAO ĐỔI
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1838`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1839`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1824`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1806`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1831`
+dID = ``
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1827`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1843`
+
+
+//PHÁP LUẬT TÀI CHÍNH
+TIN NỔI BẬT
+THÔNG BÁO
+KẾ HOẠCH CÔNG TÁC PHÁP CHẾ TÀI CHÍNH
+TIN HOẠT ĐỘNG CÔNG TÁC PCTC
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `93031`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `93030`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `93034`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `93001`
+
+
+//ĐẢNG BỘ BỘ TÀI CHÍNH
+Văn bản - Tài liệu
+Biểu mẫu công tác Đảng
+Trao đổi, hỏi đáp
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33263`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33256`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `33266`
+
+
+
+Home: 454
+
+///////////////////SITE MAP EN
+Page Home
+News-Event 
+- 16260
+PRESS RELEASE
+- 16262
+POLICY HIGHTLIGHTS
+- 16256
+MONTHLY EXCHANGE RATE
+- 16230
+BULLETIN PUBLIC DEBT
+- 1630
+
+
+Categories
+Introduction
+- dID = `15063`
+News-Event
+- 1607
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1607`
+Legal Document
+- 1612
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1612`
+FAQs on Financial Policies // CHỨNG MINH VỀ CHÍNH SÁCH TÀI CHÍNH
+Financial sector
+ - 1634
+ dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1634`
+Orther categories
+
+Con Introduction
+	Leaders of Ministry of Finance
+	Tasks and Powers
+	Organization Structure
+	History of the Finance sector of Vietnam
+--------------------
+Con News-Event
+News
+Notes	
+Press Release	
+Local News
+- 1608
+- 1609
+- 1610
+- 1611
+
+16260
+16261
+16262
+16263
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16260`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16261`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16262`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16263`
+	
+Con Financial sector
+--
+State Budget
+Bulletin Public Debt
+International intergration
+Information law finance Viet Nam
+	
+Con Orther categories
+--
+State Budget
+Policy hightlights
+Suggestion about Draft Legal Document
+Administrative Procedures
+Bilateral Cooperation Programs
+List of consultant
+Contribute Advice
+Contribute - Make suggestions
+Foreign Investments
+Monthly Exchange Rate
+Meeting - Seminar
+Research - Discussion
+Tender information
+Report about 135 Programe
+	
+State Budget
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `1614`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16009`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16008`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16010`
+
+International intergration
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16019`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16286`
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16256`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16268`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `2219`
+
+---
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16270`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16271`
+
+--
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16282`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16283`
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16284`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16285`
+
+
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16272`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16273`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16281`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16230`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16280`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16274`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16275`
+dDocType <matches> `Tinbai` <AND> xmTrangthai <matches> `2` <AND> xmMuchienthi <contains> `16279`
+
+home/menu/financial-sector/international-intergration/financial-integration
+LANGUAGE_CODE = 'en' and root like 'home/menu/financial-sector/international-intergration/financial-integration%'
+
+LANGUAGE_CODE = 'en' and root like 'home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta%'
+--------------------
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-afta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-china-acfta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-south-korea-akfta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-japan-ajcep
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-india-aifta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/asean-australia-newzealand-aanzfta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-japan
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-chi-le-vcfta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-south-korea-vkfta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-eurasian-economic-union-vcufta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/trans-pacific-partnership-agreement-tpp
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-eu
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/viet-nam-efta
+home/menu/financial-sector/international-intergration/financial-integration/free-trade-area-fta/rcep
+--------------------
+LANGUAGE_CODE = 'en' and root like 'home/menu/financial-sector/international-intergration/financial-integration/apec-financial-cooperation%'
+
+home/menu/financial-sector/international-intergration/public-finance-group-partners
+LANGUAGE_CODE = 'en' and root like 'home/menu/financial-sector/international-intergration/public-finance-group-partners%'
+
+
+home/menu/financial-sector/international-intergration/public-finance-group-partners/oda-programs-and-projects/list-of-oda-program-and-project
+home/menu/financial-sector/international-intergration/public-finance-group-partners/oda-programs-and-projects/products-and-publications-of-projects
+home/menu/financial-sector/international-intergration/public-finance-group-partners/oda-programs-and-projects/relating-forums
+
+
+Đảng bộ Bộ Tài chính 33
+Thông báo - Chỉ đạo điều hành 31
+Công đoàn, Đoàn thanh niên 32
+
+
+https://mof.gov.vn/hoidapcstc/home/iframeqa
+
+Map<String, Object> mapTmp = new LinkedHashMap<String, Object>();
+List<Map<String, Object>> lst = new ArrayList<>();
+
+
+
+https://mof.tinhvan.com/webcenter/vbdt/backend

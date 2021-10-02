@@ -1,0 +1,91 @@
+<div style="outline: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: arial;
+    color: #000;
+    font-size: 12px;">
+    <div class="x1az" style="display: block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 5px;
+    text-transform: uppercase;">
+        <div >
+            <div style="background-color:transparent;">
+                <div>
+                    <span style="display:none">
+                        <label></label>
+                    </span>
+                    <div >
+                        <div>
+                            <ul style="list-style:none; padding:0px; margin:0px;">
+                                <li value="1">
+                                    <div class="donvi-tructhuoc-cover" style="background-color: #c7ceda; border: 1px solid white">
+                                        <div class="header-cover">
+                                            <a href="http://ssc.gov.vn/ssc/faces/en/enmenu/enpages_home">
+                                                <img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9349&dDocName=MOFUCM009347&allowInterrupt=1">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="http://ssc.gov.vn/ssc/faces/en/enmenu/enpages_home">STATE SECURITIES COMMISSION OF VIETNAM</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li value="2">
+                                        <div style="background-color: #c7ceda; border: 1px solid white">
+                                            <div class="header-cover">
+                                                <a href="http://vst.mof.gov.vn">
+                                                    <img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9350&dDocName=MOFUCM009348&allowInterrupt=1">
+                                                    </a>
+                                                </div>
+                                                <div class="link-cover">
+                                                    <a style="color: #2772ab;" href="http://vst.mof.gov.vn">VIETNAM STATE TREASURY</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li value="3">
+                                            <div class="donvi-tructhuoc-cover" style="background-color: #c7ceda; border: 1px solid white">
+                                                <div>
+                                                    <a href="http://gdsr.gov.vn/Pages/Home.aspx">
+                                                        <img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9351&dDocName=MOFUCM009349&allowInterrupt=1">
+                                                        </a>
+                                                    </div>
+                                                    <div class="link-cover">
+                                                        <a style="color: #2772ab;" href="http://gdsr.gov.vn/Pages/Home.aspx">GENERAL DEPARTMENT OF STATE RESERVES</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li value="4">
+                                                <div style="background-color: #c7ceda; border: 1px solid white">
+                                                    <div>
+                                                        <a href="https://www.customs.gov.vn/home.aspx?language=en-US">
+                                                            <img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9352&dDocName=MOFUCM009350&allowInterrupt=1">
+                                                            </a>
+                                                        </div>
+                                                        <div>
+                                                            <a style="color: #2772ab;"  href="https://www.customs.gov.vn/home.aspx?language=en-US">GENERAL DEPARTMENT OF VIETNAM CUSTOMS</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li value="5">
+                                                    <div style="background-color: #c7ceda; border: 1px solid white">
+                                                        <div>
+                                                            <a  href="http://gdt.gov.vn/wps/portal/english">
+                                                                <img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9353&dDocName=MOFUCM009351&allowInterrupt=1">
+                                                                </a>
+                                                            </div>
+                                                            <div >
+                                                                <a style="color: #2772ab;" href="http://gdt.gov.vn/wps/portal/english">GENERAL DEPARTMENT OF TAXATION</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

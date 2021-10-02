@@ -1,0 +1,359 @@
+<div style="width:700px;"><div ><div><div ><div ><div  style="background-color:transparent;" >	
+<style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+/** reset styling **/
+.firebugResetStyles {
+    z-index: 2147483646 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: fixed !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent none !important;
+    pointer-events: none !important;
+    white-space: normal !important;
+}
+style.firebugResetStyles {
+    display: none !important;
+}
+
+.firebugBlockBackgroundColor {
+    background-color: transparent !important;
+}
+
+.firebugResetStyles:before, .firebugResetStyles:after {
+    content: "" !important;
+}
+/**actual styling to be modified by firebug theme**/
+.firebugCanvas {
+    display: none !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    width: auto !important;
+    position: static !important;
+}
+
+.firebugLayoutBoxOffset {
+    opacity: 0.8 !important;
+    position: fixed !important;
+}
+
+.firebugLayoutLine {
+    opacity: 0.4 !important;
+    background-color: #000000 !important;
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    width: 1px !important;
+    height: 100% !important;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    width: 100% !important;
+    height: 1px !important;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px !important;
+    border-top: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px !important;
+    border-left: 1px solid #999999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxParent {
+    border-top: 0 none !important;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none !important;
+    position: fixed !important;
+    width: auto !important;
+}
+
+.firebugRuler{
+    position: absolute !important;
+}
+
+.firebugRulerH {
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 14px !important;
+    background:url(/webcenter/image/idcplg?IdcService=GET_FILE&dID=9225&dDocName=MOFUCM009224&allowInterrupt=1) repeat-x !important;
+    border-top: 1px solid #BBBBBB !important;
+    border-right: 1px dashed #BBBBBB !important;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.firebugRulerV {
+    top: 0 !important;
+    left: -15px !important;
+    width: 14px !important;
+    height: 100% !important;
+    background:url(/webcenter/image/idcplg?IdcService=GET_FILE&dID=9225&dDocName=MOFUCM009224&allowInterrupt=1') repeat-y !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px dashed #BBBBBB !important;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0 !important;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.fbProxyElement {
+    position: fixed !important;
+    pointer-events: auto !important;
+}
+</style>
+<style>
+ahtml, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+*{outline:none;}
+html{
+min-height: 100%; /*Sets the min height to the
+  height of the viewport.*/
+ width: 100%;
+ height: 100%; /*Effectively, this is min height
+  for IE5+/Win, since IE wrongly expands
+  an element to enclose its content.
+  This mis-behavior screws up modern
+  browsers*/
+ margin: 0;
+ padding: 0;
+ }
+BODY
+{
+	font-family:Verdana,Arial,sans-serif,;
+	color:#444444;
+	font-size:62.5%;
+	min-height: 100%; /*Sets the min height to the
+  height of the viewport.*/
+ width: 100%;
+ height: 100%; /*Effectively, this is min height
+  for IE5+/Win, since IE wrongly expands
+  an element to enclose its content.
+  This mis-behavior screws up modern
+  browsers*/
+ margin: 0;
+ padding: 0;
+ /*background-image:url('bg.gif');*/
+}
+/* thumbnail list */
+
+	
+	
+	
+		
+	
+	
+/* // thumbnail list */
+
+#header{
+	height:0ptpx;
+/*background:transparent url(slideshow.png) no-repeat 50% 16px ;*/
+}
+
+#footer{
+	height: 43px; /* .push must be the same height as .footer */
+    padding-top:10px;
+    /*border-top:1px solid black; */
+    width:687px;
+    margin:0pt auto 0px;
+}
+#footer div p{
+  width:687px;
+}
+
+ #push {
+	
+    padding-top:10px;
+}
+#wrapper{
+    width:687px;
+    min-height: 96%;
+	height: auto !important;
+	height: 96%;
+	text-align:left;
+  /*  margin: 0 auto -30px;
+    padding:0 10px 0px 10px;*/
+}
+
+.clearfix{
+	clear:both;
+	float:none;
+}
+.slide{
+	width:687px;
+	height:365px;
+}
+.nav{   background:rgba(0, 0, 0, 0) url(/webcenter/image/idcplg?IdcService=GET_FILE&dID=9225&dDocName=MOFUCM009224&allowInterrupt=1) no-repeat scroll 0 bottom / 698px 49px;
+    float: left;
+    height: 58px;
+    margin-top: -69px;
+    position: absolute;
+    width: 687px;
+    z-index: 9999;}
+#bigPic{
+	width:687px;
+	height:365px;
+	
+	background-color:#FFF;
+	margin-bottom:10px;
+}
+#bigPic img{
+	position:absolute;
+	display:none;
+	width:687px;
+	height:365px;
+}
+ul#thumbs li.active{
+	border:2px solid #ccc;	
+	background:#fff;
+	margin:20px 5px 3px 5px;
+}
+.title {
+    color: #fff;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin:30px 68px 10px 0;
+    text-transform: uppercase;
+}
+ul#thumbs, ul#thumbs { float:right
+}
+ul#thumbs, ul#thumbs li{
+	margin:0 38px 0 0;
+	padding:0;
+	list-style:none;
+}
+	
+ul#thumbs li{
+	float:left;
+	margin-right:7px;
+	border:2px solid #fff;	
+	margin:20px 5px 3px 5px;
+	cursor:pointer;
+}
+ul#thumbs img{
+	float:left;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;		
+}
+</style>
+
+	<div id="wrapper">
+		<div id="header"></div>
+		<div id="body">
+		<div class="slide">
+			<div id="bigPic">
+				<a href="/webcenter/portal/ttcg/r/h/spdv1/spdv51959"><img style="display: block; opacity: 1; z-index: 1;" src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9222&dDocName=MOFUCM009221&allowInterrupt=1" alt=""></a>
+				<a href="/webcenter/portal/ttcg/r/h/spdv1/spdv51"><img style="display: none; opacity: 1; z-index: 1;" src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9223&dDocName=MOFUCM009222&allowInterrupt=1" alt=""></a>
+				<a href="/webcenter/portal/ttcg/r/h/spdv1/spdv519595"><img style="display: none; opacity: 1; z-index: 1;" src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9224&dDocName=MOFUCM009223&allowInterrupt=1" alt=""> </a>
+			</div>
+			
+			<div class="nav"> 
+			<ul id="thumbs">		
+				<li class="active" rel="1"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9222&dDocName=MOFUCM009221&allowInterrupt=1" alt=""></li>
+				<li class="" rel="2"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9223&dDocName=MOFUCM009222&allowInterrupt=1" alt=""></li>
+				<li class="" rel="3"><img src="/webcenter/image/idcplg?IdcService=GET_FILE&dID=9224&dDocName=MOFUCM009223&allowInterrupt=1" alt=""></li>
+			</ul><div class="title">S%/4UNICODE-FONTSPECIFIC?n ph%/4UNICODE-FONTSPECIFIC?m n%/4UNICODE-FONTSPECIFIC?i b%/4UNICODE-FONTSPECIFIC?t</div>
+			</div>
+		
+		</div>
+		</div>
+		<div class="clearfix"></div>
+		<div id="push"></div>
+	</div>
+	
+
+	<script type="text/javascript">
+	var currentImage;
+    var currentIndex = -1;
+    var interval;
+    function showImage(index){
+        if(index < $('#bigPic img').length){
+        	var indexImage = $('#bigPic img')[index]
+            if(currentImage){   
+            	if(currentImage != indexImage ){
+                    $(currentImage).css('z-index',2);
+                    clearTimeout(myTimer);
+                    $(currentImage).fadeOut(250, function() {
+					    myTimer = setTimeout("showNext()", 3000);
+					    $(this).css({'display':'none','z-index':1})
+					});
+                }
+            }
+            $(indexImage).css({'display':'block', 'opacity':1});
+            currentImage = indexImage;
+            currentIndex = index;
+            $('#thumbs li').removeClass('active');
+            $($('#thumbs li')[index]).addClass('active');
+        }
+    }
+    
+    function showNext(){
+        var len = $('#bigPic img').length;
+        var next = currentIndex < (len-1) ? currentIndex + 1 : 0;
+        showImage(next);
+    }
+    
+    var myTimer;
+    
+    $(document).ready(function() {
+	    myTimer = setTimeout("showNext()", 3000);
+		showNext(); //loads first image
+        $('#thumbs li').bind('click',function(e){
+        	var count = $(this).attr('rel');
+        	showImage(parseInt(count)-1);
+        });
+	});
+    
+	
+	</script>	</div></div></div></div></div></div>

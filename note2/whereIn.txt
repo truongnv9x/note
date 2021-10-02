@@ -1,0 +1,86 @@
+this.genWherein(ctck)
+
+private StringBuffer genWherein(List<Integer> sIdCTCK) {
+	sIdCTCK = sIdCTCK.stream().sorted().collect(Collectors.toList());
+	StringBuffer s = new StringBuffer();
+
+	s.append("(");
+	for (Integer id : sIdCTCK) {
+		s.append(id + ",");
+	}
+	StringBuffer Rest = new StringBuffer();
+	Rest.append(s.substring(0, s.length() - 1).toString());
+	Rest.append(")");
+	return Rest;
+
+}
+
+QtNguoiDungDTO userInfo = UserInfoGlobal.getUserInfoAuthor();
+if (userInfo.getCtckId() == null) {
+	throw new Exception();
+}
+
+userInfo.getCtckId()
+
+
+StringBuilder whereString = new StringBuilder(
+" WHERE t1.IS_BANG_TAM = 0 AND t1.CTCK_THONG_TIN_ID IN "
++ "(SELECT DISTINCT t1.CTCK_ID FROM LK_NGUOI_DUNG_CTCK t1 JOIN CTCK_THONG_TIN t2 ON NGUOI_DUNG_ID = :idnguoidung AND t1.CTCK_ID = t2.CTCK_THONG_TIN_ID "
++" AND t2.IS_BANG_TAM = 0 AND t2.TRANG_THAI = 1)");
+
+if (String.valueOf(idNguoiDung).length() > 0 && idNguoiDung != null) {
+	query.setParameter("idnguoidung", idNguoiDung);
+}
+
+whereString.toString()
+
+
+LOGic
+
+// List ctckId with current id
+QtNguoiDungDTO user = UserInfoGlobal.getUserInfoAuthor();
+List<Integer> ctckIdList = ctckThongTinDao.getListIdByCurrentUser(user);
+user.setLstCtckId(ctckIdList);
+
+if (ctckIdList.size() > 0) {
+	result = dao.list(user, pageNo, pageSize, keySort, desc, filterkey, ctckThongTinId, loaiCongBo, loaiTin,
+			tieuDe, noiDungTrichYeu, ngayCbttTu, ngayCbttDen, ngayGuiTu, ngayGuiDen, trangThai);
+
+	if (result.getListThongTinBaoCao() != null) {
+		Map<Integer, List<CbttBaoCaoDTO>> mapGroupCTCK = result.getListThongTinBaoCao().stream()
+				.collect(Collectors.groupingBy(CbttBaoCaoDTO::getCtckThongTinId));
+
+		for (Entry<Integer, List<CbttBaoCaoDTO>> entry : mapGroupCTCK.entrySet()) {
+			CbttBaoCaoDTO objectFist = entry.getValue().stream().findFirst().get();
+			CbttBaoCaoGroupCongTy itemDisplay = new CbttBaoCaoGroupCongTy();
+			itemDisplay.setTenCongTy(objectFist.getTenCongty());
+			itemDisplay.setListCbttBaoCao(entry.getValue());
+			result.listThongTinBaoCaoDisplay.add(itemDisplay);
+		}
+	}
+}
+
+
+List<Integer>getListIdByCurrentUser(QtNguoiDungDTO currentUser);
+
+@Override
+public List<Integer> getListIdByCurrentUser(QtNguoiDungDTO currentUser) {
+	List<Integer> ctckIdList = new ArrayList<Integer>();
+	try {
+		if (currentUser.getThanhVien()) {
+			ctckIdList.add(currentUser.getCtckId());
+		} else {
+			Query query = entityManager.createQuery("SELECT DISTINCT c.ctckId FROM "
+					+ LkNguoiDungCtckEntity.class.getName() + " c WHERE (c.nguoiDungId =:nguoidung)");
+			query.setParameter("nguoidung", currentUser.getId());
+			ctckIdList = query.getResultList();
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
+		entityManager.close();
+	}
+
+	return ctckIdList;
+}

@@ -1,0 +1,2590 @@
+/* Copyright (c) 2008, 2010, Oracle and/or its affiliates. 
+All rights reserved. */
+
+/**
+ * WebCenter Portal default Skin
+ *
+ */
+
+
+/**
+ * Default Font Family, e.g.
+ * font-family: Tahoma,Verdana,Helvetica,sans-serif
+ */
+.AFDefaultFontFamily:alias
+{
+    font-family: Arial, Tahoma,Verdana,Helvetica,sans-serif
+}
+
+
+/**
+ * Default Font Size, e.g.
+ * font-size: 11px;
+ */
+.AFDefaultFont:alias
+{
+}
+
+
+/**
+ * Text foreground color.
+ */
+.AFTextForeground:alias
+{
+/*
+  color: #333333;
+*/
+}
+
+
+/**
+ * Label text color.
+ */
+.AFLabelTextForeground:alias,
+.AFLabelTextForegroundDisabled:alias
+{
+}
+
+
+/**
+ * Font used in banner to display the page title.
+ */
+.AFBrandingBarTitle
+{
+}
+
+
+/**
+ * Input Components
+ *
+ */
+
+/* border and background on inputText components */
+.AFFormControlContentBorder:alias
+{
+}
+.AFFormControlContentBackground:alias
+{
+}
+
+/* foreground and background color on disabled inputText components */
+.AFFormControlContentForegroundDisabled:alias
+{
+}
+.AFFormControlContentBackgroundDisabled:alias
+{
+}
+
+
+/**
+ * Links
+ *
+ * Foreground color and border style for regular links, visited
+ * links, and active links.
+ */
+.AFLinkForeground:alias
+{
+}
+
+.AFVisitedLinkForeground:alias,
+.AFActiveLinkForeground:alias
+{
+}
+
+.AFActiveLinkBorder:alias
+{
+}
+
+
+/**
+ * Menus
+ *
+ * Menu items are items inside a menu, including sub-menus.
+ * Menu bar-items are items directly on a menuBar, similar to buttons.
+ *
+ */
+
+/* menu text color */
+.AFMenuTextForeground:alias
+{
+}
+
+/* menu item (height) */
+af|commandMenuItem::menu-item,
+af|goMenuItem::menu-item,
+af|menu::submenu
+{
+}
+
+/* menu item - highlight (color and background-color) */
+af|commandMenuItem:highlighted::menu-item-text,
+af|commandMenuItem:highlighted::menu-item-icon-style,
+af|commandMenuItem:highlighted::menu-item-accelerator,
+af|commandMenuItem:highlighted::menu-item-open-indicator,
+af|goMenuItem:highlighted::menu-item-text,
+af|goMenuItem:highlighted::menu-item-icon-style,
+af|goMenuItem:highlighted::menu-item-accelerator,
+af|goMenuItem:highlighted::menu-item-open-indicator,
+af|menu:highlighted::submenu-text,
+af|menu:highlighted::submenu-icon-style,
+af|menu:highlighted::submenu-accelerator,
+af|menu:highlighted::submenu-open-indicator
+{
+}
+
+/* menu bar-item (height)*/
+af|commandMenuItem::bar-item,
+af|goMenuItem::bar-item,
+af|menu::bar-item
+{
+}
+
+/* menu bar-item - highlight (background-image and background-color) */
+af|commandMenuItem::bar-item:highlighted,
+af|goMenuItem::bar-item:highlighted,
+af|menu::bar-item:highlighted
+{
+}
+
+/* menu bar-item - depressed (background-image and background-color) */
+af|commandMenuItem::bar-item:depressed,
+af|goMenuItem::bar-item:depressed,
+af|menu::bar-item:depressed
+{
+}
+
+
+
+/**
+ * Buttons
+ *
+ */
+
+/* Button background color, e.g. background-color: gray; background-image: ... */
+.AFButtonBackground:alias
+{
+}
+
+.AFButtonBackgroundHover:alias
+{
+}
+
+.AFButtonBackgroundActive:alias
+{
+}
+
+.AFButtonBackgroundFocus:alias
+{
+}
+
+.AFButtonBackgroundDisabled:alias
+{
+}
+
+/* Button border, also used by menus, e.g. border: 1px solid black; */
+.AFButtonBorder:alias
+{
+}
+
+.AFButtonBorderHover:alias
+{
+}
+
+.AFButtonBorderActive:alias,
+.AFButtonBorderDepressed:alias
+{
+}
+
+.AFButtonBorderDisabled:alias
+{
+}
+
+/* Button text color for regular buttons, e.g. color: black; */
+.AFButtonForeground:alias
+{
+}
+
+.AFButtonForegroundHover:alias
+{
+}
+
+.AFButtonForegroundDepressed:alias
+{
+}
+
+.AFButtonForegroundDisabled:alias
+{
+}
+
+/* Button text color for toolbar buttons with text */
+.AFButtonText:alias
+{
+}
+
+.AFButtonTextHover:alias
+{
+}
+
+.AFButtonTextDepressed:alias
+{
+}
+
+.AFButtonTextDisabled:alias
+{
+}
+
+
+/**
+ * DecorativeBoxes and PanelTabbed.  DecorativeBoxes are boxes with 
+ * decoration on all four sides and all four corners, e.g. rounded
+ * corners or shadows.  The styles used by decorativeBoxes are shared
+ * with the content area of panelTabbed (below the tabs themselves).
+ *
+ * There are three styles of tabs that should be skinned
+ *  1) normal (no theme)
+ *  2) level 1 (theme="medium")
+ *  3) level 2 (theme="light")
+ *
+ * For tabs, both the tabs themselves are skinned, as well as the 
+ * content area below the tabs.  The content area is what is shared
+ * with decorativeBox.
+ *
+ */
+
+
+/**
+ * Normal tabs, e.g. in dialogs, outside the "theme" hierarchy
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* normal unselected tabs */
+.AFTabAboveStartUnselectedBackground:alias:ltr
+{
+}
+.AFTabAboveStartUnselectedBackground:alias:rtl
+{
+} 
+.AFTabAboveMiddleUnselectedBackground:alias
+{
+}
+.AFTabAboveEndUnselectedBackground:alias:ltr
+{
+} 
+.AFTabAboveEndUnselectedBackground:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content,
+af|panelTabbed::tab af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content,
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link
+{
+}
+
+/* normal selected tabs */
+.AFTabAboveStartSelectedBackground:alias:ltr
+{
+} 
+.AFTabAboveStartSelectedBackground:alias:rtl
+{
+}
+.AFTabAboveMiddleSelectedBackground:alias
+{
+}
+.AFTabAboveEndSelectedBackground:alias:ltr
+{
+} 
+.AFTabAboveEndSelectedBackground:alias:rtl
+{
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content,
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link
+{
+}
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content,
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link
+{
+}
+
+/* normal content */
+af|panelTabbed::header-start
+{
+}
+af|panelTabbed::header-center
+{
+}
+af|panelTabbed::header-end
+{
+}
+af|panelTabbed::body-start
+{
+}
+af|panelTabbed::body
+{
+}
+af|panelTabbed::body-end
+{
+}
+af|panelTabbed::footer-start
+{
+}
+af|panelTabbed::footer-center
+{
+}
+af|panelTabbed::footer-end
+{
+}
+
+/* normal content rtl */
+af|panelTabbed::header-start:rtl
+{
+}
+af|panelTabbed::header-end:rtl
+{
+}
+af|panelTabbed::body-start:rtl
+{
+}
+af|panelTabbed::body-end:rtl
+{
+}
+af|panelTabbed::footer-start:rtl
+{
+}
+af|panelTabbed::footer-end:rtl
+{
+}
+
+
+/**
+ * Level 1 (medium) tabs.
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* level 1 unselected tabs */
+.AFTabAboveStartUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveStartUnselectedLevel1Background:alias:rtl
+{
+}
+.AFTabAboveMiddleUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel1Background:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content[theme="medium"]
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content[theme="medium"]
+{
+}
+
+/* level 1 selected tabs */
+.AFTabAboveStartSelectedLevel1Background:alias
+{
+}
+.AFTabAboveStartSelectedLevel1Background:alias:rtl
+{ 
+}
+.AFTabAboveMiddleSelectedLevel1Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel1Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel1Background:alias:rtl
+{ 
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link[theme="dark"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content[theme="medium"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content[theme="medium"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link[theme="medium"]
+{
+}
+
+/* level 1 content -- also used for "medium" decorativeBoxes */
+af|panelTabbed::header-start[theme="dark"],
+af|decorativeBox::top-start[theme="medium"]
+{
+}
+af|panelTabbed::header-center[theme="dark"],
+af|decorativeBox::top[theme="medium"]
+{
+}
+af|panelTabbed::header-end[theme="dark"],
+af|decorativeBox::top-end[theme="medium"]
+{
+}
+af|panelTabbed::body-start[theme="dark"],
+af|decorativeBox::start[theme="medium"]
+{
+}
+af|panelTabbed::body[theme="dark"],
+af|decorativeBox::center[theme="medium"]
+{
+}
+af|panelTabbed::body-end[theme="dark"],
+af|decorativeBox::end[theme="medium"]
+{
+}
+af|panelTabbed::footer-start[theme="dark"],
+af|decorativeBox::bottom-start[theme="medium"]
+{
+}
+af|panelTabbed::footer-center[theme="dark"],
+af|decorativeBox::bottom[theme="medium"]
+{
+}
+af|panelTabbed::footer-end[theme="dark"],
+af|decorativeBox::bottom-end[theme="medium"]
+{
+}
+
+/* rtl */
+af|panelTabbed::header-start[theme="dark"]:rtl,
+af|decorativeBox::top-start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::header-end[theme="dark"]:rtl,
+af|decorativeBox::top-end[theme="medium"]:rtl
+{
+}
+af|panelTabbed::body-start[theme="dark"]:rtl,
+af|decorativeBox::start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::body-end[theme="dark"]:rtl,
+af|decorativeBox::end[theme="medium"]:rtl
+{
+}
+af|panelTabbed::footer-start[theme="dark"]:rtl,
+af|decorativeBox::bottom-start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::footer-end[theme="dark"]:rtl,
+af|decorativeBox::bottom-end[theme="medium"]:rtl
+{
+}
+
+
+/**
+ * Level 2 (light) tabs.
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* level 2 unselected tabs */
+.AFTabAboveStartUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveStartUnselectedLevel2Background:alias:rtl
+{
+}
+.AFTabAboveMiddleUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel2Background:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content[theme="light"]
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content[theme="light"]
+{
+}
+
+/* level 2 selected tabs */
+.AFTabAboveStartSelectedLevel2Background:alias
+{
+}
+.AFTabAboveStartSelectedLevel2Background:alias:rtl
+{ 
+}
+.AFTabAboveMiddleSelectedLevel2Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel2Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel2Background:alias:rtl
+{ 
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link[theme="medium"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content[theme="light"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content[theme="light"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link[theme="light"]
+{
+}
+
+/* level 2 content -- also used for "light" decorativeBoxes */
+af|panelTabbed::header-start[theme="medium"],
+af|decorativeBox::top-start[theme="light"]
+{
+}
+af|panelTabbed::header-center[theme="medium"],
+af|decorativeBox::top[theme="light"]
+{
+}
+af|panelTabbed::header-end[theme="medium"],
+af|decorativeBox::top-end[theme="light"]
+{
+}
+af|panelTabbed::body-start[theme="medium"],
+af|decorativeBox::start[theme="light"]
+{
+}
+af|panelTabbed::body[theme="medium"],
+af|decorativeBox::center[theme="light"]
+{
+}
+af|panelTabbed::body-end[theme="medium"],
+af|decorativeBox::end[theme="light"]
+{
+}
+af|panelTabbed::footer-start[theme="medium"],
+af|decorativeBox::bottom-start[theme="light"]
+{
+}
+af|panelTabbed::footer-center[theme="medium"],
+af|decorativeBox::bottom[theme="light"]
+{
+}
+af|panelTabbed::footer-end[theme="medium"],
+af|decorativeBox::bottom-end[theme="light"]
+{
+}
+
+/* rtl */
+af|panelTabbed::header-start[theme="medium"]:rtl,
+af|decorativeBox::top-start[theme="light"]:rtl
+{
+}
+af|panelTabbed::header-end[theme="medium"]:rtl,
+af|decorativeBox::top-end[theme="light"]:rtl
+{
+}
+af|panelTabbed::body-start[theme="medium"]:rtl,
+af|decorativeBox::start[theme="light"]:rtl
+{
+}
+af|panelTabbed::body-end[theme="medium"]:rtl,
+af|decorativeBox::end[theme="light"]:rtl
+{
+}
+af|panelTabbed::footer-start[theme="medium"]:rtl,
+af|decorativeBox::bottom-start[theme="light"]:rtl
+{
+}
+af|panelTabbed::footer-end[theme="medium"]:rtl,
+af|decorativeBox::bottom-end[theme="light"]:rtl
+{
+}
+
+
+/*============================TTTC===============================*/
+.x1ci{padding:0;}
+.x1az, .x1ee{margin-bottom:0px !important;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, sub, sup, tt, var, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+    vertical-align: top !important;
+}
+
+body {margin:0px; padding:0px; background-color:#fff !important; font:12px normal Arial, Helvetica, sans-serif; color:#222; font:normal 12px Arial, Helvetica, sans-serif;}
+a {color:#2C6EA8; text-decoration:none;}
+a:hover {color:#3C5186; text-decoration:none;}
+.box-container {display:inline-block; clear:both; width:100%; margin-bottom:10px;}
+.box-container .box-news-home-right .header{padding-left:10px;padding-top:5px;}
+.box-container-nopadding {padding-bottom:0px;}
+div.ads {padding:0px; margin:0px;}
+div.ads li {padding-bottom:5px;}
+div.ads li a {display:block; width:100%;}
+div.ads li a img {width:100%; border:0px;}
+
+#wrapper {width:1000px; margin:0 auto;  -moz-box-shadow: 0px 1px 3px  #ccc;-webkit-box-shadow: 0px 1px 3px  #ccc;box-shadow: 0px 1px 3px #ccc; overflow: hidden; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+
+
+#header .logo-bg {background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+      background-position: 13px -476px;
+	  position:relative;
+width:1000px; height:107px; line-height:107px;}
+#header #logo {display:inline-block; clear:both; padding:20px 30px 0px 30px; float:left; line-height:1;}
+#header .top-nav {width:225px;line-height:1; position: absolute; right: 10px;top:60px}
+#header .top-nav .search{float:left;margin-left:35px;}
+#header .top-nav .icon {clear:both;}
+#header .top-nav .icon ul {list-style:none; padding:0px; margin:0px; float:right;}
+#header .top-nav .icon ul li {float:left; line-height:1; padding-left:21px;}
+#header .top-nav .datetime {clear:both;text-align:right; padding-top:21px;}
+#header .top-nav .datetime span,
+#header .top-nav .datetime a,
+#header .top-nav .datetime a:link,
+#header .top-nav .datetime a:visited {font:bold 11px tahoma; color:#2D2F9E;}
+#header .top-nav .datetime a:hover {color:#00ACEE;}
+#header .top-nav .datetime a {margin-left:5px;}
+.datetime span a#datetime{text-decoration:none;color:#2d2f9e !important;}
+
+#header #menu {display:inline-block; clear:both; width:100%; background:#3C5186;}
+#header #menu .menu-top {}/*{background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/icon-menu-home.jpg) no-repeat 15px 0px; padding-left:50px;}*/
+#header #menu .menu-top ul {list-style:none; padding:0px; margin:0px; display:inline-block; clear:both; width:100%;}
+#header #menu .menu-top ul li {float:left; padding-left:0px;}
+#header #menu .menu-top ul li span,
+#header #menu .menu-top ul li a,
+#header #menu .menu-top ul li a:link,
+#header #menu .menu-top ul li a:visited {display:block; padding:14px 10px 14px 10px; font:bold 12px Arial; color:#fff; text-decoration: none;}
+#header #menu .menu-top ul li a:hover {background:#7eabd2; color:#fff;}
+
+
+#footer { padding:0px 10px}
+#footer .footer-c {width:100%; display:inline-block; clear:both; background:#E1EBF4; }
+#footer .footer-image {width:340px; float:left;height:137px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position:0px -200px;}
+#footer .footer-content {width:625px; float:right; padding:5px 15px 5px 0px;}
+#footer .footer-content {text-align:justify; font:normal 12px Arial, Helvetica, sans-serif; }
+#footer .footer-content h4,
+#footer .footer-content h2 {font:bold 12px Arial; color:#3A588C; padding-bottom:5px;}
+#footer .footer-content h2 {font-size:16px;}
+#footer .footer-content ul {list-style:none; margin:0px; padding:0px; padding-top:5px;}
+#footer .footer-content ul li {float:left; padding-right:5px;}
+#footer .footer-content ul li a,
+#footer .footer-content ul li a:link,
+#footer .footer-content ul li a:visited,
+#footer .footer-content ul li span {font:normal 13px Arial; color:#333;}
+#footer .footer-content ul li a:hover,
+#footer .footer-content ul li a.actived {color:#3A588C; }
+#footer .footer-content .info {width:100%; display:inline-block; clear:both; padding-top:4px;}
+#footer .footer-content .left {float:left; width:60%;}
+#footer .footer-content .right {float:right; width:39%;}
+.right p,.left p{margin-top:0px;}
+#footer .footer-content .info p {font:normal 11px Tahoma; color:#444; padding-bottom:3px;}
+#footer .footer-content .info p a,
+#footer .footer-content .info p a:link,
+#footer .footer-content .info p a:visited {color:#3A588C; text-decoration:underline;}
+#footer .footer-content .info p a:hover {color:#000;}
+
+.footer-info {overflow: hidden; padding: 0; margin:0; height: 20px; padding-top:5px;}
+.footer-link-cover-first {float:left; padding:0 0 5px 0;}
+.footer-link-cover-not-first {float:left; padding:0 5px;}
+.footer-link-selected {font-size:small; color:#3a588c; text-decoration: none !important;}
+.footer-link-not-selected {font-size:small; color:#333; text-decoration: none !important;}
+.footer-spacer-cover {float:left; padding:0 5px;}
+.footer-spacer-item {background-color:#fff;margin-top: 2px;}
+
+
+.content {width:980px; padding:10px; display:inline-block; clear:both;}
+.content .left-655 {width:655px; float:left;}
+.content .right-280 {float:right; width:280px;}
+
+
+
+.layouts-home {display:inline-block; clear:both; width:100%;}
+.layouts-home .hot-news {float:left; width:100%;}
+
+.hot-news .left {width:380px; float:left; position:relative;}
+.hot-news .left a.image {display:block; height:315px; width:100%;position:relative;}
+.hot-news .left a.image image {width:100%; border:0px; overflow:hidden;}
+
+.hot-news .left .text-layer {position:absolute; bottom:0px; padding:20px; opacity: 0.75; color:#232A5E; background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/icon-hotnews.png) no-repeat 0px 20px #E9F0F6;}
+.hot-news .left .text-layer p { padding:0px 0px 0px 20px;}
+.hot-news .left .text-layer a,
+.hot-news .left .text-layer a:link,
+.hot-news .left .text-layer a:visited {font:bold 16px Arial;}
+
+.hot-news .right {max-width:589px; float:left; border-right:1px solid #ccc; margin-left: 10px;}
+.hot-news .head {background:#E9F0F6; padding:5px;margin-left: 10px;}
+.hot-news .head a{text-transform:uppercase; color:#225A95; font:bold 14px Arial;}
+.hot-news .right ul {list-style:none; padding:0px; margin:0px;}
+.hot-news .right ul li {display:inline-block; clear:both; width:100%; padding-top:10px; margin-left:-10px;}
+.hot-news .right ul li a,
+.hot-news .right ul li a:link,
+.hot-news .right ul li a:visited { display:block; color:#333; font:normal 12px Arial;}
+.hot-news .right ul li a:hover {text-decoration: none;}
+.hot-news .right ul li div:hover{background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/icon-hot-news-left.jpg) no-repeat 3px 0px; font-weight:bold; color:#1A669A;}
+.hot-news .right ul li div.actived {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/icon-hot-news-left.jpg) no-repeat 3px 0px; font-weight:bold; color:#1A669A;}
+.hot-news .right ul li a span.img {display:block; width:65px; padding:3px; background:#fff; float:left; margin-right:6px; margin-left:10px;}
+.hot-news .right ul li a:hover span.img,
+.hot-news .right ul li a .actived span.img {background: #C9DBE9;}
+.hot-news .right ul li a img {width:62px; border:1px solid #ddd;}
+.hot-news .right ul li span.date {color:#4386BD; font:normal 11px Tahoma;}
+
+.layouts-home .logo-home-right {float:right; width:220px;}
+
+
+.box-news-home-right {}
+.box-news-home-right .header {background:#7dabd2; }
+.header {background:#7dabd2; }
+.box-news-home-right .header div { no-repeat top right;  text-align:left;}
+.header div { no-repeat top right; padding:0px 10px 4px 0px; text-align:left;}
+.header div a{color:#fff!important;}
+.header div a:hover{color:#fff;}
+.box-news-home-right .header a{font:bold 13px Arial; text-transform:uppercase; text-decoration: none;}
+.header a{font:bold 13px Arial; text-transform:uppercase; text-decoration: none;}
+.box-news-home-right .header a:link,
+.box-news-home-right .header a:visited {color:#fff;}
+.header a:link,
+.header a:visited {color:#fff;}
+.box-news-home-right .header a:hover {color:#C7D9E5;}
+.header a:hover {color:#C7D9E5;}
+.box-news-home-right .head-news {}
+.box-news-home-right .head-news ul {list-style:none; padding:0px; margin:0px;}
+.box-news-home-right .head-news ul li {padding:5px 10px 5px 10px;text-align:justify;position:relative;}
+.tcdp_arr{position:absolute;left: -2px;
+  top: 9px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -51px 0px;
+  width:5px;
+  height:7px;
+  }
+.box-news-home-right .head-news ul li a,
+.box-news-home-right .head-news ul li a:link,
+.box-news-home-right .head-news ul li a:visited {font:normal 12px Arial; color:#333;text-align:justify;}
+.box-news-home-right .head-news ul li span {color:#999; font:normal 11px Tahoma;}
+.box-news-home-right .head-news ul li a:hover{text-decoration:none;}
+
+
+
+.layouts-news {width:100%; display:inline-block; clear:both;}
+.layouts-news .left-670 {float:left; width:670px;}
+.layouts-news .right-300 {float:right; width:300px;}
+
+.box-news-home-icon {}
+.box-news-home-icon .header {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-01-bg.jpg) repeat-x;}
+.box-news-home-icon .header .icon {background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: 0px -613px;}
+.box-news-home-icon .header .icon_only {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-011.png) no-repeat top left;}
+.box-news-home-icon .header span {display:block; padding:11px 10px 5px 50px;}
+
+.box-news-home-icon .header span.news {}
+.box-news-home-icon .header span.person {}
+.box-news-home-icon .header span.activity {}
+
+
+.box-news-home-icon .header span a,
+.box-news-home-icon .header span a:link,
+.box-news-home-icon .header span a:visited {font:bold 13px Arial; color:#fff; text-transform:uppercase;}
+
+
+.box-news-home-icon .body-news {padding:10px; border:1px solid #E4EDF4; }
+.box-news-home-icon .body-news .content-c {display:inline-block; clear:both; width:100%; background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/border-v.jpg) repeat-y 57% 0px;}
+.box-news-home-icon .body-news .left {float:left; width:55%;}
+.box-news-home-icon .body-news .left .thumb {float:left; display:block; width:120px; margin-right:10px;}
+.box-news-home-icon .body-news .left .thumb img {width:100%; border:0px;}
+.box-news-home-icon .body-news .left p.title a {font:bold 12px Arial; line-height:1.3; text-align:justify;}
+.box-news-home-icon .body-news .left p.title a:link,
+.box-news-home-icon .body-news .left p.title a:visited {color:#1B7CCB;}
+.box-news-home-icon .body-news .left p.title a:hover {color:#3C5186; text-decoration: none;}
+.box-news-home-icon .body-news .left p.title span {font-weight:normal; color:#666;}
+
+.box-news-home-icon .body-news .right {float:right; width:41%;}
+.box-news-home-icon .body-news .right ul {list-style:none; padding:0px; margin:0px;}
+.box-news-home-icon .body-news .right ul li {padding:0px 5px 8px 10px;position:relative ;line-height:1.4; text-align:justify;} 
+.ttcm_arr{background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -81px 0px;position:absolute;left:-3px;top:2px;width:6px;height:10px;}
+.box-news-home-icon .body-news .right ul li a,
+.box-news-home-icon .body-news .right ul li a:link,
+.box-news-home-icon .body-news .right ul li a:visited {color:#333; font:normal 12px Arial;}
+.box-news-home-icon .body-news .right ul li a:hover {color:#3C5186;}
+.box-news-home-icon .body-news .right ul li span {color:#4D8CC1; font:normal 11px Tahoma;}
+
+/***************************************/
+.box-forex {}
+.box-forex .head .left {float:left; width:57%;}
+.box-forex .head .left .header {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-01-bg.jpg) repeat-x top left;}
+.box-forex .head .left .header div.icon {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-01.jpg) no-repeat 0px 0px; }
+.box-forex .head .left .header div.icon div.ck {padding:8px 10px 8px 45px; background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/homeicon-tc.png) no-repeat 15px 4px;}
+.box-forex .head .right {float:left; width:43%;}
+.box-forex .head .right .header {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-01-bg.jpg) repeat-x top left;}
+.box-forex .head .right .header div.icon {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/news-home-bg-01.jpg) no-repeat -100px 0px; }
+.box-forex .head .right .header div.icon div.tg {padding:8px 10px 8px 45px; background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/icon-chungkhoan.png) no-repeat 15px 4px;}
+.box-forex .head a,
+.box-forex .head a:link,
+.box-forex .head a:visited {font:bold 12px Arial; color:#fff; text-transform:uppercase;}
+.box-forex .head a:hover {color:#333;}
+
+.box-forex .content-c {border:1px solid #E2E3E5; border-top:0px; background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/border-ck-tg.jpg) repeat-y 57% 0px;}
+.box-forex .content-border { display:inline-block; clear:both; width:100%;}
+.box-forex .content-c .left {float:left; width:57%;}
+.box-forex .content-c .right {float:left; width:43%;}
+.box-forex .content-c .forex {padding:10px; min-height:100px;}
+
+
+
+.box-news-home-blue {  padding: 0px 0px 0px 0px;  background-color: #7EABD2;}
+.box-news-home-blue .header {background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: 0px -581px;}
+    
+.box-news-home-blue .header div {padding:8px 10px;}
+.box-news-home-blue .header div a,
+.box-news-home-blue .header div a:link,
+.box-news-home-blue .header div a:visited {color:#fff; font:bold 13px Arial; text-transform:uppercase;}
+.box-news-home-blue .header div a:hover {color:#B8D1E7;}
+.box-news-home-blue .blue-right {border:1px solid #CBD8E4; background:#E1EBF4; padding:16px 0px;}
+.box-news-home-blue .blue-right ul {list-style:none; padding:0px; margin:0px;}
+.box-news-home-blue .blue-right ul li {padding:7px 10px 7px 20px;position:relative; text-align:justify;}
+.mtn_arr{width:4px;height:7px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  position:absolute;
+  background-color: transparent;
+   background-position: -52px 0px;
+  top: 11px;
+  left: 6px;}
+.box-news-home-blue .blue-right ul li a,
+.box-news-home-blue .blue-right ul li a:link,
+.box-news-home-blue .blue-right ul li a:visited {font:normal 12px Arial; color:#333;}
+.box-news-home-blue .blue-right ul li span {color:#4386BD; font:normal 11px Tahoma;}
+
+
+
+.box-video-right {}
+.box-video-right .header {background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -1px -583px;}
+.box-video-right .header .icon-video {padding:9px 10px 6px 10px;}
+.box-video-right .header .icon-video a,
+.box-video-right .header .icon-video a:link,
+.box-video-right .header .icon-video a:visited {font:bold 13px Arial; text-transform:uppercase; color:#fff;}
+.box-video-right .header .icon-video a:hover {color:#ccc;}
+
+.box-video-right .video-news {padding:0px 5px 5px 5px; background:#7FACD3;}
+.box-video-right .video-news .content-bg {background:#fff; }
+.box-video-right .video-news .first {border-bottom:1px solid #eee; padding:10px;}
+.box-video-right .video-news .first div.img {display:block; width:90px; float:left; margin-right:10px;}
+.box-video-right .video-news .first div.img img {width:100%; border:0px;}
+.box-video-right .video-news .first p.title {text-align:justify;line-height:1.3;}
+.box-video-right .video-news .first p.title a,
+.box-video-right .video-news .first p.title a:link,
+.box-video-right .video-news .first p.title a:visited {font:bold 13px Arial; color:#333;}
+.box-video-right .video-news .first p.title a:hover {color:#3D5287;}
+.box-video-right .video-news .first p.title span {font:normal 11px Tahoma; color:#7FABCE;}
+.box-video-right .video-news ul.other {list-style:none; padding:5px 0px; margin:0px;}
+.box-video-right .video-news ul.other li {padding:5px 5px 5px 40px;text-align:justify;position:relative;}
+.arr_video{background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -533px -10px;
+  left: 9px;
+  top: 5px;position:absolute;height:18px;width:22px;}
+.box-video-right .video-news ul.other li a,
+.box-video-right .video-news ul.other li a:link,
+.box-video-right .video-news ul.other li a:visited {font:normal 13px Arial; color:#333;}
+.box-video-right .video-news ul.other li a:hover{color:#3D5287;}
+.box-video-right .video-news ul.other li span {font:normal 11px Tahoma; color:#7FABCE;}
+
+.box-site-link {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/sitelink-icon.jpg) no-repeat 0px 15px #7EABD2; padding:15px 10px 5px 10px;margin-top:5px;}
+.box-site-link .select {padding-left:20px; padding-bottom:10px;}
+.box-site-link .select select {border:3px solid #E3EDF6; background:#fff; padding:8px;font:normal 13px Arial; color:#666; width:100%;}
+.box-site-link .select select optgroup{
+ font-family:arial !important;
+ font-weight:bold !important;
+ font-style:normal !important;
+}
+
+
+
+
+.layouts-video-ads {}
+.layouts-video-ads .video-ads {float:left; width:100%;}
+.layouts-video-ads .right {float:right; width:43%;}
+
+.box-image-left {}
+.box-image-left .header { width:100%; display:inline-block; clear:both;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: 0px -616px;
+  
+}
+.box-image-left .header .title {float:left; width:65%;}
+.box-image-left .header .title .media { padding:3px 10px 3px 8px;position:relative;}
+.haps_arr_icon{width:25px;height:25px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+      background-position: -477px -8px;
+	left: 11px;
+  top: 5px;
+ position:absolute;}
+.box-image-left .header .title a,
+.box-image-left .header .title a:link,
+.box-image-left .header .title a:visited {font:bold 13px Arial; color:#fff; text-transform:uppercase;}
+.box-image-left .header .title a:hover {color:#E2EBF2;}
+.box-image-left .header .title a{display:block;margin-top:7px;margin-left:45px;}
+
+.box-image-left .header .more {float:right; width:29%; text-align:right;}
+.box-image-left .header .more div { padding:8px 10px 8px 45px;}
+.box-image-left .header .more a,
+.box-image-left .header .more a:link,
+.box-image-left .header .more a:visited {font:normal 11px Tahoma; color:#fff; text-align:right;}
+.box-image-left .header .more a:hover {color:#3C5186;}
+
+.box-image-left .image-news {padding-top:5px; background:#E1EBF4;}
+.box-image-left .image-news .image-container img {width:100%; border:0px;}
+.box-image-left .image-news .video-list {width:100%; display:inline-block; clear:both;}
+
+.box-image-left .image-news .video-list .btn-left {float:left; width:12px; padding:10px;}
+.box-image-left .image-news .video-list .btn-right {float:right; width:12px; padding:10px 10px 10px 0px;}
+
+.box-image-left .image-news .video-list ul {list-style:none; padding:0px; margin:0px; padding:10px 0px; float:left; width:310px; overflow:hidden;}
+.box-image-left .image-news .video-list ul li {float:left;width:77px; }
+.box-image-left .image-news .video-list ul li a {display:block; width:70px; border:1px solid #E1EBF4;}
+.box-image-left .image-news .video-list ul li a:hover {border:1px solid #3C5186;}
+.box-image-left .image-news .video-list ul li a img {width:100%;}
+
+
+/*--Main Image Preview--*/
+.main_image {
+    width: 380px; height: 315px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+.main_image img{
+    width: 380px;
+}
+.main_image h2 {    
+    line-height: 18px;
+    margin: 0 10px 10px 15px;
+}
+.main_image h2 a{
+    color: #2c6ea8;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.main_image h2 a:hover{
+    color: #3c5186;
+    text-decoration: none;
+}
+.main_image h2 a:visited{
+    color: #2c6ea8;
+    text-decoration: none;
+}
+.main_image p {
+    font-size: 1.1em;
+    line-height: 16px;
+    margin: 0;
+    padding: 0 10px 5px;
+}
+.block small { 
+    padding: 0 0 0 20px; 
+    background: url(images/icon_cal.gif) no-repeat 0 center; 
+    font-size: 1em; 
+}
+.main_image .block h2 span{margin-left:5px;}
+.main_image .block small {margin-left: 10px;min-height:30px;}
+.main_image .desc{
+    position: absolute;
+    bottom: 0;	left: 0;
+    width: 100%;
+    min-height: 45px;
+    background-color: #e9f0f6;
+    opacity: 0.75;
+    display: none;
+opacity:0.9!important;
+}
+.main_image .block{
+    width: 100%;
+    margin-top: 10px;
+    background:transparent;
+min-height:30px;
+}
+.main_image a.collapse {
+    background: url(images/btn_coll.gif) no-repeat left top;
+    height: 27px; width: 93px;
+    text-indent: -99999px;
+    position: absolute; 
+    top: -27px; right: 20px; 
+}
+.main_image a.show {background-position: left bottom;} 
+.main_image .desc .block h2 .block-desc{display:block!important;color:#3a3a3a;font-size:12px;line-height:150%;}
+/*Thumbs list*/
+.image_thumb {
+    float: left;
+    /*border-right: 1px solid #fff;*/
+    border-right: 1px solid #E9F0F6;
+    min-height:315px;
+  border-bottom: 1px solid #E9F0F6;
+  box-sizing: border-box;
+}
+.image_thumb img {
+    background: #fff; 
+    float: left;
+    width: 65px;
+    padding:4px;
+height:46px;
+}
+.image_thumb ul {
+    margin: 5px 0 0 0; padding: 0;
+    list-style: none;
+}
+.image_thumb ul li{
+    margin: 0; padding: 1px 10px;
+    float: left;
+	position:relative;
+    /*border-right: 1px solid #ccc;*/
+}
+.image_thumb ul li.hover {
+    
+    color:#1A669A;
+    font-weight: bold;
+    cursor: pointer;
+}
+.image_thumb ul li.active {
+    
+    color:#1A669A;
+    font-weight: bold;
+    cursor: default;
+}
+
+.image_thumb ul li.active img{
+    background-color:#c9dbe9;
+}
+.image_thumb ul li.hover img{
+    background-color:#c9dbe9;
+}
+
+.image_thumb ul li a{
+    font-size: 12px;
+    color: #000;
+
+}
+
+.image_thumb ul li a:visited{
+    color:#000;
+}
+.image_thumb ul li.active a{
+    color: #1a669a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+html .image_thumb ul li h2 {
+    font-size: 12px; 
+    margin: 5px 0; padding: 0;
+}
+.image_thumb ul li .block {
+    margin-left: 80px;
+    padding: 0;
+    font-size: 12px;
+    text-align: justify;
+    padding: 3px 0 0;
+    line-height: 15px;
+}	
+.image_thumb ul li .block .link-title{
+    display: none;
+}
+.image_thumb ul li p{display: none;}
+
+/*AD GALLERY*/
+#gallery {
+    padding: 30px;
+    background: #e1eef5;
+}
+  .ad-image {
+  cursor: pointer;
+}
+.ad-gallery {
+    max-width: 670px;
+}
+.ad-gallery, .ad-gallery * {
+  margin: 0;
+  padding: 0;
+}
+  .ad-gallery .ad-image-wrapper {
+    width: 100%;
+    height: 263px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+    .ad-gallery .ad-image-wrapper .ad-loader {
+      position: absolute;
+      z-index: 10;
+      top: 48%;
+      left: 48%;
+      border: 1px solid #CCC;
+    }
+    .ad-gallery .ad-image-wrapper .ad-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev, .ad-gallery .ad-image-wrapper .ad-next {
+      /* Or else IE will hide it */
+      background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/trans.gif);
+    }
+      .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/ad_prev.png);
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 47%;
+        left: 0;
+        z-index: 101;
+      }
+      .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/ad_next.png);
+        width: 30px;
+        height: 30px;
+        right: 0;
+        left: auto;
+      }
+    .ad-gallery .ad-image-wrapper .ad-image {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+      .ad-gallery .ad-image-wrapper .ad-image a img {
+        border: 0;
+      }
+      .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 7px;
+        text-align: left;
+        width: 100% !important;
+        z-index: 2;
+        background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/opa75.png);
+        color: #000;
+      }
+      * html .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        background: none;
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/opa75.png');
+      }
+        .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title {
+          display: block;
+        }
+  .ad-gallery .ad-controls {
+    height: 20px;
+  }
+    .ad-gallery .ad-info {
+      float: left;
+    }
+    .ad-gallery .ad-slideshow-controls {
+      float: right;
+    }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-start, .ad-gallery .ad-slideshow-controls .ad-slideshow-stop {
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-countdown {
+        padding-left: 5px;
+        font-size: 0.9em;
+      }
+    .ad-gallery .ad-slideshow-running .ad-slideshow-start {
+      cursor: default;
+      font-style: italic;
+    }
+  .ad-gallery .ad-nav {
+    width: 94%;
+    position: relative;
+    padding: 0 0 10px 20px;
+  }
+    .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+    }
+    /* IE 6 doesn't like height: 100% */
+    * html .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      height: 50px;
+    }
+    .ad-gallery .ad-back {
+      cursor: pointer;
+      left: 0;
+      width: 13px;
+      display: block;
+      background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/ad_scroll_back.png) 0px 15px no-repeat;
+    }
+    .ad-gallery .ad-forward {
+      cursor: pointer;
+      display: block;
+      right: 0;
+      width: 13px;
+      background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/js/ad-gallery/ad_scroll_forward.png) 0px 15px no-repeat;
+    }
+    .ad-gallery .ad-nav .ad-thumbs {
+      overflow: hidden;
+      width: 94%;
+    }
+      .ad-gallery .ad-thumbs .ad-thumb-list {
+        float: left;
+        width: 9000px;
+        list-style: none;
+      }
+        .ad-gallery .ad-thumbs li {
+          float: left;
+          padding-right: 5px;
+        }
+          .ad-gallery .ad-thumbs li a {
+            display: block;
+          }
+            .ad-gallery .ad-thumbs li a img {
+              border: 3px solid #CCC;
+              display: block;
+              width:60px;
+              height: 40px;
+            }
+            .ad-gallery .ad-thumbs li a.ad-active img {
+              border: 3px solid #616161;
+            }
+/* Can't do display none, since Opera won't load the images then */
+.ad-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
+
+/*=====================================*********=========================================*/
+/*===================================================BREAD CRUMBS*/
+.xj9{
+    display: none;
+}
+.breadcrumbs-cover{
+    margin-top:10px;
+}
+.breadCrumbs{
+    display: inline-block;
+    float: left;
+    border-left:1px solid  InactiveCaptiontext ;
+}
+
+.breadCrumbs a,.breadCrumbs a:visited{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color:#404041 ;
+    text-decoration: none;
+    margin-left:10px;
+    margin-right:10px;
+}
+.LinkBreadCrumbs{
+     /*margin-bottom:5px;*/
+}
+.LinkBreadCrumbs a, .LinkBreadCrumbs a:hover, .LinkBreadCrumbs a:visited{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color:#404041 ;
+    text-decoration: none;
+    margin-right:10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ==========================================Tin Moi nhat*/
+.chitiettin-cover{
+    border:1px solid #e3dedb;
+    /*margin-left:22px;*/
+}
+.chitiettin-content{
+   padding:10px;
+overflow:hidden;
+}
+
+.chitiettin-title{
+    color:#2573b3;
+    font: 16px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.chitiettin-image{
+    float:left;
+    /*margin-right: 10px;*/
+}
+.chitiettin-comments{
+    margin-right:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+.chitiettin-image img{
+    width: 250px;
+}
+.chitiettin-docContent{
+    clear: both;
+    margin-top: 20px;
+    border:1px solid White ;
+line-height:2em;
+}
+.chitiettin-attachfile{
+    
+}
+.chitiettin-attachfile label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color:#2573b3;
+}
+.attachfile-item{
+    padding-left:10px;
+    padding-top:5px;    
+margin-bottom:0px;
+}
+.attachfile-item a , .attachfile-item a:visited, .attachfile-item a:hover{
+    color: #404040 !important;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration:none;
+}
+.chitiettin-header{
+     /*padding-top: 10px;*/
+     /*padding-left:30px;*/
+     /*padding-bottom:5px;*/
+     background: url("/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/attachfile.gif") no-repeat  10px center ;
+     /*width: 645px;*/
+}
+.chitiettin-header label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+.chitiettin-share-link{
+    float:right;
+}
+.chitiettin-related-news{
+    clear:both;
+    margin-top:10px;
+}
+.chitiettin-related-news-header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #404041;
+    border-bottom:1px solid #e3dedb;
+    text-transform: uppercase;
+    padding-bottom:5px;
+}
+.chitiettin-related-news-title{
+    margin-top:5px;
+background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/custom/third-level-sitemap.gif);
+background-position:0px 0px;
+background-repeat:no-repeat;
+padding-left:10px;
+}
+.chitiettin-related-news-title a, .chitiettin-related-news-title a:hover, .chitiettin-related-news-title a:visited{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+/*font-weight: bold;*/
+    color: #404041 !important;
+    text-decoration:none;
+
+}
+.chitiettin-related-news-title span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+line-height:150%;
+    color: #000;
+    font-style: normal;
+}
+.chitiettin-binhchon{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color:#404041;
+    text-transform: uppercase;
+    font-weight:bold;
+    margin-top:25px;
+    border-bottom:1px solid #e3dedb;
+    padding-bottom:5px;
+}
+.chitiettin-binhchon-item{
+    margin-top:5px;
+}
+.chitiettin-binhchon-item a, .chitiettin-binhchon-item a:hover, .chitiettin-binhchon-item a:visited{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#404041;
+    text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #404041 !important;
+padding-left:20px;
+    text-decoration:none;
+	background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/icon_check.png);
+	background-position:0px 2px;
+	background-repeat:no-repeat;
+background-size:16px;
+border:1px solid #fff;margin-bottom:3px;
+}
+.chitiettin-binhluan{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color:#404041;
+    text-transform: uppercase;
+    font-weight:bold;
+    margin:10px 0px 10px 0px;
+    padding-bottom:5px;
+}
+.chitiettin-binhluan-form table tr td label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    color:#404041;
+}
+.chitiettin-lstbinhluan{
+    margin-top:10px;
+float:left;
+}
+.chitiettin-lstbinhluan-header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    color:#404041;
+}
+.chitiettin-lstbinhluan .lstbinhluan{
+    margin-top:10px;
+}
+.chitiettin-lstbinhluan .lstbinhluan label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#2573b3;
+}
+.chitiettin-lstbinhluan .lstbinhluan .lsbinhluan-comment{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#404041;
+    padding:5px;
+    display: block;
+}
+span.cd-related-news-date{color: #2573b3;}
+/*=================================================DANH SACH TIN BAI PHAN TRANG*/
+.dstinbai-cover{
+    /*margin-left:27px;*/
+    margin-bottom: 10px;
+}
+.dstinbai-thumnail-cover{
+    border:1px solid #6098C7;
+    padding:0px 10px 0px 10px;
+}
+.dstinbai-thumnail-cover table tr td{
+   padding:5px 0px 0px 0px;
+}
+.dstinbai-thumnail-cover table tr td a{
+  border-right:none !important;
+  font-size: 12px;
+  font-weight: bold;
+}
+.dstinbai-thumnail-cover table tr td a:hover{text-decoration:none;}
+.dstinbai-thumnail-cover table tr td a:visited, .dstinbai-thumnail-cover table tr td a:actived{color:#003286!important;}
+
+.dstinbai-thumnail-cover table tr td a label{
+     font-size: 12px;
+     color: #bbbbbb;
+}
+.dstinbai-thumnail-cover table tr.row-title td.cell-title{
+    padding:10px 0px 5px 0px;
+    text-align: justify;
+    vertical-align: top;
+    line-height: 15px;
+    /*border-right:1px solid #6098C7;*/
+}
+
+.dstinbai-thumnail-cover table tr.row-title td a, 
+.dstinbai-thumnail-cover table tr.row-title td a:hover, 
+.dstinbai-thumnail-cover table tr.row-title td a:visited,
+.dstinbai-thumnail-cover table tr.row-title td a:actived{
+    font-family: Arial;
+    font-weight: bold;
+    color: #2573b3!important;
+    font-size: 12px;
+    text-decoration: none;
+   
+}
+.dstinbai-thumnail-cover table tr.row-title td a span label{margin-left:5px;color:#000 !important;font-size:12px}
+.dstinbai-thumnail-cover table tr.row-comment td.cell-comment{
+     vertical-align: top;
+     /*border-right:1px solid #6098C7;*/
+      border-bottom: 1px dotted #bbbcbc;
+     line-height: 15px;
+}
+.dstinbai-thumnail-cover table tr.row-comment td.cell-comment .image{
+    float: left;
+    padding:0px 10px 0px 0px;
+
+    font-size: 10px !important;
+    font-style: italic;
+}
+.dstinbai-thumnail-cover table tr.row-comment td.cell-comment .image img{
+    width: 120px !important;
+}
+.dstinbai-thumnail-cover table tr.row-comment td.cell-comment .comment{
+    font-family: Arial;
+    color: #414141;
+    font-size: 12px;
+    text-align: justify;
+    line-height: 15px;
+   
+}
+.dstinbai-thumnail-cover table tr.row-date td.cell-date{
+    /*border-bottom:1px solid #6098C7;*/
+    /*border-right: 1px solid #6098C7;*/
+    /*vertical-align: middle;*/
+    /*padding: 10px;*/
+    /*text-align: right;*/
+}
+.dstinbai-thumnail-cover table tr.row-date td.cell-date label{
+    /*color: #2673b4;*/
+    /*font-size: 11px;*/
+}
+.dstinbai-cover .dstinbai-header{
+    float: left;
+  height: 32px;
+  width: 100%;
+/* background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/KBNN/images/mini_lg.png);
+  background-repeat: no-repeat;
+background-position: 10px 2px;*/
+  background-color: #518FC3;
+}
+.dstinbai-cover .dstinbai-header a, .dstinbai-cover .dstinbai-header a:hover, .dstinbai-cover .dstinbai-header a:visited{
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+.dstinbai-cover .dstinbai-xemtiep{
+    text-align: right;
+    padding:10px;
+}
+.dstinbai-cover .dstinbai-xemtiep a, .dstinbai-cover .dstinbai-xemtiep a:hover, .dstinbai-cover .dstinbai-xemtiep a:visited{
+    font-family: Arial;
+    color: #414141;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2573b3;
+}
+.dstinbai-pageNumber{
+    text-align: right;
+    height: 30px;
+    margin-top:10px;
+    padding-left:0px;
+}
+/*===========================================LEFT MENU*/
+.leftmenu-content{
+    padding: 0px;
+    border-top: none;
+    border:1px solid #7eabd2;
+margin-bottom:5px;
+}
+.RootNode{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.RootNode-Normal table tr td:first-child td{
+    width:100% !important;
+}
+.RootNode li{
+    list-style: none ;
+    margin-left: -40px;
+}
+.RootNode-first-sub{
+    background: url("/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/arrow_horizontal.png") no-repeat center center ;
+    height: 25px;
+    background-color: #7eabd2;
+    border-right: 1px solid white;
+}
+.RootNode-first-sub a, .RootNode-first-sub a:hover, .RootNode-first-sub a:visited{
+    text-decoration: none;
+    display: block;
+}
+.RootNode-last-sub{
+   height: 35px;
+   background-color: #7eabd2;
+   line-height: 35px;
+   padding: 0px 0px 0px 10px;
+}
+.RootNode-last-sub a, RootNode-last-sub a:visited, RootNode-last-sub a:hover{
+    font-family: Arial;
+    font-size: 13px;
+    color: White !important;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    /*margin-left:10px;*/
+}
+.RootNode-last a, RootNode-last a:visited, RootNode-last a:hover{
+    font-family: Arial;
+    font-size: 13px;
+    color: White !important;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+.RootNode-Actived .RootNode-first-sub{
+    height: 25px;
+    background: url("/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/arrow_horizontal_selected.png") no-repeat center center ;
+    border-right: 1px solid white;
+}
+.RootNode-Actived  .RootNode-last-sub{
+    height: 25px;
+    background-color: #2573b3;
+}
+
+/*.leftmenu-content ul li:hover table tr td:first-child + td  {
+    font-weight: bold;
+    height: 35px;
+    background-color: #2573b3;
+}
+.leftmenu-content ul li:hover table tr td:first-child{
+    height: 35px;
+    background-color: #2573b3;
+    background: url("/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/arrow_horizontal_selected.png") no-repeat center center ;
+}
+.leftmenu-content ul li:hover table tr td:first-child + td a:hover{
+    text-decoration: none;
+}*/
+.NodeLevel2-Normal{
+    padding: 10px 0px 10px 25px;
+    word-spacing: normal;
+    border-top: 1px solid #7eabd2;
+    background-color: #e9f0f6;
+background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/box-news-right-home-icon.png);
+background-repeat:no-repeat;
+background-position: 14px 13px;
+}
+.NodeLevel2-Normal a:hover{ 
+    /*display: block;*/
+    color: #1e649f !important;
+    /*font-family: Arial;*/
+    /*font-weight: bold;*/
+    /*font-size: 13px;*/
+    text-decoration: none;
+    
+}
+.NodeLevel2-Normal a, .NodeLevel2-Normal a:visited{
+    display: block;
+    color: #404041;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
+.NodeLevel2-Actived{
+    padding: 10px 0px 10px 25px;
+    word-spacing: normal;
+    border-top: 1px solid #7eabd2;
+    background-color: #e9f0f6;
+background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/box-news-right-home-icon-red.png);
+background-repeat:no-repeat;
+background-position: 14px 13px;
+}
+.NodeLevel2-Actived a, .NodeLevel2-Actived a:visited, .NodeLevel2-Actived a:hover{ 
+    display: block;
+    color: #1e649f !important;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.NodeLevel3-Normal{
+      min-height: 25px;
+      word-spacing: normal;
+      border-top: 1px solid #7eabd2;
+      background-color: #ffffff;
+      padding-left: 40px;
+      padding-top: 10px;
+}
+.NodeLevel3-Normal a:hover{
+    display: block;
+    color: #1e649f !important;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;   
+    text-decoration: none;
+}
+.NodeLevel3-Normal a, .NodeLevel3-Normal a:visited{
+    display: block;
+    color: #404041 ;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
+.NodeLevel3-Actived{
+     min-height: 25px;
+      word-spacing: normal;
+      border-top: 1px solid #7eabd2;
+      background-color: #ffffff;
+      padding-left: 70px;
+      padding-top: 10px;
+}
+.NodeLevel3-Actived a, .NodeLevel3-Actived a:visited, .NodeLevel3-Actived a:hover{
+    display: block;
+    color: #1e649f !important;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
+.NodeLevel4-Normal{
+    min-height: 20px;
+    width: 175px;
+    padding-left:70px;
+    word-spacing: normal;
+    padding-top:10px;
+    padding-bottom:5px;
+    /*background:  url("/oracle/webcenter/portalapp/shared/images/arrow_selected.png") no-repeat 40px center;*/
+}
+.NodeLevel4-Normal a:hover{
+    display: block;
+    color: #e07a00 !important;
+    font-family: Tahoma;
+    font-size: 14px;
+    text-decoration: none;
+}
+.NodeLevel4-Normal a, .NodeLevel4-Normal a:visited{
+    display: block;
+    color: #404041;
+    font-family: Tahoma;
+    font-size: 14px;
+    text-decoration: none;
+}
+.NodeLevel4-Actived{
+    min-height: 20px;
+    width: 175px;
+    padding-left:70px;
+    word-spacing: normal;
+    padding-top:10px;
+    padding-bottom:5px;
+    text-decoration: none;
+}
+.NodeLevel4-Actived a, .NodeLevel4-Actived a:visited, .NodeLevel4-Actived a:hover{
+    display: block;
+    color: #e38719 !important;
+    font-family: Tahoma;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/*============================Tamnv fix demo===16.4.2015*/
+.lkweb-container {display:inline-block; clear:both; width:100%; }
+.lkweb-container-nopadding {padding-bottom:0px;}
+div.lkweb-ads {padding:0px; margin:0px;margin-top:0px;}
+div.lkweb-ads li {padding-bottom:7px;}
+div.lkweb-ads li a {display:block; width:100%; }
+div.lkweb-ads li a img {width:100%; border:0px; }
+
+.lkweb-site-link {background:url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/sitelink-icon.jpg) no-repeat 0px 15px #7EABD2; padding:15px 10px 5px 10px;}
+.lkweb-site-link .select {padding-left:20px; padding-bottom:10px;}
+.lkweb-site-link .select select {border:3px solid #E3EDF6; background:#fff; padding:8px;font:normal 13px Arial; color:#666; width:100%;}
+
+/*============================end*/
+
+/*=========================PAGE NUMBER*/
+.buttonPagination{
+    text-align:right;
+    margin-bottom:3px;
+    margin-top: 10px;
+    height: 30px;
+    border-top:1px dotted gray;
+float: right;
+  width: 100%;
+}
+.pageNumber{
+    display: inline-block;
+    text-align: right;
+    margin-left: 2px;
+}
+.pageNumber button{
+    font-size: 12px  !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    padding-bottom:0px !important;
+    padding-top:0px !important;
+    /*font-weight: bold  !important;*/
+    font-family: Arial, Helvetica, sans-serif !important;
+    height: 25px !important;
+    color:#2573b3;
+    border:none !important;
+}
+.pageNumber button:hover{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    /*font-weight: bold !important;*/
+    /*background-color: #2573b3 !important;*/
+    /*border-bottom:1px solid Black !important;*/
+    padding-bottom: 0px !important;
+    margin-top:0px !important;
+    background-color: #ffffff !important;
+    border:none !important;
+    cursor: pointer !important;
+}
+.pageNumber button[disabled]{
+    color:gray !important;
+    background-color: #ffffff !important;
+    border:none !important;
+}
+/*=========================================VIDEO*/
+.dsvideos-cover{
+    
+    border:1px solid #eaeaeb;
+    
+}
+.dsvideos-body{
+     /*border:1px solid #e7e0d8;*/
+     /*width: 637px;*/
+     /*margin-left: 27px;*/
+    /*margin-right: 27px;*/
+}
+#content{
+     padding-left:2px;
+}
+#contentdsvideo{
+     /*padding-left:1px;*/
+     padding-top:5px;
+}
+.dsvideos-jwplayer{
+   
+}
+.dsvideos-list{
+    padding-top: 3px;
+    font-weight: bold;
+}
+.dsvideos-pageNumber{
+    border-top:1px dotted gray;
+    padding-top:5px;
+    text-align: right;
+    margin-bottom:5px;
+    margin-right:2px;
+    
+}
+.media-item{
+/*background-image:url("/oracle/webcenter/portalapp/shared/images/arrow.png"); */
+    background-position: 5px 15px;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    padding-right:10px;
+    border-top: 1px solid #cfc7c1;
+    text-align: justify;
+}
+.media-item a:hover span{
+    font: normal  12px Arial, Helvetica, sans-serif;
+    color:#e37700;    
+    text-decoration: none;
+}
+.media-item a,.media-item a:focus span{
+    /*padding-left: 20px;*/
+    color:  #404041;
+    font: normal  12px Arial, Helvetica, sans-serif;
+    white-space: normal;
+}
+.media-item span{
+    padding-left: 10px;
+    color:  #404041;
+    font: normal  12px Arial, Helvetica, sans-serif;
+    white-space: normal;
+    display: block;
+}
+
+ /*======================================Danh sach album anh begin*/
+    .dsfolios-cover{
+        /*border:1px solid #e0dfdd;*/
+        /*border-bottom: none !important;*/
+    }
+    .lstfolios-header .header{
+        height: 35px;
+        background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/breadcrumbs-header.png) no-repeat top left;
+        background-size: 700px 35px; 
+padding:0px;
+    }
+.lstfolios-header .header .title{padding:0px!important;}
+    .lstfolios-header .header .title a{ 
+        line-height: 35px !important;
+        padding-left:5px !important;
+    margin-left: 10px;
+    margin-top: 0px!important;
+    }
+    .lstSliderImage{
+      border: none !important;
+      width: 690px;
+  }
+  .lstfolio-content{
+      border:1px solid #e0dfdd;
+      border-bottom: none !important;
+  }
+  .ad-gallery .lstSliderImage .ad-image-wrapper {
+    width: 685px;
+height:500px ;
+    margin-bottom: 10px ;
+    position: relative ;
+    overflow: hidden;
+    margin-left:4px;
+  }
+   .ad-gallery .lstSliderImage .ad-image-wrapper .ad-image-description .ad-description-title{
+       margin-left:5px;
+   }
+   .ad-gallery .lstSliderImage .ad-back{
+       margin-left: 5px;
+   }
+   .ad-gallery .lstSliderImage .ad-nav{
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 0;
+        padding-top: 0;
+        position: relative;
+        width: 97%;
+   }
+   
+  .lstfolios { 
+     border: 1px solid #e0dfdd;
+     border-top:none !important;
+     border-bottom:none !important;
+  }
+  .box-containeralbum{
+      display:inline-block; clear:both; width:100%; padding-bottom:0px;
+  }
+  .lstfolios table{
+    width: 100%;
+  }
+  .lstfolios table tr td{
+      padding:10px 10px 10px 5px;
+      border-top:1px solid rgb(214,214,214) ;
+      border-bottom:1px solid rgb(214,214,214) ;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 15px;
+  }
+  .lstfolios table tr td:first-child{
+    width:100px !important;
+  }
+  .lstfolios table tr td a span{
+      margin-left: 0px !important;
+      text-decoration: none !important;
+  }
+  .lstfolios table tr td a,  .lstfolios table tr td a:hover,  .lstfolios table tr td a:visited{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color:#1a669a !important;
+        padding-right: 10px;
+  }
+  .lstfolios img{
+      width:100px !important;
+  }
+  .lstfolios .header{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color:#404041;
+      line-height: 35px;
+      height: 35px;
+      padding-left:5px;
+  }
+  .folios-pageNumber{
+      clear: both;
+      text-align: right;
+      padding:10px 0px;
+  }
+  .menu-selected {background-color:#7eabd2;}
+  /*======================================Danh sach album anh end*/
+
+/*--------------------FRONTEND---------------------------*/
+
+.chungkhoan-frontend-cover{
+    padding: 10px;
+}
+.tygia-frontend-cover div{
+
+overflow-x:hidden !important
+}
+
+.tygia-frontend-cover{
+     padding: 10px 5px 0 10px;
+}
+.tygia-frontend-cover>div{
+        border-left: 1px solid #E8E8E8;
+    border-radius: 12px;
+}
+.tygia-frontend-cover>div>table{
+     height:134px;
+}
+.tygia-frontend-cover>div>table span{
+     font-size:12px !important
+}
+
+.frontend-tygia-ngoaite{
+    color: #333;
+}
+
+.frontend-tygia-ban{
+    color: #333;
+}
+/*--------------------FRONTEND---------------------------*/
+.x26e > td > a{padding:5px 0px 5px 5px;display:block}
+.x26e > td > a > span{font-weight:bold;font-size:12px;}
+.x26e > td > a > span > label{font-style:Italic;margin-left:5px;}
+/*----------------------LEFT MENU--------------------------*/
+
+.RootNode-last-a {width:100%;height:30px;background: #7EABD2;}
+.RootNode-last-a a{
+color:#fff;
+font-weight:bold;
+float:left;
+font-size: 13px;
+  padding: 9px 0px 0px 20px;
+  text-transform: uppercase;
+  text-decoration: none!important;}
+.RootNode-last-a a:visited,.RootNode-last-a a:actived{color:#fff!important;}
+.breadCrumbs_home{float:left;width:65px;border:none!important;}
+.breadCrumbs_home a{font-weight:bold;color:#404041;font-size:12px;}
+.breadCrumbs_home a:hover{text-decoration:none;}
+.breadCrumbs_home a:visited,.breadCrumbs_home a:actived{color:#404041;}
+.tcdp_more{  float: right;
+  margin-right: 10px;
+  
+  color: #4386BD;
+  position:relative;
+  background-position: 1px 1px;
+  background-repeat: no-repeat;
+  }
+.tcdp_more  a{font-size:12px;}
+a.tcdp_more{font-size:12px;color:#003286;background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/icon_xemthem.png);background-repeat:no-repeat;padding-left:8px;}
+a.tcdp_more:hover{text-decoration:none}
+.tcdp_more a:hover{text-decoration:none;}
+.tcdp_more a:visited,.tcdp_more:actived{color: #6099c8!important;}
+.ar_tcdp_mew{background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -20px 0px;
+  position: absolute;
+  left: -11px;
+  width: 5px;
+  height: 6px;
+  top: 2px;
+  }
+.search{float:left;margin-top:20px;}
+.search span{float:left;color:#fff;}
+.search span input{height:27px;border:none;background:#7dabd2;width:160px;margin:0px;color:#fff;font-weight:bold;padding:0px 10px;width:140px;  float: left;}
+.search a{float:left;}
+.search a img{float:left;width:21px;height:21px;background:#7dabd2;padding:3px;}
+.share_logo_image{width:29px;margin-right:15px;float:left;margin-top:2px;}
+/**********onsiteBTC********************/
+
+.chitiettin-related-news-header{
+border-bottom: 1px dotted #848484;
+  padding-bottom: 3px;
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 25px;margin-bottom:10px;
+}
+.chitiettin-binhchon{
+border-bottom: 1px dotted #848484;
+
+  }
+  
+  
+  .chitiettin-binhchon-item a:hover{border:1px solid #cacaca;background-color:#eee;border-radius:3px;}
+.share_logo_image{width:29px;margin-right:15px;float:left;margin-top:2px;}
+.binhchon_items{float:left;width:65%;border:1px solid #c8c8c8;border-radius:5px;padding:5px;}
+.binhluan_gui{width:70%;border:1px solid #eee;border-radius:5px;height:23px;}
+.cd-comments{float:left;width:100%;}
+.chitiettin-binhchon{border-bottom: 1px dotted #848484;
+  padding-bottom: 3px;
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 25px;margin-bottom:10px;}
+.chitiettin-binhchon-item{width:100%;float:Left;font-size:13px;line-height:150%;}
+.chitiettin-binhchon-item a{width:90%;float:Left;font-size:13px;line-height:150%;color:#222;}
+.chitiettin-binhluan{float:left;width:100%;border-bottom: 1px dotted #848484;
+  padding-bottom: 3px;
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;margin-bottom:10px;}
+.chitiettin-binhluan-form table{float:left;}
+.chitiettin-binhluan-form table tr td font{color:red;}
+
+.chitiettin-lstbinhluan{float:left;width:100%;}
+.chitiettin-lstbinhluan-header{float:left;width:100%;border-bottom: 1px dotted #848484;
+  padding-bottom: 3px;
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;margin-bottom:10px;}
+.lstbinhluan{float:left;width:100%;}
+.lstbinhluan span label{color:#2673b4;}
+.lstbinhluan span{color:#222;line-height: 150%;}
+.lsbinhluan-comment{float:left;width:100%;}
+
+/**************attach file********************/
+.chitiettin-attachfile{float:left;width:100%;}
+.chitiettin-attachfile span{
+float:left;
+width:100%;
+margin-bottom:10px;
+text-align:left;
+color: #000;
+	background-position:0px -1px;
+background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/attachfile.gif);
+	background-repeat:no-repeat;
+padding-left:20px;clear:both;  }
+.attachfile-item{background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/icon-download.png);
+	background-position:0px 1px;
+	background-repeat:no-repeat;
+padding-left:20px;clear:both;background-size: 16px;}
+.attachfile-item a{font-size:12px!important;}
+.attachfile-item a:hover{text-decoration:none;color: #003286;}
+.attachfile-item a:visited,.attachfile-item a:actived{color: #003286;}
+.attachfile-item{float:left;}
+
+/*========= TIM KIEM PRESENTER =====*/
+.searchcontent-cover{
+    border:1px solid #b1dbef;
+    background-color:#ffffff !important;
+    padding:0px 5px;
+}
+.searchcontent-body table{
+    width:100% !important;
+}
+.searchcontent-form{
+    /*border:1px solid red;*/
+    padding-right: 10px;
+}
+.searchcontent-input{
+    margin-top: 15px;
+    white-space: nowrap;
+}
+.searchcontent-input table tr td:first-child{
+    text-align:left !important;
+    width:90px;
+}
+.searchcontent-input input{
+    /*background-color: #e7e0d8;*/
+    width: 280px !important;
+    font-size:12px;
+}
+.searchcontent-input label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-right:18px;
+}
+.searchcontent-radio{
+    margin-top: 10px;
+}
+.searchcontent-radio table tr td:first-child{
+    text-align:left;
+    width:80px;
+}
+.searchcontent-radio label:first-child{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+    margin-right: 25px;
+}
+.searchcontent-radio input{
+    margin-left:10px;
+    
+}
+.searchcontent-radio label{
+    font-size:12px;
+}
+.searchcontent-manyshuttle{
+    margin-top: 10px;
+}
+.searchcontent-manyshuttle table tr td:first-child{
+   text-align:left;
+   font-weight:bold;
+   color: #3e3e3e;
+}
+.searchcontent-manyshuttle label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.searchcontent-cover h1{
+   color:#3e3e3e !important;
+   font-size:12px;
+}
+.searchcontent-date{
+    margin-top: 10px;    
+}
+.searchcontent-date label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+}
+.searchcontent-date .firstDate{
+    float:left;
+}
+.searchcontent-date .secondDate{
+   margin-left: 395px;
+}
+.searchcontent-buttonsearch{
+    margin-top: 15px;
+    /*border:1px solid red;*/
+    text-align: center;
+}
+.searchcontent-Firstdate label{
+    margin-right:8px;
+}
+.searchcontent-Seconddate label{
+    margin-left:80px;
+}
+.searchcontent-buttonsearch{
+}
+.searchcontent-buttonsearch button{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 12px!important;
+    font-weight: bold!important;
+    color: #3e3e3e!important;
+    background-color: #e7e0d8 !important;
+    background-image: none!important;
+    
+}
+.searchcontent-buttonsearch button:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+    background-color: #e7e0d8 !important;
+}
+.searchcontent-buttonsearch button:active{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+    background-color: #e7e0d8 !important;
+}
+.searchcontent-datatable{
+    padding:0px 5px;
+}
+.searchcontent-result{
+    border-bottom:1px dotted gray;
+    padding-bottom:5px;
+    margin-bottom: 10px;
+}
+.searchcontent-result label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3e3e3e;
+}
+
+.searchcontent-result-item {
+    margin-bottom: 5px;
+}
+.searchcontent-result-item a,.searchcontent-result-item a:visited, .searchcontent-result-item a:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #2673b4;
+    text-decoration:none;
+}
+.searchcontent-result-item label{
+    color: gray;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+.searchcontent-result-comment{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #404040;
+}
+.searchcontentPagination-pageNumber{
+    /*border-top:1px dotted gray;*/
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align: right;
+}
+.searchcontentPagination-pageNumber button{
+    font-size: 11px  !important;
+    background:none !important;
+    padding-bottom:0px !important;
+    padding-top:0px !important;
+    font-weight: bold  !important;
+    font-family: Arial!important;
+    height: 25px !important;
+    color:#2673b4;
+    border:none !important;
+}
+.searchcontentPagination-pageNumber button:hover{
+    font-family: Arial!important;
+    background:none !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    border-bottom:1px solid Black !important;
+    padding-bottom: 0px !important;
+    margin-top:0px !important;
+    border:none !important;
+    color:#2673b4;  
+    cursor:pointer !important;
+}
+.searchcontentPagination-pageNumber button[disabled]{
+    color:gray !important;
+    background:none !important;
+    border:none !important;
+    cursor:default !important;
+}
+/***********Xem them tin***************/
+.more_news{position:relative;}
+.arr_ttcm_more{width:4px;height:7px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+    background-position: -22px 0px;position:absolute;left:0px;top:3px;}
+.more_news,.more_news a:visited,.more_news a:actived{  float: right;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #4386BD;
+
+	background-position:1px 1px;
+	background-repeat:no-repeat;padding-left:11px;
+}
+.more_news a:hover{text-decoration:none;}
+.share img{width:30px;margin-top:1px;margin-right:10px;}
+.footer-image img{float:left;width:280px;}
+.email_share img{width:24px;}
+
+/*=============================rss=================================*/
+.rss-list-cover{
+    border: 1px solid #6098C7;
+margin-bottom:15px;
+}
+.rss-list-cover ul{
+padding:10px 0 10px 0 !important;
+}
+.rss-list-cover ul li{
+background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/rss.png);
+background-repeat: no-repeat;
+background-position: 10px 0px;
+padding-bottom:10px !important;
+}
+.rss-list-cover ul li a, .rss-list-cover ul li a:visited, .rss-list-cover ul li a:hover{
+text-decoration:none;
+font-size:12px;
+}
+.rss-link{
+padding-left:30px;
+}
+/*=============================View RSS=================================*/
+.twocol,.onecol{float:left;}
+.twocol .r_box_tit,.onecol .r_box_tit{float:left;overflow:hidden;}
+.onecol .r_box_tit{float:left;overflow:hidden;width:217px;}
+.twocol .r_box_tit .rss{float:left;}
+.rssheader{float:left;background-color:#7DABD2;width:100%;padding:7px 5px;box-sizing: border-box;}
+.rssheader div a{color:#fff!important;font-family:Arial;font-weight:bold;font-size:14px;padding-left: 10px;text-transform: uppercase;}
+.rssfeed{float:left;width:100%;border:1px solid #E9F0F6;    box-sizing: border-box;}
+.feedEkList{float:left;width:100%;box-sizing: border-box;}
+.itemTitle{clear:both;}
+.itemTitle a{text-decoration:none;color:#000;font-size:12px;lime-height:150%;}
+.itemDate{ color: #949494;text-align:left;font-size:11px;clear:both;}
+.twocol .r_box_tit .rss div{float:left;}
+.feedEkList{padding:5px 0px!important;list-style:none;margin-top: 0px;}
+.twocol .r_box_tit .rss li{width:225px!important;float:left;
+background: url(/oracle/webcenter/siteresources/scopedMD/shared/BTC/images/arrow-list-red.png);
+  background-repeat: no-repeat;
+  background-position: 12px 6px;
+  background-color: transparent;
+  padding-left: 25px;
+padding-top:5px;
+}
+.feedEkList li{
+padding: 5px 10px 5px 10px;
+  background: url(/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/box-news-right-home-icon.png);
+  text-align: justify;
+  background-repeat: no-repeat;
+  background-position: 3px 8px;
+  background-color: transparent;
+}
+.audiovieo{  padding: 11px 10px 3px 50px!important;}
+
+.listrss{overflow:hidden;}
+/**************************************************************************/
+.arr_imp{width: 6px;height: 10px;position: absolute;background-repeat:no-repeat;background-position:0px 0px;left: 2px;	top: 5px;background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);}
+.active_arr{background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);display:block!important;}
+.actived_arr{padding:0px!important;height:25px;width:25px;position:absolute;left:0px;background-repeat:no-repeat;  background-position: -418px -13px;left:17px;	top: 5px;background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);}
+.box-news-home-icon .header .icon .new{position:relative}
+.box-news-home-icon .header .icon .activity{position:relative}
+.ar_tgnt{padding:0px!important;height:25px;width:25px;position:absolute;left:0px;background-repeat:no-repeat;  background-position: -447px -11px;left:17px;	top: 5px;background-image:url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);}
+.icon_mail,.icon_rss,.icon_face,.icon_tw{width:21px;height:17px;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display:block;
+    }
+.icon_mail{background-position:-325px -16px;}
+.icon_rss{background-position:-292px -16px;}
+.icon_face{background-position:-357px -16px;}
+.icon_tw{background-position:-256px -16px;}
+.icon_search{float:right;width:27px;height:27px;display:block;background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+  background-color: #7dabd2;
+    background-position: 0px -167px;}
+	.btt{background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/main_icon_btc.png);
+  background-repeat: no-repeat;
+    background-position: -79px -100px;
+	right: 30px!important;
+  background-color: transparent;}
+/********** SEARCH*****/
+.search-left111>tbody>tr>td>label {
+    width: 75px !important;
+    display: block;
+    margin: 0;
+    text-align: left;
+}
+.search-left111>tbody>tr>td:first-child {
+    width: 70px;
+}
+.searchcontent-manyshuttle1 td {
+    vertical-align: middle !important;
+}
+.secondDate1{
+margin-left: -78px;
+}
+/********** SEARCH*****/
+.search-left111>tbody>tr>td>label {
+    width: 75px !important;
+    display: block;
+    margin: 0;
+    text-align: left;
+}
+.search-left111>tbody>tr>td:first-child {
+    width: 70px;
+}
+.searchcontent-manyshuttle1 td {
+    vertical-align: middle !important;
+}
+.secondDate1{
+margin-left: -78px;
+}
+
+.top-menu .menu .search, .x266 .x235 .x26b {
+    float: right!important;
+    margin: 3px;
+    background-color: #246097;
+}
+.image_thumb .head{ margin-left: 10px;   background-color: #c9dbe9;padding:9px 5px;}    
+.image_thumb .head a{color: #1a669a;font-weight:bold;text-transform: uppercase;font-family: arial;font-size: 13px;display:none;}
+.image_thumb .head span{display:none;}
+.image_thumb .head a:first-child{display:block!important;}
+.block > .block-desc{display:none;}
+
+.content-box a{margin-top:5px;display:block}
+*{font-size:12px}
+.dstinbai-thumnail-cover img{
+float:left;
+margin-right: 10px
+}
+.dstinbai-thumnail-cover a{margin-top
+	display: block;
+	margin: 10px 0 5px 0;
+}
+.chungkhoan-frontend-cover text{font-size:10px}
+
+*::-webkit-input-placeholder {
+    color: #fff !important;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: #fff !important;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: #fff !important;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fff !important;
+}
+.image_thumb .block span{    color: #989898 !important;
+    margin-left: 5px;}
+.head-news span,.content-c span,.box-news-home-blue .blue-right span,.content-bg  span{color:#000 !important;font-size:12px }
+.content_sum{line-height:130%;text-align:justify;font-size:12px;display: block;}
+.header{margin-bottom:-1px}
+.chitiettin-docContent img{min-width:455px;max-width:482px;height:auto;}
+
+.xkc{
+	display: none;
+}
+
+.menu-navbar{
+	float: left !important;
+	width: 100% !important;
+}

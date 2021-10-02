@@ -1,0 +1,508 @@
+BTC ENGLISH
+bTC_BOX_TIN_00
+bTC_BOX_TIN_01
+bTC_BOX_THONG_KE_01
+
+bOX_TIN_BTC_EN
+
+oracle.webcenter.content.templates.default.category
+/portal/btcen/pages_r/l/newsdetails?dDocName=
+danhSachTinBaiCap2
+
+/webcenter/portal/btcen/pages_home
+----------------------
+Home				
+Introduction				
+	Leaders of Ministry of Finance			
+	Tasks and Powers			
+	Organization Structure			
+	History of the Finance Sector of Vietnam			
+News - Events				
+	News			
+	Notices			
+	Local News			
+Research - Discussion	: research-discussion		(16274)
+Public Services	: /portal/btcen/pages_r/folder-chuyentrang/publicservices		
+Financial strategy and Policy				
+Legal Documents				
+Statistics				
+	Bulletin public debt.			
+FAQs on Financial Policies				
+State Budget copy				
+	Domestic Statistics			
+		Plan		
+		Final accounts		
+	Annual State Budget Report			
+	External Statistics 1			
+	Index of State Budget			
+State Budget				
+	/portal/btcen/pages_r/menu-1/statebudget
+	
+	Disclosure by the State Budget Law			
+	disclosure-by-the-state-budget-law
+	/portal/btcen/pages_r/menu-1/statebudget/disclosure-by-the-state-budget-law
+	
+		Excutive's Budget Proposal
+		excutives-budget-proposal
+		/portal/btcen/pages_r/menu-1/statebudget/excutives-budget-proposal
+		
+		Enacted Budget		
+		enacted-budget
+		/portal/btcen/pages_r/menu-1/statebudget/enacted-budget
+		
+		Budget Execution		
+		budget-execution
+		/portal/btcen/pages_r/menu-1/statebudget/budget-execution
+		
+		Final Accounts	
+		final-accounts
+		/portal/btcen/pages_r/menu-1/statebudget/final-accounts
+		
+	Disclosure by the International Standard	
+	disclosure-by-the-international-standard	
+	/portal/btcen/pages_r/menu-1/statebudget/disclosure-by-the-international-standard	
+	
+	Citizens Budget	
+	citizens-budget	
+	/portal/btcen/pages_r/menu-1/statebudget/citizens-budget	
+Bulletin Public Debt : bulletin-public-debt	
+International Cooperation				
+	Financial integration
+	/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration
+		General news : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/general-news  -16020
+		SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16020')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		
+		Free Trade Area (FTA) /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta - 16097,16107, 16126	
+		SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16097','16107','16126')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			ASEAN (AFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16033')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16034')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16035')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16036')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16037')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16038')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16039')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16040')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16041')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-afta/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16244')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			ASEAN - China (ACFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16042')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16043')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16044')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16045')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16046')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16047')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16048')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16049')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16050')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16057')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			ASEAN - South Korea (AKFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16051')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16052')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16053')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16054')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16055')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16056')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16057')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16058')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16059')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-south-korea-akfta/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16242')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			ASEAN-Japan (AJCEP)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16060')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16061')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16062')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16063')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16064')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16065')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16066')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16067')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16068')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market :
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-japan-ajcep/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16243')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			ASEAN - India (AIFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16069')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16070')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16071')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16072')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16073')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16074')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16075')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16076')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16077')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-india-aifta/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16258')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			ASEAN - Australia - NewZealand (AANZFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16078')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16079')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16080')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16081')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16082')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16083')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16084')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16085')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16086')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-australia-newzealand-aanzfta/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16244')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - Japan : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan	
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16087')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16088')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16089')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16090')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16091)  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16092')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16093')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16094')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16095')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Expressed commitment to open financial services market : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-japan/expressed-commitment-to-open-financial-services-market
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16245')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - Chi Le (VCFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16096')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16097')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Agreements/Protocols : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/agreements-protocols
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16098')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Legal Enactments : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/legal-enactments
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16099')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Vietnam : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/fta-tariff-schedules-of-vietnam
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16100')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				FTA Tariff Schedules of Partner Countries : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/fta-tariff-schedules-of-partner-countries
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16101')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Q&A : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/q-a
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16102')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16103')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Search for tariff rates : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-chi-le-vcfta/search-for-tariff-rate
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16104')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - South Korea (VKFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-south-korea-vkfta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16105')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-south-korea-vkfta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16106')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-south-korea-vkfta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16107')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - Eurasian Economic Union (VCUFTA)	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eurasian-economic-union-vcufta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16108')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eurasian-economic-union-vcufta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16109')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eurasian-economic-union-vcufta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16110')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Trans - Pacific Partnership Agreement TPP	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/trans-pacific-partnership-agreement-tpp
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16111')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/trans-pacific-partnership-agreement-tpp/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16112')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/trans-pacific-partnership-agreement-tpp/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16113')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Negotiation : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/trans-pacific-partnership-agreement-tpp/negotiation
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16114')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - EU	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eu
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16115')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eu/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16116')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eu/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16117')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Negotiation : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-eu/negotiation
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16118')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Viet Nam - EFTA	 : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-efta
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16119')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-efta/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16120')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-efta/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16121')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Negotiation : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/viet-nam-efta/negotiation
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16122')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			RCEP	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/rcep
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16123')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				Introduction : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/rcep/introduction
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16124')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Contact points : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/rcep/contact-points
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16125')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Negotiation : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/rcep/negotiation
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16126')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+		APEC Financial Cooperation	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/apec-financial-cooperation	- 16126,16292
+		SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16138')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		
+			Policy themes and initiatives	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/apec-financial-cooperation/policy-themes-and-initiatives
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16139')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+			New	 : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/apec-financial-cooperation/new
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16138')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+			Cooperation in Capital Market Development	: /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/apec-financial-cooperation/cooperation-in-capital-market-development
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16247')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+			Annual APEC conferences	 : /portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/apec-financial-cooperation/annual-apec-conferences
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16138')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+	Public Finance Group partners: public-finance-group-partners	- 16286
+	/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16286')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		Documents on PFPG : /portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/documents-on-pfpg : 16289
+		SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16289')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		
+		ODA Programs and Projects	: /portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects - 16149
+		SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16149')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		
+			List of ODA program and project : 
+			/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/list-of-oda-program-and-project	- 16290
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16290')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc		
+			
+				List of on - going projects : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/list-of-oda-program-and-project/list-of-on-going-projects : 16292
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16292')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Programs - Projects Ended (from 2000 to Date) : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/list-of-oda-program-and-project/programs-projects-ended-from-2000-to-date : 16293
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16293')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Products and publications of projects	: 
+			/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/products-and-publications-of-projects : 16157
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16157')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+				Study tours reports : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/products-and-publications-of-projects/study-tours-reports : 16159
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16159')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+				Other publications of ODA projects/programs : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/products-and-publications-of-projects/other-publications-of-oda-projects-programs : 16160
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16160')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+				
+			Relating forums	 : 
+			/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/relating-forums : 16166
+			SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16166')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+			
+				Partnership Group for PFM : 
+				/portal/btcen/pages_r/menu-1/internationalcooperation/public-finance-group-partners/oda-programs-and-projects/relating-forums/partnership-group-for-pfm : 16265
+				SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16265')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+Vietnam bond market				
+National inistute for finance				
+List off sectors an trades subject to conditional business investment				
+Corporate finance management				
+Business investment				
+Research programs and scientific topics				
+Financial sector's modernization				
+State Budget				
+Press Release	
+			
+Policy hightlights	: policyhightlights		: 16256	
+/portal/btcen/pages_r/folder-chuyentrang/policyhightlights
+
+
+Stock information				
+	HNX			
+	HOSE			
+Monthly Exchange Rate	: monthly-exchange-rate	
+/portal/btcen/pages_r/folder-chuyentrang/monthly-exchange-rate
+
+Suggestion about Draft Legal Document
+/portal/btcen/pages_r/folder-chuyentrang/suggestion-about-draft-legal-document
+
+		
+	Detail Draft Legal Document			
+Financial integration				
+Bulletin Public Debt				
+Tender information		 : 	tender-information (16275)
+	Invitation for BIDS		: invitation-for-bids	(16276)
+	/portal/btcen/pages_r/folder-chuyentrang/tender-information/invitation-for-bids
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16276')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+	Results			: results (16277)
+	/portal/btcen/pages_r/folder-chuyentrang/tender-information/results
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16277')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+	Stipulation		: stipulation  (16278)
+	/portal/btcen/pages_r/folder-chuyentrang/tender-information/stipulation
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16278')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+Insuarance managerment and supervisory				: insuarance-managerment-and-supervisory
+	News.		(1640) - news
+	/portal/btcen/pages_r/folder-chuyentrang/insuarance-managerment-and-supervisory/news
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1640')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+	List of foreign enterprises, branches and foreign representative offices	(1641)	- list-of-foreign-enterprises-branches-and-foreign-representative-offices	
+	/portal/btcen/pages_r/folder-chuyentrang/insuarance-managerment-and-supervisory/list-of-foreign-enterprises-branches-and-foreign-representative-offices
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1641')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+		
+	Overview of insurance market by year (major market growth indices by year)		(1642)	- overview-of-insurance-market-by-year-major-market-growth-indices-by-year
+	/portal/btcen/pages_r/folder-chuyentrang/insuarance-managerment-and-supervisory/overview-of-insurance-market-by-year-major-market-growth-indices-by-year
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1642')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+Strategy and action plan				
+Vietnam state treasury				
+General department of state reserves				
+General department of taxation				
+state securities commissuon of VietNam				
+Website links				
+	Ministries, Sectors and Localities			
+	The Units of the Ministry			
+General finance				
+Field of taxation				
+Field of customs				
+Disclosure of SB				
+
+/pages_r/folder-chuyentrang
+
+startNode=/pages_r/folder-chuyentrang, includeStartNode=true
+
+startNode=/pages_r/menu-1, includeStartNode=true
+
+folder-chuyentrang
+startNode=/pages_r/folder-chuyentrang, includeStartNode=false
+startNode=/pages_r/menu-1, includeStartNode=false

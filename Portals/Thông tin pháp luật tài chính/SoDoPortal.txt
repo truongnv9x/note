@@ -1,0 +1,74 @@
+ttpltc
+Thông tin pháp luật tài chính r
+	Menu m menu
+		Trang chủ
+		Giới thiệu
+		Tin hoạt động ! Tin-hoat-dong
+		Văn bản mới ! Van-ban-moi
+		Kế hoạch công tác ! Ke-hoach-cong-tac
+			Kế hoạch công tác ! Ke-hoach-cong-tac
+		Chương trình Pháp luật ! Chuong-trinh-phap-luat
+			Chương trình luật, pháp lệnh, nghị quyết của QH và UBTVQH	Chuong-trinh-luat-phap-lenh-nghi-quyet-cua-QH-va-UBTVQH
+			Chương trình nghị định của CP, quyết định của TTCP	Chuong-trinh-nghi-dinh-cua-CP-quyet-dinh-cua-TTCP
+		Cải cách hành chính
+			Thủ tục hành chính đã công bố theo đề án 30		Thu-tuc-hanh-chinh-da-cong-bo-theo-de-an-30
+			Các quyết định công bố TTHC		Cac-quyet-dinh-cong-bo-TTHC
+			Tin hoạt động cải cách hành chính	Tin-hoat-dong-cai-cach-hanh-chinh
+		Hướng dẫn nghiệp vụ ! Huong-dan-nghiep-vu
+			Soạn thảo văn bản Soan-thao-van-ban
+			Kiểm tra văn bản Kiem-tra-van-ban
+			Rà soát, hệ thống hóa	Ra-soat-he-thong-hoa
+			Hợp nhất văn bản	Hop-nhat-van-ban
+			Pháp điển hệ thống QPPL		Phap-dien-he-thong-QPPL		
+			Phổ biến, tuyên truyền PL	Pho-bien-tuyen-truyen-PL
+			Hỗ trợ pháp lý cho DN	Ho-tro-phap-ly-cho-DN
+			Kiểm soát thủ tục hành chính	Kiem-soat-thu-tuc-hanh-chinh	
+		Triển khai thi hành hiến pháp
+		Thông báo
+		Tin trang chủ
+		Đề cương Văn bản pháp luật ! De-cuong-van-ban-phap-luat
+		Hỏi - đáp pháp luật tài chính ! Hoi-dap-phap-luat-tai-chinh
+			Chi tiết hỏi đáp
+	Link l 
+		Chi tiết tin 
+		93001	cm93001
+		93002	cm93002
+		93014	cm93014
+		93015	cm93015
+		93016	cm93016
+		93017	cm93017
+		93019	cm93019
+		93022	cm93022
+		93028	cm93028
+		93030	cm93030
+		93031	cm93031
+		93034	cm93034
+		93035	cm93035
+		93036	cm93036
+		93037	cm93037
+		93038	cm93038
+		93040	cm93040
+		93041	cm93041
+		93042	cm93042
+		93043	cm93043
+		93044	cm93044
+		93045	cm93045
+		93046	cm93046
+		93047	cm93047
+		93048	cm93048
+		93049	cm93049
+	footer f footer
+		Trang chủ		bhome		/webcenter/portal/ttpltc
+		Sơ đồ site
+		Liên hệ
+	Menu top h Menu top
+		Cổng TTĐT Bộ Tài Chính
+		Trang chủ	link_home	/webcenter/portal/ttpltc
+		Tin hoạt động			/webcenter/portal/ttpltc/r/m/thdctpctc
+		Kế hoạch công tác	 lk_khct	/webcenter/portal/ttpltc/r/m/ctkhctpctc
+		Chương trình pháp luật		lk_ctpl 	/webcenter/portal/ttpltc/r/m/ctxdvbqppltc
+		Cải cách HC		lk_cthc		/webcenter/portal/ttpltc/r/m/cchc
+		Hướng dẫn NV	lk_hdnv		/webcenter/portal/ttpltc/r/m/hdnv
+	Tìm kiếm
+	In tin tức
+	

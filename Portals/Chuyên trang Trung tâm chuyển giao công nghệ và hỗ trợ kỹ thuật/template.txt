@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   <f:loadBundle basename="oracle.webcenter.portalframework.sitestructure.resource.PortalAppPageResource" var="portalResource"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript">
+    $(document).ready(function(){
+            startTime();
+        });
+
+        function startTime() {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            m = checkTime(m);
+
+            months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+            days = ['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
+            var qqqq = days[today.getDay()]+', '+today.getDate()+'/'+months[today.getMonth()]+'/'+today.getFullYear()+' ';
+            document.getElementById('datetime').innerHTML = qqqq + h+":"+m;
+            var t = setTimeout(function(){startTime()},500);
+        }
+
+        function checkTime(i) {
+            if (10>i) {i = "0" + i};
+            return i;
+        }
+     function redirectURL(event){
+            var searchText = event.getSource().findComponent("inputsearch");
+            var rootURL=$(".contexRoot").text();
+            var text=searchText.getValue() == null?"":searchText.getValue();
+            var url="/webcenter/portal/"+rootURL+"/pages_r/search?SearchInput="+text;
+            window.location.href = url;
+            return false;
+         }
+    </af:resource>
+   <af:pageTemplateDef var="attrs">
+      <af:panelGroupLayout id="pt_root" layout="scroll">
+         <af:outputText styleClass="contexRoot" value="#{spaceContext.currentSpaceName}" inlineStyle="display:none;"/>
+         <af:panelGroupLayout styleClass="header" id="pt_pgl1" layout="vertical">
+            <af:panelGroupLayout styleClass="banner" id="pt_pgl2" layout="vertical">
+               <af:goLink styleClass="logo" destination="" id="pt_gl1">
+                  <af:image styleClass="text_logo" source="http://mof.tinhvan.com/api/linux/images/TTCG/logo_header.png" id="pt_i2"/>
+               </af:goLink>
+               <af:panelGroupLayout styleClass="head_link" id="pt_pgl8">
+                  <ul class="datetime">
+                     <li>
+                        <a id="datetime" href="#"/>
+                     </li>
+                     <li>
+                        <a id="lang" href="#"/>
+                     </li>
+                  </ul>
+               </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <div id="top-menu" class="top-menu">
+               <div id="menu" class="menu">
+                  <div class="block">
+                     <af:panelList id="pl1" styleClass="ul1">
+                        <af:forEach var="node" varStatus="vs" items="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/h, includeStartNode=false']}">
+                           <h:panelGroup id="pg1" layout="block" styleClass="#{node.selected || node.onSelectedPath ? 'active' : 'list'}">
+                              <af:goLink id="pt_gl2" text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.prettyUrl}" targetFrame="#{node.attributes['Target']}"/>
+                           </h:panelGroup>
+                        </af:forEach>
+                     </af:panelList>
+                  </div>
+               </div>
+            </div>
+         </af:panelGroupLayout>
+         <af:panelGroupLayout styleClass="bg_main_view" id="pt_pgl6" layout="vertical">
+            <af:panelGroupLayout styleClass="content" id="pt_pgl5" layout="vertical">
+               <af:facetRef facetName="content"/>
+            </af:panelGroupLayout>
+         </af:panelGroupLayout>
+         <af:panelGroupLayout styleClass="bg_main_view" id="pt_pgl7" layout="vertical">
+            <af:panelGroupLayout styleClass="footer" layout="vertical" id="pt_pgl3">
+               <af:panelGroupLayout styleClass="footer_logo" id="pt_pgl4">
+                  <af:image source="/oracle/webcenter/siteresources/scopedMD/shared/CONGDOANBTC/images/btc-footer.png" id="pt_i7"/>
+               </af:panelGroupLayout>
+               <af:panelGroupLayout layout="vertical" styleClass="footer_info" id="pt_pgl9">
+                  <div class="footer_title">
+                     <h4>Cổng thông tin điện tử bộ tài chính</h4>
+                     <h1>trung tâm chuyển giao công nghệ và hỗ trợ kỹ thuật</h1>
+                  </div>
+                  <af:panelList styleClass="link_footer">
+                     <af:forEach var="node" varStatus="vs" items="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/f, includeStartNode=false']}">
+                        <h:panelGroup layout="block" id="pt_pg1">
+                           <af:goLink text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.PrettyUrl}" id="gl5"/>
+                        </h:panelGroup>
+                     </af:forEach>
+                  </af:panelList>
+                  <div id="contact">
+                     <span>Số 28 Trần Hưng Đạo - Hà Nội; Tel: (84-4) 2220 2888, Fax: (84-4)2220 8129, Email: hotrokythuat@mof.gov.vn</span>
+                  </div>
+               </af:panelGroupLayout>
+            </af:panelGroupLayout>
+         </af:panelGroupLayout>
+      </af:panelGroupLayout>
+      <af:xmlContent>
+         <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+            <display-name>pageTemplateCONGDOANBTC</display-name>
+            <facet>
+               <description>Facet for content</description>
+               <facet-name>content</facet-name>
+            </facet>
+            <attribute>
+               <attribute-name>contentWidth</attribute-name>
+               <attribute-class>java.lang.String</attribute-class>
+               <default-value>1001px</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>showNavigation</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{true}</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>showGreetings</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{securityContext.authenticated}</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>showLogin</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{true}</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>showAdmin</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{securityContext.authenticated}</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>isAdminPage</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{false}</default-value>
+            </attribute>
+            <attribute>
+               <attribute-name>isEditingTemplate</attribute-name>
+               <attribute-class>java.lang.Boolean</attribute-class>
+               <default-value>#{false}</default-value>
+            </attribute>
+         </component>
+      </af:xmlContent>
+   </af:pageTemplateDef>
+</jsp:root>

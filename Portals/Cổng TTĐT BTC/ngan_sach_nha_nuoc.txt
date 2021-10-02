@@ -1,0 +1,58 @@
+Ngân sách nhà nước
+Hộp dữ liệu trong nước
+Nội dung dưới thư mục
+ngansach-nhanuoc
+
+page://oracle/webcenter/page/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/Page106.jspx
+page://oracle/webcenter/page/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/Page106.jspx	
+page://oracle/webcenter/page/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/Page106.jspx	
+page://oracle/webcenter/page/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/Page106.jspx
+
+startNode=/pages_r/lvtc/ngan-sach-nha-nuoc, includeStartNode=true
+
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc
+
+1.Báo cáo NSNN hàng năm
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/bao-cao-nsnn-hang-nam
+
+2.Báo cáo NSNN dành cho công dân
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/bao-cao-nsnn-danh-cho-cong-dan
+
+3.Công khai theo chuẩn quốc tế
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/cong-khai-theo-chuan-quoc-te
+
+4.Công khai theo quy định của Luật NSNN
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/cong-khai-theo-quy-dinh-cua-luat-nsnn
+
+	1.Dự thảo dự toán trình Quốc hội
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/du-thao-du-toan-trinh-quoc-hoi
+	
+	2.Dự toán Quốc hội quyết định
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/du-toan-quoc-hoi-quyet-dinh
+	
+	3.Tình hình thực hiện dự toán
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/tinh-hinh-thuc-hien-du-toan
+	
+	4.Quyết toán Quốc hội phê chuẩn
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/quyet-toan-quoc-hoi-phe-chuan
+	
+5.Hỏi - Đáp về ngân sách Nhà Nước
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/hoi-dap-ve-ngan-sach-nha-nuoc
+
+6.Tổng hợp công khai ngân sách của các Bộ, cơ quan trung ương
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/tong-hop-cong-khai-ngan-sach-cua-cac-bo-co-quan-trung-uong
+
+	1.Dự toán
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/du-toan-tong-hop-cong-khai-ngan-sach-cua-cac-bo-co-quan-trung-uong
+	
+	2.Quyết toán
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/quyet-toan-tong-hop-cong-khai-ngan-sach-cua-cac-bo-co-quan-trung-uong
+	
+7.Tổng hợp công khai ngân sách của các địa phương
+/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/tong-hop-cong-khai-ngan-sach-cua-cac-dia-phuong
+
+	1.Dự toán
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/du-toan-tong-hop-cong-khai-ngan-sach-cua-cac-dia-phuong
+	
+	2.Quyết toán
+	/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/quyet-toan-tong-hop-cong-khai-ngan-sach-cua-cac-dia-phuong

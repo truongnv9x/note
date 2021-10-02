@@ -1,0 +1,91 @@
+folder Trung tâm nc và đào tạo bảo hiểm r
+	Menu m menu
+		Trang chủ
+		Giám sát bảo hiểm
+			Tin quản lý, giám sát
+			Tin thị trường
+		Hoạt động đại lý bảo hiểm
+		Niên giám thị trường bảo hiểm
+		Nghiên cứu khoa học
+			Đề tài khoa học
+			Nghiên cứu trao đổi
+		Hợp tác nghiên cứu, đào tạo
+			Hợp tác trong nước
+			Hợp tác quốc tế
+		Tin kinh tế tài chính
+		Văn bản Luật quy định về thi đại lý bảo hiểm
+		Niên giám thị trường bảo hiểm Việt Nam
+		Bản tin thị trường bảo hiểm toàn cầu
+		Điểm tin thị trường bảo hiểm 
+		Tin tức - sự kiện
+		Tin quốc tế
+		Thông báo
+	Tài liệu thí điểm bảo hiểm 
+	Tài liệu hướng dẫn thí điểm
+	Địa chỉ và website các 
+	Link l 
+		Chi tiết tin 
+		cm1701
+		cm1706
+		cm1707
+		cm1709
+		cm1710
+		cm1711
+		cm1714
+		cm1717
+		cm1720
+		cm1721
+		cm1722
+		cm1724
+		cm1725
+		cm1726
+		cm1727
+		cm1728
+		cm1729
+		cm1730
+		cm1731
+		cm1734
+		cm1735
+		cm1736
+		cm1737
+		cm1738
+		cm1739
+		cm1740
+		cm1741
+		cm1742
+		cm1743
+		cm1744
+		cm1745
+		cm1746
+		cm1747
+		cm1748
+		cm1749
+		cm1750
+		cm1751
+	footer f footer
+		Trang chủ
+		Sơ đồ site
+		Liên hệ
+	Menu top h Menu top
+		Cổng TTĐT Bộ Tài Chính
+		Trang chủ
+		Giới thiệu
+			Quyết định thành lập
+			Chức năng, nhiệm vụ, quyền hạn
+			Sơ đồ tổ chức
+			Sứ mệnh và tầm nhìn
+		Đào tạo
+			Tình hình hoạt động đào tạo
+			Chương trình đào tạo
+			Kế hoạch đào tạo
+			Tin thi trực tuyến
+		Văn bản pháp quy
+			Luật kinh doanh bảo hiểm
+			Văn bản luật liên quan
+		Hỏi đáp
+		Thư viện tài liệu
+	Tìm kiếm
+	In tin tức
+	
+	
+	https://www.mof.gov.vn/webcenter/portal/ttncdtbh

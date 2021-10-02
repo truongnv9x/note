@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   <af:resource source="/oracle/webcenter/siteresources/scopedMD/shared/TTTC/css/reset.css" type="css"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/ad-gallery/ad-gallery.js"/>
+   <af:resource type="javascript">
+        $(document).ready(function(){
+           startTime();
+           $('.backToTop').click(function(){
+               jQuery('html, body').animate({scrollTop: 0}, 500);
+            });
+            $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+            $('.backToTop').fadeIn(500);
+            } else {
+            $('.backToTop').fadeOut(500);
+            }
+            });
+        });
+
+        function startTime() {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            m = checkTime(m);
+			/*s = checkTime(s);*/
+            months = ['01','02','3','4','5','6','7','8','9','10','11','12'],
+			days = ['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+            var qqqq = days[today.getDay()]+', '+today.getDate()+'/'+months[today.getMonth()]+'/'+today.getFullYear()+' ';
+			document.getElementById('datetime').innerHTML =' <b> ' +qqqq + h+":"+m +' </b>';  
+			
+			
+			var minNumber = 200; // The minimum number you want
+			var maxNumber = 1000; // The maximum number you want
+			var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); 
+			document.getElementById("myNumber").innerHTML = randomnumber;
+			
+			//Tong luot khach truy cap
+			var date = new Date();
+			var seconds = Math.ceil((date.getTime() - new Date("01/01/1980").getTime()) / 1000) + "";
+			var output = "3" + seconds.substring(3).slice(0, -1);
+			output = [output.slice(0, 1), ",", output.slice(1)].join('');
+			output = [output.slice(0, 5), ",", output.slice(5)].join('');
+			document.getElementById("lblLuotTruyCap").innerHTML =  output;
+			
+            var t = setTimeout(function(){startTime()},500);
+        }
+
+        function checkTime(i) {
+            if (10>i) {i = "0" + i};
+            return i;
+        }
+
+
+     var time = new Date().getTime();
+     $(document.body).bind("mousemove keypress", function(e) {
+         time = new Date().getTime();
+     });
+
+     function refresh() {
+         if(new Date().getTime() - time >= 600000) {
+
+             $(document.body).bind("mousemove keypress", function(e) {
+         window.location.reload(true);
+     });
+         }
+         else
+             setTimeout(refresh, 10000);
+     }
+
+     //setTimeout(refresh, 10000);
+      function notmatch(str) {
+            var mikExp = /[$\\@\\\#%\^\&amp;\*\(\)\[\]\+\_\{\}\`\~\=\|]/;
+            var check=0;
+            do{
+                check=str.search(mikExp);
+                str=str.substring(0,check)+str.substring(check+1,str.length);
+            }
+            while(check!=-1);
+            return str;
+
+        }
+
+     function redirectURLKey(event){
+     if(event.getKeyCode()==13){
+          var searchText = event.getSource().findComponent("inputsearch");
+
+            var rootURL=$(".contexRoot").text();
+            var text=searchText.getValue() == null?"":searchText.getValue();
+            text=encodeURIComponent(text);
+            var url="/webcenter/portal/"+rootURL+"/pages_r/search?SearchInput="+text;
+
+            window.location.href = url;
+            return false;
+     }else{
+
+         var searchText = document.getElementById("T:inputsearch::content").value;
+         var truetext=notmatch(searchText);
+         document.getElementById("T:inputsearch::content").value=truetext;
+     }
+
+
+
+     }
+     function redirectURL(event){
+
+            var searchText = event.getSource().findComponent("inputsearch");
+            var rootURL=$(".contexRoot").text();
+            var text=searchText.getValue() == null?"":searchText.getValue();
+            text=encodeURIComponent(text);
+            var url="/webcenter/portal/"+rootURL+"/pages_r/search?SearchInput="+text;
+            window.location.href = url;
+            return false;
+
+
+     }
+
+   </af:resource>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76455638-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+   <af:pageTemplateDef var="attrs">
+      <af:outputText styleClass="contexRoot" value="#{spaceContext.currentSpaceName}" inlineStyle="display:none;"/>
+      <div id="wrapper">
+         <div id="header">
+            <div class="logo-bg">
+               <div id="logo">
+                  <af:goImageLink destination="#" icon="/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/logo.jpg" id="gil1"/>
+               </div>
+               <div class="top-nav">
+                  <div class="datetime" style="width:223px;height:14px">
+                     <span id="datetime">
+                        <h1/>
+                     </span>
+                  </div>
+                  <div class="search">
+                     <af:inputText id="inputsearch" maximumLength="300" simple="true" placeholder="Tìm kiếm">
+                        <af:clientListener method="redirectURLKey" type="keyUp"/>
+                     </af:inputText>
+                     <af:commandImageLink text="" id="cil1" styleClass="icon_search">
+                        <af:clientListener method="redirectURL" type="click"/>
+                     </af:commandImageLink>
+                  </div>
+               </div>
+            </div>
+            <div id="menu">
+               <div class="menu-top">
+                  <ul>
+                     <li>
+                        <af:goLink id="pt_gl11" text="Cổng TTĐT Bộ Tài Chính" destination="http://www.mof.gov.vn/"/>
+                     </li>
+                     <af:iterator var="node" varStatus="vs" value="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/m, includeStartNode=false']}">
+                        <li>
+                           <af:panelBorderLayout styleClass="#{node.onSelectedPath == true ? 'menu-selected' : 'menu-normal'}">
+                              <af:goLink id="pt_gl2" text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.prettyUrl}" targetFrame="#{node.attributes['Target']}"/>
+                           </af:panelBorderLayout>
+                        </li>
+                     </af:iterator>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="content">
+            <af:facetRef facetName="content"/>
+         </div>
+         <div id="footer">
+            <div class="footer-c">
+               <af:panelGroupLayout styleClass="footer-image" id="pt_pgl2"/>
+               <div class="footer-content">
+                  <h4>CỔNG THÔNG TIN ĐIỆN TỬ BỘ TÀI CHÍNH</h4>
+                  <h2>TRANG TIN TỨC TÀI CHÍNH</h2>
+                  <af:panelBorderLayout styleClass="footer-info" id="pt_pbl2">
+                     <af:forEach var="node" varStatus="vs" items="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r/f, includeStartNode=false']}">
+                        <af:panelBorderLayout styleClass="#{vs.first ? 'footer-link-cover-first' : 'footer-link-cover-not-first'}" id="pt_pbl3">
+                           <af:panelBorderLayout id="pt_pbl4">
+                              <af:goLink id="pt_gl111" text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{node.prettyUrl}" targetFrame="#{node.attributes['Target']}" styleClass="#{node.selected ? 'footer-link-selected' : 'footer-link-not-selected'}"/>
+                           </af:panelBorderLayout>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout styleClass="footer-spacer-cover" rendered="#{vs.last ? false : true}" id="pt_pbl5">|</af:panelBorderLayout>
+                     </af:forEach>
+                  </af:panelBorderLayout>
+                  <af:panelBorderLayout styleClass="info" id="pbl4">
+                     <table style="width:550px !important; position:absolute">
+                        <tr>
+                           <td style="padding-right:10px; vertical-align:top; font-size:11px">
+                              <div id="pbl25" style="font-size:11px">
+                                 <af:outputText value="Cơ quan chủ quản: Bộ Tài chính" id="ot5"/>
+                                 <br/>
+                                 <af:outputText value="Người chịu trách nhiệm: Thứ trưởng Tạ Anh Tuấn"/>
+                                 <br/>
+                                 <af:outputText value="Địa chỉ: Số 28 Trần Hưng Đạo - Quận Hoàn Kiếm - Hà Nội" id="ot6"/>
+                                 <br/>
+                                 <af:outputText value="Điện thoại Cổng thông tin điện tử: (84-24)2220.2828-2888 Fax:(84-24)2220.8091 Email: support@mof.gov.vn" id="ot7"/>
+                              </div>
+                           </td>
+                        </tr>
+                     </table>
+                  </af:panelBorderLayout>
+               </div>
+            </div>
+         </div>
+         <af:panelGroupLayout styleClass="backToTop btt" inlineStyle="width:35px;height:35px;position:fixed;right:0px;bottom:10px;display:none;opacity:0.8;" id="pt_pgl1"/>
+      </div>
+      <af:xmlContent>
+         <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+            <display-name>tttcPageTemplate</display-name>
+            <facet>
+               <description>Nội dung chính</description>
+               <facet-name>content</facet-name>
+            </facet>
+         </component>
+      </af:xmlContent>
+   </af:pageTemplateDef>
+</jsp:root>

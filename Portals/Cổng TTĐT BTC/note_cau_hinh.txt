@@ -1,0 +1,1769 @@
+startNode=/pages_r, includeStartNode=false
+&nbsp;
+
+---------------------------------
+https://drive.google.com/file/d/1qmfCpg30v1ttqHqxZJe4ESPZSPlKazmt/view?usp=sharing
+---------------------------------
+menu-1
+startNode=/pages_r/menu-1, includeStartNode=false
+background-image: linear-gradient(to right, #1170c0, #a8d7fe);
+#link{float:left;width:100%;border:none;height:30px;background:#fff;color:#015daa;padding-left:10px;/*font-weight:bold;*/font-size:14px;}
+
+
+Lịch trình kế hoạch
+Hộp tin nhỏ 2
+
+
+
+https://www.mof.gov.vn/webcenter/portal/mof
+//tìm kiếm
+
+function searchtctt() {
+					var input = document.getElementById("inputsearch").value;
+					if(input != '' ){
+						var btn = document.getElementById("T\:cil1");
+						var rootURL = "/webcenter/portal/ttncdtbh/pages_r/search";
+						var url = rootURL + "?SearchInput=" + input;
+						window.location.href = url;
+					}else{
+						$('.box-search').toggleClass('d-block')
+					}		   
+			   }
+			   
+			   
+			   
+			   <div class="search">
+                              <div class="box-search">
+                                 <input aria-label="Search" id="inputsearch" class="input-search form-control" method="redirectURLKey" placeholder="Search" type="keyUp"/>
+                              </div>
+                              <a class="btn-search" onclick="searchtctt()">
+                                 <i class="icon-search"/>
+                              </a>
+                           </div>
+						   
+						   
+						   
+danhSachTinBaiCap2
+bOX_TIN_BTC_EN
+
+/portal/ttcg/pages_r/h/tintc1
+startNode=/pages_r/h/tintc1, includeStartNode=false
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33353')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Khen thưởng
+Tin hoạt động
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33051')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/khen-thuong-xu-phat/khen-thuong/khen-thuong-tin-hoat-dong
+
+Phong trào thi đua
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33050')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/khen-thuong-xu-phat/khen-thuong/khen-thuong-phong-trao-thi-dua
+
+Gương điển hình tiên tiến, người tốt - việc tốt
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33056')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/khen-thuong-xu-phat/khen-thuong/khen-thuong-guong-dien-hinh-tien-tien-nguoi-tot-viec-tot
+
+Lịch công tác
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33353')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Tuyển dụng
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33067')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Đưa Nghị quyết của Đảng vào cuộc sống
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33255')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Hoạt động của các tổ chức cơ sở Đảng	
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33257')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Văn bản - Tài liệu	
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33263')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Biểu mẫu công tác Đảng	
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33256')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Hướng dẫn, hỏi đáp công tác Đảng	
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33264')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Nghiên cứu - Trao đổi	
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33265')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+-----------
+oracle.webcenter.content.templates.default.category
+hopcongkhaingansach
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33322')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/cong-khai-ngan-sach-btc/du-doan-ngan-sach-da-duoc-cap-co-tham-quyen-giao
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33323')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/cong-khai-ngan-sach-btc/tinh-hinh-thuc-hien-du-toan-ngan-sach-trong-nam
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33324')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/cong-khai-ngan-sach-btc/Quyet-toan-ngan-sach-da-duoc-cap-co-tham-quyen-phe-duyet
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33325')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/cddh/cong-khai-ngan-sach-btc/Tong-hop-tinh-hinh-cong-khai
+
+/portal/TVBTC/pages_r/l/chi-tiet-tin-full?dDocName=
+
+/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+/portal/tttc/pages_r/l/chi-tiet-tin-tin-tuc-tai-chinh?dDocName=
+/portal/tttc/pages_r/l/chi-tiet-tin-tin-tuc-tai-chinh
+
+zdetailPrettyLink
+
+http://192.168.50.250:8888/webcenter/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=MOFUCM020607
+&dID=20825&_afrRedirect=3806189690645882
+
+<input-parameter-definition id="__1">
+         <name id="__2">zdetailPrettyLink</name>
+         <value>#{pageFlowScope.zdetailPrettyLink}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+
+/portal/kbnn/pages_r/l/chi-tiet-tin-thi-truong-trai-phieu?dDocName=
+
+/portal/cd/pages_r/l/chi-tiet-tin-cong-doan?dDocName=
+
+/portal/thtk/pages_r/l/chi-tiet-tin-tin-hoc-va-thong-ke?dDocName=
+/portal/thtk/pages_r/l/chi-tiet-tin-tin-hoc-va-thong-ke?dDocName=
+500017
+
+/portal/cqlg/pages_r/l/chi-tiet-tin-cuc-quan-ly-gia?dDocName=
+
+/portal/cqlgsbh/pages_r/l/chi-tiet-tin-cuc-quan-ly-giam-sat-bao-hiem?dDocName=
+/portal/ttpltc/pages_r/l/chi-tiet-tin-ttpltc?dDocName=
+/portal/apec/pages_r/l/chi-tiet-tin-apec?dDocName=
+
+/portal/thanhtrabtc/pages_r/l/chi-tiet-tin-thanh-tra-btc?dDocName=
+--------------------
+/portal/ttncdtbh/pages_r/l/chi-tiet-tin?dDocName=
+/portal/ttcg/pages_r/l/chi-tiet-tin-ttcg?dDocName=
+
+bTC_BOX_TIN_00
+bTC_BOX_TIN_01
+bTC_BOX_THONG_KE_01
+
+
+------------------------Viện chien lược và tài chính
+/portal/vclvcstc/pages_r/l/chi-tiet-tin?dDocName=
+Tin kinh tế - Tài chính
+/portal/vclvcstc/pages_r/m/tin-tuc-su-kien/tinkinht-tichnh
+Nghiên cứu và trao đổi
+/portal/vclvcstc/pages_r/m/nghien-cuu-va-trao-doi
+Hội thảo
+/portal/vclvcstc/pages_r/m/hitho
+Tin quốc tế
+/portal/vclvcstc/pages_r/m/tin-tuc-su-kien/tin-quoc-te
+
+
+------------------------TIN HỌC TÀI CHÍNH
+/portal/thtc/pages_r/l/chi-tiet-tin?dDocName=
+
+<style>
+.list-noti marquee {
+    height: 565px;
+}
+</style>
+
+mucHienThi
+------------------------------
+Văn bản quy phậm pháp luật
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1321')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+ĐỊNH HƯỚNG NCKH
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1383')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+ĐỀ TÀI NCKH CẤP NHÀ NƯỚC
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+CHƯƠNG TRÌNH, ĐỀ TÀI NCKH CẤP BỘ
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('14001')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	KẾT QUẢ CHƯƠNG TRÌNH, ĐỀ TÀI
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	KẾT QUẢ CHƯƠNG TRÌNH, ĐỀ TÀI
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('14003')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+ĐỀ TÀI NCKH CẤP CƠ SỞ
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	DANH MỤC CHƯƠNG TRÌNH, ĐỀ TÀI
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	KẾT QUẢ CHƯƠNG TRÌNH, ĐỀ TÀI
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('600002')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+BÁO CÁO THƯỜNG XUYÊN
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1311')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+HOẠT ĐỘNG NGHIÊN CỨU
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+---------------
+Hội thảo
+	HỘI THẢO TRONG NƯỚC
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1318')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	HỘI THẢO QUỐC TẾ
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1317')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+Tư vấn, đào tạo, dịch vụ công
+	HỢP TÁC QUỐC TẾ
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1323')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	HỢP TÁC TRONG NƯỚC
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1324')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	ĐÀO TẠO VÀ DỊCH VỤ CÔNG
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1325')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+Điều tra - khảo sát
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1338')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Ấn phẩm, tạp chí, sách báo
+	BÁO, TẠP CHÍ
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1315')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	SÁCH ĐÃ PHÁT HÀNH
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1316')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+startNode=/pages_r/o, includeStartNode=true
+startNode=/pages_r, includeStartNode=false
+
+/portal/ttcg/pages_r/l/chi-tiet-tin-ttcg?dDocName=
+tinnibt
+mucHienThi
+34000
+
+/webcenter/portal/TVBTC
+
+
+//Thanh tra btc
+/portal/thanhtrabtc/pages_r/l/chi-tiet-tin-thanh-tra-btc?dDocName=
+
+Lãnh đạo Bộ Tài chính phụ trách thanh tra qua các thời kỳ
+/portal/thanhtrabtc/pages_r/m/gioi-thieu-chung/lanh-dao-bo-tai-chinh
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1851')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Chánh thanh tra Bộ Tài chính qua các thời ký
+/portal/thanhtrabtc/pages_r/m/gioi-thieu-chung/chnhthanhtrabtichnhquaccthik
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1852')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Chức năng, nhiệm vụ, quyền hạn
+/portal/thanhtrabtc/pages_r/m/gioi-thieu-chung/chcnngnhimvquynhn
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1821')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Lịch sử thanh tra tài chính
+/portal/thanhtrabtc/pages_r/m/gioi-thieu-chung/lchsthanhtratichnh
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1822')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Tổ chức bộ máy
+/portal/thanhtrabtc/pages_r/m/gioi-thieu-chung/tchcbmy
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1823')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1365')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1362')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+linh
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1725')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1706')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1711')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1706')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1706')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+bTC_BOX_TIN_00
+bTC_BOX_TIN_01
+bTC_BOX_THONG_KE_01
+
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/luat
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/nghi-dinh
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/thong-tu
+
+/portal/TVBTC/pages_r/k/o/chien-luoc-va-ke-hoach-hanh-dong/clptntc
+
+oracle.webcenter.content.templates.default.category
+bTC_BOX_THONG_KE_01
+
+hopcongkhaingansach
+
+/webcenter/portal/TVBTC
+
+Cách tính giá trị trái phiếu
+1461
+Cách thức giao dịch trái phiếu 
+1462
+Các sản phẩm trái phiếu trên thị trường  
+1460
+
+/portal/cd/pages_r/m/hnhnhcngon?dDocName=
+
+/portal/TVBTC/pages_r/l/chi-tiet-tin-full?dDocName=
+
+pages_r/cddh/khen-thuong-xu-phat
+
+startNode=/pages_r/cddh/khen-thuong-xu-phat, includeStartNode=false
+
+startNode=/pages_r/cddh/cong-khai-ngan-sach-btc, includeStartNode=false
+
+/portal/TVBTC/pages_r/cddh/cong-khai-ngan-sach-btc
+
+startNode=/pages_r/cddh/cong-khai-ngan-sach-btc, includeStartNode=true
+
+startNode=/pages_r, includeStartNode=false
+startNode=/pages_r/cddh/khen-thuong-xu-phat, includeStartNode=false
+
+
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te
+/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+HỘI NHẬP VÀ HỢP TÁC TÀI CHÍNH
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33203,33542,33533')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh
+
+------------------------------------------------------------------
+FTA
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33097')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta
+
+1
+ASEAN(AFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33098')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-afta
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33224')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-afta/thong-tin-chung-asean-afta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33223')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-afta/van-kien-hiep-dinh-asean-afta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33222')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-afta/cac-van-ban-phap-ly-cua-viet-nam-asean-afta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33220')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-afta/cac-van-ban-phap-ly-cua-cac-nuoc-asean-afta
+2
+ASEAN-TRUNG QUỐC (ACFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33099')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33100')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta/thong-tin-chung-asean-trung-quoc-acfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33101')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta/van-kien-hiep-dinh-asean-trung-quoc-acfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33102')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta/cac-van-ban-phap-ly-cua-viet-nam-asean-trung-quoc-acfta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33104')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta/cac-van-ban-phap-ly-cua-cac-nuoc-asean-trung-quoc-acfta
+3
+ASEAN-HÀN QUỐC (AKFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33107')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-han-quoc-akfta
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33108')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-han-quoc-akfta/thong-tin-chung-asean-han-quoc-akfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33109')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-han-quoc-akfta/van-kien-hiep-dinh-asean-han-quoc-akfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33110')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-han-quoc-akfta/cac-van-ban-phap-ly-cua-viet-nam-asean-han-quoc-akfta
+	d.Các câu hỏi thường gặp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33113')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-han-quoc-akfta/cac-cau-hoi-thuong-gap-asean-han-quoc-akfta
+	e.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33112')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-trung-quoc-acfta/cac-van-ban-phap-ly-cua-cac-nuoc-asean-han-quoc-akfta
+	
+4
+ASEAN-NHẬT BẢN (AJCEP)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33115')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-nhat-ban-ajcep
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33116')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-nhat-ban-ajcep/thong-tin-chung-asean-nhat-ban-ajcep
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33117')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-nhat-ban-ajcep/van-kien-hiep-dinh-asean-nhat-ban-ajcep
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33118')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-nhat-ban-ajcep/cac-van-ban-phap-ly-cua-viet-nam-asean-nhat-ban-ajcep
+	
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33120')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-nhat-ban-ajcep/cac-van-ban-phap-ly-cua-cac-nuoc-asean-nhat-ban-ajcep
+5	
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+ASEAN-ẤN ĐỘ (AIFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33123')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-an-do-aifta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33124')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-an-do-aifta/thong-tin-chung-asean-an-do-aifta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33125')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-an-do-aifta/van-kien-hiep-dinh-asean-an-do-aifta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33126')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-an-do-aifta/cac-van-ban-phap-ly-cua-viet-nam-asean-an-do-aifta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33128')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-an-do-aifta/cac-van-ban-phap-ly-cua-cac-nuoc-asean-an-do-aifta
+6
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+ASEAN-ÚC-NEWZEALAND(AANZFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33131')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-uc-newzealand-aanzfta
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33132')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-uc-newzealand-aanzfta/thong-tin-chung-asean-uc-newzealand-aanzfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33133')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-uc-newzealand-aanzfta/van-kien-hiep-dinh-asean-uc-newzealand-aanzfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33134')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-uc-newzealand-aanzfta/cac-van-ban-phap-ly-cua-viet-nam-asean-uc-newzealand-aanzfta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33136')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/asean-uc-newzealand-aanzfta/cac-van-ban-phap-ly-cua-cac-nuoc-asean-uc-newzealand-aanzfta
+7
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - NHẬT BẢN
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33139')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-nhat-ban
+	
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33140')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-nhat-ban/thong-tin-chung-viet-nam-nhat-ban
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33141')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-nhat-ban/van-kien-hiep-dinh-viet-nam-nhat-ban
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33142')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-nhat-ban/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-nhat-ban
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33144')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-nhat-ban/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-nhat-ban
+8
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - CHI LÊ (VCFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33194')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-chi-le-vcfta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33195')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-chi-le-vcfta/thong-tin-chung-viet-nam-chi-le-vcfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33196')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-chi-le-vcfta/van-kien-hiep-dinh-viet-nam-chi-le-vcfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33197')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-chi-le-vcfta/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-chi-le-vcfta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33199')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-chi-le-vcfta/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-chi-le-vcfta
+9
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - HÀN QUỐC (VKFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33196')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33197')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta/thong-tin-chung-viet-nam-han-quoc-vkfta
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta/thong-tin-chung-viet-nam-han-quoc-vkfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33267')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta/van-kien-hiep-dinh-viet-nam-han-quoc-vkfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33268')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-han-quoc-vkfta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33270')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-han-quoc-vkfta/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-han-quoc-vkfta
+10
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - LIÊN MINH KINH TẾ Á ÂU (VCUFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33199')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-lien-minh-kinh-te-a-au-vcufta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33200')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-lien-minh-kinh-te-a-au-vcufta/thong-tin-chung-viet-nam-lien-minh-kinh-te-a-au-vcufta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33299')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-lien-minh-kinh-te-a-au-vcufta/van-kien-hiep-dinh-viet-nam-lien-minh-kinh-te-a-au-vcufta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33302')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-lien-minh-kinh-te-a-au-vcufta/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-lien-minh-kinh-te-a-au-vcufta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33298')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-lien-minh-kinh-te-a-au-vcufta/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-lien-minh-kinh-te-a-au-vcufta
+11
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - ANH (UKVFTA)
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333321')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-anh-ukvfta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333322')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-anh-ukvfta/thong-tin-chung-viet-nam-anh-ukvfta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333323')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-anh-ukvfta/van-kien-hiep-dinh-viet-nam-anh-ukvfta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333324')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-anh-ukvfta/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-anh-ukvfta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333326')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-anh-ukvfta/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-anh-ukvfta
+12
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+HIỆP ĐỊNH ĐỐI TÁC TOÀN DIỆN VÀ TIẾN BỘ XUYÊN TBD CPTPP
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33202')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33203')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/thong-tin-chung-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33275')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/van-kien-hiep-dinh-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+	c.Cam kết TPP - cam-ket-tpp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33205')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/cam-ket-tpp-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+	d.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33278')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/cac-van-ban-phap-ly-cua-viet-nam-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+	e.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33274')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/cac-van-ban-phap-ly-cua-cac-nuoc-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+	f.Các câu hỏi thường gặp - cac-cau-hoi-thuong-gap
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33276')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp/cac-cau-hoi-thuong-gap-hiep-dinh-doi-tac-toan-dien-va-tien-bo-xuyen-tbd-cptpp
+13
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - EU
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33206')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33207')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu/thong-tin-chung-viet-nam-eu
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33293')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu/van-kien-hiep-dinh-viet-nam-eu
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33296')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-eu
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33292')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-eu
+	e.Các câu hỏi thường gặp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33294')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-eu/cac-cau-hoi-thuong-gap-viet-nam-eu
+14
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+Việt Nam - EFTA
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33210')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33211')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/thong-tin-chung-viet-nam-efta
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33287')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/van-kien-hiep-dinh-viet-nam-efta
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33290')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/cac-van-ban-phap-ly-cua-viet-nam-viet-nam-efta
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33286')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/cac-van-ban-phap-ly-cua-cac-nuoc-viet-nam-efta
+	
+	c.Các câu hỏi thường gặp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33288')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/cac-cau-hoi-thuong-gap-viet-nam-efta
+	d.Tiến trình đàm phán
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33213')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/tien-trinh-dam-phan-viet-nam-efta
+	
+15
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+RCEP
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33214')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep
+
+	a. Thông tin chung
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33215')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/thong-tin-chung-rcep
+	b.Văn kiện - Hiệp định
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33281')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/van-kien-hiep-dinh-rcep
+	c.Các văn bản pháp lý của Việt Nam
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33284')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/cac-van-ban-phap-ly-cua-viet-nam-rcep
+	d.Các văn bản pháp lý của các nước
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33280')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/cac-van-ban-phap-ly-cua-cac-nuoc-rcep
+	e.Các câu hỏi thường gặp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33282')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/cac-cau-hoi-thuong-gap-rcep
+	f.Tiến trình đàm phán
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33217')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/rcep/tien-trinh-dam-phan-rcep
+------------------------------------------------------------------
+HỢP TÁC SONG PHƯƠNG
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33542')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-song-phuong
+------------------------------------------------------------------
+HỢP TÁC TÀI CHÍNH ASEAN
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33148')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean
+	
+	startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+	
+	1.Chủ tịch ASEAN 2020
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33520')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/chu-tich-asean-2020
+	
+	2.Hồ sơ chung ASEAN 2020
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33521')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-chung-asean-2020
+	
+	3.Hồ sơ về hợp tác kinh tê ASEAN (AEM/ SEOM)
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33522')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-ve-hop-tac-kinh-te-asean-aem-seom
+	
+	4.Hồ sơ về nhóm công tác phát triển thị trường vốn ASEAN (WC-CMD)
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33523')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-ve-nhom-cong-tac-phat-trien-thi-truong-von-asean-wc-cmd
+	
+	5.Hồ sơ AIF (ASEAN)
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33524')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-aif-asean
+	
+	6.Hồ sơ ACTS (ASEAN)
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33525')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-acts-asean
+	
+	7.Hồ sơ ASEAN 2020 - Doanh nghiệp
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33526')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/ho-so-asean-2020-doanh-nghiep
+	
+	8. Hội nhập tài chính - tiền tệ ASEAN
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33149')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/hoi-nhap-tai-chinh-tien-te-asean
+	
+	9. Hợp tác ASEAN khác
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33151')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean/hop-tac-asean-khac
+	
+	
+------------------------------------------------------------------
+HỢP TÁC TÀI CHÍNH ASEAN+3
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33152')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3
+
+	startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+	1. HỒ SƠ VỀ HỢP TÁC TÀI CHÍNH ASEAN+3
+	Hồ sơ về hợp tác tài chính Asean+3
+	33527
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33527')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-ve-hop-tac-tai-chinh-asean-3
+
+	2.HỒ SƠ VỀ HỢP TÁC TÀI CHÍNH ASEAN+3 (AMRO)
+	Hồ sơ về hợp tác tài chính Asean+3 (AMRO)
+	33528
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33528')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-ve-hop-tac-tai-chinh-asean-3-amro
+
+	3.HỒ SƠ VỀ HỢP TÁC TÀI CHÍNH ASEAN+3 (CMIM)
+	Hồ sơ về hợp tác tài chính Asean+3 (CMIM)
+	33529
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33529')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-ve-hop-tac-tai-chinh-asean-3-cmim
+
+	4.HỒ SƠ VỀ QUỸ BẢO LÃNH TÍN DỤNG ĐẦU TƯ ASEAN+3 (CGIF)
+	Hồ sơ về quỹ bảo lãnh tín dụng đầu tư Asean+3 (CGIF)
+	33530
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33530')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-ve-quy-bao-lanh-tin-dung-dau-tu-asean-3-cgif
+
+	5.HỒ SƠ ASEAN+3 (SEADRIF)
+	Hồ sơ Asean+3 (SEADRIF)
+	33531
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33531')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-asean-3-seadrif
+
+	6.HỒ SƠ HỖ TRỢ KỸ THUẬT NOMURA – GIAI ĐOẠN IX (ASEAN+3)
+	Hồ sơ hỗ trợ kỹ thuật NOMURA -Giai đoạn IX (ASEAN+3)
+	33532
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33532')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/ho-so-ho-tro-ky-thuat-nomura-giai-doan-ix-asean-3
+
+	7.HỢP TÁC PHÁT TRIỂN THỊ TRƯỜNG TRÁI PHIẾU KHU VỰC
+	Hợp tác phát triển thị trường trái phiếu khu vực
+	33514
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33514')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-asean-3/hop-tac-phat-trien-thi-truong-trai-phieu-khu-vuc
+
+------------------------------------------------------------------
+Hợp tác tài chính APEC
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33158')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-apec
+------------------------------------------------------------------
+WTO
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33090')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto
+
+startNode=/pages_r/lvtc/hop-tac-quoc-te, includeStartNode=true
+1.THÔNG TIN CHUNG
+33237
+33091
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33091')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/thong-tin-chung-wto
+	a.WTO LÀ GÌ ?
+	33238
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33238')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/thong-tin-chung-wto/wto-la-gi
+	
+	b.TIẾN TRÌNH Việt Nam GIA NHẬP WTO
+	33239
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33239')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/thong-tin-chung-wto/tien-trinh-viet-nam-gia-nhap-wto
+2.CÁC THOẢ THUẬN - HIỆP ĐỊNH
+33092
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33092')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-thoa-thuan-hiep-dinh-wto
+	a.HỆ THỐNG CÁC VĂN BẢN QUY ĐỊNH HIỆP ĐỊNH
+	33236
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33236')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-thoa-thuan-hiep-dinh-wto/he-thong-cac-van-ban-quy-dinh-hiep-dinh
+
+	b.LINK CÁC VĂN BẢN HIỆP ĐỊNH CỦA WTO
+	33235
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33235')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-thoa-thuan-hiep-dinh-wto/link-cac-van-ban-hiep-dinh-cua-wto
+3.CÁC CAM KẾT CỦA VN
+33093
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33093')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-cam-ket-cua-vn-wto
+
+	a.BÁO CÁO GIA NHẬP
+	33250
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33250')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-cam-ket-cua-vn-wto/bao-cao-gia-nhap-wto
+	
+	b.CAM KẾT THƯƠNG MẠI HÀNG HÓA
+	33251
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33251')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-cam-ket-cua-vn-wto/cam-ket-thuong-mai-hang-hoa-wto
+	
+	c.CAM KẾT THƯƠNG MẠI DỊCH VỤ
+	33252
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33252')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cac-cam-ket-cua-vn-wto/cam-ket-thuong-mai-dich-vu-wto
+	
+4.CÂU HỎI THƯỜNG GẶP
+33094
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33094')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/cau-hoi-thuong-gap-wto
+
+5.ĐẦU MỐI LIÊN HỆ
+33095
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33095')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/dau-moi-lien-he-wto
+
+6.Thực thi cam kết
+333340
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('333340')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/wto/thuc-thi-cam-ket
+
+------------------------------------------------------------------
+HỢP TÁC TÀI CHÍNH KHÁC
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33533')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/hop-tac-tai-chinh-khac
+------------------------------------------------------------------
+NHÓM ĐỐI TÁC TÀI CHÍNH CÔNG
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33015')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong
+
+1.THÔNG TIN VỀ CÁC ĐỐI TÁC TÀI CHÍNH CÔNG
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33176')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-cac-doi-tac-tai-chinh-cong
+------------------------------------------------------------------
+2.HOẠT ĐỘNG CỦA NHÓM ĐỐI TÁC TÀI CHÍNH CÔNG
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33169')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/hoat-dong-cua-nhom-doi-tac-tai-chinh-cong
+------------------------------------------------------------------
+3.THÔNG TIN VỀ HOẠT ĐỘNG CỦA CÁC CHƯƠNG TRÌNH, DỰ ÁN
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33026')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an
+
+	a.TÌNH HÌNH THỰC HIỆN CÁC CHƯƠNG TRÌNH, DỰ ÁN
+	33169
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33169')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/tinh-hinh-thuc-hien-cac-chuong-trinh-du-an
+	b.CÁC SẢN PHẨM, ẤN PHẨM CỦA CÁC CHƯƠNG TRÌNH, DỰ ÁN
+	33026
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33026')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/cac-san-pham-an-pham-cua-cac-chuong-trinh-du-an
+	c.CÁC VĂN BẢN PHÁP QUY LIÊN QUAN
+	33171
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33171')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/cac-van-ban-phap-quy-lien-quan
+------------------------------------------------------------------
+4.HỖ TRỢ KỸ THUẬT CỦA CÁC ĐỐI TÁC TÀI CHÍNH CÔNG
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33534')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/ho-tro-ky-thuat-cua-cac-doi-tac-tai-chinh-cong
+------------------------------------------------------------------
+THÔNG TIN CHUNG VỀ HOẠT ĐỘNG ĐỐI NGOẠI
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33089')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Thong-tin-chung-ve-hoat-dong-doi-ngoai
+------------------------------------------------------------------
+
+
+--------------------------
+BOND MARKET
+bTC_BOX_TIN_00
+bTC_BOX_TIN_01
+bTC_BOX_THONG_KE_01
+oracle.webcenter.content.templates.default.category
+/portal/tttpen/pages_r/l/detail?dDocName=
+/webcenter/portal/TVBTC
+
+Tin nổi bật
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13108')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+Announcement
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13107')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+/portal/vclvcstcen/pages_r/l/detailnews?dDocName=
+
+/portal/vclvcstcen/pages_home
+
+Research activities
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13101')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+WORKSHOP
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13105')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+INTERNATIONAL COOPERATION
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13103')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+IMPLEMENTATION PLAN
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1394')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+FINANCE DEVELOPMENT STRATEGY OTHER RELATED STRATEGIES
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1395')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+State-level Research Projects
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1398')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Ministerial-level Research Projects
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1399')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Grassroots-level Research Projects
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13100')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+RESEARCH ACTIVITIES
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13101')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+DOMESTIC WORKSHOPS
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13103')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+INTERNATIONAL WORKSHOPS
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('13104')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1034')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+---------------------------
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE  ora:p:xmNgonngu = 'vi' and ora:p:xmDonVi = 'cd'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+oracle.webcenter.content.templates.default.category
+hoptinanhtrangchuv2
+/webcenter/portal/tttc/pages_r/o/hinh-anh-phong-su-anh?dID=
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ora:p:xmChuyenmuc = '33248' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33248')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+----------------
+hoidap-danhsach 
+1,1429,null
+/portal/ttpltc/r/m/hd/hd_chitiet
+/portal/ttpltc/r/m/hd
+
+hoidap-chitiet
+#{param.id}
+
+Thông tin chung về hoạt động đối ngoại
+menu
+Thong-tin-chung-ve-hoat-dong-doi-ngoai
+33089
+
+
+-------------------------------
+
+BTC ENGLISH
+bTC_BOX_TIN_00
+bTC_BOX_TIN_01
+bTC_BOX_THONG_KE_01
+
+bOX_TIN_BTC_EN
+
+
+oracle.webcenter.content.templates.default.category
+/portal/tttpen/pages_r/l/detail?dDocName=
+
+/webcenter/portal/TVBTC
+
+/webcenter/portal/btcen
+
+startNode=/pages_r/chuyen-muc-1, includeStartNode=false
+startNode=/pages_r/menu-1, includeStartNode=false
+
+/portal/btcen/pages_r/l/newsdetails?dDocName=
+
+oracle.webcenter.content.templates.default.category
+danhSachTinBaiCap2
+
+
+/api/linux/images/CONGCHINH_EN/logo_home_btc_en.png
+
+/webcenter/portal/vclvcstcen
+/api/linux/images/CONGCHINH_EN/public_service.jfif
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16019','16020','160')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16020')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16020')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16019')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16019')  ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16286')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16004')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16005')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16006')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16009')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16008')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16010')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+---------------------------
+
+
+/api/linux/images/CONGCHINH_EN/financial_strategy_and_policy.jfif
+
+--new event
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16260')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+PRESS RELEASE
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16262')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+POLICY HIGHLIGHTS
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16256')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+MONTHLY EXCHANGE RATE
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16230')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+MENU NGANG
+-Introduction
+-News-Events
+	News
+	/portal/btcen/pages_r/m/news-events/news
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16260')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	NOTICES
+	/portal/btcen/pages_r/m/news-events/notices
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16261')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	PRESS RELEASE
+	/portal/btcen/pages_r/m/news-events/press-release
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16262')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	LOCAL NEWS 
+	/portal/btcen/pages_r/m/news-events/local-news
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16263')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-Legal Documents
+	vbqppl-def
+	Dv Soanthao Id	
+
+	Dv Soanthao Id				Advanced edit options		
+	Dep Id	
+
+	1
+	Dep Id				Advanced edit options		
+	Doc Type Id	
+
+	Doc Type Id				Advanced edit options		
+	Id VB Dieu Hanh	
+
+	346
+	Id VB Dieu Hanh				Advanced edit options		
+	Id VB Phap Quy	
+
+	347
+	Id VB Phap Quy				Advanced edit options		
+	Row Per Page	
+
+	10
+	Row Per Page			Advanced edit options		
+	Url VBDH Chi Tiet	
+
+	/portal/mof/r/m/legaldoc/legaldoc2
+	Url VBDH Chi Tiet				Advanced edit options		
+	Url VBPQ Chi Tiet	
+
+	/portal/mof/r/m/legaldoc/legaldoc2
+	Url VBPQ Chi Tiet				Advanced edit options		
+
+-Statistics
+	Ex-import products
+	(html mark up)
+	BULLETIN PUBLIC DEBT
+	/portal/btcen/pages_r/m/statistics/bulletinpublicdebt
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16254')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	ANNUAL REPORT
+	/portal/btcen/pages_r/m/statistics/annual-report
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16297')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+-FAQs on Financial Policies
+
+
+
+MENU 1
+-State Budget
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-International Cooperation
+	FINANCIAL INTEGRATION
+	/portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16020')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+	PUBLIC FINANCE GROUP PARTNERS
+	/portal/btcen/pages_r/menu-1/internationalcooperation/publicfinancegrouppartners
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16159','16292','16293')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	
+-VietNam Bond Market
+-Insuarance managerment and supervisory
+	NEWS
+	/portal/btcen/pages_r/menu-1/insuarancemanagermentandsupervisory/news
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1640') and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	LIST OF FOREIGN ENTERPRISES, BRANCHES AND FOREIGN REPRESENTATIVE OFFICES
+	/portal/btcen/pages_r/menu-1/insuarancemanagermentandsupervisory/list-of-foreign-enterprises-branches-and-foreign-representative-offices
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1641')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	OVERVIEW OF INSURANCE MARKET BY YEAR (MAJOR MARKET GROWTH INDICES BY YEAR)
+	/portal/btcen/pages_r/menu-1/insuarancemanagermentandsupervisory/overview-of-insurance-market-by-year-major-market-growth-indices-by-year
+	SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1642')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-National institute for finance
+-List of sectors and trades subject to conditional Business investment
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1632')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-Corporate finance management
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1633')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-Business investment
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1635') and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-Research programs and scientific topics
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1636') and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+-Financial sector's modernization
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1634')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+portal/btcen/pages_r/menu-1/internationalcooperation/financialintegration/free-trade-area-fta/asean-china-acfta
+
+/portal/TVBTC/pages_sitemap
+
+startNode=/pages_r/chuyen-muc-1, includeStartNode=false
+
+Bulletin Public Debt
+/webcenter/portal/btcen/pages_r/folder-chuyentrang/bulletin-public-debt
+
+Suggestion about Draft Legal Document
+
+
+/portal/TVBTC/pages_r/cddh/khen-thuong-xu-phat
+
+Chỉ đạo điều hành
+startNode=/pages_r/cddh, includeStartNode=true
+
+BTC với công dân
+startNode=/pages_r/cd, includeStartNode=true
+
+BTC với doanh nghiệp
+startNode=/pages_r/dn, includeStartNode=true
+
+Chuyên mục khác
+startNode=/pages_r/k/o, includeStartNode=true
+
+Bộ tài chính với doanh nghiệp
+/pages_r/dn
+startNode=/pages_r/dn, includeStartNode=true
+
+/portal/TVBTC/pages_r/k/o/chien-luoc-va-ke-hoach-hanh-dong
+
+
+
+Fix thêm thanh điều hướng trên toàn bộ các portal 
+Fix Site map các site con
+Cấu hình pages trang tiếng anh cổng chính 
+
+
+"Trưởng đã fix
+(29/7/2021)"
+
+
+
+http://192.168.50.250:8888/webcenter/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/cong-khai-theo-quy-dinh-cua-luat-nsnn/du-thao-du-toan-trinh-quoc-hoi
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1442')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('21007')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+
+
+
+#{param.CategoriesId}
+#{param.Name}
+#{param.TthcDepartmentId}
+#{param.TthcLevelsId}
+#{param.baseDateFrom}
+#{param.baseDateTo}
+#{param.baseNo}
+#{param.dmId}
+#{param.publishDateFrom}
+#{param.publishDateTo}
+
+/portal/TrangdchvcngBTC/pages_r/m/bthtchnhchnh/tmkimthtchnhchnh
+
+
+
+
+
+
+<div style="width: 100%; float: left; margin-top: 15px; box-shadow: 0px 3px 7px #d3d3d3;">
+  <a href="/webcenter/portal/TVBTC/pages_r/lvtc/ngan-sach-nha-nuoc/cong-khai-theo-quy-dinh-cua-luat-nsnn">
+  	<img 
+		style=" background-repeat: no-repeat;
+             	  width: 50%; height: 106px!important;" 
+		src="/api/linux/images/VIEN_CHIENLUOC/du_lieu_va_thong_ke_kinh_te.png">
+   </a>
+  <a href="http://canhtranhquocgia.vn">
+    <img 
+		style=" background-repeat: no-repeat; float: right;
+              width: 50%; height: 106px!important;" 
+		src="/api/linux/images/VIEN_CHIENLUOC/dien_dan_canh_tranh.png">
+  </a>
+</div>
+
+
+Tạp chí kinh tế tài chính việt nam
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1346')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Thông tin tài chính
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1315')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Thông tin vụ lãnh đạo
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1331')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+Sách xuất bản
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1387')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+1387
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1387')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+<img style="width: 100%" src="/api/linux/images/NATIONA_INSTITUTE/structure.png"/>
+
+startNode=/pages_r, includeStartNode=false
+
+startNode=/pages_r, includeStartNode=false
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1346')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ora:p:dID IN ('12825')
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ora:p:dDocName IN ('MOFUCM012820') and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+hienthichitietnoidungtinh
+single
+
+CQLGSBH
+
+<img style="width: 100%" src="/api/linux/images/CQLGSBH/anh_1.png"/>
+
+<img style="width: 100%" src="/api/linux/images/CQLGSBH/anh_2.png"/>
+
+----------------
+Cấu hình hình ảnh
+
+
+
+SELECT * FROM ora:t:IDC:Profile:TinVideo ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinVideo WHERE ora:p:xmSecurityGroup = 'HOINGHI_APEC' ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinVideo WHERE ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+videointros
+
+muctinvideo-tintuctaichinh
+
+oracle.webcenter.content.templates.default.category
+
+/portal/tttc/pages_r/o/newpage?dDocName=
+
+/portal/tttc/pages_r/o/newpage
+
+danhsachalbumanh
+
+/portal/TVBTC/pages_r/cd/du-thao-van-ban/dtvb-chi-tiet-gop-y-du-thao
+
+/portal/TVBTC/pages_r/cd/du-thao-van-ban/du-thao-da-lay-y-kien/dtvb-chi-tiet-gop-y-du-thao
+
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ANY ora:p:xmChuyenmucanh IN ('apec')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ANY ora:p:xmDonvi IN ('apec')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ora:p:xmDonvi IN ('apec') and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:AlbumAnh WHERE ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+-	Lớp đào tạo 1 (Dành cho cán bộ biên tập trang tin tức tài chính, trang bộ trưởng, trang cổng chính): https://meet.google.com/zcz-hdvi-usc
+-	Lớp đào tạo 2 (Dành cho cán bộ biên tập Chuyên trang): https://meet.google.com/mqk-yjdp-zqb
+-	Lớp đào tạo 3 (Dành cho cán bộ biên tập Chuyên trang): https://meet.google.com/ime-rkjd-dhf
+-	Lớp đào tạo 4 (Dành cho cán bộ biên tập Chuyên trang): https://meet.google.com/fua-hmjy-tjj
+-	Lớp đào tạo 5 (Dành cho cán bộ quản trị và vận hành): https://meet.google.com/jzs-sczg-usi 
+
+TVBTC
+TV
+
+<select name="xmDonvi" id="xmDonvi-15167" onchange="updateDependentChoices(this.id, 'xmDonvi', 1);">
+   <option value="" label="No Selection" class="idcNoSelection"></option>
+   <option value="DV_HanhHTH">Hanh_HTH_Donvi</option>
+   <option value="Hanh_HTH_Donvi2">Hanh_HTH_DV2</option>
+   <option value="apec">Hội nghị Apec_VN</option>
+   <option value="apecen">Hội nghị APEC_EN</option>
+   <option value="btc">Cổng TTĐT BTC</option>
+   <option value="cd" selected="">Trang TTĐT Công đoàn Bộ Tài Chính</option>
+   <option value="cqlg">Trang TTĐT Cục quản lý giá</option>
+   <option value="cqlgsbh">Cục quản lý giám sát bảo hiểm</option>
+   <option value="dvc_kbnn">Trang DVC Kho Bạc Nhà Nước</option>
+   <option value="hethong">Hệ thống</option>
+   <option value="iom">Trang TTĐT Bộ trưởng Bộ Tài Chính EN</option>
+   <option value="isa">Cục quản lý giám sát bảo hiểm trang tiếng anh</option>
+   <option value="kbnn">Cổng TTĐT Kho Bạc Nhà Nước VN</option>
+   <option value="legal">Trang tiếng anh thông tin pháp luật tài chính </option>
+   <option value="m_btc">Cổng TTĐT BTC MOBILE VN</option>
+   <option value="m_kbnn">Cổng TTĐT Kho Bạc Nhà Nước MOBILE VN</option>
+   <option value="m_mof">Cổng TTĐT BTC MOBILE EN</option>
+   <option value="m_vst">Cổng TTĐT Kho Bạc Nhà Nước MOBILE EN</option>
+   <option value="mbtc">Cổng TTĐT BTC MOBILE VN</option>
+   <option value="mof">Cổng TTĐT BTC EN</option>
+   <option value="news">Trang tin tức tài chính EN</option>
+   <option value="nxbtc">Trang TTĐT Nhà xuất bản Tài chính</option>
+   <option value="thanhtrabtc">Thanh tra Bộ Tài Chính</option>
+   <option value="thtc">Trang tin hoc tai chinh</option>
+   <option value="thtk">Trang tin hoc thong ke</option>
+   <option value="tpcp">Trái phiếu Chính phủ</option>
+   <option value="tpcpen">Trang CPCP en</option>
+   <option value="ttbt">Trang TTĐT Bộ trưởng Bộ Tài Chính</option>
+   <option value="ttcg">Trung tâm chuyển giao</option>
+   <option value="ttncdtbh">Trung tâm nghiên cứu và đào tạo bảo hiểm</option>
+   <option value="ttpltc">Trang thông tin pháp luật tài chính</option>
+   <option value="tttc">Trang tin tức tài chính</option>
+   <option value="vclvcstc">Viện chiến lược và chính sách tài chính</option>
+   <option value="vclvcstcen">Viện chiến lược và chính sách tài chính EN</option>
+   <option value="vdt">Vụ đầu tư</option>
+   <option value="vst">Cổng TTĐT Kho Bạc Nhà Nước EN</option>
+</select>
+
+
+------------
+
+<select name="dSecurityGroup" id="dSecurityGroup-20445" onchange="updateDependentChoices(this.id, 'dSecurityGroup', 1);">
+   <option value="" label="No Selection" class="idcNoSelection"></option>
+   <option value="APEC">APEC</option>
+   <option value="APEC_All_Content">APEC_All_Content</option>
+   <option value="APEC_en">APEC_en</option>
+   <option value="APEC_vn">APEC_vn</option>
+   <option value="AlbumAnh">AlbumAnh</option>
+   <option value="AlbumAnh_APEC">AlbumAnh_APEC</option>
+   <option value="AlbumAnh_CQLG">AlbumAnh_CQLG</option>
+   <option value="AlbumAnh_CQLGSBH">AlbumAnh_CQLGSBH</option>
+   <option value="AlbumAnh_CongChinh">AlbumAnh_CongChinh</option>
+   <option value="AlbumAnh_CongDoan">AlbumAnh_CongDoan</option>
+   <option value="AlbumAnh_KBNN">AlbumAnh_KBNN</option>
+   <option value="AlbumAnh_NXB">AlbumAnh_NXB</option>
+   <option value="AlbumAnh_PLTC">AlbumAnh_PLTC</option>
+   <option value="AlbumAnh_TTNCDT">AlbumAnh_TTNCDT</option>
+   <option value="AlbumAnh_ThanhTraBo">AlbumAnh_ThanhTraBo</option>
+   <option value="AlbumAnh_TrangTinBoTruong">AlbumAnh_TrangTinBoTruong</option>
+   <option value="AlbumAnh_TrangTinTucTaiChinh">AlbumAnh_TrangTinTucTaiChinh</option>
+   <option value="AlbumAnh_VCLCS">AlbumAnh_VCLCS</option>
+   <option value="AlbumAnh_VuDauTu">AlbumAnh_VuDauTu</option>
+   <option value="All_Content">All_Content</option>
+   <option value="BTC">BTC</option>
+   <option value="BTC_QuanTri">BTC_QuanTri</option>
+   <option value="CONGCHINH_DANGBO">CONGCHINH_DANGBO</option>
+   <option value="CQLG">CQLG</option>
+   <option value="CQLGSBH">CQLGSBH</option>
+   <option value="CQLGSBH_All_Content">CQLGSBH_All_Content</option>
+   <option value="CQLG_All_Content">CQLG_All_Content</option>
+   <option value="CQLG_BinhOnGiaSua">CQLG_BinhOnGiaSua</option>
+   <option value="CQLG_DangKyVaKeKhai">CQLG_DangKyVaKeKhai</option>
+   <option value="CQLG_DienDanTraoDoi">CQLG_DienDanTraoDoi</option>
+   <option value="CQLG_GioiThieuChinhSach">CQLG_GioiThieuChinhSach</option>
+   <option value="CQLG_GioiThieuChung">CQLG_GioiThieuChung</option>
+   <option value="CQLG_HeThongGiaThiTruong">CQLG_HeThongGiaThiTruong</option>
+   <option value="CQLG_HoatDongThamDinhGia">CQLG_HoatDongThamDinhGia</option>
+   <option value="CQLG_HopTacQuocTe">CQLG_HopTacQuocTe</option>
+   <option value="CQLG_KT_TT_XL">CQLG_KT_TT_XL</option>
+   <option value="CQLG_QuyDinhVeGia">CQLG_QuyDinhVeGia</option>
+   <option value="CQLG_TTVeQuanLyGiaTaiDiaPhuong">CQLG_TTVeQuanLyGiaTaiDiaPhuong</option>
+   <option value="CQLG_TapChiThiTruongGiaCa">CQLG_TapChiThiTruongGiaCa</option>
+   <option value="CQLG_ThongBao">CQLG_ThongBao</option>
+   <option value="CQLG_TinTucHoatDong">CQLG_TinTucHoatDong</option>
+   <option value="CQLG_VBDH">CQLG_VBDH</option>
+   <option value="CQLG_VBQPPL">CQLG_VBQPPL</option>
+   <option value="CQLG_en">CQLG_en</option>
+   <option value="CQLG_vi">CQLG_vi</option>
+   <option value="CongChinh">CongChinh</option>
+   <option value="CongChinh_70NamTaiChinhVN">CongChinh_70NamTaiChinhVN</option>
+   <option value="CongChinh_CTNghienCuuDTKhoaHoc">CongChinh_CTNghienCuuDTKhoaHoc</option>
+   <option value="CongChinh_CaiCachTTHC">CongChinh_CaiCachTTHC</option>
+   <option value="CongChinh_CoPhanHoaDoanhNghiep">CongChinh_CoPhanHoaDoanhNghiep</option>
+   <option value="CongChinh_DauTu">CongChinh_DauTu</option>
+   <option value="CongChinh_English">CongChinh_English</option>
+   <option value="CongChinh_GioiThieuBo">CongChinh_GioiThieuBo</option>
+   <option value="CongChinh_HienDaiHoaCNTT">CongChinh_HienDaiHoaCNTT</option>
+   <option value="CongChinh_HopTacQuocTe">CongChinh_HopTacQuocTe</option>
+   <option value="CongChinh_KeHoachHanhDong">CongChinh_KeHoachHanhDong</option>
+   <option value="CongChinh_KeToanKiemToan">CongChinh_KeToanKiemToan</option>
+   <option value="CongChinh_NSNN">CongChinh_NSNN</option>
+   <option value="CongChinh_QuanLyNo">CongChinh_QuanLyNo</option>
+   <option value="CongChinh_SoLieuThongKe">CongChinh_SoLieuThongKe</option>
+   <option value="CongChinh_TTDieuHanhGia">CongChinh_TTDieuHanhGia</option>
+   <option value="CongChinh_TaiChinhDoanhNghiep">CongChinh_TaiChinhDoanhNghiep</option>
+   <option value="CongChinh_ThiDuaKhenThuong">CongChinh_ThiDuaKhenThuong</option>
+   <option value="CongChinh_ThongBaoCDDH">CongChinh_ThongBaoCDDH</option>
+   <option value="CongChinh_ThongTinDVTC">CongChinh_ThongTinDVTC</option>
+   <option value="CongChinh_ThongTinDauThau">CongChinh_ThongTinDauThau</option>
+   <option value="CongChinh_TinThuThap">CongChinh_TinThuThap</option>
+   <option value="CongChinh_TuyenDung">CongChinh_TuyenDung</option>
+   <option value="CongChinh_TyGiaHachToan">CongChinh_TyGiaHachToan</option>
+   <option value="CongChinh_VanDeQHQuanTam">CongChinh_VanDeQHQuanTam</option>
+   <option value="CongChinh_Video">CongChinh_Video</option>
+   <option value="CongChinh_VietNam">CongChinh_VietNam</option>
+   <option value="CongDoan">CongDoan</option>
+   <option value="CongDoan_All_Content">CongDoan_All_Content</option>
+   <option value="CongDoan_BaoCaoSoKetTongKet">CongDoan_BaoCaoSoKetTongKet</option>
+   <option value="CongDoan_CacPhongTraoThiDua">CongDoan_CacPhongTraoThiDua</option>
+   <option value="CongDoan_ChuongTrinhCongTac">CongDoan_ChuongTrinhCongTac</option>
+   <option value="CongDoan_CongTacDang">CongDoan_CongTacDang</option>
+   <option value="CongDoan_GioiThieuCongDoan">CongDoan_GioiThieuCongDoan</option>
+   <option value="CongDoan_HeThongVanBan">CongDoan_HeThongVanBan</option>
+   <option value="CongDoan_HoatDongThanhTraND">CongDoan_HoatDongThanhTraND</option>
+   <option value="CongDoan_HoatDongTuCoSo">CongDoan_HoatDongTuCoSo</option>
+   <option value="CongDoan_HopThuCTV">CongDoan_HopThuCTV</option>
+   <option value="CongDoan_HuongDanVanBanMoi">CongDoan_HuongDanVanBanMoi</option>
+   <option value="CongDoan_ThiDuaKhenThuong">CongDoan_ThiDuaKhenThuong</option>
+   <option value="CongDoan_ThongBao">CongDoan_ThongBao</option>
+   <option value="CongDoan_ThucHienDanChu">CongDoan_ThucHienDanChu</option>
+   <option value="CongDoan_TinTucHoatDong">CongDoan_TinTucHoatDong</option>
+   <option value="CongDoan_ToChucCongDoan">CongDoan_ToChucCongDoan</option>
+   <option value="CongDoan_TraoDoiKienNghi">CongDoan_TraoDoiKienNghi</option>
+   <option value="CongDoan_cacHoatDongChaoMung">CongDoan_cacHoatDongChaoMung</option>
+   <option value="CongDoan_en">CongDoan_en</option>
+   <option value="CongDoan_vi">CongDoan_vi</option>
+   <option value="DongSuKien">DongSuKien</option>
+   <option value="DongSuKien_CQLG">DongSuKien_CQLG</option>
+   <option value="DongSuKien_CQLGSBH">DongSuKien_CQLGSBH</option>
+   <option value="DongSuKien_CongChinh">DongSuKien_CongChinh</option>
+   <option value="DongSuKien_CongDoan">DongSuKien_CongDoan</option>
+   <option value="DongSuKien_KBNN">DongSuKien_KBNN</option>
+   <option value="DongSuKien_NXB">DongSuKien_NXB</option>
+   <option value="DongSuKien_PLTC">DongSuKien_PLTC</option>
+   <option value="DongSuKien_TPCP">DongSuKien_TPCP</option>
+   <option value="DongSuKien_TTNCDT">DongSuKien_TTNCDT</option>
+   <option value="DongSuKien_ThanhTraBo">DongSuKien_ThanhTraBo</option>
+   <option value="DongSuKien_TrangTinBoTruong">DongSuKien_TrangTinBoTruong</option>
+   <option value="DongSuKien_TrangTinTucTaiChinh">DongSuKien_TrangTinTucTaiChinh</option>
+   <option value="DongSuKien_VCLCS">DongSuKien_VCLCS</option>
+   <option value="DongSuKien_VuDauTu">DongSuKien_VuDauTu</option>
+   <option value="DuLieuHeThongCu">DuLieuHeThongCu</option>
+   <option value="HOINGHI_APEC" selected="">HOINGHI_APEC</option>
+   <option value="IPMSYS_ANNOTATE">IPMSYS_ANNOTATE</option>
+   <option value="IPMSYS_SPPTCNT">IPMSYS_SPPTCNT</option>
+   <option value="ISA">ISA</option>
+   <option value="KBNN">KBNN</option>
+   <option value="KBNN_All_Content">KBNN_All_Content</option>
+   <option value="KBNN_Anh">KBNN_Anh</option>
+   <option value="KBNN_Gioithieu">KBNN_Gioithieu</option>
+   <option value="KBNN_Hethongvanban">KBNN_Hethongvanban</option>
+   <option value="KBNN_Hoinghihoithao">KBNN_Hoinghihoithao</option>
+   <option value="KBNN_Hoptacquocte">KBNN_Hoptacquocte</option>
+   <option value="KBNN_Nghiencuutraodoi">KBNN_Nghiencuutraodoi</option>
+   <option value="KBNN_Thongbao">KBNN_Thongbao</option>
+   <option value="KBNN_Thongcaobaochi">KBNN_Thongcaobaochi</option>
+   <option value="KBNN_Thongtindauthau">KBNN_Thongtindauthau</option>
+   <option value="KBNN_Thongtinlinhvucnghiepvu">KBNN_Thongtinlinhvucnghiepvu</option>
+   <option value="KBNN_Thongtinxulykhenthuong">KBNN_Thongtinxulykhenthuong</option>
+   <option value="KBNN_Thutuchanhchinh">KBNN_Thutuchanhchinh</option>
+   <option value="KBNN_Tintucsukien">KBNN_Tintucsukien</option>
+   <option value="KBNN_Traiphieuchinhphu">KBNN_Traiphieuchinhphu</option>
+   <option value="KBNN_Video">KBNN_Video</option>
+   <option value="KBNN_en">KBNN_en</option>
+   <option value="KBNN_vi">KBNN_vi</option>
+   <option value="Lien_Ngao_Group">Lien_Ngao_Group</option>
+   <option value="MOF">MOF</option>
+   <option value="MOF_All_Content">MOF_All_Content</option>
+   <option value="NXB">NXB</option>
+   <option value="NXB_All_Content">NXB_All_Content</option>
+   <option value="NXB_CacLoaiSach">NXB_CacLoaiSach</option>
+   <option value="NXB_DanhMucSach">NXB_DanhMucSach</option>
+   <option value="NXB_GiaoKhoaGiaoTrinh">NXB_GiaoKhoaGiaoTrinh</option>
+   <option value="NXB_GuongTotDienHinh">NXB_GuongTotDienHinh</option>
+   <option value="NXB_HuongDanNghiepVu">NXB_HuongDanNghiepVu</option>
+   <option value="NXB_NghienCuuLyLuan">NXB_NghienCuuLyLuan</option>
+   <option value="NXB_NhaSach">NXB_NhaSach</option>
+   <option value="NXB_ThongBao">NXB_ThongBao</option>
+   <option value="NXB_ThongTinVeNXB">NXB_ThongTinVeNXB</option>
+   <option value="NXB_TinTucSuKien">NXB_TinTucSuKien</option>
+   <option value="NXB_VanBanCheDo">NXB_VanBanCheDo</option>
+   <option value="NXB_en">NXB_en</option>
+   <option value="NXB_vi">NXB_vi</option>
+   <option value="PLTC">PLTC</option>
+   <option value="PLTC_All_Content">PLTC_All_Content</option>
+   <option value="PLTC_QuanTri">PLTC_QuanTri</option>
+   <option value="Per_HanhHTH_TT_BT">Per_HanhHTH_TT_BT</option>
+   <option value="Public">Public</option>
+   <option value="QuanTriHeThong">QuanTriHeThong</option>
+   <option value="Secure">Secure</option>
+   <option value="THTC">THTC</option>
+   <option value="THTC_All content">THTC_All content</option>
+   <option value="THTK">THTK</option>
+   <option value="THTK_All_content">THTK_All_content</option>
+   <option value="TPCP">TPCP</option>
+   <option value="TPCP_All_Content">TPCP_All_Content</option>
+   <option value="TPCP_ChinhSachVanBanLienQuan">TPCP_ChinhSachVanBanLienQuan</option>
+   <option value="TPCP_DuLieu">TPCP_DuLieu</option>
+   <option value="TPCP_English">TPCP_English</option>
+   <option value="TPCP_GiaoDich">TPCP_GiaoDich</option>
+   <option value="TPCP_GioiThieu">TPCP_GioiThieu</option>
+   <option value="TPCP_KeHoachPhatHanh">TPCP_KeHoachPhatHanh</option>
+   <option value="TPCP_KetQuaPhatHanh">TPCP_KetQuaPhatHanh</option>
+   <option value="TPCP_ThanhVienThiTruong">TPCP_ThanhVienThiTruong</option>
+   <option value="TPCP_ThongBao">TPCP_ThongBao</option>
+   <option value="TPCP_ThongTinGiaoDich">TPCP_ThongTinGiaoDich</option>
+   <option value="TPCP_TinTucThiTruong">TPCP_TinTucThiTruong</option>
+   <option value="TPCP_en">TPCP_en</option>
+   <option value="TPCP_vi">TPCP_vi</option>
+   <option value="TPCPen_All_Content">TPCPen_All_Content</option>
+   <option value="TTCG">TTCG</option>
+   <option value="TTCG_All_Content">TTCG_All_Content</option>
+   <option value="TTCG_GioiThieu">TTCG_GioiThieu</option>
+   <option value="TTCG_KeToanHCSN">TTCG_KeToanHCSN</option>
+   <option value="TTCG_KeToanNSX">TTCG_KeToanNSX</option>
+   <option value="TTCG_KhoAnh">TTCG_KhoAnh</option>
+   <option value="TTCG_LTKeHoachTrienkhai">TTCG_LTKeHoachTrienkhai</option>
+   <option value="TTCG_LichTrinhKeHoach">TTCG_LichTrinhKeHoach</option>
+   <option value="TTCG_LienHe">TTCG_LienHe</option>
+   <option value="TTCG_PMQLNganSach">TTCG_PMQLNganSach</option>
+   <option value="TTCG_QLTHTaiSanCoDinhDang">TTCG_QLTHTaiSanCoDinhDang</option>
+   <option value="TTCG_SanPhamDichVu">TTCG_SanPhamDichVu</option>
+   <option value="TTCG_THDuToanQuyetToan">TTCG_THDuToanQuyetToan</option>
+   <option value="TTCG_THThuNopDangPhi">TTCG_THThuNopDangPhi</option>
+   <option value="TTCG_TaiXuong">TTCG_TaiXuong</option>
+   <option value="TTCG_TinTrienKhai">TTCG_TinTrienKhai</option>
+   <option value="TTCG_TinTuc">TTCG_TinTuc</option>
+   <option value="TTCG_TinTucSuKien">TTCG_TinTucSuKien</option>
+   <option value="TTCG_VanBanQuyPhamPhapLuat">TTCG_VanBanQuyPhamPhapLuat</option>
+   <option value="TTNCDT">TTNCDT</option>
+   <option value="TTNCDT_All_content">TTNCDT_All_content</option>
+   <option value="TTNCDT_BanTinBHToanCau">TTNCDT_BanTinBHToanCau</option>
+   <option value="TTNCDT_DaoTao">TTNCDT_DaoTao</option>
+   <option value="TTNCDT_DiemTinTTBaoHiem">TTNCDT_DiemTinTTBaoHiem</option>
+   <option value="TTNCDT_GiamSatBaoHiem">TTNCDT_GiamSatBaoHiem</option>
+   <option value="TTNCDT_GioiThieu">TTNCDT_GioiThieu</option>
+   <option value="TTNCDT_HopTacNghienCuuDaoTao">TTNCDT_HopTacNghienCuuDaoTao</option>
+   <option value="TTNCDT_NghienCuu">TTNCDT_NghienCuu</option>
+   <option value="TTNCDT_NienGiamTTBH">TTNCDT_NienGiamTTBH</option>
+   <option value="TTNCDT_ThuVienTaiLieu">TTNCDT_ThuVienTaiLieu</option>
+   <option value="TTNCDT_TinKinhTeTaiChinh">TTNCDT_TinKinhTeTaiChinh</option>
+   <option value="TTNCDT_VanBanPhapQuy">TTNCDT_VanBanPhapQuy</option>
+   <option value="TTNCDT_en">TTNCDT_en</option>
+   <option value="TTNCDT_vi">TTNCDT_vi</option>
+   <option value="TTTC">TTTC</option>
+   <option value="TTTC_ChiDaoDieuHanh">TTTC_ChiDaoDieuHanh</option>
+   <option value="TTTC_CoCheChinhSach">TTTC_CoCheChinhSach</option>
+   <option value="TTTC_DiemTinTaiChinh">TTTC_DiemTinTaiChinh</option>
+   <option value="TTTC_HoatDongLanhDaoBo">TTTC_HoatDongLanhDaoBo</option>
+   <option value="TTTC_HoatDongNganhTaiChinh">TTTC_HoatDongNganhTaiChinh</option>
+   <option value="TTTC_NghienCuuTraoDoi">TTTC_NghienCuuTraoDoi</option>
+   <option value="TTTC_QuanTri">TTTC_QuanTri</option>
+   <option value="TTTC_TaiChinhPhapLuat">TTTC_TaiChinhPhapLuat</option>
+   <option value="TTTC_TaiChinhQuocTe">TTTC_TaiChinhQuocTe</option>
+   <option value="TTTC_TaiChinhTrongNuoc">TTTC_TaiChinhTrongNuoc</option>
+   <option value="TTTC_ThiTruongTaiChinh">TTTC_ThiTruongTaiChinh</option>
+   <option value="TTTC_ThoiSuKinhTeTaiChinh">TTTC_ThoiSuKinhTeTaiChinh</option>
+   <option value="TTTC_ThongBao">TTTC_ThongBao</option>
+   <option value="TTTC_ThongCaoBaoChi">TTTC_ThongCaoBaoChi</option>
+   <option value="TTTC_TinAudioVideo">TTTC_TinAudioVideo</option>
+   <option value="TTTC_TinTaiChinhDiaPhuong">TTTC_TinTaiChinhDiaPhuong</option>
+   <option value="TTTC_Video">TTTC_Video</option>
+   <option value="TTTC_en">TTTC_en</option>
+   <option value="TTTC_vi">TTTC_vi</option>
+   <option value="ThanhTraBo">ThanhTraBo</option>
+   <option value="ThanhTraBo_All_Content">ThanhTraBo_All_Content</option>
+   <option value="ThanhTraBo_BanDocVoiTrangTin">ThanhTraBo_BanDocVoiTrangTin</option>
+   <option value="ThanhTraBo_BaoCaoThuongKy">ThanhTraBo_BaoCaoThuongKy</option>
+   <option value="ThanhTraBo_ChiDaoHDNghiepVu">ThanhTraBo_ChiDaoHDNghiepVu</option>
+   <option value="ThanhTraBo_GiaiQuyetKhieuNai">ThanhTraBo_GiaiQuyetKhieuNai</option>
+   <option value="ThanhTraBo_GioiThieuChinhSach">ThanhTraBo_GioiThieuChinhSach</option>
+   <option value="ThanhTraBo_GioiThieuChung">ThanhTraBo_GioiThieuChung</option>
+   <option value="ThanhTraBo_HoatDongThanhTra">ThanhTraBo_HoatDongThanhTra</option>
+   <option value="ThanhTraBo_HopTacQuocTe">ThanhTraBo_HopTacQuocTe</option>
+   <option value="ThanhTraBo_PhongChongThamNhung">ThanhTraBo_PhongChongThamNhung</option>
+   <option value="ThanhTraBo_TapChiThanhTraTC">ThanhTraBo_TapChiThanhTraTC</option>
+   <option value="ThanhTraBo_ThongTinTongHop">ThanhTraBo_ThongTinTongHop</option>
+   <option value="ThanhTraBo_TinTucSuKien">ThanhTraBo_TinTucSuKien</option>
+   <option value="ThanhTraBo_en">ThanhTraBo_en</option>
+   <option value="ThanhTraBo_vi">ThanhTraBo_vi</option>
+   <option value="TrangTinBoTruong">TrangTinBoTruong</option>
+   <option value="TrangTinBoTruong_All_Content">TrangTinBoTruong_All_Content</option>
+   <option value="TrangTinBoTruong_BTTienNhiem">TrangTinBoTruong_BTTienNhiem</option>
+   <option value="TrangTinBoTruong_ChiDao">TrangTinBoTruong_ChiDao</option>
+   <option value="TrangTinBoTruong_HoatDong">TrangTinBoTruong_HoatDong</option>
+   <option value="TrangTinBoTruong_PhatBieu">TrangTinBoTruong_PhatBieu</option>
+   <option value="TrangTinBoTruong_QuaTrinhCTac">TrangTinBoTruong_QuaTrinhCTac</option>
+   <option value="TrangTinBoTruong_TinAudio">TrangTinBoTruong_TinAudio</option>
+   <option value="TrangTinBoTruong_TinVideo">TrangTinBoTruong_TinVideo</option>
+   <option value="TrangTinBoTruong_en">TrangTinBoTruong_en</option>
+   <option value="TrangTinBoTruong_vi">TrangTinBoTruong_vi</option>
+   <option value="VCLCS">VCLCS</option>
+   <option value="VCLCS_All_content">VCLCS_All_content</option>
+   <option value="VCLCS_AnPhamTapChiSachBao">VCLCS_AnPhamTapChiSachBao</option>
+   <option value="VCLCS_DienDanNoiBo">VCLCS_DienDanNoiBo</option>
+   <option value="VCLCS_DuLieuVaThongKeKinhTe">VCLCS_DuLieuVaThongKeKinhTe</option>
+   <option value="VCLCS_Functionandtasks">VCLCS_Functionandtasks</option>
+   <option value="VCLCS_GioiThieu">VCLCS_GioiThieu</option>
+   <option value="VCLCS_HoatDongDieuTraKhaoSat">VCLCS_HoatDongDieuTraKhaoSat</option>
+   <option value="VCLCS_HoatDongNghienCuu">VCLCS_HoatDongNghienCuu</option>
+   <option value="VCLCS_HoiThao">VCLCS_HoiThao</option>
+   <option value="VCLCS_Introduction">VCLCS_Introduction</option>
+   <option value="VCLCS_NghienCuuVaTraoDoi">VCLCS_NghienCuuVaTraoDoi</option>
+   <option value="VCLCS_OrganizationalStructure">VCLCS_OrganizationalStructure</option>
+   <option value="VCLCS_QuanLyKhoaHoc">VCLCS_QuanLyKhoaHoc</option>
+   <option value="VCLCS_TinTuc">VCLCS_TinTuc</option>
+   <option value="VCLCS_TuVanDaoTao">VCLCS_TuVanDaoTao</option>
+   <option value="VCLCS_en">VCLCS_en</option>
+   <option value="VCLCS_vi">VCLCS_vi</option>
+   <option value="VuDauTu">VuDauTu</option>
+   <option value="VuDauTu_All_Content">VuDauTu_All_Content</option>
+</select>
+
+----
+<div class="iframeqa"></div>
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        $.getJSON('http://api.allorigins.win/get?url=https://mof.gov.vn/hoidapcstc/home/iframeqa', function (data) {
+            $('.iframeqa').html(data.contents);
+        });
+    });
+    var content = $('.iframeqa .hoidap-trangchu-danhsach-list ul li span span');
+    $(content).each((i,item) => {
+        item.innerText = item.innerText.replace(/[()]/g,'');
+        item.outerHTML = item.outerHTML.replace('style=\"font-size:12px\"', 'class="date-item"');
+    });
+</script>
+
+http://10.192.255.219:8003/api/linux/css/truongnv3/style.css
+IP Public: 118.70.217.120
+Tên miền: m-portal.mof.gov.vn
+
+https://thuenhanuoc.vn/basic_status
+
+int-portalBTC / Dvc@1234
+
+10.192.243.242 port 8080
+10.192.243.242:8080
+
+10.192.243.242 port 8080
+int-portalBTC / Dvc@1234
+domain: vpbtc
+
+
+/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+
+https://m-portal.mof.gov.vn
+
+key like '%PROXY%'
+PROXY_HOSTNAME 10.192.243.242
+
+http://10.192.255.219:8888/webcenter
+/system/login.jsp
+
+http://10.192.255.219:8001/console/login/LoginForm.jsp
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/btc_portal/servers/AdminServer/upload
+
+api_1	Configured	api_cluster	portal-app03	RUNNING	 OK	8003	663797552	1027604480
+api_2	Configured	api_cluster	portal-app04	RUNNING	 OK	8003	337873176	1012924416
+app_acms1	Configured	app_cluster	portal-app03	RUNNING	 OK	7003	310924688	1002438656
+app_acms2	Configured	app_cluster	portal-app04	RUNNING	 OK	7003	136428080	753401856
+space_1	Configured	space_cluster	portal-app03	RUNNING	 Warning	8888	22131920	942669824
+space_2	Configured	space_cluster	portal-app04	RUNNING	 OK	8888	206963256	1007681536
+space_3	Configured	space_cluster	portal-app03	RUNNING	 OK	8890	213508064	996671488
+space_4
+
+http://10.192.255.219:8888/webcenter/portal/admin/portals?_afrRedirect=2946637076693989
+
+PROXY_HOSTNAME	https://10.192.243.242
+PROXY_PORT	8080
+PROXY_USERNAME	int-portalBTC
+PROXY_PASS	Dvc@1234
+
+<dependency>
+	<groupId>com.mashape.unirest</groupId>
+	<artifactId>unirest-java</artifactId>
+	<version>1.4.9</version>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.httpcomponents</groupId>
+	<artifactId>httpcore</artifactId>
+	<version>4.2.2</version>
+</dependency>
+
+
+118.70.217.120	mof.gov.vn
+
+https://mof.tinhvan.com/stock-currency-service/stock-chart-hnx
+
+<iframe src="https://mof.tinhvan.com/stock-currency-service/stock-chart-hnx" width="100%" height="250" frameborder="0" scrolling="no" ></iframe>
+
+<iframe src="https://mof.tinhvan.com/stock-currency-service/stock-chart-hose" width="100%" height="250" frameborder="0" scrolling="no"></iframe>
+
+<iframe src="https://mof.tinhvan.com/stock-currency-service/currency" width="100%" height="280" frameborder="0" scrolling="yes"></iframe>
+
+
+<iframe src="https://m-portal.mof.gov.vn/stock-currency-service/stock-chart-hnx" width="100%" height="250" frameborder="0" scrolling="no" ></iframe>
+
+
+https://mof.tinhvan.com/api/resource/cs/groups/all_content/documents/tinanh/dwnt/mde0/~edisp/mofucm014142.jpg
+
+https://m-portal.mof.gov.vn/api/resource/cs/groups/all_content/documents/tinanh/dwnt/mja3/~edisp/mofucm207703.jpg
+
+https://m-portal.mof.gov.vn/api/resource/cs/groups/all_content/documents/tinanh/dwnt/mja3/~edisp/mofucm207958.jpg
+
+http://portal-app03:16200/cs/groups/all_content/documents/tinanh/dwnt/mja3/~edisp/mofucm207703.jpg
+
+https://drive.google.com/file/d/1dRILOmJv5gVtI6JIhAfcGqcMzJDFKFfB/view?usp=sharing
+
+URL_DINHKEM_REPLACE	http://mofportal.tvs.com:16200
+
+http://10.192.255.219:8001/console
+
+
+https://m-portal.mof.gov.vn/acms/faces/login
+
+/global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/guest/files
+
+---
+Authentication scheme NTLM not supported
+---
+
+		<dependency>
+		    <groupId>com.mashape.unirest</groupId>
+		    <artifactId>unirest-java</artifactId>
+		    <version>1.4.9</version>
+		</dependency>
+		
+
+URL_DINHKEM_REPLACE https://portal-app03:16200
+
+http://10.192.255.219:16200
+http://192.168.50.250:16200
+
+# =============Database config==================
+spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.api.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
+spring.datasource.api.username=MOF_OCS
+spring.datasource.api.password=Portalmof2021
+
+spring.datasource.apputils.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.apputils.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
+spring.datasource.apputils.username=btcapputils
+spring.datasource.apputils.password=btcapputils
+
+spring.datasource.acms.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.acms.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
+spring.datasource.acms.username=wccbtcdev
+spring.datasource.acms.password=wccbtcdev
+# ==============JPA / HIBERNATE=================
+app.hibernate.api.show-sql=true
+app.hibernate.api.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+app.hibernate.api.open-in-view=false
+
+#app.hibernate.apputils.show-sql=true
+#app.hibernate.apputils.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+#app.hibernate.apputils.open-in-view=false
+
+#app.hibernate.api.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+#--------------------------------
+# Tomcat Port 
+#----------------------------------
+server.port = 8080
+
+spring.devtools.restart.exclude=static/**
+ spring.mvc.throwExceptionIfNoHandlerFound=true
+ spring.resources.add-mappings=false
+
+http://10.192.255.219:8888/webcenter/portal/admin/portals
+
+ID_HDSD_VI	20799
+ID_HDSD_EN	20799
+
+10.192.255.219
+re 
+/global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/linux/images/CONGCHINH_EN/
+
+
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/cac-fta-bta-khac/thucthicamket
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/cac-fta-bta-khac/thngtinchung
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/cac-fta-bta-khac/vnkin-hipnh
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/space_1/logs/
+
+<iframe src="https://mof.tinhvan.com/stock-currency-service/stock-chart-hnx" width="100%" height="250" frameborder="0" scrolling="no" ></iframe>
+
+<iframe src="https://mof.tinhvan.com/stock-currency-service/stock-chart-hose" width="100%" height="250" frameborder="0" scrolling="no"></iframe>
+
+735 336 744
+abcd@1234
+
+122160901
+abcd@1234
+
+334555
+
+33353
+
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/van-kien-hiep-dinh-vietnam-efta
+https://mof.gov.vn/webcenter/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=MOFUCM093424
+https://mof.gov.vn/webcenter/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=MOFUCM093422
+
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/tinh-hinh-thuc-hien-cac-chuong-trinh-du-an/bao-cao-tong-hop-thth-oda-cua-bo
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/tinh-hinh-thuc-hien-cac-chuong-trinh-du-an/bao-cao-thth-cac-ct-du-an-oda-cua-bo
+
+
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/cac-san-pham-an-pham-cua-cac-chuong-trinh-du-an/cac-bao-cao-nghien-cuu
+/portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/Nhom-doi-tac-tai-chinh-cong/thong-tin-ve-hoat-dong-chuong-trinh-du-an/cac-san-pham-an-pham-cua-cac-chuong-trinh-du-an/cac-san-pham-an-pham-khac
+ 

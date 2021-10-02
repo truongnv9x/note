@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="block-tintuc" styleClass="block-tintuc" layout="block">
+         <div class="block-header-tintuc">
+            <af:goLink text="#{pageFlowScope.ztextHeader}" destination="#{pageFlowScope.zlinkHeader}" id="gl24"/>
+         </div>
+         <div class="block-list-tintuc">
+            <div class="block-list-content">
+               <af:panelList listStyle="list-style:none;">
+                  <af:iterator var="node" value="#{datatablecashtime.lstThumnailItem}" id="i1" varStatus="vs">
+                     <h:panelGroup id="pg1" layout="span">
+                        <af:outputLabel styleClass="list-content-arr" id="ol1"/>
+                        <af:goLink text="#{node.title}  " destination="#{node.linkChitiet}" id="pt_gl17"/>
+                        <span>
+                           <af:outputText value="#{node.ngayXuatban}" id="ot1">
+                              <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                           </af:outputText>
+                        </span>
+                     </h:panelGroup>
+                  </af:iterator>
+               </af:panelList>
+            </div>
+            <div class="xemthem">
+               <af:outputLabel styleClass="more_main" id="ol2"/>
+               <af:goLink text="Xem thêm" destination="#{pageFlowScope.zlinkHeader}" id="gl28"/>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s8bba98ff_4cbb_40b8_beee_296c916a23ed/taskFlow/gsr3162fc51_c3cf_4029_b1ed_982afab6226b/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+      <input-parameter-definition id="__1">
+         <name id="__2">rootNode</name>
+         <value>#{pageFlowScope.rootNode}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <input-parameter-definition id="__3">
+         <name id="__4">exPlain</name>
+         <value>#{pageFlowScope.exPlain}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+   </task-flow-definition>
+</adfc-config>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html">
+   <af:panelGroupLayout styleClass="listright3" id="pgl1">
+      <af:iterator var="root" varStatus="vstl" value="#{navigationContext.defaultNavigationModel.listModel[pageFlowScope.rootNode]}" id="i1">
+         <af:panelList id="pl1" styleClass="list_listright3 exPlain_bt">
+            <h:panelGroup id="pg1" styleClass="#{root.selected || root.onSelectedPath ? 'active122' : ''}">
+               <af:goLink text="#{root.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{root.prettyUrl}" disabled="#{not root.navigable}" id="gl2"/>
+               <af:outputLabel styleClass="arr_up_down up_down" rendered="#{pageFlowScope.exPlain ne 'no'}" id="ol1"/>
+            </h:panelGroup>
+            <af:panelGroupLayout rendered="#{! empty root.children}" layout="vertical" id="pgl3" styleClass="listlistright3 exPlain_ls">
+               <af:iterator var="item" varStatus="vs2" value="#{root.children}" id="i12">
+                  <h:panelGroup id="pg2" styleClass="#{item.selected || item.onSelectedPath ? 'active1' : ''}">
+                     <af:goLink text="#{item.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{item.prettyUrl}" disabled="#{not item.navigable}" id="gl1"/>
+                  </h:panelGroup>
+               </af:iterator>
+            </af:panelGroupLayout>
+         </af:panelList>
+      </af:iterator>
+   </af:panelGroupLayout>
+</jsp:root>

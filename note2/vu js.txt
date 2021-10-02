@@ -1,0 +1,105 @@
+### PHÍM TẮT TRONG VS CODE 
+
+Ctrl+Shift+P : Tìm file name 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Setting
+https://medium.com/@damthanhbinh/t%E1%BA%A1o-m%E1%BB%99t-%E1%BB%A9ng-d%E1%BB%A5ng-tr%C3%AAn-vue-cli-user-interface-tool-5427270cf8ac
+https://www.vuemastery.com/courses/real-world-vue-js/vue-cli/
+npm i -g @vue/cli
+
+### run GUI
+
+
+###
+npm install
+
+### create app
+vue create app_name
+
+### compile 
+npm run dev (compile 1 lần)
+npm run watch (compile mỗi khi có thay đổi)
+
+### Mỗi thành phần là một component và là một file.vue
+
+### generate component 
+-- install 
+npm i vue-generate-component
+
+vgc footer
+
+### Truyền dữ liệu từ thằng cha sang thằng con 
+
+Props Down -> Truyền data từ thằng cha sang con
+Props Up   -> Truyền sự kiện thông báo cho thằng cha để thay đổi data
+	- custom event
+Tag slot tag -> Truyền cấu trục html theo thẻ
+
+### Rang buộc thuộc tính của thẻ
+v-bind Ràng buộc atribute
+	### binding html 
+	v-html 
+
+### sự kiện là v-on:Tên_Sự_kiện(click,....) v-on == @ (@ short hand)
+
+### two way binding
+
+### watch theo dõi biến nếu có thay đổi thì thực hiện một function nào đấy
+
+### computed thực hiện như function nhưng không có dấu ngoặc và thực hiện chỉ định
+
+### v-on="method_name" tương tứng với @click="method_name"
+
+### computed thực hiện như function nhưng nó thực hiện như function
+
+### css  17.18 https://www.youtube.com/watch?v=2hvINlYs1TA&list=PLb9GOiDj30nSOhB6eBGPXwI0Rn2SJKls-&index=23
+
+ v-bind:style="[condition?{ 'background-color': 'none' }: {'background': '#00FF7F'}]"
+ 
+### show err 
+self.displayWarning
+self.displaySuccess
+self.displayError
+
+## router 
+ self.$router.go(-1);
+ router.go(1)
+ self.$router.push("/bmbaocaoedit/" + self.$route.params.id);
+
+### convert list to String format "a,b,c"
+let string=self.list.map(function(elem) {
+        return elem.value;
+      }).join(",")
+	  
+	  
+### show loading
+   self.hideLoading();
+      self.showLoading();
+	  
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller">
+   <task-flow-definition id="blanktaskflow">
+      <display-name>Blank Task Flow</display-name>
+      <default-activity>taskflowview</default-activity>
+      <data-control-scope>
+         <isolated/>
+      </data-control-scope>
+      <input-parameter-definition id="__2">
+         <name id="__3">zdataSource</name>
+         <value>#{pageFlowScope.zdataSource}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <input-parameter-definition id="__4">
+         <name id="__5">zmaxResults</name>
+         <value>#{pageFlowScope.zmaxResults}</value>
+         <class>java.lang.String</class>
+         <required/>
+      </input-parameter-definition>
+      <view id="taskflowview">
+         <page>/oracle/webcenter/siteresources/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/taskFlow/gsrfc53f687_4f4c_4aeb_9646_204e598abe8c/taskflow.jsff</page>
+      </view>
+      <use-page-fragments/>
+   </task-flow-definition>
+</adfc-config>
+
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.easing-1.3.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.mousewheel-3.1.12.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery.jcarousellite.js"/>
+   <af:resource type="css" source="/oracle/webcenter/siteresources/scopedMD/shared/css/font-awesome.css"/>
+   <af:resource type="javascript">
+         $(function() {
+            $(".lienketngang_slider").jCarouselLite({
+                btnNext: " .img_bt_next",
+                btnPrev: " .img_bt_prev",
+                mouseWheel: true,
+                vertical: false,
+                circular: false,
+                 visible: 4
+
+            });
+
+        });
+    </af:resource>
+   <af:outputLabel value="#{datatable.loadThumnailContentItems}" visible="false" id="ol3"/>
+   <af:panelGroupLayout layout="vertical" styleClass="img_box" id="pgl1">
+      <af:panelGroupLayout styleClass="img_prev img_bt_prev" id="pgl2"/>
+      <af:panelGroupLayout styleClass="img_next img_bt_next" id="pgl3"/>
+      <af:panelGroupLayout layout="vertical" id="pgl4">
+         <af:panelList styleClass="lienketngang-cover lienketngang_slider" id="pl1">
+            <af:iterator var="node" value="#{datatable.lstThumnailItem}" id="i1" varStatus="vs">
+               <h:panelGroup layout="block" id="pg1">
+                  <af:goImageLink icon="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.docName}&amp;dID=#{node.DID}&amp;RevisionSelectionMethod=LatestReleased&amp;allowInterrupt=1&amp;noSaveAs=1" destination="#{node.xmLienketweb}" id="pt_i15"/>
+               </h:panelGroup>
+            </af:iterator>
+         </af:panelList>
+      </af:panelGroupLayout>
+   </af:panelGroupLayout>
+</jsp:root>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" version="2.1">
+   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   <af:componentDef var="attrs" componentVar="comp">
+      <af:xmlContent>
+         <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+            <display-name>TwoColumnNarrowRight1</display-name>
+            <facet>
+               <facet-name>area1</facet-name>
+            </facet>
+            <facet>
+               <facet-name>area2</facet-name>
+            </facet>    
+			<facet>
+               <facet-name>area3</facet-name>
+            </facet>
+            <facet>
+               <facet-name>area4</facet-name>
+            </facet>      
+			<facet>
+               <facet-name>area5</facet-name>
+            </facet>	
+			<facet>
+               <facet-name>area6</facet-name>
+            </facet>	
+         </component>
+      </af:xmlContent>
+      <af:group id="twoColumnNarrowRight1">
+         <af:resource type="css" source="${pageDocBean.layoutCssPath}"/>
+         <div class="area1">
+            <af:facetRef facetName="area1"/>
+         </div>
+         <div class="area2">
+            <af:facetRef facetName="area2"/>
+         </div>
+		 <div class="area3">
+            <af:facetRef facetName="area3"/>
+         </div>
+         <div class="area4">
+            <af:facetRef facetName="area4"/>
+         </div>
+		 <div class="area5">
+            <af:facetRef facetName="area5"/>
+         </div>
+		 <div class="area6">
+            <af:facetRef facetName="area6"/>
+         </div>
+      </af:group>
+   </af:componentDef>
+</jsp:root>
+
+.area1 {
+  float:left;
+  width:70%;
+}
+.area2 {
+  float:left;
+  width:30%;
+}
+.area3 {
+  clear: both;
+  float:left;
+  width:100%;
+}
+.area4 {
+  clear: both;
+  float:left;
+  width:50%;
+}
+.area5 {
+  float:left;
+  width:50%;
+}
+.area6 {
+  clear: both;
+  float:left;
+  width:100%;
+}
+
+
+

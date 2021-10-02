@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:trh="http://myfaces.apache.org/trinidad/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core">
+   <af:panelBorderLayout id="pbl1">
+      <div class="leftmenu-content" style="overflow:hidden;">
+         <ul class="RootNode" style="list-style-type:none">
+            <af:iterator var="root" varStatus="vstl" value="#{navigationContext.defaultNavigationModel.listModel['startNode=/pages_r, includeStartNode=false']}" id="i3">
+               <li>
+                  <af:panelGroupLayout rendered="#{root.attributes['Description'] == 'menu'   ? true : false}" id="pgl1">
+                     <af:panelGroupLayout layout="vertical" styleClass="#{root.onSelectedPath ? 'RootNode-Actived' : 'RootNode-Normal'}" id="pgl3">
+                        <af:panelGroupLayout styleClass="RootNode-last-a" id="pgl2" layout="vertical">
+                           <af:goLink text="#{root.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{root.PrettyUrl}" id="gl1"/>
+                        </af:panelGroupLayout>
+                     </af:panelGroupLayout>
+                     <af:panelBorderLayout rendered="#{! empty root.children}" id="pbl8">
+                        <div class="NodeLevel2">
+                           <ul style="list-style-type:none">
+                              <af:switcher defaultFacet="viewChild" id="s1">
+                                 <f:facet name="non"/>
+                                 <f:facet name="viewChild">
+                                    <af:iterator var="item" varStatus="vs2" value="#{root.children}" id="i1">
+                                       <li>
+                                          <af:panelGroupLayout rendered="#{item.attributes['Description'] == 'menu' ? true : false}" id="pgl4">
+                                             <af:panelGroupLayout layout="vertical" styleClass="#{(item.selected || item.onSelectedPath )? 'NodeLevel2-Actived' : 'NodeLevel2-Normal'}" id="pgl5">
+                                                <af:goLink text="#{item.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{item.PrettyUrl}" id="gl2"/>
+                                             </af:panelGroupLayout>
+                                             <af:panelBorderLayout rendered="#{! empty item.children}" id="pbl18" styleClass="level2">
+                                                <div class="NodeLevel3">
+                                                   <ul style="list-style-type:none">
+                                                      <af:switcher defaultFacet="viewChild" facetName="#{item.onSelectedPath ? 'viewChild' : 'non'}" id="s2">
+                                                         <f:facet name="non"/>
+                                                         <f:facet name="viewChild">
+                                                            <af:iterator var="subitem" varStatus="vs2" value="#{item.children}" id="i12">
+                                                               <li>
+                                                                  <af:panelGroupLayout rendered="#{subitem.attributes['Description'] == 'menu' ? true : false}" id="pgl6">
+                                                                     <af:panelGroupLayout layout="vertical" styleClass="#{(subitem.selected || subitem.onSelectedPath )? 'NodeLevel3-Actived' : 'NodeLevel3-Normal'}" id="pgl7">
+                                                                        <af:goLink text="#{subitem.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{subitem.PrettyUrl}" id="gl3"/>
+                                                                     </af:panelGroupLayout>
+                                                                     <af:panelBorderLayout rendered="#{! empty subitem.children}" id="pbl2">
+                                                                        <div class="NodeLevel4">
+                                                                           <ul style="list-style-type:none">
+                                                                              <af:switcher defaultFacet="viewChild" facetName="#{subitem.onSelectedPath ? 'viewChild' : 'non'}" id="s3">
+                                                                                 <f:facet name="non"/>
+                                                                                 <f:facet name="viewChild">
+                                                                                    <af:iterator var="child" varStatus="vs3" value="#{subitem.children}" id="i2">
+                                                                                       <li>
+                                                                                          <af:panelGroupLayout rendered="#{child.attributes['Description'] == 'menu' ? true : false}" id="pgl8">
+                                                                                             <af:panelGroupLayout layout="vertical" styleClass="#{(child.selected || child.onSelectedPath )? 'NodeLevel4-Actived' : 'NodeLevel4-Normal'}" id="pgl9">
+                                                                                                <af:goLink text="#{child.title}" destination="/portal/#{spaceContext.currentSpaceName}/#{child.PrettyUrl}" id="gl4"/>
+                                                                                             </af:panelGroupLayout>
+                                                                                          </af:panelGroupLayout>
+                                                                                       </li>
+                                                                                    </af:iterator>
+                                                                                 </f:facet>
+                                                                              </af:switcher>
+                                                                           </ul>
+                                                                        </div>
+                                                                     </af:panelBorderLayout>
+                                                                  </af:panelGroupLayout>
+                                                               </li>
+                                                            </af:iterator>
+                                                         </f:facet>
+                                                      </af:switcher>
+                                                   </ul>
+                                                </div>
+                                             </af:panelBorderLayout>
+                                          </af:panelGroupLayout>
+                                       </li>
+                                    </af:iterator>
+                                 </f:facet>
+                              </af:switcher>
+                           </ul>
+                        </div>
+                     </af:panelBorderLayout>
+                  </af:panelGroupLayout>
+               </li>
+            </af:iterator>
+         </ul>
+      </div>
+   </af:panelBorderLayout>
+</jsp:root>

@@ -1,0 +1,6 @@
+=====xampp mysql
+xampp-stop
+xampp-start
+xampp-control
+
+contactmanager user/pass =root/root

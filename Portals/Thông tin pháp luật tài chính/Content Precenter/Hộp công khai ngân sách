@@ -1,0 +1,332 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:fmt=" http://java.sun.com/jsp/jstl/fmt">
+   <c:set var="portalBundle" value="#{adfBundle['portal.PortalBundle']}"/>
+   <dt:contentListTemplateDef var="nodes">
+      <af:resource type="javascript">
+        function processEvent(event) {
+            var buttonHidden = event.getSource().findComponent("sukiengiantiep");
+            var indexSelected = parseInt(event.getSource().getProperty("numberOfPage"), 10);
+            AdfCustomEvent.queue(buttonHidden, "hiddenEvent", 
+            {
+                fvalue : indexSelected
+            },
+            true);
+        }
+      </af:resource>
+      <af:resource type="css">
+        .box-ckns-cover{
+			margin-bottom: 10px;
+		}
+		.box-ckns-cover label{
+			text-align: left;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			font-weight: bold;
+			color:#333333;
+		}
+		.box-ckns-thumnail-cover{
+			border:1px solid #6098C7;
+			padding:30px 10px 10px 10px;
+			width:643px;
+		}
+		.box-ckns-thumnail-cover table tr td a{
+		  border-right:none !important;
+		}
+		.box-ckns-thumnail-cover table tr.row-title td.cell-title{
+			padding:10px 0px 5px 0px;
+			text-align: justify;
+			vertical-align: top;
+			line-height: 15px;
+		}
+		.box-ckns-thumnail-cover table tr.row-title td.cell-title label{
+		   color:#bbbcbc !important;
+		}
+		.box-ckns-thumnail-cover table tr.row-title td a, 
+		.box-ckns-thumnail-cover table tr.row-title td a:hover, 
+		.box-ckns-thumnail-cover table tr.row-title td a:visited{
+			font-family: Arial;
+			font-weight: bold;
+			color: #2573b3;
+			font-size: 12px;
+			text-decoration: none;
+		   
+		}
+		.box-ckns-thumnail-cover table tr.row-title td a span label{margin-left:5px;}
+		.box-ckns-thumnail-cover table tr.row-comment td.cell-comment{
+			 vertical-align: top;
+			  border-bottom: 1px dotted #bbbcbc;
+			  padding-bottom:5px;
+			 line-height: 15px;
+		}
+		.box-ckns-thumnail-cover table tr.row-comment td.cell-comment .image{
+			float: left;
+			padding:0px 10px 0px 0px;
+
+			font-size: 10px !important;
+			font-style: italic;
+		}
+		.box-ckns-thumnail-cover table tr.row-comment td.cell-comment .image img{
+			width: 120px !important;
+		}
+		.box-ckns-thumnail-cover table tr.row-comment td.cell-comment .comment{
+			font-family: Arial;
+			color: #414141;
+			font-size: 12px;
+			text-align: justify;
+			line-height: 15px;
+		}
+
+		.box-ckns-cover .box-ckns-header{
+			float: left;
+		  height: 32px;
+		  width: 100%;
+		  background-color: #518FC3;
+		}
+		.box-ckns-cover .box-ckns-header a, .box-ckns-cover .box-ckns-header a:hover, .box-ckns-cover .box-ckns-header a:visited{
+			text-transform: uppercase;
+			font-family: Arial;
+			font-size: 13px;
+			color: #ffffff;
+			font-weight: bold;
+			text-decoration: none;
+			margin-left: 5px;
+			margin-top: 10px;
+			display: inline-block;
+
+		}
+		.box-ckns-cover .box-ckns-xemtiep{
+			text-align: right;
+			padding:10px;
+		}
+		.box-ckns-cover .box-ckns-xemtiep a, .box-ckns-cover .box-ckns-xemtiep a:hover, .box-ckns-cover .box-ckns-xemtiep a:visited{
+			font-family: Arial;
+			color: #414141;
+			font-size: 12px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #2573b3;
+		}
+		.box-ckns-pageNumber{
+			text-align: right;
+			height: 30px;
+			margin-top:10px;
+			padding-left:0px;
+		}
+		.box-ckns-thumnail-cover table{
+			width:100%;
+			border-collapse: collapse;
+			font-size: 12px;
+			margin-top:10px;
+		}
+		.box-ckns-thumnail-cover table tr:first-child td{
+			text-align:center !important;
+		}
+		.box-ckns-thumnail-cover table tr td{
+			border:1px solid #e1e9ef;
+			vertical-align: middle;
+			padding:5px;
+			text-align: left !important;
+		}
+		.box-ckns-thumnail-cover table tr td a, .box-ckns-thumnail-cover table tr td a:hover, .box-ckns-thumnail-cover table tr td a:visited{
+			font-size: 12px;
+			color: #2673b4;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child{
+			text-align:center !important;
+			width: 20px;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child + td{
+			width:180px;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child + td + td{
+			text-align:center !important;
+			width:45px;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child + td + td+ td{
+			width: 70px;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child + td + td+ td + td{
+			width: 70px;
+		}
+		.box-ckns-thumnail-cover table tr td:first-child + td + td+ td + td + td{
+			width: 60px;
+		}
+      </af:resource>
+      <af:outputLabel value="#{datatable.loadLstItems}" visible="false" id="ol3"/>
+      <c:set var="sizeLst" value="#{fn:length(datatable.lstContentItems)}"/>
+      <c:set var="rowLoop" value="#{datatable.countColumn - sizeLst % datatable.countColumn}"/>
+      <af:switcher facetName="#{datatable.flagPhanTrang?'display':'none'}">
+         <f:facet name="display">
+            <af:panelBorderLayout styleClass="box-ckns-cover" binding="#{datatable.contentPanelBorderLayout}">
+               <af:panelBorderLayout styleClass="box-ckns-header" rendered="#{pageFlowScope.ztextHeader != ''}">
+                  <af:goLink text="#{datatable.currentPathTitle}" destination="#{datatable.linkHeader}" disabled="#{!datatable.flagDisableHeaderLink}"/>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout styleClass="box-ckns-thumnail-cover" id="pbl12">
+                  <trh:tableLayout>
+                     <trh:rowLayout>
+                        <trh:cellFormat>
+                           <af:outputLabel value="STT"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Tên báo cáo"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Năm/kỳ báo cáo"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Biểu mẫu"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Số quyết định công bố"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Ngày công bố"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Đường dẫn văn bản"/>
+                        </trh:cellFormat>
+                     </trh:rowLayout>
+                     <c:set var="recordStart" value="#{datatable.numberOfResult * (datatable.currentPage - 1)}"/>
+                     <af:iterator value="#{datatable.lstContentItems}" var="node" varStatus="vs">
+                        <trh:rowLayout>
+                           <trh:cellFormat>
+                              <af:outputText value="#{recordStart + vs.index + 1}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{node.title}"/>
+                           </trh:cellFormat>
+                           <c:set var="strComent" value="#{fn:split(node.comment, '#')}"/>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[3]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[0]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[1]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[2]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:goLink destination="#{node.linkChitiet}" text="#{node.title}"/>
+                           </trh:cellFormat>
+                        </trh:rowLayout>
+                     </af:iterator>
+                  </trh:tableLayout>
+                  <af:panelBorderLayout inlineStyle="display:table-row" id="pbl10"/>
+                  <af:panelBorderLayout styleClass="box-ckns-xemtiep" id="pbl7" rendered="#{datatable.flagXemTiep}">
+                     <af:goLink id="gl1" text="Xem tiếp" destination="#{datatable.linkHeader}"/>
+                  </af:panelBorderLayout>
+                  <af:panelBorderLayout styleClass="box-ckns-pageNumber" id="pbl3" rendered="#{datatable.flagPhanTrang}" visible="#{sizeLst gt 0?'true':'false'}">
+                     <af:commandButton text="123" styleClass="buttonEvent" partialSubmit="true" id="sukiengiantiep" visible="false">
+                        <af:serverListener type="hiddenEvent" method="#{datatable.pageSeleted}"/>
+                     </af:commandButton>
+                     <af:panelBorderLayout id="pbl5" styleClass="pageNumber">
+                        <af:commandButton text="&lt;&lt;" partialSubmit="true" id="cil1" disabled="#{!datatable.flagPrevFirst}">
+                           <af:clientAttribute name="numberOfPage" value="#{1}"/>
+                           <af:clientListener method="processEvent" type="click"/>
+                        </af:commandButton>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout id="pbl1" styleClass="pageNumber">
+                        <af:commandButton text="&lt;" partialSubmit="true" id="cb1" disabled="#{!datatable.flagPrevFirst}">
+                           <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage-1}"/>
+                           <af:clientListener method="processEvent" type="click"/>
+                        </af:commandButton>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout id="pbl13" styleClass="pageNumber">
+                        <af:iterator var="vs" value="#{datatable.lstPagination}" varStatus="vst" id="i2">
+                           <af:commandButton styleClass="numberOfPage" text="#{vs}" id="cl1" partialSubmit="true" disabled="#{datatable.currentPage eq vs?'true':'false'}">
+                              <af:clientAttribute name="numberOfPage" value="#{vs}"/>
+                              <af:clientListener method="processEvent" type="click"/>
+                           </af:commandButton>
+                        </af:iterator>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout id="pbl16" styleClass="pageNumber">
+                        <af:commandButton text=">" partialSubmit="true" id="cil5" disabled="#{!datatable.flagNextLast}">
+                           <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage+1}"/>
+                           <af:clientListener method="processEvent" type="click"/>
+                        </af:commandButton>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout id="pbl2" styleClass="pageNumber">
+                        <af:commandButton text=">>" partialSubmit="true" id="cb2" disabled="#{!datatable.flagNextLast}">
+                           <af:clientAttribute name="numberOfPage" value="#{datatable.numberOfPage}"/>
+                           <af:clientListener method="processEvent" type="click"/>
+                        </af:commandButton>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout id="pbl4" styleClass="pageNumber">
+                        <af:commandButton text="#{datatable.ratePage}" partialSubmit="true" id="cb3" disabled="true"/>
+                     </af:panelBorderLayout>
+                  </af:panelBorderLayout>
+               </af:panelBorderLayout>
+            </af:panelBorderLayout>
+         </f:facet>
+         <f:facet name="none">
+            <af:panelBorderLayout styleClass="box-ckns-cover" id="pbl22">
+               <af:panelBorderLayout styleClass="box-ckns-header" id="pbl23">
+                  <af:goLink text="#{datatable.currentPathTitle}" destination="#{datatable.linkHeader}" disabled="#{datatable.flagDisableHeaderLink}" id="gl4"/>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout styleClass="box-ckns-thumnail-cover" id="pbl21">
+                  <trh:tableLayout>
+                     <trh:rowLayout>
+                        <trh:cellFormat>
+                           <af:outputLabel value="STT"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Tên báo cáo"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Năm/kỳ báo cáo"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Biểu mẫu"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Số quyết định công bố"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Ngày công bố"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:outputLabel value="Đường dẫn văn bản"/>
+                        </trh:cellFormat>
+                     </trh:rowLayout>
+                     <af:iterator value="#{datatable.lstContentItems}" var="node" varStatus="vs">
+                        <trh:rowLayout>
+                           <trh:cellFormat>
+                              <af:outputText value="#{vs.index + 1}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{node.title}"/>
+                           </trh:cellFormat>
+                           <c:set var="strComent" value="#{fn:split(node.comment, '#')}"/>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[3]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[0]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[1]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:outputText value="#{strComent[2]}"/>
+                           </trh:cellFormat>
+                           <trh:cellFormat>
+                              <af:goLink destination="#{node.linkChitiet}" text="#{node.title}"/>
+                           </trh:cellFormat>
+                        </trh:rowLayout>
+                     </af:iterator>
+                  </trh:tableLayout>
+                  <af:panelBorderLayout inlineStyle="display:table-row" id="pbl8"/>
+                  <af:panelBorderLayout styleClass="box-ckns-xemtiep" id="pbl6" rendered="#{datatable.flagXemTiep}">
+                     <af:goLink id="gl5" text="#{res['XEM_TIEP']}" destination="#{datatable.linkHeader}"/>
+                  </af:panelBorderLayout>
+               </af:panelBorderLayout>
+            </af:panelBorderLayout>
+         </f:facet>
+      </af:switcher>
+   </dt:contentListTemplateDef>
+</jsp:root>

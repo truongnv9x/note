@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<select name="xmMuchienthi_Options" id="xmMuchienthi-36463" onchange="updateDependentChoices(this.id, 'xmMuchienthi', 1);">
+   <option value="" label="No Selection" class="idcNoSelection" />
+   <option value="36009">APEC__APEC 2017 FCP documents (36009)</option>
+   <option value="36005">APEC__APEC 2017 FMMP Result (36005)</option>
+   <option value="36010">APEC__APEC 2017 Financial cooporation Agenda (36010)</option>
+   <option value="36002">APEC__APEC financial cooporation  (36002)</option>
+   <option value="36001">APEC__APEC process (36001)</option>
+   <option value="36004">APEC__Featured News (36004)</option>
+   <option value="36011">APEC__Hosting Cities Images (36011)</option>
+   <option value="36012">APEC__Image News (36012)</option>
+   <option value="36013">APEC__Other Information</option>
+   <option value="36006">APEC__Photo news (36006)</option>
+   <option value="36008">APEC__Press Release  (36008)</option>
+   <option value="36007">APEC__Video news (36007)</option>
+   <option value="36003">APEC__Vietnam in APEC financial cooporation (36003)</option>
+   <option value="16239">BTC__ Cải cách thủ tục hành chính_EN(16239)</option>
+   <option value="16233">BTC__70 năm Tài chính Việt Nam đồng hành cùng đất nước_EN(16233)</option>
+   <option value="1617">BTC__Bulletin public Debt (1617)</option>
+   <option value="1614">BTC__Disclosure of SB (1614)</option>
+   <option value="1605">BTC__History of the FinanceSector of Vietnam (1605)</option>
+   <option value="1615">BTC__Index of SB (1615)</option>
+   <option value="1601">BTC__Introduction (1601)</option>
+   <option value="1602">BTC__Leaders of Ministry of Finance (1602)</option>
+   <option value="1612">BTC__Legal Documents (1612)</option>
+   <option value="1611">BTC__Local News (1611)</option>
+   <option value="1606">BTC__Location (1606)</option>
+   <option value="1616">BTC__Monthly exchange rate (1616)</option>
+   <option value="1608">BTC__News (1608)</option>
+   <option value="1607">BTC__News - Event (1607)</option>
+   <option value="1609">BTC__Notices (1609)</option>
+   <option value="1604">BTC__Organization structure (1604)</option>
+   <option value="1610">BTC__Press Release (1610)</option>
+   <option value="1613">BTC__State Budget (1613)</option>
+   <option value="1603">BTC__Tasks and Powers (1603)</option>
+   <option value="16209">BTC__Tuyển Dụng_EN(16209)</option>
+   <option value="16234">BTC__Vấn đề Quốc hội quan tâm_EN(16234)</option>
+   <option value="22003">Bộ Trưởng__Các Bộ trưởng tiền nhiệm_EN(22003)</option>
+   <option value="22008">Bộ Trưởng__Các Nguồn Khác_EN(22008)</option>
+   <option value="22002">Bộ Trưởng__Các bài phát biểu_EN (22002)</option>
+   <option value="22009">Bộ Trưởng__Dân Hỏi Bộ Trưởng Trả Lời_EN (22009)</option>
+   <option value="22004">Bộ Trưởng__Hoạt Động_EN(22004)</option>
+   <option value="22005">Bộ Trưởng__Quá Trình Công Tác_EN(22005)</option>
+   <option value="22010">Bộ Trưởng__Tin Nổi Bật_EN(22010)</option>
+   <option value="22006">Bộ Trưởng__Tin audio - Video _EN (2006)</option>
+   <option value="22001">Bộ trưởng__Chỉ đạo_EN (22001)</option>
+   <option value="213001">ISA__About isa (213001)</option>
+   <option value="213034">ISA__International cooperation(213034)</option>
+   <option value="213025">ISA__International news(213025)</option>
+   <option value="213039">ISA__Key insurance programs and schemes(213039)</option>
+   <option value="213007">ISA__Legal framework &amp; document(213007)</option>
+   <option value="213010">ISA__Market information(213010)</option>
+   <option value="213043">ISA__Notes(213043)</option>
+   <option value="213042">ISA__Public servies(213042)</option>
+   <option value="213038">ISA__Qa</option>
+   <option value="213016">ISA__Regulatory &amp; supervisory news(213016)</option>
+   <option value="213030">ISA__Research and training courses(213030)</option>
+   <option value="213023">ISA__administrative sanctions on insurance(213023)</option>
+   <option value="213037">ISA__bilateral cooperation(213037)</option>
+   <option value="213009">ISA__daily documents(213009)</option>
+   <option value="213004">ISA__functions &amp; responsibilities(213004)</option>
+   <option value="213015">ISA__hot news and events(213015)</option>
+   <option value="213029">ISA__in/others(213029)</option>
+   <option value="213033">ISA__information on insurance training courses(213033)</option>
+   <option value="213017">ISA__information relating to insurance companies, reinsurers and brokerage firms(213017)</option>
+   <option value="213018">ISA__information relating to representative offices of foreign insurance institutions in viet nam(213018)</option>
+   <option value="213022">ISA__inspection and on-site examination plans(213022)</option>
+   <option value="213011">ISA__insurance market statistics(213011)</option>
+   <option value="213019">ISA__insurance products(213019)</option>
+   <option value="213035">ISA__international integration commitments(ISA)</option>
+   <option value="213008">ISA__law &amp; regulations(213008)</option>
+   <option value="213006">ISA__leaders of isa(213006)</option>
+   <option value="213026">ISA__legislation(213026)</option>
+   <option value="213012">ISA__list of companies and the branches of foreign non-life insurers(213012)</option>
+   <option value="213013">ISA__list of representative offices of foreign insurance companies(213013)</option>
+   <option value="213036">ISA__multilateral cooperation(213036)</option>
+   <option value="213020">ISA__new executives and/or actuaries(213020)</option>
+   <option value="213005">ISA__organnization structure(213005)</option>
+   <option value="213032">ISA__other insurance research publications and/or surveys(213032)</option>
+   <option value="213024">ISA__others(213024)</option>
+   <option value="213028">ISA__performance reviews(213028)</option>
+   <option value="213027">ISA__statistics and ratings(213027)</option>
+   <option value="213002">ISA__strategic vision(213002)</option>
+   <option value="213003">ISA__the history of the astablishment and development(213003)</option>
+   <option value="213031">ISA__the latest research(213031)</option>
+   <option value="213040">ISA__the pilot program on agricultural(213040)</option>
+   <option value="213041">ISA__the pilot program on export credit insurance(213041)</option>
+   <option value="213014">ISA__the published annual financial reports(213014)</option>
+   <option value="213021">ISA__training institutes for insurance agents(213021)</option>
+   <option value="221019">KBNN__Tin nổi bật_EN(221019)</option>
+   <option value="221016">KBNN__Truyền thống KBNN_EN(221016)</option>
+   <option value="2201">LEGAL__About us (2201)</option>
+   <option value="2219">LEGAL__Administrative Procedures (2219)</option>
+   <option value="2214">LEGAL__Appraising document of normative act and law document (2214)</option>
+   <option value="2220">LEGAL__Consultation Draft Document (2220)</option>
+   <option value="2215">LEGAL__Document inspecting process (2215)</option>
+   <option value="2212">LEGAL__Drafting the document (2212)</option>
+   <option value="2213">LEGAL__Form of documents (2213)</option>
+   <option value="2222">LEGAL__Home news(2222)</option>
+   <option value="2210">LEGAL__Law Database (2210)</option>
+   <option value="2218">LEGAL__Law checking and systematizing process (2218)</option>
+   <option value="2216">LEGAL__Law dissemination process (2216)</option>
+   <option value="2202">LEGAL__Legal Advice (2202)</option>
+   <option value="2204">LEGAL__Look for question (2204)</option>
+   <option value="2205">LEGAL__Look up document (2205)</option>
+   <option value="2207">LEGAL__News and Events (2207)</option>
+   <option value="2209">LEGAL__News summary of normative act and law document (2209)</option>
+   <option value="2221">LEGAL__Notes(2221)</option>
+   <option value="2217">LEGAL__Official gazette proceedings (2217)</option>
+   <option value="2211">LEGAL__Professional Guidance (2211)</option>
+   <option value="2206">LEGAL__Program on the elaboration of legal documents (2206)</option>
+   <option value="2208">LEGAL__Propagandic activities news of the law (2208)</option>
+   <option value="2203">LEGAL__Question and answer about law (2203)</option>
+   <option value="16269">MOF__Administrative Procedures(16269)</option>
+   <option value="16270">MOF__Administrative Procedures/Administrative procedure from(16270)</option>
+   <option value="16271">MOF__Administrative Procedures/Guire the administrative prodedures(16271)</option>
+   <option value="1184">MOF__Bao cao ngan sach dan cho cong dan (Citizens Budget) (1184)</option>
+   <option value="16282">MOF__Bilateral Cooperation Programs(16282)</option>
+   <option value="16254">MOF__Bulletin Public Debt(16254)</option>
+   <option value="16257">MOF__Cam kết mở cửa của ViệtNam_EN(16257)</option>
+   <option value="1185">MOF__Citizens Budget(1185)</option>
+   <option value="16273">MOF__Contribute - Make suggestions(16273)</option>
+   <option value="16272">MOF__Contribute Advice(16272)</option>
+   <option value="16238">MOF__Các dự án thuộc bộ_EN(16238)</option>
+   <option value="16241">MOF__Cải cách thủ tục hành chính/Các Quyết định công bố TTHC_EN(16241)</option>
+   <option value="16240">MOF__Cải cách thủ tục hành chính/Thủ tục hành chính đã có công bố theo đề án 30_EN(16240)</option>
+   <option value="1181">MOF__Domestic Statistics/Du toan QH thong qua (Plan) 1181</option>
+   <option value="1180">MOF__Domestic Statistics/Excutive's Budget Proposal) 1180</option>
+   <option value="1183">MOF__Domestic Statistics/Final Account(1183)</option>
+   <option value="1182">MOF__Domestic Statistics/Tinh hinh du thao thuc hien du toan(State budget Execution)1182</option>
+   <option value="16281">MOF__Foreign Investments(16281)</option>
+   <option value="16175">MOF__Hiện đại hóa Ngành tài chính_EN(16175)</option>
+   <option value="16215">MOF__Hệ thống văn bản TCDN/Nghị Định_EN(16215)</option>
+   <option value="16216">MOF__Hệ thống văn bản TCDN/Thông tư_EN(16216)</option>
+   <option value="16214">MOF__Hệ thống văn bản TCDN/Văn Bản khác_EN(16214)</option>
+   <option value="16031">MOF__Hợp tác quốc tế/WTO/Danh mục biểu thuế MFN_EN(16031)</option>
+   <option value="16024">MOF__Hợp tác quốc tế/WTO/Tiến trình Việt Nam ra nhập WTO_EN(16024)</option>
+   <option value="16246">MOF__Hợp tác về phát triển thị trường vốn_EN(16246)</option>
+   <option value="16018">MOF__International intergration(16018)</option>
+   <option value="16019">MOF__International intergration/Financial integration(16019)</option>
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16138','16139','16247')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16138">MOF__International intergration/Financial integration/APEC Financial Cooperation(16138)</option>
+   <option value="16247">MOF__International intergration/Financial integration/APEC Financial Cooperation/Cooperation in Infrastructure development(16247)</option>
+   <option value="16139">MOF__International intergration/Financial integration/APEC Financial Cooperation/Policy themes and initiatives(16139)</option>
+   
+   <option value="16128">MOF__International intergration/Financial integration/ASEAN Financial Cooperation(16128)</option>
+   <option value="16130">MOF__International intergration/Financial integration/ASEAN Financial Cooperation/ASEAN Infrastructural Fund(16130)</option>
+   <option value="16129">MOF__International intergration/Financial integration/ASEAN Financial Cooperation/ASEAN financial – currency integration(16129)</option>
+   <option value="16131">MOF__International intergration/Financial integration/ASEAN Financial Cooperation/Other ASEAN Cooperation(16131)</option>
+   
+   <option value="16132">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation(16132)</option>
+   <option value="16134">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation/Bond market development(16134)</option>
+   <option value="16136">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation/Macroeconomics monitoring(16136)</option>
+   <option value="16137">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation/Other cooperation(16137)</option>
+   <option value="16135">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation/Research and capacity building(16135)</option>
+   <option value="16133">MOF__International intergration/Financial integration/ASEAN+3 Financial Cooperation/Updates on new cooperation initiatives(16133)</option>
+   
+   <option value="16140">MOF__International intergration/Financial integration/ASEM Financial Cooperation(16140)</option>
+   
+   <option value="16248">MOF__International intergration/Financial integration/Bilateral cooperation programs(16248)</option>
+   <option value="16252">MOF__International intergration/Financial integration/Bilateral cooperation programs/Cooperation program with Cuba(16252)</option>
+   <option value="16250">MOF__International intergration/Financial integration/Bilateral cooperation programs/Cooperation program with Korea(16250)</option>
+   <option value="16249">MOF__International intergration/Financial integration/Bilateral cooperation programs/Cooperation program with Laos PDR(16249)</option>
+   <option value="16251">MOF__International intergration/Financial integration/Bilateral cooperation programs/Cooperation program with Singapore(16251)</option>
+   
+   <option value="16127">MOF__International intergration/Financial integration/Conference News(16127)</option>
+   <option value="16141">MOF__International intergration/Financial integration/EAS Financial Cooperation(16141)</option>
+   
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16033','16034','16035','16036','16037','16038','16039')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   
+
+  
+   <option value="16032">MOF__International intergration/Financial integration/FTA(16032)</option>
+   <option value="16033">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)(16033)</option>
+   <option value="16035">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Agreements/Protocols(16035)</option>
+   <option value="16040">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Contact points(16040)</option>
+   <option value="16259">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Expressed commitment to open financial services market(16259)</option>
+   <option value="16038">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/FTA Tariff Schedules of Partner Countries(16038)</option>
+   <option value="16037">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/FTA Tariff Schedules of Vietnam(16037)</option>
+   <option value="16034">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Introduction(16034)</option>
+   <option value="16036">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Legal Enactments(16036)</option>
+   <option value="16039">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Q&amp;A(16039)</option>
+   <option value="16041">MOF__International intergration/Financial integration/FTA/ASEAN (AFTA)/Search for tariff rates(16041)</option>
+   
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16078','16079','16080','16081','16082','16083','16084')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16078">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)(16078)</option>
+   <option value="16080">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Agreements/Protocols(16080)</option>
+   <option value="16085">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Contact points(16085)</option>
+   <option value="16244">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Expressed commitment to open financial services market(16244)</option>
+   <option value="16083">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/FTA Tariff Schedules of Partner Countries(16083)</option>
+   <option value="16082">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/FTA Tariff Schedules of Vietnam(16082)</option>
+   <option value="16079">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Introduction(16079)</option>
+   <option value="16081">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Legal Enactments(16081)</option>
+   <option value="16084">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Q&amp;A(16084)</option>
+   <option value="16086">MOF__International intergration/Financial integration/FTA/ASEAN - Australia - NewZealand (AANZFTA)/Search for tariff rates(16086)</option>
+
+ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16042','16043','16044','16045','16046','16047','16048')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+	  
+   <option value="16042">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)(16042)</option>
+   <option value="16044">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Agreements/Protocols(16044)</option>
+   <option value="16049">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Contact points(16049)</option>
+   <option value="16057">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Expressed commitment to open financial services market(16057)</option>
+   <option value="16047">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/FTA Tariff Schedules of Partner Countries(16047)</option>
+   <option value="16046">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/FTA Tariff Schedules of Vietnam(16046)</option>
+   <option value="16043">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Introduction(16043)</option>
+   <option value="16045">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Legal Enactments(16045)</option>
+   <option value="16048">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Q&amp;A(16048)</option>
+   <option value="16050">MOF__International intergration/Financial integration/FTA/ASEAN - China (ACFTA)/Search for tariff rates(16050)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16069','16070','16071','16072','16072','16073','16074','16075')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16069">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)(16069)</option>
+   <option value="16071">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Agreements/Protocols(16071)</option>
+   <option value="16076">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Contact points(16076)</option>
+   <option value="16258">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Expressed commitment to open financial services market(16258)</option>
+   <option value="16074">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/FTA Tariff Schedules of Partner Countries(16074)</option>
+   <option value="16073">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/FTA Tariff Schedules of Vietnam(16073)</option>
+   <option value="16070">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Introduction(16070)</option>
+   <option value="16072">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Legal Enactments(16072)</option>
+   <option value="16075">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Q&amp;A(16075)</option>
+   <option value="16077">MOF__International intergration/Financial integration/FTA/ASEAN - India (AIFTA)/Search for tariff rates(16077)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16051','160520','16053','16054','16055','16056')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   
+   <option value="16051">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)(16051)</option>
+   <option value="16053">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Agreements/Protocols(16053)</option>
+   <option value="16058">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Contact points(16058)</option>
+   <option value="16242">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Expressed commitment to open financial services market(16242)</option>
+   <option value="16056">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/FTA Tariff Schedules of Partner Countries(16056)</option>
+   <option value="16055">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/FTA Tariff Schedules of Vietnam(16055)</option>
+   <option value="16052">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Introduction(16052)</option>
+   <option value="16054">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Legal Enactments(16054)</option>
+   <option value="16059">MOF__International intergration/Financial integration/FTA/ASEAN - South Korea (AKFTA)/Search for tariff rates(16059)</option>
+ 
+ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16060','16061','16062','16063','16064','1606')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+ 
+   <option value="16060">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)(16060)</option>
+   <option value="16062">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Agreements/Protocols(16062)</option>
+   <option value="16067">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Contact points(16067)</option>
+   <option value="16243">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Expressed commitment to open financial services market(16243)</option>
+   <option value="16065">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/FTA Tariff Schedules of Partner Countries(16065)</option>
+   <option value="16064">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/FTA Tariff Schedules of Vietnam(16064)</option>
+   <option value="16061">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Introduction(16061)</option>
+   <option value="16063">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Legal Enactments(16063)</option>
+   <option value="16066">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Q&amp;A(16066)</option>
+   <option value="16068">MOF__International intergration/Financial integration/FTA/ASEAN-Japan (AJCEP)/Search for tariff rates(16068)</option>
+ 
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16123','16124','16125','16126')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16123">MOF__International intergration/Financial integration/FTA/RCEP(16123)</option>
+   <option value="16125">MOF__International intergration/Financial integration/FTA/RCEP/Contact points(16125)</option>
+   <option value="16124">MOF__International intergration/Financial integration/FTA/RCEP/Introduction(16124)</option>
+   <option value="16126">MOF__International intergration/Financial integration/FTA/RCEP/Negotiation(16126)</option>
+
+
+  
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16111','16112','16113','16114','16298','16299')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16111">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP(16111)</option>
+   <option value="16113">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP/Contact points(16113)</option>
+   <option value="16299">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP/FTA Tariff Schedules of Partner Countries(16299)</option>
+   <option value="16298">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP/FTA Tariff Schedules of Vietnam(16298)</option>
+   <option value="16112">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP/Introduction(16112)</option>
+   <option value="16114">MOF__International intergration/Financial integration/FTA/Trans - Pacific Partnership Agreement TPP/Negotiation(16114)</option>
+   
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16096','16097','16098','16099','16100','16101','16102')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16096">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)(16096)</option>
+   <option value="16098">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Agreements/Protocols(16098)</option>
+   <option value="16103">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Contact points(16103)</option>
+   <option value="16101">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/FTA Tariff Schedules of Partner Countries(16101)</option>
+   <option value="16100">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/FTA Tariff Schedules of Vietnam(16100)</option>
+   <option value="16097">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Introduction(16097)</option>
+   <option value="16099">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Legal Enactments(16099)</option>
+   <option value="16102">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Q&amp;A(16102)</option>
+   <option value="16104">MOF__International intergration/Financial integration/FTA/Viet Nam - Chi Le (VCFTA)/Search for tariff rates(16104)</option>
+ 
+ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16034','16079','16043','16070','16052','16061','16124','16112','16097','16120','16116','16109','16088','16106','16301')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+ 
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16119','16120','16121','16122')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16119">MOF__International intergration/Financial integration/FTA/Viet Nam - EFTA(16119)</option>
+   <option value="16121">MOF__International intergration/Financial integration/FTA/Viet Nam - EFTA/Contact points(16121)</option>
+   <option value="16120">MOF__International intergration/Financial integration/FTA/Viet Nam - EFTA/Introduction(16120)</option>
+   <option value="16122">MOF__International intergration/Financial integration/FTA/Viet Nam - EFTA/Negotiation(16122)</option>
+   
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16115','16116','16117','16118')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc  
+   <option value="16115">MOF__International intergration/Financial integration/FTA/Viet Nam - EU(16115)</option>
+   <option value="16117">MOF__International intergration/Financial integration/FTA/Viet Nam - EU/Contact points(16117)</option>
+   <option value="16116">MOF__International intergration/Financial integration/FTA/Viet Nam - EU/Introduction(16116)</option>
+   <option value="16118">MOF__International intergration/Financial integration/FTA/Viet Nam - EU/Negotiation(16118)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16108','16109','16110')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16108">MOF__International intergration/Financial integration/FTA/Viet Nam - Eurasian Economic Union (VCUFTA)(16108)</option>
+   <option value="16110">MOF__International intergration/Financial integration/FTA/Viet Nam - Eurasian Economic Union (VCUFTA)/Contact points(16110)</option>
+   <option value="16109">MOF__International intergration/Financial integration/FTA/Viet Nam - Eurasian Economic Union (VCUFTA)/Introduction(16109)</option>
+   
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16087','16088','16089','16090','16091','16092','16093')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16087">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan(16087)</option>
+   <option value="16089">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Agreements/Protocols(16089)</option>
+   <option value="16094">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Contact points(16094)</option>
+   <option value="16245">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Expressed commitment to open financial services market(16245)</option>
+   <option value="16092">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/FTA Tariff Schedules of Partner Countries(16092)</option>
+   <option value="16091">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/FTA Tariff Schedules of Vietnam(16091)</option>
+   <option value="16088">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Introduction(16088)</option>
+   <option value="16090">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Legal Enactments(16090)</option>
+   <option value="16093">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Q&amp;A(16093)</option>
+   <option value="16095">MOF__International intergration/Financial integration/FTA/Viet Nam - Japan/Search for tariff rates(16095)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16105','16106','16107','16305')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16105">MOF__International intergration/Financial integration/FTA/Viet Nam - South Korea (VKFTA)(16105)</option>
+   <option value="16305">MOF__International intergration/Financial integration/FTA/Viet Nam - South Korea (VKFTA)/Agreements_Protocols(16305)</option>
+   <option value="16107">MOF__International intergration/Financial integration/FTA/Viet Nam - South Korea (VKFTA)/Contact points(16107)</option>
+   <option value="16106">MOF__International intergration/Financial integration/FTA/Viet Nam - South Korea (VKFTA)/Introduction(16106)</option>
+   
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16300','16301','16302','16303','16304')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc  
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16300','16301','16302','16303','16304')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc  
+
+   <option value="16300">MOF__International intergration/Financial integration/FTA/Vietnam – EAEU(16300)</option>
+   <option value="16302">MOF__International intergration/Financial integration/FTA/Vietnam – EAEU/Agreements/Protocolsn(16302)</option>
+   <option value="16304">MOF__International intergration/Financial integration/FTA/Vietnam – EAEU/Contact points(16304)</option>
+   <option value="16303">MOF__International intergration/Financial integration/FTA/Vietnam – EAEU/FTA Tariff Schedules of Partner Countries(16303)</option>
+   <option value="16301">MOF__International intergration/Financial integration/FTA/Vietnam – EAEU/Introduction(16301)</option>
+
+
+
+   <option value="16142">MOF__International intergration/Financial integration/G20 Financial Cooperation(16142)</option>
+   <option value="16020">MOF__International intergration/Financial integration/General news(16020)</option>
+   
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16020') and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   
+   <option value="16021">MOF__International intergration/Financial integration/WTO(16021)</option>
+   <option value="16025">MOF__International intergration/Financial integration/WTO/Agreements/Protocols(16025)</option>
+   <option value="16030">MOF__International intergration/Financial integration/WTO/Contact points(16030)</option>
+   <option value="16028">MOF__International intergration/Financial integration/WTO/Expressed commitment to open financial services market(16028)</option>
+   <option value="16022">MOF__International intergration/Financial integration/WTO/Introduction(16022)</option>
+   <option value="16023">MOF__International intergration/Financial integration/WTO/Introduction/WTO documents(16023)</option>
+   <option value="16026">MOF__International intergration/Financial integration/WTO/Legal Enactments(16026)</option>
+   <option value="16029">MOF__International intergration/Financial integration/WTO/Q&amp;A(16029)</option>
+   <option value="16027">MOF__International intergration/Financial integration/WTO/Search for tariff rates(16027)</option>
+   <option value="16253">MOF__International intergration/Financial integration/WTO/Tariff Schedules(16253)</option>
+
+
+   
+   <option value="16286">MOF__International intergration/Public Finance Group partners(16286)</option>
+   <option value="16287">MOF__International intergration/Public Finance Group partners/Activities/events on Public Finance(16287)</option>
+   <option value="16288">MOF__International intergration/Public Finance Group partners/Activity Plan of PFPG(16288)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16149','16295','16296','16162','16163','16164','16165','16292','16293','16153','16158','16159','16160','16265','16266')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16289">MOF__International intergration/Public Finance Group partners/Documents on PFPG(16289)</option>
+   <option value="16149">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects(16149)</option>
+   <option value="16294">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Implementation situation of ODA projects(16294)</option>
+   <option value="16296">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Implementation situation of ODA projects/Consolidated reports of the Ministry of Finance(16296)</option>
+   <option value="16295">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Implementation situation of ODA projects/Implementation reports of projects/programs(16295)</option>
+   
+   <option value="16161">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Legal documents(16161)</option>
+   <option value="16162">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Legal documents/Gerenal regulation on ODA management(16162)</option>
+   <option value="16164">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Legal documents/Legal document on M&amp;E of ODA activities(16164)</option>
+   <option value="16163">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Legal documents/Legal documents on ODA financial management(16163)</option>
+   <option value="16165">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Legal documents/Other relating legal documents(16165)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16290','16292','16293')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16292')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+   <option value="16290">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/List of ODA program and project(16290)</option>
+   <option value="16292">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/List of ODA program and project/List of on - going projects(16292)</option>
+   <option value="16293">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/List of ODA program and project/Programs - Projects Ended (from 2000 to Date)(16293)</option>
+   
+   <option value="16153">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/News on projects’ activities(16153)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16157','16158','16159','16160')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   <option value="16157">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Products and publications of projects(16157)</option>
+   <option value="16160">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Products and publications of projects/Other publications of ODA projects/programs(16160)</option>
+   <option value="16158">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Products and publications of projects/Research reports(16158)</option>
+   <option value="16159">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Products and publications of projects/Study tours reports(16159)</option>
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16166','16265','16266')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc   
+   <option value="16166">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Relating forums(16166)</option>
+   <option value="16266">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Relating forums/Aid Effectiveness Forum(16266)</option>
+   <option value="16265">MOF__International intergration/Public Finance Group partners/ODA Programs and Projects/Relating forums/Partnership Group for PFM(16265)</option>
+   <option value="16167">MOF__Invest(16167)</option>
+   <option value="16170">MOF__Invest/Chế độ - Chính sách_EN(16170)</option>
+   <option value="16171">MOF__Invest/Dữ liệu và thống kê tài chính_EN(16171)</option>
+   <option value="16168">MOF__Invest/Giới thiệu về đầu tư_EN(16168)</option>
+   <option value="16169">MOF__Invest/Tin tức đầu tư_EN(16169)</option>
+   <option value="16011">MOF__Kế Toán Kiểm Toán_EN(16011)</option>
+   <option value="16016">MOF__Kế toán - Kiểm toán/CKDS kế toán viên hành nghề và doanh nghiệp kế toán_EN(16014)</option>
+   <option value="16014">MOF__Kế toán - Kiểm toán/CKDSkiểm toán viên hành nghề và doanh nghiệp kiểm toán_EN(16014)</option>
+   <option value="16015">MOF__Kế toán - Kiểm toán/Cơ chế, chính sách - kiểm toán(16015)</option>
+   <option value="16017">MOF__Kế toán - Kiểm toán/Cơ chế, chính sách - kế toán(16017)</option>
+   <option value="16012">MOF__Kế toán - Kiểm toán/Giới thiệu vụ Chế độ kế toán và kiểm toán_EN(16012)</option>
+   <option value="16013">MOF__Kế toán - Kiểm toán/Tin tức kế toán kiểm toán(16013)</option>
+   <option value="16283">MOF__List of consultant(16283)</option>
+   <option value="16284">MOF__List of consultant/International consultants(16284)</option>
+   <option value="16285">MOF__List of consultant/Local consultants(16285)</option>
+   <option value="16263">MOF__Local News(16263)</option>
+   <option value="16280">MOF__Meeting - Seminar(16280)</option>
+   <option value="16150">MOF__MofofProjects/Activities-Events on Public Financ(16150)</option>
+   <option value="16151">MOF__MofofProjects/Activity Plan Of PFPG(16151)</option>
+   <option value="16152">MOF__MofofProjects/Documents on PFPG(16152)</option>
+   <option value="16230">MOF__Monthly Exchange Rate(16230)</option>
+   <option value="16291">MOF__News - Events/Local News(16291)</option>
+   <option value="16260">MOF__News - Events/News(16260)</option>
+   <option value="16261">MOF__News - Events/Notices(16261)</option>
+   <option value="16262">MOF__News - Events/Press Release(16262)</option>
+   <option value="16154">MOF__News on projects’ activities/Consolidated reports of the Ministry of Finance(16154)</option>
+   <option value="16156">MOF__News on projects’ activities/Consolidated reports of the Ministry of Finance(16156)</option>
+   <option value="16155">MOF__News on projects’ activities/Implementation reports of projects/programs(16155)</option>
+   <option value="16256">MOF__Policy hightlights(16256)</option>
+   <option value="16220">MOF__Quản lý Tài chính doanh nghiệp/ Tin nổi bật TCDN_EN(16220)</option>
+   <option value="16219">MOF__Quản lý Tài chính doanh nghiệp/Cổ phần hóa đơn vị sự nghiệp_EN(16219)</option>
+   <option value="16212">MOF__Quản lý Tài chính doanh nghiệp/Giới thiệu về lĩnh vực TCDN_EN(16212)</option>
+   <option value="16213">MOF__Quản lý Tài chính doanh nghiệp/Hệ thống văn bản TCDN_EN(16213)</option>
+   <option value="16217">MOF__Quản lý Tài chính doanh nghiệp/Tài chính doanh nghiệp_EN(16217)</option>
+   <option value="16218">MOF__Quản lý Tài chính doanh nghiệp/Tái cơ cấu DNNN_EN(16218)</option>
+   <option value="16211">MOF__Quản lý Tài chính doanh nghiệp_EN(16211)</option>
+   <option value="16264">MOF__Relating forums(16264)</option>
+   <option value="16279">MOF__Report about 135 programe(16279)</option>
+   <option value="16274">MOF__Research - Discussion(16274)</option>
+   <option value="16001">MOF__State Budget(16001)</option>
+   <option value="16007">MOF__State Budget/ Số liệu quốc tế_EN(16007)</option>
+   <option value="16009">MOF__State Budget/Annual State Budget Report(16009)</option>
+   <option value="16004">MOF__State Budget/Domestic Statistics(16004)</option>
+   <option value="16006">MOF__State Budget/Domestic Statistics/Final accounts(16006)</option>
+   <option value="16005">MOF__State Budget/Domestic Statistics/Plan(16005)</option>
+   <option value="16008">MOF__State Budget/External Statistics(16008)</option>
+   <option value="16003">MOF__State Budget/Hệ thống văn bản_EN(16003)</option>
+   <option value="16010">MOF__State Budget/Index of State Budget(16010)</option>
+   <option value="16002">MOF__State Budget/Introduction(16002)</option>
+   <option value="16297">MOF__Statistics(16297)</option>
+   <option value="16232">MOF__Strategy and action plan(16232)</option>
+   <option value="16268">MOF__Suggestion about Draft Legal Document(16268)</option>
+   <option value="16196">MOF__Số liệu thống kê/ Số lượng đơn vị quan hệ với ngân sách_EN(16196)</option>
+   <option value="16195">MOF__Số liệu thống kê/Bản tin nợ công_EN(16195)</option>
+   <option value="16194">MOF__Số liệu thống kê/Hàng hóa xuất khẩu, nhập khẩu_EN(16194)</option>
+   <option value="16198">MOF__Số liệu thống kê/Số lượng đối tượng nộp thuế_EN(16198)</option>
+   <option value="16199">MOF__Số liệu thống kê/Tình hình hoạt động thị trường bảo hiểm_EN(16199)</option>
+   <option value="16197">MOF__Số liệu thống kê/Tình hình hoạt động thị trường chứng khoán_EN(16197)</option>
+   <option value="16193">MOF__Số liệu thống kê_EN(16193)</option>
+   <option value="16275">MOF__Tender information(16275)</option>
+   
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16276')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16277')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('16278')  and ora:p:xmNgonngu = 'en'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   
+   <option value="16276">MOF__Tender information/Invitation for BIDS(16276)</option>
+   <option value="16277">MOF__Tender information/Results(16277)</option>
+   <option value="16278">MOF__Tender information/Stipulation(16278)</option>
+   <option value="16190">MOF__Thi đua khen thưởng/Gương điển hình tiên tiến, người tốt - việc tốt_EN(16190)</option>
+   <option value="16192">MOF__Thi đua khen thưởng/Nghiên cứu trao đổi_EN(16192)</option>
+   <option value="16184">MOF__Thi đua khen thưởng/Phong trào thi đua_EN(16184)</option>
+   <option value="16188">MOF__Thi đua khen thưởng/Quyết định khen thưởng/Bộ Tài chính_EN(16188)</option>
+   <option value="16189">MOF__Thi đua khen thưởng/Quyết định khen thưởng/Cơ quan khác_EN(16189)</option>
+   <option value="16187">MOF__Thi đua khen thưởng/Quyết định khen thưởng/Cấp nhà nước_EN(16187)</option>
+   <option value="16186">MOF__Thi đua khen thưởng/Quyết định khen thưởng_EN(16186)</option>
+   <option value="16191">MOF__Thi đua khen thưởng/Sáng kiến-khinh nghiệm_EN(16191)</option>
+   <option value="16185">MOF__Thi đua khen thưởng/Tin hoạt động_EN(16185)</option>
+   <option value="16182">MOF__Thi đua khen thưởng/Văn bản hướng dẫn/Chỉ thị_EN(16182)</option>
+   <option value="16179">MOF__Thi đua khen thưởng/Văn bản hướng dẫn/Luật_EN(16179)</option>
+   <option value="16180">MOF__Thi đua khen thưởng/Văn bản hướng dẫn/Nghị định_EN(16180)</option>
+   <option value="16181">MOF__Thi đua khen thưởng/Văn bản hướng dẫn/Thông tư_EN(16181)</option>
+   <option value="16183">MOF__Thi đua khen thưởng/Văn bản hướng dẫn/Văn bản hướng dẫn khác_EN(16183)</option>
+   <option value="16178">MOF__Thi đua khen thưởng/Văn bản hướng dẫn_EN(16178)</option>
+   <option value="16177">MOF__Thi đua khen thưởng_EN(16177)</option>
+   <option value="16200">MOF__Thông báo - Chỉ đạo điều hành_EN(16200)</option>
+   <option value="16237">MOF__Thông tin điều hành giá/Giá Sữa_EN(16237)</option>
+   <option value="16236">MOF__Thông tin điều hành giá/Giá Xăng_EN(16236)</option>
+   <option value="16235">MOF__Thông tin điều hành giá_EN(16235)</option>
+   <option value="16226">MOF__Thông tin đấu thầu/Kế hoạch đấu thầu_EN(16226)</option>
+   <option value="16228">MOF__Thông tin đấu thầu/Kết quả lựa chọn_EN(16228)</option>
+   <option value="16229">MOF__Thông tin đấu thầu/Quy định_EN(16229)</option>
+   <option value="16227">MOF__Thông tin đấu thầu/Thông báo mời thầu_EN(16227)</option>
+   <option value="16225">MOF__Thông tin đấu thầu_EN(16225)</option>
+   <option value="16148">MOF__Thông tin đối ngoại/ Văn bản pháp quy về công tác đối ngoại_EN(16148)</option>
+   <option value="16146">MOF__Thông tin đối ngoại/Báo cáo công tác đối ngoại_EN(16146)</option>
+   <option value="16147">MOF__Thông tin đối ngoại/Báo cáo kết quả công tác nước ngoài_EN(16147)</option>
+   <option value="16145">MOF__Thông tin đối ngoại/Thông tin Hội thảo quốc tế_EN(16145)</option>
+   <option value="16144">MOF__Thông tin đối ngoại/Tin tức làm việc của Lãnh đạo Bộ với đối tác nước ngoài_EN(16144)</option>
+   <option value="16143">MOF__Thông tin đối ngoại_EN(16143)</option>
+   <option value="16267">MOF__sugesstion(16267)</option>
+   <option value="21902">Tin tức TC__Hoạt động lãnh đạo Bộ_EN(21902)</option>
+   <option value="21903">Tin tức TC__Hoạt động ngành Tài chính_EN(21903)</option>
+   <option value="21909">Tin tức TC__Nghiên cứu trao đổi_EN(21909)</option>
+   <option value="21906">Tin tức TC__Thông cáo báo chí_EN(21906)</option>
+   <option value="21901">Tin tức TC__Thời Sự_EN(21901)</option>
+   <option value="21910">Tin tức TC__Tin Nổi Bật_EN(21910)</option>
+   <option value="21907">Tin tức TC__Tin Tài chính địa phương_EN(21907)</option>
+   <option value="21904">Tin tức TC__Tin chính sách Tài chính_EN(21904)</option>
+   <option value="21905">Tin tức TC__Tin tức - Sự kiện_EN(21905)</option>
+   <option value="21908">Tin tức TC__Điểm tin tài chính_EN(21908)</option>
+   <option value="13107">VCL__Announcement(13107)</option>
+   <option value="1391">VCL__Function and tasks (1391)</option>
+   <option value="13105">VCL__International Cooperation(13105)</option>
+   <option value="1389">VCL__Introduction (1389)</option>
+   <option value="13106">VCL__New Publication(13106)</option>
+   <option value="1390">VCL__Organizational Structure (1390)</option>
+   <option value="13108">VCL__Outstanding news(13108)</option>
+   <option value="1397">VCL__Project (1397)</option>
+   <option value="13100">VCL__Project/Grassroots-level Research Projects (13100)</option>
+   <option value="1399">VCL__Project/Ministerial-level Research Projects (1399)</option>
+   <option value="1398">VCL__Project/State-level Research Projects (1398)</option>
+   <option value="13109">VCL__Publication(13109)</option>
+   <option value="13101">VCL__Research activities (13101)</option>
+   <option value="1396">VCL__Scientific Research Orientation (1396)</option>
+   <option value="1392">VCL__Strategies - Policies (1392)</option>
+   <option value="1395">VCL__Strategies - Policies/Finance Development Strategy and other related strategies(1395)</option>
+   <option value="1393">VCL__Strategies - Policies/Finance Strategy (1393)</option>
+   <option value="1394">VCL__Strategies - Policies/Implementation Plan (1394)</option>
+   <option value="13102">VCL__Workshops (13102)</option>
+   <option value="13104">VCL__Workshops/ International Workshops(13104)</option>
+   <option value="13103">VCL__Workshops/Domestic Workshops (13103)</option>
+   <option value="221033">VST__Accounting exchange rate(221033)</option>
+   <option value="221038">VST__Asset Auction(221038)</option>
+   <option value="221034">VST__Bidding information(221034)</option>
+   <option value="221035">VST__Bidding plan(221035)</option>
+   <option value="221023">VST__Financial and banking news(221023)</option>
+   <option value="221029">VST__Government bonds(221029)</option>
+   <option value="221004">VST__History of the State Treasury(221004)</option>
+   <option value="221013">VST__Internationnal intergration(221013)</option>
+   <option value="221022">VST__Local news(221022)</option>
+   <option value="221041">VST__Mechanisms and policies(221041)</option>
+   <option value="221042">VST__Members of the market(221042)</option>
+   <option value="221020">VST__News(221020)</option>
+   <option value="221031">VST__Notice of Issuance(221031)</option>
+   <option value="221024">VST__Notices(221024)</option>
+   <option value="221025">VST__Press release(221025)</option>
+   <option value="221014">VST__Research exchanges(221014)</option>
+   <option value="221037">VST__Results of selection(221037)</option>
+   <option value="221032">VST__Results released(221032)</option>
+   <option value="221015">VST__Scientific research(221015)</option>
+   <option value="221039">VST__State treasury business(221039)</option>
+   <option value="221021">VST__State treasury operations(221021)</option>
+   <option value="221012">VST__Strategic development of state treasury(221012)</option>
+   <option value="221036">VST__The bid invitation notice(221036)</option>
+   <option value="221030">VST__The plans to release and payments(221030)</option>
+   <option value="221017">VST__The treasury vocational culture(221017)</option>
+   <option value="221040">VST__good person and good work</option>
+   <option value="1630">eBTC__Bulletin public debt (1630 )</option>
+   <option value="1635" selected="">eBTC__Business invenstment ( 1635 )</option>
+   <option value="1633">eBTC__Corporate finance management ( 1633 )</option>
+   <option value="1639">eBTC__External statistics ( 1639 )</option>
+   <option value="1634">eBTC__Financial sector's modernization ( 1634 )</option>
+   <option value="1637">eBTC__Financial strategy ( 1637 )</option>
+   <option value="1631">eBTC__Insuarance managerment an supervisory  ( 1631 )</option>
+   <option value="1641">eBTC__Insuarance managerment and supervisory / List of foreign enterprises, branches and foreign representative offices ( 1641 )</option>
+   <option value="1640">eBTC__Insuarance managerment and supervisory / News ( 1640 )</option>
+   <option value="1642">eBTC__Insuarance managerment and supervisory. / Overview of insurance market by year (major market growth indices by year) ( 1642 )</option>
+   <option value="1632">eBTC__List of conditional investment an business lines ( 1632 )</option>
+   <option value="1638">eBTC__List off sectors an trades subject to conditional business investment ( 1638 )</option>
+   <option value="1636">eBTC__Research programs an scientific topics ( 1636 )</option>
+   <option value="710101">eTPCP_Out_standing_news(710101)</option>
+   <option value="710019">eTPCP__Corporate bons   (710019)</option>
+   <option value="710002">eTPCP__Functional tasks of the organizations related to the bond market ( 710002 )</option>
+   <option value="710005">eTPCP__Government bonds issued by auction method ( 710005)</option>
+   <option value="710007">eTPCP__Government bonds issued by auction method / Auciton Calendar ( 710007 )</option>
+   <option value="710006">eTPCP__Government bonds issued by auction method / Auction plan (710006)</option>
+   <option value="710009">eTPCP__Government bonds issued by auction method / Aution result ( 710009 )</option>
+   <option value="710008">eTPCP__Government bonds issued by auction method / Government bonds auction procedures ( 710008 )</option>
+   <option value="710012">eTPCP__Government guaranteed bonds issued by auction method  / Auction plan ( 710012)</option>
+   <option value="71010">eTPCP__Government guaranteed bonds issued by auction method ( 710010)</option>
+   <option value="710011">eTPCP__Government guaranteed bonds issued by auction method / Auciton Calendar ( 710011)</option>
+   <option value="710015">eTPCP__Government guaranteed bonds issued by auction method / Aution result ( 710015 )</option>
+   <option value="710014">eTPCP__Government guaranteed bonds issued by auction method / Government bonds auction procedures ( 710014</option>
+   <option value="710030">eTPCP__Information and analysis of Vietnam Bond Market(710030)</option>
+   <option value="710025">eTPCP__Information and analysis of the bond market (710025)</option>
+   <option value="710003">eTPCP__Legal framework on bond market ( 710003)</option>
+   <option value="710023">eTPCP__Market data / Historical data issuance of bonds (710023)</option>
+   <option value="710017">eTPCP__Municipal bonds / Issuance calendar (710017)</option>
+   <option value="710018">eTPCP__Municipal bonds / Issuance result (710018)</option>
+   <option value="710016">eTPCP__Municipal bonds / Proposed auction plan (710016)</option>
+   <option value="35101">eTPCP__Primary Dealer / List off Primany Dealers (35101)</option>
+   <option value="710021">eTPCP__Primary Dealer / List off Primany Dealers (710021)</option>
+   <option value="710022">eTPCP__Primary Dealer / Right and Obligations of Primarry Dealer (710022)</option>
+   <option value="710004">eTPCP__Primary market (710004)</option>
+   <option value="710020">eTPCP__Secondary market / Overview (710020)</option>
+   <option value="710031">eTPCP__VN Bond Market Overview(710031)</option>
+   <option value="710000">eTPCP__VietNam bond market overview  ( 710000 )</option>
+</select>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl-lienket-donvi-doc" layout="block">
+         <af:panelList id="pl1" listStyle="list-style:none; padding:0px; margin:0px;">
+            <af:iterator var="node" value="#{nodes}" id="i1" varStatus="vs">
+               <h:panelGroup styleClass="donvi-tructhuoc-cover" layout="block">
+                  <div class="header-cover">
+                     <af:goLink destination="#{node.propertyMap['xmLienketweb'].value}" id="pt_gl11">
+                        <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.propertyMap['dDocName'].value}&amp;dID=&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Native File&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i15"/>
+                     </af:goLink>
+                  </div>
+                  <div class="link-cover">
+                     <af:goLink text="#{node.propertyMap['dDocTitle'].value}" destination="#{node.propertyMap['xmLienketweb'].value}" id="pt_gl12"/>
+                  </div>
+               </h:panelGroup>
+            </af:iterator>
+         </af:panelList>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>
