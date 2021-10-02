@@ -1,0 +1,95 @@
+https://mof.gov.vn/hoidapcstc/home/iframeqa
+
+<iframe src="https://mof.gov.vn/hoidapcstc/home/iframeqa" width="330" height="191" frameborder="0" scrolling="no"></iframe>
+
+
+var iframe = document.getElementById("myFrame");
+var elmnt = iframe.contentWindow.document.getElementsByTagName("H1")[0];
+elmnt.style.display = "none";
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<title>Access an &lt;iframe&gt; document</title>
+	<body>
+		<h1>Access an &lt;iframe&gt; document</h1>
+		<button onclick="changeStuff()">change Stuff</button>
+		<hr>
+		<iframe id="myIframe" src="https://mof.gov.vn/hoidapcstc/home/iframeqa" width="330" height="191" frameborder="0" scrolling="no"></iframe>
+
+		<script type="text/javascript">
+			const myIframe = document.getElementById("myIframe");
+			//console.log(myIframe);
+
+			function changeStuff(){
+				const iframeWindow = myIframe.contentWindow;
+				const iframeDocument = myIframe.contentDocument;
+				const iframeHeading = iframeDocument.querySelector("h1");
+
+				console.log(iframeDocument);
+
+				iframeDocument.body.style.backgroundColor = "#ff0000";
+				iframeHeading.textContent = "This has been changed! ";
+
+			}
+			
+			 function docbao(){
+				var iframe = document.getElementById("vbee-audio-source");              
+				var voice = document.getElementById("voiceselect").value;
+				if (iframe.src!=""){
+				   iframe.src = iframe.src;
+				} else {
+				   var myDivObj = document.getElementById("content-voice").innerHTML ;
+				   let content = strip(myDivObj);
+				   var urlAudio ="";
+				   var url = "https://mof.gov.vn/hoidapcstc/home/iframeqa";
+				   var request = new XMLHttpRequest();
+				   var params = "content="+content+"&amp;voicetype="+voice;
+				   request.open('POST', url, true);
+				   request.onreadystatechange = function() {
+					  if (request.readyState==4) {
+							urlAudio = request.responseText;
+							document.getElementById("vbee-audio-source").src = urlAudio;
+					  }
+				   };
+				   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				   request.send(params);
+				}
+			 }
+		</script>
+	</body>
+</html>
+
+
+http://192.168.50.250:8888/webcenter/portal/TVBTC/pages_r/cd/du-thao-van-ban
+
+/portal/TVBTC/pages_r/cd/du-thao-van-ban/du-thao-da-lay-y-kien/dtvb-chi-tiet-gop-y-du-thao
+
+http://192.168.50.250:8888/webcenter/portal/TVBTC/pages_r/cd/du-thao-van-ban/du-thao-da-lay-y-kien/dtvb-chi-tiet-gop-y-du-thao?id=15835
+
+
+
+function docbao(){
+	var iframe = document.getElementById("vbee-audio-source");              
+	var voice = document.getElementById("voiceselect").value;
+	if (iframe.src!=""){
+	   iframe.src = iframe.src;
+	} else {
+	   var myDivObj = document.getElementById("content-voice").innerHTML ;
+	   let content = strip(myDivObj);
+	   var urlAudio ="";
+	   var url = "http://mof.tinhvan.com/api/getaudio";
+	   var request = new XMLHttpRequest();
+	   var params = "content="+content+"&amp;voicetype="+voice;
+	   request.open('POST', url, true);
+	   request.onreadystatechange = function() {
+		  if (request.readyState==4) {
+				urlAudio = request.responseText;
+				document.getElementById("vbee-audio-source").src = urlAudio;
+		  }
+	   };
+	   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	   request.send(params);
+	}
+ }
+		 

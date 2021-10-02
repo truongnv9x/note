@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+         <div class="box-container">
+            <div class="box-site-link">
+               <div class="select">
+                  <af:selectOneChoice unselectedLabel="Liên kết website" id="pt_soc1" simple="true" listStyle="height:auto;">
+                     <f:selectItems value="" id="pt_si1"/>
+                  </af:selectOneChoice>
+               </div>
+               <div class="ads">
+                  <af:panelList id="pl1" listStyle="list-style:none; padding-left:0;">
+                     <af:goLink destination="http://thoibaotaichinhvietnam.vn" id="pt_gl43">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/TTTC/taichinh.png" id="pt_i27"/>
+                     </af:goLink>
+                     <af:goLink destination="https://tapchitaichinh.vn" id="pt_gl44">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/TTTC/tctc_1448428402277.png" id="pt_i28"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.baohaiquan.vn" id="pt_gl45">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/TTTC/haiquan.png" id="pt_i29"/>
+                     </af:goLink>
+                     <af:goLink destination="http://tapchithue.com.vn" id="pt_gl46">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/TTTC/tapchithuenhanuoconline_1439349401695.jpg" id="pt_i30"/>
+                     </af:goLink>
+                     <af:goLink destination="http://www.taichinhdientu.vn" id="pt_gl47">
+                        <af:image source="http://mof.tinhvan.com/api/linux/images/TTTC/bANNER_1447402246162.png" id="pt_i31"/>
+                     </af:goLink>
+                  </af:panelList>
+               </div>
+            </div>
+         </div>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

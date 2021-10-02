@@ -1,0 +1,14 @@
+Không như cách truyền callback kiểu cũ, một promise có những đảm bảo như sau:
+
+Callback sẽ không bao giờ được gọi trước khi hoàn tất lượt chạy của một JavaScript event loop.
+Callback được thêm vào then() sau khi tiến trình bất đồng bộ đã hoàn thành vẫn được gọi, và theo nguyên tắc ở trên.
+Nhiều callback có thể được thêm vào bằng cách gọi then() nhiều lần. Mỗi callback sẽ được gọi lần lượt, theo thứ tự mà chúng được thêm vào.
+Một trong những đặc tính tuyệt vời của promise là chaining (gọi nối).
+
+rước năm 2015, sử dụng vartừ khóa là cách duy nhất để khai báo một biến JavaScript.
+
+Phiên bản 2015 của JavaScript (ES6) cho phép sử dụng const từ khóa để xác định một biến không thể được gán lại và lettừ khóa để xác định một biến có phạm vi hạn chế.
+
+Vì hơi phức tạp để mô tả sự khác biệt giữa các từ khóa này và bởi vì chúng không được hỗ trợ trong các trình duyệt cũ hơn, phần đầu tiên của hướng dẫn này thường sẽ sử dụng var.
+
+const res = await

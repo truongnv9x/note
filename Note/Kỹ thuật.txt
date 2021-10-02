@@ -1,0 +1,15 @@
+  <af:image styleClass="text_logo" source="https://www.mof.gov.vn/webcenter/image/idcplg?IdcService=GET_FILE&dID=158360&dDocName=MOFUCM151727&allowInterrupt=1" id="pt_i2"/>
+  
+  /webcenter/image/idcplg?IdcService=GET_FILE&amp;dID=#{node.propertyMap['dID'].value}&amp;dDocName=#{node.propertyMap['dDocName'].value}&amp;allowInterrupt=1
+/webcenter/image/idcplg?IdcService=GET_FILE&amp;dID=158360&amp;dDocName=MOFUCM151727&amp;allowInterrupt=1
+/webcenter/image/idcplg?IdcService=GET_FILE&amp;dID=158360&amp;dDocName=MOFUCM006417&amp;allowInterrupt=1
+
+root/Admin@123
+
+
+thitruongtraiphieu-ta.png
+
+ <af:image styleClass="text_logo" source="http://mof.tinhvan.com/api/linux/images/CQLG/cucquanlygia.png" id="pt_i2"/>
+ <af:image styleClass="text_logo" source="http://mof.tinhvan.com/api/linux/images/TTTP/thitruongtraiphieu-ta.png" id="pt_i2"/>
+ 
+ https://www.mof.gov.vn/webcenter/portal/ttbt

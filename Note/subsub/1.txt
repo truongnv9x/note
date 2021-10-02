@@ -1,0 +1,90 @@
+@extends('viewer.layout.index')
+@section('title')
+  <title>Đặt mua hàng</title>
+@endsection
+@section('content')
+    <div class="customer_login mt-45">
+        <div class="container">
+            <div class="row">
+               <!--login area start-->
+                <div class="col-lg-12 col-md-12">
+                    <div class="account_form login">
+                    <!-- <h2>{{Auth::user()->name}}</h2> -->
+                <form action="{{route('post-dmk')}}" method="post">
+                    </p>
+                        <p>   
+                        <label>Họ tên : <span> <h3>{{Auth::user()->name}}</h3> </span></label>
+                        <!-- <input type="text"> {{Auth::user()->name}} </input> -->
+                        </p>   
+                        <p>   
+                        <label>Số điện thoại : <span> <h3>{{Auth::user()->phone}}</h3> </span></label>
+                        <!-- <input type="password" name="newpassagain"> -->
+                        </p>  
+                </form>
+                <div style="margin-top: 15px">
+                <h2>Thông tin các đơn hàng</h2>
+                </div>
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr align="center">
+                        <th>STT</th>
+                        <!-- <th>Người mua</th> -->
+                        <!-- <th>Email</th> -->
+                        <th>Tổng tiền</th>
+                        <th>Ngày mua</th>
+                        <th>SDT</th>
+                        <th>Địa chỉ</th>
+                        <th>Trạng thái</th> 
+                        <!-- <th>Thao tác</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($ttcn->HoaDon as $hd)
+                    <tr class="odd gradeX" align="center">
+                        <td>{{$hd->id}}</td>
+                        <!-- <td>{{ $hd->ten }}</td> -->
+                        <!-- <td>
+                        {{ $hd->User->email }}
+                        </td> -->
+                        <td>{{ $hd->tongtien }}</td>
+                        <td>{{ date('d-m-Y', strtotime($hd->ngaymua)) }}</td>
+                        <td>{{ $hd->sdt }}</td>
+                        <td>{{ $hd->dia_chi }}</td>
+                    
+                        <td>
+                        @if($hd->trangthai ==0)
+                            <span style="color:yellow">Chờ lấy hàng</span>
+                        @elseif($hd->trangthai ==1)
+                            <span style="color:red">Đang giao</span>
+                        @elseif($hd->trangthai ==2)
+                            <span style="color:blue">Chờ thanh toán</span>
+                        @elseif($hd->trangthai ==3)
+                            <span style="color:green">Đã thanh toán</span>
+                        @endif
+                        </td>
+                        <!-- <td class="center">
+                            <button class="btn btn-info btn-action">
+                            @if($hd->trangthai ==0)
+                            <i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/xoa/{{ $hd->id }}">Giao hàng</a>
+                            @elseif($hd->trangthai ==1)
+                            <i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/xoa/{{ $hd->id }}">Chờ thanh toán</a>
+                            @elseif($hd->trangthai ==2)
+                            <i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/xoa/{{ $hd->id }}">Thanh toán</a>
+                            @elseif($hd->trangthai ==3)
+                            <i class="fa fa-trash-o  fa-fw"></i>Đã thanh toán
+                            @endif 
+                            </button>
+                        </td> -->
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+                     </div>    
+                </div>
+                <!--login area start-->
+
+                
+            </div>
+        </div>    
+    </div>
+@endsection
