@@ -1,0 +1,7 @@
+--- Add and edit portal  (Ctrl+Shift+E)
+xmlns:wcdc="http://xmlns.oracle.com/webcenter/spaces/taglib" 
+	<af:panelGroupLayout id="pt_tb" styleClass="WCEditableArea">
+		<wcdc:portalToolbar id="ptbdc"/>
+	</af:panelGroupLayout>
+	
+==============================================================================================

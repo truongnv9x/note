@@ -1,0 +1,28 @@
+startNode=/pages_r, includeStartNode=false
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+xem_tiep
+phan_trang
+/webcenter/portal/thtrtrph/pages_r/m/thtrngscp/ivitpcp/chitiet21007?dDocName=${param.dDocName}
+chitiettinfull
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1902')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+page://oracle/webcenter/page/scopedMD/s64d1edc9_eb1c_46bd_b8be_7d714ad2cfb3/Page2.jspx
+
+RSS
+33067,33177,33085,33076
+
+Chi tiết tin video
+/oracle/webcenter/page/scopedMD/s18422123_4c03_49e1_a7f4_784c55ff2079/Page96e45904_ce34_4ff0_b20c_859671acd3b5.jspx
+Chi tiết tin 
+/oracle/webcenter/page/scopedMD/s18422123_4c03_49e1_a7f4_784c55ff2079/Page8f17d35e_1291_48c5_89aa_9469723ab61f.jspx
+Chi tiết tin pdf
+/oracle/webcenter/page/scopedMD/s18422123_4c03_49e1_a7f4_784c55ff2079/Pagefe11c4da_6497_4161_9c6a_0439cceb8694.jspx
+Chi tiết tin right
+/oracle/webcenter/page/scopedMD/s18422123_4c03_49e1_a7f4_784c55ff2079/Pageefca8454_7ba8_485b_b2e0_608a239d06d0.jspx
+
+
+/webcenter/?dDocName=${param.dDocName}
+portal/thtrtrph/pages_r/m/thtrngscp/ivitpcp/chitiet21007
+
+0981008999

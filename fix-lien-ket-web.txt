@@ -1,0 +1,62 @@
+<div id="T:oc_1695854973region1:listTmplt:pbl1" style="overflow:hidden;">
+	<div class="box-container">
+		<div class="box-site-link">
+			<div class="select">
+				<select id="link" onchange="window.open(this.options[this.selectedIndex].value,'_blank');this.options[0].selected=true">
+					<option selected="selected" value="0">Liên kết website</option>
+					<optgroup label="Báo chí">
+						<option value="http://cand.com.vn">Báo Công An Nhân Dân</option>
+						<option value="http://baocongthuong.com.vn">Báo Công Thương</option>
+						<option value="http://enternews.vn">Báo Diễn đàn doanh nghiệp</option>
+						<option value="http://dantri.com.vn">Báo Dân Trí</option>
+						<option value="http://laodong.com.vn">Báo Lao Động</option>
+						<option value="http://www.daibieunhandan.vn">Báo Người đại biểu nhân dân</option>
+						<option value="http://www.nhandan.com.vn">Báo Nhân Dân</option>
+						<option value="http://baophapluat.vn">Báo Pháp luật Việt Nam</option>
+						<option value="http://www.sggp.org.vn">Báo Sài Gòn Giải Phóng</option>
+						<option value="vnanet.vn">Báo Thông tấn xã Việt Nam</option>
+						<option value="http://www.thesaigontimes.vn">Báo Thời báo Kinh tế Sài Gòn</option>
+						<option value="http://vneconomy.vn">Báo Thời báo Kinh tế Việt Nam</option>
+						<option value="tintuc.vn">Báo Tin Tức Online</option>
+						<option value="http://baochinhphu.vn/">Báo Điện tử Chính phủ</option>
+						<option value="http://daidoanket.vn">Báo Đại Đoàn Kết</option>
+						<option value="http://baodautu.vn">Báo Đầu tư</option>
+						<option value="hanoimoi.com.vn">Hà Nội mới</option>
+						<option value="http://thoibaonganhang.vn">Thời báo Ngân hàng</option>
+					</optgroup>
+				</select>
+			</div>
+		<div class="ads">
+			<div id="T:oc_1695854973region1:listTmplt:pl1" class="x3q">
+				<ul style="list-style:none; padding-left:0;">
+					<li value="1">
+						<a id="T:oc_1695854973region1:listTmplt:i1:0:pt_gl11" href="http://thoibaotaichinhvietnam.vn/">
+							<img id="T:oc_1695854973region1:listTmplt:i1:0:pt_i8" class="xjd" src="/oracle/webcenter/siteresources/scopedMD/shared/TTTC/images/logo_tbtc.jpg">
+						</a>
+					</li>
+					<li value="2">
+						<a id="T:oc_1695854973region1:listTmplt:i1:1:pt_gl11" href="http://www.tapchitaichinh.vn">
+							<img id="T:oc_1695854973region1:listTmplt:i1:1:pt_i8" class="xjd" src="/webcenter/ShowProperty?nodeId=%2FUCM56%2FBTC002405%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1">
+						</a>
+					</li>
+					<li value="3">
+						<a id="T:oc_1695854973region1:listTmplt:i1:2:pt_gl11" href="http://www.baohaiquan.vn">
+							<img id="T:oc_1695854973region1:listTmplt:i1:2:pt_i8" class="xjd" src="/webcenter/ShowProperty?nodeId=%2FUCM56%2FBTC002403%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1">
+						</a>
+					</li>
+					<li value="4">
+						<a id="T:oc_1695854973region1:listTmplt:i1:3:pt_gl11" href="http://tapchithue.com.vn">
+							<img id="T:oc_1695854973region1:listTmplt:i1:3:pt_i8" class="xjd" src="/webcenter/ShowProperty?nodeId=%2FUCM56%2FBTC270465%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1">
+						</a>
+					</li>
+					<li value="5">
+						<a id="T:oc_1695854973region1:listTmplt:i1:4:pt_gl11" href="http://www.taichinhdientu.vn/">
+							<img id="T:oc_1695854973region1:listTmplt:i1:4:pt_i8" class="xjd" src="/webcenter/ShowProperty?nodeId=%2FUCM56%2FBTC270627%2F%2FidcPrimaryFile&amp;revision=latestreleased&amp;rid=1">
+						</a>
+					</li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
