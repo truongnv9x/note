@@ -1,0 +1,88 @@
+<label class="col-md-2 col-control-label">
+  Mã hàng
+  <span style="color:red">(*)</span>
+</label>
+<div class="col-md-4">
+  <q-input
+	ref="maHang"
+	v-model="modelHang.maHang"
+	type="text"
+	maxlength="200"
+	dense
+	outlined
+	:rules="[ val => val && val.length > 0 || 'Mã hàng không được bỏ trống' ]"
+  />
+</div>
+
+
+checkExitByMaSheetLienThong() {
+      var self = this;
+      let maSheetLT = self.model.maSheetLT;
+
+      if (maSheetLT == undefined || maSheetLT == null || maSheetLT == "") {
+        self.$refs.maSheetLT.validate();
+        self.exitsMa = true;
+        self.hideLoading();
+        return;
+      } else {
+        let Parram = {
+          maSheetLT: maSheetLT,
+          bmSheetId: 0,
+          bmBaoCaoId: this.$route.params.id
+        };
+        apiService.get(
+          process.env.VUE_APP_ROOT_API + "sheet/checkexitsmasheetlienthong",
+          Parram,
+          function(res) {
+            if (res) {
+              self.exitsMa = false;
+              self.messageCheckMaLienThong = "Mã sheet liên thông đã tồn tại";
+              self.$refs.maSheetLT.validate();
+              self.hideLoading();
+            } else {
+              self.exitsMa = true;
+              self.$refs.maSheetLT.validate();
+              self.hideLoading();
+            }
+          }
+        );
+      }
+    },
+	
+checkExitByMaCotLienThong() {
+      var self = this;
+      self.showLoading();
+      let maCotLT = self.modelCot.maCotLT;
+      // let id = self.modelHang.id;
+
+      if (maCotLT == undefined || maCotLT == null || maCotLT == "") {
+        self.exitsMa = true;
+        self.$refs.maCotLT.validate();
+        self.hideLoading();
+        return;
+      } else {
+        let Parram = {
+          maCotLT: maCotLT,
+          id: this.modelCot.id,
+          sheetId: this.sheetId
+        };
+        // debugger;
+        apiService.get(
+          process.env.VUE_APP_ROOT_API + "cotsheet/checkexitsmacotlienthong",
+          Parram,
+          function(res) {
+            // debugger;
+            if (res) {
+              self.exitsMa = false;
+              self.messageCheckMaLienThong = "Mã cột liên thông đã tồn tại";
+              self.$refs.maCotLT.validate();
+              self.hideLoading();
+            } else {
+              self.exitsMa = true;
+              self.$refs.maCotLT.validate();
+              self.hideLoading();
+            }
+          }
+        );
+      }
+    },

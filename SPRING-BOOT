@@ -1,0 +1,18 @@
+##### PROJECT EXAMPLE
+http://hqh.com.vn/
+
+
+##### LOGING
+%d : thời gian ghi message, có thể chấp nhận tất các các định dạng SimperDateFormat cho phép
+%thread : tên thread ghi message
+$-5level : level ghi log (các mức level có thể là trace, debug, info, warn, error)
+%logger{36} : tên package class nơi log được ghi ra. Số 36 có ý nghĩa là lược ngắn tên package class trong trường hợp tên quá dài.
+%M : tên của method nơi log được ghi ra
+%msg: message chính
+%n : ngắt dòng
+%magenta() : đặt màu của message đầu ra trong dấu (), có thể chọn các màu khác
+highlight() : đặt màu của message đầu ra trong dấu (), tùy thuộc vào level log (ví dụ ERROR là màu đỏ)
+
+#### JPA 
+	Mapping when use native query
+		https://www.baeldung.com/jpa-queries-custom-result-with-aggregation-functions

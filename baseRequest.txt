@@ -1,0 +1,49 @@
+const axios = require('axios');
+const apiUrl = 'http://localhost/api/';
+
+export default {
+	getHeaders(){
+		let token = window.localStorage.getItem('token');
+		if(token == null){
+			return {};
+		}
+		return {Authoriztion: 'Bear' + token}
+	}
+	get(url){
+		return axios.get(
+		apiUrl + url,{
+			headers: this.getHeaders() }
+		)
+	}
+	post(url,data){
+		return axios.post(
+		apiUrl + url,
+		data{
+			headers: this.getHeaders() }
+		)
+	}
+
+}
+
+use : {{ tongTien | dauChamPhanTach}}
+filters:{
+	dauChamPhanTach: function(soTien){
+		return soTien.toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&,');
+	}
+
+}
+
+axios.request(config)
+axios.get(url[, config])
+axios.delete(url[, config])
+axios.head(url[, config])
+axios.options(url[, config])
+axios.post(url[, data[, config]])
+axios.put(url[, data[, config]])
+axios.patch(url[, data[, config]])
+
+console.log(response.data);
+console.log(response.status);
+console.log(response.statusText);
+console.log(response.headers);
+console.log(response.config);

@@ -1,0 +1,19 @@
+<label class="col-md-2 col-control-label">
+  Vốn điều lệ
+</label>
+<div class="col-md-4">
+  <q-input
+	ref="vonDieuLe"
+	v-model.number="Model.vonDieuLe"
+	@blur="Model.vonDieuLe == null ? true:  Model.vonDieuLe = Model.vonDieuLe.trim()"
+	dense
+	outlined
+	@input="(val) => { Model.vonDieuLe = formatPrice(val); }"
+	maxlength="15"
+	min="0"
+	lazy-rules  
+	:rules="[ 
+	  val=>val && val.length <=15 || val=='' ||  'Không được nhập quá 12 ký tự'
+	  ]"          
+  />
+</div>

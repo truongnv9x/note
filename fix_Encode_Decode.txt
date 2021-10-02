@@ -1,0 +1,39 @@
+List
+
+var conditionOne = 0;
+if (self.pagination.rowsPerPage > res.lstQtNguoiDung.length) {
+conditionOne = res.lstQtNguoiDung.length;
+} else {
+conditionOne = self.pagination.rowsPerPage;
+}
+for (let i = 0; i < conditionOne; i++) {
+//demo encode
+self.nguoiDungs[i].id = self.encodeString(
+  self.nguoiDungs[i].id,
+  "nguoidung"
+);
+}
+
+Edit
+
+save
+//demo encode
+self.model.id = self.decodeString(self.model.id, "nguoidung");
+//demo encode
+
+getById
+
+//demo encode
+var id = self.$route.params.id;
+id = self.decodeString(id, "codongctckmqh");
+//demo encode
+
+
+self.ChiTieu.id = self.decodeString(self.$route.params.id, "chitieu");
+
+var id = self.$route.params.id;
+id = self.decodeString(id, "chitieu");
+
+WriteLogInDataBaseGlobal.WriteLogDB(dtoLog);
+
+Mưa(Tắc đường) + nhà xa (15km)

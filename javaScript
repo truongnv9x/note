@@ -1,0 +1,4 @@
+$('#f_TuNgay').addClass("error");
+$('#f_TuNgay').removeClass('error');
+$("#tiepNhan").attr("disabled", true);
+$('#f_TuKhoa').removeAttr("disabled");

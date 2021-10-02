@@ -1,0 +1,103 @@
+@RequestMapping(value = "/ctckvpdaidiennuocngoai/export", method = RequestMethod.GET)
+	public ResponseEntity<ByteArrayResource> ExportExcel(
+			@Valid @RequestParam(value = "strfilter", required = false) String strfilter,
+			@RequestParam(value = "sTenCongTyMe", required = false) String sTenCongTyMe,
+			@RequestParam(value = "sTenVPDaiDien", required = false) String sTenVPDaiDien,
+			@RequestParam(value = "sDiaChiVPDaiDien", required = false) String sDiaChiVPDaiDien,
+			@RequestParam(value = "sSoVanBan", required = false) String sSoVanBan,
+			@RequestParam(value = "trangThai", required = false) String trangThai) throws ApiRequestException {
+
+		HoSoVPDaiDienNuocNgoaiBDTO lstHsVpddnn = new HoSoVPDaiDienNuocNgoaiBDTO();
+
+		Workbook workbook = new XSSFWorkbook();
+
+		Sheet sheet = workbook.createSheet("sheet1");
+
+		CellStyle style = CellConfig.createStyleForTitleTBCN(sheet, workbook);
+
+		lstHsVpddnn = ctckVPDaiDienNuocNgoaiService.list(strfilter, sTenCongTyMe, sTenVPDaiDien, sDiaChiVPDaiDien,
+				sSoVanBan, trangThai);
+
+		Integer rownum = 0;
+		Cell cell;
+		Row row;
+
+		row = sheet.createRow(rownum);
+
+		cell = row.createCell(0, CellType.STRING);
+		cell.setCellValue("Tên công ty mẹ");
+		cell.setCellStyle(style);
+
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue("Tên văn phòng đại diện");
+		cell.setCellStyle(style);
+
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue("Địa chỉ văn phòng đại diện");
+		cell.setCellStyle(style);
+
+		cell = row.createCell(3, CellType.STRING);
+		cell.setCellValue("Số văn bản");
+		cell.setCellStyle(style);
+
+		cell = row.createCell(4, CellType.STRING);
+		cell.setCellValue("Trạng thái");
+		cell.setCellStyle(style);
+
+		// Data
+		if (lstHsVpddnn != null) {
+			for (HoSoVPDaiDienNuocNgoaiDTO dto : lstHsVpddnn.getListVPDaiDienNN()) {
+				rownum++;
+				row = sheet.createRow(rownum);
+				cell = row.createCell(0, CellType.STRING);
+				cell.setCellValue(dto.getTenCongTyMe());
+				CellConfig.BorderTable(cell, sheet);
+
+				cell = row.createCell(1, CellType.STRING);
+				cell.setCellValue(dto.getTenVanPhongDaiDien());
+				CellConfig.BorderTable(cell, sheet);
+
+				cell = row.createCell(2, CellType.STRING);
+				cell.setCellValue(dto.getDiaChiVanPhong());
+				CellConfig.BorderTable(cell, sheet);
+
+				cell = row.createCell(3, CellType.STRING);
+				cell.setCellValue(dto.getSoVanBan());
+				CellConfig.BorderTable(cell, sheet);
+
+				cell = row.createCell(4, CellType.STRING);
+				cell.setCellValue(dto.getTrangThai());
+				CellConfig.BorderTable(cell, sheet);
+			}
+
+		}
+		CellConfig.autoSizeColumns(workbook);
+
+		String fileName = "Ho_so_van_phong_dai_dien.xls";
+
+		try {
+			FileOutputStream out = null;
+			if (workbook instanceof HSSFWorkbook) {
+				out = new FileOutputStream(fileName);
+			} else if (workbook instanceof XSSFWorkbook) {
+				out = new FileOutputStream("Ho_so_van_phong_dai_dien_nuoc_ngoai.xlsx");
+			}
+			ByteArrayOutputStream bos = new ByteArrayOutputStream();
+			workbook.write(bos);
+
+			byte[] bytes = bos.toByteArray();
+			ByteArrayResource resource = new ByteArrayResource(bytes);
+
+			out.close();
+			workbook.close();
+			return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION).contentLength(bytes.length) //
+					.body(resource);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}

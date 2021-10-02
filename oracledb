@@ -1,0 +1,136 @@
+
+##### Start SQL PLUS
+username:	sqlplus / as sysdba
+password:	admin
+[or]
+username:	/ as sysdba
+[or]
+username:	sys as sysdba
+password:	admin
+
+### Test connect
+connect user_name/password
+[ex] connect BIDV_ADMIN/padmin
+
+
+#### UBCK +boot+oracle
+Username/Password: SCMS/SCMS
+Hostname: 192.168.50.166
+Port: 1521 + SID: db12c
+
+UBCK_LOCAL	SCMS@//localhost:1521/orcl
+
+
+### LOCAL DATABASE
+
+============== CREATE USER UBCK_LOCAL
+CREATE USER UBCK_LOCAL IDENTIFIED BY SCMS;
+GRANT CONNECT TO SCMS;
+GRANT CONNECT, RESOURCE, DBA TO UBCK_LOCAL;
+GRANT CREATE SESSION GRANT ANY PRIVILEGE TO UBCK_LOCAL;
+
+-- USER 1
+
+	CREATE USER SCMS IDENTIFIED BY SCMS;
+	GRANT CONNECT TO SCMS;
+	GRANT CONNECT, RESOURCE, DBA TO SCMS;
+	GRANT CREATE SESSION GRANT ANY PRIVILEGE TO SCMS;
+
+
+============== CREATE USER BIDV
+CREATE USER BIDV_ADMIN IDENTIFIED BY padmin;
+GRANT CONNECT TO BIDV_ADMIN;
+GRANT CONNECT, RESOURCE, DBA TO BIDV_ADMIN;
+GRANT CREATE SESSION GRANT ANY PRIVILEGE TO BIDV_ADMIN;
+
+============== CREATE USER GOISPDV
+
+CREATE USER GOISPDV IDENTIFIED BY padmin;
+GRANT CONNECT TO GOISPDV;
+GRANT CONNECT, RESOURCE, DBA TO GOISPDV;
+GRANT CREATE SESSION GRANT ANY PRIVILEGE TO GOISPDV;
+
+
+-- chuyển từ định dạng utf8 sang tiếng việt và ngược lại
+SELECT ASCIISTR('hoặc hủy duyệt') FROM DUAL;
+select unistr('\0110\00e3 t\1ed3n t\1ea1i \0110\0103ng k\00fd b\1ea3o hi\1ec3m cho Th\1ebb') FROM DUAL;
+
+
+
+
+
+### SERVER dangkytindung
+
+connect name:	DA_BIDV
+username:		DA_BIDV
+pass:			DA_BIDV
+hostname:		192.168.50.123
+port:			1521
+servicename:	tvsdb
+
+
+jdbc:oracle:thin:@10.53.253.29:1521/newbsms11 
+jdbc:oracle:thin:@192.168.50.123:1521/tvsdb
+
+user_name/password:	dknhdtnew/dknhdtnew
+
+
+###============ SERVER bao lanh
+
+connect name:	BIDV_XNBL
+username:		BIDV_XNBL
+pass:			BIDV_XNBL
+hostname:		192.168.50.123
+port:			1521
+servicename:	tvsdb
+
+
+
+########## bảo lãnh 
+mình gửi thông tin database nhé 
+#u/p:qllchs/qllchs
+db12cp2 =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 10.53.253.59)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = db12cp2)
+    )
+  )
+  jdbc:oracle:thin:@10.53.253.59:1521/db12cp2
+  update  file : applicationContext.xml ==>   <jee:jndi-lookup id="dataSource" jndi-name="bidvfw_ptpm"/>
+  
+######### Thu phí
+
+#TPGOISPDV/TPGOISPDV
+TPGOISPDV =
+(DESCRIPTION= 
+    (ADDRESS= 
+        (PROTOCOL=TCP) 
+        (HOST=10.53.252.97) 
+        (PORT=1521)
+    ) 
+    (CONNECT_DATA= 
+        (SERVER=dedicated) 
+        (SERVICE_NAME =IBMB12CPDB3)
+    )
+)
+ jdbc:oracle:thin:@10.53.252.97:1521/IBMB12CPDB3
+ 
+ 
+#### scms 
+user scms/Scms2020
+	oracle base: C:\app\scms
+	software laction: C:\app\scms\product\12.1.0\dbhome_1
+	
+	Global database name: scms/scms
+	pluggable database name: tvscms
+
+
+
+
+
+
+
+

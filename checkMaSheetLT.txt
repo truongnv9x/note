@@ -1,0 +1,80 @@
+checkExitByMaLienThong() {
+  var self = this;
+  let maSheetLT = self.model.maSheetLT;
+
+  if (maSheetLT == undefined || maSheetLT == null || maSheetLT == "") {
+	self.exitsMa = true;
+	self.$refs.maSheetLT.validate();
+	self.hideLoading();
+	return;
+  } else {
+	let Parram = {
+	  maSheetLT: maSheetLT,
+	  bmSheetId: 0,
+	  bmBaoCaoId: this.$route.params.id
+	};
+	apiService.get(
+	  process.env.VUE_APP_ROOT_API + "sheet/checkexitsmasheetlienthong",
+	  Parram,
+	  function(res) {
+		if (res) {
+		  self.exitsMa = false;
+		  self.messageCheckMaLienThong = "Mã sheet liên thông đã tồn tại";
+		  self.$refs.maSheetLT.validate();
+		  self.hideLoading();
+		} else {
+		  self.exitsMa = true;
+		  self.$refs.maSheetLT.validate();
+		  self.hideLoading();
+		}
+	  }
+	);
+  }
+},
+
+//-------------------------------------------------------------------------------
+<label class="col-md-2 col-control-label">Mã sheet liên thông</label>
+<div class="col-md-4">
+  <q-input
+	ref="maSheetLT"
+	v-model="model.maSheetLT"
+	type="text"
+	maxlength="200"
+	@blur="checkExitByMaSheetLienThong()"
+	dense
+	outlined
+	:rules="[
+   val => exitsMa || messageCheckMaLienThong ]"
+  />
+</div>
+
+//-------------------------------------------------------------------------------
+maSheetLT: "",
+
+messageCheckMaLienThong: "",
+exitsMa: true,
+
+//-----------------------
+onValidate() {
+  this.$refs.maSheet.validate();
+  this.$refs.maSheetLT.validate();
+  this.$refs.khoGiay.validate();
+  this.$refs.tieuDeChinh.validate();
+  this.$refs.tenbaocao.validate();
+  if (
+	this.$refs.maSheet.hasError ||
+	this.$refs.maSheetLT.hasError ||
+	this.$refs.khoGiay.hasError ||
+	this.$refs.tieuDeChinh.hasError ||
+	this.$refs.tenbaocao.hasError
+  ) {
+	this.formHasError = true;
+  } else {
+	this.validateMaSheet(this.model.maSheet);
+  }
+},
+//-------------------------------------
+
+saveSubmit() {
+var self = this;
+self.model.maSheetLT = self.model.maSheetLT.trim();

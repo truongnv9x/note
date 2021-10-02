@@ -1,0 +1,95 @@
+<div class="form-group row col-12" style="margin-top:20px">
+                  <label class="col-md-2 col-control-label">
+                    File đính kèm
+                    <span style="color:red">(*)</span>
+                  </label>
+
+                  <div class="col-md-10">
+                    <q-btn
+                      size="12px"
+                      label="Test button"
+                      style="display:none"
+                      id="testButton"
+                      @click="checkKySo()"
+                    />
+                    <q-uploader
+                      ref="uploader"
+                      :url="uploadURL"
+                      v-model="tmpPathUpload"
+                      :headers="Authorization"
+                      @removed="fileRemoved"
+                      auto-upload
+                      :factory="getSignedUrlTEMP"
+                      label="Đăng tải tệp đính kèm"
+                      accept=".doc, .docx, .pdf, .xls, .xlsx"
+                      multiple
+                    >
+                      <template v-slot:list="scope">
+                        <q-list separator>
+                          <q-item v-for="file in scope.files" :key="file.name">
+                            <q-item-section>
+                              <q-item-label class="full-width ellipsis">{{ file.name }}</q-item-label>
+                              <template
+                                v-if="file.__status=='failed' || (file.statusCks != undefined && file.statusCks != null && !file.statusCks)"
+                              >
+                                <q-item-label
+                                  caption
+                                  v-show="file.__status=='failed' || (file.statusCks != undefined && file.statusCks != null && !file.statusCks)"
+                                >
+                                  Trạng thái:
+                                  <span style="color:red">Thất bại</span>
+                                </q-item-label>
+                                <q-item-label
+                                  caption
+                                  v-show="file.statusCks == null || (file.statusCks != undefined && file.statusCks != null && !file.statusCks)"
+                                >{{ file.__sizeLabel }} / 0.00%</q-item-label>
+                              </template>
+                              <template v-else>
+                                <q-item-label caption>
+                                  Trạng thái:
+                                  <span style="color:green">Thành công</span>
+                                </q-item-label>
+                                <q-item-label
+                                  caption
+                                >{{ file.__sizeLabel }} / {{ file.__progressLabel }}</q-item-label>
+                              </template>
+                            </q-item-section>
+
+                            <q-item-section v-if="file.__img" thumbnail class="gt-xs">
+                              <img :src="file.__img.src" />
+                            </q-item-section>
+
+                            <q-item-section top side>
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="delete"
+                                @click="scope.removeFile(file)"
+                              />
+                            </q-item-section>
+                            <q-item-section
+                              top
+                              side
+                              v-show="file.name.toLowerCase().includes('.pdf')"
+                            >
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="check_circle"
+                                title="Ký số"
+                                id="kySoButton"
+                                @click="signFile(tmpPathUpload, file.name)"
+                              />
+                            </q-item-section>
+                          </q-item>
+                        </q-list>
+                      </template>
+                    </q-uploader>
+                  </div>
+                </div>

@@ -1,0 +1,37 @@
+apiService.get(
+      process.env.VUE_APP_ROOT_API + "ctckthongtin/getall",
+      requestCtck,
+      function (res) {
+        debugger;
+        self.optionCtckThongTins = [];
+        if (res != null && res.lstCtckThongTin.length > 0) {
+          var itemCtckThongTin = {
+            label: "-- Chọn --",
+            value: "",
+            id: "",
+          };
+          var itemCtckThongTinChecked = {
+            label: "-- Chọn --",
+            value: "",
+            id: "",
+          };
+          self.optionCtckThongTins.push(itemCtckThongTin);
+          for (let index = 0; index < res.lstCtckThongTin.length; index++) {
+            itemCtckThongTin = {
+              label: res.lstCtckThongTin[index].label,
+              value: res.lstCtckThongTin[index].ctckThongTinId,
+              id: res.lstCtckThongTin[index].id,
+            };
+            if (index == 0) {
+              itemCtckThongTinChecked = itemCtckThongTin;
+              self.getCtckThongTinId = itemCtckThongTin;
+            }
+            self.optionCtckThongTins.push(itemCtckThongTin);
+          }
+          if (itemCtckThongTinChecked.value != "") {
+            self.fillDataCongTy(itemCtckThongTinChecked);
+          }
+        }
+      },
+      function () {}
+    );

@@ -1,0 +1,22 @@
+formatTyLe
+
+{{formatTyLe(itemCD.tyLeNamGiu)}}
+
+formatTyLe(value) {
+    return value.toFixed(2);
+},
+
+
+
+qlrrChiTieuId.tenChiTieu
+qlrrChiTieuId.maChiTieu
+qlrrChiTieuId.loaiHinh	
+
+
+
+
+
+ formatPrice(value) {
+  var numeral = require("numeral");
+  return numeral(value).format("0,0");
+},

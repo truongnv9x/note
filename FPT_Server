@@ -1,0 +1,8 @@
+####################FPT Server
+Host localhost
+port 14147
+user admin
+pass admin
+
+user	FTPUser
+pass	admin

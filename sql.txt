@@ -1,0 +1,10 @@
+SELECT 
+        t1.ID, 
+        HO_TEN, 
+        SO_CMND, 
+        t1.chuc_vu_id, 
+        CASE WHEN t1.chuc_vu_id IS NOT NULL THEN (SELECT LISTAGG(TEN_CHUC_VU, ', ') 
+            WITHIN GROUP(ORDER BY TEN_CHUC_VU) ten_chuc_vu FROM DM_CHUC_VU t WHERE ID IN 
+            (SELECT regexp_substr(t1.CHUC_VU_ID,'[^,]+', 1, level) AS list FROM dual CONNECT BY regexp_substr(t1.CHUC_VU_ID, '[^,]+', 1, level) IS NOT NULL)) END AS TEN_CHUC_VU_JOIN,
+        (SELECT LISTAGG(SO_CHUNG_CHI_HNCK, ', ') WITHIN GROUP (ORDER BY SO_CHUNG_CHI_HNCK) FROM CTCK_NGUOI_HANH_NGHE_CK WHERE CTCK_NHAN_SU_ID = t1.ID) SO_CCHN_JOIN,
+ FROM CTCK_NHAN_SU_CAO_CAP t1
