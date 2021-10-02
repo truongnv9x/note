@@ -1,0 +1,1646 @@
+<template>
+  <div>
+    <div class="page-bar">
+      <div class="q-pa-md q-gutter-sm">
+        <q-breadcrumbs>
+          <q-breadcrumbs-el label="Trang chủ" icon="home" to="/" />
+          <q-breadcrumbs-el label="Thiết lập công thức" />
+          <!-- <q-breadcrumbs-el label="Thêm mới" /> -->
+        </q-breadcrumbs>
+      </div>
+    </div>
+    <div class="q-pa-md">
+      <div class="portlet box blue">
+        <div class="portlet-title">
+          <div class="caption">
+            <i class="fa fa-plus" aria-hidden="true"></i> Thiết lập công thức
+          </div>
+        </div>
+        <div class="portlet-body form">
+          <q-form class="login-form layout-padding">
+            <div class="form-body">
+              <div>
+                <div class="row col-12">
+                  <div class="q-pa-md q-gutter-sm">
+                    <q-btn
+                      @click="clickCong()"
+                      size="md"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label="+"
+                    />
+                    <q-btn
+                      @click="clickTru()"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label="-"
+                    />
+                    <q-btn
+                      @click="clickNhan()"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label="x"
+                    />
+                    <q-btn
+                      @click="clickChia()"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label="/"
+                    />
+                    <q-btn
+                      @click="clickNgacTrai()"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label="("
+                    />
+                    <q-btn
+                      @click="clickNgacPhai()"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                      label=")"
+                    />
+                    <q-btn
+                      @click="backspace()"
+                      icon="backspace"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                    />
+
+                    <q-btn
+                      @click="deleteAll()"
+                      icon="clear"
+                      style="width:90px;"
+                      color="white"
+                      text-color="black"
+                    />
+                  </div>
+                </div>
+
+                <div class="row col-12">
+                  <div style="overflow-x:auto;max-width: 100%;">
+                    <table
+                      class="q-table tableControler q-table_n-sticky"
+                      style="border:1px solid rgba(0,0,0,0.1) !important"
+                    >
+                      <thead>
+                        <tr class style="text-align: left;">
+                          <th align="left">Báo cáo</th>
+                          <th align="right">Sheet báo cáo</th>
+                          <th align="center">Hàng</th>
+                          <th align="center">Cột</th>
+                          <th align="center">Ô dữ liệu</th>
+                          <th align="center">Thao tác</th>
+                          <!-- <th align="center">Action</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <q-select
+                              :options-sanitize="true"
+                              filter
+                              use-input
+                              v-model="BaoCao.bmBaoCaoId"
+                              dense
+                              outlined
+                              input-debounce="0"
+                              :options="optionBmBaoCao"
+                              :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn báo cao.']"
+                              @input="(newval)=> {
+                                     
+                                    optionBmSheet = getBmSheetDropDown(newval.value);
+                                  }"
+                            >
+                              <template v-slot:no-option>
+                                <q-item>
+                                  <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                                </q-item>
+                              </template>
+                            </q-select>
+                          </td>
+
+                          <td>
+                            <q-select
+                              :options-sanitize="true"
+                              filter
+                              use-input
+                              v-model="BaoCao.bmSheetId"
+                              dense
+                              outlined
+                              input-debounce="0"
+                              :options="optionBmSheet"
+                              :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet báo cáo.']"
+                              @input="(newval)=> {
+                                    optionBmSheetHang = getBmSheetHangDropDown(newval.value);
+                                    optionBmSheetCot = getBmSheetCotDropDown(newval.value);
+                                  }"
+                            >
+                              <template v-slot:no-option>
+                                <q-item>
+                                  <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                                </q-item>
+                              </template>
+                            </q-select>
+                          </td>
+
+                          <td>
+                            <q-select
+                              :options-sanitize="true"
+                              filter
+                              use-input
+                              v-model="BaoCao.bmSheetHangId"
+                              dense
+                              outlined
+                              input-debounce="0"
+                              :options="optionBmSheetHang"
+                              :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet hàng.']"
+                            >
+                              <template v-slot:no-option>
+                                <q-item>
+                                  <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                                </q-item>
+                              </template>
+                            </q-select>
+                          </td>
+
+                          <td>
+                            <q-select
+                              :options-sanitize="true"
+                              filter
+                              use-input
+                              v-model="BaoCao.bmSheetCotId"
+                              dense
+                              outlined
+                              input-debounce="0"
+                              :options="optionBmSheetCot"
+                              :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet cột.']"
+                              @input="(newval)=> {
+                                  
+                                    optionSheetChiTieu = getSheetChiTieuDropDown(
+                                      BaoCao.bmSheetId.value,
+                                      BaoCao.bmSheetHangId.value,
+                                      newval.value);
+                                  }"
+                            >
+                              <template v-slot:no-option>
+                                <q-item>
+                                  <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                                </q-item>
+                              </template>
+                            </q-select>
+                          </td>
+
+                          <td>
+                            <q-select
+                              :options-sanitize="true"
+                              filter
+                              use-input
+                              v-model="BaoCao.bmSheetChiTieuId"
+                              dense
+                              outlined
+                              input-debounce="0"
+                              :options="optionSheetChiTieu"
+                              :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn chỉ tiêu, hoặc chỉ tiêu không có công thức']"
+                            >
+                              <template v-slot:no-option>
+                                <q-item>
+                                  <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                                </q-item>
+                              </template>
+                            </q-select>
+                          </td>
+
+                          <td>
+                            <div class="row col-12">
+                              <div class="col-md-4">
+                                <q-btn
+                                  color="primary"
+                                  style="margin-top:-50%;"
+                                  title="Đưa vào công thức"
+                                  icon="add"
+                                  @click="getGiaTriChiTieu()"
+                                />
+                              </div>
+                              <div class="col-md-3"></div>
+                              <div class="col-md-4">
+                                <q-btn
+                                  color="red"
+                                  style="margin-top:-50%;"
+                                  title="Chọn lại"
+                                  icon="cached"
+                                  @click="resetFormChiTieu()"
+                                />
+                              </div>
+                              <div class="col-md-1"></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- He SO -begin -->
+              <div class="mb-20"></div>
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">Hệ số</label>
+                <div class="col-md-3">
+                  <q-input
+                    filter
+                    use-input
+                    dense
+                    outlined
+                    style="text-align:center;"
+                    v-model="HeSo"
+                    type="number"
+                  />
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                  <q-btn
+                    color="primary"
+                    title="Nhập Hệ Số"
+                    icon="add"
+                    style="margin-left:-25%;"
+                    label="Nhập hệ số"
+                    @click="getHeSo()"
+                  />
+                </div>
+              </div>
+
+              <hr />
+
+              <!-- Thiet lap cong thuc dung ham SUM -begin -->
+              <div class="mb-20"></div>
+              <div class="form-group row col-12">
+                <!-- CheckBox dùng hàm -->
+                <label class="col-md-2 col-control-label">Dùng hàm</label>
+                <div class="col-md-3">
+                  <q-checkbox v-model="dungHam" style="margin-left:-10px!important" />
+                </div>
+              </div>
+              <div class="mb-20"></div>
+
+              <!-- Dùng hàm -->
+              <div v-show="dungHam">
+                <hr />
+
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-sm-2 col-control-label">Chọn hàm</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.hamTinhToan"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionHamTinhToan"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn hàm.']"
+                      @input="(newval)=> {
+                                    this.checkSuDungHam(newval.value);
+                                  }"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+
+                  <div class="col-md-1 col-sm-1" v-show="HamCIF.isUseHamCif"></div>
+                  <div class="col-md-2 col-sm-2" v-show="HamCIF.isUseHamCif">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="HamCIF.dieuKienHamCif"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="HamCIF.dieuKienHamCifOptions"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+
+                  <div class="col-md-1 col-sm-1" v-show="HamCIF.isUseHamCif"></div>
+                  <div class="col-md-2 col-sm-2" v-show="HamCIF.isUseHamCif">
+                    <q-input
+                      filter
+                      use-input
+                      dense
+                      outlined
+                      style="text-align:center;"
+                      v-model="HamCIF.giaTriHamCif"
+                      type="number"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row col-12">
+                  <!-- Báo cáo -->
+                  <label class="col-md-2 col-sm-2 col-control-label">Báo cáo</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.baoCaoId"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionBmBaoCao"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn báo cao.']"
+                      @input="(newval)=> {
+                                    optionBmSheet = getBmSheetDropDown(newval.value);
+                                  }"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+
+                  <!-- Sheet báo cáo -->
+                  <label class="col-md-2 col-sm-2 col-control-label">Sheet báo cáo</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.sheedId"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionBmSheet"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet báo cáo.']"
+                      @input="(newval)=> {
+                                    optionBmSheetHang = getBmSheetHangDropDown(newval.value);
+                                    optionBmSheetCot = getBmSheetCotDropDown(newval.value);
+                                  }"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+
+                  <!-- Cột  -->
+                  <label class="col-md-2 col-sm-2 col-control-label">Cột</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.cotId"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionBmSheetCot"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet cột.']"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+                  <!-- Từ hàng -->
+                  <label class="col-md-2 col-sm-2 col-control-label">Từ hàng</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.tuHangId"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionBmSheetHang"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn sheet hàng.']"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+                </div>
+                <div class="form-group row col-12"></div>
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-sm-2 col-control-label">Đến hàng</label>
+                  <div class="col-md-4 col-sm-4">
+                    <q-select
+                      :options-sanitize="true"
+                      filter
+                      use-input
+                      v-model="CongThucSum.denHangId"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="optionBmSheetHang"
+                      @input="(newVal) => { 
+                          this.CongThucSum.denHangId = newVal;  }"
+                      :rules="[val => this.CongThucSum.denHangId == undefined  && val == ''? true:this.validateChonDen(val,CongThucSum.tuHangId.value) || 'Vui lòng chọn hàng đến hợp lệ']"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+
+                  <div class="col-md-2 col-sm-2"></div>
+
+                  <div class="col-md-4 col-sm-4">
+                    <q-btn
+                      v-show="CongThucSum.baoCaoId.value!=null&&CongThucSum.sheedId.value!=null
+                      &&CongThucSum.cotId.value!=null&&CongThucSum.tuHangId.value!=null&&
+                      CongThucSum.denHangId.value!=null"
+                      @click="generateCongThucDungHam()"
+                      class="col-md-2"
+                      color="primary"
+                      label="Lấy công thức hàm"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row col-12"></div>
+
+              <!-- Thiet lap cong thuc text -begin -->
+              <div class="mb-20"></div>
+              <hr />
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-sm-2 col-control-label">Công thức</label>
+                <div class="col-md-10 col-sm-10">
+                  <q-input
+                    ref="congThucValidate"
+                    v-model="CongThuc"
+                    type="text"
+                    maxlength="200"
+                    dense
+                    disable
+                    outlined
+                    lazy-rules
+                    :rules="[
+                    val => val && val.length > 0 || 'Công thức không được bỏ trống']"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-20"></div>
+              <div class="form-actions right">
+                <q-btn
+                  size="12px"
+                  type="button"
+                  color="primary"
+                  label="Xác nhận"
+                  icon="save"
+                  style="text-decoration:none;margin-right:5px"
+                  title="Thêm mới"
+                  @click="layCongThucGenerate()"
+                />
+
+                <q-btn
+                  size="12px"
+                  label="Thoát"
+                  style="text-decoration:none"
+                  title="Trở về"
+                  @click="backPageView()"
+                />
+              </div>
+
+              <!-- </div> -->
+            </div>
+          </q-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import baseCommon from "../../baseCommon";
+import apiService from "../../services/apiService";
+//import axios from "axios";
+
+const hamConnst = [
+  {
+    label: "-- Chọn hàm tính toán --",
+    value: null
+  },
+  {
+    label: "SUM",
+    value: "SUM"
+  },
+  {
+    label: "AVG",
+    value: "AVG"
+  },
+  {
+    label: "CIF",
+    value: "CIF"
+  },
+  {
+    label: "SUMALL",
+    value: "SUMALL"
+  },
+  {
+    label: "ACC",
+    value: "ACC"
+  }
+];
+
+const hamCIFConst = [
+  {
+    label: "=",
+    value: "=="
+  },
+  {
+    label: ">=",
+    value: ">="
+  },
+  {
+    label: "<=",
+    value: "<="
+  },
+  {
+    label: ">",
+    value: ">"
+  },
+  {
+    label: "<",
+    value: "<"
+  },
+  {
+    label: "Chứa",
+    value: "IN"
+  },
+  {
+    label: "Không trống",
+    value: "NOT IN"
+  }
+];
+
+export default {
+  name: "thietLapCongThuc",
+  mixins: [baseCommon, apiService],
+  components: {},
+  data() {
+    return {
+      // optionCapDoSelect: optionCapDo,
+      //optionTrangThaiSelect: optionTrangThai,
+      optionBaoCaoSelect: null,
+
+      //get from server
+      optionBmBaoCao: [],
+      optionBmSheet: [],
+      optionBmSheetHang: [],
+      optionBmSheetCot: [],
+      optionSheetChiTieu: [],
+      optionKyBaoCao: [],
+      optionBmBaoCaoSelected: null,
+      optionHamTinhToan: hamConnst,
+
+      // The new cong thuc
+      BaoCao: {
+        bmBaoCaoId: { value: null, label: "Chọn báo cáo" },
+        bmSheetId: { value: null, label: "Chọn sheet" },
+        bmSheetHangId: { value: null, label: "Chọn hàng" },
+        bmSheetCotId: { value: null, label: "Chọn cột" },
+        bmSheetChiTieuId: { value: null, label: "Chọn chỉ tiêu" }
+      },
+
+      // Thiết lập công thức
+      kieuSo: false,
+      dungHam: false,
+      CongThuc: "",
+      HeSo: "",
+      idSelected: "",
+
+      // Cong thuc SUM object
+      CongThucSum: {
+        hamTinhToan: { value: null, label: "--Chọn hàm tính toán--" },
+        baoCaoId: { value: null, label: "--Chọn báo cáo--" },
+        sheedId: { value: null, label: "--Chọn sheet--" },
+        cotId: { value: null, label: "--Chọn cột--" },
+        tuHangId: { value: null, label: "--Chọn hàng--" },
+        denHangId: { value: null, label: "--Chọn hàng--" }
+      },
+
+      listCongThucDetail: [],
+
+      congthucDetail: {
+        bmBaoCaoId: "", // baocaoID
+        bmSheetId: "", // sheet ID
+        bmSheetHangId: "", // sheet hang ID
+        bmSheetCotId: "", // sheet cot ID
+        bmSheetChiTieuId: "", // sheet o chi tieu ID
+        sudungHam: "", // co su dung ham: Yes/no
+        hamTinhToan: "", // SUM/COUNT IF, AVG ...
+        tuHangId: "", // gia tri ID tu Hang - sd for Ham
+        denHangId: "", // gia tri ID den Hang - sd for Ham
+        tenOChiTieu: "", // tieu de o chi tieu,
+        giatriOChitieu: "", // gia tri o chi tieu,
+        phepToan: "", // phep toan: +,-,*,/,(),
+        dieuKienCif: "",
+        giaTriCif: "",
+        stt: "", // stt cua phep toan,
+        heSo: "" // He so
+      },
+      CongThucValidate: "", // set gia tri to validate cong thuc.
+      HamCIF: {
+        isUseHamCif: false,
+        dieuKienHamCifOptions: hamCIFConst,
+        dieuKienHamCif: { value: "==", label: "=" },
+        giaTriHamCif: ""
+      },
+
+      // Get tham so man hinh su dung Thiet lap cong thuc.
+      requestParams: {
+        pageViewName: "",
+        congthuc: "", // get cong thuc for update
+        congthucText: "", // get cong thuc text for update
+        congthucTong: "", // get cong thuc tong (validate) for update
+
+        // param of chi tieu rui ro.
+        chitieuId: "",
+        itemId: "",
+
+        // Canh bao chi tieu model.
+        cbChiTieuModel: {},
+
+        // Canh bao chi tieu model.
+        thietLapOModel: {},
+
+        // Set view params to call back.
+        viewParams: {}
+      },
+
+      // tra ve to view (cong thuc & cong thuc text)
+      responseParams: {
+        pageViewNameResponse: "",
+        congthucResponse: "", // set result: Cong thuc
+        congthucTextResponse: "", // set result: Cong thuc object (json)
+        congthucTongResponse: "" // set result: Cong thuc validate
+      },
+
+      // From: Thiet lap O: update Bc Dau Vao / Dau Ra
+      kieuBaoCao: "",
+      bmBaoCaoId: ""
+    };
+  },
+  created() {
+    var self = this;
+
+    // [C - 20200511] - get request params from pageView.
+    self.getRequestParamsOfPageViewDetail();
+    self.getRequestParams();
+    self.getBmBaoCaoDropDown();
+    self.hideLoading();
+  },
+
+  methods: {
+    /*
+     * [C - 20200511] METHOD: Get params details of page view {model, id ...}
+     */
+    getRequestParamsOfPageViewDetail() {
+      var self = this;
+
+      switch (self.requestParams.pageViewName) {
+        // get params for canh bao chi tieu
+        /// params template: [Add/Update CT: {pageViewName: ten pageview, cbChiTieuModel: model cua form canh bao chi tieu }]
+        case "canhBaoChiTieuAddView": //get by add form
+        case "canhBaoChiTieuEditView": //get by edit form
+          if (self.$route.params.cbChiTieuModel != undefined) {
+            self.requestParams.cbChiTieuModel =
+              self.$route.params.cbChiTieuModel;
+          }
+          break;
+
+        // get params for thiet lap o
+        case "thietLapO":
+          // get model params
+          if (self.$route.params.modelCell != undefined) {
+            self.requestParams.thietLapOModel = self.$route.params.modelCell;
+          }
+
+          // get view init params
+          if (self.$route.params.viewParams != undefined) {
+            self.requestParams.viewParams = self.$route.params.viewParams;
+          }
+
+          // Get params check bc dau vao/dau ra.
+          self.kieuBaoCao = self.$route.params.kieuBaoCao;
+          self.bmBaoCaoId = self.$route.params.baoCaoId;
+
+          break;
+        // get params for thiet lap o
+        case "chiTieuList":
+          // get param for chi tieu rui ro
+          if (self.$route.params.chitieuId != undefined) {
+            self.requestParams.chitieuId = self.$route.params.chitieuId;
+          }
+          break;
+
+        default:
+          break;
+      }
+    },
+
+    /*
+     * [C - 20200511] METHOD: get request params
+     */
+    getRequestParams() {
+      var self = this;
+      //get common request params
+      self.requestParams.pageViewName = self.$route.params.pageViewName;
+      // [U - 20200511] check update cong thuc.
+      if (
+        self.$route.params.congthuc != undefined ||
+        self.$route.params.congthucText != undefined ||
+        self.$route.params.congthucTong != undefined
+      ) {
+        self.requestParams.congthuc = self.$route.params.congthuc;
+        self.requestParams.congthucText = self.$route.params.congthucText;
+        self.requestParams.congthucTong = self.$route.params.congthucTong;
+        // init gia tri cong thuc edit.
+        self.initCongThucEdit();
+      }
+
+      // [C - 20200511] Get params details of page view {model, id ...}
+      self.getRequestParamsOfPageViewDetail();
+
+      // get item id for update cong thuc.
+      self.requestParams.itemId = self.$route.params.itemId;
+    },
+
+    /*
+     * init edit cong thuc.
+     */
+    initCongThucEdit() {
+      var self = this;
+      if (
+        self.requestParams.congthuc === "" ||
+        self.requestParams.congthucText === ""
+      ) {
+        return;
+      }
+
+      // set gia tri cong thuc to update.
+      try {
+        self.CongThuc = self.requestParams.congthuc;
+        self.listCongThucDetail = JSON.parse(self.requestParams.congthucText);
+        self.CongThucValidate = self.requestParams.congthucTong;
+      } catch (err) {
+        self.displayError(
+          "Cập nhật: Công thức không đúng định dạng! " + err.message
+        );
+        self.CongThuc = "";
+        self.listCongThucDetail = "";
+      }
+    },
+
+    /*
+     * Validate cong thuc
+     */
+    validateCongThuc(congThuc) {
+      var self = this;
+      try {
+        eval(congThuc);
+        return 1;
+      } catch (er) {
+        self.displayError("Công thức không đúng định dạng! " + er.message);
+        return 0;
+      }
+    },
+
+    /*
+     *  Check su dung ham
+     */
+    checkSuDungHam(ham) {
+      var self = this;
+      if (ham === "CIF") {
+        self.HamCIF.isUseHamCif = true;
+      } else {
+        self.HamCIF.isUseHamCif = false;
+      }
+    },
+
+    getCongThucDetailOfPhepToan(pheptoan) {
+      var self = this;
+      self.listCongThucDetail.push({
+        bmBaoCaoId: "", // baocaoID
+        bmSheetId: "", // sheet ID
+        bmSheetHangId: "", // sheet hang ID
+        bmSheetCotId: "", // sheet cot ID
+        bmSheetChiTieuId: "", // sheet o chi tieu ID
+        sudungHam: "", // co su dung ham: Yes/no
+        hamTinhToan: "", // SUM/COUNT IF, AVG ...
+        tuHangId: "", // gia tri ID tu Hang - sd for Ham
+        denHangId: "", // gia tri ID den Hang - sd for Ham
+        tenOChiTieu: "", // tieu de o chi tieu,
+        giatriOChitieu: pheptoan, // gia tri o chi tieu,
+        phepToan: pheptoan, // phep toan: +,-,*,/,(),....
+        dieuKienCif: "", // dieu kien ham cif
+        giaTriCif: "", // gia tri ham cif
+        stt: "", // stt cua phep toan
+        heSo: "" // he so
+      });
+    },
+
+    /**
+     * reset Form Chi Tieu
+     **/
+    resetFormChiTieu() {
+      var self = this;
+      self.BaoCao.bmBaoCaoId = { value: null, label: "Chọn báo cáo" };
+      self.BaoCao.bmSheetId = { value: null, label: "Chọn sheet" };
+      self.BaoCao.bmSheetHangId = { value: null, label: "Chọn hàng" };
+      self.BaoCao.bmSheetCotId = { value: null, label: "Chọn cột" };
+      self.BaoCao.bmSheetChiTieuId = { value: null, label: "Chọn chỉ tiêu" };
+    },
+
+    /**
+     * [C - 20200511] Get He So
+     **/
+    getHeSo() {
+      var self = this;
+
+      if (self.HeSo != "") {
+        var heSoVal = "{" + self.HeSo + "}";
+        // add he so
+        self.CongThuc += heSoVal;
+        // add gia tri to validate form
+        self.CongThucValidate += "1";
+
+        self.listCongThucDetail.push({
+          bmBaoCaoId: "", // baocaoID
+          bmSheetId: "", // sheet ID
+          bmSheetHangId: "", // sheet hang ID
+          bmSheetCotId: "", // sheet cot ID
+          bmSheetChiTieuId: "", // sheet o chi tieu ID
+          sudungHam: "", // co su dung ham: Yes/no
+          hamTinhToan: "", // SUM/COUNT IF, AVG ...
+          tuHangId: "", // gia tri ID tu Hang - sd for Ham
+          denHangId: "", // gia tri ID den Hang - sd for Ham
+          tenOChiTieu: "", // tieu de o chi tieu,
+          giatriOChitieu: heSoVal, // gia tri o chi tieu,
+          phepToan: "", // phep toan: +,-,*,/,(),....
+          dieuKienCif: "", // dieu kien ham cif
+          giaTriCif: "", // gia tri ham cif
+          stt: "", // stt cua phep toan,
+          heSo: self.HeSo
+        });
+      }
+    },
+
+    /**
+     * Generate cong thuc dung ham.
+     **/
+    getGiaTriChiTieu() {
+      var self = this;
+
+      if (
+        self.BaoCao.bmSheetChiTieuId != null ||
+        self.BaoCao.bmSheetChiTieuId.value != null
+      ) {
+        var congthucChitieu = "[" + self.BaoCao.bmSheetChiTieuId.value + "]";
+
+        // // Check o chi tieu exist
+        // if (self.CongThuc.includes(congthucChitieu)) {
+        //   return;
+        // }
+
+        // add chi tieu to cong thuc
+        self.CongThuc += congthucChitieu;
+
+        // add gia tri to validate form
+        self.CongThucValidate += "1";
+
+        // add cong thuc detail
+        self.listCongThucDetail.push({
+          bmBaoCaoId: self.BaoCao.bmBaoCaoId.value, // baocaoID
+          bmSheetId: self.BaoCao.bmSheetId.value, // sheet ID
+          bmSheetHangId: self.BaoCao.bmSheetHangId.value, // sheet hang ID
+          bmSheetCotId: self.BaoCao.bmSheetCotId.value, // sheet cot ID
+          bmSheetChiTieuId: self.BaoCao.bmSheetChiTieuId.value, // sheet o chi tieu ID
+          sudungHam: "0", // co su dung ham: Yes/no
+          hamTinhToan: "", // SUM/COUNT IF, AVG ...
+          tuHangId: "", // gia tri ID tu Hang - sd for Ham
+          denHangId: "", // gia tri ID den Hang - sd for Ham
+          tenOChiTieu: self.BaoCao.bmSheetChiTieuId.label, // tieu de o chi tieu,
+          giatriOChitieu: congthucChitieu, // gia tri o chi tieu,
+          phepToan: "", // phep toan: +,-,*,/,(),....
+          dieuKienCif: "", // dieu kien ham cif
+          giaTriCif: "", // gia tri ham cif
+          stt: "", // stt cua phep toan
+          heSo: ""
+        });
+      }
+    },
+
+    /**
+     * Generate cong thuc dung ham.
+     **/
+    generateCongThucDungHam() {
+      var self = this;
+      var congThucSum = "";
+
+      if (self.CongThucSum.hamTinhToan.value == null) {
+        self.displayError("Bạn chưa chọn hàm tính toán.");
+        return;
+      }
+
+      if (
+        self.CongThucSum.tuHangId.value == null &&
+        self.CongThucSum.denHangId.value == null
+      ) {
+        self.displayError("Bạn chưa chọn giá trị hàng.");
+        return;
+      }
+      // Use ham CIF
+      if (self.HamCIF.isUseHamCif) {
+        /// Check gia tri khi dung ham CIF
+        if (self.HamCIF.giaTriHamCif === "") {
+          self.displayError("Bạn phải nhập giá trị khi dùng hàm CIF.");
+          return;
+        }
+
+        // create cong thuc for ham CIF
+        congThucSum =
+          "{" +
+          self.CongThucSum.hamTinhToan.value +
+          ",[" +
+          self.CongThucSum.tuHangId.value +
+          "]|[" +
+          self.CongThucSum.denHangId.value +
+          "],[" +
+          self.HamCIF.dieuKienHamCif.value +
+          "][" +
+          self.HamCIF.giaTriHamCif +
+          "]}";
+      }
+      // Use ham khac.
+      else {
+        // create cong thuc for ham khac.
+        congThucSum =
+          "{" +
+          self.CongThucSum.hamTinhToan.value +
+          ",[" +
+          self.CongThucSum.tuHangId.value +
+          "]|[" +
+          self.CongThucSum.denHangId.value +
+          "]}";
+      }
+
+      // Check o chi tieu exist
+      if (self.CongThuc.includes(congThucSum)) {
+        return;
+      }
+
+      // Set to Cong thuc.
+      self.CongThuc += congThucSum;
+      this.CongThucValidate += "1";
+
+      // add cong thuc dung ham
+      self.listCongThucDetail.push({
+        bmBaoCaoId: self.CongThucSum.baoCaoId.value, // baocaoID
+        bmSheetId: self.CongThucSum.sheedId.value, // sheet ID
+        bmSheetHangId: "", // sheet hang ID
+        bmSheetCotId: self.CongThucSum.cotId.value, // sheet cot ID
+        bmSheetChiTieuId: "", // sheet o chi tieu ID
+        sudungHam: "1", // co su dung ham: Yes/no
+        hamTinhToan: self.CongThucSum.hamTinhToan.value, // SUM/COUNT IF, AVG ...
+        tuHangId: self.CongThucSum.tuHangId.value, // gia tri ID tu Hang - sd for Ham
+        denHangId: self.CongThucSum.denHangId.value, // gia tri ID den Hang - sd for Ham
+        tenOChiTieu: congThucSum, // tieu de o chi tieu,
+        giatriOChitieu: congThucSum, // gia tri o chi tieu,
+        phepToan: "", // phep toan: +,-,*,/,(),....
+        dieuKienCif: self.HamCIF.dieuKienHamCif.value, // dieu kien ham cif
+        giaTriCif: self.HamCIF.giaTriHamCif, // gia tri ham cif
+        stt: "", // stt cua phep toan
+        heSo: ""
+      });
+    },
+
+    /**Cong thuc new **/
+    themHeSo() {
+      this.CongThuc += this.HeSo;
+      this.HeSo = "";
+    },
+    clickCong() {
+      this.CongThuc += "+";
+      this.CongThucValidate += "+";
+      this.getCongThucDetailOfPhepToan("+");
+    },
+    clickTru() {
+      this.CongThuc += "-";
+      this.CongThucValidate += "-";
+      this.getCongThucDetailOfPhepToan("-");
+    },
+    clickNhan() {
+      this.CongThuc += "*";
+      this.CongThucValidate += "*";
+      this.getCongThucDetailOfPhepToan("*");
+    },
+    clickChia() {
+      this.CongThuc += "/";
+      this.CongThucValidate += "/";
+      this.getCongThucDetailOfPhepToan("/");
+    },
+    clickNgacTrai() {
+      this.CongThuc += "(";
+      this.CongThucValidate += "(";
+      this.getCongThucDetailOfPhepToan("(");
+    },
+    clickNgacPhai() {
+      this.CongThuc += ")";
+      this.CongThucValidate += ")";
+      this.getCongThucDetailOfPhepToan(")");
+    },
+    backspace() {
+      //remove element of cong thuc validate
+      this.CongThucValidate = this.CongThucValidate.substr(
+        0,
+        this.CongThucValidate.length - 1
+      );
+
+      if (this.listCongThucDetail.length > 0) {
+        this.congthucDetail = this.listCongThucDetail[
+          this.listCongThucDetail.length - 1
+        ];
+
+        var giaTriOCt = this.congthucDetail.giatriOChitieu;
+        if (giaTriOCt != "" && this.CongThuc.includes(giaTriOCt)) {
+          this.CongThuc = this.CongThuc.replace(giaTriOCt, "");
+          this.listCongThucDetail.pop();
+        }
+      }
+    },
+    deleteAll() {
+      this.CongThuc = "";
+      this.CongThucValidate = "";
+      this.resetThieuLapCongThucList();
+    },
+    /**Cong thuc new - end **/
+
+    /***
+     *
+     * METHOD: Validate chon hang.
+     */
+    async validateChonDen(val, tuHangIds) {
+      //var self = this;
+      if (val == null) {
+        return true;
+      }
+      if (val != null && val != "" && tuHangIds != undefined) {
+        let Parram = {
+          tuHangId: tuHangIds,
+          denHangId: val.value
+        };
+
+        return new Promise(resolve => {
+          apiService.get(
+            process.env.VUE_APP_ROOT_API + "cellsheet/validatechonhang",
+            Parram,
+            function(res) {
+              // set selected value in dropdown CTCK
+
+              if (!res) {
+                alert(
+                  "Hàng được chọn phải số thứ tự lớn hơn lựa chọn từ hàng, vui lòng chọn lại"
+                );
+              }
+              resolve(res);
+              return res;
+            },
+            function() {}
+          );
+        });
+      }
+    },
+
+    /***
+     *
+     * METHOD: Lay cong thuc theo thiet lap dieu kien.
+     */
+    layCongThucGenerate() {
+      var self = this;
+
+      // Validation cong thuc, return 1 neu cong thuc dung dinh dang.
+      var isValid = self.validateCongThuc(self.CongThucValidate);
+      if (isValid == 0) {
+        return;
+      }
+
+      // set cong thuc data to response.
+      self.responseParams.pageViewNameResponse = "ThietLapCongThucView";
+      self.responseParams.congthucResponse = self.CongThuc; // set result : Cong thuc text
+      self.responseParams.congthucTextResponse = JSON.stringify(
+        self.listCongThucDetail
+      ); //// set result : Cong thuc object
+      self.responseParams.congthucTongResponse = self.CongThucValidate; // [C-20200511] set result : Cong thuc validate.
+      // [U - 20200511] Tra ve result cong thuc theo tung pageView
+      if (
+        self.requestParams.pageViewName == undefined ||
+        self.requestParams.pageViewName == ""
+      ) {
+        return;
+      }
+      /// check page view to response
+      switch (self.requestParams.pageViewName) {
+        //// tra ve cong thuc for Canh bao chi tieu
+        case "canhBaoChiTieuAddView":
+        case "canhBaoChiTieuEditView":
+          self.responseCongThucToCanhBaoChiTieuView();
+          break;
+
+        //// tra ve cong thuc for Bao cao dau vao/ra
+        case "thietLapO":
+          self.responseCongThucToThietLapOView();
+          break;
+
+        //// tra ve cong thuc for chi tieu rui ro.
+        case "chiTieuList":
+          self.responseCongThucToChiTieuListView();
+          break;
+
+        //// tra ve cong thuc for chi tieu rui ro.
+        case "chiTieuEdit":
+          self.responseCongThucToChiTieuEditView();
+          break;
+
+        //// tra ve cong thuc for chi tieu rui ro.
+        case "chiTieuAdd":
+          self.responseCongThucToChiTieuEditView();
+          break;
+
+        default:
+          break;
+      }
+    },
+
+    /***
+     * [C - 20200511] METHOD: response cong thuc to thiet lap O.
+     */
+    responseCongThucToChiTieuListView() {
+      var self = this;
+
+      // case response edit form cong thuc.
+      if (self.requestParams.chitieuId != undefined) {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            // [common]: set data cong thuc.
+            pageViewName: self.responseParams.pageViewNameResponse,
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            congthucTong: self.responseParams.congthucTongResponse,
+
+            // set for chitieuruiro
+            id: self.requestParams.chitieuId,
+            ChiTieu: self.$route.params.model
+          }
+        });
+      }
+    },
+    /***
+     * [C - 20200511] METHOD: response cong thuc to thiet lap O.
+     */ responseCongThucToChiTieuEditView() {
+      var self = this;
+
+      // case response edit form cong thuc.
+      if (self.requestParams.chitieuId != undefined) {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            // [common]: set data cong thuc.
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            congthucTong: self.responseParams.congthucTongResponse,
+
+            // set for chitieuruiro
+            id: self.requestParams.chitieuId,
+            ChiTieu: self.$route.params.model
+          }
+        });
+      }
+    },
+
+    /***
+     * [C - 20200511] METHOD: response cong thuc to thiet lap O.
+     */
+    responseCongThucToThietLapOView() {
+      var self = this;
+
+      //ToanLK - Set công thức cho model
+      var modelCell = self.$route.params.modelCell;
+      modelCell.congThuc = self.responseParams.congthucResponse;
+      modelCell.congThucText = self.responseParams.congthucTextResponse;
+      modelCell.congThucTong = self.responseParams.congthucTongResponse;
+      //End-ToanLK
+      // case response edit form cong thuc.
+      if (self.requestParams.itemId != undefined) {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            // [common]: set data cong thuc.
+            pageViewName: self.responseParams.pageViewNameResponse,
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            congthucTong: self.responseParams.congthucTongResponse,
+
+            // set for bao cao dau vao/ra
+            sheetId: self.requestParams.viewParams.sheetId,
+            bmBaoCaoId: self.requestParams.viewParams.bmBaoCaoId,
+            hangId: self.requestParams.viewParams.hangId,
+            cotId: self.requestParams.viewParams.cotId,
+            modelCell: modelCell,
+
+            // set for chitieuruiro
+            //chitieuId: self.requestParams.chitieuId,
+
+            // [common] set id for update form.
+            id: self.requestParams.itemId
+          }
+        });
+        // case response add new form cong thuc.
+      } else {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewNameResponse,
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            // set for bao cao dau vao/ra
+            sheetId: self.requestParams.viewParams.sheetId,
+            bmBaoCaoId: self.requestParams.viewParams.bmBaoCaoId,
+            hangId: self.requestParams.viewParams.hangId,
+            cotId: self.requestParams.viewParams.cotId,
+            // set for chitieuruiro
+            //chitieuId: self.requestParams.chitieuId,
+            modelCell: modelCell
+          }
+        });
+      }
+    },
+
+    /***
+     * [C - 20200511] METHOD: response cong thuc to canh bao chi tieu.
+     */
+    responseCongThucToCanhBaoChiTieuView() {
+      var self = this;
+      // case response edit form cong thuc.
+      if (
+        self.requestParams.itemId != undefined ||
+        self.requestParams.itemId != ""
+      ) {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            // [common]: set data cong thuc.
+            pageViewName: self.responseParams.pageViewNameResponse,
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            congThucTong: self.responseParams.congthucTongResponse,
+
+            // set model for update.
+            model: self.requestParams.cbChiTieuModel,
+            id: self.requestParams.itemId
+          }
+        });
+        // case response add new form cong thuc.
+      } else {
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewNameResponse,
+            congthuc: self.responseParams.congthucResponse,
+            congthucText: self.responseParams.congthucTextResponse,
+            congThucTong: self.responseParams.congthucTongResponse,
+            model: self.requestParams.cbChiTieuModel
+          }
+        });
+      }
+    },
+
+    /***
+     * METHOD: tro ve man hinh sd thiet lap
+     */
+    backPageView() {
+      var self = this;
+
+      if (self.$route.params.pageViewName == undefined) {
+        return;
+      }
+
+      /// check page view to back
+      switch (self.requestParams.pageViewName) {
+        //// tra ve cong thuc for Canh bao chi tieu
+        case "canhBaoChiTieuAddView":
+        case "canhBaoChiTieuEditView":
+          self.backToCanhBaoChiTieuView();
+          break;
+
+        //// tra ve cong thuc for Bao cao dau vao/ra
+        case "thietLapO":
+          self.backToThietLapOView();
+          break;
+
+        //// tra ve cong thuc for chi tieu rui ro.
+        case "chiTieuList":
+          self.backToChiTieuListView();
+          break;
+
+        case "chiTieuAdd":
+          self.responseCongThucToChiTieuEditView();
+          break;
+
+        case "chiTieuEdit":
+          self.responseCongThucToChiTieuEditView();
+          break;
+
+        default:
+          break;
+      }
+    },
+
+    /***
+     * METHOD: back to chi tieu list view
+     */
+    backToChiTieuListView() {
+      var self = this;
+
+      this.$router.push({
+        name: self.requestParams.pageViewName,
+        params: {
+          pageViewName: self.responseParams.pageViewName
+        }
+      });
+    },
+
+    /***
+     * METHOD: back to Thiet lap o view
+     */
+    backToThietLapOView() {
+      var self = this;
+      var modelCell = self.$route.params.modelCell;
+      if (self.requestParams.itemId != undefined) {
+        // set params to back page view
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewName,
+
+            // set for bao cao dau vao/ra
+            sheetId: self.requestParams.viewParams.sheetId,
+            bmBaoCaoId: self.requestParams.viewParams.bmBaoCaoId,
+            hangId: self.requestParams.viewParams.hangId,
+            cotId: self.requestParams.viewParams.cotId,
+
+            // set for back edit page
+            id: self.requestParams.itemId,
+
+            // set model for back
+            modelCell: modelCell
+          }
+        });
+      } else {
+        // set params to back page view
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewName,
+
+            // set for bao cao dau vao/ra
+            sheetId: self.requestParams.viewParams.sheetId,
+            bmBaoCaoId: self.requestParams.viewParams.bmBaoCaoId,
+            hangId: self.requestParams.viewParams.hangId,
+            cotId: self.requestParams.viewParams.cotId,
+
+            // set model for back
+            modelCell: modelCell
+          }
+        });
+      }
+    },
+
+    /***
+     * METHOD: back to Canh Bao chi tieu view
+     */
+    backToCanhBaoChiTieuView() {
+      var self = this;
+      if (self.requestParams.itemId != undefined) {
+        // set params to back page view: View UPDATE
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewName,
+            // set for back edit page
+            id: self.requestParams.itemId,
+            // set model for update.
+            model: self.requestParams.cbChiTieuModel
+          }
+        });
+      } else {
+        // set params to back page view: : View CREATE
+        this.$router.push({
+          name: self.requestParams.pageViewName,
+          params: {
+            pageViewName: self.responseParams.pageViewName,
+            // set model for update.
+            model: self.requestParams.cbChiTieuModel
+          }
+        });
+      }
+    },
+
+    backToChiTieuRuiRo() {},
+
+    /***
+     * METHOD: init thiet lap cong thuc list
+     */
+    async resetThieuLapCongThucList() {
+      var self = this;
+
+      // init cong thuc detail.
+      self.listCongThucDetail = [];
+    },
+
+    /***
+     * METHOD: init Thieu Lap Cong Thuc
+     */
+    async initThieuLapCongThuc() {
+      var self = this;
+      self.closeDialogThietLapCongThuc = true;
+    },
+
+    /***
+     * METHOD: Get Bm Bao Cao Dau vao/ra.
+     */
+    async getBmBaoCaoDropDown() {
+      var self = this;
+
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "bmbaocao/dropdown",
+        null,
+        function(res) {
+          self.optionBmBaoCao = res;
+          // Neu bao cao la dau vao -> hien thi select bao cao do.
+          if (self.kieuBaoCao == 0) {
+            var baoCao = self.optionBmBaoCao.find(
+              f => f.value == self.bmBaoCaoId
+            );
+            if (baoCao != undefined) {
+              self.optionBmBaoCao = [];
+              self.optionBmBaoCao.push(baoCao);
+            }
+          }
+        },
+        function() {}
+      );
+    },
+
+    /***
+     * METHOD: Get Bm Bao Cao for Canh Bao Chi tieu
+     */
+    async getBmBaoCaoCanhBaoDropDown() {
+      var self = this;
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "canhbaochitieu/lsbaocaoselect",
+        null,
+        function(res) {
+          //
+          self.optionBmBaoCao = res;
+          //
+        },
+        function() {}
+      );
+    },
+
+    /***
+     * METHOD: Get Bm Sheet
+     */
+    async getBmSheetDropDown(bieumauId) {
+      //
+      var self = this;
+      if (bieumauId.value != undefined && bieumauId.value != "") {
+        bieumauId = bieumauId.value;
+      }
+      let parr = {
+        bieumauId: bieumauId
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "canhbaochitieu/lssheetselect",
+        parr,
+        function(res) {
+          //
+          if (res != null && res.length > 0) {
+            //
+            self.optionBmSheet = res;
+            self.optionBmSheet.unshift({ value: "", label: "Chọn sheet" });
+            return self.optionBmSheet;
+          }
+        }
+      );
+    },
+
+    /***
+     * METHOD: Get Bm Sheet Hang
+     */
+    async getBmSheetHangDropDown(sheedId) {
+      var self = this;
+      if (sheedId.value != undefined && sheedId.value != "") {
+        sheedId = sheedId.value;
+      }
+      let parr = {
+        sheetId: sheedId
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "hangsheet/dshangcongthuc",
+        parr,
+        function(res) {
+          if (res != null && res.length > 0) {
+            self.optionBmSheetHang = res;
+            self.optionBmSheetHang.unshift({ value: "", label: "Chọn hàng" });
+            return self.optionBmSheetHang;
+          }
+        }
+      );
+    },
+
+    /***
+     * METHOD: Get Bm Sheet Cot
+     */
+    async getBmSheetCotDropDown(sheedId) {
+      var self = this;
+      if (sheedId.value != undefined && sheedId.value != "") {
+        sheedId = sheedId.value;
+      }
+      let parr = {
+        sheetId: sheedId
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "cotsheet/dscotcongthuc",
+        parr,
+        function(res) {
+          if (res != null && res.length > 0) {
+            self.optionBmSheetCot = res;
+            self.optionBmSheetCot.unshift({ value: "", label: "Chọn cột" });
+            return self.optionBmSheetCot;
+          }
+        }
+      );
+    },
+
+    /***
+     * METHOD: Get Chi Tieu List Dropdown
+     */
+    async getSheetChiTieuDropDown(sheedId, hangId, cotId) {
+      var self = this;
+
+      let parr = {
+        sheedId: sheedId,
+        hangId: hangId,
+        cotId: cotId
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "canhbaochitieu/dsodulieu",
+        parr,
+        function(res) {
+          if (res != null && res.length > 0) {
+            self.optionSheetChiTieu = res;
+            self.optionSheetChiTieu.unshift({
+              value: null,
+              label: "-- Chọn chỉ tiêu --"
+            });
+            return self.optionSheetChiTieu;
+          }
+        }
+      );
+    }
+  }
+};
+</script>

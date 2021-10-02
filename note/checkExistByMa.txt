@@ -1,0 +1,61 @@
+checkExitByMa(){
+  var self = this;
+
+  self.showLoading();
+  let maChucVu = self.Model.maChucVu;
+  let id = self.Model.id;
+  let  params = {
+	  maChucVu: maChucVu,
+	  id:id
+	};
+
+  apiService.get(
+	process.env.VUE_APP_ROOT_API + "chucvu/exitsMa",
+	params,
+	function(res) {
+	 if(res){
+	   self.messageCheck="Mã chức vụ đã tồn tại";
+		self.exitsMa=false;
+		self.$refs.maChucVu.validate();
+		self.hideLoading();
+	 }else{
+		self.exitsMa=true;
+		self.$refs.maChucVu.validate();
+		self.hideLoading();
+	 }
+	},
+  );
+},
+
+exitsMa: true,
+messageCheck: "",
+val => exitsMa || messageCheck
+
+CongTy
+
+xulyhanhchinh/exitsQuyetDinh
+
+@RequestMapping(value = "/chucvu/exitsMa", method = RequestMethod.GET)
+public ResponseEntity<Boolean> checkExitsByMa(
+		@RequestParam(value = "maChucVu", required = false) String maChucVu,
+		@RequestParam(value = "id", required = false) Integer id) throws ApiRequestException {
+	Boolean result=false;
+
+	try {
+		logger.info(Constants.Logs.EXITS);
+		
+		result = cvService.isExistByMa(maChucVu,id);
+
+		return new ResponseEntity<Boolean>(result, HttpStatus.OK);
+
+	} catch (Exception e) {
+		logger.error(e.toString());
+		throw new ApiRequestException(Constants.Messages.EXCEPTION_FAIL, HttpStatus.EXPECTATION_FAILED);
+	}
+}
+
+
+
+isExistByQuyetDinh
+
+boolean isExistByQuyetDinh(String quyetDinh, Integer id);

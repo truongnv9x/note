@@ -1,0 +1,425 @@
+/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+.ul1 ul{float:left;
+
+jirra
+http://14.160.64.50:8080/secure/Dashboard.jspa
+
+http://192.168.50.250:16200/cs/
+http://192.168.50.250:16200/cs/login/login.htm
+
+
+http://mof.tinhvan.com
+
+http://192.168.50.250:8890/webcenter/system/login.jsp
+
+http://192.168.50.252:8890/webcenter/system/login.jsp
+http://192.168.50.252:9001/console
+
+http://192.168.50.252:8890/webcenter/portal/builder/portals?_adf.ctrl-state=ywaw8wfaq_1763&_afrLoop=611342717613070
+
+http://192.168.50.252:8890/webcenter/portal/builder/portals/admin/cqlgsbh/
+
+http://192.168.50.250:7005/webcenter/portal/admin/portals/list?wc.contentSource=
+http://192.168.50.250:8001/console/console.portal?_nfpb=true&_pageLabel=EnvironmentsSummaryPage
+
+http://192.168.50.250:8888/webcenter/portal/admin/portals/list
+
+http://mof.tinhvan.com/api/linux/images/CQLG/quochuy.png
+
+http://192.168.50.250:16200/cs/
+
+startNode=/pages_r, includeStartNode=false
+
+/webcenter/image/idcplg?IdcService=GET_FILE&amp;dID=#{node.propertyMap['dID'].value}&amp;dDocName=#{node.propertyMap['dDocName'].value}&amp;allowInterrupt=1
+
+HTML MARKUP
+/webcenter/image/idcplg?IdcService=GET_FILE&dID=9232&dDocName=MOFUCM009231&allowInterrupt=1
+
+/image/idcplg?IdcService=GET_FILE&amp;dID=9220&amp;dDocName=MOFUCM009219&amp;allowInterrupt=1
+
+/image/idcplg?IdcService=GET_FILE&amp;dID=9221&amp;dDocName=MOFUCM009220&amp;allowInterrupt=1
+
+<af:image styleClass="text_logo" source="/image/idcplg?IdcService=GET_FILE&amp;dID=9220&amp;dDocName=MOFUCM009219&amp;allowInterrupt=1" id="pt_i2"/>
+
+weblogic
+weblogic1
+
+WINSCP
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1902')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1913')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1908')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+
+#{uib_o_w_s_r_DefaultGroupSpaceCatalog['DOCLIB_CONTENT_PRESENTER.TITLE']}
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('2000')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1137')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1196')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1198')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1102')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1103')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1191')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1192')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1178')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1179')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('2000')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+6098C7
+testStyle
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1199')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1902')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1915')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('2000')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('2000')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+dstinbai_phantrang
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413041')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+startNode=/pages_r, includeStartNode=false
+/portal/ttcg/pages_r/h/tintc1
+xem_tiep
+
+//-------------- Thị trường trái phiếu-----------------
+/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng
+/portal/kbnn/pages_r/m/thtrngscp
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu
+
+/portal/kbnn/pages_r/m/dliuvthtrng
+
+Danh sách xếp hạng nhà tạo lập thị trường
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1439')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/danhschxphngnhtolpthtrng
+/webcenter/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/danhschxphngnhtolpthtrng/chitiet1439?dDocName=${param.dDocName}
+Nghĩa vụ nhà tạo lập thị trường
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1453')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/nghavnhtolpthtrng
+/webcenter/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/nghavnhtolpthtrng/chitiet1453?dDocName=${param.dDocName}
+Hoạt động nhà tạo lập thị trường
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1454')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/hotngnhtolpthtrng
+/webcenter/portal/kbnn/pages_r/m/thngtinvccnhtolpthtrng/hotngnhtolpthtrng/chitiet1454?dDocName=${param.dDocName}
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('21007')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/webcenter/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/imtin/chitiet1456?dDocName=${param.dDocName}
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1470')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/webcenter/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/imtin/chitiet1456?dDocName=${param.dDocName}
+----------------------------------------
+Điểm tin
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1456')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/imtin
+/webcenter/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/imtin/chitiet1456?dDocName=${param.dDocName}
+Bình luận   
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1457')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/bnhlun
+/webcenter/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/bnhlun/chitiet1457?dDocName=${param.dDocName}
+Báo cáo nghiên cứu – Báo cáo hoạt động
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1499')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/boconghincubocohotng
+/webcenter/portal/kbnn/pages_r/m/ccthngtintiliuvthtrngtriphiu/boconghincubocohotng/chitiet1499?dDocName=${param.dDocName}
+----------------------------------------
+Các sản phẩm trái phiếu trên thị trường  
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1460')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/oto/ccsnphmtriphiutrnthtrng
+/webcenter/portal/kbnn/pages_r/m/oto/ccsnphmtriphiutrnthtrng/chitiet1460?dDocName=${param.dDocName}
+Cách tính giá trị trái phiếu    
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1461')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/oto/cchtnhgitrtriphiu
+/webcenter/portal/kbnn/pages_r/m/oto/cchtnhgitrtriphiu/chitiet1461?dDocName=${param.dDocName}
+Cách thức giao dịch trái phiếu 
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1462')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/oto/cchthcgiaodchtriphiu
+/webcenter/portal/kbnn/pages_r/m/oto/cchthcgiaodchtriphiu/chitiet1462?dDocName=${param.dDocName}
+----------------------------------------
+Đối với TPCP
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('21007')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thtrngscp/ivitpcp
+Đối với TPCPBL
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1438')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thtrngscp/ivitpcpbl
+/webcenter/portal/kbnn/pages_r/m/thtrngscp/ivitpcpbl/chitiet1438?dDocName=${param.dDocName}
+Đối với TPCQĐP
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1450')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/thtrngscp/ivitpcqp
+/webcenter/portal/kbnn/pages_r/m/thtrngscp/ivitpcqp/chitiet1450?dDocName=${param.dDocName}
+
+<div>
+			<h3 style="background: #518FC3;
+    padding: 10px 5px;"><a style="    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;" href="https://hnx.vn/tin-tuc-su-kien-ttcbhnx.html">Thị trường TPDN</a></h3>
+			<ul style="padding:5px 10px 10px 10px;border:1px solid #518FC3">
+				<li  style="padding:8px 0;    border-bottom: 1px dotted #BBBCBC;"><a style="font-family: Arial;
+    font-weight: bold;
+    color: #2573b3;
+    font-size: 12px;
+    text-decoration: none;" href="https://hnx.vn/tin-tuc-su-kien-ttcbhnx.html">Thị trường TPDN</a></li>
+	<h3 style="text-align:right;padding:10px 10px 0 10px"><a style="color: #2573b3;font-size: 12px" href="https://hnx.vn/tin-tuc-su-kien-ttcbhnx.html">Xem tiếp</a></h3>
+			</ul>
+			
+		</div>
+
+----------------------------------------
+Tin tức - sự kiên
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1441')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/tintc-skin
+/webcenter/portal/kbnn/pages_r/m/tintc-skin/chitiet1441?dDocName=${param.dDocName}
+
+----------------------------------------
+Tổ chức hoạt động trên thị trường trái phiếu
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1444')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/tchchotngtrnthtrngtriphiu
+/webcenter/portal/kbnn/pages_r/m/tchchotngtrnthtrngtriphiu/chitiet1444?dDocName=${param.dDocName}
+----------------------------------------
+Luật
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1470')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/lut
+/webcenter/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/lut/chitiet1470?dDocName=${param.dDocName}
+Nghị định
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1472')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/nghnh
+/webcenter/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/nghnh/chitiet1472?dDocName=${param.dDocName}
+Thông tư
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1471')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/thngt
+/webcenter/portal/kbnn/pages_r/m/vnbnqpplvthtrngtriphiu/thngt/chitiet1471?dDocName=${param.dDocName}
+----------------------------------------
+
+/oracle/webcenter/page/scopedMD/sda558cf4_94f3_42b0_a77c_17c7c7538e0d/Page3b30e1ef_107d_4ac5_a6ff_7e40bf7ed366.jspx
+/webcenter/portal/tttp/pages_r/m/thtrngscp/ivitpcp/chitiet21007?dDocName=${param.dDocName}
+
+/webcenter/portal/kbnn/pages_r/m/thtrngscp/ivitpcp/chitiet21007?dDocName=${param.dDocName}
+
+/webcenter/portal/thtrtrph/pages_r/m/thtrngscp/ivitpcp/chitiet21007?dDocName=${param.dDocName}
+
+----------------------------------------
+
+----------------------------------------
+
+----------------------------------------
+
+----------------------------------------
+
+----------------------------------------
+
+----------------------------------------
+
+----------------------------------------
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+phan_trang
+Transparent
+
+
+/portal/cqlg/pages_r/m/trangchu
+/webcenter/portal/cqlg
+
+/webcenter/portal/btc/pages_trangchu
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413023,413018')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413071')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413027')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413038')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413032')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413008')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413009')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413010')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413041')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413018')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413020')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413023')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413019')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413022')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413025')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413028')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1714')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1744')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413037')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413036')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413041')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413028')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413028')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413028')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+Tin hoạt động
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413041')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413065')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413066')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('413100')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+oracle.webcenter.content.templates.default.category
+danhsachtinbai
+
+danhsachtinbaicongthanhphan
+
+Height	 536px
+
+hopcongdanhsachtinthanhphancoanh
+
+danhsachtinbaicongthanhphan
+danhsachtinbaiconfig
+
+danhsachthongtinphiaduoi
+danhsachcacchuyenmuctintuc
+contentPresenterTemplate-MultipleItems1
+
+chitiettin
+
+SELECT * FROM ora:t:IDC:Profile:TinBai
+oracle.webcenter.content.templates.default.category
+chitiettin
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+oracle.webcenter.content.templates.default.category
+dstinbai_phantrang
+
+/oracle/webcenter/page/scopedMD/s3863ff56_0c2a_420a_aa4c_1f36112152c0/Paged0062439_887b_4519_b892_747b9ca318d2.jspx
+
+/webcenter/portal/cqlg/pages_r/m/gtc2678/cnnv655920/chitietpage?dDocName=${param.dDocName}
+
+chitiet413071
+
+/webcenter/portal/Ccqunlgimstbohim/pages_r/m/cbspbh/chitiet413071?dDocName=${param.dDocName}
+
+
+/oracle/webcenter/page/scopedMD/s81716ce9_4f5b_485a_9c05_78ab85123c84/Page8757ff13_ccf8_49f9_a011_13972bf681b2.jspx
+
+chitiettinfull
+
+1138 tin nổi bật
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1196')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1906')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+
+7ffe9501-6e59-4fbd-9eae-2e45e9f062d1
+oracle.webcenter.content.templates.default.category
+
+danhsachtinbai
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('1191') and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+danhsachtinbaicongthanhphan
+
+dstinbai_phantrang
+
+dstinbaiphantrang
+
+chitiettinfull
+
+content-detail-full : Chi tiết tin full
+
+contentdetailfull
+
+content-detail : Chi tiết tin
+
+ds_tin_bai - Danh sách tin bài không có mô tả
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai
+oracle.webcenter.content.templates.default.category
+chitiettin
+#{uib_o_w_s_r_DefaultGroupSpaceCatalog['DOCLIB_CONTENT_PRESENTER.TITLE']}
+
+
+/oracle/webcenter/page/scopedMD/s3262accd_6313_4457_bfbc_72b700002020/Page9e3357e9_d1d5_42fb_803a_fba68d8723f3.jspx
+
+6098C7
+testStyle
+
+
+/oracle/webcenter/page/scopedMD/s3863ff56_0c2a_420a_aa4c_1f36112152c0/Paged0062439_887b_4519_b892_747b9ca318d2.jspx
+
+/webcenter/portal/cqlg/pages_r/m/gtc2678/cnnv655920/chitietpage?dDocName=${param.dDocName}
+
+
+gtc
+
+oracle.webcenter.content.templates.default.category
+
+<input-parameter-definition id="__3">
+         <name id="__4">textHeader</name>
+         <value>#{pageFlowScope.textHeader}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+      <input-parameter-definition id="__5">
+         <name id="__6">rootNode</name>
+         <value>#{pageFlowScope.rootNode}</value>
+         <class>java.lang.String</class>
+      </input-parameter-definition>
+	  
+	  
+centerWidth
+leftWidth
+rightWidth
+showFooter
+showHeader
+
+Tin Video 
+<div class="img">
+	<af:image source="/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i23"/>
+</div>
+
+hienthichitietnoidungtinh
+/oracle/webcenter/siteresources/scopedMD/s8bba98ff_4cbb_40b8_beee_296c916a23ed/contentPresenterTemplate/gsr7845610f_4a91_4749_8640_1ce732af95c7/ContentPresenterTemplate.jspx
+view-id	hienthichitietnoidungtinh
+content-type-name	*
+template-type	single
+content-repository	*
+ 
+OK
+
+/webcenter/portal/btc/pages_home
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmId IN ('12429')
+
+SELECT * FROM ora:t:IDC:Profile:TinBai
+danhsachtinbai
+oracle.webcenter.content.templates.default.category
+
+Danh sách câu hỏi - trả lời

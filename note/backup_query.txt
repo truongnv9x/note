@@ -1,0 +1,14 @@
+StringBuilder selectString = null;
+selectString = new StringBuilder(
+		" select  tv.id, tv.ngay_gui,  tv.trang_thai, tv.bm_bao_cao_dinh_ky_id , tv.ctck_thong_tin_id ,tt.ten_tieng_viet,tv.ten_bao_cao, bck.ky_bao_cao as KBC_1, tv.loai_bc_gui, tv.file_dinh_kem, tv.ky_bao_cao as KBC_2, tv.gia_tri_ky_bc, '' ");
+selectString.append(" from  bc_thanh_vien tv  ");
+selectString.append(" left join ctck_thong_tin tt on  tv.ctck_thong_tin_id = tt.id ");
+selectString.append(" left join bm_bao_cao_dinh_ky  bck on tv.bm_bao_cao_dinh_ky_id = bck.id ");
+selectString.append(" where  tv.id =  " + thanhVienId);
+if(baocaoId > 0) {
+	selectString.append(" and tv.bm_bao_cao_id = " + baocaoId);
+}
+selectString.append(" order by  tv.id desc  ");
+
+
+Query selectQuery = this.entityManager.createNativeQuery(selectString.toString());

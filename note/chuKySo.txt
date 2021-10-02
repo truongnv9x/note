@@ -1,0 +1,61 @@
+buildTableCt(idBcKt, isKhoangTg, lstDonViStr) {
+      var self = this;
+      var numDonVi = 1;
+      if (lstDonViStr.includes(",")) {
+        numDonVi = lstDonViStr.split(",").length;
+      }
+      this.showLoadingInfi();
+      var params = {
+        idBcKt: idBcKt,
+        isKhoangTg: isKhoangTg,
+        numDonVi: numDonVi,
+      };
+      if (idBcKt != "" && idBcKt != null) {
+        apiService.get(
+          process.env.VUE_APP_ROOT_API + "baocaokhaithac/buildtablect",
+          params,
+          function (res) {
+            // if(res != null){
+            //     self.lstTableCt = res;
+            //     // self.tableCt = res[0].sheetTable;
+            //     self.chiTietChiTieu = true;
+            //     self.optionTableCt = [];
+            //       if(res.length > 0){
+            //         for(let i = 0; i < res.length; i ++){
+            //           let oTc = {
+            //             value : res[i].sheetId,
+            //             label : res[i].sheetName
+            //           }
+            //           self.optionTableCt.push(oTc);
+            //         }
+            //       }
+            // }
+            if (res != null && res[0]) {
+              // self.selectedSheet = "";
+              self.lstTableCt = res;
+              self.tableCt = res[0].sheetTable;
+              self.optionTableCt = [];
+              // self.tableCt = "";
+              self.chiTietChiTieu = true;
+              if (res.length > 0) {
+                for (let i = 0; i < res.length; i++) {
+                  let oTc = {
+                    value: res[i].sheetId,
+                    label: res[i].sheetName,
+                  };
+                  self.optionTableCt.push(oTc);
+                }
+              }
+              self.selectedSheet = self.optionTableCt[0].label;
+              self.hideLoading();
+            } else {
+              self.displayError("Không tìm thấy danh sách chỉ tiêu");
+              self.hideLoading();
+            }
+          }
+        );
+      }
+      // else if (lstId == "") {
+      //   self.optionKyBaoCao = [];
+      // }
+    },

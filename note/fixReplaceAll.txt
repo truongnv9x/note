@@ -1,0 +1,559 @@
+<template>
+  <div>
+    <div class="page-bar">
+      <div class="q-pa-md q-gutter-sm">
+        <q-breadcrumbs>
+          <q-breadcrumbs-el label="Trang chủ" icon="home" to="/trangchu" />
+          <q-breadcrumbs-el
+            label="Danh sách cảnh báo chỉ tiêu"
+            to="/canhbaochitieu"
+          />
+          <q-breadcrumbs-el label="Xem chi tiết" />
+        </q-breadcrumbs>
+      </div>
+    </div>
+
+    <div class="q-pa-md">
+      <div class="portlet box blue">
+        <div class="portlet-title">
+          <div class="caption">
+            <q-icon name="info" size="20px" class="mt-0"></q-icon>Thông tin chi
+            tiết
+          </div>
+          <div class="tools">
+            <a href class="remove" data-original-title title></a>
+          </div>
+        </div>
+
+        <div class="portlet-body form">
+          <div class="form-body">
+            <fieldset>
+              <legend class="fwb">Nội dung cảnh báo</legend>
+              <br />
+              <div class="form-group row col-12">
+                <div class="form-group row col-12 q-gutter-sm">
+                  <q-radio
+                    disable
+                    readonly
+                    dense
+                    v-model="model.loaiChiTieuCB"
+                    val="1"
+                    label="Thông tư 87/2017/TT-BTC"
+                  />
+                  <q-radio
+                    disable
+                    readonly
+                    dense
+                    v-model="model.loaiChiTieuCB"
+                    val="0"
+                    label="Thông tư 210/2012/TT-BTC"
+                  />
+                </div>
+              </div>
+              <br />
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">Mã cảnh báo</label>
+                <div class="col-md-4">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.maCanhBao"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+
+                <label class="col-md-2 col-control-label">Tên cảnh báo</label>
+                <div class="col-md-4">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.tenCanhBao"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+              </div>
+              <br />
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label"
+                  >Văn bản tham chiếu</label
+                >
+                <div class="col-md-4">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.vanBanThamChieu"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+
+                <label class="col-md-2 col-control-label">Cấp độ</label>
+                <div class="col-md-4">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.capDo"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">Ghi chú</label>
+                <div class="col-md-10">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.ghiChu"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="textarea"
+                  />
+                </div>
+              </div>
+              <br />
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">Trạng thái</label>
+                <div class="col-md-4">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="trangThaiText"
+                    dense
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+                <label
+                  class="col-md-2 col-control-label"
+                  v-if="model.loaiChiTieuCB == '0'"
+                  >Công thức</label
+                >
+                <div class="col-md-4" v-if="model.loaiChiTieuCB == '0'">
+                  <q-input
+                    ref="tenCoDong"
+                    v-model="model.congThuc"
+                    dense
+                    autogrow
+                    maxlength="250"
+                    outlined
+                    rows="2"
+                    disable
+                    type="text"
+                  />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+
+            <br />
+            <fieldset>
+              <legend class="fwb">Điều kiện cảnh báo</legend>
+
+              <div>
+                <table class="q-table">
+                  <thead>
+                    <tr>
+                      <td class="col-control-label" width="40%">
+                        Tên điều kiện
+                      </td>
+                      <td class="col-control-label" width="30%">Điều kiện</td>
+                      <td class="col-control-label" width="30%">Giá trị</td>
+                    </tr>
+                  </thead>
+
+                  <tbody
+                    v-for="(item, index) in chiTieuDieuKienList"
+                    :key="index"
+                    data-th="Name"
+                    style="cursor: pointer"
+                    class="table-border"
+                  >
+                    <tr>
+                      <td width="40%">{{ item.tenDieuKien }}</td>
+                      <td width="30%">{{ item.dieuKien }}</td>
+                      <td width="30%">{{ item.giaTriSoSanh }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+            <div
+              class="form-actions row col-12 right"
+              v-if="model.loaiChiTieuCB == '0'"
+            >
+              <label class="col-md-2 col-control-label">
+                Năm cảnh báo
+                <span style="color: red">(*)</span>
+              </label>
+              <div class="col-md-4">
+                <q-input
+                  ref="namCanhBao"
+                  v-model="namCanhBao"
+                  dense
+                  maxlength="4"
+                  style="width: 50%; margin-right: 5px"
+                  outlined
+                  rows="2"
+                  type="number"
+                  lazy-rules
+                  :rules="[
+                    (val) =>
+                      (val && val.length != 0) || 'Số năm không được để trống',
+                    (val) =>
+                      (val && val.length <= 4) ||
+                      'Số năm cho phép nhập tối đa 4 ký tự',
+                    (val) =>
+                      new RegExp(/(?:(?:19|20)[0-9]{2})/).test(String(val)) ||
+                      'Năm báo cáo không đúng định dạng.',
+                  ]"
+                />
+              </div>
+
+              <label class="col-md-2 col-control-label">
+                Kỳ cảnh báo
+                <span style="color: red">(*)</span>
+              </label>
+              <div class="col-md-4">
+                <q-select
+                  ref="kyCanhBao"
+                  filter
+                  use-input
+                  v-model="kyCanhBao"
+                  dense
+                  outlined
+                  input-debounce="0"
+                  :options="kyCanhBaoOption"
+                  :rules="[
+                    (v) =>
+                      (v && v.value !== null) ||
+                      'Bắt buộc phải chọn kỳ cảnh báo.',
+                  ]"
+                >
+                  <template v-slot:no-option>
+                    <q-item>
+                      <q-item-section class="text-grey"
+                        >Không có kết quả</q-item-section
+                      >
+                    </q-item>
+                  </template>
+                </q-select>
+              </div>
+            </div>
+            <div class="form-actions row col-12 right">
+              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <q-btn
+                  size="12px"
+                  type="button"
+                  color="green"
+                  label="Thực hiện cảnh báo"
+                  icon="check"
+                  style="text-decoration: none; margin-right: 5px"
+                  title="Thực hiện cảnh báo chỉ tiêu"
+                  @click="thucHienCanhBaoChiTieu()"
+                />&nbsp;&nbsp;&nbsp;
+                <q-btn
+                  size="12px"
+                  label="Trở về"
+                  to="/canhbaochitieu"
+                  style="text-decoration: none"
+                  title="Trở về"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import baseCommon from "../../baseCommon";
+import apiService from "../../services/apiService";
+import moment from "moment";
+
+const kyCanhBaoConst = [
+  {
+    label: "-- Chọn kỳ cảnh báo --",
+    value: null,
+  },
+  {
+    label: "Tháng",
+    value: "TH",
+  },
+  {
+    label: "Quý",
+    value: "Q",
+  },
+  {
+    label: "Bán niên",
+    value: "BN",
+  },
+  {
+    label: "Năm",
+    value: "NAM",
+  },
+];
+
+export default {
+  name: "loghethongEdit",
+  mixins: [baseCommon, apiService],
+  components: {},
+  data() {
+    return {
+      model: {},
+      trangThaiText: "",
+      chiTieuDieuKienList: [],
+      namCanhBao: "",
+      kyCanhBao: {
+        label: "-- Chọn kỳ cảnh báo --",
+        value: null,
+      },
+      congThucObject: {},
+      chiTieuId: "",
+      kyBaoCaoId: "",
+      congThuc: "",
+      kyCanhBaoOption: kyCanhBaoConst,
+      lstCT: [],
+      lstH: [],
+    };
+  },
+  created() {
+    this.getById();
+  },
+  methods: {
+    formatPrice(value) {
+      var numeral = require("numeral");
+      return numeral(value).format("0,0");
+    },
+    thucHienCanhBaoChiTieu() {
+      var self = this;
+
+      if (self.loaiChiTieuCB == "0") {
+        if (self.kyCanhBao.value === null) {
+          this.$refs.kyCanhBao.validate();
+          // self.displayError("Bạn chưa chọn kỳ cảnh báo!");
+        }
+
+        if (self.namCanhBao === "") {
+          this.$refs.namCanhBao.validate();
+          // self.displayError("Bạn chưa nhập năm cảnh báo!");
+        }
+      }
+
+      var requestParams = {
+        kyCanhBao: self.kyCanhBao.value,
+        namCanhBao: self.namCanhBao,
+        canhBaoId: self.model.id,
+      };
+
+      if (self.kyCanhBao.value !== null && self.namCanhBao !== "") {
+        apiService.post(
+          process.env.VUE_APP_ROOT_API + "canhbaochitieu/thuchiencanhbao",
+          requestParams,
+          function (res) {
+            if (res != null) {
+              if (res.status == 417) {
+                self.displayError(res.data);
+              } else {
+                self.displaySuccess(res);
+              }
+            }
+          },
+          function (err) {
+            self.displayError(err.data);
+          }
+        );
+      }
+    },
+    getById() {
+      var self = this;
+
+      apiService.get(
+        process.env.VUE_APP_ROOT_API +
+          "canhbaochitieu/chitiet/" +
+          self.decodeString(self.$route.params.id, "canhbaochitieu"),
+        null,
+        function (res) {
+          self.model = res;
+          self.model.loaiChiTieuCB = res.loaiChiTieuCB + "";
+          self.trangThaiText = self.getTrangThaiStr(self.model.trangThai);
+          if (
+            res.cbChiTieuDieuKiens != undefined &&
+            res.cbChiTieuDieuKiens != null &&
+            res.cbChiTieuDieuKiens.length > 0
+          ) {
+            for (var i = 0; i < res.cbChiTieuDieuKiens.length; i++) {
+              res.cbChiTieuDieuKiens[i].giaTriSoSanh = self.formatPrice(
+                res.cbChiTieuDieuKiens[i].giaTriSoSanh
+              );
+            }
+          }
+          self.chiTieuDieuKienList = res.cbChiTieuDieuKiens;
+
+          if(res.congThuc != undefined && res.congThuc != null && res.congThuc != ""){
+            // console.log(res.congThuc);
+            var congThucStr = res.congThuc;
+            var arr = res.congThuc.split(/[\n-]|[\n+]|[\n*]|[\n/]/);
+            var lstChiTieu = [];
+            var lstHam = [];
+
+            if (arr != undefined && arr != null && arr.length > 0) {
+              for (let i = 0; i < arr.length; i++) {
+                if (arr[i].includes(",")) {
+                  var splitHam = arr[i].split(",");
+                  if (
+                    splitHam != undefined &&
+                    splitHam != null &&
+                    splitHam.length > 1
+                  ) {
+                    let id = splitHam[1]
+                      .replace("{", "")
+                      .replace("}", "")
+                      .replaceAll("[", "")
+                      .replaceAll("]", "")
+                      .replaceAll("|", ",");
+                    if (!lstHam.includes(id)) {
+                      lstHam.push(id);
+                    }
+                  }
+                } else {
+                  if (!arr[i].includes("{")) {
+                    let id = arr[i]
+                      .replace("[", "")
+                      .replace("]", "")
+                      .replaceAll("(", "")
+                      .replaceAll(")", "");
+                    if (!lstChiTieu.includes(id)) {
+                      lstChiTieu.push(id);
+                    }
+                  }
+                }
+              }
+            }
+            congThucStr = congThucStr
+              .replaceAll("SUM", "Tổng ")
+              .replaceAll("CIF", "Đếm khi ")
+              .replaceAll("CIF", "Đếm khi ")
+              .replaceAll("AVG", "Trung bình ")
+              .replaceAll("ACC", "Lũy kế ")
+              .replaceAll(",", "");
+            
+            var parr1 = {
+              lstChiTieu: lstChiTieu == null ? null : lstChiTieu,
+            };
+            apiService.post(
+              process.env.VUE_APP_ROOT_API + "canhbaochitieu/chitieudetail",
+              parr1,
+              function (res1) {
+                self.lstCT = res1;
+                  var str = "";
+                 if(self.lstCT != undefined && self.lstCT != null && self.lstCT.length > 0){
+                    switch(self.lstCT.length) {
+                    case 1:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString());
+                      break;
+                    case 2:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString())
+                        .replaceAll(self.lstCT[1].key.toString(), self.lstCT[1].value.toString());
+                      break;
+                    case 3:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString())
+                        .replaceAll( self.lstCT[1].key.toString(), self.lstCT[1].value.toString())
+                        .replaceAll(self.lstCT[2].key.toString(), self.lstCT[2].value.toString());
+                      break;
+                    case 4:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString())
+                        .replaceAll(self.lstCT[1].key.toString(), self.lstCT[1].value.toString())
+                        .replaceAll(self.lstCT[2].key.toString(), self.lstCT[2].value.toString())
+                        .replaceAll(self.lstCT[3].key.toString(), self.lstCT[3].value.toString());
+                      break;
+                    case 5:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString())
+                        .replaceAll(self.lstCT[1].key.toString(), self.lstCT[1].value.toString())
+                        .replaceAll(self.lstCT[2].key.toString(), self.lstCT[2].value.toString())
+                        .replaceAll(self.lstCT[3].key.toString(), self.lstCT[3].value.toString())
+                        .replaceAll(self.lstCT[4].key.toString(), self.lstCT[4].value.toString());
+                      break;
+                    case 6:
+                      str = congThucStr.replaceAll(self.lstCT[0].key.toString(), self.lstCT[0].value.toString())
+                        .replaceAll(self.lstCT[1].key.toString(), self.lstCT[1].value.toString())
+                        .replaceAll(self.lstCT[2].key.toString(), self.lstCT[2].value.toString())
+                        .replaceAll(self.lstCT[3].key.toString(), self.lstCT[3].value.toString())
+                        .replaceAll(self.lstCT[4].key.toString(), self.lstCT[4].value.toString())
+                        .replaceAll(self.lstCT[5].key.toString(), self.lstCT[5].value.toString());
+                      break;
+                    default:
+                      str = congThucStr.replaceAllself.lstCT[0].key.toString(), self.lstCT[0].value.toString();
+                      break;
+                  }
+                 }
+                
+                self.model.congThuc = str;
+
+                if(lstHam.length > 0 ){
+                  var parr2 = {
+                  lstHam: lstHam == null ? null : lstHam,
+                };
+                  apiService.post(
+                    process.env.VUE_APP_ROOT_API +
+                      "canhbaochitieu/chitieuhamdetail",
+                    parr2,
+                    function (res2) {
+                      self.lstH = res2;
+                      var strTotal = "";
+                      if(self.lstH != undefined && self.lstH != null && self.lstH.length > 0){
+                        strTotal = self.model.congThuc.replaceAll("[" + self.lstH[0].key.toString() + "]" + "|" + "[" + self.lstH[1].key.toString()+"]",
+                        " Biểu mẫu " + self.lstH[0].value[0].toString() + " Từ hàng " + self.lstH[0].value[1].toString() + " đến hàng " + self.lstH[1].value[1].toString());
+                      }
+                      self.model.congThuc = strTotal;
+                      // .replaceAll("{"," ").replaceAll("}"," ").replaceAll("("," ").replaceAll(")"," ");
+                    },
+                    function () {}
+                  );
+                }
+              },
+              function () {}
+            );
+          }
+        },
+        function () {}
+      );
+    },
+    
+    convertToDate(value) {
+      if (value != null) {
+        return moment(String(value)).format("DD/MM/YYYY");
+      }
+    },
+    getTrangThaiStr(value) {
+      if (value != null) {
+        return value == 1 ? "Hoạt động" : "Không hoạt động";
+      } else {
+        return "";
+      }
+    },
+  },
+};
+</script>

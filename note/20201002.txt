@@ -1,0 +1,51 @@
+ ,val => ngayChaoBanValidate1 || 'Ngày chào bán phải nhỏ hơn ngày hiện tại',
+ 
+ 
+ computed
+  ngayChaoBanValidate1() {
+  var today = this.getToDayTypeInt();
+  var ngayCB = this.dateToInt(this.NgayChaoBan);
+
+  return ngayCB <= today;
+},
+
+ Fix Cong bo thong tin // (CBTTIFram and CTCKIFr) -  endcode and decode
+ Fix không hiển thị thông tin chi tiết của công bố thông tin 
+ 
+Thay đổi label "Trạng thái sử dụng" thành "Kích hoạt"
+ 
+ Thêm cột tên công ty chứng khoán (Lịch sử truy cập)
+ Loại tin trong phần danh sách cbtt bỏ loại chào bán và tiến độ .
+ 
+ 
+ var obj = {"1":5,"2":7,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0}
+var result = Object.keys(obj).map((key) => [Number(key), obj[key]]);
+
+
+
+56987: "Biểu mẫu BCTHTCHN - Cột Số đầu năm -  Hàng 13"
+56988: "Biểu mẫu BCTHTCHN - Cột Số đầu năm -  Hàng 14"
+239092: "Biểu mẫu BCTHTCHN - Cột Số cuối năm -  Hàng 13"
+239179: "Biểu mẫu BCTHTCHN - Cột Số cuối năm -  Hàng 15"
+239191: "Biểu mẫu BCTHTCHN - Cột Số cuối năm -  Hàng 14"
+
+45372: Array(2)
+0: "BCTHTCHN"
+1: "10"
+length: 2
+45373: Array(2)
+0: "BCTHTCHN"
+1: "12"
+length: 2
+
+for (Entry<String, Object> testo : map3.entrySet()) {
+	if (testo.getKey().equals("Q")) {
+		mapTemp.put(testo.getKey(), testo.getValue());
+	}
+}
+ 
+
+
+ 
+ 
+ 

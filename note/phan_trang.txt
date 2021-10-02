@@ -1,0 +1,56 @@
+<!-- phân trang -->
+          <template>
+            <div
+              slot="pagination"
+              class="row flex-center q-py-sm pagiation-custumes"
+              style="justify-content: flex-end!important"
+            >
+              <div class="q-table__control">
+                <span style="display: contents;">
+                  Hiển thị
+                  <q-select
+                    :options-sanitize="true"
+                    v-model="pagination.rowsPerPage"
+                    :options="rowsOptions"
+                    @input="(newVal) => { 
+                    pagination.rowsPerPage = newVal; 
+                    requestPerPage();
+                     }"
+                    style="margin-left:10px"
+                  />
+                </span>
+                &nbsp;
+                <span
+                  class="q-table__bottom-item"
+                >Trên tổng số {{ this.pagination.total }} bản ghi</span>
+              </div>
+              <q-btn
+                round
+                dense
+                size="sm"
+                outline
+                style="color: primary;"
+                class="q-mr-sm"
+                :disable="this.isFirstPage"
+                @click="prevPage()"
+              >
+                <i class="material-icons" style="font-size:20px">keyboard_arrow_left</i>
+              </q-btn>
+
+              <div
+                class="q-mr-sm"
+                style="font-size: small"
+              >Trang {{ this.pagination.page }} / {{ this.pagination.pagesNumber }}</div>
+              <q-btn
+                round
+                dense
+                size="sm"
+                outline
+                style="color: primary;"
+                :disable="this.isLastPage"
+                @click="nextPage()"
+              >
+                <i class="material-icons" style="font-size:20px">keyboard_arrow_right</i>
+              </q-btn>
+            </div>
+          </template>

@@ -1,0 +1,18 @@
+public List<Integer> findChucNangIdByNguoiDungId(int nguoiDungId) {
+	String StringQuery = "SELECT chuc_nang_id FROM  LK_CHUC_NANG_NHOM_NGUOI "
+			+ "WHERE NHOM_NGUOI_DUNG_ID IN (SELECT NHOM_NGUOI_DUNG_ID FROM LK_NGUOI_DUNG_NHOM lk JOIN QT_NHOM_NGUOI_DUNG qtn ON qtn.ID = lk.NHOM_NGUOI_DUNG_ID "
+			+ "WHERE NGUOI_DUNG_ID="
+			+ nguoiDungId + "  AND (NGAY_HET_HAN IS NULL OR TO_CHAR(NGAY_HET_HAN, 'YYYYMMDDHHmm') > TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHHmm'))) " + "UNION " + "SELECT chuc_nang_id  " + "FROM LK_CHUC_NANG_NGUOI "
+			+ "WHERE NGUOI_DUNG_ID = " + nguoiDungId;
+
+	List<Object[]> objList = entityManager.createNativeQuery(StringQuery).getResultList();
+
+	List<Integer> results = new ArrayList<>(objList.size());
+	for (Object object : objList) {
+		results.add(object != null ? Integer.parseInt(object.toString()) : null);
+	}
+	return results;
+}
+
+
+ fix ctckDichVuAdd, baoCaoDinhKi, lichSuBaoCao

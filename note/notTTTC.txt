@@ -1,0 +1,4 @@
+Mục tin video
+<af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1"
+ =>
+<img src="/webcenter/image/idcplg?IdcService=GET_FILE&amp;dID=#{node.propertyMap['dID'].value}&amp;dDocName=#{node.propertyMap['dDocName'].value}&amp;allowInterrupt=1"
