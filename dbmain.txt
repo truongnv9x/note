@@ -1,8 +1,0 @@
-SSC_SCMS_DEV
-SSC_SCMS_DEV
-SSC_SCMS_DEV
-host_name: 192.168.50.213
-port: 1521
-Servicename: bidvportaldb
-
-192.168.50.213
