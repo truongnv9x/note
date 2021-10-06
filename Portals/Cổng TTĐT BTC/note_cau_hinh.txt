@@ -1689,6 +1689,7 @@ Authentication scheme NTLM not supported
 URL_DINHKEM_REPLACE https://portal-app03:16200
 
 http://10.192.255.219:16200
+
 http://192.168.50.250:16200
 
 # =============Database config==================
@@ -1755,6 +1756,11 @@ abcd@1234
 334555
 
 33353
+
+/global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
+
+http://10.192.255.219:8001/console/login/LoginForm.jsp
+
 
 /portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/viet-nam-efta/van-kien-hiep-dinh-vietnam-efta
 https://mof.gov.vn/webcenter/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=MOFUCM093424
