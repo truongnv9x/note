@@ -1,0 +1,74 @@
+<style>
+    .vacxin-wrap {
+        height: 120px !important;
+        padding: 17px 25px;
+        background: linear-gradient(to bottom, #8daedf, #a8d7fe);
+    }
+    .vacxin-wrap .row {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .vacxin-img {
+        margin-right: 15px;
+    }
+    .vacxin-img img {
+        width: 50px;
+    }
+    .vacxin-txt {
+        font-weight: bold;
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .total-vacxin {
+        font-size: 28px;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+    @media only screen and (max-width: 1024px) {
+        .vacxin-wrap {
+            height: auto !important;
+        }
+    }
+</style>
+<a href="/webcenter/portal/ttbt/pages_home">
+    <div class="botruong-banner position-relative">
+        <img class="w-100" src="/api/linux/images/CONGCHINH/anh-bo-truong12.jpg">
+    </div>
+</a>
+<a href="/webcenter/portal/TVBTC/pages_r/lvtc/quy-vacxin-phong-covid">
+    <div class="cate-item vacxin-wrap">
+        <div class="row m-0">
+            <div class="vacxin-img">
+                <img src="/api/linux/images/CONGCHINH/vacxine.png" alt="">
+            </div>
+            <div class="vacxin-txt">
+                quỹ vắc-xin phòng chống covid-19
+            </div>
+        </div>
+        <div class="total-vacxin">8.692,6 tỷ VNĐ</div>
+    </div>
+</a>
+<div class="cate-item hanhchinh">
+    <a href="/webcenter/portal/TrangdchvcngBTC/pages_home">
+        <span class="txt1">thủ tục hành chính</span>
+        <span class="txt2">&amp; dịch vụ công trực tuyến</span>
+    </a>
+</div>
+<div class="cate-item hanhchinh">
+    <a href="/webcenter/portal/TVBTC/pages_r/k/o/van-de-quoc-hoi-quan-tam">
+        <span class="txt1">vấn đề</span>
+        <span class="txt2">quốc hội quan tâm</span>
+    </a>
+</div>
+<div class="cate-item hanhchinh">
+    <a href="/webcenter/portal/TVBTC/pages_r/cddh/dang-bo-btc">
+        <span class="txt1">đảng bộ bộ tài chính</span>
+    </a>
+</div>
+<div class="cate-item hanhchinh">
+    <a href="/webcenter/portal/cd">
+        <span class="txt1">công đoàn bộ</span>
+    </a>
+</div>
