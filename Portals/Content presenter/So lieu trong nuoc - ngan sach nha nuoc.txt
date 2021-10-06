@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+   <style>
+        .nsnn-cover {
+            width: 100%;
+            padding: 10px
+        }
+
+        .nsnn-content-box {
+            width: 100%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nsnn-content-box table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nsnn-content-folder {
+            padding-left: 10px;
+            width: 100%;
+            margin-top: 10px;
+            background-image: url(/api/linux/images/TTBTC/lvtc-selected.png);
+            background-repeat: no-repeat;
+            background-position: 0px 6px;
+        }
+
+        .nsnn-content-folder span {
+            color: #2573BA;
+        }
+
+        .nsnn-content-box ul {
+            margin-left: 15px !important;
+            margin-bottom: 10px !important;
+            list-style: none;
+        }
+
+        .nsnn-content-box ul li {
+            border-bottom: 1px dotted #bbbbee;
+            padding: 9px 0px;
+            background-image: url(/oracle/webcenter/siteresources/scopedMD/shared/images/arrow_right_red.png);
+            background-repeat: no-repeat;
+            background-position: 0px 12px;
+            padding-left: 12px;
+            background-size: 6px;
+            list-style: none;
+        }
+
+        .nsnn-content-box ul li a {
+            color: #2573BA;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nsnn-content-box ul li a:hover {
+            text-decoration: none;
+        }
+
+        .nsnn-select-box label {
+            color: #2573b3;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .nsnn-select-box select {
+            color: #2573b3;
+            font-size: 12px;
+        }
+
+        .nsnn-content-sub-folder {
+            width: 100%;
+        }
+
+        .nsnn-subfolder-label {
+            margin-top: 10px;
+        }
+
+        .nsnn-subfolder-label span {
+            padding-left: 15px;
+            margin-left: 10px;
+            background-image: url(/api/linux/images/TTBTC/icon_xemthem.png);
+            background-repeat: no-repeat;
+            background-position: 0px 4px;
+        }
+
+        .child-sub {
+            padding-left: 45px;
+        }
+
+        .child-sub a{
+            color: #2573BA;
+            
+        }
+    </style>
+   <dt:contentListTemplateDef var="nodes">
+      <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+      <af:resource type="javascript">
+            function effection(event){
+            var className = event.getSource().getProperty("code");
+            $(className).slideToggle( "slow" );
+            }
+        </af:resource>
+      <af:outputText visible="false" value="#{nsnnSoLieuTrongNuocBean.initPage}" id="ot1"/>
+      <af:panelBorderLayout id="pbl3" styleClass="nsnn-cover">
+         <af:panelGroupLayout layout="horizontal" id="pgl1" styleClass="nsnn-select-box">
+            <af:panelBorderLayout id="pbl4" binding="#{nsnnSoLieuTrongNuocBean.panelBoderLayoutSelectBox}" inlineStyle="margin-bottom:10px;"/>
+         </af:panelGroupLayout>
+         <af:panelBorderLayout id="pbl6" styleClass="nsnn-content-box" binding="#{nsnnSoLieuTrongNuocBean.contentPanelBorderLayout}">
+            <af:iterator var="node" value="#{nsnnSoLieuTrongNuocBean.lstFolderItem}" varStatus="vs">
+               <af:panelBorderLayout id="pbl9" styleClass="nsnn-content-folder">
+                  <af:outputText value="#{node.folderName}" inlineStyle="cursor:pointer;">
+                     <af:clientListener method="effection" type="click"/>
+                     <af:clientAttribute name="code" value=".block-#{vs.index}"/>
+                  </af:outputText>
+                  <br/>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout styleClass="block-#{vs.index}" inlineStyle="display:none;">
+                  <af:panelList id="pbl1" rendered="#{!node.hasSubFolder}" inlineStyle="list-style:none;">
+                     <af:iterator var="sub" value="#{node.lstContentInFolder}">
+                        <h:panelGroup layout="block" id="pg1">
+                           <af:panelBorderLayout styleClass="item" id="pbl11232134">
+                              <a href="/webcenter#{sub.linkChitiet}">
+                                 <span>
+                                    <af:outputText value="#{sub.title}"/>
+                                 </span>
+                              </a>
+                              <af:outputLabel value="#{sub.ngayXuatban}" id="ol6">
+                                 <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                              </af:outputLabel>
+                           </af:panelBorderLayout>
+                        </h:panelGroup>
+                     </af:iterator>
+                  </af:panelList>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout id="pbl2" rendered="#{node.hasSubFolder}" styleClass="nsnn-content-sub-folder">
+                  <af:iterator var="subFol" value="#{node.lstSubFolder}" varStatus="vs2">
+                     <af:panelBorderLayout styleClass="nsnn-subfolder-label">
+                        <af:outputText value="#{subFol.folderName}" inlineStyle="cursor:pointer;">
+                           <af:clientListener method="effection" type="click"/>
+                           <af:clientAttribute name="code" value=".block-#{vs.index}#{vs2.index}"/>
+                        </af:outputText>
+                        <br/>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout styleClass="block-#{vs.index}#{vs2.index} child-sub" inlineStyle="display:none;">
+                        <af:iterator var="subFolNews" value="#{subFol.lstContentInFolder}">
+                           <af:panelBorderLayout styleClass="item" id="pbl1123232134">
+                              <a href="/webcenter#{subFolNews.linkChitiet}">
+                                 <span>
+                                    <af:outputText value="#{subFolNews.title}"/>
+                                 </span>
+                              </a>
+                              <af:outputLabel value="#{subFolNews.ngayXuatban}" id="ol1">
+                                 <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                              </af:outputLabel>
+                           </af:panelBorderLayout>
+                        </af:iterator>
+                     </af:panelBorderLayout>
+                  </af:iterator>
+               </af:panelBorderLayout>
+            </af:iterator>
+         </af:panelBorderLayout>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

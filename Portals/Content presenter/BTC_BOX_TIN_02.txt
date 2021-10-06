@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <div class="ct-content-wrap">
+         <af:iterator rows="0" var="node" varStatus="iterator" value="#{nodes}" id="it1">
+            <div class="ct-content-item">
+               <h3 class="title">
+                  <a class="three-line" href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value.stringValue}">
+                     <af:outputText value="#{node.propertyMap['dDocTitle'].value.stringValue}"/>
+                  </a>
+               </h3>
+               <div class="datetime">
+                  <span class="item-calendar"/>
+                  <span class="time">
+                     <af:outputText value="#{node.propertyMap['xmNgayxuatban'].value.calendarValue}">
+                        <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy"/>
+                     </af:outputText>
+                  </span>
+               </div>
+            </div>
+         </af:iterator>
+      </div>
+      <div class="ct-content-button">
+         <a class="btn-viewmore" href="/webcenter#{pageFlowScope.zlinkHeader}">Xem thêm</a>
+      </div>
+   </dt:contentListTemplateDef>
+</jsp:root>

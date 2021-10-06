@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates">
+   <dt:contentListTemplateDef var="nodes">
+      <af:resource type="javascript">
+            function processEvent(event) {
+            var buttonHidden = event.getSource().findComponent("sukiengiantiep");
+            var indexSelected = parseInt(event.getSource().getProperty("numberOfPage"), 10);
+            AdfCustomEvent.queue(buttonHidden, "hiddenEvent",
+            {
+            fvalue : indexSelected
+            },
+            true);
+            }
+        </af:resource>
+      <af:outputLabel value="#{datatable.loadLstItems}" visible="false" id="ol3"/>
+      <c:set var="sizeLst" value="#{fn:length(datatable.lstContentItems)}"/>
+      <c:set var="rowLoop" value="#{datatable.countColumn - sizeLst % datatable.countColumn}"/>
+      <af:switcher facetName="#{datatable.flagPhanTrang?'display':'none'}" id="s1">
+         <f:facet name="display">
+            <af:panelBorderLayout styleClass="dstinbai-cover" binding="#{datatable.contentPanelBorderLayout}" id="pbl9">
+               <af:panelBorderLayout rendered="#{! empty pageFlowScope.ztextHeader}" styleClass="cate-title" id="pbl11">
+                  <div class="cate-title">
+                     <h2 class="heading">#{pageFlowScope.ztextHeader}</h2>
+                  </div>
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item">
+                        <a href="#">Trang ch?</a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">#{pageFlowScope.ztextHeader}</li>
+                  </ol>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout styleClass="new-content" id="pbl12">
+                  <div class="box-news-cate">
+                     <af:iterator value="#{datatable.lstContentItems}" varStatus="vs" rows="#{datatable.tableRow}" id="i3">
+                        <div class="bnc-item">
+                           <div class="bnc-image">
+                              <af:goLink destination="#{pageFlowScope.zdetailPrettyLink}">
+                                 <af:outputText rendered="#{!composerContext.inEditMode}" id="ot1" value="&lt;img class='center-block center-block1' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='#{facesContext.externalContext.requestContextPath}/ShowProperty?nodeId=/UCMServer/#{node.flagAnhMota}'>&lt;/img>" escape="false"/>
+                              </af:goLink>
+                           </div>
+                           <div class="bnc-content">
+                              <h3 class="bnc-title">
+                                 <af:goLink destination="#{pageFlowScope.zdetailPrettyLink}?dDocName=#{node.docName}">
+                                    <af:outputText id="ot2" value="#{node.title}'"/>
+                                 </af:goLink>
+                              </h3>
+                              <div class="datetime">
+                                 <span class="item-calendar"/>
+                                 <span class="time">
+                                    <af:outputText value="#{node.ngayXuatban}">
+                                       <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy hh:mm:ss"/>
+                                    </af:outputText>
+                                 </span>
+                              </div>
+                              <div class="sapo-news">
+                                 <p>
+                                    <af:outputText id="ot2" value="#{node.comment}"/>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <af:iterator value="#{datatable.vituralLst}" rendered="#{varnode.index+1 eq sizeLst and sizeLst % datatable.countColumn ne 0}" rows="#{rowLoop}" id="i7">
+                           <trh:cellFormat width="#{100/datatable.countColumn}%" id="cf1" styleClass="cell-title"/>
+                        </af:iterator>
+                     </af:iterator>
+                     <trh:rowLayout width="100%" styleClass="row-comment" id="rl2">
+                        <af:iterator var="node" value="#{datatable.lstContentItems}" id="i4" varStatus="varnode" first="#{vs.index * datatable.countColumn}" rows="#{datatable.countColumn}">
+                           <trh:cellFormat width="#{100/datatable.countColumn}%" styleClass="cell-comment" id="cf4">
+                              <af:panelBorderLayout id="pbl17">
+                                 <af:panelBorderLayout styleClass="image" id="pbl14" rendered="#{datatable.flagAnhMota and node.flagAnhMota}">
+                                    <af:image shortDesc="#{node.title}" rendered="#{node.flagAnhMota}" source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Thumbnail&amp;allowInterrupt=1&amp;noSaveAs=1" id="i6"/>
+                                 </af:panelBorderLayout>
+                                 <af:panelBorderLayout id="pbl18" styleClass="comment" rendered="#{datatable.flagComments}">
+                                    <af:outputText value="#{node.comment}" escape="false" id="ot2"/>
+                                 </af:panelBorderLayout>
+                              </af:panelBorderLayout>
+                           </trh:cellFormat>
+                           <af:iterator value="#{datatable.vituralLst}" rendered="#{varnode.index+1 eq sizeLst and sizeLst % datatable.countColumn ne 0}" rows="#{rowLoop}" id="i10">
+                              <trh:cellFormat width="#{100/datatable.countColumn}%" id="cf2" styleClass="cell-comment"/>
+                           </af:iterator>
+                        </af:iterator>
+                     </trh:rowLayout>
+                     <af:panelBorderLayout inlineStyle="display:table-row" id="pbl10"/>
+                     <af:panelBorderLayout styleClass="dstinbai-xemtiep" id="pbl7" rendered="#{datatable.flagXemTiep}">
+                        <af:goLink id="gl1" text="Xem ti�?p" destination="#{datatable.linkHeader}"/>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout styleClass="dstinbai-pageNumber" id="pbl3" rendered="#{datatable.flagPhanTrang}" visible="#{sizeLst gt 0?'true':'false'}">
+                        <af:commandButton text="123" styleClass="buttonEvent" partialSubmit="true" id="sukiengiantiep" visible="false">
+                           <af:serverListener type="hiddenEvent" method="#{datatable.pageSeleted}"/>
+                        </af:commandButton>
+                        <af:panelBorderLayout id="pbl5" styleClass="pageNumber">
+                           <af:commandButton text="&lt;&lt;" partialSubmit="true" id="cil1" disabled="#{!datatable.flagPrevFirst}">
+                              <af:clientAttribute name="numberOfPage" value="#{1}"/>
+                              <af:clientListener method="processEvent" type="click"/>
+                           </af:commandButton>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout id="pbl1" styleClass="pageNumber">
+                           <af:commandButton text="&lt;" partialSubmit="true" id="cb1" disabled="#{!datatable.flagPrevFirst}">
+                              <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage-1}"/>
+                              <af:clientListener method="processEvent" type="click"/>
+                           </af:commandButton>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout id="pbl13" styleClass="pageNumber">
+                           <af:iterator var="vs" value="#{datatable.lstPagination}" varStatus="vst" id="i2">
+                              <af:commandButton styleClass="numberOfPage" text="#{vs}" id="cl1" partialSubmit="true" disabled="#{datatable.currentPage eq vs?'true':'false'}">
+                                 <af:clientAttribute name="numberOfPage" value="#{vs}"/>
+                                 <af:clientListener method="processEvent" type="click"/>
+                              </af:commandButton>
+                           </af:iterator>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout id="pbl16" styleClass="pageNumber">
+                           <af:commandButton text=">" partialSubmit="true" id="cil5" disabled="#{!datatable.flagNextLast}">
+                              <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage+1}"/>
+                              <af:clientListener method="processEvent" type="click"/>
+                           </af:commandButton>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout id="pbl2" styleClass="pageNumber">
+                           <af:commandButton text=">>" partialSubmit="true" id="cb2" disabled="#{!datatable.flagNextLast}">
+                              <af:clientAttribute name="numberOfPage" value="#{datatable.numberOfPage}"/>
+                              <af:clientListener method="processEvent" type="click"/>
+                           </af:commandButton>
+                        </af:panelBorderLayout>
+                        <af:panelBorderLayout id="pbl4" styleClass="pageNumber">
+                           <af:commandButton text="#{datatable.ratePage}" partialSubmit="true" id="cb3" disabled="true"/>
+                        </af:panelBorderLayout>
+                     </af:panelBorderLayout>
+                  </div>
+               </af:panelBorderLayout>
+            </af:panelBorderLayout>
+         </f:facet>
+         <f:facet name="none">
+            <af:panelBorderLayout styleClass="dstinbai-cover" id="pbl22">
+               <af:panelBorderLayout styleClass="dstinbai-header" id="pbl25">
+                  <af:goLink text="#{datatable.currentPathTitle}" destination="#{datatable.linkHeader}" disabled="#{datatable.flagDisableHeaderLink}" id="gl6"/>
+               </af:panelBorderLayout>
+               <af:panelBorderLayout styleClass="dstinbai-thumnail-cover" id="pbl21">
+                  <trh:tableLayout width="100%" id="tl1">
+                     <af:iterator value="#{datatable.lstContentItems}" varStatus="vs" rows="#{datatable.tableRow}" id="i11">
+                        <trh:rowLayout width="100%" styleClass="row-title" id="rl3">
+                           <af:iterator var="node" value="#{datatable.lstContentItems}" id="i9" varStatus="varnode" first="#{vs.index * datatable.countColumn}" rows="#{datatable.countColumn}">
+                              <trh:cellFormat width="#{100/datatable.countColumn}%" styleClass="cell-title" id="cf7">
+                                 <af:panelBorderLayout id="pbl24">
+                                    <af:goLink rendered="#{empty pageFlowScope.zdetailPrettyLink}" text="#{node.title}" destination="/portal/#{spaceContext.currentSpaceName}/pages_r/l/cm#{node.chuyenMucTin}?dDocName=#{node.docName}&amp;dID=#{node.DID}" id="gl8" targetFrame="_parent">
+                                       <af:outputLabel value="#{node.ngayXuatban}" id="ol4">
+                                          <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                                       </af:outputLabel>
+                                    </af:goLink>
+                                    <af:goLink rendered="#{! empty pageFlowScope.zdetailPrettyLink}" text="#{node.title}" destination="#{node.linkChitiet}" id="gl2" targetFrame="_parent">
+                                       <af:outputLabel value="#{node.ngayXuatban}" id="ol1">
+                                          <f:convertDateTime pattern="(dd/MM/yyyy)"/>
+                                       </af:outputLabel>
+                                    </af:goLink>
+                                 </af:panelBorderLayout>
+                              </trh:cellFormat>
+                              <af:iterator value="#{datatable.vituralLst}" rendered="#{varnode.index+1 eq sizeLst and sizeLst % datatable.countColumn ne 0}" rows="#{rowLoop}" id="i12">
+                                 <trh:cellFormat width="#{100/datatable.countColumn}%" id="cf6" styleClass="cell-title"/>
+                              </af:iterator>
+                           </af:iterator>
+                        </trh:rowLayout>
+                        <trh:rowLayout width="100%" styleClass="row-comment" id="rl4">
+                           <af:iterator var="node" value="#{datatable.lstContentItems}" id="i8" varStatus="varnode" first="#{vs.index * datatable.countColumn}" rows="#{datatable.countColumn}">
+                              <trh:cellFormat width="#{100/datatable.countColumn}%" styleClass="cell-comment" id="cf8">
+                                 <af:panelBorderLayout id="pbl20">
+                                    <af:panelBorderLayout styleClass="image" id="pbl19" rendered="#{datatable.flagAnhMota and node.flagAnhMota}">
+                                       <af:image shortDesc="#{node.title}" rendered="#{node.flagAnhMota}" source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Thumbnail&amp;allowInterrupt=1&amp;noSaveAs=1" id="i5"/>
+                                    </af:panelBorderLayout>
+                                    <af:panelBorderLayout id="pbl15" styleClass="comment" rendered="#{datatable.flagComments}">
+                                       <af:outputText value="#{node.comment}" escape="false" id="ot3"/>
+                                    </af:panelBorderLayout>
+                                 </af:panelBorderLayout>
+                              </trh:cellFormat>
+                              <af:iterator value="#{datatable.vituralLst}" rendered="#{varnode.index+1 eq sizeLst and sizeLst % datatable.countColumn ne 0}" rows="#{rowLoop}" id="i13">
+                                 <trh:cellFormat width="#{100/datatable.countColumn}%" id="cf5" styleClass="cell-comment"/>
+                              </af:iterator>
+                           </af:iterator>
+                        </trh:rowLayout>
+                     </af:iterator>
+                  </trh:tableLayout>
+                  <af:panelBorderLayout inlineStyle="display:table-row" id="pbl8"/>
+                  <af:panelBorderLayout styleClass="dstinbai-xemtiep" id="pbl6" rendered="#{datatable.flagXemTiep}">
+                     <af:goLink id="gl5" text="#{res['XEM_TIEP']}" destination="#{datatable.linkHeader}"/>
+                  </af:panelBorderLayout>
+               </af:panelBorderLayout>
+            </af:panelBorderLayout>
+         </f:facet>
+      </af:switcher>
+   </dt:contentListTemplateDef>
+</jsp:root>

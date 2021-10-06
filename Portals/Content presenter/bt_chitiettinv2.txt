@@ -1,0 +1,856 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root version="2.1" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:rtc="http://xmlns.oracle.com/webcenter/collab/rtc" xmlns:cmfn="http://xmlns.oracle.com/webcenter/content/functions" xmlns:f="http://java.sun.com/jsf/core">
+   <dt:contentTemplateDef var="node">
+      <af:outputText value="&lt;script src='/webcenter/oracle/webcenter/siteresources/scopedMD/shared/LibaryUpdate12c/sharer.min.js'>&lt;/script>" escape="false"/>
+      <af:resource source="//api/linux/css/sondt/green-audio-player.min.css" type="css"/>
+      <af:outputText value="#{newsPortalBean.loadContent}" visible="false" rendered="#{newsPortalBean.contentItem == null}"/>
+      <af:inputText binding="#{newsPortalBean.itDocName}" visible="false"/>
+      <af:inputText binding="#{newsPortalBean.itChuyenMuc}" visible="false"/>
+      <af:resource type="javascript">
+         jQuery(document).ready(function ($) {
+            $(".btnrating").on('click', (function (e) {
+               var previous_value = $("#selected_rating").val();
+               var selected_value = $(this).attr("data-attr");
+               $("#selected_rating").val(selected_value);
+
+               $(".selected-rating").empty();
+               $(".selected-rating").html(selected_value);
+
+               for (i = 1; i &lt;= selected_value; ++i) {
+                  $("#rating-star-" + i).toggleClass('btn-star--selected');
+                  $("#rating-star-" + i).toggleClass('btn-default');
+               }
+
+               for (ix = 1; ix &lt;= previous_value; ++ix) {
+                  $("#rating-star-" + ix).toggleClass('btn-star--selected');
+                  $("#rating-star-" + ix).toggleClass('btn-default');
+               }
+            }));
+         });
+      </af:resource>
+      <af:resource type="javascript">
+			function handleChange(src) { 
+            document.getElementById("rateResult").value = src;
+         }
+			
+			function addVote(vote, temp){
+            var lstVote = document.getElementById("lstVote").value;
+            if(lstVote == ''){
+               lstVote = ","
+            }
+            if(temp.checked) {
+               lstVote = lstVote.replace(vote + ",", "");
+               lstVote = lstVote + vote + ",";
+            }
+            else{
+               lstVote = lstVote.replace(vote + ",", "")
+            }
+               document.getElementById("lstVote").value = lstVote;
+			}
+			
+			function saveVoteResult(evt){
+				var temp = document.getElementById("lstVote").value;
+				AdfCustomEvent.queue(evt.getSource(), "valueChangeEvent",{value : temp}, false);
+				//document.getElementById("lstVote").value = "";
+				//$(".form-check-inline input[type=checkbox]").attr('checked', false);
+			}
+			
+			function saveRateResult(evt){
+				var temp = document.getElementById("rateResult").value;
+				var title = document.getElementById("docTitle").value;
+				AdfCustomEvent.queue(evt.getSource(), "valueChangeEvent",{value : temp, title : title}, false);
+				//document.getElementById("rateResult").value = "";
+			}
+			
+         function strip(html){
+            html = html.replace(/(\r\n|\n|\r|\s|\")/gm, " ");
+				html = $("
+         <p>"+html+"</p>
+").text();        
+               return html;
+         }
+
+         function docbao(){
+            var iframe = document.getElementById("vbee-audio-source");              
+            var voice = document.getElementById("voiceselect").value;
+            if (iframe.src!=""){
+               iframe.src = iframe.src;
+            } else {
+               var myDivObj = document.getElementById("content-voice").innerHTML ;
+               let content = strip(myDivObj);
+               var urlAudio ="";
+               var url = "https://mof.tinhvan.com/api/getaudio";
+               var request = new XMLHttpRequest();
+               var params = "content="+content+"&amp;voicetype="+voice;
+               request.open('POST', url, true);
+               request.onreadystatechange = function() {
+                  if (request.readyState==4) {
+                        urlAudio = request.responseText;
+                        document.getElementById("vbee-audio-source").src = urlAudio;
+                  }
+               };
+               request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+               request.send(params);
+            }
+         }
+         var count = 12;
+
+         function fontPlus() {
+            count++;
+            var styleClass = ".detail-content p span";
+            var mFontSize = count + "pt";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+            styleClass = ".detail-content p";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+            styleClass = ".content p";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+         }
+
+         function fontMinus() {
+            count--;
+            if (8 > count)
+               count = 8;
+            var styleClass = ".detail-content p span";
+            var mFontSize = count + "pt";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+            styleClass = ".detail-content p";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+            styleClass = ".content p";
+            $(styleClass).css( {
+               "font-size" : mFontSize
+            });
+         }
+
+         function setTuongPhan(lvtuongphan) {
+            if (lvtuongphan == 3) {
+               $(".cd-content").attr("style", "background-color: #FFF !important");
+            } else {
+               if (lvtuongphan == 0) {
+                  $(".cd-content").attr("style", "background-color: #DCDCDC !important");
+               } else {
+                  if (lvtuongphan == 1) {
+                        $(".cd-content").attr("style", "background-color: #F5F5F5 !important");
+                  } else {
+                        $(".cd-content").attr("style", "background-color: #F8F8FF !important");
+                  }
+               }
+            }
+         }
+
+         $(document).ready(function () {
+            window.addEventListener('load', function () {
+               GreenAudioPlayer.init({
+                  selector: '.player',
+                  stopOthersOnPlay: true
+               });
+               $('#btn-read').click(function(){
+                  $('.audio-detail .loading').css('display','block');
+                  var check = $('.play-pause-btn')[0];
+                  const interval = setInterval(function() {
+                     if(check.hasAttribute('style') === true) {
+                        clearInterval(interval);
+                     } else {
+                        var iframe = document.getElementById("vbee-audio-source");              
+                        var voice = document.getElementById("voiceselect").value;
+                        if (iframe.src!=""){
+                           iframe.src = iframe.src;
+                        } else {
+                           var myDivObj = document.getElementById("content-voice").innerHTML ;
+                           let content = strip(myDivObj);
+                           var urlAudio ="";
+                           var url = "https://mof.tinhvan.com/api/getaudio";
+                           var request = new XMLHttpRequest();
+                           var params = "content="+content+"&amp;voicetype="+voice;
+                           request.open('POST', url, true);
+                           request.onreadystatechange = function() {
+                              if (request.readyState==4) {
+                                 urlAudio = request.responseText;
+                                 document.getElementById("vbee-audio-source").src = urlAudio;
+                              }
+                           };
+                           request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                           request.send(params);
+                        }
+                     }
+                  }, 5000);
+                  
+               })
+            });
+            $(document).keydown(function( e ){
+                keyboardShortcut({
+                    selector: e,
+                    key: 'openbracket',
+                    ctrl: true
+                },function() {
+                    fontPlus();
+                });
+                keyboardShortcut({
+                    selector: e,
+                    key: 'closebraket',
+                    ctrl: true
+                },function() {
+                    fontMinus();
+                });
+                keyboardShortcut({
+                    selector: e,
+                    key: 'uparrow',
+                    ctrl: true
+                },function() {
+                    if (tuongphan &lt; 3) {
+                        tuongphan = tuongphan + 1;
+                        setTuongPhan(tuongphan);
+                    }
+                });
+                keyboardShortcut({
+                    selector: e,
+                    key: 'downarrow',
+                    ctrl: true
+                },function() {
+                    if (tuongphan > 0) {
+                        tuongphan = tuongphan - 1;
+                        setTuongPhan(tuongphan);
+                    }
+                });
+                keyboardShortcut({
+                    selector: e,
+                    key: 'p',
+                    ctrl: true
+                },function() {
+                    var divContents = document.getElementById("content-print").innerHTML;
+                    var a = window.open('','PRINT');
+                    a.document.write(divContents);
+                    a.document.close();
+                    a.print();
+                });
+                keyboardShortcut({
+                    selector: e,
+                    key: 'm',
+                    ctrl: true
+                },function() {
+                    window.open('https://mail.google.com/mail/u/0/#inbox?compose=new');
+                });
+            });
+
+            var statuSpeaker = false;
+            var tuongphan = 3;
+            setTuongPhan(tuongphan);
+            $("#giamtuongphan").click(function () {
+               if (tuongphan > 0) {
+                  tuongphan = tuongphan - 1;
+                  setTuongPhan(tuongphan);
+               }
+            });
+            $("#tangtuongphan").click(function () {
+               if (tuongphan &lt; 3) {
+                  tuongphan = tuongphan + 1;
+                  setTuongPhan(tuongphan);
+               }
+            });
+            $(".btn-print").click(function () {
+               var divContents = document.getElementById("detail-content").innerHTML;
+               $('.print-title').removeClass('d-none');
+               var a = window.open('','PRINT');
+               a.document.write(divContents);
+               a.document.close();
+               $('.print-title').addClass('d-none');
+               a.print();
+            })
+            $(".btn-mail").click(function(){
+               window.open('https://mail.google.com/mail/u/0/#inbox?compose=new');
+            })
+         })
+         <f:view>
+            <af:document id="d1">
+               '); a.document.write('
+               '); a.document.write(divContents); a.document.write('
+               '+'
+            </af:document>
+         </f:view>
+      </af:resource>
+      <af:resource type="javascript">
+			function handleDialog(){
+				location.reload();
+			}
+			
+         function refreshCaptcha(evt) {
+            try {
+               var captchaImage = evt.getSource().findComponent("captchaImage");
+               captchaImage.setSource(captchaImage.getSource() + "?force=" + new Date().getMilliseconds());
+               evt.cancel();
+               return false;
+            }
+            catch (err) {
+               alert(err);
+            }
+            return false;
+         }
+			
+			function refreshCaptchaVote(evt) {
+            try {
+               var captchaImage = evt.getSource().findComponent("captchaImageVote");
+               captchaImage.setSource(captchaImage.getSource() + "?force=" + new Date().getMilliseconds());
+               evt.cancel();
+               return false;
+            }
+            catch (err) {
+               alert(err);
+            }
+            return false;
+         }
+
+         function processEvent(event) {
+            var buttonHidden = event.getSource().findComponent("sukiengiantiep");
+            var indexSelected = parseInt(event.getSource().getProperty("numberOfPageCm"), 10);
+            AdfCustomEvent.queue(buttonHidden, "hiddenEvent", {
+               fvalue : indexSelected
+            }, true);
+         }
+
+         //refesh capcha when user click submit form
+         function refreshCaptchaSubmit(evt) {
+            try {
+               var captchaImage = evt.getSource().findComponent("captchaImage");
+               captchaImage.setSource(captchaImage.getSource() + "?force=" + new Date().getMilliseconds());
+            }
+            catch (err) {
+               alert(err);
+            }
+         }
+      </af:resource>
+      <af:resource type="javascript">
+         var old_var="";
+         var x_var=2000;
+         function countc(){
+            var x = 2000 - getUTF8Length(document.getElementsByClassName('x25')[3].value);
+            if(x &lt;= 0){
+               x=x_var;
+               document.getElementsByClassName('x25')[3].value=old_var;
+            } else{
+               old_var=document.getElementsByClassName('x25')[3].value;
+               x_var=x;
+            }
+            document.getElementsByClassName('count_char')[0].innerHTML=x;
+         }
+      </af:resource>
+      <af:resource type="javascript">
+         $(document).ready(function() {
+            var content = $('.detail-content img');
+            $(content).each((i,item) => {
+                if(item.alt !== "") {
+                    var str = item.alt;
+                    if(!str.toLowerCase().includes(':\\') &amp;&amp; !str.toLowerCase().includes('.jpg') &amp;&amp; !str.toLowerCase().includes('.png')
+                    &amp;&amp; !str.toLowerCase().includes('.jpeg') &amp;&amp; !str.toLowerCase().includes('.gif') &amp;&amp; !str.toLowerCase().includes('.bmp') 
+                    &amp;&amp; !str.toLowerCase().includes('image')) {
+                        $('
+         <div class="img-title">' + item.alt +'</div>
+').insertAfter(item);
+                    }
+                }
+            });
+
+            var table = $('.detail-content table');
+            $(table).each((i,item) => {
+               if(item.summary !== "") {
+                  item.innerHTML = item.innerHTML.replace('&lt;span','&lt;span data-original-title="' + item.summary + '"');
+                  $('.detail-content table span').tooltip();
+               }
+            });
+         });
+      </af:resource>
+      <af:outputText id="itHeader" rendered="#{! empty pageFlowScope.ztextHeader}" value="#{pageFlowScope.ztextHeader}" escape="false"/>
+      <div class="new-content cd-content" id="new-content">
+         <h1 class="detail-title">
+            <af:outputText value="#{newsPortalBean.contentItem.dDocTitle}"/>
+            <small>
+               <i class="far fa-clock mr-1"/>
+               <af:outputText value="#{newsPortalBean.contentItem.xmNgayxuatban}">
+                  <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy HH:mm:ss"/>
+               </af:outputText>
+            </small>
+            <small class="d-none">
+               <af:outputText styleClass="far fa-eye mr-1" rendered="#{newsPortalBean.readCountVisible}" value=" #{newsPortalBean.contentItem.xmSolandoc}"/>
+            </small>
+         </h1>
+         <div class="btn-time">
+            <div class="datetime">
+                    Cỡ chữ:
+               <a href="javascript:fontMinus()" class="px-1">A-</a>
+               <a href="javascript:fontPlus()">A+</a>
+            </div>
+            <div class="datetime read">
+               <a id="btn-read" href="javascript:void(0)">Đọc báo</a>
+               <div class="audio-detail player ml-2">
+                  <audio id="vbee-audio-source" controls="" name="media" controlslist="nodownload">
+                     <source id="ogg_src" type="audio/ogg"/>
+                  </audio>
+               </div>
+               <div class="select-voice ml-3">
+                  <select class="form-control" id="voiceselect">
+                     <option value="v1">Phía bắc</option>
+                     <option value="v2">Phía trung</option>
+                     <option value="v3">Phía nam</option>
+                  </select>
+               </div>
+            </div>
+            <div class="datetime">
+                    Tương phản:
+               <a href="javascript:void(0)" id="giamtuongphan" class="px-1">
+                        Giảm
+                    </a>
+               <a href="javascript:void(0)" id="tangtuongphan">
+                        Tăng
+                    </a>
+            </div>
+            <div class="datetime">
+               <button class="btn" onclick="return false;" data-sharer="facebook" data-hashtag="#BTC" data-url="#{request.requestURL}?dDocName=#{param.dDocName}">
+                  <i class="fas fa-share-alt"/>
+               </button>
+               <button class="btn btn-print" onclick="return false;">
+                  <i class="fas fa-print"/>
+               </button>
+               <button class="btn btn-mail" onclick="return false;">
+                  <i class="fas fa-envelope"/>
+               </button>
+            </div>
+         </div>
+         <div class="detail-content" id="detail-content">
+            <h1 class="detail-title print-title d-none">
+               <af:outputText value="#{newsPortalBean.contentItem.dDocTitle}"/>
+            </h1>
+            <af:outputText value="&lt;div  id='content-print'>&lt;p style='font-family: Arial;font-size: 14px; text-align: justify; #{newsPortalBean.contentItem.dDocType=='TinBai'?'font-weight: bold;':'' }'>&lt;/p>&lt;div  id='content-voice'>#{newsPortalBean.content}&lt;/div>&lt;/div>" id="ot6" escape="false"/>
+         </div>
+      </div>
+      <div class="chitiettin-attachfile">
+         <af:outputLabel value="#{res['TEP_NOI_DUNG_DINH_KEM']}" rendered="#{newsPortalBean.flagAttachfile}"/>
+         <af:iterator var="attachitem" value="#{newsPortalBean.lstAttachFileId}">
+            <div class="attachfile-item d-flex align-items-center">
+               <div class="attachfile-icon mr-1">
+                  <i class="fas fa-download" style="color: #1170c0;"/>
+               </div>
+               <af:goLink destination="/contentattachfile/idcplg?dID=#{attachitem.DID}&amp;dDocName=#{attachitem.docName}&amp;filename=#{attachitem.title}" targetFrame="_top" text="#{attachitem.title}" id="gl2"/>
+            </div>
+         </af:iterator>
+      </div>
+      <div class="other-news">
+         <div class="other-news-title">
+            <h2>Các tin khác</h2>
+         </div>
+         <div class="list-other">
+            <ul>
+               <af:iterator value="#{newsPortalBean.lstContent}" var="item" id="i21" varStatus="iterator">
+                  <li>
+                     <a id="a1" href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{item.dDocName}">
+                        <af:outputText id="ot12" value="#{item.dDocTitle}"/>
+                        <span class="text-ngayxam">
+                           <af:outputText value="#{item.xmNgayxuatban==null?'':'('}"/>
+                           <af:outputText value="#{item.xmNgayxuatban}" id="ot71">
+                              <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy HH:mm"/>
+                           </af:outputText>
+                           <af:outputText value="#{item.xmNgayxuatban==null?'':')'}"/>
+                        </span>
+                     </a>
+                  </li>
+               </af:iterator>
+            </ul>
+         </div>
+      </div>
+      <div class="rating">
+         <af:panelBorderLayout styleClass="cd-comments" rendered="#{newsPortalBean.voteVisible}" id="pbl7888">
+            <af:panelBorderLayout styleClass="binhchon-cover" visible="#{newsPortalBean.contentItem.xmBinhchon eq '0' ?'true':'false'}" id="pbl31888">
+               <af:outputLabel value="#{newsPortalBean.percentRate}" visible="false" id="ol112888"/>
+               <h2>Bình chọn</h2>
+               <div class="rating-content">
+                  <div class="row">
+                     <div class="col-12 col-md-4">
+                        <af:panelBorderLayout visible="true" id="pbl31899888">
+                           <div class="">
+                              <h5 class="text-center">Điểm bình chọn</h5>
+                              <div class="point_vote text-center">
+                                 <span class="selected-rating">0</span>
+                                 <small> / 5</small>
+                              </div>
+                              <div class="star-wrap d-flex justify-content-center">
+                                 <input type="hidden" id="selected_rating" name="selected_rating" value="0" required="required"/>
+                                 <button type="button" class="btnrating btn" data-attr="1" onclick="handleChange(1);" id="rating-star-1">
+                                    <i class="fa fa-star" aria-hidden="true"/>
+                                 </button>
+                                 <button type="button" class="btnrating btn" data-attr="2" onclick="handleChange(2);" id="rating-star-2">
+                                    <i class="fa fa-star" aria-hidden="true"/>
+                                 </button>
+                                 <button type="button" class="btnrating btn" data-attr="3" onclick="handleChange(3);" id="rating-star-3">
+                                    <i class="fa fa-star" aria-hidden="true"/>
+                                 </button>
+                                 <button type="button" class="btnrating btn" data-attr="4" onclick="handleChange(4);" id="rating-star-4">
+                                    <i class="fa fa-star" aria-hidden="true"/>
+                                 </button>
+                                 <button type="button" class="btnrating btn btn-default" data-attr="5" onclick="handleChange(5);" id="rating-star-5">
+                                    <i class="fa fa-star" aria-hidden="true"/>
+                                 </button>
+                              </div>
+                              <input type="text" id="rateResult" style="display:none"/>
+                              <input type="text" id="docTitle" style="display:none" value="#{newsPortalBean.title}"/>
+                              <div class="total-vote mt-2 mb-2 d-flex justify-content-center">
+                                 <div class="mr-1">
+                                    <i class="fas fa-user"/>
+                                 </div>
+                                 <div>Tổng #{newsPortalBean.totalRate} lượt bình chọn</div>
+                              </div>
+                           </div>
+                        </af:panelBorderLayout>
+                     </div>
+                     <div class="col-12 col-md-8">
+                        <div class="progress-wrap">
+                           <div class="progress-item mb-2 d-flex align-items-center">
+                              <div class="total-star pr-2">
+                                    5
+                                 <i class="fa fa-star"/>
+                              </div>
+                              <div class="progress">
+                                 <div class="progress-bar pl-1 text-left" role="progressbar" style="width: #{newsPortalBean.star5}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                #{newsPortalBean.star5}%
+                                            </div>
+                              </div>
+                           </div>
+                           <div class="progress-item mb-2 d-flex align-items-center">
+                              <div class="total-star pr-2">
+                                    4
+                                 <i class="fa fa-star"/>
+                              </div>
+                              <div class="progress">
+                                 <div class="progress-bar bg-success text-left pl-1" role="progressbar" style="width: #{newsPortalBean.star4}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">#{newsPortalBean.star4}%
+                                            </div>
+                              </div>
+                           </div>
+                           <div class="progress-item mb-2 d-flex align-items-center">
+                              <div class="total-star pr-2">
+                                    3
+                                 <i class="fa fa-star"/>
+                              </div>
+                              <div class="progress">
+                                 <div class="progress-bar bg-info text-left pl-1" role="progressbar" style="width: #{newsPortalBean.star3}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">#{newsPortalBean.star3}%
+                                            </div>
+                              </div>
+                           </div>
+                           <div class="progress-item mb-2 d-flex align-items-center">
+                              <div class="total-star pr-2">
+                                    2
+                                 <i class="fa fa-star"/>
+                              </div>
+                              <div class="progress">
+                                 <div class="progress-bar bg-warning text-left pl-1" role="progressbar" style="width: #{newsPortalBean.star2}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">#{newsPortalBean.star2}%
+                                            </div>
+                              </div>
+                           </div>
+                           <div class="progress-item mb-2 d-flex align-items-center">
+                              <div class="total-star pr-2">
+                                    1
+                                 <i class="fa fa-star"/>
+                              </div>
+                              <div class="progress">
+                                 <div class="progress-bar bg-danger text-left pl-1" role="progressbar" style="width: #{newsPortalBean.star1}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">#{newsPortalBean.star1}%
+                                            </div>
+                              </div>
+                           </div>
+                           <div class="btn-vote-wrap text-right mt-3">
+                              <af:commandButton partialSubmit="true" immediate="false" styleClass="btn btn-primary btn_vote btn-last" text="Bình chọn" id="btnRate">
+                                 <af:clientListener type="action" method="saveRateResult"/>
+                                 <af:serverListener type="valueChangeEvent" method="#{newsPortalBean.verifyRate}"/>
+                              </af:commandButton>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+      </div>
+      <div class="rating voting mt-3">
+         <af:panelBorderLayout styleClass="cd-comments" rendered="#{newsPortalBean.voteVisible}" id="pbl7">
+            <af:panelBorderLayout styleClass="binhchon-cover" visible="#{newsPortalBean.contentItem.xmBinhchon eq '1' ?'true':'false'}" id="pbl31">
+               <af:outputLabel value="#{newsPortalBean.voteType}" visible="false" id="ol112"/>
+               <af:outputLabel value="#{newsPortalBean.loadVote}" visible="false" id="ol11"/>
+               <h2>
+                  <af:outputText value="#{newsPortalBean.tvsDefaultVote.title}" id="ot972"/>
+               </h2>
+               <div class="rating-content">
+                  <div class="number_vote">
+                     <af:outputText value="#{newsPortalBean.totalVote} lượt bình chọn" id="ot973"/>
+                  </div>
+                  <div class="vote_select pt-3">
+                     <af:panelBorderLayout styleClass="chitiettin-binhchon" id="pbl3333">
+                        <af:iterator var="count" value="#{newsPortalBean.mapCount}" id="i66">
+                           <af:panelBorderLayout id="pb31666" styleClass="chitiettin-binhchon-item">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <label class="progress_title">
+                                       <af:outputText value="#{count.title} "/>
+                                    </label>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="progress">
+                                       <div class="progress-bar bg-success text-left pl-1" role="progressbar" style="width: #{count.percent}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                          <af:outputText value="#{count.percent}%"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </af:panelBorderLayout>
+                        </af:iterator>
+                     </af:panelBorderLayout>
+                     <div class="vote_title">
+                        <af:outputText value="Chọn 1 hoặc nhiều lựa chọn bên dưới để bình chọn" id="ot971"/>
+                     </div>
+                     <div class="vote_select">
+                        <af:iterator var="voteItem" value="#{newsPortalBean.tvsDefaultVote.tvsVoteItemList}" id="i6">
+                           <div class="form-check-inline">
+                              <input type="checkbox" class="check_select" id="vote#{voteItem.id}" value="#{voteItem.id}" onchange="addVote((#{voteItem.id}), this)"/>
+                              <label>#{voteItem.itemContent}</label>
+                           </div>
+                        </af:iterator>
+                     </div>
+                     <input type="text" id="lstVote" style="display:none"/>
+                  </div>
+                  <div class="vote-send">
+                     <af:panelBorderLayout styleClass="chitiettin-binhluan-form" binding="#{newsPortalBean.panelFormVotes}" id="pbl25">
+                        <div class="row">
+                           <div class="col-12 col-md-6 py-2">
+                              <div class="input-comment">
+                                 <af:inputText maximumLength="100" binding="#{newsPortalBean.ritVoteName}" id="it722" placeholder="Họ và tên *"/>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-6 py-2">
+                              <div class="input-comment">
+                                 <af:inputText maximumLength="100" binding="#{newsPortalBean.ritVoteEmail}" id="it727" placeholder="Email *"/>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-12 py-2">
+                              <div class="input-comment input-captcha row">
+                                 <div class="col-lg-4 col-5 pr-0 pr-md-3">
+                                    <af:inputText binding="#{newsPortalBean.ritVoteCapcha}" value="#{requestScope.bestVoteGuess}" id="it522" placeholder="Mã xác nhận"/>
+                                 </div>
+                                 <div class="col-lg-4 col-7 pr-0">
+                                    <div class="d-flex align-items-center">
+                                       <div class="captcha-img mr-2">
+                                          <af:image source="/captchaservlet" id="captchaImageVote" clientComponent="true"/>
+                                       </div>
+                                       <div class="captcha-ref">
+                                          <af:commandImageLink shortDesc="Refresh" immediate="true" icon="/images/refresh.png" id="cil2">
+                                             <af:clientListener method="refreshCaptchaVote" type="action"/>
+                                          </af:commandImageLink>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-12 py-2">
+                              <div class="btn-comment--wrap">
+                                 <af:commandButton styleClass="btn-comment" text="Gửi bình chọn" partialSubmit="true" immediate="false" id="btnComment">
+                                    <af:clientListener type="action" method="saveVoteResult"/>
+                                    <af:serverListener type="valueChangeEvent" method="#{newsPortalBean.verifyVote}"/>
+                                 </af:commandButton>
+                              </div>
+                           </div>
+                        </div>
+                     </af:panelBorderLayout>
+                  </div>
+               </div>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+      </div>
+      <div class="rating mt-3">
+         <af:panelBorderLayout styleClass="cd-comments" rendered="#{newsPortalBean.commentsVisible}" id="pbl28">
+            <af:panelBorderLayout styleClass="binhluan-cover" visible="#{newsPortalBean.contentItem.xmBinhluan eq '1' ?'true':'false'}" id="pbl27">
+               <h2>
+                  <af:outputText value="#{res['binhluan.tieu.de']}" id="ot7"/>
+               </h2>
+               <div class="rating-content">
+                  <af:panelBorderLayout styleClass="chitiettin-binhluan-form" binding="#{newsPortalBean.panelFormComments}" id="pbl1">
+                     <div class="row">
+                        <div class="col-12 col-md-6 py-2">
+                           <div class="input-comment">
+                              <af:inputText maximumLength="100" binding="#{newsPortalBean.ritCommentName}" id="it1" placeholder="#{res['binhluan.ho.ten']} *"/>
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-6 py-2">
+                           <div class="input-comment">
+                              <af:inputText maximumLength="100" binding="#{newsPortalBean.ritCommentEmail}" id="it2" placeholder="#{res['binhluan.email']} *"/>
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-12 py-2">
+                           <div class="input-comment">
+                              <af:inputText id="it3" binding="#{newsPortalBean.ritComment}" rows="5" placeholder="#{res['binhluan.binh.luan']} *">
+                                 <af:clientListener method="countc" type="keyUp"/>
+                              </af:inputText>
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-12 py-2">
+                           <div class="input-comment input-captcha row">
+                              <div class="col-lg-4 col-5 pr-0 pr-md-3">
+                                 <af:inputText binding="#{newsPortalBean.ritCapcha}" value="#{requestScope.bestGuess}" id="it4" placeholder="#{res['binhluan.ma.bao.mat']}"/>
+                              </div>
+                              <div class="col-lg-4 col-7 pr-0">
+                                 <div class="d-flex align-items-center">
+                                    <div class="captcha-img mr-2">
+                                       <af:image source="/captchaservlet" id="captchaImage" clientComponent="true"/>
+                                    </div>
+                                    <div class="captcha-ref">
+                                       <af:commandImageLink shortDesc="Refresh" immediate="true" icon="/images/refresh.png" id="cil1">
+                                          <af:clientListener method="refreshCaptcha" type="action"/>
+                                       </af:commandImageLink>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-12 py-2">
+                           <div class="btn-comment--wrap">
+                              <af:commandButton styleClass="btn-comment" text="#{res['binhluan.button.gui']}" partialSubmit="true" immediate="false" actionListener="#{newsPortalBean.verifyAnswer}" id="cb1"/>
+                           </div>
+                        </div>
+                     </div>
+                  </af:panelBorderLayout>
+                  <af:outputLabel value="#{newsPortalBean.loadLstComments}" visible="false" id="ol3"/>
+                  <div class="mt-4">
+                     <h5 class="list-cmt--title">
+                        <af:outputText value="#{res['binhluan.danh.sach']}" id="ot13"/>
+                     </h5>
+                  </div>
+                  <af:panelBorderLayout styleClass="chitiettin-lstbinhluan" id="pbl14" partialTriggers="sukiengiantiep" rendered="#{newsPortalBean.totalRowsCm eq '0' ? false : true}">
+                     <div class="list-comment">
+                        <af:iterator var="node" value="#{newsPortalBean.lstGuestComment}" varStatus="vst" id="i3">
+                           <div class="comment-item">
+                              <span class="comment-name">
+                                 <af:outputLabel value="#{node.username}" id="gl3"/>
+                              </span>
+                              <span class="comment-content">
+                                 <af:outputText value="#{node.commentText}" id="ot9"/>
+                              </span>
+                              <div class="cmt-time">
+                                 <span>
+                                    <i class="far fa-clock"/>
+                                 </span>
+                                 <span>
+                                    <af:outputLabel value="#{node.creationDate}" id="ot8">
+                                       <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </af:outputLabel>
+                                 </span>
+                              </div>
+                           </div>
+                           <af:iterator var="reply" value="#{node.tvsGuestCommentList}" id="i5">
+                              <c:set var="isApproved" value="#{reply.status eq 2 ? true : false}"/>
+                              <af:panelBorderLayout id="pbl16" rendered="#{isApproved}">
+                                 <af:outputText value="#{reply.username}" id="ot10"/>
+                                 <af:outputText value="#{reply.creationDate}" id="ot11">
+                                    <f:convertDateTime pattern=" (dd/MM/yyyy)"/>
+                                 </af:outputText>
+                                 <af:outputText value="#{reply.commentText}" id="ot1"/>
+                              </af:panelBorderLayout>
+                           </af:iterator>
+                        </af:iterator>
+                     </div>
+                     <div class="pagi-page">
+                        <nav aria-label="Page navigation example">
+                           <af:panelBorderLayout id="pbl18" styleClass="buttonPagination">
+                              <ul class="pagination">
+                                 <li class="page-item">
+                                    <af:commandButton text="123" styleClass="buttonEvent" partialSubmit="true" id="sukiengiantiep" visible="false">
+                                       <af:serverListener type="hiddenEvent" method="#{newsPortalBean.pageSeleted}"/>
+                                    </af:commandButton>
+                                 </li>
+                                 <af:switcher defaultFacet="#{newsPortalBean.flagPrevFirst?'enable':'disable'}" id="s4">
+                                    <li class="page-item">
+                                       <f:facet name="enable">
+                                          <af:panelBorderLayout id="pbl20" styleClass="pageNumber">
+                                             <af:commandButton text="&lt;" partialSubmit="true" styleClass="prevEnable" shortDesc="previous page" id="cil3">
+                                                <af:clientAttribute name="numberOfPageCm" value="#{newsPortalBean.currentPage-1}"/>
+                                                <af:clientListener method="processEvent" type="click"/>
+                                             </af:commandButton>
+                                          </af:panelBorderLayout>
+                                       </f:facet>
+                                    </li>
+                                    <li class="page-item">
+                                       <f:facet name="disable">
+                                          <af:panelBorderLayout id="pbl21" styleClass="pageNumber">
+                                             <af:commandButton text="&lt;" partialSubmit="true" styleClass="prevDisable" id="cil4" disabled="true"/>
+                                          </af:panelBorderLayout>
+                                       </f:facet>
+                                    </li>
+                                 </af:switcher>
+                                 <af:iterator var="vs" value="#{newsPortalBean.lstPagination}" varStatus="vst" id="i4">
+                                    <li class="page-item">
+                                       <af:commandButton styleClass="numberOfPage" partialSubmit="true" text="#{vs}" id="cl1" shortDesc="page #{vs}" disabled="#{newsPortalBean.currentPage eq vs?'true':'false'}">
+                                          <af:clientAttribute name="numberOfPageCm" value="#{vs}"/>
+                                          <af:clientListener method="processEvent" type="click"/>
+                                       </af:commandButton>
+                                    </li>
+                                 </af:iterator>
+                                 <af:switcher defaultFacet="#{newsPortalBean.flagNextLast?'enable':'disable'}" id="s5">
+                                    <li class="page-item">
+                                       <f:facet name="enable">
+                                          <af:panelBorderLayout id="pbl23" styleClass="pageNumber">
+                                             <af:commandButton text=">" partialSubmit="true" styleClass="nextEnable" shortDesc="next page" id="cil5">
+                                                <af:clientAttribute name="numberOfPageCm" value="#{newsPortalBean.currentPage+1}"/>
+                                                <af:clientListener method="processEvent" type="click"/>
+                                             </af:commandButton>
+                                          </af:panelBorderLayout>
+                                       </f:facet>
+                                    </li>
+                                    <li class="page-item">
+                                       <f:facet name="disable">
+                                          <af:panelBorderLayout id="pbl17" styleClass="pageNumber">
+                                             <af:commandButton text=">" styleClass="nextDisable" id="cil6" disabled="true"/>
+                                          </af:panelBorderLayout>
+                                       </f:facet>
+                                    </li>
+                                 </af:switcher>
+                              </ul>
+                           </af:panelBorderLayout>
+                        </nav>
+                     </div>
+                  </af:panelBorderLayout>
+               </div>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+      </div>
+      <af:popup contentDelivery="lazyUncached" binding="#{newsPortalBean.popupBl}" id="p2">
+         <af:dialog id="d5" type="ok" titleIconSource="/Images/tick_circle.png" title="Xác nhận" resize="off">
+            <af:outputText value="Bình luận thành công"/>
+            <af:clientListener method="handleDialog" type="dialog"/>
+         </af:dialog>
+      </af:popup>
+      <af:popup contentDelivery="lazyUncached" binding="#{newsPortalBean.popupBc}" id="p1">
+         <af:dialog id="d6" type="ok" titleIconSource="/Images/tick_circle.png" title="Xác nhận" resize="off">
+            <af:outputText value="Bình chọn thành công"/>
+            <af:clientListener method="handleDialog" type="dialog"/>
+         </af:dialog>
+      </af:popup>
+      <af:outputText escape="false" value="&lt;script src='/api/linux/js/sondt/green-audio-player.min.js' async  > &lt;/script >"/>
+      <af:outputText escape="false" value="&lt;script src='/api/linux/js/sondt/keyboardShortcut.js' async  > &lt;/script >"/>
+   </dt:contentTemplateDef>
+   <style>
+        .xhg,
+        .x5s {
+            overflow: unset !important;
+        }
+        .rating-content .pagi-page .prevDisable, .rating-content .pagi-page .nextDisable {
+            background: #fff !important;
+            color: #000000 !important;
+        }  
+        .chitiettin-attachfile a {
+            color: #1170c0;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+</jsp:root>

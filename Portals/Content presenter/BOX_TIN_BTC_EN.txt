@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <div class="thongke-content">
+         <div class="cate-title">
+            <h2 class="heading">
+               <a href="/webcenter#{pageFlowScope.zlinkHeader}">
+                  <af:outputText value="#{pageFlowScope.ztextHeader}" id="ot1"/>
+               </a>
+            </h2>
+         </div>
+         <div class="new-content tin_tuc">
+            <div class="cate-tab-content pb-0">
+               <af:iterator rows="0" var="node" varStatus="iterator" value="#{nodes}" id="it1">
+                  <div class="item-news-common px-0 pt-0">
+                     <af:goLink destination="#{pageFlowScope.zdetailPrettyLink}" rendered="#{pageFlowScope.zdisplayImage}">
+                        <div class="thumb">
+                           <af:outputText rendered="#{!composerContext.inEditMode}" id="ot12" value="&lt;img class='center-block center-block1' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.propertyMap['xmAnhdaidien'].value}&amp;dID=#{node.propertyMap['dID'].value}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1'>&lt;/img>" escape="false"/>
+                        </div>
+                     </af:goLink>
+                     <h4 class="inc-title">
+                        <af:goLink styleClass="font-weight-bold" destination="#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value}">
+                           <af:outputText value="#{node.propertyMap['dDocTitle'].value.stringValue}"/>
+                        </af:goLink>
+                     </h4>
+                     <div class="datetime">
+                        <span class="item-calendar"/>
+                        <span class="time">
+                           <af:outputText value="#{node.propertyMap['xmNgayxuatban'].value.calendarValue}">
+                              <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy"/>
+                           </af:outputText>
+                        </span>
+                     </div>
+                     <div class="sapo-news">
+                        <p>
+                           <af:outputText id="ot21" rendered="#{pageFlowScope.zdisplayComment}" value="#{node.propertyMap['xComments'].value}"/>
+                        </p>
+                     </div>
+                  </div>
+               </af:iterator>
+               <div class="cate-tab border-0">
+                  <div class="ct-content-button">
+                     <a class="btn-viewmore" href="/webcenter#{pageFlowScope.zlinkHeader}">View more</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </dt:contentListTemplateDef>
+</jsp:root>

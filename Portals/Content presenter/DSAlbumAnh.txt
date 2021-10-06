@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/jquery-1.8.2.js"/>
+   <af:resource type="javascript" source="/oracle/webcenter/siteresources/scopedMD/shared/js/ad-gallery/ad-gallery.js"/>
+   <dt:contentListTemplateDef var="nodes">
+      <af:resource type="javascript">
+       function processClickAlbum(event){
+                var itemComponent = event.getSource().findComponent("clickAlbum");
+                var folioDid=event.getSource().getProperty("folioDid");
+                var currentpage=event.getSource().getProperty("currentpage");
+                AdfCustomEvent.queue(itemComponent, "hiddenEventLoadAlbum",{folioDid:folioDid,currentpage:currentpage},false);
+        }
+          function processEvent(event) {
+            var buttonHidden = event.getSource().findComponent("sukiengiantiep");
+            var indexSelected = parseInt(event.getSource().getProperty("numberOfPage"), 10);
+            AdfCustomEvent.queue(buttonHidden, "hiddenEvent",
+            {
+                fvalue : indexSelected
+            },
+            true);
+        }
+        function loadSlider(){
+            $('.ad-gallery').adGallery();
+        }
+    </af:resource>
+      <trh:script id="s1">
+        $(function () {
+            $('.ad-gallery').adGallery();
+        });
+      </trh:script>
+      <af:outputText value="#{datatable.loadFolios}" visible="false"/>
+      <af:panelBorderLayout styleClass="dsfolios-cover">
+         <af:panelBorderLayout binding="#{datatable.contentPanelBorderLayout}">
+            <h:panelGroup id="pbl1" layout="block" style="overflow:hidden;">
+               <h:panelGroup id="pg1" layout="block" styleClass="box-containeralbum">
+                  <h:panelGroup id="pg2" layout="block" styleClass="layouts-video-ads">
+                     <h:panelGroup id="pg3" layout="block" styleClass="video-ads">
+                        <h:panelGroup id="pg4" layout="block" styleClass="box-image-left">
+                           <div class="lstfolios-header">
+                              <div class="header">
+                                 <div class="title">
+                                    <h:panelGroup id="pbl2" styleClass="#{pageFlowScope.ziconStyle}" layout="block">
+                                       <af:goLink text="#{datatable.currentPathTitle}" destination="#{datatable.linkHeader}" disabled="#{!datatable.flagDisableHeaderLink}"/>
+                                    </h:panelGroup>
+                                 </div>
+                                 <div class="more">
+                                    <div>
+                                       <af:goLink text=" " destination="#{pageFlowScope.zlinkHeader}" id="gl2"/>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="lstfolio-content">
+                              <h:panelGroup id="pg5" layout="block" styleClass="image-news">
+                                 <h:panelGroup id="gallery" layout="block" styleClass="ad-gallery">
+                                    <div class="lstSliderImage">
+                                       <h:panelGroup id="pg6" layout="block" styleClass="ad-image-wrapper"/>
+                                       <div class="ad-nav">
+                                          <div class="ad-thumbs">
+                                             <af:panelList id="pl1" listStyle="list-style:none; padding:0; margin:0; float:left; width:9000px;">
+                                                <af:iterator var="node" value="#{datatable.lstAlbumImages}" id="i2" varStatus="vs">
+                                                   <af:goLink destination="#" id="pt_gl25">
+                                                      <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.docName}&amp;dID=#{node.DID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i15" shortDesc="#{node.title}" styleClass="image#{vs.index}"/>
+                                                   </af:goLink>
+                                                </af:iterator>
+                                             </af:panelList>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </h:panelGroup>
+                              </h:panelGroup>
+                           </div>
+                        </h:panelGroup>
+                     </h:panelGroup>
+                  </h:panelGroup>
+               </h:panelGroup>
+            </h:panelGroup>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout binding="#{datatable.paginationPanelBorderLayout}">
+            <af:panelBorderLayout styleClass="lstfolios">
+               <af:outputText styleClass="header" value="Danh sách Album ảnh"/>
+               <trh:tableLayout>
+                  <af:iterator var="node" varStatus="vas" value="#{datatable.lstContentItems}" id="i1">
+                     <trh:rowLayout>
+                        <trh:cellFormat rendered="#{datatable.flagAnhMota}">
+                           <af:image shortDesc="#{node.title}" rendered="#{node.flagAnhMota}" source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Thumbnail&amp;allowInterrupt=1&amp;noSaveAs=1" id="i6"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat>
+                           <af:commandImageLink text="#{node.title}" id="cil1" partialSubmit="true">
+                              <af:clientListener method="processClickAlbum" type="click"/>
+                              <af:clientAttribute name="folioDid" value="#{node.DID}"/>
+                              <af:clientAttribute name="currentpage" value="#{datatable.currentPage}"/>
+                           </af:commandImageLink>
+                           <af:panelBorderLayout id="pbl18" styleClass="comment" rendered="#{datatable.flagComments}">
+                              <af:outputText value="#{node.comment}"/>
+                           </af:panelBorderLayout>
+                           <af:outputText value="#{node.ngayXuatban}" id="ot5" styleClass="media-date"/>
+                        </trh:cellFormat>
+                     </trh:rowLayout>
+                  </af:iterator>
+               </trh:tableLayout>
+            </af:panelBorderLayout>
+         </af:panelBorderLayout>
+      </af:panelBorderLayout>
+      <af:panelBorderLayout inlineStyle="display:table-row" id="pbl10"/>
+      <af:panelBorderLayout styleClass="folios-pageNumber" id="pbl3" rendered="#{datatable.flagPhanTrang}">
+         <af:commandButton text="123" styleClass="buttonEvent" partialSubmit="true" id="clickAlbum" visible="false">
+            <af:serverListener type="hiddenEventLoadAlbum" method="#{datatable.getAlbumImages}"/>
+         </af:commandButton>
+         <af:commandButton text="123" styleClass="buttonEvent" partialSubmit="true" id="sukiengiantiep" visible="false">
+            <af:serverListener type="hiddenEvent" method="#{datatable.pageSelectedAlbum}"/>
+         </af:commandButton>
+         <af:panelBorderLayout id="pbl5" styleClass="pageNumber">
+            <af:commandButton text="&lt;&lt;" partialSubmit="true" id="cb4" disabled="#{!datatable.flagPrevFirst}">
+               <af:clientAttribute name="numberOfPage" value="#{1}"/>
+               <af:clientListener method="processEvent" type="click"/>
+            </af:commandButton>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout id="pbl7" styleClass="pageNumber">
+            <af:commandButton text="&lt;" partialSubmit="true" id="cb1" disabled="#{!datatable.flagPrevFirst}">
+               <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage-1}"/>
+               <af:clientListener method="processEvent" type="click"/>
+            </af:commandButton>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout id="pbl13" styleClass="pageNumber">
+            <af:iterator var="vs" value="#{datatable.lstPagination}" varStatus="vst" id="i3">
+               <af:commandButton styleClass="numberOfPage" text="#{vs}" id="cl1" partialSubmit="true" disabled="#{datatable.currentPage eq vs?'true':'false'}">
+                  <af:clientAttribute name="numberOfPage" value="#{vs}"/>
+                  <af:clientListener method="processEvent" type="click"/>
+               </af:commandButton>
+            </af:iterator>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout id="pbl16" styleClass="pageNumber">
+            <af:commandButton text=">" partialSubmit="true" id="cil5" disabled="#{!datatable.flagNextLast}">
+               <af:clientAttribute name="numberOfPage" value="#{datatable.currentPage+1}"/>
+               <af:clientListener method="processEvent" type="click"/>
+            </af:commandButton>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout id="pbl8" styleClass="pageNumber">
+            <af:commandButton text=">>" partialSubmit="true" id="cb2" disabled="#{!datatable.flagNextLast}">
+               <af:clientAttribute name="numberOfPage" value="#{datatable.numberOfPage}"/>
+               <af:clientListener method="processEvent" type="click"/>
+            </af:commandButton>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout id="pbl4" styleClass="pageNumber">
+            <af:commandButton text="#{datatable.ratePage}" partialSubmit="true" id="cb3" disabled="true"/>
+         </af:panelBorderLayout>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>
