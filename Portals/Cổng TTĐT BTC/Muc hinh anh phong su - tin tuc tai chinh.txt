@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentListTemplateDef var="nodes">
+      <af:outputText value="#{datatable.loadLstItems}" visible="false"/>
+      <h:panelGroup id="pbl1" layout="block">
+         <h:panelGroup id="pg1" layout="block">
+            <h:panelGroup id="pg2" layout="block">
+               <h:panelGroup id="pg3" layout="block">
+                  <h:panelGroup id="pg4" layout="block">
+                     <div class="cate-title">
+                        <h2 class="heading">
+                           <af:goLink text="#{pageFlowScope.ztextHeader}" destination="#{pageFlowScope.zlinkHeader}" id="gl1"/>
+                        </h2>
+                     </div>
+                     <div class="cate-tab">
+                        <h:panelGroup id="pg5" layout="block" styleClass="image-news">
+                           <h:panelGroup id="gallery" layout="block" styleClass="ad-gallery">
+                              <h:panelGroup id="pg6" layout="block" styleClass="ad-image-wrapper"/>
+                              <div class="ad-nav">
+                                 <div class="ad-thumbs">
+                                    <af:panelList id="pl1" listStyle="list-style:none; padding:0; margin:0; float:left; width:9000px;">
+                                       <af:iterator var="node" value="#{datatable.lstContentItems}" id="i2" varStatus="vs">
+                                          <af:goLink destination="#{pageFlowScope.zlinkHeader}?dID=#{node.DID}" id="pt_gl25">
+                                             <af:image source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=specific&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="pt_i15" shortDesc="#{node.title}" styleClass="image#{vs.index}"/>
+                                          </af:goLink>
+                                       </af:iterator>
+                                    </af:panelList>
+                                 </div>
+                              </div>
+                           </h:panelGroup>
+                        </h:panelGroup>
+                     </div>
+                  </h:panelGroup>
+               </h:panelGroup>
+            </h:panelGroup>
+         </h:panelGroup>
+      </h:panelGroup>
+   </dt:contentListTemplateDef>
+</jsp:root>

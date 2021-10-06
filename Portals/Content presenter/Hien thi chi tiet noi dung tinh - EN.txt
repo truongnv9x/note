@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <dt:contentTemplateDef var="node">
+      <af:resource source="//api/linux/css/sondt/green-audio-player.min.css" type="css"/>
+      <af:resource type="javascript">
+            function strip(html){
+                html = html.replace(/(\r\n|\n|\r|\s|\")/gm, " ");
+                html = $("
+         <p>"+html+"</p>
+").text();        
+                return html;
+            }
+
+            function docbao(){
+                var iframe = document.getElementById("vbee-audio-source");              
+
+                if (iframe.src!=""){
+                    iframe.src = iframe.src;
+                } else {
+                    var myDivObj = document.getElementById("content-voice").innerHTML ;
+                    var content = strip(myDivObj);
+                    var urlAudio ="";
+                    var url = "http://mof.tinhvan.com/api/getaudio";
+                    var request = new XMLHttpRequest();
+                    var params = "content="+content;
+                    request.open('POST', url, true);
+                    request.onreadystatechange = function() {
+                        if (request.readyState==4) {
+                            urlAudio = request.responseText;
+                            document.getElementById("vbee-audio-source").src = urlAudio;
+                        }
+                    };
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send(params);
+                }
+            }
+            
+            var count = 10;
+            function fontPlus() {
+                count++;
+                if(count>18) count=18;
+                var styleClass = ".cd-content p span";
+                var styleClass1 = ".cd-content p";
+                var mFontSize = count + "pt";
+                $(styleClass).css( {
+                    "font-size" : mFontSize
+                });
+                $(styleClass1).css( {
+                    "font-size" : mFontSize
+                });
+
+            }
+
+            function fontMinus() {
+                count--;
+                if (8 > count)
+                count = 8;
+                var styleClass = ".cd-content p span";
+                var mFontSize = count + "pt";
+                $(styleClass).css( {
+                    "font-size" : mFontSize
+                });
+                var styleClass1 = ".cd-content p";
+                var mFontSize = count + "pt";
+                $(styleClass1).css( {
+                    "font-size" : mFontSize
+                });
+            }
+
+            function setTuongPhan(lvtuongphan) {
+                if (lvtuongphan == 3) {
+                    $(".cd-content").attr("style", "background-color: #FFF !important");
+                } else {
+                    if (lvtuongphan == 0) {
+                        $(".cd-content").attr("style", "background-color: #DCDCDC !important");
+                    } else {
+                        if (lvtuongphan == 1) {
+                            $(".cd-content").attr("style", "background-color: #F5F5F5 !important");
+                        } else {
+                            $(".cd-content").attr("style", "background-color: #F8F8FF !important");
+                        }
+                    }
+                }
+            }
+
+            $(document).ready(function () {
+                window.addEventListener('load', function () {
+                    GreenAudioPlayer.init({
+                        selector: '.player',
+                        stopOthersOnPlay: true
+                    });
+                    $('#btn-read').click(function(){
+                        $('.audio-detail .loading').css('display','block');
+                        var check = $('.play-pause-btn')[0];
+                        const interval = setInterval(function() {
+                            if(check.hasAttribute('style') === true) {
+                                clearInterval(interval);
+                            } else {
+                                var iframe = document.getElementById("vbee-audio-source");              
+                                var voice = document.getElementById("voiceselect").value;
+                                if (iframe.src!=""){
+                                    iframe.src = iframe.src;
+                                } else {
+                                    var myDivObj = document.getElementById("content-voice").innerHTML ;
+                                    let content = strip(myDivObj);
+                                    var urlAudio ="";
+                                    var url = "https://mof.tinhvan.com/api/getaudio";
+                                    var request = new XMLHttpRequest();
+                                    var params = "content="+content+"&amp;voicetype="+voice;
+                                    request.open('POST', url, true);
+                                    request.onreadystatechange = function() {
+                                        if (request.readyState==4) {
+                                            urlAudio = request.responseText;
+                                            document.getElementById("vbee-audio-source").src = urlAudio;
+                                        }
+                                    };
+                                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                    request.send(params);
+                                }
+                            }
+                        }, 5000);
+                    })
+                });
+                $(document).keydown(function( e ){
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'openbracket',
+                        ctrl: true
+                    },function() {
+                        fontPlus();
+                    });
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'closebraket',
+                        ctrl: true
+                    },function() {
+                        fontMinus();
+                    });
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'uparrow',
+                        ctrl: true
+                    },function() {
+                        if (tuongphan &lt; 3) {
+                            tuongphan = tuongphan + 1;
+                            setTuongPhan(tuongphan);
+                        }
+                    });
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'downarrow',
+                        ctrl: true
+                    },function() {
+                        if (tuongphan > 0) {
+                            tuongphan = tuongphan - 1;
+                            setTuongPhan(tuongphan);
+                        }
+                    });
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'p',
+                        ctrl: true
+                    },function() {
+                        var divContents = document.getElementById("content-print").innerHTML;
+                        var a = window.open('','PRINT');
+                        a.document.write(divContents);
+                        a.document.close();
+                        a.print();
+                    });
+                    keyboardShortcut({
+                        selector: e,
+                        key: 'm',
+                        ctrl: true
+                    },function() {
+                        window.open('https://mail.google.com/mail/u/0/#inbox?compose=new');
+                    });
+                });
+                var statuSpeaker = false;
+                var tuongphan = 3;
+                setTuongPhan(tuongphan);
+                $("#giamtuongphan").click(function () {
+                    if (tuongphan > 0) {
+                        tuongphan = tuongphan - 1;
+                        setTuongPhan(tuongphan);
+                    }
+                });
+                $("#tangtuongphan").click(function () {
+                    if (tuongphan &lt; 3) {
+                        tuongphan = tuongphan + 1;
+                        setTuongPhan(tuongphan);
+                    }
+                });
+                $(".btn-print").click(function () {
+                    var divContents = document.getElementById("content-print").innerHTML;
+                    var a = window.open('','PRINT');
+                    a.document.write('
+         <html>
+');
+                    a.document.write('
+            <body> ');
+                    a.document.write(divContents);
+                    a.document.write('</body>
+'+'
+         </html>
+');
+                    a.document.close();
+                    a.print();
+                })
+                $(".btn-mail").click(function(){
+                    window.open('https://mail.google.com/mail/u/0/#inbox?compose=new');
+                })
+            })
+      </af:resource>
+      <af:panelBorderLayout id="pgl20">
+         <div class="new-content">
+            <af:panelBorderLayout styleClass="chitiettin-cover" id="pbl1">
+               <af:outputLabel value="#{displaycontentbean.loadStaticContent}" visible="false" id="ol93"/>
+               <af:panelBorderLayout styleClass="chitiettin-content" id="pbl3">
+                  <af:panelBorderLayout styleClass="chitiettin-under-title" id="pbl2">
+                     <div class="btn-time">
+                        <div class="datetime">
+                                    Font size:
+                           <a class="px-1" href="javascript:fontMinus()">A-</a>
+                           <a href="javascript:fontPlus()">A+</a>
+                        </div>
+                        <div class="datetime read">
+                           <a id="btn-read" href="javascript:void(0)">Read</a>
+                           <div class="audio-detail player ml-2">
+                              <audio id="vbee-audio-source" controls="" name="media" controlslist="nodownload">
+                                 <source id="ogg_src" type="audio/ogg"/>
+                              </audio>
+                           </div>
+                           <div class="select-voice ml-3">
+                              <select class="form-control" id="voiceselect">
+                                 <option value="v1">North</option>
+                                 <option value="v2">Middle</option>
+                                 <option value="v3">South</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="datetime">
+                                    Contrast:
+                           <a href="javascript:void(0)" id="giamtuongphan" class="px-1">
+                                        Reduction
+                                    </a>
+                           <a href="javascript:void(0)" id="tangtuongphan">
+                                        Increase
+                                    </a>
+                        </div>
+                        <div class="datetime">
+                           <button class="btn" onclick="return false;" data-sharer="facebook" data-hashtag="#BTC" data-url="#{request.requestURL}?dDocName=#{param.dDocName}">
+                              <i class="fas fa-share-alt"/>
+                           </button>
+                           <button class="btn btn-print" onclick="return false;">
+                              <i class="fas fa-print"/>
+                           </button>
+                           <button class="btn btn-mail" onclick="return false;">
+                              <i class="fas fa-envelope"/>
+                           </button>
+                        </div>
+                     </div>
+                  </af:panelBorderLayout>
+                  <af:panelBorderLayout styleClass="cd-content" id="pbl4">
+                     <af:panelBorderLayout styleClass="chitiettin-docContent" id="pbl8">
+                        <div id="content-print">
+                           <div id="content-voice">
+                              <af:outputText value="#{displaycontentbean.contentDetail}" inlineStyle="width:100%" escape="false" id="ot4"/>
+                           </div>
+                        </div>
+                     </af:panelBorderLayout>
+                     <af:panelBorderLayout styleClass="chitiettin-attachfile" id="pbl9">
+                        <af:outputLabel value="#{res['TEP_NOI_DUNG_DINH_KEM']}" rendered="#{displaycontentbean.flagAttachfile}" id="ol7"/>
+                        <af:iterator var="attachitem" value="#{displaycontentbean.lstAttachFileId}" id="i2">
+                           <af:panelBorderLayout styleClass="attachfile-item" id="pbl13">
+                              <af:goLink destination="/contentattachfile/idcplg?dID=#{attachitem.DID}&amp;dDocName=#{attachitem.docName}&amp;filename=#{attachitem.title}" targetFrame="_top" text="#{attachitem.title}" id="gl2"/>
+                           </af:panelBorderLayout>
+                        </af:iterator>
+                     </af:panelBorderLayout>
+                  </af:panelBorderLayout>
+               </af:panelBorderLayout>
+            </af:panelBorderLayout>
+         </div>
+      </af:panelBorderLayout>
+      <af:outputText escape="false" value="&lt;script src='/api/linux/js/sondt/green-audio-player.min.js' async  > &lt;/script >"/>
+   </dt:contentTemplateDef>
+</jsp:root>

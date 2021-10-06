@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+   <af:resource source="//api/linux/js/sondt/slick.min.js" type="javascript"/>
+   <style>
+        .news-item {
+            margin: 0 12px !important;
+        }
+        #news-slider {
+            position: relative;
+        }
+        #news-slider .owl-prev, #news-slider .owl-next {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: #fff;
+            padding: 0 15px;
+        }
+        #news-slider .owl-prev {
+            left: 0;
+        }
+        #news-slider .owl-next  {
+            right: 0;
+        }
+        @media (max-width: 767px) {
+            .news-item-top .image {
+                height: 260px;
+            }
+            .box-news .news-item-top {
+                height: 260px !important;
+            }
+            .box-news .news-item-top .content {
+                position: absolute !important;
+            }
+        }
+    </style>
+   <dt:contentListTemplateDef var="nodes">
+      <div id="news-slider" class="owl-carousel owl-theme">
+         <af:iterator rows="0" var="node" varStatus="iterator" value="#{nodes}" id="it1">
+            <af:panelBorderLayout id="nodeListPane01" rendered="#{iterator.index lt 3}">
+               <div class="news-item-top">
+                  <div class="image">
+                     <a href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value.stringValue}">
+                        <af:outputText rendered="#{!composerContext.inEditMode}" id="ot1" value="&lt;img class='center-block center-block1' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.propertyMap['xmAnhdaidien'].value}&amp;dID=#{node.propertyMap['dID'].value}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1'>&lt;/img>" escape="false"/>
+                     </a>
+                  </div>
+                  <div class="content">
+                     <h3 class="news-title">
+                        <a href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value.stringValue}">
+                           <af:outputText value="#{node.propertyMap['dDocTitle'].value.stringValue}"/>
+                        </a>
+                        <span class="time">
+                           <af:outputText value="#{node.propertyMap['xmNgayxuatban'].value.calendarValue}">
+                              <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy hh:mm:ss"/>
+                           </af:outputText>
+                        </span>
+                     </h3>
+                     <p class="sapo two-line">
+                        <af:outputText value="#{node.propertyMap['xComments'].value.stringValue}"/>
+                     </p>
+                  </div>
+               </div>
+            </af:panelBorderLayout>
+         </af:iterator>
+      </div>
+      <div class="news-child">
+         <div class="row m-0">
+            <af:iterator rows="0" var="node" varStatus="iterator" value="#{nodes}" id="it2" first="1">
+               <af:panelBorderLayout styleClass="col-md-4" id="nodeListPane02" rendered="#{iterator.index lt 4}">
+                  <div class="news-item">
+                     <div class="image">
+                        <a href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value.stringValue}">
+                           <af:outputText rendered="#{!composerContext.inEditMode}" id="ot2" value="&lt;img class='center-block center-block1' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.propertyMap['xmAnhdaidien'].value}&amp;dID=#{node.propertyMap['dID'].value}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1'>&lt;/img>" escape="false"/>
+                        </a>
+                     </div>
+                     <div class="content">
+                        <h3 class="news-title">
+                           <a class="three-line" href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.propertyMap['dDocName'].value.stringValue}">
+                              <af:outputText value="#{node.propertyMap['dDocTitle'].value.stringValue}"/>
+                           </a>
+                        </h3>
+                     </div>
+                  </div>
+               </af:panelBorderLayout>
+            </af:iterator>
+         </div>
+      </div>
+   </dt:contentListTemplateDef>
+   <script>
+        $(document).ready(function () {
+            $('#news-slider').owlCarousel({
+                autoPlay: true,
+                loop: true,
+                autoplayTimeout: 5000,
+                slideSpeed: 500,
+                items: 1,
+                navigation: true,
+                navigationText: ['
+      <i class="fas fa-chevron-left"/>
+', '
+      <i class="fas fa-chevron-right"/>
+']
+            })
+        });
+   </script>
+</jsp:root>

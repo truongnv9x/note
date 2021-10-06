@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root version="2.1" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:rtc="http://xmlns.oracle.com/webcenter/collab/rtc" xmlns:cmfn="http://xmlns.oracle.com/webcenter/content/functions" xmlns:f="http://java.sun.com/jsf/core">
+   <dt:contentTemplateDef var="node">
+      <af:outputText id="ot1" value="#{newsPortalBean.initInputListPagingContent}" visible="false"/>
+      <af:inputText id="it262" binding="#{newsPortalBean.itChuyenMuc}" visible="false"/>
+      <af:outputText id="itHeader" rendered="#{! empty pageFlowScope.ztextHeader}" value="#{pageFlowScope.ztextHeader}" escape="false"/>
+      <af:panelBorderLayout styleClass="new-content" id="pbl12">
+         <div class="box-news-cate">
+            <af:iterator rows="0" var="node" varStatus="iterator" value="#{newsPortalBean.lstContent}" id="it01">
+               <div class="bnc-item" style="border-bottom: 1px dotted #bbbcbc ">
+                  <div class="bnc-image">
+                     <a href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.dDocName}" rendered="#{pageFlowScope.zdisplayImage}">
+                        <af:outputText rendered="#{!composerContext.inEditMode and pageFlowScope.zdisplayImage }" id="ot12" value="&lt;img class='center-block center-block1' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.xmAnhdaidien}&amp;dID=#{node.dID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1'>&lt;/img>" escape="false"/>
+                     </a>
+                  </div>
+                  <div class="bnc-content">
+                     <h3 class="bnc-title">
+                        <a href="/webcenter#{pageFlowScope.zdetailPrettyLink}#{node.dDocName}">
+                           <af:outputText id="ot2" value="#{node.dDocTitle}"/>
+                        </a>
+                     </h3>
+                     <div class="datetime">
+                        <span class="item-calendar"/>
+                        <span class="time">
+                           <af:outputText value="#{node.xmNgayxuatban}">
+                              <af:convertDateTime dateStyle="short" pattern="dd/MM/yyyy HH:mm:ss"/>
+                           </af:outputText>
+                        </span>
+                     </div>
+                     <div class="sapo-news">
+                        <p>
+                           <af:outputText id="ot21" rendered="#{pageFlowScope.zdisplayComment}" value="#{node.xComments}"/>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </af:iterator>
+         </div>
+         <div class="clearfix"/>
+         <af:outputText value="&lt;div class='pagi-page'>" escape="false"/>
+         <af:outputText id="otbeginnav" value="&lt;nav aria-label='Page navigation example'>             &lt;ul class='pagination'>" escape="false"/>
+         <af:iterator rows="0" var="node" varStatus="iterator" value="#{newsPortalBean.lstPaging}" id="itnav">
+            <af:outputText id="otbeginli" value="&lt;li class='page-item'>" escape="false"/>
+            <a href="#{node.destination}" class="page-link #{node.styleClass}">
+               <af:outputText value="#{node.text}"/>
+            </a>
+            <af:outputText id="otendli" value="&lt;li>" escape="false"/>
+         </af:iterator>
+         <af:outputText id="otendnav" value="&lt;ul>&lt;nav>" escape="false"/>
+         <af:outputText value="&lt;/div>" escape="false"/>
+      </af:panelBorderLayout>
+   </dt:contentTemplateDef>
+</jsp:root>
