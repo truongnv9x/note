@@ -1,0 +1,38 @@
+Danh sach file tai xuong
+
+KẾ TOÁN HÀNH CHÍNH SỰ NGHIỆP (IMAS)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết<11
+and	Nhóm liên kết>9
+
+KẾ TOÁN NGÂN SÁCH XÃ VÀ TÀI CHÍNH XÃ (KTXA)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết<10
+
+PHẦN MỀM QUẢN LÝ NGÂN SÁCH (QLNS)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết>10
+and	Nhóm liên kết<12
+
+
+QUẢN LÝ & TỔNG HỢP TÀI SẢN CỐ ĐỊNH KHỐI ĐẢNG (THTS)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết>11
+and	Nhóm liên kết<13
+
+TỔNG HỢP THU NỘP ĐẢNG PHÍ (TNDP)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết>12
+and	Nhóm liên kết<14
+
+TỔNG HỢP DỰ TOÁN QUYẾT TOÁN (THBC)
+Content Type	IDC:Profile:LienKetWeb
+and	Đơn vị==ttcg
+and	Nhóm liên kết>13
+and	Nhóm liên kết<15
+

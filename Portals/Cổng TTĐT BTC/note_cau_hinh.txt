@@ -1690,6 +1690,25 @@ http://10.192.255.219:16200
 
 http://192.168.50.250:16200
 
+deploy API 
+
+Lethihonghanh-tv\tvgh@3377
+pim-htdv-14/Htkt!2020
+Mã Pin: 0336637946
+
+Tinh Vân - Nguyễn Công Quyền - Hỗ trợ cổng BTC
+
+http://10.192.255.219:8001/console/login/LoginForm
+/global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
+
+735 336 744
+abcd@1234
+
+122160901
+abcd@1234
+
+================================================================================================================
+
 # =============Database config==================
 spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
 spring.datasource.api.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
@@ -1723,6 +1742,13 @@ server.port = 8080
 spring.devtools.restart.exclude=static/**
  spring.mvc.throwExceptionIfNoHandlerFound=true
  spring.resources.add-mappings=false
+
+
+
+
+================================================================================================================
+
+
 
 http://10.192.255.219:8888/webcenter/portal/admin/portals
 
@@ -1777,4 +1803,8 @@ pim-htdv-14/Htkt!2020
 Mã Pin: 0336637946
 
 Tinh Vân - Nguyễn Công Quyền - Hỗ trợ cổng BTC
+
+https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/slnsnn/mlns2
+
+
  

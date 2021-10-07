@@ -112,6 +112,9 @@
    <option value="33105">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Các câu hỏi thường gặp (33105)</option>
    <option value="33101">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Các Thoả thuận - Hiệp định (33101)</option>
    <option value="33102">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Các văn bản pháp lý của Việt Nam (33102)</option>
+   
+   SELECT * FROM ora:t:IDC:Profile:TinBai WHERE ANY ora:p:xmMuchienthi IN ('33102')  and ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+   
    <option value="33100">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Giới thiệu chung (33100)</option>
    <option value="33227">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Tra cứu mức thuế suất ưu đãi đặc biệt (33227)</option>
    <option value="33106">BTC__Hợp tác quốc tế/HN &amp; HTTC/FTA/ASEAN-Trung Quốc (ACFTA)/Đầu mối liên hệ (33106)</option>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <dt:contentListTemplateDef var="nodes">
+      <div class="box-highlight">
+         <div class="cate-tab border-0 new_top_right">
+            <div class="cate-title w-100">
+               <h2 class="heading">
+                  <af:outputText value="#{pageFlowScope.ztextHeader}" id="ot1"/>
+               </h2>
+            </div>
+            <div class="box-news-cate mt-1">
+               <af:iterator row="0" value="#{nodes}" id="i1" varStatus="vs1" var="n1">
+                  <af:panelBorderLayout id="nodeListPane02" rendered="#{vs1.first}">
+                     <div class="bnc-item m-0 d-block">
+                        <div class="bnc-image mb-1">
+                           <af:goLink id="pt_gl41" destination="#{pageFlowScope.zdetailPrettyLink}#{n1.propertyMap['dDocName'].value}">
+                              <af:outputText rendered="#{!composerContext.inEditMode and vs1.first}" escape="false" value="&lt;img class='w-100 mr-0' onerror='this.src=&quot;/webcenter/oracle/webcenter/siteresources/scopedMD/shared/BOTRUONG/images/no.jpg&quot;' src='/webcenter/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{n1.propertyMap['xmAnhdaidien'].value}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1'/>" id="pt_gl4"/>
+                           </af:goLink>
+                        </div>
+                        <div class="bnc-content w-100">
+                           <h3 class="bnc-title px-1">
+                              <af:goLink id="pt_gl44" rendered="#{vs1.first}" destination="#{pageFlowScope.zdetailPrettyLink}#{n1.propertyMap['dDocName'].value}" text="#{n1.propertyMap['dDocTitle'].value}"/>
+                           </h3>
+                        </div>
+                     </div>
+                  </af:panelBorderLayout>
+               </af:iterator>
+            </div>
+            <div class="cate-tab-content border-0">
+               <af:iterator first="1" value="#{nodes}" id="i2" varStatus="vs2" var="n2">
+                  <div class="ct-content-item mt-0">
+                     <h3 class="title">
+                        <af:goLink id="pt_gl6" destination="#{pageFlowScope.zdetailPrettyLink}#{n2.propertyMap['dDocName'].value}" text="#{n2.propertyMap['dDocTitle'].value}"/>
+                     </h3>
+                  </div>
+               </af:iterator>
+            </div>
+         </div>
+      </div>
+   </dt:contentListTemplateDef>
+</jsp:root>
