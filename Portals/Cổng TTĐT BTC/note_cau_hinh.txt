@@ -1679,6 +1679,8 @@ https://m-portal.mof.gov.vn/acms/faces/login
 Authentication scheme NTLM not supported
 ---
 
+https://vidi.mof.gov.vn/webcenter/portal/admin/portals/list?wc.contentSource=
+
 		<dependency>
 		    <groupId>com.mashape.unirest</groupId>
 		    <artifactId>unirest-java</artifactId>
@@ -1749,10 +1751,24 @@ spring.devtools.restart.exclude=static/**
 
 
 ================================================================================================================
+C:\JDeveloper\mywork\5. Program\ContentPresenterLib\LibPortalOracle12c_AIO_test\PortalSharedLibrary\deploy
 
+//
+backup
+stop server
+xoá deploy cũ
+deploy
+start server
+//
 
-
+http://10.192.255.219:7001/console/console.portal?_nfpb=true&_pageLabel=CoreClusterClusterConfigServersPage&handle=com.bea.console.handles.JMXHandle%28%22com.bea%3AName%3Ducm_cluster%2CType%3DCluster%22%29
 http://10.192.255.219:8888/webcenter/portal/admin/portals
+
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/AdminServer/upload
+
+/RESTFulAPI_WebService.war/app
+
 
 ID_HDSD_VI	20799
 ID_HDSD_EN	20799
@@ -1760,7 +1776,8 @@ ID_HDSD_EN	20799
 10.192.255.219
 re 
 /global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
-/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/linux/images/CONGCHINH_EN/
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/linux/images/CONGCHINH_EN/to-chuc-en.PNG
 
 
 /portal/TVBTC/pages_r/lvtc/hop-tac-quoc-te/hoi-nhap-va-hop-tac-tai-chinh/fta/cac-fta-bta-khac/thucthicamket
@@ -1776,8 +1793,17 @@ re
 735 336 744
 abcd@1234
 
+
+dungdn1 Ndgnud21)(@!
+
+
 122160901
 abcd@1234
+
+UCM
+http://10.192.255.219:16200/cs/idcplg?IdcService=COLLECTION_DISPLAY&hasCollectionID=true&dCollectionID=284959085683000002
+
+209896
 
 334555
 
@@ -1809,4 +1835,20 @@ Tinh Vân - Nguyễn Công Quyền - Hỗ trợ cổng BTC
 https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/slnsnn/mlns2
 
 
+Dân hỏi BT trả lời 
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2009')  and  ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttbt/pages_r/l/tin-bo-tai-chinh?dDocName=
+bTC_BOX_THONG_KE_01
+aeb8f8ef-42eb-4634-99ac-8703480426d4
+/portal/ttbt/pages_r/m/dan-hoi-bo-truong-tra-loi
+
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2004')  and  ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+/portal/ttbt/pages_r/m/thd
+/portal/ttbt/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+
+10.192.243.242
  
