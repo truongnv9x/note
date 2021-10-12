@@ -1,0 +1,20 @@
+1. Copy js css vao thu muc 
+/u01/siteresources/oracle/webcenter/siteresources/scopedMD/shared
+2. Chay lenh
+cd /u01
+./wlst.sh
+connect('weblogic','weblogic1','t3://localhost:8001');
+importMetadata(application='webcenter',server='space_1', fromLocation='/u01/siteresources', docs='/oracle/webcenter/siteresources/scopedMD/shared/**')
+
+link tương ứng
+
+https://mof.gov.vn/webcenter/oracle/webcenter/siteresources/scopedMD/shared/   css/btcvn/stylesheet.css
+
+
+/webcenter/oracle/webcenter/siteresources/scopedMD/shared/images/CONGCHINH/anh-bo-truong12.jpg
+
+
+
+/webcenter/oracle/webcenter/siteresources/scopedMD/shared/js/btcvn/script.js
+/webcenter/oracle/webcenter/siteresources/scopedMD/shared/css/btcvn/stylesheet.css
+/webcenter/oracle/webcenter/siteresources/scopedMD/shared/css/btcvn/style.css

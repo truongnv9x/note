@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "8a28c5fa-78d7-49b3-bea8-2c84de8b40b8",
+		"name": "BTC-Public Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/home?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"home"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getCategories?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getCategories"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "News",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getNews?id=4&limit=10&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getNews"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getDetail?id=16004&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getDetail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "16004"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RelatedNews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getRelatedNews?DocType=TinBai&chuyenMuc=1906&ngayXuatBan=22/01/2021 00:01:00&limit=0&offset=1&language_code=vi&dID=53",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getRelatedNews"
+					],
+					"query": [
+						{
+							"key": "DocType",
+							"value": "TinBai"
+						},
+						{
+							"key": "chuyenMuc",
+							"value": "1906"
+						},
+						{
+							"key": "ngayXuatBan",
+							"value": "22/01/2021 00:01:00"
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						},
+						{
+							"key": "dID",
+							"value": "53"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getVideos?limit=0&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getVideos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchNews",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "keyword",
+							"value": "cục thuế",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "TinBai",
+							"type": "text"
+						},
+						{
+							"key": "language_code",
+							"value": "vi",
+							"type": "text"
+						},
+						{
+							"key": "limit",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/searchNews",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"searchNews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "testvotes",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testvotes@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "16004",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "test votes",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "vote",
+							"value": "9182,9183,9184",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/postComment",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"postComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getNotification?id=31&limit=10&offset=0&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "31"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotification Localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getNotification?limit=10&offset=0&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGuide",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getGuide?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getGuide"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getaudio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "content",
+							"value": "Thủ tướng Phạm Minh Chính đến kiểm tra một số điểm an sinh xã hội ở TP HCM - vùng dịch lớn nhất nước trên cương vị Trưởng ban phòng chống Covid-19 quốc gia, sáng 26/8.",
+							"type": "text"
+						},
+						{
+							"key": "voicetype",
+							"value": "v1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getaudio",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getaudio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

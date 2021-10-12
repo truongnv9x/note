@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core">
+   <dt:contentListTemplateDef var="nodes">
+      <af:resource type="javascript">
+            function processEvent(event) {
+                var buttonHidden = event.getSource().findComponent("sukiengiantiep");
+                var indexSelected = parseInt(event.getSource().getProperty("numberOfPage"), 5);
+                AdfCustomEvent.queue(buttonHidden, "hiddenEvent", {
+                    fvalue : indexSelected
+                }, true);
+            }
+        </af:resource>
+      <af:inputText value="true" visible="false" id="it1" binding="#{contentunderfolder.isltkh}"/>
+      <af:outputText visible="false" value="#{contentunderfolder.initPage}" id="ot1"/>
+      <af:inputText value="15" visible="false" id="it2" binding="#{contentunderfolder.inputResultsOnPage}"/>
+      <div class="cate-title">
+         <h2 class="heading">
+            <af:goLink text="#{pageFlowScope.ztextHeader}" destination="#{pageFlowScope.zlinkHeader}" id="gl1"/>
+         </h2>
+      </div>
+      <af:panelBorderLayout styleClass="underfolder-body" id="pbl3">
+         <af:panelGroupLayout layout="vertical" id="pgl1" styleClass="underfolder-combobox d-flex justify-content-center ml-0">
+            <af:panelBorderLayout styleClass="underfolder-combobox1" id="pbl4" binding="#{contentunderfolder.panelBoderLayoutSelectBox}" inlineStyle="margin-right:10px;"/>
+            <af:panelBorderLayout styleClass="underfolder-combobox2" id="pbl1" binding="#{contentunderfolder.pannelBorderLayoutSo}"/>
+         </af:panelGroupLayout>
+         <af:panelBorderLayout id="pbl6" binding="#{contentunderfolder.contentPanelBorderLayout}" styleClass="underfolder-content">
+            <af:iterator var="node" value="#{contentunderfolder.lstContentItem}" id="i1" varStatus="vs">
+               <af:panelBorderLayout id="pbl9" styleClass="underfolder-item">
+                  <div class="tin_tuc">
+                     <div class="item-news-common">
+						<af:panelGroupLayout rendered="#{pageFlowScope.zdisplayImage}">
+							<div class="thumb">
+							   <div class="image">
+									<a href="/webcenter#{node.linkChitiet}">
+										<af:image shortDesc="#{node.title}" rendered="#{pageFlowScope.zdisplayImage}" source="/image/idcplg?IdcService=GET_FILE&amp;dDocName=#{node.anhMota}&amp;dID=#{node.anhMotaDID}&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Web&amp;allowInterrupt=1&amp;noSaveAs=1" id="imag_2"/>
+									</a>
+							   </div>
+							</div>
+						</af:panelGroupLayout>
+                        <div class="inc-title">
+							<a href="/webcenter#{node.linkChitiet}">
+								<af:outputText styleClass="item-detail font-weight-bold" value="#{node.title}"/>
+							</a>
+                        </div>
+                        <div class="sapo-news">
+                           <p>
+                              <af:outputText value="#{node.comment}"/>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </af:panelBorderLayout>
+            </af:iterator>
+         </af:panelBorderLayout>
+         <af:panelBorderLayout inlineStyle="display:table-row" id="pbl13"/>
+         <af:outputText binding="#{contentunderfolder.collectionIdKyHop}" visible="false"/>
+         <c:set var="size" value="#{fn:length(contentunderfolder.lstContentItem)}"/>
+         <div class="clear"/>
+         <div class="rating-content pt-2">
+            <div class="pagi-page">
+               <nav>
+                  <af:panelBorderLayout id="pbl2" binding="#{contentunderfolder.pagingPanel}" visible="#{size >0?'true':'false'}">
+                     <ul class="pagination">
+                        <li class="page-item">
+                           <af:commandButton text="123" styleClass="buttonEvent" id="sukiengiantiep" visible="false">
+                              <af:serverListener type="hiddenEvent" method="#{contentunderfolder.pageSeleted}"/>
+                           </af:commandButton>
+                        </li>
+                        <li class="page-item">
+                           <af:panelBorderLayout id="pbl17" styleClass="pageNumber">
+                              <af:commandButton text="&lt;" partialSubmit="true" id="cb2" disabled="#{!contentunderfolder.flagPrevFirst}">
+                                 <af:clientAttribute name="numberOfPage" value="#{contentunderfolder.currentPage-1}"/>
+                                 <af:clientListener method="processEvent" type="click"/>
+                              </af:commandButton>
+                           </af:panelBorderLayout>
+                        </li>
+                        <af:iterator var="vs" value="#{contentunderfolder.lstPagination}" varStatus="vst" id="i3">
+                           <li class="page-item">
+                              <af:commandButton styleClass="numberOfPage" text="#{vs}" partialSubmit="true" id="cl1" shortDesc="page #{vs}" disabled="#{contentunderfolder.currentPage eq vs?'true':'false'}">
+                                 <af:clientAttribute name="numberOfPage" value="#{vs}"/>
+                                 <af:clientListener method="processEvent" type="click"/>
+                              </af:commandButton>
+                           </li>
+                        </af:iterator>
+                        <li class="page-item">
+                           <af:panelBorderLayout id="pbl16" styleClass="pageNumber">
+                              <af:commandButton text=">" partialSubmit="true" styleClass="nextEnable" id="cil5" disabled="#{!contentunderfolder.flagNextLast}">
+                                 <af:clientAttribute name="numberOfPage" value="#{contentunderfolder.currentPage+1}"/>
+                                 <af:clientListener method="processEvent" type="click"/>
+                              </af:commandButton>
+                           </af:panelBorderLayout>
+                        </li>
+                     </ul>
+                  </af:panelBorderLayout>
+               </nav>
+            </div>
+         </div>
+      </af:panelBorderLayout>
+   </dt:contentListTemplateDef>
+</jsp:root>

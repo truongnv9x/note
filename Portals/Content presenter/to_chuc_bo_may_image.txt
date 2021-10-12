@@ -1,0 +1,39 @@
+<div id="thum_image" class="new-content text-center">
+    <img usemap="#image-map" src="/api/linux/images/CONGCHINH/to-chuc-bo-may.png"/>
+</div>
+<map name="image-map">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vngnschnhnc" coords="146,395,187" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vut" coords="58,72,92,156" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vtichnhqucphnganninhcbitvi" coords="105,73,143,159" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vtichnhhnhchnhsnghip" coords="158,71,192,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vchnhschthu" coords="203,71,241,157" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vtichnhccngnhngvtchctichnh" coords="255,71,292,157" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vthiua-khenthng" coords="303,71,342,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vhptcquct" coords="362,70,402,159" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vphpch" coords="412,71,452,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vnphng" coords="462,70,501,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vtchccnb" coords="512,70,550,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/thanhtra" coords="561,70,599,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ccqunlgimstktonkimton" coords="611,71,650,158" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ccqunlcngsn" coords="2,179,48,266" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ccqunlnvtichnhingoi" coords="61,180,108,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ccqunlgimstbohim" coords="120,179,168,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ccqunlgi" coords="180,179,227,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/cctinhc-thngktichnh" coords="239,179,286,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/cctichnhdoanhnghip" coords="299,181,346,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/cckhoch-tichnh" coords="358,180,406,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/tngccthu" coords="418,179,465,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/tngcchiquan" coords="476,179,526,268" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/tngccdtrnhnc" coords="538,180,585,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/khobcnhnc" coords="596,179,644,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/ybanchngkhonnhnc" coords="655,180,704,267" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/vinchinlcvchnhschtichnh" coords="1,339,100,386" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/thibotichnhvitnam" coords="122,340,177,384" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/tpchtichnh" coords="200,339,257,385" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/trngbidngcnbtichnh" coords="279,338,335,384" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/hoc-vien-tai-chinh" coords="368,339,425,385" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/truong-dai-hoc-tai-chinh-marketing" coords="439,338,505,386" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/nha-xuat-ban-tai-chinh" coords="517,340,583,384" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/truong-dai-hoc-tai-chinh-ke-toan" coords="597,340,654,386" shape="rect">
+    <area target="_self" href="/webcenter/portal/TVBTC/pages_r/m/gioi-thieu-bo/tchcbmy/truong-dai-hoc-tc-qtkd" coords="666,339,723,384" shape="rect">
+</map>
