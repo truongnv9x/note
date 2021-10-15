@@ -36,3 +36,4 @@ and	Đơn vị==ttcg
 and	Nhóm liên kết>13
 and	Nhóm liên kết<15
 
+alo alo
