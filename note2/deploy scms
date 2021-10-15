@@ -240,4 +240,28 @@ datasource.sampleapp.password=PJ_TEMP
 
 
 
+//chứng chỉ hành nghề
+
+delete from CTCK_NGUOI_HANH_NGHE_CK where id in (select id from (SELECT id, HOTEN, 
+        SO_CHUNG_CHI_HNCK, 
+        NGAY_CAP_CCHN, 
+        NGAYSINH, 
+        ROW_NUMBER() OVER (PARTITION BY HOTEN, SO_CHUNG_CHI_HNCK,  NGAY_CAP_CCHN, NGAYSINH ORDER BY HOTEN) row_num
+     FROM
+        CTCK_NGUOI_HANH_NGHE_CK) where row_num > 1);
+commit;
+
+
+create or replace FUNCTION "FN_CONVERT_TO_VN" /* Creator: Date: Des: function chuyển đổi kí tự có dấu thành không dấu */
+( STRINPUT IN NVARCHAR2 )
+RETURN NVARCHAR2 IS
+STRCONVERT NVARCHAR2(32527);
+BEGIN
+    STRCONVERT := TRANSLATE(REPLACE(REPLACE(STRINPUT,'́', ''),'̀',''), 'áàảãạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴ', 'aaaaaaaaaaaaaaaaadeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyAAAAAAAAAAAAAAAAADEEEEEEEEEEEIIIIIOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYY' );
+    RETURN STRCONVERT;
+END;
+
+http://10.176.1.60:4419/NHNService.asmx/NHNTTNHN
+http://10.176.1.60:4419/NHNService.asmx/DongBoNhanSuNHNCK
+
 
