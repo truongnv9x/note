@@ -2,10 +2,12 @@
 <jsp:root version="2.1" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:dt="http://xmlns.oracle.com/webcenter/content/templates" xmlns:cmf="http://xmlns.oracle.com/webcenter/content/faces" xmlns:rtc="http://xmlns.oracle.com/webcenter/collab/rtc" xmlns:cmfn="http://xmlns.oracle.com/webcenter/content/functions" xmlns:f="http://java.sun.com/jsf/core">
    <dt:contentTemplateDef var="node">
       <af:outputText value="&lt;script src='/webcenter/oracle/webcenter/siteresources/scopedMD/shared/LibaryUpdate12c/sharer.min.js'>&lt;/script>" escape="false"/>
-      <af:resource source="//api/linux/css/sondt/green-audio-player.min.css" type="css"/>
+      <af:resource source="//webcenter/oracle/webcenter/siteresources/scopedMD/shared/css/btcvn/green-audio-player.min.css" type="css"/>
       <af:outputText value="#{newsPortalBean.loadContent}" visible="false" rendered="#{newsPortalBean.contentItem == null}"/>
       <af:inputText binding="#{newsPortalBean.itDocName}" visible="false"/>
       <af:inputText binding="#{newsPortalBean.itChuyenMuc}" visible="false"/>
+	  <af:inputText binding="#{newsPortalBean.linkSpeechV1}" visible="false"/>
+	  
       <af:resource type="javascript">
          jQuery(document).ready(function ($) {
             $(".btnrating").on('click', (function (e) {
@@ -79,7 +81,7 @@
                var myDivObj = document.getElementById("content-voice").innerHTML ;
                let content = strip(myDivObj);
                var urlAudio ="";
-               var url = "https://mof.tinhvan.com/api/getaudio";
+               var url = "https://mof.gov.vn/api/getaudio";
                var request = new XMLHttpRequest();
                var params = "content="+content+"&amp;voicetype="+voice;
                request.open('POST', url, true);
@@ -155,7 +157,7 @@
                });
                $('#btn-read').click(function(){
                   $('.audio-detail .loading').css('display','block');
-                  var check = $('.play-pause-btn')[0];
+                  /*var check = $('.play-pause-btn')[0];
                   const interval = setInterval(function() {
                      if(check.hasAttribute('style') === true) {
                         clearInterval(interval);
@@ -168,7 +170,7 @@
                            var myDivObj = document.getElementById("content-voice").innerHTML ;
                            let content = strip(myDivObj);
                            var urlAudio ="";
-                           var url = "https://mof.tinhvan.com/api/getaudio";
+                           var url = "https://mof.gov.vn/api/getaudio";
                            var request = new XMLHttpRequest();
                            var params = "content="+content+"&amp;voicetype="+voice;
                            request.open('POST', url, true);
@@ -183,7 +185,7 @@
                         }
                      }
                   }, 5000);
-                  
+                  */
                })
             });
             $(document).keydown(function( e ){
@@ -396,9 +398,9 @@
                </div>
                <div class="select-voice ml-3">
                   <select class="form-control" id="voiceselect">
-                     <option value="v1">Phía bắc</option>
-                     <option value="v2">Phía trung</option>
-                     <option value="v3">Phía nam</option>
+                     <option value="v1">Miền Bắc</option>
+                     <option value="v2">Miền Trung</option>
+                     <option value="v3">Miền Nam</option>
                   </select>
                </div>
             </div>
@@ -508,7 +510,7 @@
                            </div>
                         </af:panelBorderLayout>
                      </div>
-                     <div class="col-12 col-md-8">
+                     <div class="col-12 col-md-5">
                         <div class="progress-wrap">
                            <div class="progress-item mb-2 d-flex align-items-center">
                               <div class="total-star pr-2">
@@ -561,12 +563,14 @@
                                             </div>
                               </div>
                            </div>
-                           <div class="btn-vote-wrap text-right mt-3">
-                              <af:commandButton partialSubmit="true" immediate="false" styleClass="btn btn-primary btn_vote btn-last" text="Bình chọn" id="btnRate">
-                                 <af:clientListener type="action" method="saveRateResult"/>
-                                 <af:serverListener type="valueChangeEvent" method="#{newsPortalBean.verifyRate}"/>
-                              </af:commandButton>
-                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-md-3">
+                        <div class="btn-vote-wrap text-right">
+                           <af:commandButton partialSubmit="true" immediate="false" styleClass="btn btn-primary btn_vote btn-last" text="Bình chọn" id="btnRate">
+                              <af:clientListener type="action" method="saveRateResult"/>
+                              <af:serverListener type="valueChangeEvent" method="#{newsPortalBean.verifyRate}"/>
+                           </af:commandButton>
                         </div>
                      </div>
                   </div>
@@ -834,8 +838,7 @@
             <af:clientListener method="handleDialog" type="dialog"/>
          </af:dialog>
       </af:popup>
-      <af:outputText escape="false" value="&lt;script src='/api/linux/js/sondt/green-audio-player.min.js' async  > &lt;/script >"/>
-      <af:outputText escape="false" value="&lt;script src='/api/linux/js/sondt/keyboardShortcut.js' async  > &lt;/script >"/>
+      <af:outputText escape="false" value="&lt;script src='/webcenter/oracle/webcenter/siteresources/scopedMD/shared/js/btcvn/green-audio-player.min.js' async  > &lt;/script >"/>
    </dt:contentTemplateDef>
    <style>
         .xhg,

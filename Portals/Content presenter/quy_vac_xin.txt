@@ -80,8 +80,8 @@
       </div>
       <div class="cate-item hanhchinh">
          <a href="/webcenter/portal/cd">
-            <span class="txt1">công đoàn bộ</span>
-            <span class="txt2">bộ tài chính</span>
+            <span class="txt1">công đoàn bộ bộ tài chính</span>
+            <!--<span class="txt2">bộ tài chính</span>-->
          </a>
       </div>
    </dt:contentListTemplateDef>
