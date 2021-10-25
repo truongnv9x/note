@@ -1919,4 +1919,33 @@ numberOfResult 10
 mofocsdb
 mofdb
 
+less /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/space_1/logs/space_1.out
 
+Lethihonghanh-tv\tvgh@3377
+pim-htdv-14/Htkt!2020
+Mã Pin: 0336637946
+
+Tinh Vân - Nguyễn Công Quyền - Hỗ trợ cổng BTC
+
+https://www.mof.gov.vn/webcenter/portal/btc/r/lvtc/slnsnn/mlns2
+
+
+Dân hỏi BT trả lời 
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2009')  and  ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+/portal/ttbt/pages_r/l/tin-bo-tai-chinh?dDocName=
+bTC_BOX_THONG_KE_01
+aeb8f8ef-42eb-4634-99ac-8703480426d4
+/portal/ttbt/pages_r/m/dan-hoi-bo-truong-tra-loi
+
+
+
+SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2004')  and  ora:p:xmNgonngu = 'vi'  and ora:p:xmTrangthai = '2' ORDER BY ora:p:xmNgayxuatban desc
+
+/portal/ttbt/pages_r/m/thd
+/portal/ttbt/pages_r/l/tin-bo-tai-chinh?dDocName=
+
+
+10.192.243.242
+ 
+cd /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/space_1/logs/
+tail -f space_1.out
