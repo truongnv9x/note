@@ -1713,6 +1713,20 @@ abcd@1234
 
 ================================================================================================================
 
+spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.api.url=jdbc:oracle:thin:@192.168.50.124:1521:mofdb
+spring.datasource.api.username=MOF_OCS
+spring.datasource.api.password=Mof2021#
+spring.datasource.apputils.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.apputils.url=jdbc:oracle:thin:@192.168.50.124:1521:mofdb
+spring.datasource.apputils.username=btcapputils
+spring.datasource.apputils.password=btcapputils
+spring.datasource.acms.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.acms.url=jdbc:oracle:thin:@192.168.50.124:1521:mofdb
+spring.datasource.acms.username=wccbtcdev
+spring.datasource.acms.password=wccbtcdev
+
+
 # =============Database config==================
 spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
 spring.datasource.api.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
@@ -1728,6 +1742,7 @@ spring.datasource.acms.driver-class-name=oracle.jdbc.OracleDriver
 spring.datasource.acms.url=jdbc:oracle:thin:@10.192.1.44:1521:portaldb1
 spring.datasource.acms.username=wccbtcdev
 spring.datasource.acms.password=wccbtcdev
+
 # ==============JPA / HIBERNATE=================
 app.hibernate.api.show-sql=true
 app.hibernate.api.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
@@ -1772,6 +1787,22 @@ http://10.192.255.219:8888/webcenter/portal/admin/portals
 
 /global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
 /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/AdminServer/upload
+
+/global/cms/natives_files/domains/mof_content/ucm/cs/vault/
+
+/global/cms/natives_files/domains/mof_content/ucm/cs/vault/tinvideo/@tiepnk/dwnt/mja4/
+
+/global/cms/natives_files/domains/mof_content/ucm/cs/weblayout/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/
+
+
+
+
+https://mof.gov.vn/api/resource/cs/weblayout/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/mofucm208720.mp4
+
+https://mof.gov.vn/webcenter/cs/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/mofucm208720.mp4
+
+
+https://mof.gov.vn/api/resource/cs/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/mofucm208720.mp4
 
 /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/api_1/logs/
 
@@ -1862,3 +1893,30 @@ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2004'
 
 10.192.243.242
  
+ 
+Acunetix
+
+
+<AND> xmNgayxuatban <= `<$dateCurrent(0)$>`
+
+http://192.168.50.250:8888/webcenter/system/login.jsp
+
+https://118.70.204.161/webcenter/system/login.jsp
+
+http://10.192.255.187/webcenter/system/login.jsp
+
+TỔNG HỢP DỰ TOÁN QUYẾT TOÁN (THBC)
+
+PHẦN MỀM QUẢN LÝ NGÂN SÁCH (QLNS)
+
+QUẢN LÝ & TỔNG HỢP TÀI SẢN CỐ ĐỊNH KHỐI ĐẢNG (THTS)
+
+docType	ThongTinDauThau		
+mucHienThi	33079
+numberOfResult 10
+
+
+mofocsdb
+mofdb
+
+
