@@ -1949,3 +1949,19 @@ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2004'
  
 cd /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/space_1/logs/
 tail -f space_1.out
+
+https://mof.tinhvan.com/webcenter/portal/btc/pages_home
+
+lib or apputils
+(name = "VBDTSessionEJB", mappedName = "Modul_VanBanDuThao-Model-VBDTSessionEJB")
+
+deploy apputils
+deploy tung ViewController -> adflibModule_****.jar
+
+file deploy ACMS
+C:\JDeveloper\mywork\5. Program\Portal_acms\deploy
+
+C:\Users\truongnv3.TINHVAN\AppData\Roaming\JDeveloper\system12.2.1.4.42.190911.2248\DefaultDomain\servers\DefaultServer\cache
+
+file deploy AppUtil
+C:\JDeveloper\mywork\5. Program\BTCAppUtils\File_Deploy\BTCPortalApp.ear
