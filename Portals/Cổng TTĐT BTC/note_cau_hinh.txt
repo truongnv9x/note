@@ -1951,6 +1951,7 @@ cd /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/s
 tail -f space_1.out
 
 https://mof.tinhvan.com/webcenter/portal/btc/pages_home
+https://mof.tinhvan.com/webcenter/portal/btc/pages_r/cddh/thong-ke-tai-chinh/bao-cao-thuong-nien
 
 lib or apputils
 (name = "VBDTSessionEJB", mappedName = "Modul_VanBanDuThao-Model-VBDTSessionEJB")
