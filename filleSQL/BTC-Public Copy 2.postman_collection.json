@@ -1,0 +1,1118 @@
+{
+	"info": {
+		"_postman_id": "bfc225cf-c997-4356-91b6-3d3ad83d9bb1",
+		"name": "BTC-Public Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/home?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"home"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home-Localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/home?language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getCategories?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getCategories"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getCategories?language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getCategories"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "News",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getNews?id=4&limit=10&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getNews"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "News-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getNews?id=62&limit=10&offset=1&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getNews"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "62"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getDetail?id=210850&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getDetail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "210850"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getDetail2?id=MOFUCM214430&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getDetail2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MOFUCM214430"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getDetail?id=23284&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getDetail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "23284"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail2 -local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getDetail2?id=MOFUCM023083&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getDetail2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "MOFUCM023083"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RelatedNews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getRelatedNews?DocType=TinBai&chuyenMuc=1906&ngayXuatBan=22/01/2021 00:01:00&limit=0&offset=1&language_code=vi&dID=53",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getRelatedNews"
+					],
+					"query": [
+						{
+							"key": "DocType",
+							"value": "TinBai"
+						},
+						{
+							"key": "chuyenMuc",
+							"value": "1906"
+						},
+						{
+							"key": "ngayXuatBan",
+							"value": "22/01/2021 00:01:00"
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						},
+						{
+							"key": "dID",
+							"value": "53"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RelatedNews-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getRelatedNews?DocType=TinBai&chuyenMuc=1906&ngayXuatBan=22/01/2021 00:01:00&limit=0&offset=1&language_code=vi&dID=53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getRelatedNews"
+					],
+					"query": [
+						{
+							"key": "DocType",
+							"value": "TinBai"
+						},
+						{
+							"key": "chuyenMuc",
+							"value": "1906"
+						},
+						{
+							"key": "ngayXuatBan",
+							"value": "22/01/2021 00:01:00"
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						},
+						{
+							"key": "dID",
+							"value": "53"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vidi.mof.gov.vn/api/getVideos?limit=0&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"vidi",
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getVideos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video MOF.TINHVAN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getVideos?limit=0&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getVideos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.tinhvan.com/api/getVideos?limit=0&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"tinhvan",
+						"com"
+					],
+					"path": [
+						"api",
+						"getVideos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlbumAnh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getAlbumAnhs?limit=0&offset=1&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getAlbumAnhs"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Video-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getVideos?limit=0&offset=1&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getVideos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlbumAnh-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getAlbumAnhs?limit=0&offset=1&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAlbumAnhs"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchNews",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "keyword",
+							"value": "cục thuế",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "TinBai",
+							"type": "text"
+						},
+						{
+							"key": "language_code",
+							"value": "vi",
+							"type": "text"
+						},
+						{
+							"key": "limit",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mof.gov.vn/api/searchNews",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"searchNews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchNews-local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "keyword",
+							"value": "cục thuế",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "TinBai",
+							"type": "text"
+						},
+						{
+							"key": "language_code",
+							"value": "vi",
+							"type": "text"
+						},
+						{
+							"key": "limit",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/searchNews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"searchNews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "testvotes",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testvotes@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "16004",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "test votes",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "vote",
+							"value": "9182,9183,9184",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mof.gov.vn/api/postComment",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"postComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postComment-local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "testvotes",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testvotes@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "16004",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "test votes",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "vote",
+							"value": "9182,9183,9184",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/postComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getNotification?id=31&limit=10&offset=0&language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "31"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotification-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getNotification?id=31&limit=10&offset=0&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "31"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotification Localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getNotification?limit=10&offset=0&language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGuide",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getGuide?language_code=vi",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getGuide"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGuide-local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getGuide?language_code=vi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getGuide"
+					],
+					"query": [
+						{
+							"key": "language_code",
+							"value": "vi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getaudio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://mof.gov.vn/api/getaudio?content=123123123&voicetype=v1",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getaudio"
+					],
+					"query": [
+						{
+							"key": "content",
+							"value": "123123123"
+						},
+						{
+							"key": "voicetype",
+							"value": "v1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getaudio Copy",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":3123,\r\n    \"voicetype\":\"v1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mof.gov.vn/api/getaudio",
+					"protocol": "https",
+					"host": [
+						"mof",
+						"gov",
+						"vn"
+					],
+					"path": [
+						"api",
+						"getaudio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getaudio-local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getaudio?content=123123123&voicetype=v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getaudio"
+					],
+					"query": [
+						{
+							"key": "content",
+							"value": "123123123"
+						},
+						{
+							"key": "voicetype",
+							"value": "v1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
