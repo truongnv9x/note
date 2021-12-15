@@ -296,17 +296,31 @@ public Integer parseIntegerValue(Object obj) {
 		return value;
 	}
 	
+	public Long parseLongValue(Object obj) {
+		Long value = new Long(0);
+		if(obj != null) {
+			if(obj instanceof Integer) {
+				value = ((Integer) obj).longValue();
+			}else if(obj instanceof BigDecimal){
+				value = ((BigDecimal) obj).longValue();
+			}else if(obj instanceof Long) {
+				value = ((Long) obj);
+			}
+		}
+		return value;
+	}
+	
 	public BigDecimal parseBigDecimalValue(Object obj) {
 		BigDecimal value = new BigDecimal(0);
 		if(obj != null) {
 			if(obj instanceof Integer) {
-				Integer tyLeNamGiuInt = ((Integer) obj).intValue();
-				value = new BigDecimal(tyLeNamGiuInt);
+				Integer intTyppe = ((Integer) obj).intValue();
+				value = new BigDecimal(intTyppe);
 			}else if(obj instanceof BigDecimal){
 				value = ((BigDecimal) obj);
 			}else if(obj instanceof Long) {
-				long tyLeNamGiuLong = ((Long) obj);
-				value = new BigDecimal(tyLeNamGiuLong);
+				long longType = ((Long) obj);
+				value = new BigDecimal(longType);
 			}
 		}
 		return value;
