@@ -22,12 +22,14 @@ oracle
 
 To enable call-by-reference, set the enable-call-by-reference element to True in the weblogic-ejb-jar.xml deployment descriptor or corresponding annotation for this EJB.>
 
+acmsds
 BTC - acms
 jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
 oracle.jdbc.xa.client.OracleXADataSource
 user=wccbtcdev
 wccbtcdev
 
+mofocsdb
 BTC - apputils
 jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
 oracle.jdbc.xa.client.OracleXADataSource
@@ -35,6 +37,7 @@ user=MOF_OCS
 Portalmof2021
 
 --------------------------------------------------
+acmsds1
 UBCK - acms
 jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
 oracle.jdbc.xa.client.OracleXADataSource
@@ -43,10 +46,11 @@ wccbtcdev
 
 oracle.jdbc.OracleDriver
 
+mofocsdb1
 UBCK - apputils
 jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
 oracle.jdbc.xa.client.OracleXADataSource
-user=CONTENT_OCS
+user=CT_OCS
 admin123
 
 
