@@ -3,13 +3,17 @@ http://192.168.50.237:8001/console (SSC_CONTENT)
 http://192.168.50.237:16200/cs (UCM)
 http://192.168.50.237:1620/ibr (IBR)
 DB: 192.168.50.180 port 1521 SID:ubdb1
-CONTENT_OCS admin123 nhes anh
+CONTENT_OCS admin123 
+CT_OCS/admin123 // new
+SSC_DVC_DEMO sscdvcdemo
+
+
 
 192.168.50.237
 oracle
 oracle 
 
-/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/AdminServer/upload
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/UBCK_PORTAL/servers/AdminServer/upload
 
 /global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
 
@@ -17,3 +21,34 @@ oracle
 
 
 To enable call-by-reference, set the enable-call-by-reference element to True in the weblogic-ejb-jar.xml deployment descriptor or corresponding annotation for this EJB.>
+
+BTC - acms
+jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
+oracle.jdbc.xa.client.OracleXADataSource
+user=wccbtcdev
+wccbtcdev
+
+BTC - apputils
+jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
+oracle.jdbc.xa.client.OracleXADataSource
+user=MOF_OCS
+Portalmof2021
+
+--------------------------------------------------
+UBCK - acms
+jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
+oracle.jdbc.xa.client.OracleXADataSource
+user=wccbtcdev
+wccbtcdev
+
+oracle.jdbc.OracleDriver
+
+UBCK - apputils
+jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
+oracle.jdbc.xa.client.OracleXADataSource
+user=CONTENT_OCS
+admin123
+
+
+805735171556000002
+805735171556000001
