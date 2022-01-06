@@ -1711,6 +1711,7 @@ abcd@1234
 122160901
 abcd@1234
 
+https://118.70.204.161/webcenter/portal/btc
 ================================================================================================================
 
 spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
@@ -1780,6 +1781,9 @@ clean r build
 build từng cái ra file ear
 cho chắc
 cuối cùng thì build cái kia ra file war
+
+Apputil
+C:\JDeveloper\mywork\5. Program\BTCAppUtils\BTCAppUtilsBackend\ViewController\src\com\tvs\btcportal\app\view\utils
 
 
 http://10.192.255.219:7001/console/console.portal?_nfpb=true&_pageLabel=CoreClusterClusterConfigServersPage&handle=com.bea.console.handles.JMXHandle%28%22com.bea%3AName%3Ducm_cluster%2CType%3DCluster%22%29
