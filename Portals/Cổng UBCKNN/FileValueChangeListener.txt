@@ -1,0 +1,609 @@
+package tvs.com.web;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import java.io.InputStream;
+
+import java.io.OutputStream;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+
+import java.util.Map;
+
+import java.util.Set;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.event.ValueChangeListener;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import oracle.adf.view.rich.component.rich.input.RichInputFile;
+
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelLabelAndMessage;
+
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
+import oracle.adf.view.rich.context.AdfFacesContext;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.ListUtils;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.myfaces.trinidad.model.UploadedFile;
+import org.apache.myfaces.trinidad.util.Service;
+
+import tvs.com.ridc.wcc.meta.DocumentAttributeDef;
+import tvs.com.web.pojo.FileUploaded;
+
+import view.backing.common.JSFUtils;
+import view.backing.common.ParamUtils;
+import view.backing.system.config.ConfigEnum;
+import view.backing.system.config.ConfigUtil;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import oracle.stellent.ridc.model.DataObject;
+
+import oracle.stellent.ridc.model.TransferFile;
+
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+import org.apache.poi.xwpf.converter.core.FileURIResolver;
+import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter;
+import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+
+import tvs.com.ridc.wcc.service.ServiceFacade;
+
+import tvs.com.web.pojo.ContentItem;
+import tvs.com.web.pojo.User;
+
+import view.backing.common.RepoUtils;
+import view.backing.contentmanagement.repository.content.CheckOutAndOpenBean;
+
+import view.backing.contentmanagement.repository.content.ContentNewBean;
+import view.backing.system.utils.SystemUtils;
+
+
+public  class FileValueChangeListener implements ValueChangeListener {
+
+    Map<String, Object> fileContainer;
+    private RichPanelFormLayout formPanel;
+
+    //    String contenType;
+
+    public FileValueChangeListener() {
+        super();
+        this.fileContainer = new HashMap<String, Object>();
+    }
+
+    public FileValueChangeListener(RichPanelFormLayout formPanel) {
+        super();
+        this.formPanel = formPanel;
+        this.fileContainer = new HashMap<String, Object>();
+    }
+
+    /**
+     * primaryFile and xmAnhdaidien upload handler
+     * @param valueChangeEvent
+     */
+    public void processValueChange(ValueChangeEvent valueChangeEvent) {
+        UIComponent uiComp = valueChangeEvent.getComponent();
+        if (uiComp instanceof RichInputFile) {
+            UIComponent parent = uiComp.getParent();
+            if (parent instanceof RichPanelLabelAndMessage) {
+                RichPanelLabelAndMessage container =
+                    (RichPanelLabelAndMessage)parent;
+            }
+        }
+
+
+        String contenType = StringUtils.EMPTY;
+        Object fileContainerObject =
+            ParamUtils.getParamPageFlowScope("fileContainer");
+        Object contenTypeObj = ParamUtils.getParamPageFlowScope("contenType");
+        if (fileContainerObject instanceof Map) {
+            this.fileContainer = (Map<String, Object>)fileContainerObject;
+        }
+        if (contenTypeObj instanceof String) {
+            contenType = String.valueOf(contenTypeObj);
+        }
+
+        UIComponent uIComponent = valueChangeEvent.getComponent();
+        Object object = valueChangeEvent.getNewValue();
+        if (!(uIComponent instanceof RichInputFile)) {
+            return;
+        }
+        RichInputFile inputFile = (RichInputFile)uIComponent;
+        String fieldName = inputFile.getId();
+        if (object instanceof UploadedFile) {
+
+            UploadedFile uploadedFile = (UploadedFile)object;
+            Object obj = ConfigUtil.getConfigValue(ConfigEnum.UniquePrimaryFile.getName());
+            boolean unique = BooleanUtils.toBoolean(String.valueOf(obj));
+            FileUploaded fileUploaded = new FileUploaded();
+            try {
+                fileUploaded = FileValueChangeListener.tempStore(uploadedFile, unique);
+            } catch (IOException e) {
+            }
+
+            if (DocumentAttributeDef.XM_ANH_DAI_DIEN.getName().equals(fieldName)) {
+                Set<String> invalidFiles = new HashSet<String>();
+                List<UploadedFile> filesValid = new ArrayList<UploadedFile>();
+                //                        List<String> fileExtsAllowed =  ConfigUtil.getFileExtension(ConfigEnum.NewsImageAvatar.getName(), contenType);
+                List<String> fileExtsAllowed =
+                    ConfigUtil.getListValue(ConfigEnum.NewsImageAvatar.getName());
+                String ext =
+                    StringUtils.lowerCase(FilenameUtils.getExtension(uploadedFile.getFilename()));
+                if (fileExtsAllowed == null ||
+                    !fileExtsAllowed.contains(ext)) {
+                    invalidFiles.add(uploadedFile.getFilename());
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      listToString(fileExtsAllowed)),
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      listToString(fileExtsAllowed))));
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                    return;
+                }
+                // check file size
+                long maxSize =
+                    ConfigUtil.getLongValue(ConfigEnum.NewsImageFileSize);
+                if (uploadedFile.getLength() > maxSize) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("ANH_DAI_DIEN_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize)),
+                                                                                  JSFUtils.getMessage("ANH_DAI_DIEN_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize))));
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                    return;
+                }
+            }
+            String ext =
+                StringUtils.lowerCase(FilenameUtils.getExtension(uploadedFile.getFilename()));
+            String html = "";
+//            DataObject objContent = null;
+            try {
+                Map<String, Object> params = new HashMap<String, Object>();
+                Date date = Calendar.getInstance().getTime();
+                DateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
+                String titleTemp = "temp" + dateFormat.format(date);
+                params.put(DocumentAttributeDef.D_DOC_TITLE.getName(), titleTemp);
+                TransferFile transferFile;
+                transferFile = FileUploaded.toTransferFile(fileUploaded);
+                params.put(DocumentAttributeDef.PRIMARY_FILE.getName(), transferFile);
+                ServiceFacade.addxmTeptindinhkem(transferFile, params);
+//                if(objContent != null && objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()) != null && objContent.get(DocumentAttributeDef.D_ID.getName()) != null){
+//                    ParamUtils.putParamSessionScope("dDocNameRemix", objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+//                    for(int i = 0; i < 96; i++){
+//                        Thread.sleep(1000);
+//                        html = RepoUtils.getDocContent(objContent.get(DocumentAttributeDef.D_ID.getName()), objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+//                            if(html != null && !html.toLowerCase().replaceAll(" ","").contains("unabletogetdynamicconversion")){
+//                                break;
+//                            }else{
+//                                html = RepoUtils.getDocContent(objContent.get(DocumentAttributeDef.D_ID.getName()), objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+//                            }
+//                    }
+//                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+//            if(objContent != null && objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()) != null && objContent.get(DocumentAttributeDef.D_ID.getName()) != null){
+//                List<ContentItem> delLst = new ArrayList<>();
+//                ContentItem delItem = new ContentItem();
+//                delItem.setIsLink(false);
+//                delItem.setdDocName(objContent.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+//                delLst.add(delItem);
+//                try {
+//                    ServiceFacade.deleteContents(delLst);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+            if (DocumentAttributeDef.PRIMARY_FILE.getName().equals(fieldName)) {
+                if (ext != null) {
+                    if(ext.equals("pdf")){
+                        if(ParamUtils.getParamSessionScope("contentAction").toString().equals("moi")){
+                            ParamUtils.putParamSessionScope("showCkEditor", false);
+                            ContentNewBean temp = new ContentNewBean();
+                            temp.hideCkeditorRemix();
+                            temp.uploadFile(valueChangeEvent, null);
+                        }
+                        else if(ParamUtils.getParamSessionScope("contentAction").toString().equals("sua")){
+                            ParamUtils.putParamSessionScope("showCkEditor", false);
+                            CheckOutAndOpenBean temp = new CheckOutAndOpenBean();
+                            temp.hideCkeditorRemix();
+                            temp.returnFromNewFile(valueChangeEvent, null);
+                        }
+                    }
+//                else if (ext.equals("docx") || ext.equals("doc")) {
+//                    if(ParamUtils.getParamSessionScope("contentAction") != null){
+//                        if(ParamUtils.getParamSessionScope("contentAction").toString().equals("moi")){
+//                            if ((contenType != null && !contenType.equals("TinBai") && !contenType.equals("ThongTinDauThau") && !contenType.equals("NoiDungTinh"))){
+//                                ParamUtils.putParamSessionScope("showCkEditor", false);
+//                                ContentNewBean temp = new ContentNewBean();
+//                                temp.hideCkeditorRemix();
+//                                temp.uploadFile(valueChangeEvent, null);
+//                            }
+//                            else{
+//                                ParamUtils.putParamSessionScope("showCkEditor", true);
+//                                ContentNewBean temp = new ContentNewBean();
+//                                temp.showCkEditorRemix();
+//                                temp.uploadFile(valueChangeEvent, html);
+//                            }
+//                        }
+//                        else if(ParamUtils.getParamSessionScope("contentAction").toString().equals("sua")){
+//                            if ((contenType != null && !contenType.equals("TinBai") && !contenType.equals("ThongTinDauThau") && !contenType.equals("NoiDungTinh"))){
+//                                ParamUtils.putParamSessionScope("showCkEditor", false);
+//                                CheckOutAndOpenBean temp = new CheckOutAndOpenBean();
+//                                temp.hideCkeditorRemix();
+//                                temp.returnFromNewFile(valueChangeEvent, null);
+//                            }
+//                            else{
+//                                ParamUtils.putParamSessionScope("showCkEditor", true);
+//                                CheckOutAndOpenBean temp = new CheckOutAndOpenBean();
+//                                temp.showCkeditorRemix();
+//                                temp.returnFromNewFile(valueChangeEvent, html);
+//                            }
+//                        }
+//                    }
+//                }
+            }
+                
+                
+           
+                if(contenType == null || contenType.isEmpty())
+                {
+                    return;
+                }
+                Set<String> invalidFiles = new HashSet<String>();
+                List<UploadedFile> filesValid = new ArrayList<UploadedFile>();
+                List<String> fileExtsAllowed =
+                    ConfigUtil.getFileExtension(ConfigEnum.WhiteListFileExtension.getName(),
+                                                contenType);
+    
+                if (fileExtsAllowed == null ||
+                    !fileExtsAllowed.contains(ext)) {
+                    invalidFiles.add(uploadedFile.getFilename());
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      listToString(fileExtsAllowed)),
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      listToString(fileExtsAllowed))));
+                    inputFile.resetValue();
+                    //JSFUtils.addFacesErrorMessage(JSFUtils.getResourceBundle("DU_LIEU_KHONG_HOP_LE"));
+                    
+                    inValidateFileCallBack(true, DocumentAttributeDef.PRIMARY_FILE.getName());
+                    return;
+                } 
+                // check file size
+                long maxSize =
+                    ConfigUtil.getSizePrimaryFile(ConfigEnum.WhiteListFileExtension.getName(),
+                                                  contenType);
+                if (uploadedFile.getLength() > maxSize) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize)),
+                                                                                  JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                                                      uploadedFile.getFilename(),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize)))); //KICH_THUOC_CHO_PHEP_KHONG_HOP_LE
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.PRIMARY_FILE.getName());
+                    return;
+                }
+                
+      
+            }
+            
+            try {
+                if (this.fileContainer != null) {
+                    this.fileContainer.put(fieldName, fileUploaded);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+        // update view
+        UIComponent labelAndPanel = inputFile.getParent();
+        for (UIComponent child : labelAndPanel.getChildren()) {
+            if (child instanceof RichPanelGroupLayout) {
+                RichPanelGroupLayout group = (RichPanelGroupLayout)child;
+                for (UIComponent groupChild : group.getChildren()) {
+                    if (groupChild instanceof RichOutputText) {
+                        RichOutputText fileNameView =
+                            (RichOutputText)groupChild;
+                        if (fileContainer.containsKey(fieldName)) {
+                            FileUploaded fileUploaded =
+                                (FileUploaded)fileContainer.get(fieldName);
+                            if (fileUploaded != null) {
+                                fileNameView.setValue(fileUploaded.getFileName());
+                            }
+                        }
+                        break;
+                    }
+                }
+                group.setVisible(true);
+                //                    inputFile.resetValue();
+                break;
+            }
+        }
+        //            UIComponent containerUi =  labelAndPanel.getParent();
+        AdfFacesContext.getCurrentInstance().addPartialTarget(labelAndPanel);
+
+        return;
+    }
+    
+   
+    public void inValidateFileCallBack(boolean inValidate,
+                                       String fieldName) {
+
+        if (!inValidate)return;
+//        if (DocumentAttributeDef.PRIMARY_FILE.getName().equals(fieldInValid)) {
+            RichPanelLabelAndMessage container = null;
+            for (UIComponent comp : formPanel.getChildren()) {
+                String id = comp.getId();
+                if (comp instanceof RichPanelLabelAndMessage) {
+                    container = (RichPanelLabelAndMessage)comp;
+                    UIComponent hintGroupComp = container.getChildren().get(0);
+                    if (hintGroupComp != null &&
+                        fieldName.equals(hintGroupComp.getId())) {
+                        break;
+                    }
+                }
+            }
+            if (container == null)
+                return;
+            UIComponent hintGroupComp = container.getChildren().get(1);
+            if (hintGroupComp instanceof RichPanelGroupLayout) {
+                RichPanelGroupLayout hintGroupPanel =
+                    (RichPanelGroupLayout)hintGroupComp;
+                hintGroupPanel.setVisible(false);
+                AdfFacesContext.getCurrentInstance().addPartialTarget(hintGroupPanel);
+            }
+//        }
+    }
+
+    /**
+     * Attach file upload handler
+     * @param valueChangeEvent
+     * @param fileContainer
+     * @param contentType
+     */
+    public static void attachFilesValueChangeHandler(ValueChangeEvent valueChangeEvent,
+                                                     Map<String, Object> fileContainer,
+                                                     String contentType) {
+        Object fileContainerObject =
+            ParamUtils.getParamPageFlowScope("fileContainer");
+        if (fileContainerObject instanceof Map) {
+            fileContainer = (Map<String, Object>)fileContainerObject;
+        }
+        UIComponent uIComponent = valueChangeEvent.getComponent();
+        Object object = valueChangeEvent.getNewValue();
+        if (uIComponent instanceof RichInputFile) {
+            RichInputFile inputFile = (RichInputFile)uIComponent;
+            String fieldName = inputFile.getId();
+            List<String> fileExtsAllowed =
+                ConfigUtil.getFileExtension(ConfigEnum.AttachFilesAllowed.getName(),
+                                            contentType); //getContentType()
+            long maxSize =
+                ConfigUtil.getSizeAttachFile(ConfigEnum.AttachFilesAllowed.getName(),
+                                             contentType);
+            Set<String> invalidFiles = new HashSet<String>();
+            List<UploadedFile> filesValid = new ArrayList<UploadedFile>();
+            List<FileUploaded> filesUploaded = new ArrayList<FileUploaded>();
+
+            List<UploadedFile> uploadedFiles = new ArrayList<UploadedFile>();
+            if (object instanceof List) {
+                uploadedFiles = (List<UploadedFile>)object;
+            } else if (object instanceof UploadedFile) {
+                uploadedFiles.add((UploadedFile)object);
+            }
+            if (uploadedFiles instanceof
+                List) { //&& DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName().equals(fieldName)
+                // check extension file
+                for (UploadedFile file : uploadedFiles) {
+                    String ext =
+                        StringUtils.lowerCase(FilenameUtils.getExtension(file.getFilename()));
+                    if (fileExtsAllowed == null ||
+                        !fileExtsAllowed.contains(ext)) {
+                        invalidFiles.add(file.getFilename());
+                        continue;
+                    }
+                    filesValid.add(file);
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      listToString(invalidFiles),
+                                                                                                      listToString(fileExtsAllowed)),
+                                                                                  JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                                                      listToString(invalidFiles),
+                                                                                                      listToString(fileExtsAllowed))));
+                    inputFile.resetValue();
+                    return;
+                }
+                // check file size
+                //                        long maxSize =  ConfigUtil.getLongValue(ConfigEnum.AttachFileFileSize);
+                filesValid.clear();
+                for (UploadedFile file : uploadedFiles) {
+                    if (file.getLength() > maxSize) {
+                        invalidFiles.add(file.getFilename());
+                        continue;
+                    }
+                    filesValid.add(file);
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance().addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                                                 new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                                                  JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                                                      listToString(invalidFiles),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize)),
+                                                                                  JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                                                      listToString(invalidFiles),
+                                                                                                      FileUtils.byteCountToDisplaySize(maxSize))));
+                    //                            inputFile.resetValue();
+                    return;
+                }
+                if (CollectionUtils.isNotEmpty(filesValid)) {
+                    for (UploadedFile fileValid : filesValid) {
+                        FileUploaded fUploaded = null;
+                        try {
+                            fUploaded =
+                                    FileValueChangeListener.tempStore(fileValid,
+                                                                      false);
+                            filesUploaded.add(fUploaded);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                if (CollectionUtils.isNotEmpty(filesUploaded)) {
+                    List<FileUploaded> fileUploadedOld =
+                        new ArrayList<FileUploaded>();
+                    if (fileContainer.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+                        Object obj =
+                            fileContainer.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+                        if (obj instanceof List) {
+                            fileUploadedOld = (List<FileUploaded>)obj;
+                        }
+                    }
+                    List fileUploadedNew =
+                        ListUtils.sum(filesUploaded, fileUploadedOld);
+                    if (fileUploadedNew != null) {
+                        fileContainer.put(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName(),
+                                          fileUploadedNew);
+                    }
+                }
+            }
+            inputFile.resetValue();
+        }
+    }
+
+    /**
+     * Convert Collection<String>  to simple string that human readable
+     * @param list
+     * @return
+     */
+    public static String listToString(Collection<String> list) {
+        if (CollectionUtils.isEmpty(list))
+            return StringUtils.EMPTY;
+        StringBuilder builder = new StringBuilder();
+        Iterator<String> iter = list.iterator();
+        while (iter.hasNext()) {
+            builder.append(iter.next());
+            if (iter.hasNext()) {
+                builder.append(",");
+            }
+        }
+        return builder.toString();
+    }
+
+    /**
+     * Store file temp
+     * @param uploadedFile
+     * @return
+     * @throws IOException
+     */
+    public static FileUploaded tempStore(UploadedFile uploadedFile,
+                                         boolean unique) throws IOException {
+        String prefix = FilenameUtils.getBaseName(uploadedFile.getFilename());
+        String suffix = FilenameUtils.getExtension(uploadedFile.getFilename());
+        File tempFile = File.createTempFile(prefix + "-", "." + suffix);
+        InputStream input = uploadedFile.getInputStream();
+        OutputStream output = new FileOutputStream(tempFile);
+        FileUploaded fileUploaded = null;
+        try {
+            IOUtils.copy(input, output);
+            fileUploaded = new FileUploaded();
+            // create fileName with rule
+            String fileName = uploadedFile.getFilename();
+            //            Object obj = ConfigUtil.getConfigValue(ConfigEnum.UniquePrimaryFile.getName());
+            //            boolean unique = BooleanUtils.toBoolean(String.valueOf(obj));
+            if (unique) {
+                fileName =
+                        FilenameUtils.getBaseName(fileName) + "_" + Calendar.getInstance().getTimeInMillis() +
+                        "." + FilenameUtils.getExtension(fileName);
+            }
+            //            //System.out.println("******* unique:" +unique);
+            //            //System.out.println("******* fileName:" +fileName);
+            fileUploaded.setFileName(fileName);
+            fileUploaded.setContentType(uploadedFile.getContentType());
+            fileUploaded.setFile(tempFile);
+            fileUploaded.setLength(tempFile.length());
+            fileUploaded.setFilePath(tempFile.getAbsolutePath());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            IOUtils.closeQuietly(output);
+            IOUtils.closeQuietly(input);
+        }
+        return fileUploaded;
+    }
+
+
+    public void setFileContainer(Map<String, Object> fileContainer) {
+        this.fileContainer = fileContainer;
+    }
+
+    public Map<String, Object> getFileContainer() {
+        return fileContainer;
+    }
+
+    public void setFormPanel(RichPanelFormLayout formPanel) {
+        this.formPanel = formPanel;
+    }
+
+    public RichPanelFormLayout getFormPanel() {
+        return formPanel;
+    }
+
+
+
+}
+
