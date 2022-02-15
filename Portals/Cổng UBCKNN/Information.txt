@@ -147,30 +147,47 @@ PickerParamForContentPresenterShareLibWar
 
 Using ContentControl instead of ContentPresenter is working for me. Thanks @KaiBrummund for his comment on my question.
 
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+		  /oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
 
 
 
 
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+	
+/u01/oracle/Oracle/Middleware/Oracle_Home/em/archives/fmwctrl/plugins
 
 
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/btc_portal
+
+/u01/Oracle/Middleware/Oracle_Home/em/archives/fmwctrl/plugins/ 
+	
+/u01/Oracle/Middleware/Oracle_Home/wcportal/archives/applications/webcenter. ear
+
+/oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
 
 
+/oracle/webcenter/doclib/view/jsf/taskflows/presenter/
+
+contentPresenter.xml
 
 
+237
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/ubck_portal/servers/AdminServer/upload
+250
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/btc_portal/servers/AdminServer/upload
+
+constraints-propertybean
+
+C:\Oracle\Middleware\Oracle_Home\jdeveloper\jdev
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/u01/metadata
 

@@ -1794,6 +1794,9 @@ http://10.192.255.219:8888/webcenter/portal/admin/portals
 
 /global/cms/natives_files/domains/mof_content/ucm/cs/vault/
 
+ unzip acmsbtc_application.zip
+
+
 /global/cms/natives_files/domains/mof_content/ucm/cs/vault/tinvideo/@tiepnk/dwnt/mja4/
 
 /global/cms/natives_files/domains/mof_content/ucm/cs/weblayout/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/
@@ -1984,7 +1987,19 @@ C:\Users\truongnv3.TINHVAN\AppData\Roaming\JDeveloper\system12.2.1.4.42.190911.2
 file deploy AppUtil
 C:\JDeveloper\mywork\5. Program\BTCAppUtils\File_Deploy\BTCPortalApp.ear
 
+192.168.50.237:9001/console
+192.168.50.237:8989/webcenter/portal
 
 
 Fix search tìm kiếm dự thảo văn bản theo ngày xuất bản 
 Fix bug scms
+
+
+
+
+root like 'home/menu%' and LANGUAGE_CODE = 'en'
+
+
+
+
+

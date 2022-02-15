@@ -13,6 +13,50 @@ C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps
 ========> B1: Merge code bản mới nhất ở cả server + client
 ========> B2: Client đổi thông tin 2 file env và httpConnect để cấu hình trỏ lại đường dẫn
 
+http://fims.ssc.gov.vn/BaoCao/wpKhaiThacBc.aspx?loaithanhvienid=1&thanhvienid={0}&mk={1}
+
+DECLARE
+  P_MABAOCAO VARCHAR2(200);
+  P_GIATRIKY NVARCHAR2(200);
+  P_THOIHANGUI TIMESTAMP;
+BEGIN
+  P_MABAOCAO := 'BCTHMGTDCK';
+  P_GIATRIKY := '15/05/2018';
+  P_THOIHANGUI := TO_TIMESTAMP('16/05/2018 08:00:00', 'dd/mm/yyyy hh:mi:ss');
+
+  SP_UPDATE_THOI_HAN_BAOCAO(
+    P_MABAOCAO => P_MABAOCAO,
+    P_GIATRIKY => P_GIATRIKY,
+    P_THOIHANGUI => P_THOIHANGUI
+  );
+--rollback; 
+END;
+
+----
+
+DECLARE
+  P_MABAOCAO NVARCHAR2(200);
+  P_KYBAOCAO NVARCHAR2(200);
+  P_GIATRIKY NVARCHAR2(200);
+  P_NAMCANHBAO NVARCHAR2(200);
+  P_THOIHANGUI TIMESTAMP;
+BEGIN
+  P_MABAOCAO := 'BCTCQ';
+  P_KYBAOCAO := 'Q';
+  P_GIATRIKY := '4';
+  P_NAMCANHBAO := '2021';
+  P_THOIHANGUI := TO_TIMESTAMP('18/01/2022 08:00:00', 'dd/mm/yyyy hh:mi:ss');
+
+  SP_TAO_BAO_CAO_THU_CONG(
+    P_MABAOCAO => P_MABAOCAO,
+    P_KYBAOCAO => P_KYBAOCAO,
+    P_GIATRIKY => P_GIATRIKY,
+    P_NAMCANHBAO => P_NAMCANHBAO,
+    P_THOIHANGUI => P_THOIHANGUI
+  );
+--rollback; 
+END;
+
 103.3.252.117 với user/pass: tinhvanuser01/Tinhvan0
 https://192.168.3.17/PasswordVault/v10/logon/cyberark
 user/pass: donvitinhvan/Uyban0099
@@ -23,7 +67,16 @@ https://www.youtube.com/watch?v=wAabWWyAkDg
 
 hopcongkhaingansach
 
+
 YenThanhVien / Yen@th84
+
+admin/Cn2t@512
+
+UPDATE MẬT KHẨU = Ssc@123
+
+UPDATE QT_NGUOI_DUNG SET MAT_KHAU = '$2a$10$kirGS.pNUuMQx67GHkk6guuAlVm72uHh.4f5wXzZbNZPGYP6CDwqm' WHERE MA_NGUOI_DUNG IN 
+(select DISTINCT(T1.ID) from QT_NGUOI_DUNG T1 LEFT JOIN LK_NGUOI_DUNG_NHOM T2 ON T1.MA_NGUOI_DUNG = T2.NGUOI_DUNG_ID WHERE NHOM_NGUOI_DUNG_ID IN (47,91));
+
 
 regex
 Fax: /^\+?[0-9]+$/
@@ -78,6 +131,24 @@ VUE_APP_ROOT_API = http://192.168.2.45:8080/scms-server/api/v1/
 BASE_URL = /
 
 
+
+----------------------------------
+----------------------------------
+VUE_APP_ROOT_API= https://scms.ssc.gov.vn/scms-server/api/v1/
+BASE_URL = /
+
+
+export default {
+  httpConnect: "https://scms.ssc.gov.vn/scms-server"
+};
+// httpConnect: "http://localhost:8088"
+// httpConnect: "http://scms.tinhvan.com/scms-server"
+// httpConnect: "http://scmstest.tinhvan.com/scms-test"
+// httpConnect: "http://192.168.2.45:8080/scms-server"
+// httpConnect: "http://103.3.252.91:8080/scms-server"
+// VUE_APP_ROOT_API = http://192.168.2.45:8080/scms-server/api/v1/
+// BASE_URL = /
+
 //new-------------------
 http://103.3.252.91:8080/phanquyenbaocaodichvuctck
 
@@ -85,6 +156,16 @@ http://103.3.252.91:8080/login
 VUE_APP_ROOT_API = http://103.3.252.91:8080/scms-server/api/v1/
 BASE_URL = /
 
+VUE_APP_ROOT_API = http://scms.ssc.gov.vn/scms-server/api/v1/
+BASE_URL = /
+
+httpConnect: "http://103.3.252.91:8080/scms-server"
+
+httpConnect: "http://scms.ssc.gov.vn/scms-server"
+
+274520
+
+http://scms.ssc.gov.vn/scms-server/authenticate
 
 Root
 VUE_APP_ROOT_API= http://scms.tinhvan.com/scms-server/api/v1/
@@ -594,4 +675,60 @@ for (String kyBC : listKyBc) {
         }
         return new String(result);
     }
-									
+						
+
+
+npm install @vue/cli 
+npm install -g npm@latest
+npm v vue
+npm install --save --legacy-peer-deps
+npm i vue@latest --save
+npm 
+
+
+
+select id,tai_khoan from qt_nguoi_dung where tai_khoan in ('anhntv','anhnv','toanlk','truongnv','truongnv1','truongnv3');
+
+
+
+
+
+getGDTTTrangThai
+
+<q-btn
+                v-show="
+                  (model.trangThai == 0 || model.trangThai == 1)
+                "
+                size="12px"
+                color="warning"
+                label="Ngừng sử dụng"
+                icon="import_export"
+                @click="ngungSuDung(model)"
+                style="text-decoration: none"
+              />&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
