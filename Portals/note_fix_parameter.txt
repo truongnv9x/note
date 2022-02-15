@@ -1,0 +1,61 @@
+{"AddForm":
+{"map":{
+"TinBai":["dDocAuthor","xmNguonthuthap","xmSolandoc","xTrashDeleteDate","xmSolanbinhchon","xmNgaysua","xmNgayxuatban","xmNguoisua","xmBinhluan","xmNguoitaophienban","xmNguoiduyet","xCollectionID","xmNguoiduyetcoso","xmSolanchiasequaemail","xmNgaytao","xmThutu","xmBinhchon","xCollectionIDPath"],
+"AlbumAnh":["dDocName","xComments","xmNgayxuatban"]}}}
+
+
+
+
+{"SearchForm":{
+"map":{"TinBai":["xCollectionID"],
+"NoiDungTinh":["dDocName","xmNgonngu","xmNguoitao","dDocAuthor","xmTeptindinhkem","xmNguoiduyet","xmCapduyet","xCollectionID","xmNguoiduyetcoso","dSecurityGroup","xmNgaytao","xCollectionIDPath","dDocAccount"]}},
+"AddForm":{"map":{"AlbumAnh":["dDocName","dDocAuthor","dDocType","xmNgaysua","xmNguoisua","dDocAccount"],
+"NoiDungTinh":["dDocAuthor","xmNguoiduyet","dDocType","xmNguoiduyetcoso","xmNgonngu","xmNguoitao"],
+"ThongTinDauThau":["dDocName","xmSolandoc","xmNgaysua","xmNguoisua","xmNguoiduyet","dDocType"],
+"DongSuKien":["dDocType","xmNgayhethan"],
+"TinThuThap":["dDocType"],"TinVideo":["xmNguoiduyet","dDocType","xmNguoiduyetcoso","xmNguoitao"],
+"TepTaiLieu":["xmNguoiduyet","dDocType","xmNguoiduyetcoso","xmNgaysua","xmNguoitaophienban"],
+"TinAnh":["xmNguoiduyet","xmNguoiduyetcoso","dDocAccount"],"NSNN2019":["xmSolandoc","dDocAuthor","xmNguoisua","xmNguoitaophienban","xmNguoiduyet","dDocType","xmNguoiduyetcoso"],
+"Anh":["dDocAuthor","dDocType"]}},"ViewForm":{"map":{"AlbumAnh":["dDocName"]}}}
+
+
+
+--- Add and edit portal  (Ctrl+Shift+E)
+xmlns:wcdc="http://xmlns.oracle.com/webcenter/spaces/taglib" 
+	<af:panelGroupLayout id="pt_tb" styleClass="WCEditableArea">
+		<wcdc:portalToolbar id="ptbdc"/>
+	</af:panelGroupLayout>
+	
+==============================================================================================
+
+file docx config parameter content presenter
+\SourceCode\portal\source_new_v2\Document\portal\configWebcenter.docx
+/u01/Oracle/Middleware/Oracle_Home/wcportal/webcenter/modules/oracle.webcenter.framework/doclib-service-view.jar
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/wcportal/webcenter/modules/oracle.webcenter.framework
+
+
+
+==============================================================================================
+deploy API vào châm 7007 --> api --> context root /api
+==============================================================================================
+startNode=/pages_r/m, includeStartNode=:includeStartNode
+includeStartNode = true ---> sẽ for từ element root "m" sau đó for đến child
+includeStartNode = false ---> đọc trực tiếp từ element child của "m"
+==============================================================================================
+chuyển sang ggskin để fix vỡ layout lần load đầu tiên
+==============================================================================================
+thêm Link http || https phải thêm link trong /oracle/webcenter/webcenterapp/metadata/valid-link-url.xml
+
+<?xml version='1.0' encoding='UTF-8'?>
+<valid-link-url xmlns="http://xmlns.oracle.com/webcenter/validurl">
+	<Item link="https://vbpq.mof.gov.vn/"/>
+	<!-- <Item link=""/> -->
+</valid-link-url>
+
+tạo con mới thì import portal xong hết rồi hãy import metadata
+làm ngược k đc đâu
+
+
+
+==============================================================================================

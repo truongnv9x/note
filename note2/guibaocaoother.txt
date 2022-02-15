@@ -1,0 +1,2787 @@
+<template>
+  <div>
+    <div class="page-bar">
+      <div class="q-pa-md q-gutter-sm">
+        <q-breadcrumbs>
+          <q-breadcrumbs-el label="Trang chủ" icon="home" to="/trangchu" />
+          <q-breadcrumbs-el
+            label="Danh sách báo cáo định kỳ"
+            to="/baocaodinhkictck"
+          />
+          <q-breadcrumbs-el label="Gửi báo cáo" />
+        </q-breadcrumbs>
+      </div>
+    </div>
+    <div class="q-pa-md">
+      <div class="portlet box blue">
+        <div class="portlet-title">
+          <div class="caption">
+            <i aria-hidden="true"></i>
+            Gửi {{ guiBaocaoTitle }}
+          </div>
+          <div class="tools">
+            <a href class="remove" data-original-title title></a>
+          </div>
+        </div>
+        <div class="portlet-body form">
+          <br />
+          <fieldset style="padding: 10px; overflow: hidden; min-width: 100%">
+            <legend class="fwb">Thông tin gửi báo cáo</legend>
+            <form
+              class="login-form layout-padding"
+              addform
+              @submit.prevent.stop="onValidate"
+            >
+              <div class="form-body">
+                <!-- Tên công ty ck  ▼ -->
+                <div class="mb-10"></div>
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Công ty CK
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-10">
+                    <q-input
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.congtyCk"
+                      disable
+                      dense
+                      outlined
+                      input-debounce="0"
+                    />
+                  </div>
+                  <!-- Tên công ty ck  ▲ -->
+                </div>
+
+                <!-- Chon loai bao cao gui  ▼ -->
+                <div class="mb-20"></div>
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Loại báo cáo gửi
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-10">
+                    <q-select
+                      filter
+                      use-input
+                      v-model="loaiBaoCaoGui"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="loaiBaoCaoGuiOps"
+                      @input="
+                        (newval) => {
+                          this.initGuiBaoCaoType(newval);
+                          this.getLoaiBaoCaoGuiRequest(newval.value);
+                          }"
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey"
+                            >Không có kết quả</q-item-section
+                          >
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+                  <!-- Chon loai bao cao gui  ▲ -->
+                </div>
+
+                <!--  Năm báo cáo  ▼ -->
+                <div class="mb-20"></div>
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Năm báo cáo
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-10">
+                    <q-input
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.namBaoCao"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      lazy-rules
+                      :rules="[
+                        (val) =>
+                          val.length != 0 || 'Số năm không được để trống',
+                        (val) =>
+                          new RegExp(/(?:(?:19|20)[0-9]{2})/).test(
+                            String(val)
+                          ) || 'Năm báo cáo không đúng định dạng.',
+                      ]"
+                    />
+                  </div>
+                </div>
+                <!--  Năm báo cáo  ▲ -->
+
+                <!-- Ky bao cao form  ▼ -->
+                <!-- <div class="form-group row col-12" v-show="!guiBaoCaoTypeOptions.isGuiBcBatThuong"> -->
+                  <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Kỳ báo cáo
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-4">
+                    <q-select
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.kyGuiBcText"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="dulieuBaoCaoOptions.optionKyGuiBaoCao"
+                      >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey"
+                            >Không có kết quả</q-item-section
+                          >
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div>
+                  <!-- Ky bao cao form  ▲ -->
+
+                  <!-- gia tri ky form  ▼ -->
+                  <template v-if="dulieuBaoCao.kyGuiBcText.value != 'N'">
+                  <label class="col-md-2 col-control-label">
+                    Giá trị kỳ
+                    <!-- <span style="color:red">(*)</span> -->
+                  </label>
+                  <div class="col-md-4" v-if="loaiBaoCaoGui.value != null">
+                    <q-input
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.giaTriKyBaoCao"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      lazy-rules
+                    >
+                      <!-- :rules="[ v => v.length != 0 || 'Bắt buộc phải nhập giá trị kỳ.']" -->
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey"
+                            >Không có kết quả</q-item-section
+                          >
+                        </q-item>
+                      </template>
+                    </q-input>
+                  </div>
+                  </template>
+                  <template v-if="dulieuBaoCao.kyGuiBcText.value == 'N'">
+                  <label class="col-md-2 col-control-label">
+                    Giá trị kỳ
+                    <!-- <span style="color:red">(*)</span> -->
+                  </label>
+                  <div class="col-md-4" v-if="loaiBaoCaoGui.value != null">
+                    <q-input
+                                :value="dulieuBaoCao.giaTriKyBaoCao"
+                                v-model="dulieuBaoCao.giaTriKyBaoCao"
+                                dense
+                                outlined
+                                lazy-rules
+                                :rules="[
+                                  (val) =>
+                                    val.length > 0 ||
+                                    'Vui lòng chọn giá trị kỳ báo cáo',
+                                ]"
+                                readonly
+                              >
+                                <template v-slot:append>
+                                  <q-icon
+                                    name="event"
+                                    class="cursor-pointer"
+                                    color="primary"
+                                  >
+                                    <q-popup-proxy
+                                      ref="qDateProxy"
+                                      transition-show="scale"
+                                      transition-hide="scale"
+                                    >
+                                      <q-date
+                                        v-model="NgayKyBaoCaoTemp"
+                                        @input="
+                                          (val) => {
+                                            var newTuNgay = new Date(val);
+
+                                            dulieuBaoCao.giaTriKyBaoCao =
+                                              (newTuNgay.getDate() < 10
+                                                ? '0' + newTuNgay.getDate()
+                                                : newTuNgay.getDate()) +
+                                              '/' +
+                                              (newTuNgay.getMonth() + 1 < 10
+                                                ? '0' +
+                                                  (newTuNgay.getMonth() + 1)
+                                                : newTuNgay.getMonth() + 1) +
+                                              '/' +
+                                              newTuNgay.getFullYear();
+                                            $refs.qDateProxy.hide();
+                                          }
+                                        "
+                                      ></q-date>
+                                    </q-popup-proxy>
+                                  </q-icon>
+                                </template>
+                              </q-input>
+                  </div>
+                  </template>
+                  <!-- <div class="col-md-4" v-else>
+                    <q-select
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.giaTriKyBaoCao"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      :options="dulieuBaoCaoOptions.optionGiaTriBaoCao"
+                      :rules="[ v => v.value !== '' || 'Bắt buộc phải chọn giá trị kỳ báo cáo.']"
+                      @input="(newval)=> {
+                                    this.dulieuBaoCaoOptions.optionGiaTriBaoCao = this.getBmBaoCaoDropDown(newval.value);
+                          }"
+                      lazy-rules
+                    >
+                      <template v-slot:no-option>
+                        <q-item>
+                          <q-item-section class="text-grey">Không có kết quả</q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
+                  </div> -->
+                  <!-- gia tri ky form  ▲ -->
+                </div>
+
+                <div class="mb-10"></div>
+                <div class="form-group row col-12">
+                  <!-- Ten bao cao form ▼ -->
+                  <label class="col-md-2 col-control-label">
+                    Sử dụng biểu mẫu hệ thống
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-1">
+                    <div class="q-gutter-sm">
+                      <q-checkbox v-model="suDungBieuMau" @input="(newval)=> {
+                           if(newval == false){
+                             this.dulieuBaoCao.bmBaoCaoId = null;
+                           }
+                          }" />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-10"></div>
+                <div class="form-group row col-12">
+                  <!-- Ten bao cao form  ▼ -->
+                  <template v-if="suDungBieuMau">
+                    <label class="col-md-2 col-control-label">
+                      Tên báo cáo
+                      <strong style="color: red; font-size: 16px">*</strong>
+                    </label>
+                    <div class="col-md-4">
+                      <q-select
+                        v-model="dulieuBaoCao.bmBaoCaoId"
+                        dense
+                        filter
+                        use-input
+                        outlined
+                        input-debounce="0"
+                        :options="optionBmBaoCaoTemp"
+                        @filter="filterDropdownBMBC"
+                        @input="(newval)=> {
+                           this.getFileDinhKem(newval.value);
+                           this.getBmSheetDropDown(newval.value);
+                          }"
+                        :rules="[ v => v && v.value !== '' || 'Bắt buộc phải chọn báo cáo.']"
+                      >
+                        <template v-slot:no-option>
+                          <q-item>
+                            <q-item-section class="text-grey"
+                              >Không có kết quả</q-item-section
+                            >
+                          </q-item>
+                        </template>
+                      </q-select>
+                    </div>
+                  </template>
+                  <!-- Ten bao cao form  ▲ -->
+                  <template v-if="!suDungBieuMau">
+                    <label class="col-md-2 col-control-label">
+                      Tên báo cáo
+                      <strong style="color: red; font-size: 16px">*</strong>
+                    </label>
+                    <div class="col-md-4">
+                      <q-input
+                        use-input
+                        v-model="dulieuBaoCao.tenBaoCao"
+                        dense
+                        outlined
+                        input-debounce="0"
+                        lazy-rules
+                        :rules="[
+                          (v) =>
+                            v.length != 0 || 'Bắt buộc phải nhập tên báo cáo.',
+                        ]"
+                      >
+                        <template v-slot:no-option>
+                          <q-item>
+                            <q-item-section class="text-grey"
+                              >Không có kết quả</q-item-section
+                            >
+                          </q-item>
+                        </template>
+                      </q-input>
+                    </div>
+                  </template>
+
+                  <!--  Năm báo cáo  ▼ -->
+                  <!-- <label class="col-md-2 col-control-label">
+                    Năm báo cáo
+                    <span style="color:red"></span>
+                  </label>
+                  <div class="col-md-4">
+                    <q-input
+                      filter
+                      use-input
+                      v-model="dulieuBaoCao.namBaoCao"
+                      dense
+                      outlined
+                      input-debounce="0"
+                      lazy-rules
+                      :rules="[ 
+                      val => val.length != 0 || 'Số năm không được để trống'
+                      ,val => val.length <= 4 || 'Số năm cho phép nhập tối đa 4 ký tự'
+                      ,val => (new RegExp(/(?:(?:19|20)[0-9]{2})/).test(String(val))) || 'Năm báo cáo không đúng định dạng.'
+                      ]"
+                    />
+                  </div> -->
+                  <!--  Năm báo cáo  ▲ -->
+                </div>
+
+                <!-- Tài liệu đính kèm báo cáo   ▼ -->
+                <template v-if="!suDungBieuMau || (suDungBieuMau && !canImport)">
+                <div class="mb-10"></div>
+                <br />
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    <!-- File đính kèm -->
+                    Tài liệu báo cáo
+                    <strong style="color: red; font-size: 16px">*</strong>
+                  </label>
+                  <div class="col-md-4">
+                    <!-- <q-input ref="tenCoDong" v-model="dulieuBaoCao.fileDinhKem" dense maxlength="250" outlined rows="2" type="text" />
+                    -->
+                    <q-btn
+                      size="12px"
+                      label="Test button"
+                      style="display: none"
+                      id="testButton"
+                      @click="checkKySo()"
+                    />
+                    <q-uploader
+                      ref="uploader"
+                      :url="uploadURL"
+                      v-model="tmpPathUpload"
+                      :headers="Authorization"
+                      @removed="fileRemoved"
+                      auto-upload
+                      :factory="getSignedUrlTEMP"
+                      label="Đăng tải tệp tài liệu"
+                      accept=".doc, .docx, .pdf, .xls, .xlsx"
+                      multiple
+                    >
+                      <template v-slot:list="scope">
+                        <q-list separator>
+                          <q-item v-for="file in scope.files" :key="file.name">
+                            <q-item-section>
+                              <q-item-label class="full-width ellipsis">{{
+                                file.name
+                              }}</q-item-label>
+                              <template
+                                v-if="
+                                  file.__status == 'failed' ||
+                                  (file.statusCks != undefined &&
+                                    file.statusCks != null &&
+                                    !file.statusCks)
+                                "
+                              >
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.__status == 'failed' ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                >
+                                  Trạng thái:
+                                  <span style="color: red">Thất bại</span>
+                                </q-item-label>
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.statusCks == null ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                  >{{ file.__sizeLabel }} / 0.00%</q-item-label
+                                >
+                              </template>
+                              <template v-else>
+                                <q-item-label caption>
+                                  Trạng thái:
+                                  <span style="color: green">Thành công</span>
+                                </q-item-label>
+                                <q-item-label caption
+                                  >{{ file.__sizeLabel }} /
+                                  {{ file.__progressLabel }}</q-item-label
+                                >
+                              </template>
+                            </q-item-section>
+
+                            <q-item-section
+                              v-if="file.__img"
+                              thumbnail
+                              class="gt-xs"
+                            >
+                              <img :src="file.__img.src" />
+                            </q-item-section>
+
+                            <q-item-section top side>
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="delete"
+                                @click="scope.removeFileBaoCao(file)"
+                              />
+                            </q-item-section>
+                            <q-item-section
+                              top
+                              side
+                              v-show="file.name.toLowerCase().includes('.pdf')"
+                            >
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="check_circle"
+                                title="Ký số"
+                                id="kySoButton"
+                                @click="signFile(tmpPathUpload, file.name)"
+                              />
+                            </q-item-section>
+                          </q-item>
+                        </q-list>
+                      </template>
+                    </q-uploader>
+                  </div>
+                </div>
+                </template>
+                <!-- Tài liệu đính kèm báo cáo  ▲ -->
+
+                <!-- Trích yếu form  ▼ -->
+                <div class="mb-10"></div>
+                <br />
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Trích yếu
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-10">
+                    <q-input
+                      ref="tenCoDong"
+                      v-model="dulieuBaoCao.trichYeu"
+                      dense
+                      maxlength="500"
+                      outlined
+                      rows="2"
+                      type="textarea"
+                    />
+                  </div>
+                </div>
+                <div class="mb-20"></div>
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    File đính kèm
+                    <!-- <template v-if="this.dulieuBaoCao.canCbtt == true">
+                      <span style="color: red">(*)</span>
+                    </template> -->
+                  </label>
+                  <div class="col-md-10">
+                    <q-uploader
+                      ref="uploader"
+                      :url="uploadURL"
+                      v-model="tmpPathUploadFileDinhKem"
+                      :headers="Authorization"
+                      @removed="fileRemovedFileDinhKem"
+                      auto-upload
+                      :factory="getSignedUrlTEMPFileDinhKem"
+                      label="Đăng tải tệp đính kèm"
+                      accept=".doc, .docx, .pdf, .xls, .xlsx"
+                      multiple
+                    >
+                      <template v-slot:list="scope">
+                        <q-list separator>
+                          <q-item v-for="file in scope.files" :key="file.name">
+                            <q-item-section>
+                              <q-item-label class="full-width ellipsis">{{
+                                file.name
+                              }}</q-item-label>
+                              <template
+                                v-if="
+                                  file.__status == 'failed' ||
+                                  (file.statusCks != undefined &&
+                                    file.statusCks != null &&
+                                    !file.statusCks)
+                                "
+                              >
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.__status == 'failed' ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                >
+                                  Trạng thái:
+                                  <span style="color: red">Thất bại</span>
+                                </q-item-label>
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.statusCks == null ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                  >{{ file.__sizeLabel }} / 0.00%</q-item-label
+                                >
+                              </template>
+                              <template v-else>
+                                <q-item-label caption>
+                                  Trạng thái:
+                                  <span style="color: green">Thành công</span>
+                                </q-item-label>
+                                <q-item-label caption
+                                  >{{ file.__sizeLabel }} /
+                                  {{ file.__progressLabel }}</q-item-label
+                                >
+                              </template>
+                            </q-item-section>
+
+                            <q-item-section
+                              v-if="file.__img"
+                              thumbnail
+                              class="gt-xs"
+                            >
+                              <img :src="file.__img.src" />
+                            </q-item-section>
+
+                            <q-item-section top side>
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="delete"
+                                @click="scope.removeFile(file)"
+                              />
+                            </q-item-section>
+                            <q-item-section
+                              top
+                              side
+                              v-show="file.name.toLowerCase().includes('.pdf')"
+                            >
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="check_circle"
+                                title="Ký số"
+                                id="kySoButton"
+                                @click="signFile(tmpPathUploadFileDinhKem, file.name)"
+                              />
+                            </q-item-section>
+                          </q-item>
+                        </q-list>
+                      </template>
+                    </q-uploader>
+                  </div>
+                </div>
+                <!-- Trích yếu form  ▲ -->
+
+                <!-- Ghi chú form  ▼ -->
+                <div class="mb-10"></div>
+                <br />
+                <div class="form-group row col-12">
+                  <label class="col-md-2 col-control-label">
+                    Ghi chú
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-10">
+                    <q-input
+                      ref="ghiChu"
+                      v-model="dulieuBaoCao.ghiChu"
+                      dense
+                      maxlength="500"
+                      outlined
+                      rows="2"
+                      type="textarea"
+                    />
+                  </div>
+                </div>
+                <!-- Ghi chú form  ▲ -->
+                <template
+                  v-if="this.suDungBieuMau && !this.canImport && this.arrFileDinhKem != null && this.arrFileDinhKem.length > 0"
+                >
+                  <div class="mb-10"></div>
+                  <br />
+                  <div class="form-group row col-12">
+                    <label class="col-md-2 col-control-label">
+                      File báo cáo
+                      <span style="color: red"></span>
+                    </label>
+                    <div class="col-md-10">
+                      <q-list v-for="(item, idx) in arrFileDinhKem" :key="idx">
+                        <q-item clickable active-class="bg-teal-1 text-grey-8">
+                          <q-item-section avatar>
+                            <a
+                              title="download"
+                              style="text-decoration: none"
+                              @click="downloadfile(item.path)"
+                            >
+                              <q-btn
+                                round
+                                color="positive"
+                                icon="cloud_download"
+                                size="7px"
+                              ></q-btn>
+                            </a>
+                          </q-item-section>
+                          <q-item-section>{{ item.nameFile }}</q-item-section>
+                        </q-item>
+                      </q-list>
+                    </div>
+                  </div>
+                </template>
+                <!-- Option chọn kiểu giá trị form  ▼ -->
+                <div class="mb-10"></div>
+                <br />
+                <div
+                  class="form-group row col-12"
+                  v-show="isUpdateBaoCao"
+                >
+                  <label class="col-md-2 col-control-label">
+                    Cách nhập dữ liệu
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-4">
+                    <q-radio
+                      v-model="selectInputType"
+                      val="0"
+                      label="Nhập từ biểu mẫu"
+                      @input="(val) => this.selectInputTypeOptions(val)"
+                    ></q-radio>
+                    <q-radio
+                      v-model="selectInputType"
+                      val="1"
+                      label="Nhập từ file"
+                      @input="(val) => this.selectInputTypeOptions(val)"
+                    ></q-radio>
+                  </div>
+                </div>
+                <!-- Option chọn kiểu giá trị form  ▲ -->
+
+                <!-- Import dữ liệu form  ▼ -->
+                <div class="mb-10"></div>
+                <br />
+                <div
+                  class="form-group row col-12"
+                  v-show="isSelectedImportFile"
+                >
+                  <label class="col-md-2 col-control-label">
+                    Nhập dữ liệu từ excel
+                    <span style="color: red"></span>
+                  </label>
+                  <div class="col-md-4">
+                    <!-- ref="uploaderImport" -->
+                    <q-uploader
+                      :url="uploadURL"
+                      v-model="tmpPathUploadTemplateData"
+                      :headers="Authorization"
+                      @removed="fileRemovedTemplate"
+                      auto-upload
+                      :factory="getSignedUrlTEMPLATE"
+                      label="File biểu mẫu.xlsx"
+                      accept=".xlsx"
+                    >
+                      <template v-slot:list="scope">
+                        <q-list separator>
+                          <q-item v-for="file in scope.files" :key="file.name">
+                            <q-item-section>
+                              <q-item-label class="full-width ellipsis">{{
+                                file.name
+                              }}</q-item-label>
+                              <template
+                                v-if="
+                                  file.__status == 'failed' ||
+                                  (file.statusCks != undefined &&
+                                    file.statusCks != null &&
+                                    !file.statusCks)
+                                "
+                              >
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.__status == 'failed' ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                >
+                                  Trạng thái:
+                                  <span style="color: red">Thất bại</span>
+                                </q-item-label>
+                                <q-item-label
+                                  caption
+                                  v-show="
+                                    file.statusCks == null ||
+                                    (file.statusCks != undefined &&
+                                      file.statusCks != null &&
+                                      !file.statusCks)
+                                  "
+                                  >{{ file.__sizeLabel }} / 0.00%</q-item-label
+                                >
+                              </template>
+                              <template v-else>
+                                <q-item-label caption>
+                                  Trạng thái:
+                                  <span style="color: green">Thành công</span>
+                                </q-item-label>
+                                <q-item-label caption
+                                  >{{ file.__sizeLabel }} /
+                                  {{ file.__progressLabel }}</q-item-label
+                                >
+                              </template>
+                            </q-item-section>
+
+                            <q-item-section
+                              v-if="file.__img"
+                              thumbnail
+                              class="gt-xs"
+                            >
+                              <img :src="file.__img.src" />
+                            </q-item-section>
+
+                            <q-item-section top side>
+                              <q-btn
+                                class="gt-xs"
+                                size="12px"
+                                flat
+                                dense
+                                round
+                                icon="delete"
+                                @click="scope.removeFile(file)"
+                              />
+                            </q-item-section>
+                          </q-item>
+                        </q-list>
+                      </template>
+                    </q-uploader>
+                  </div>
+                  <div class="col-md-2">
+                    <q-btn
+                      class="col-md-4 col-sm-4"
+                      size="12px"
+                      label="Tải biểu mẫu"
+                      color="green"
+                      icon="arrow_downward"
+                      style="text-decoration: none"
+                      @click="thucHienUploadFileTemplate()"
+                    />&nbsp;
+                  </div>
+                </div>
+                <!-- Import dữ liệu form  ▲ -->
+              </div>
+              <div class="form-actions right">
+                <q-btn
+                  size="12px"
+                  type="submit"
+                  color="primary"
+                  label="Tạo thông tin gửi báo cáo"
+                  icon="save"
+                  style="text-decoration: none; margin-right: 5px"
+                  title="Lưu thông tin báo cáo"
+                  @click="
+                    saveDataThongTinAndSentBaocao(
+                      dulieuBaoCao.giaTriKyBaoCao,
+                      dulieuBaoCao.bmBaoCaoId,
+                      0
+                    )
+                  "
+                />
+                <!-- Old source -  @click="saveCellValues(dulieuBaoCao.giaTriKyBaoCao, dulieuBaoCao.bmBaoCaoId)" -->
+                <q-btn
+                  size="12px"
+                  type="submit"
+                  color="green"
+                  label="Lưu và gửi báo cáo"
+                  icon="send"
+                  style="text-decoration: none; margin-right: 5px"
+                  title="Lưu thông tin báo cáo và gửi UBCK"
+                  @click="
+                    saveDataThongTinAndSentBaocao(
+                      dulieuBaoCao.giaTriKyBaoCao,
+                      dulieuBaoCao.bmBaoCaoId,
+                      1
+                    )
+                  "
+                />
+                <!-- Old source - @click="sendBaoCaoUbck(dulieuBaoCao.giaTriKyBaoCao, dulieuBaoCao.bmBaoCaoId)" -->
+                <q-btn
+                  size="12px"
+                  label="Trở về"
+                  :to="'/baocaodinhkictck'"
+                  title="Trở về"
+                  style="text-decoration: none"
+                />
+              </div>
+            </form>
+          </fieldset>
+          <br />
+          <br />
+
+          <!-- [C-20200507] Check update bao cao  -->
+          <div v-show="isUpdateBaoCao">
+            <!-- E-form nhập nội dung báo cáo  - INPUT FORM  ▼ ▼ ▼ ▼  -->
+            <fieldset
+              style="padding: 10px; overflow: hidden; min-width: 100%"
+              v-show="!isSelectedImportFile"
+            >
+              <legend class="fwb">Nhập nội dung báo cáo</legend>
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">
+                  Sheet báo cáo
+                  <span style="color: red"></span>
+                </label>
+                <div class="col-md-4">
+                  <q-select
+                    filter
+                    use-input
+                    v-model="dulieuBaoCao.bmSheetId"
+                    dense
+                    outlined
+                    input-debounce="0"
+                    :options="dulieuBaoCaoOptions.optionBmSheet"
+                    :rules="[
+                      (v) =>
+                        v.value !== '' || 'Bắt buộc phải chọn sheet báo cao.',
+                    ]"
+                    lazy-rules
+                    @input="
+                      (newval) => {
+                        this.loadEFormSheet(newval.value);
+                      }
+                    "
+                  >
+                    <template v-slot:no-option>
+                      <q-item>
+                        <q-item-section class="text-grey"
+                          >Không có kết quả</q-item-section
+                        >
+                      </q-item>
+                    </template>
+                  </q-select>
+                </div>
+                <div class="col-md-6" v-show="showButtonSave" align="right">
+                  <q-btn
+                    size="12px"
+                    type="submit"
+                    color="orange"
+                    label="Lưu dữ liệu sheet báo cáo"
+                    icon="save"
+                    style="text-decoration: none; margin-right: 5px"
+                    title="Thêm mới dữ liệu sheet"
+                    @click="
+                      saveDataSheetBc(
+                        dulieuBaoCao.giaTriKyBaoCao,
+                        dulieuBaoCao.bmBaoCaoId
+                      )
+                    "
+                  />
+                </div>
+              </div>
+              <div
+                class="genTable-div q-table_n-sticky q-table__container q-table--cell-separator q-table--loading q-table__card q-table--no-wrap"
+              >
+                <div class="q-table__middle scroll table-cauhinh-chinhsua">
+                  <div
+                    v-html="tableHtmlGenerate"
+                    @click="handleClick"
+                    v-on:dblclick="removeItem"
+                  ></div>
+                </div>
+                <div class="form-actions right" v-show="showButtonSave">
+                  <q-btn
+                    size="12px"
+                    type="submit"
+                    color="orange"
+                    label="Lưu dữ liệu sheet báo cáo"
+                    icon="save"
+                    style="text-decoration: none; margin-right: 5px"
+                    title="Thêm mới dữ liệu sheet"
+                    @click="
+                      saveDataSheetBcImport(
+                        dulieuBaoCao.giaTriKyBaoCao,
+                        dulieuBaoCao.bmBaoCaoId
+                      )
+                    "
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <!-- E-form nhập nội dung báo cáo - INPUT FORM  ▲ ▲ ▲ ▲  -->
+
+            <!-- E-form nhập nội dung báo cáo - IMPORT EXCEL  ▼ ▼ ▼ ▼  -->
+            <fieldset
+              style="padding: 10px; overflow: hidden; min-width: 100%"
+              v-show="isSelectedImportFile"
+            >
+              <legend class="fwb">Nội dung báo cáo chi tiết</legend>
+              <div class="form-group row col-12">
+                <label class="col-md-2 col-control-label">
+                  Sheet báo cáo
+                  <span style="color: red"></span>
+                </label>
+                <div class="col-md-4">
+                  <q-select
+                    filter
+                    use-input
+                    v-model="sheetBaoCaoImport.bmSheetImportId"
+                    dense
+                    outlined
+                    input-debounce="0"
+                    :options="dulieuBaoCaoOptions.optionBmSheetImport"
+                    :rules="[
+                      (v) =>
+                        v.value !== '' || 'Bắt buộc phải chọn sheet báo cao.',
+                    ]"
+                    lazy-rules
+                    @input="
+                      (newval) => {
+                        this.loadEFormSheetImport(newval.value);
+                      }
+                    "
+                  >
+                    <template v-slot:no-option>
+                      <q-item>
+                        <q-item-section class="text-grey"
+                          >Không có kết quả</q-item-section
+                        >
+                      </q-item>
+                    </template>
+                  </q-select>
+                </div>
+                <div class="col-md-6" v-show="showButtonSave" align="right">
+                  <q-btn
+                    size="12px"
+                    type="submit"
+                    color="orange"
+                    label="Lưu dữ liệu sheet báo cáo"
+                    icon="save"
+                    style="text-decoration: none; margin-right: 5px"
+                    title="Thêm mới dữ liệu sheet"
+                    @click="
+                      saveDataSheetBcImport(
+                        dulieuBaoCao.giaTriKyBaoCao,
+                        dulieuBaoCao.bmBaoCaoId
+                      )
+                    "
+                  />
+                </div>
+              </div>
+              <div
+                class="genTable-div q-table_n-sticky q-table__container q-table--cell-separator q-table--loading q-table__card q-table--no-wrap"
+              >
+                <div class="q-table__middle scroll table-cauhinh-chinhsua">
+                  <div
+                    v-html="tableHtmlGenerateImport"
+                    @click="handleClick"
+                    v-on:dblclick="removeItem"
+                  ></div>
+                </div>
+                <div class="form-actions right" v-show="showButtonSave">
+                  <q-btn
+                    size="12px"
+                    type="submit"
+                    color="orange"
+                    label="Lưu dữ liệu sheet báo cáo"
+                    icon="save"
+                    style="text-decoration: none; margin-right: 5px"
+                    title="Thêm mới dữ liệu sheet"
+                    @click="
+                      saveDataSheetBcImport(
+                        dulieuBaoCao.giaTriKyBaoCao,
+                        dulieuBaoCao.bmBaoCaoId
+                      )
+                    "
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <!-- E-form nhập nội dung báo cáo - IMPORT EXCEL  ▲ ▲ ▲ ▲  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script src="../../../public/js/test.js"></script>
+<script>
+import baseCommon from "../../baseCommon";
+import apiService from "../../services/apiService";
+import httpsAuthor from "../../urlAuth/httpConnect";
+import Cookies from "js-cookie";
+import axios from "axios";
+
+const kyGuiBaoCaoLs = [
+  {
+    label: "-- Chọn kỳ gửi báo cáo --",
+    value: null,
+  },
+  {
+    label: "Ngày",
+    value: "N",
+  },
+  {
+    label: "Tuần",
+    value: "TU",
+  },
+  {
+    label: "Tháng",
+    value: "TH",
+  },
+  {
+    label: "Quý",
+    value: "Q",
+  },
+  {
+    label: "Bán niên",
+    value: "BN",
+  },
+  {
+    label: "Năm",
+    value: "NAM",
+  },
+];
+
+const loaiBaoCaoGuiConst = [
+  {
+    label: "Báo cáo định kỳ",
+    value: "DK",
+  },
+  {
+    label: "Báo cáo bất thường",
+    value: "BT",
+  },
+  {
+    label: "Báo cáo theo yêu cầu",
+    value: "TYC",
+  },
+  {
+    label: "Báo cáo khác",
+    value: "K",
+  },
+];
+
+//VRuntimeTemplate
+export default {
+  name: "guiBaoCao",
+  mixins: [baseCommon, apiService],
+  components: {},
+  data() {
+    var token = null;
+    var Author = null;
+    if (Cookies.get("tokenSCMS") != null || Cookies.get("tokenSCMS") != "") {
+      token = Cookies.get("tokenSCMS");
+    }
+    if (token != null) {
+      Author = [{ name: "Authorization", value: "Bearer " + `${token}` }];
+    }
+
+    return {
+      // Properties for upload file
+      uploadURL: httpsAuthor.httpConnect + "/uploadMultipleFiles",
+      canImport: true,
+      arrFileDinhKem: [],
+      Authorization: Author,
+      tmpPathUpload: [],
+      tmpFileName: "",
+      tmpPathUploadTemplate: [],
+      tmpPathUploadData: [],
+      tmpPathUploadTemplateData: [],
+      tmpPathUploadFileDinhKem: [],
+      allSheet: [],
+      NgayKyBaoCaoTemp: "",
+
+      // properties chọn kiểu nhập
+      selectInputType: "0",
+      isSelectedImportFile: false,
+
+      // model lưu báo cáo
+      model: {
+        bmBaoCaoByBmBaoCaoId: "",
+        tableHtmlRaw: "",
+      },
+
+      // prop hiển thị sheet báo cáo
+      tableHtmlGenerate: "",
+
+      // prop hiển thị sheet báo cáo for import
+      tableHtmlGenerateImport: "",
+
+      // props hiển thị thông tin báo cáo trước khi nhập
+      dulieuBaoCao: {
+        bmBaoCaoId: {
+          label: "-- Chọn biểu mẫu báo cáo --",
+          value: null,
+        },
+        bmSheetId: "",
+        kyBaoCaoId: "",
+        congtyKiemToanId: "",
+        kiemToanVienId: "",
+        giaTriKyBaoCao: "",
+        fileDinhKem: "",
+        trichYeu: "",
+        kyGuiBcText: "",
+        trangThaiKiemToan: "", // [U - 20200505] Trang thai kiem toan,
+        congtyCk: "", // [U - 20200505] Cong ty chung khoan,
+        loaiBaoCao: "", // [U - 20200505] Loai bao cao,
+        nhomBaoCao: "", // [U - 20200505] nhom bao cao,
+        namBaoCao: "", // [U - 20200505] nam bao cao,
+        ghiChu: "", // [U - 20200507] ghi chu,
+        existThanhVienId: 0, // [U - 20200507] exist du lieu thanh vien ,
+        tenBaoCao: "",
+        arrFileDinhKem: [],
+        arrFileBaoCao: [],
+      },
+
+      // props hiển thị thông tin báo cáo trước khi nhập
+      sheetBaoCaoImport: {
+        bmSheetImportId: "",
+      },
+
+      // props luu tru du lieu data import
+      dulieuBaoCaoImportLs: [],
+      dulieuBaoCaoImportDetail: {},
+
+      optionBmBaoCaoTemp: [],
+
+      // props luu tru option
+      dulieuBaoCaoOptions: {
+        optionBmBaoCao: [],
+        optionBmSheet: {
+          value: null,
+          label: "-- Chọn sheet báo cáo --",
+        },
+        optionKyBaoCao: [],
+        optionCongTyKiemToan: [],
+        optionKiemToanVien: [],
+
+        optionBmSheetImport: {
+          value: null,
+          label: "-- Chọn sheet báo cáo --",
+        },
+
+        optionKyGuiBaoCao: kyGuiBaoCaoLs,
+        optionGiaTriBaoCao: [],
+      },
+      duLieuBaoCaoCheckFileDinhKem: [],
+      showButtonSave: false,
+
+      // sd for them moi du lieu bao cao.
+      dulieuBaoCaoRequest: {
+        dulieuCell: [],
+        kyBaoCaoRequest: "",
+        dulieuCellDynamic: [], // [U] du lieu cell dynamic list data.
+        dulieuCellDynamicObject: {}, // [U] du lieu cell dynamic object.
+      },
+      thanhVienId: "",
+
+      // Nhom bao cao text - Loai bao cao text.
+      loaiBaoCaoText: "", // [U - 20200505] Loai bao cao,
+      nhomBaoCaoText: "", // [U - 20200505] nhom bao cao,
+
+      bmBaoCaoData: {}, // [U - 20200506] thông tin chi tiết báo cáo,
+
+      // [U - 20200506] Loai bao cao gui
+      loaiBaoCaoGui: "",
+      loaiBaoCaoGuiOps: loaiBaoCaoGuiConst, // [U - 20200506] Loai bao cao gui option,
+
+      // loai bao cao request
+      loaiBaoCaoGuiReq: "",
+      guiBaocaoTitle: "",
+
+      guiBaoCaoTypeOptions: {
+        isGuiBcBatThuong: false,
+        isGuiBcYeuCau: false,
+        isGuiBcKhac: false,
+      },
+
+      // check create/update BC
+      isUpdateBaoCao: true,
+
+      //check su dung bieu mau he thong
+      suDungBieuMau: true,
+    };
+  },
+
+  beforeCreate() {},
+
+  created() {
+    // Check NSD thuoc cong ty ck gui bao cao
+    this.kiemTraNSDThuocCtck();
+
+    // Get Loai bao cao request
+    this.loaiBaoCaoGuiReq = this.$route.params.baocaotype;
+    this.getLoaiBaoCaoGuiRequest(this.loaiBaoCaoGuiReq);
+  },
+  async mounted() {
+    //var self = this;
+    //self.displayError("test người dùng.");
+    //return;
+  },
+
+  fileRemovedFileDinhKem(_path) {
+      var self = this;
+      self.checkImportFile = false;
+      this.selectedFile = false;
+      self.tmpPathUploadFileDinhKem = self.tmpPathUploadFileDinhKem.filter(
+        function (el) {
+          return el != null;
+        }
+      );
+      if (self.tmpPathUploadFileDinhKem.length > 0) {
+        const needle = _path[0].name.toLowerCase();
+        var itemRemove = self.tmpPathUploadFileDinhKem.filter(
+          (v) => v.fileNameOriginal.toLowerCase() == needle
+        )[0];
+
+        if (itemRemove != null) {
+          self.tmpPathUploadFileDinhKem.splice(
+            self.tmpPathUploadFileDinhKem.indexOf(itemRemove),
+            1
+          );
+        }
+      }
+    },
+
+    //file đính kèm
+    async getSignedUrlTEMPFileDinhKem(_file) {
+      if (_file != null && _file.length > 0 && _file[0].__status != "failed") {
+        var self = this;
+        return new Promise((resolve, reject) => {
+          const files = new FormData();
+          if (_file.length > 1) {
+            for (var i = 0; i < _file.length; i++) {
+              files.append("files", _file[i]);
+            }
+          } else {
+            files.append("files", _file[0]);
+          }
+
+          apiService.postUploadFile(
+            httpsAuthor.httpConnect + "/uploadMultipleFilesImport",
+            files,
+            function (res) {
+              if (res != null) {
+                if (res.status === 302) {
+                  reject(_file);
+                } else if (res.status === 417) {
+                  self.displayError(
+                    "Đăng tải File gặp sự cố, Vui lòng thử lại"
+                  );
+                  resolve(null);
+                } else if (res.status == 201) {
+                  if (
+                    res.data != null &&
+                    res.data.length > 0 &&
+                    res.data[0].message != null
+                  ) {
+                    self.displayError(res.data[0].message);
+                    self.tmpPathUploadFileDinhKem.push(res.data[0]);
+                    reject(_file);
+                  } else {
+                    self.tmpPathUploadFileDinhKem.push(res.data[0]);
+                    resolve(_file);
+                  }
+                } else {
+                  reject(_file);
+                }
+              } else {
+                reject(_file);
+                self.displayError("Đăng tải File gặp sự cố, Vui lòng thử lại");
+              }
+            }
+            // );
+          );
+        });
+      }
+    },
+
+  methods: {
+    // METHOD: xóa file đính kèm
+    removeFile(i) {
+      this.dulieuBaoCao.arrFileDinhKem.splice(i, 1);
+    },
+
+    removeFileBaoCao(i) {
+      this.dulieuBaoCao.arrFileBaoCao.splice(i, 1);
+    },
+    filterDropdownBMBC(val, updateLH) {
+      // updateLH
+      var self = this;
+
+      if (val === "") {
+        updateLH(() => {
+          self.optionBmBaoCaoTemp = self.dulieuBaoCaoOptions.optionBmBaoCao;
+        });
+        return;
+      }
+
+      updateLH(() => {
+        const needle = val.toLowerCase();
+        self.optionBmBaoCaoTemp = self.dulieuBaoCaoOptions.optionBmBaoCao.filter(
+          (v) => v.label.toLowerCase().indexOf(needle) > -1
+        );
+      });
+    },
+
+    //xử lý click button
+
+    getGtKyBc(val) {
+      var self = this;
+      self.optionGiaTriKyBaoCao = [];
+      self.modelTongHop.giaTriKyBaoCao = {
+        label: "-- Chọn --",
+        value: "",
+      };
+      if (val.value == "TU") {
+        for (let i = 1; i <= 52; i++) {
+          let gt = i;
+          self.optionGiaTriKyBaoCao.push(gt);
+        }
+      } else if (val.value == "TH") {
+        for (let i = 1; i <= 12; i++) {
+          let gt = i;
+          self.optionGiaTriKyBaoCao.push(gt);
+        }
+      } else if (val.value == "Q") {
+        for (let i = 1; i <= 4; i++) {
+          let gt = i;
+          self.optionGiaTriKyBaoCao.push(gt);
+        }
+      } else if (val.value == "BN" || val.value == "NAM") {
+        for (let i = 2005; i <= 2030; i++) {
+          let gt = i;
+          self.optionGiaTriKyBaoCao.push(gt);
+        }
+      }
+    },
+
+    handleClick(e) {
+      //Thêm hàng động khi bấm nút button
+      var checkButton = e.target.closest("button");
+      if (checkButton != undefined) {
+        //Set báo cáo id + sheetId
+        var bmBaoCaoId = this.dulieuBaoCao.bmBaoCaoId.value;
+        var sheetId;
+        if (this.isSelectedImportFile) {
+          sheetId = this.sheetBaoCaoImport.bmSheetImportId.value;
+        } else {
+          sheetId = this.dulieuBaoCao.bmSheetId.value;
+        }
+
+        if (sheetId == null || sheetId == undefined || sheetId === "") {
+          this.displayError("Vui lòng chọn sheet báo cáo.");
+          return;
+        }
+        //Lấy tổng cột
+        var colTotal = checkButton.dataset.coltotal;
+        if (
+          colTotal != undefined &&
+          sheetId != undefined &&
+          bmBaoCaoId != undefined
+        ) {
+          //lấy rowIndex mới nhất
+          var currRowIndex = 1;
+          // var tdDongCurrent = $("tr")[e.target.closest("tr").rowIndex - 1].children[0];
+          var tdDongCurrent = $("tbody tr[data-hangdong]:last")[0];
+          if (
+            tdDongCurrent != undefined &&
+            tdDongCurrent.dataset.hangIndex != undefined
+          ) {
+            currRowIndex = parseInt(tdDongCurrent.dataset.hangIndex) + 1;
+          }
+          var tBodyElement = e.target.closest("tbody");
+          var trButtonElement = e.target.closest("tr");
+          var trElement = tBodyElement.insertRow(
+            trButtonElement.sectionRowIndex
+          );
+          trElement.dataset.hangdong = 1;
+          trElement.dataset.hangIndex = currRowIndex;
+          for (var i = 0; i < colTotal; i++) {
+            // var cell = trElement.insertCell();
+            // cell.click("deleteRowDong");
+            // cell.innerHTML = "<input />";
+            trElement.innerHTML +=
+              " <td data-hangdong='1' data-id='" +
+              i +
+              "|" +
+              currRowIndex +
+              "'> <input class='form-control gt-cell-dynamic' type='text' id='" +
+              bmBaoCaoId +
+              "|" +
+              checkButton.dataset.hangid +
+              "|" +
+              i +
+              "|" +
+              currRowIndex +
+              "' style='height: 70%; border: 1px dotted #338DFF; margin-bottom: 6%;' /></td>";
+          }
+        }
+      }
+      // if (e.target.closest("tr").dataset.hangdong != undefined) {
+      //   alert("a");
+      // }
+    },
+    removeItem(e) {
+      var trElement = e.target.closest("td");
+      if (trElement.dataset.hangdong != undefined) {
+        var self = this;
+
+        self.$q
+          .dialog({
+            title: "Bạn có thực sự muốn bỏ hàng động này?",
+            message: "<strong>" + "</strong>",
+            html: true,
+            ok: {
+              color: "primary",
+              label: "Xóa",
+              size: "12px",
+            },
+            cancel: {
+              color: "negative",
+              label: " Hủy",
+              size: "12px",
+            },
+          })
+          .onOk(() => {
+            var tBodyElement = e.target.closest("tbody");
+            tBodyElement.deleteRow(e.target.closest("tr").rowIndex - 1);
+          });
+      }
+    },
+    onValidate() {},
+
+    /**
+     * [C - 20200506] Init gui bao cao type.
+     */
+    initGuiBaoCaoType(guiBaoCaoType) {
+      var self = this;
+
+      if (guiBaoCaoType.value === "DK") {
+        self.$router.push({ name: "guiBaoCaoView" });
+      }
+
+      switch (guiBaoCaoType.value) {
+        case "BT":
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = true;
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = false;
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = false;
+          break;
+        case "TYC":
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = true;
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = false;
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = false;
+          break;
+        case "K":
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = true;
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = false;
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = false;
+          break;
+
+        default:
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = false;
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = false;
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = false;
+          break;
+      }
+      self.guiBaocaoTitle = guiBaoCaoType.label;
+    },
+
+    /**
+     * [C - 20200506] Loai bao cao gui
+     */
+    getLoaiBaoCaoGuiRequest(loaiBaoCaoReq) {
+      var self = this;
+      self.loaiBaoCaoGui = self.loaiBaoCaoGuiOps.find(
+        (f) => f.value === loaiBaoCaoReq
+      );
+      switch (loaiBaoCaoReq) {
+        case "BT":
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = true;
+          self.getBmBaoCaoDropDown(loaiBaoCaoReq);
+          break;
+        case "TYC":
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = true;
+          self.getBmBaoCaoDropDown(loaiBaoCaoReq);
+          break;
+        case "K":
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = true;
+          self.getBmBaoCaoDropDown(loaiBaoCaoReq);
+          break;
+
+        default:
+          self.guiBaoCaoTypeOptions.isGuiBcBatThuong = false;
+          self.guiBaoCaoTypeOptions.isGuiBcYeuCau = false;
+          self.guiBaoCaoTypeOptions.isGuiBcKhac = false;
+          break;
+      }
+      self.guiBaocaoTitle = self.loaiBaoCaoGui.label;
+    },
+
+    /**
+     * [C - 20200505] Get gia tri nhom bao cao text
+     */
+    getNhomBaoCaoText(nhomBaoCao) {
+      var self = this;
+
+      switch (nhomBaoCao) {
+        case "HD":
+          self.nhomBaoCaoText = "Hoạt động";
+          break;
+        case "TCR":
+          self.nhomBaoCaoText = "Tài chính riêng";
+          break;
+        case "HN":
+          self.nhomBaoCaoText = "Hợp nhất";
+          break;
+        case "TLATTC":
+          self.nhomBaoCaoText = "Tỷ lệ an toàn tài chính";
+          break;
+        case "DKGDTT":
+          self.nhomBaoCaoText = "Đăng ký giao dịch trực tuyến";
+          break;
+        case "K":
+          self.nhomBaoCaoText = "Khác";
+          break;
+
+        default:
+          self.nhomBaoCaoText = "";
+          break;
+      }
+    },
+
+    /**
+     * [C - 20200505] Get gia tri loai bao cao text
+     */
+    getLoaiBaoCaoText(loaiBaoCao) {
+      var self = this;
+
+      switch (loaiBaoCao) {
+        case "DK":
+          self.loaiBaoCaoText = "Báo cáo định kỳ";
+          break;
+        case "BT":
+          self.loaiBaoCaoText = "Báo cáo bất thường";
+          break;
+        case "TYC":
+          self.loaiBaoCaoText = "Báo cáo theo yêu cầu";
+          break;
+        case "K":
+          self.loaiBaoCaoText = "Báo cáo khác";
+          break;
+
+        default:
+          self.loaiBaoCaoText = "";
+          break;
+      }
+    },
+
+    //METHOD: Lay thong tin bao cao theo bao cao id.
+    async getThongTinBmBaoCao(bmBaoCao) {
+      var self = this;
+      await axios
+        .get(
+          process.env.VUE_APP_ROOT_API +
+            "baocaodinhki/bmbaocao/" +
+            bmBaoCao.value,
+          null
+        )
+        .then(function (res) {
+          // console.log(res);
+          if (res.data != null) {
+            self.dulieuBaoCao.loaiBaoCao = self.getLoaiBaoCaoText(
+              res.data.loaiBaoCao
+            );
+
+            self.dulieuBaoCao.nhomBaoCao = self.getNhomBaoCaoText(
+              res.data.nhomBaoCao
+            );
+          }
+        })
+        .catch(function (err) {
+          self.displayError("Lỗi: " + err);
+        });
+    },
+
+    //METHOD: Kiem tra NSD có thuộc ctck.
+    async kiemTraNSDThuocCtck() {
+      var self = this;
+      await axios
+        .get(process.env.VUE_APP_ROOT_API + "baocaodinhky/kiemtractck", null)
+        .then(function (res) {
+          self.dulieuBaoCao.congtyCk = res.data;
+        })
+        .catch(function () {
+          self.$router.push({ name: "baoCaoDinhKiCTCKView" });
+        });
+
+      self.dulieuBaoCao.namBaoCao = new Date().getFullYear();
+    },
+
+    // Get gia tri ky bao cao dropdown
+    async getGiaTriKyBaoCaoDropDown(kyBaoCaoText) {
+      var self = this;
+      await axios
+        .get(process.env.VUE_APP_ROOT_API + "baocaodinhky/dsgiatrikybaocao", {
+          params: {
+            kyBaoCao: kyBaoCaoText,
+            namBaoCao: self.dulieuBaoCao.namBaoCao,
+          },
+        })
+        .then(function (res) {
+          self.dulieuBaoCaoOptions.optionGiaTriBaoCao = res.data;
+          return self.dulieuBaoCaoOptions.optionGiaTriBaoCao;
+        })
+        .catch(function () {});
+    },
+
+    // METHOD: load e-form from imported file.
+    loadEFormSheetImport(sheetId) {
+      var self = this;
+      if (self.dulieuBaoCaoImportLs.length > 0) {
+        self.dulieuBaoCaoImportDetail = self.dulieuBaoCaoImportLs.find(
+          (x) => x.id === sheetId
+        );
+
+        if (
+          self.dulieuBaoCaoImportDetail == null ||
+          self.dulieuBaoCaoImportDetail.tableHtmlRaw == null
+        ) {
+          self.tableHtmlGenerateImport =
+            "<span> Sheet báo cáo không có dữ liệu</span>";
+
+          self.showButtonSave = false;
+        } else {
+          self.tableHtmlGenerateImport =
+            self.dulieuBaoCaoImportDetail.tableHtmlRaw;
+          self.showButtonSave = true;
+        }
+      }
+    },
+
+    selectInputTypeOptions(val) {
+      var self = this;
+      if (val === "1") {
+        self.isSelectedImportFile = true;
+      } else {
+        self.isSelectedImportFile = false;
+      }
+    },
+
+    fileRemovedTemplate(_path) {
+      var self = this;
+      this.selectedFile = false;
+      self.tmpPathUploadTemplateData = self.tmpPathUploadTemplateData.filter(
+        function (el) {
+          return el != null;
+        }
+      );
+      if (self.tmpPathUploadTemplateData.length > 0) {
+        const needle = _path[0].name.toLowerCase();
+        var itemRemove = self.tmpPathUploadTemplateData.filter(
+          (v) => v.fileNameOriginal.toLowerCase() == needle
+        )[0];
+
+        if (itemRemove != null) {
+          self.tmpPathUploadTemplateData.splice(
+            self.tmpPathUploadTemplateData.indexOf(itemRemove),
+            1
+          );
+        }
+      }
+    },
+
+    //file dữ liệu
+    async getSignedUrlTEMPLATE(_file) {
+      var self = this;
+      return new Promise((resolve, reject) => {
+        const files = new FormData();
+        if (_file.length > 1) {
+          for (var i = 0; i < _file.length; i++) {
+            files.append("files", _file[i]);
+          }
+        } else {
+          files.append("files", _file[0]);
+        }
+
+        apiService.postUploadFile(
+          httpsAuthor.httpConnect + "/uploadMultipleFilesImport",
+          files,
+          function (res) {
+            if (res != null) {
+              if (res.status === 302) {
+                reject(_file);
+              } else if (res.status === 417) {
+                self.displayError("Đăng tải File gặp sự cố, Vui lòng thử lại");
+                resolve(null);
+              } else if (res.status == 201) {
+                self.tmpPathUploadTemplateData.push(res.data[0]);
+
+                resolve(_file);
+              } else {
+                reject(_file);
+              }
+            } else {
+              reject(_file);
+              self.displayError("Đăng tải File gặp sự cố, Vui lòng thử lại");
+            }
+          }
+          // );
+        );
+      });
+    },
+
+    // METHOD: thực hiện upload file báo cáo
+    thucHienUploadFileTemplate() {
+      var self = this;
+      if (
+        self.tmpPathUploadTemplateData == null ||
+        (self.tmpPathUploadTemplateData != null &&
+          self.tmpPathUploadTemplateData.length == 0) ||
+        self.tmpPathUploadTemplateData == undefined
+      ) {
+        self.displayError("Vui lòng nhập file biểu mẫu đầu vào");
+        return;
+      }
+
+      if (
+        self.dulieuBaoCao.bmBaoCaoId == null ||
+        self.dulieuBaoCao.bmBaoCaoId.value == null ||
+        self.dulieuBaoCao.bmBaoCaoId.value == undefined
+      ) {
+        self.displayError("Vui lòng chọn biểu mẫu đầu vào");
+        return;
+      }
+
+      let file = self.tmpPathUploadTemplateData[0];
+      file.bmBaoCaoId = self.dulieuBaoCao.bmBaoCaoId.value;
+      file.kyBaoCaoId = self.dulieuBaoCao.giaTriKyBaoCao.value;
+      apiService.put(
+        process.env.VUE_APP_ROOT_API + "bmbaocao/import_v2",
+        //process.env.VUE_APP_ROOT_API + "bmbaocao/import",
+        JSON.stringify(file),
+        function (res) {
+          if (res != null) {
+            if (res.status === 417) {
+              self.displayError(res.data);
+            } else {
+              var strMessage = "Đăng tải file báo cáo thành công.";
+              self.displaySuccess(strMessage);
+              self.dulieuBaoCaoOptions.optionBmSheetImport = res.lsSheetImport;
+              self.dulieuBaoCaoOptions.optionBmSheetImport.unshift({
+                value: "",
+                label: "Chọn sheet báo cáo",
+              });
+
+              self.dulieuBaoCaoImportLs = res.detailImportSheet;
+            }
+          } else {
+            return apiService.displayErrorApi(self);
+          }
+        }
+      );
+    },
+
+    add: function (files) {
+      let uploader = this.$refs.uploader;
+      uploader.files = uploader.files.concat(files);
+      uploader.upload();
+    },
+    reset() {},
+    fileRemoved(_path) {
+      var self = this;
+      this.selectedFile = false;
+      self.tmpPathUpload = self.tmpPathUpload.filter(function (el) {
+        return el != null;
+      });
+      if (self.tmpPathUpload.length > 0) {
+        const needle = _path[0].name.toLowerCase();
+        var itemRemove = self.tmpPathUpload.filter(
+          (v) => v.fileNameOriginal.toLowerCase() == needle
+        )[0];
+
+        if (itemRemove != null) {
+          self.tmpPathUpload.splice(self.tmpPathUpload.indexOf(itemRemove), 1);
+        }
+      }
+    },
+
+    //file báo cáo
+    async getSignedUrlTEMP(_file) {
+      var self = this;
+      if (_file != null && _file.length > 0 && _file[0].__status != "failed") {
+        return new Promise((resolve, reject) => {
+          const files = new FormData();
+          if (_file.length > 1) {
+            for (var i = 0; i < _file.length; i++) {
+              files.append("files", _file[i]);
+            }
+          } else {
+            files.append("files", _file[0]);
+          }
+
+          apiService.postUploadFile(
+            httpsAuthor.httpConnect + "/uploadMultipleFiles",
+            files,
+            function (res) {
+              if (res != null) {
+                if (res.status === 302) {
+                  reject(_file);
+                } else if (res.status === 417) {
+                  self.displayError(
+                    "Đăng tải File gặp sự cố, Vui lòng thử lại"
+                  );
+                  resolve(null);
+                } else if (res.status == 201) {
+                  if (
+                    res.data != null &&
+                    res.data.length > 0 &&
+                    res.data[0].message != null
+                  ) {
+                    self.displayError(res.data[0].message);
+                    self.tmpPathUpload.push(res.data[0]);
+                    reject(_file);
+                  } else {
+                    self.tmpPathUpload.push(res.data[0]);
+                    resolve(_file);
+                  }
+                } else {
+                  reject(_file);
+                }
+              } else {
+                reject(_file);
+                self.displayError("Đăng tải File gặp sự cố, Vui lòng thử lại");
+              }
+            }
+            // );
+          );
+        });
+      }
+    },
+
+    // Save chi tieu
+    async saveCellValues(kyBaoCao, baocaoId) {
+      var self = this;
+      var sheetId = "";
+      var sheetTitle = "";
+      var sheetCtId = 0;
+      var bsheetCtVaoId = 0;
+
+      // option get data: from Import | input.
+
+      if (self.isSelectedImportFile) {
+        self.tableHtmlGenerate = "";
+      } else {
+        self.tableHtmlGenerateImport = "";
+      }
+
+      if (kyBaoCao == null || kyBaoCao == "") {
+        self.displayError("Kỳ báo cáo đang để trống!");
+        return;
+      }
+
+      var $j_object = $(".gt-cell");
+
+      if ($j_object.length == 0 || $j_object == undefined) {
+        self.displayError("Dữ liệu báo cáo đang không có dữ liệu!");
+        return;
+      }
+
+      // select sheet id from import or input form.
+      if (self.isSelectedImportFile) {
+        sheetId = self.sheetBaoCaoImport.bmSheetImportId.value;
+        sheetTitle = self.sheetBaoCaoImport.bmSheetImportId.label;
+        //alert("select import sheet ID: " + sheetId);
+      } else {
+        sheetId = self.dulieuBaoCao.bmSheetId.value;
+        sheetTitle = self.dulieuBaoCao.bmSheetId.label;
+        //alert("select input sheet ID: " + sheetId);
+      }
+
+      if (sheetId == null || sheetId == undefined || sheetId === "") {
+        self.displayError("Vui lòng chọn sheet báo cáo.");
+        return;
+      }
+
+      self.dulieuBaoCao.fileDinhKem = "";
+      if (self.tmpPathUpload.length > 0) {
+        self.tmpPathUpload.forEach((element) => {
+          self.dulieuBaoCao.fileDinhKem +=
+            element.pathFile + "~" + element.fileName + "`";
+        });
+
+        self.dulieuBaoCao.fileDinhKem = self.dulieuBaoCao.fileDinhKem.substring(
+          0,
+          self.dulieuBaoCao.fileDinhKem.length - 1
+        );
+      }
+
+      // [U] Lay gia tri trong cac o cell chi tieu
+      self.dulieuBaoCaoRequest.dulieuCell = [];
+      $j_object.each(function () {
+        if ($(this).attr("id") != undefined) {
+          var arr = $(this).attr("id").split("|");
+
+          if (arr[2].includes("-")) {
+            var sheetCtValue = arr[2].split("-");
+            sheetCtId = sheetCtValue[0];
+            bsheetCtVaoId = sheetCtValue[1];
+          } else {
+            sheetCtId = arr[2];
+          }
+
+          if ($(this).val() != "") {
+            self.dulieuBaoCaoRequest.dulieuCell.push({
+              bmBaoCaoDinhKyId: kyBaoCao.value,
+              bmBaoCaoId: baocaoId.value,
+              bmSheetId: sheetId,
+              bmSheetCotId: arr[0],
+              bmSheetHangId: arr[1],
+              bmSheetCtId: sheetCtId,
+              bmSheetCtVaoId: bsheetCtVaoId,
+              id: arr[3],
+              giaTri: $(this).val(),
+            });
+          }
+        }
+      });
+
+      if(self.dulieuBaoCaoRequest.dulieuCell.length <= 0){
+        self.displayError("Dữ liệu báo cáo đang không có dữ liệu!");
+        return;
+      }
+
+      var dulieuBaoCao = JSON.stringify(self.dulieuBaoCaoRequest.dulieuCell);
+
+      var dulieuCellReport = {
+        dulieuBaoCao: dulieuBaoCao,
+        fileDinhKem: self.dulieuBaoCao.fileDinhKem,
+        trichYeu: self.dulieuBaoCao.trichYeu,
+        bmBaoCaoDinhKyId: self.dulieuBaoCao.giaTriKyBaoCao.value,
+        bmBaoCaoId: self.dulieuBaoCao.bmBaoCaoId.value,
+        ctKiemToanId: self.dulieuBaoCao.congtyKiemToanId.value,
+        ctKiemToanVienId: self.dulieuBaoCao.kiemToanVienId.value,
+      };
+      await apiService.post(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/luunoidungbaocao",
+        dulieuCellReport,
+        function (res) {
+          if (res != null) {
+            if (res.status === 417) {
+              self.displayError(res.data);
+            } else {
+              var strMessage =
+                "Đã lưu thành công dữ liệu sheet báo cáo " + sheetTitle;
+              self.displaySuccess(strMessage);
+              self.onRequest(self);
+            }
+          } else {
+            return apiService.displayErrorApi(self);
+          }
+        }
+      );
+    },
+
+    /**
+     * [U] Luu gia tri tung sheet bao cao.
+     */
+
+    async saveDataSheetBc(kyBaoCao, baocaoId) {
+      var self = this;
+      var sheetId = "";
+      var sheetTitle = "";
+      var sheetCtId = 0;
+      var bsheetCtVaoId = 0;
+
+      // if (kyBaoCao == null || kyBaoCao == "") {
+      //   self.displayError("Kỳ báo cáo đang để trống!");
+      //   return;
+      // }
+
+      if (baocaoId == null || baocaoId == "") {
+        self.displayError("Báo cáo không có dữ liệu");
+        return;
+      }
+
+      var $j_object = $(".gt-cell");
+
+      if ($j_object.length == 0 || $j_object == undefined) {
+        self.displayError("Dữ liệu báo cáo đang không có dữ liệu!");
+        return;
+      }
+
+      // select sheet id from import or input form.
+      if (self.isSelectedImportFile) {
+        sheetId = self.sheetBaoCaoImport.bmSheetImportId.value;
+        sheetTitle = self.sheetBaoCaoImport.bmSheetImportId.label;
+        //alert("select import sheet ID: " + sheetId);
+      } else {
+        sheetId = self.dulieuBaoCao.bmSheetId.value;
+        sheetTitle = self.dulieuBaoCao.bmSheetId.label;
+        //alert("select input sheet ID: " + sheetId);
+      }
+
+      if (sheetId == null || sheetId == undefined || sheetId === "") {
+        self.displayError("Vui lòng chọn sheet báo cáo.");
+        return;
+      }
+
+      // Lay gia tri trong cac o cell chi tieu
+      $j_object.each(function () {
+        if ($(this).attr("id") != undefined) {
+          var arr = $(this).attr("id").split("|");
+
+          if (arr[2].includes("-")) {
+            var sheetCtValue = arr[2].split("-");
+            sheetCtId = sheetCtValue[0];
+            bsheetCtVaoId = sheetCtValue[1];
+          } else {
+            sheetCtId = arr[2];
+          }
+
+          if ($(this).val() != "") {
+            self.dulieuBaoCaoRequest.dulieuCell.push({
+              bmBaoCaoDinhKyId: kyBaoCao.value,
+              bmBaoCaoId: baocaoId.value,
+              bmSheetId: sheetId,
+              bmSheetCotId: arr[0],
+              bmSheetHangId: arr[1],
+              bmSheetCtId: sheetCtId,
+              bmSheetCtVaoId: bsheetCtVaoId,
+              id: arr[3],
+              giaTri: $(this).val(),
+            });
+          }
+        }
+      });
+
+      var dulieuBaoCao = JSON.stringify(self.dulieuBaoCaoRequest.dulieuCell);
+      var dulieuCellReport = {
+        dulieuBaoCao: dulieuBaoCao,
+        fileDinhKem: "",
+        trichYeu: "",
+        bmBaoCaoDinhKyId: self.dulieuBaoCao.giaTriKyBaoCao.value,
+        bmBaoCaoId: self.dulieuBaoCao.bmBaoCaoId.value,
+        ctKiemToanId: "",
+        ctKiemToanVienId: "",
+        importData: 0,
+        kyBaoCao: self.dulieuBaoCao.kyGuiBcText.value,
+      };
+      await apiService.post(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/luugiatrisheetbaocao",
+        dulieuCellReport,
+        function (res) {
+          if (res != null) {
+            if (res.status === 417) {
+              self.displayError(res.data);
+            } else {
+              var strMessage =
+                "Đã lưu thành công dữ liệu sheet báo cáo " + sheetTitle;
+              self.displaySuccess(strMessage);
+              self.onRequest(self);
+            }
+          } else {
+            return apiService.displayErrorApi(self);
+          }
+        }
+      );
+    },
+
+    /**
+     * [U] Luu gia tri tung sheet bao cao.
+     */
+    async saveDataSheetBcImport(kyBaoCao, baocaoId) {
+      var self = this;
+      var sheetId = "";
+      var sheetTitle = "";
+      var sheetCtId = 0;
+      var bsheetCtVaoId = 0;
+      // if (kyBaoCao == null || kyBaoCao == "") {
+      //   self.displayError("Kỳ báo cáo đang để trống!");
+      //   return;
+      // }
+
+      if (baocaoId == null || baocaoId == "") {
+        self.displayError("Báo cáo không có dữ liệu");
+        return;
+      }
+
+      //  gia tri cell cau hinh
+      var $j_object = $(".gt-cell");
+      // gia tri cell dynamic
+      var $j_object_dynamic = $(".gt-cell-dynamic");
+
+      var $j_object2 = $(".q-table input[data-required='1']");
+
+      var check = true;
+
+      $j_object2.each(function () {
+        var check_value = $(this).val();
+
+        if (
+          check_value == undefined ||
+          check_value == null ||
+          check_value == ""
+        ) {
+          $(this).attr(
+            "style",
+            "height: 70%; border: 1px dotted red; margin-bottom: 6%;"
+          );
+          check = false;
+        }
+      });
+      if (!check) {
+        self.displayError("Không được để trống!");
+        return;
+      }
+
+      if ($j_object.length == 0 || $j_object == undefined) {
+        self.displayError("Dữ liệu báo cáo đang không có dữ liệu!");
+        return;
+      }
+      // select sheet id from import or input form.
+      if (self.isSelectedImportFile) {
+        sheetId = self.sheetBaoCaoImport.bmSheetImportId.value;
+        sheetTitle = self.sheetBaoCaoImport.bmSheetImportId.label;
+        //alert("select import sheet ID: " + sheetId);
+      } else {
+        sheetId = self.dulieuBaoCao.bmSheetId.value;
+        sheetTitle = self.dulieuBaoCao.bmSheetId.label;
+        //alert("select input sheet ID: " + sheetId);
+      }
+
+      if (sheetId == null || sheetId == undefined || sheetId === "") {
+        self.displayError("Vui lòng chọn sheet báo cáo.");
+        return;
+      }
+
+      // Lay gia tri trong cac o cell dynamic.
+      if (
+        ($j_object_dynamic != null || $j_object_dynamic != undefined) &&
+        $j_object_dynamic.length > 0
+      ) {
+        $j_object_dynamic.each(function () {
+          var arrdynamic = $(this).attr("id").split("|");
+
+          if ($(this).val() != "") {
+            // set ls du lieu cell dynamic
+            self.dulieuBaoCaoRequest.dulieuCellDynamic.push({
+              id: "",
+              bmBaoCaoId: arrdynamic[0],
+              bmSheetHang: arrdynamic[1],
+              giaTri: $(this).val(),
+              indexCellCot: arrdynamic[2],
+              indexCellHang: arrdynamic[3],
+            });
+          }
+        });
+      }
+      // set object du lieu cell dynamic
+      self.dulieuBaoCaoRequest.dulieuCellDynamicObject = {
+        id: 0,
+        bmBaoCaoId: baocaoId.value,
+        bmSheetHang: sheetId,
+        giaTri: "",
+      };
+      // Lay gia tri trong cac o cell chi tieu CT
+      $j_object.each(function () {
+        if ($(this).attr("id") != undefined) {
+          var arr = $(this).attr("id").split("|");
+
+          if (arr[2].includes("-")) {
+            var sheetCtValue = arr[2].split("-");
+            sheetCtId = sheetCtValue[0];
+            bsheetCtVaoId = sheetCtValue[1];
+          } else {
+            sheetCtId = arr[2];
+          }
+
+          if ($(this).val() != "") {
+            self.dulieuBaoCaoRequest.dulieuCell.push({
+              //bmBaoCaoDinhKyId: kyBaoCao.value,
+              bmBaoCaoId: baocaoId.value,
+              bmSheetId: sheetId,
+              bmSheetCotId: arr[0],
+              bmSheetHangId: arr[1],
+              bmSheetCtId: sheetCtId,
+              bmSheetCtVaoId: bsheetCtVaoId,
+              id: arr[3],
+              giaTri: $(this).val(),
+            });
+          }
+        }
+      });
+
+      // convert du lieu bao cao to json
+      var dulieuBaoCao = JSON.stringify(self.dulieuBaoCaoRequest.dulieuCell);
+
+      // convert du lieu bao cao dynamic to json
+      var dulieuBaoCaoDynamic = JSON.stringify(
+        self.dulieuBaoCaoRequest.dulieuCellDynamic
+      );
+
+      self.showLoadingInfi();
+      var dulieuCellReport = {
+        dulieuBaoCao: dulieuBaoCao,
+        fileDinhKem: "",
+        trichYeu: "",
+        giaTriKyBc: self.dulieuBaoCao.giaTriKyBaoCao.value,
+        bmBaoCaoId: self.dulieuBaoCao.bmBaoCaoId.value,
+        tenBaoCao: self.dulieuBaoCao.tenBaoCao,
+        ctKiemToanId: "",
+        ctKiemToanVienId: "",
+        bcBaoCaoGtDong: self.dulieuBaoCaoRequest.dulieuCellDynamicObject,
+        bcBaoCaoDongData: dulieuBaoCaoDynamic,
+        importData: 1,
+        kyBaoCao: self.dulieuBaoCao.kyGuiBcText.value,
+      };
+      await apiService.post(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/luugiatrisheetbaocao",
+        dulieuCellReport,
+        function (res) {
+          if (res != null) {
+            if (res.status === 417) {
+              self.displayError(res.data);
+            } else {
+              var strMessage =
+                "Đã lưu thành công dữ liệu sheet báo cáo " + sheetTitle;
+              self.displaySuccess(strMessage);
+              // self.onRequest(self);
+            }
+          } else {
+            return apiService.displayErrorApi(self);
+          }
+
+          self.hideLoading();
+        }
+      );
+    },
+
+    // Luu du lieu thong tin bao cao dinh ky.
+    async saveDataThongTinAndSentBaocao(kyBaoCao, baocaoId, sentBaoCao) {
+      var self = this;
+
+      //var urlRequest = "";
+      var strMessage = "";
+
+      if (sentBaoCao == 1) {
+        strMessage = "Lưu và gửi báo cáo thành công.";
+      } else {
+        strMessage = "Lưu thành công thông tin gửi báo cáo";
+      }
+
+      if (self.suDungBieuMau) {
+        if (baocaoId == null || baocaoId == "" || (baocaoId != null && (baocaoId.value == null || baocaoId.value == ""))) {
+          self.displayError("Báo cáo không có dữ liệu");
+          return;
+        }
+      } else {
+        if (
+          self.dulieuBaoCao.tenBaoCao == null ||
+          self.dulieuBaoCao.tenBaoCao == ""
+        ) {
+          self.displayError("Tên báo cáo không được để trống");
+          return;
+        }
+      }
+
+      // self.dulieuBaoCao.fileDinhKem = "";
+      // if (self.tmpPathUpload.length > 0) {
+      //   self.tmpPathUpload.forEach((element) => {
+      //     self.dulieuBaoCao.fileDinhKem +=
+      //       element.pathFile + "~" + element.fileName + "`";
+      //   });
+
+      //   self.dulieuBaoCao.fileDinhKem = self.dulieuBaoCao.fileDinhKem.substring(
+      //     0,
+      //     self.dulieuBaoCao.fileDinhKem.length - 1
+      //   );
+      // }
+
+      // //Validate file dinh kem.
+      // if (
+      //   self.dulieuBaoCao.fileDinhKem == null ||
+      //   self.dulieuBaoCao.fileDinhKem.length == 0
+      // ) {
+      //   self.displayError("Bắt buộc tài liệu đính kèm trước khi gửi báo cáo.");
+      //   return;
+      // }
+      var _fileBaoCao = "";
+      if(!self.canImport || !self.suDungBieuMau){
+      self.tmpPathUpload = self.tmpPathUpload.filter(function (el) {
+        return el != null;
+      });
+      if (
+        sentBaoCao == 1 &&
+        self.dulieuBaoCao.arrFileBaoCao.length == 0 &&
+        (self.tmpPathUpload == null ||
+          (self.tmpPathUpload != null && self.tmpPathUpload.length == 0) ||
+          self.tmpPathUpload == undefined)
+      ) {
+        self.displayError("Bắt buộc tài liệu đính kèm trước khi gửi báo cáo.");
+        return;
+      }
+      if (self.tmpPathUpload.length > 0) {
+        self.tmpPathUpload.forEach((element) => {
+          if (element != undefined || element != null) {
+            if (element.message == null || element.message == "")
+              self.dulieuBaoCao.fileBaoCao +=
+                element.pathFile + "~" + element.fileName + "`";
+          }
+        });
+
+        _fileBaoCao = self.dulieuBaoCao.fileBaoCao.substring(
+          0,
+          self.dulieuBaoCao.fileBaoCao.length - 1
+        );
+      }
+      if (
+        sentBaoCao == 1 &&
+        self.dulieuBaoCao.arrFileBaoCao.length == 0 &&
+        _fileBaoCao == ""
+      ) {
+        self.displayError("Tài liệu đính kèm phải có ký số hợp lệ.");
+        return;
+      }
+      }
+      if (sentBaoCao == 1 && self.tmpPathUploadTemplateData.length > 0) {
+        self.tmpPathUploadTemplateData.forEach((element) => {
+          if (element != undefined || element != null) {
+            if (element.message == null || element.message == "")
+              self.dulieuBaoCao.fileBaoCao +=
+                element.pathFile + "~" + element.fileName + "`";
+          }
+        });
+
+        _fileBaoCao = self.dulieuBaoCao.fileBaoCao.substring(
+          0,
+          self.dulieuBaoCao.fileBaoCao.length - 1
+        );
+      }
+
+      var _fileDinhKem = "";
+      self.dulieuBaoCao.fileDinhKem = "";
+      if (self.tmpPathUploadFileDinhKem.length > 0) {
+        self.tmpPathUploadFileDinhKem.forEach((element) => {
+          if (element != undefined || element != null) {
+            if (element.message == null || element.message == "")
+              self.dulieuBaoCao.fileDinhKem +=
+                element.pathFile + "~" + element.fileName + "`";
+          }
+          // if(self.model.fileDinhKem == ""){
+          //   self.displayError("Đăng tải tài liệu không được bỏ trống");
+          //   return;
+          // }
+        });
+
+        _fileDinhKem = self.dulieuBaoCao.fileDinhKem.substring(
+          0,
+          self.dulieuBaoCao.fileDinhKem.length - 1
+        );
+      }
+      var dulieuCellReport = {
+        dulieuBaoCao: "",
+        fileDinhKem: (_fileDinhKem != undefined && _fileDinhKem != null && _fileDinhKem != "") ? _fileDinhKem.replace(/\//g, "\\") : null,
+        fileBaoCao: (_fileBaoCao != undefined && _fileBaoCao != null && _fileBaoCao != "") ? _fileBaoCao.replace(/\//g, "\\") : self.dulieuBaoCao.fileBaoCao,
+        trichYeu: self.dulieuBaoCao.trichYeu,
+        bmBaoCaoDinhKyId:
+          self.dulieuBaoCao.giaTriKyBaoCao != null
+            ? self.dulieuBaoCao.giaTriKyBaoCao.value
+            : null,
+        bmBaoCaoId:
+          self.dulieuBaoCao.bmBaoCaoId != null
+            ? self.dulieuBaoCao.bmBaoCaoId.value
+            : null,
+        tenBaoCao: self.dulieuBaoCao.tenBaoCao,
+        sentBaoCao: sentBaoCao,
+        arrFileDinhKem: self.dulieuBaoCao.arrFileDinhKem,
+        arrFileBaoCao: self.dulieuBaoCao.arrFileBaoCao,
+        namBaoCao: self.dulieuBaoCao.namBaoCao,
+        ghiChu: self.dulieuBaoCao.ghiChu,
+        loaiBcGui: self.loaiBaoCaoGuiReq,
+        thanhVienId: self.dulieuBaoCao.existThanhVienId,
+        //[ToanLK - 16/08/2020] Truyền giá trị kỳ báo cáo
+        giaTriKyBc: self.dulieuBaoCao.giaTriKyBaoCao,
+        kyBaoCao: self.dulieuBaoCao.kyGuiBcText.value,
+      };
+      self.showLoadingInfi();
+      await apiService.post(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/saveandsendbaocaokhac",
+        dulieuCellReport,
+        function (res) {
+          self.hideLoading();
+          if (res != null) {
+            if (res.status === 417) {
+              self.displayError(res);
+            } else {
+              self.dulieuBaoCao.existThanhVienId = res.id;
+              self.displaySuccess(strMessage);
+              if ((sentBaoCao == 0)) {
+                self.$router.push({
+                  name: "guiBaoCaoOtherEditView",
+                  params: {
+                    baocaotype: self.loaiBaoCaoGuiReq,
+                    thanhvienid: self.encodeString(
+                      self.dulieuBaoCao.existThanhVienId,
+                      "baocaodinhkyctck"
+                    ),
+                  },
+                });
+              } else {
+                self.$router.push({
+                  name: "baoCaoDinhKiCTCKView",
+                });
+              }
+            }
+          } else {
+            return apiService.displayErrorApi(self);
+          }
+        }
+      );
+    },
+
+    // load ky bao cao
+    async getKyBaoCaoDropDown() {
+      var self = this;
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/kybaocaothanhvien",
+        null,
+        function (res) {
+          if (res != null && res.length > 0) {
+            self.dulieuBaoCaoOptions.optionKyBaoCao = res;
+            self.dulieuBaoCaoOptions.optionKyBaoCao.unshift({
+              value: null,
+              label: "-- Chọn kỳ báo cáo --",
+            });
+            return self.dulieuBaoCaoOptions.optionKyBaoCao;
+          }
+        }
+      );
+    },
+
+    // load e form from sheet id
+    // async loadEFormSheet(sheetid) {
+    //   var self = this;
+
+    //   if (sheetid == "") {
+    //     self.displayError("Sheet báo cáo không tồn tại.");
+    //   }
+
+    //   await axios
+    //     .get(
+    //       process.env.VUE_APP_ROOT_API + "baocaodinhky/initeformguibaocaoother",
+    //       {
+    //         params: {
+    //           sheetId: sheetid,
+    //         },
+    //       }
+    //     )
+    //     .then(function (res) {
+    //       //set thông tin cho màn hình cập nhật sheet
+    //       if (res.status === "404") {
+    //         self.model = {};
+    //         self.showButtonSave = false;
+    //         self.tableHtmlGenerate =
+    //           " <div style='text-align: center;' ><b style='width: 100%;align-content: center;color: red;'>Sheet báo cáo chưa được thiết lập!</b></div>";
+    //       } else {
+    //         self.model = res.data;
+    //         self.tableHtmlGenerate = self.model.tableHtmlRaw;
+    //         self.showButtonSave = true;
+    //       }
+    //     })
+    //     .catch(function () {
+    //       self.model = {};
+
+    //       self.showButtonSave = false;
+    //       self.tableHtmlGenerate =
+    //         " <div style='text-align: center;' ><b style='width: 100%;align-content: center;color: red;'>Sheet báo cáo chưa được thiết lập!</b></div>";
+    //     });
+    // },
+    async loadEFormSheet(sheetid) {
+      var self = this;
+      self.tableHtmlGenerate = "";
+      if (self.allSheet != null && self.allSheet.length > 0) {
+        for (let i = 0; i < self.allSheet.length; i++) {
+          if (self.allSheet[i].id != null && self.allSheet[i].id == sheetid) {
+            self.tableHtmlGenerate = self.allSheet[i].tableHtmlRaw;
+            self.showButtonSave = true;
+          }
+        }
+      }
+      if (self.tableHtmlGenerate == "") {
+        self.showButtonSave = false;
+        self.tableHtmlGenerate = "<b>Sheet báo cáo không tồn tại.</b>";
+      }
+    },
+
+    async getAllSheet(baoCaoId) {
+      var self = this;
+      await axios(
+        process.env.VUE_APP_ROOT_API +
+          "baocaodinhky/thietlapnoidungbaocaoallsheet",
+        {
+          params: {
+            // giaTriKyBaoCao: giaTriKyBaoCao,
+            baoCaoId: baoCaoId,
+            // kyBaoCao: kyBaoCao,
+          },
+        }
+      )
+        .then(function (res) {
+          //set thông tin cho màn hình cập nhật sheet
+          if (res.status === "404") {
+            // self.model = {};
+            self.showButtonSave = false;
+            // self.tableHtmlGenerate = "<b>Sheet báo cáo không tồn tại.</b>";
+          } else {
+            // self.model = res.data;
+            self.allSheet = res.data;
+            self.loadEFormSheet(self.dulieuBaoCao.bmSheetId.value);
+            // self.allSheet = self.model.tableHtmlRaw;
+            self.showButtonSave = true;
+          }
+        })
+        .catch(function () {
+          // self.model = {};
+
+          self.showButtonSave = false;
+          // self.tableHtmlGenerate = "<b>Sheet báo cáo không tồn tại.</b>";
+        });
+    },
+    async getFileDinhKem(val) {
+      if (val != undefined && val != null && val != "") {
+        var self = this;
+        if (self.duLieuBaoCaoCheckFileDinhKem != null && self.duLieuBaoCaoCheckFileDinhKem.length > 0) {
+          for (let i = 0; i < self.duLieuBaoCaoCheckFileDinhKem.length; i++) {
+            if (self.duLieuBaoCaoCheckFileDinhKem[i].id == val) {
+              self.canImport = self.duLieuBaoCaoCheckFileDinhKem[i].canImport;
+              self.arrFileDinhKem =
+                self.duLieuBaoCaoCheckFileDinhKem[i].arrFileDinhKem;
+            }
+          }
+        }
+      }
+    },
+
+    // Lay danh sach bm sheet
+    async getBmSheetDropDown(bieumauId) {
+      var self = this;
+      if (bieumauId.value != undefined && bieumauId.value != "") {
+        bieumauId = bieumauId.value;
+      }
+      let parr = {
+        bieumauId: bieumauId,
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/listsheetdata",
+        parr,
+        function (res) {
+          //
+          if (res != null && res.length > 0) {
+            // Set sheet bao cao options.
+            self.dulieuBaoCaoOptions.optionBmSheet = res;
+
+            if (
+              self.dulieuBaoCaoOptions.optionBmSheet != null ||
+              self.dulieuBaoCaoOptions.optionBmSheet != undefined ||
+              self.dulieuBaoCaoOptions.optionBmSheet.length > 0
+            ) {
+              // Get first sheet bao cao.
+              self.dulieuBaoCao.bmSheetId =
+                self.dulieuBaoCaoOptions.optionBmSheet[0];
+              if (
+                self.dulieuBaoCao.bmSheetId != null ||
+                self.dulieuBaoCao.bmSheetId.value != null
+              ) {
+                // Load form for first sheet bao cao.
+                self.loadEFormSheet(self.dulieuBaoCao.bmSheetId.value);
+              }
+            }
+          }
+        }
+      );
+    },
+
+    // Lay danh sach bao cao dropdown
+    getBmBaoCaoDropDown(baocaotype) {
+      var self = this;
+      let parr = {
+        baocaotype: baocaotype,
+      };
+      apiService.get(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/getlsbaocaotypebdto",
+        parr,
+        function (res) {
+          self.dulieuBaoCaoOptions.optionBmBaoCao = [];
+          if (res == null || res.length == 0) {
+            return;
+          }
+          if (res.lstBmBaoCao.length > 0) {
+            for (let i = 0; i < res.lstBmBaoCao.length; i++) {
+              let optionTemp = {
+                label: res.lstBmBaoCao[i].tenBaoCao,
+                value: res.lstBmBaoCao[i].id,
+              };
+              self.dulieuBaoCaoOptions.optionBmBaoCao.push(optionTemp);
+              let optionFileTemp = {
+                canImport: res.lstBmBaoCao[i].canImport,
+                id: res.lstBmBaoCao[i].id,
+                arrFileDinhKem: res.lstBmBaoCao[i].arrFileDinhKem,
+              };
+              self.duLieuBaoCaoCheckFileDinhKem.push(optionFileTemp);
+            }
+          }
+          // self.dulieuBaoCaoOptions.optionBmBaoCao = res;
+
+          self.dulieuBaoCaoOptions.optionBmBaoCao.unshift({
+            label: "-- Chọn tên báo cáo --",
+            value: "",
+          });
+          return self.dulieuBaoCaoOptions.optionBmBaoCao;
+        },
+        function () {}
+      );
+    },
+
+    // Lay gia tri ky bao cao thanh vien.
+    async getGiaTriKyBaoCaoThanhVien(kyBcId, baoCaoId) {
+      var self = this;
+      let parr = {
+        kyBcId: kyBcId,
+        baoCaoId: baoCaoId,
+      };
+      await apiService.get(
+        process.env.VUE_APP_ROOT_API + "baocaodinhky/giatrikybaocaothanhvien",
+        parr,
+        function (res) {
+          self.dulieuBaoCao.giaTriKyBaoCao = res;
+          return self.dulieuBaoCao.giaTriKyBaoCao;
+        },
+        function () {}
+      );
+    },
+
+    // Send Bao cao UBCK
+    async sendBaoCaoUbck(kyBaoCaoId, bmBaoCaoId) {
+      var self = this;
+
+      let parr = {
+        bmBaoCaoDinhKyId: kyBaoCaoId.value,
+        bmBaoCaoId: bmBaoCaoId.value,
+      };
+
+      await self.$q
+        .dialog({
+          title: "Bạn có thực sự muốn gửi báo cáo ?",
+          message: "<strong>" + bmBaoCaoId.label + "</strong>",
+          html: true,
+          ok: {
+            color: "primary",
+            label: "Gửi",
+            size: "12px",
+          },
+          cancel: {
+            color: "negative",
+            label: " Hủy",
+            size: "12px",
+          },
+        })
+        .onOk(() => {
+          apiService.post(
+            process.env.VUE_APP_ROOT_API + "baocaodinhky/sendbaocao",
+            parr,
+            function (res) {
+              if (res != null) {
+                if (res.status === 417) {
+                  self.displayError(res.data);
+                } else {
+                  var strMessage = "Gửi báo cáo thành công.!";
+                  self.displaySuccess(strMessage);
+                  self.$router.push("/baocaodinhkictck");
+                }
+              } else {
+                return apiService.displayErrorApi(self);
+              }
+            },
+            function () {}
+          );
+        });
+    },
+    signFile(tmpPathUpload, fileName) {
+      apiService.signFile(this, tmpPathUpload, fileName, exc_sign_approved);
+    },
+    checkKySo() {
+      var self = this;
+      apiService.checkKySo(this, self.tmpFileName, self.tmpPathUpload);
+    },
+    async downloadfile(i) {
+      i = i.replace(/\\/g, "`");
+      i = i.replace(/\//g, "`");
+
+      return new Promise((resolve) => {
+        axios({
+          url: httpsAuthor.httpConnect + "/download/" + i,
+          method: "GET",
+          responseType: "blob",
+        }).then((response) => {
+          var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+          var fileLink = document.createElement("a");
+
+          fileLink.href = fileURL;
+
+          i = i.split("`");
+          let namefile = i[i.length - 1];
+          fileLink.setAttribute("download", namefile);
+          document.body.appendChild(fileLink);
+          fileLink.click();
+          resolve(i);
+        });
+      });
+    },
+  },
+};
+</script>
