@@ -1,3 +1,5 @@
+T!#%24Van
+
 Thông tin server
 + Root: 
 	192.168.50.80
@@ -11,6 +13,50 @@ C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps
 ========> B1: Merge code bản mới nhất ở cả server + client
 ========> B2: Client đổi thông tin 2 file env và httpConnect để cấu hình trỏ lại đường dẫn
 
+http://fims.ssc.gov.vn/BaoCao/wpKhaiThacBc.aspx?loaithanhvienid=1&thanhvienid={0}&mk={1}
+
+DECLARE
+  P_MABAOCAO VARCHAR2(200);
+  P_GIATRIKY NVARCHAR2(200);
+  P_THOIHANGUI TIMESTAMP;
+BEGIN
+  P_MABAOCAO := 'BCTHMGTDCK';
+  P_GIATRIKY := '15/05/2018';
+  P_THOIHANGUI := TO_TIMESTAMP('16/05/2018 08:00:00', 'dd/mm/yyyy hh:mi:ss');
+
+  SP_UPDATE_THOI_HAN_BAOCAO(
+    P_MABAOCAO => P_MABAOCAO,
+    P_GIATRIKY => P_GIATRIKY,
+    P_THOIHANGUI => P_THOIHANGUI
+  );
+--rollback; 
+END;
+
+----
+
+DECLARE
+  P_MABAOCAO NVARCHAR2(200);
+  P_KYBAOCAO NVARCHAR2(200);
+  P_GIATRIKY NVARCHAR2(200);
+  P_NAMCANHBAO NVARCHAR2(200);
+  P_THOIHANGUI TIMESTAMP;
+BEGIN
+  P_MABAOCAO := 'BCTCQ';
+  P_KYBAOCAO := 'Q';
+  P_GIATRIKY := '4';
+  P_NAMCANHBAO := '2021';
+  P_THOIHANGUI := TO_TIMESTAMP('18/01/2022 08:00:00', 'dd/mm/yyyy hh:mi:ss');
+
+  SP_TAO_BAO_CAO_THU_CONG(
+    P_MABAOCAO => P_MABAOCAO,
+    P_KYBAOCAO => P_KYBAOCAO,
+    P_GIATRIKY => P_GIATRIKY,
+    P_NAMCANHBAO => P_NAMCANHBAO,
+    P_THOIHANGUI => P_THOIHANGUI
+  );
+--rollback; 
+END;
+
 103.3.252.117 với user/pass: tinhvanuser01/Tinhvan0
 https://192.168.3.17/PasswordVault/v10/logon/cyberark
 user/pass: donvitinhvan/Uyban0099
@@ -23,6 +69,14 @@ hopcongkhaingansach
 
 
 YenThanhVien / Yen@th84
+
+admin/Cn2t@512
+
+UPDATE MẬT KHẨU = Ssc@123
+
+UPDATE QT_NGUOI_DUNG SET MAT_KHAU = '$2a$10$kirGS.pNUuMQx67GHkk6guuAlVm72uHh.4f5wXzZbNZPGYP6CDwqm' WHERE MA_NGUOI_DUNG IN 
+(select DISTINCT(T1.ID) from QT_NGUOI_DUNG T1 LEFT JOIN LK_NGUOI_DUNG_NHOM T2 ON T1.MA_NGUOI_DUNG = T2.NGUOI_DUNG_ID WHERE NHOM_NGUOI_DUNG_ID IN (47,91));
+
 
 regex
 Fax: /^\+?[0-9]+$/
@@ -77,6 +131,24 @@ VUE_APP_ROOT_API = http://192.168.2.45:8080/scms-server/api/v1/
 BASE_URL = /
 
 
+
+----------------------------------
+----------------------------------
+VUE_APP_ROOT_API= https://scms.ssc.gov.vn/scms-server/api/v1/
+BASE_URL = /
+
+
+export default {
+  httpConnect: "https://scms.ssc.gov.vn/scms-server"
+};
+// httpConnect: "http://localhost:8088"
+// httpConnect: "http://scms.tinhvan.com/scms-server"
+// httpConnect: "http://scmstest.tinhvan.com/scms-test"
+// httpConnect: "http://192.168.2.45:8080/scms-server"
+// httpConnect: "http://103.3.252.91:8080/scms-server"
+// VUE_APP_ROOT_API = http://192.168.2.45:8080/scms-server/api/v1/
+// BASE_URL = /
+
 //new-------------------
 http://103.3.252.91:8080/phanquyenbaocaodichvuctck
 
@@ -84,6 +156,16 @@ http://103.3.252.91:8080/login
 VUE_APP_ROOT_API = http://103.3.252.91:8080/scms-server/api/v1/
 BASE_URL = /
 
+VUE_APP_ROOT_API = http://scms.ssc.gov.vn/scms-server/api/v1/
+BASE_URL = /
+
+httpConnect: "http://103.3.252.91:8080/scms-server"
+
+httpConnect: "http://scms.ssc.gov.vn/scms-server"
+
+274520
+
+http://scms.ssc.gov.vn/scms-server/authenticate
 
 Root
 VUE_APP_ROOT_API= http://scms.tinhvan.com/scms-server/api/v1/
@@ -260,5 +342,393 @@ END;
 
 http://10.176.1.60:4419/NHNService.asmx/NHNTTNHN
 http://10.176.1.60:4419/NHNService.asmx/DongBoNhanSuNHNCK
+
+
+for (Entry<Integer, List<CtckCoDongJoinCTCKTT>> entry : mapGroup.entrySet()) {
+				CtckCoDongJoinCTCKTT objectFist = entry.getValue().stream().findFirst().get();
+				CtckCoDongGroupBy itemCoDongDisplay = new CtckCoDongGroupBy();
+				itemCoDongDisplay.setTenCTCK(objectFist.getTenVietTat() + " – " + objectFist.getTenCTCK());
+				itemCoDongDisplay.setCtckThongTinId(objectFist.getCtckThongTinId());
+				itemCoDongDisplay.setLstCoDong(entry.getValue());
+				lstPageCtckCoDong.getLstCoDongDisplay().add(itemCoDongDisplay);
+
+				//System.out.println("Item : " + entry.getKey() + " Count : " + entry.getValue());
+			}
+			
+			if(lstPageCtckCoDong != null && lstPageCtckCoDong.getLstCoDongDisplay() != null && lstPageCtckCoDong.getLstCoDongDisplay().size() > 1) {
+				List<CtckCoDongGroupBy> lstCtckCoDongGroupByDisplay = lstPageCtckCoDong.getLstCoDongDisplay();
+				lstCtckCoDongGroupByDisplay = lstCtckCoDongGroupByDisplay.stream()
+		        .sorted(Comparator.comparingInt(CtckCoDongGroupBy::getCtckThongTinId))
+		        .collect(Collectors.toList());
+				lstPageCtckCoDong.setLstCoDongDisplay(lstCtckCoDongGroupByDisplay);
+			}
+			
+----
+
+public Integer parseIntegerValue(Object obj) {
+		Integer value = 0;
+		if(obj != null) {
+			if(obj instanceof Integer) {
+				value = ((Integer) obj).intValue();
+			}else if(obj instanceof BigDecimal){
+				value = ((BigDecimal) obj).intValue();
+			}else if(obj instanceof Long) {
+				value = ((Long) obj).intValue();
+			}
+		}
+		return value;
+	}
+	
+	public Long parseLongValue(Object obj) {
+		Long value = new Long(0);
+		if(obj != null) {
+			if(obj instanceof Integer) {
+				value = ((Integer) obj).longValue();
+			}else if(obj instanceof BigDecimal){
+				value = ((BigDecimal) obj).longValue();
+			}else if(obj instanceof Long) {
+				value = ((Long) obj);
+			}
+		}
+		return value;
+	}
+	
+	public BigDecimal parseBigDecimalValue(Object obj) {
+		BigDecimal value = new BigDecimal(0);
+		if(obj != null) {
+			if(obj instanceof Integer) {
+				Integer intTyppe = ((Integer) obj).intValue();
+				value = new BigDecimal(intTyppe);
+			}else if(obj instanceof BigDecimal){
+				value = ((BigDecimal) obj);
+			}else if(obj instanceof Long) {
+				long longType = ((Long) obj);
+				value = new BigDecimal(longType);
+			}
+		}
+		return value;
+	}
+	
+	public Boolean parseBooleanValue(Object obj) {
+		Boolean value = false;
+		if(obj instanceof Integer) {
+			if(((Integer) obj).intValue() == 1) {
+				value = true;
+			}else {
+				value = false;
+			}
+		}else if(obj instanceof BigDecimal){
+			if(((BigDecimal) obj).intValue() == 1) {
+				value = true;
+			}else {
+				value = false;
+			}
+		}else if(obj instanceof Long){
+			if(((Long) obj).intValue() == 1) {
+				value = true;
+			}else {
+				value = false;
+			}
+		}else if(obj instanceof Boolean){
+			value =  obj != null ? (Boolean) obj : false;
+		}
+		return value;
+	}
+
+List<String> listKyBc = new ArrayList<>();
+listKyBc.add("BN");
+listKyBc.add("BT");
+listKyBc.add("N");
+listKyBc.add("TU");
+listKyBc.add("TH");
+listKyBc.add("Q");
+listKyBc.add("NAM");
+listKyBc.add("TYC");
+listKyBc.add("K");
+listKyBc = listKyBc.stream().sorted().collect(Collectors.toList());
+
+for (String kyBC : listKyBc) {
+												for (Entry<String, Object> testo : map3.entrySet()) {
+													if (testo.getKey().equals(kyBC)) {
+														mapTemp.put(testo.getKey(), testo.getValue());
+													}
+												}
+											}
+
+
+    public static String removeSpecialCharacters(String str) {
+        str = str.replaceAll("[^a-zA-Z0-9]", "_");
+        str = str.substring(0, str.lastIndexOf("_")) + "." + str.substring(str.lastIndexOf("_") + 1, str.length());
+        return str;
+    }
+	
+	
+    public static String convertUTF8ToNoSign(String org) {
+        char arrChar[] = org.toCharArray();
+        char result[] = new char[arrChar.length];
+        for (int i = 0; i < arrChar.length; i++) {
+            switch (arrChar[i]) {
+            case '\u00E1':
+            case '\u00E0':
+            case '\u1EA3':
+            case '\u00E3':
+            case '\u1EA1':
+            case '\u0103':
+            case '\u1EAF':
+            case '\u1EB1':
+            case '\u1EB3':
+            case '\u1EB5':
+            case '\u1EB7':
+            case '\u00E2':
+            case '\u1EA5':
+            case '\u1EA7':
+            case '\u1EA9':
+            case '\u1EAB':
+            case '\u1EAD':
+            case '\u0203':
+            case '\u01CE':
+                {
+                    result[i] = 'a';
+                    break;
+                }
+            case '\u00E9':
+            case '\u00E8':
+            case '\u1EBB':
+            case '\u1EBD':
+            case '\u1EB9':
+            case '\u00EA':
+            case '\u1EBF':
+            case '\u1EC1':
+            case '\u1EC3':
+            case '\u1EC5':
+            case '\u1EC7':
+            case '\u0207':
+                {
+                    result[i] = 'e';
+                    break;
+                }
+            case '\u00ED':
+            case '\u00EC':
+            case '\u1EC9':
+            case '\u0129':
+            case '\u1ECB':
+                {
+                    result[i] = 'i';
+                    break;
+                }
+            case '\u00F3':
+            case '\u00F2':
+            case '\u1ECF':
+            case '\u00F5':
+            case '\u1ECD':
+            case '\u00F4':
+            case '\u1ED1':
+            case '\u1ED3':
+            case '\u1ED5':
+            case '\u1ED7':
+            case '\u1ED9':
+            case '\u01A1':
+            case '\u1EDB':
+            case '\u1EDD':
+            case '\u1EDF':
+            case '\u1EE1':
+            case '\u1EE3':
+            case '\u020F':
+                {
+                    result[i] = 'o';
+                    break;
+                }
+            case '\u00FA':
+            case '\u00F9':
+            case '\u1EE7':
+            case '\u0169':
+            case '\u1EE5':
+            case '\u01B0':
+            case '\u1EE9':
+            case '\u1EEB':
+            case '\u1EED':
+            case '\u1EEF':
+            case '\u1EF1':
+                {
+                    result[i] = 'u';
+                    break;
+                }
+            case '\u00FD':
+            case '\u1EF3':
+            case '\u1EF7':
+            case '\u1EF9':
+            case '\u1EF5':
+                {
+                    result[i] = 'y';
+                    break;
+                }
+            case '\u0111':
+                {
+                    result[i] = 'd';
+                    break;
+                }
+            case '\u00C1':
+            case '\u00C0':
+            case '\u1EA2':
+            case '\u00C3':
+            case '\u1EA0':
+            case '\u0102':
+            case '\u1EAE':
+            case '\u1EB0':
+            case '\u1EB2':
+            case '\u1EB4':
+            case '\u1EB6':
+            case '\u00C2':
+            case '\u1EA4':
+            case '\u1EA6':
+            case '\u1EA8':
+            case '\u1EAA':
+            case '\u1EAC':
+            case '\u0202':
+            case '\u01CD':
+                {
+                    result[i] = 'A';
+                    break;
+                }
+            case '\u00C9':
+            case '\u00C8':
+            case '\u1EBA':
+            case '\u1EBC':
+            case '\u1EB8':
+            case '\u00CA':
+            case '\u1EBE':
+            case '\u1EC0':
+            case '\u1EC2':
+            case '\u1EC4':
+            case '\u1EC6':
+            case '\u0206':
+                {
+                    result[i] = 'E';
+                    break;
+                }
+            case '\u00CD':
+            case '\u00CC':
+            case '\u1EC8':
+            case '\u0128':
+            case '\u1ECA':
+                {
+                    result[i] = 'I';
+                    break;
+                }
+            case '\u00D3':
+            case '\u00D2':
+            case '\u1ECE':
+            case '\u00D5':
+            case '\u1ECC':
+            case '\u00D4':
+            case '\u1ED0':
+            case '\u1ED2':
+            case '\u1ED4':
+            case '\u1ED6':
+            case '\u1ED8':
+            case '\u01A0':
+            case '\u1EDA':
+            case '\u1EDC':
+            case '\u1EDE':
+            case '\u1EE0':
+            case '\u1EE2':
+            case '\u020E':
+                {
+                    result[i] = 'O';
+                    break;
+                }
+            case '\u00DA':
+            case '\u00D9':
+            case '\u1EE6':
+            case '\u0168':
+            case '\u1EE4':
+            case '\u01AF':
+            case '\u1EE8':
+            case '\u1EEA':
+            case '\u1EEC':
+            case '\u1EEE':
+            case '\u1EF0':
+                {
+                    result[i] = 'U';
+                    break;
+                }
+
+            case '\u00DD':
+            case '\u1EF2':
+            case '\u1EF6':
+            case '\u1EF8':
+            case '\u1EF4':
+                {
+                    result[i] = 'Y';
+                    break;
+                }
+            case '\u0110':
+            case '\u00D0':
+            case '\u0089':
+                {
+                    result[i] = 'D';
+                    break;
+                }
+            default:
+                result[i] = arrChar[i];
+            }
+        }
+        return new String(result);
+    }
+						
+
+
+npm install @vue/cli 
+npm install -g npm@latest
+npm v vue
+npm install --save --legacy-peer-deps
+npm i vue@latest --save
+npm 
+
+
+
+select id,tai_khoan from qt_nguoi_dung where tai_khoan in ('anhntv','anhnv','toanlk','truongnv','truongnv1','truongnv3');
+
+
+
+
+
+getGDTTTrangThai
+
+<q-btn
+                v-show="
+                  (model.trangThai == 0 || model.trangThai == 1)
+                "
+                size="12px"
+                color="warning"
+                label="Ngừng sử dụng"
+                icon="import_export"
+                @click="ngungSuDung(model)"
+                style="text-decoration: none"
+              />&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

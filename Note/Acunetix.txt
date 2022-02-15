@@ -7,6 +7,8 @@ X9D2S7L5WNS8
 UKLYRBGDH80V
 -------------------------------------
 Email: mason.brown1978@yahoo.com
+Email : inFo@Dr-FarFar.CoM
+Password : inFo@Dr-FarFar.CoM
 
 
 How To Crack & Download Acunetix 2022??
@@ -29,7 +31,35 @@ When you replace, start the activation process from here
 Then, wait & restart the computer
 Enjoy, to secure your online data with its higher security layer.
 
-
+123456a@
 
 https://www.dr-farfar.com/acunetix-premium-full/
 Dr.FarFar
+
+1986ad8c0a5b3df4d7028d5f3c06e936c0967a1b1b56f4df1bd4081068b690d75
+
+inFo@Dr-FarFar.CoM
+
+1986ad8c0a5b3df4d7028d5f3c06e936cc3d20f050eb348e99612348664f31e1e
+
+https://localhost:3443/Acunetix-API-Documentation.html
+sqlexpress
+Admin@123
+
+--------------
+http://localhost:3939/
+admin/123123
+---------
+
+Tại pc có sử dụng Acunetix
+Có tài khoản đăng nhập phần mềm Acunetix, để thực hiện việc rà quét bảo mật các website.
+Tại máy tính đã cài Acunetix, có thể sử dụng các api của phần mềm với URL ( ex: https://127.0.0.1:3443/api/v1/...)
+Đây có thể coi là phần backend để tích hợp cho hệ thống của mình khi gọi các api truyền cùng các tham số , 
+sau đó đón các dữ liệu trả về, lưu những dữ liệu cần dùng vào trong DB và dùng cho các tác vụ khác
+
+
+
+VMWARE
+truongnguyenvan
+123456
+
