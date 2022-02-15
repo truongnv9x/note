@@ -1,0 +1,304 @@
+@using PagedList.Mvc;
+@using TKM.DAO.EntityFramework
+@model TKM.BLL.HeThongThamSoListView
+@{
+    ViewBag.Title = "Danh sách tham số indextest nha";
+    var lstNguoiDung = (List<TKM.BLL.NguoiDungViewModel>)ViewBag.lstNguoiDung;
+}
+<div class="row">
+    <div class="col right-content">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent mb-0 fwb">
+                        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                        <li class="breadcrumb-item">@ViewBag.Title</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        @if (TempData["AlertData"] != null)
+            {
+            <div class="alert @TempData["AlertType"]">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>@Html.Raw(TempData["AlertData"])</strong>
+                <a id="lblMessage"></a>
+            </div>
+        }
+        <div class="row">
+            <div class="col">
+                <!-- Classic tabs -->
+                <div class="classic-tabs tabs-f-cl mx-2">
+                    <div class="tab-content py-0 card" id="myClassicTabContentShadow">
+                        <div class="tab-pane fade active show" id="vb-lt-den" role="tabpanel" aria-labelledby="profile-tab-classic-shadow">
+                          
+                            <div class="row mt-3">
+                                <div class="col-12">
+
+                                    <div class="table-responsive-sm">
+                                        <table class="table table-hover table-bordered" cellspacing="0" width="100%">
+                                            <thead class="indigo text-white lighten-1">
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th class="pointer" data-colname="MaThamSo" data-orderby="asc">Mã tham số</th>
+                                                    <th class="pointer" data-colname="TenThamSo" data-orderby="asc">Tên tham số</th>
+                                                    <th class="pointer" data-colname="MoTa" data-orderby="asc">Giá trị</th>
+                                                    <th class="pointer">Trạng thái</th>
+                                                    <th class="th-sm t_action" style="width:140px">Chức năng</th>
+                                                    @*<th style="width:60px">
+                                                        <input type="checkbox" id="checkItem">
+                                                    </th>*@
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbKetQua">
+                                                @{ Html.RenderAction("IndexDetail", Model); }
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Script {
+    <script>
+        $(document).ready(function () {
+            InitClickCheckAllInTable("chkall", function (res) {
+                $("#hdfID").val(res);
+            });
+        });
+        function onDelete(id) {
+            swal({
+                title: "Xóa?",
+                text: "Bạn có chắc chắn muốn xóa không?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+              .then((willDelete) => {
+                  if (willDelete) {
+                      $.ajax({
+                          type: "POST",
+                          url: '/HeThongThamSo/Delete',
+                          data: { id: id },
+                          dataType: "html",
+                          success: function (res) {
+                              res = JSON.parse(res);
+                              if (res.isSuccess == 1)
+                                  swal("Xóa thành công!", {
+                                      icon: "success",
+                                  });
+                              else
+                                  swal("Đã có lỗi xảy ra", { icon: "error", });
+                              loadData("", "");
+                          },
+                          error: function (response) {
+                              swal("Đã có lỗi xảy ra", { icon: "error", });
+                          }
+                      });
+
+                  }
+              });
+        }
+        function onDeleteMul() {
+
+
+            if ($("table tbody").find("input[type=checkbox]:checked").length == 0) {
+                swal("Bạn cần chọn ít nhất 1 danh mục cần xóa", { icon: "error", });
+            } else {
+                swal({
+                    title: "Xóa?",
+                    text: "bạn có chắc chăn muốn xóa không? ",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+             .then((willDelete) => {
+                 if (willDelete) {
+                     $.ajax({
+                         type: "POST",
+                         url: '/HeThongThamSo/DeleteMul',
+                         data: { lstid: $("#hdfID").val() },
+                         dataType: "html",
+                         success: function (res) {
+                             res = JSON.parse(res);
+                             if (res.isSuccess)
+                                 swal("Xóa thành công!", {
+                                     icon: "success",
+                                 });
+                             else
+                                 swal("Có lỗi xảy ra", {
+                                     icon: "error",
+                                 });
+                             loadData("", "");
+                         },
+                         error: function (response) {
+                             swal("Đã có lỗi xảy ra", { icon: "error", });
+                         }
+                     });
+
+                 }
+             });
+            }
+        }
+
+        function loadfrmView(id) {
+            modal.Render("/HeThongThamSo/Detail/" + id, "Thông tin hệ thống tham số", "modal-lg");
+        }
+
+        $(".keyenter").on("keypress", function (e) {
+            if (e.which == 13) {
+                $("#btnSearch").click();
+            }
+        });
+        $(".keyenterTuKhoa").on("keypress", function (e) {
+            if (e.which == 13) {
+                $("#btnSearchTuKhoa").click();
+            }
+        });
+        function setDeleteId(id) {
+            $("#delModalId").val(id);
+        };
+
+        $("#btnDel").on("click", function () {
+            $.ajax({
+                url: '/HeThongThamSo/DeleteHeThongThamSo',
+                dataType: "json",
+                type: "POST",
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ id: $("#delModalId").val() }),
+                async: true,
+                processData: false,
+                cache: false,
+                success: function (data) {
+                    location.reload();
+                },
+                error: function (xhr) {
+                    swal("Đã có lỗi xảy ra", { icon: "error", });
+                }
+            });
+            $(window).scrollTop(0);
+        });
+
+        //Thêm event xử lý load ajax
+        $("#btnSearchTuKhoa").click(function () {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("IndexDetail", "HeThongThamSo")',
+                data: { TuKhoa: $("#txtTuKhoa").val(), MaThamSo: $("#MaThamSo").val(), TenThamSo: $("#TenThamSo").val(), MoTa: $("#MoTa").val(), ColumnName: '', OrderBy: '', PageNumber: 1, PageSize: $("#changePageSize").val() },
+                dataType: "html",
+                success: function (response) {
+                    $("#tbKetQua").html(response);
+                    loadPaging();
+                },
+                error: function (response) {
+                    swal("Đã có lỗi xảy ra", { icon: "error", });
+                }
+            });
+        });
+        $("#btnSearch").click(function () {
+            loadData("", "");
+        });
+
+        $("table th").click(function () {
+            var col = $(this).data("colname");
+            var orderby = $(this).data("orderby");
+            if (col != "" && orderby != null) {
+                loadData(col, orderby);
+                if (orderby == "desc") orderby = "asc";
+                else orderby = "desc";
+                $(this).data("orderby", orderby);
+            }
+        });
+        function loadData(col, order, pnum, psize) {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("IndexDetail", "HeThongThamSo")',
+                data: { TuKhoa: $("#txtTuKhoa").val(), MaThamSo: $("#MaThamSo").val(), TenThamSo: $("#TenThamSo").val(), MoTa: $("#MoTa").val(), ColumnName: col, OrderBy: order, PageNumber: pnum, PageSize: $("#changePageSize").val() },
+                dataType: "html",
+                success: function (response) {
+
+                    $("#tbKetQua").html(response);
+                    loadPaging();
+                },
+                error: function (response) {
+                    swal("Đã có lỗi xảy ra", { icon: "error", });
+                }
+            });
+        }
+
+        function loadPaging() {
+            var total = Math.ceil($("#txtTotal").val() / $("#changePageSize").val());
+            var pnum = $("#txtPageNumber").val();
+            $(".PagedList-pageCountAndLocation").removeClass("disabled");
+            $(".PagedList-pageCountAndLocation").html("<a style=\"padding: 5px\"> Trang <input type=\"text\" id=\"pageNumber\" name=\"PageNunber\" value=\"" + pnum + "\" min=\"0\" style=\"width: 40px;\" onchange=\"onChangePageNunber($(this).val()," + total + ")\"> / " + total + "</a>");
+        }
+
+        //Nhảy trang
+        function onChangePageNunber(pagenumber, totalpagesize) {
+
+            var reg = /^[0-9]+$/;
+            if (pagenumber.match(reg)) {
+                if (pagenumber <= 0) {
+                    swal("Giá trị của trang phải lớn hơn 0!", { icon: "error", });
+                }
+                else if (pagenumber > totalpagesize) {
+                    swal("Bạn đã nhập quá số trang hiện có!", { icon: "error", });
+                }
+                else {
+                    loadData("", "", pagenumber);
+                }
+            } else {
+                swal("Bạn đã nhập sai định dạng số", { icon: "error", });
+            }
+
+        }
+
+        function onChangeStatus(id) {
+            swal({
+                title: "Thay đổi trạng thái?",
+                text: "Trạng thái sẽ được thay đổi, hãy nhấn OK!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/HeThongThamSo/onChangeStatus',
+                        data: { id: id },
+                        dataType: "html",
+                        success: function (res) {
+                            res = JSON.parse(res);
+                            if (res.isSuccess)
+                                swal("Thay đổi trạng thái thành công!", {
+                                    icon: "success",
+                                });
+                            else
+                                swal("Có lỗi xảy ra", {
+                                    icon: "error",
+                                });
+                            loadData("", "");
+                        },
+                        error: function (response) {
+                            swal("Đã có lỗi xảy ra", { icon: "error", });
+                        }
+                    });
+
+                }
+            });
+        }
+        
+    </script>
+}
+
+

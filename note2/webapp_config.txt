@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=301880
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <connectionStrings>
+      <add name="TKMReportsEntities" connectionString="metadata=res://*/EntityFramework.TKMReports.csdl|res://*/EntityFramework.TKMReports.ssdl|res://*/EntityFramework.TKMReports.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-0BG2NSR\SQL2012;initial catalog=Report_Acunetix;persist security info=True;user id=sa;password=123456a@;Connection Timeout=5000;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <appSettings>
+    <add key="owin:AutomaticAppStartup" value="false" />
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+    <!--<add key="UnobtrusiveJavaScriptEnabled" value="true" />-->
+    <add key="TopRightHeader" value="&lt;h5 style='font-size: 18px;'&gt;Hệ thống được cung cấp bởi&lt;br/&gt; &lt;b&gt;CÔNG TY CỔ PHẦN CÔNG NGHỆ TKM VIỆT NAM&lt;/b&gt;&lt;/h5&gt;" />
+    <add key="SubTitle" value="" />
+    <add key="LeftFooter" value="Công ty TKM – Lưu hành[n]BM_[TKM]_BCTK[SYSMAN] –1.1" />
+    <add key="BottomCoverPage" value="Thời gian: [ngay]/[thang]/[nam] [gio]:[phut]:[giay]&lt;br/&gt;[username] - [fullname]" />
+    <add key="license" value="aJqFSElB%2fb4%3d-dGttYWN1bmV0aXgyMDIyMDI%3d" />
+  </appSettings>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5.2"/>
+      </system.Web>
+  -->
+  <system.web>
+    <customErrors mode="Off" />
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" maxRequestLength="16384" />
+    <authentication mode="Forms">
+      <forms loginUrl="/Authencation/Login" cookieless="UseCookies" timeout="120" />
+    </authentication>
+  </system.web>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
+        <bindingRedirect oldVersion="0.0.0.0-8.0.0.0" newVersion="8.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.AspNet.SignalR.Core" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.1.0" newVersion="2.4.1.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="mssqllocaldb" />
+      </parameters>
+    </defaultConnectionFactory>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+  <system.webServer>
+    <httpProtocol>
+      <customHeaders>
+        <add name="X-Frame-Options" value="SAMEORIGIN" />
+      </customHeaders>
+    </httpProtocol>
+  </system.webServer>
+</configuration>
+
+
+https://github.com/delphiy/slack-chat-video-backend
+
+https://github.com/delphiy/slack-chat-video-frontend.git

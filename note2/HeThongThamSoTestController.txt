@@ -1,0 +1,322 @@
+
+
+using TKM.BLL;
+using TKM.Services;
+using PagedList;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace TKM.WebApp.Controllers
+{
+    public class HeThongThamSoTestController : BaseController
+    {
+
+        private HeThongThamSoTestService _heThongThamSoTestService;
+
+        #region Contructor
+        public HeThongThamSoTestController()
+        {
+            if (_heThongThamSoTestService == null) _heThongThamSoTestService = new HeThongThamSoTestService();
+        }
+        #endregion
+        public ActionResult IndexTest()
+        {
+            return View();
+        }
+        // GET: HeThongThamSoTest
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult IndexDetail(HeThongThamSoTestListView viewModel)
+        {
+            if (viewModel.PageNumber == null) viewModel.PageNumber = 1;
+            if (viewModel.PageSize == null) viewModel.PageSize = 20;
+            if (!string.IsNullOrEmpty(viewModel.TuKhoa))
+            {
+                viewModel.TuKhoa = viewModel.TuKhoa.Trim();
+            }
+
+            if (!string.IsNullOrEmpty(viewModel.MaThamSo))
+            {
+                viewModel.MaThamSo = viewModel.MaThamSo.Trim();
+            }
+
+            if (!string.IsNullOrEmpty(viewModel.TenThamSo))
+            {
+                viewModel.TenThamSo = viewModel.TenThamSo.Trim();
+            }
+
+            if (!string.IsNullOrEmpty(viewModel.MoTa))
+            {
+                viewModel.MoTa = viewModel.MoTa.Trim();
+            }
+
+            int total = 0;            
+
+            var lstResult = _heThongThamSoTestService.GetList(viewModel.TuKhoa, viewModel.MaThamSo, viewModel.TenThamSo, viewModel.MoTa, viewModel.PageNumber.Value, viewModel.PageSize.Value, ref total, viewModel.ColumnName, viewModel.OrderBy);
+            viewModel.LstHeThongThamSoTest = lstResult;
+            viewModel.TotalItem = total;
+
+            if (viewModel.PageNumber > 0 && viewModel.PageSize > 0)
+            {
+                int[] totals = new int[total];
+                ViewBag.PagedList = totals.ToPagedList((int)viewModel.PageNumber, (int)viewModel.PageSize);
+            }
+            return PartialView(viewModel);
+        }
+
+        [HttpGet]
+        public ViewResult Detail(int id = 0)
+        {
+            var obj = new HeThongThamSoTestViewModel();
+            obj = _heThongThamSoTestService.GetById(id);            
+
+            return View("~/Views/HeThongThamSoTest/Detail.cshtml", obj);
+        }
+
+        public ActionResult Add()
+        {
+            TempData["AlertData"] = null;
+            HeThongThamSoTestViewModel viewModel = new HeThongThamSoTestViewModel();
+
+            if (TempData["HeThongThamSoTest"] != null)
+            {
+                viewModel = TempData["HeThongThamSoTest"] as HeThongThamSoTestViewModel;
+            }
+            viewModel.TrangThai = true;
+            return View(viewModel);
+        }
+
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Add(HeThongThamSoTestViewModel viewModel)
+        {
+            var isSuccess = true;
+            var typeSubmit = Request["typeSubmit"];
+            viewModel.MaThamSo = Request["MaThamSo"] != null ? Request["MaThamSo"] : "";
+            viewModel.TenThamSo = Request["TenThamSo"] != null ? Request["TenThamSo"] : "";
+            viewModel.MoTa = Request["MoTa"] != null  ? Request["MoTa"] : "";
+            viewModel.TrangThai = Request["TrangThai"] != null && Request["TrangThai"].Equals("true") ? true : false;
+            var message = "";
+            try
+            {
+                if (string.IsNullOrEmpty(message))
+                {
+                    viewModel.NgayCapNhat = DateTime.Now;
+                    viewModel.NguoiCapNhatID = SessionInfo.CurrentUser.ID;
+                    viewModel.TrangThai = viewModel.TrangThai;
+                    var objCheck = _heThongThamSoTestService.Add(viewModel);
+                    if (objCheck == false)
+                    {
+                        isSuccess = false;
+                        message = "Thêm mới không thành công";
+                    }
+                    else
+                    {
+                        TempData["HeThongThamSoTest"] = null;
+                        if (objCheck == true)
+                        {
+                            message = "Thêm mới thành công";
+                            TempData["HeThongThamSoTest"] = objCheck;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isSuccess = false;
+                message = "Thêm mới không thành công";
+                TempData["AlertType"] = "alert-danger";
+                TempData["AlertData"] = message;
+                return View(viewModel);
+            }
+            //Show lỗi + Load lại data
+            TempData["AlertType"] = isSuccess ? "alert-success" : "alert-danger";
+            TempData["AlertData"] = isSuccess ? "Thành công" : message;
+            return View(viewModel);
+        }
+
+        public ActionResult Update(int? id)
+        {
+            TempData["AlertData"] = null;
+            if (id.HasValue && id.Value > 0)
+            {
+                HeThongThamSoTestViewModel viewModel = _heThongThamSoTestService.GetById(id.Value);
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "HeThongThamSoTest", null);
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Update(HeThongThamSoTestViewModel viewModel)
+        {
+            try
+            {
+                var message = String.Empty;
+                var soNgay = 0;
+                //Check validate ở ViewModel
+                if (!ModelState.IsValid)
+                {
+                    message = "Cập nhật không thành công!";
+                    
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(viewModel.TenThamSo))
+                    {
+                        message += "Chưa nhập tên tham số!</br>";
+                    }
+                    if (viewModel.MaThamSo == Utils.Utils.Parameter.CONST_SONGAYLOADVANBAN)
+                    {
+                        try
+                        {
+                            if (!string.IsNullOrEmpty(viewModel.TenThamSo))
+                            {
+                                soNgay = int.Parse(viewModel.TenThamSo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            message += "Số ngày phải là số </br>";
+                            ModelState.AddModelError("TenThamSo", "Số ngày phải là số");
+                        }
+                        if (soNgay < 0)
+                        {
+                            message += "Số ngày không được nhỏ hơn 0 </br>";
+                            ModelState.AddModelError("TenThamSo", "Số ngày không được nhỏ hơn 0 ");
+                        }
+                    }
+                    if (string.IsNullOrEmpty(message))
+                    {
+                        var oViewModel = _heThongThamSoTestService.GetById(viewModel.ID);
+                        if (oViewModel != null)
+                        {
+                            oViewModel.TenThamSo = viewModel.TenThamSo.Trim();
+                            if (viewModel.MaThamSo == Utils.Utils.Parameter.CONST_SONGAYLOADVANBAN)
+                                oViewModel.TenThamSo = soNgay.ToString();
+                            if (!string.IsNullOrEmpty(viewModel.MoTa))
+                                oViewModel.MoTa = viewModel.MoTa.Trim();
+                            oViewModel.NguoiCapNhatID = SessionInfo.CurrentUser.ID;
+                            oViewModel.NgayCapNhat = DateTime.Now;
+                            oViewModel.TrangThai = viewModel.TrangThai;
+                            //Insert văn bản đến phân công vào db                  
+                            var check = _heThongThamSoTestService.Update(oViewModel);
+                            if (check)
+                            {
+                                TempData["AlertType"] = "alert-success";
+                                TempData["AlertData"] = "Cập nhật hệ thống tham số thành công";
+                                return RedirectToAction("Index", "HeThongThamSo", null);
+                            }
+                            else
+                                message = "Cập nhật không thành công!";
+
+                        }
+                        else
+                            message = "Không tồn tại bản ghi trên hệ thống!";
+                    }
+                    else
+                    {
+                        TempData["AlertData"] = "Cập nhật không thành công! <br/>" + message;
+                    }
+                }
+                //Show lỗi + Load lại data
+                TempData["AlertType"] = "alert-danger";
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                TempData["AlertType"] = "alert-danger";
+                TempData["AlertData"] = ex.Message;
+                return View(viewModel);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult Delete(int id)
+        {
+            // 1: xóa thành công || -1: Có lỗi xảy ra khi xóa
+            var isSuccess = -1;
+            try
+            {
+                var checkDel = _heThongThamSoTestService.Delete(id);
+                if (checkDel)
+                    isSuccess = 1;
+            }
+            catch (Exception)
+            {
+                isSuccess = -1;
+            }
+            return Json(new { isSuccess = isSuccess }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult DeleteMul(string lstid)
+        {
+            bool isSuccess = false;
+            var arrid = lstid.Split(',');
+            try
+            {
+                foreach (var item in arrid)
+                {
+                    _heThongThamSoTestService.Delete(Convert.ToInt32(item));
+                }
+                isSuccess = true;
+                return Json(new
+                {
+                    isSuccess = isSuccess,
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                isSuccess = false;
+                return Json(new
+                {
+                    isSuccess = isSuccess,
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+        }   
+
+        [HttpPost]
+        public JsonResult onChangeStatus(int? id)
+        {
+            bool isSuccess = false;
+            var message = "";
+            if (id == null)
+            {
+                message = "Id không được để trống";
+                return Json(new { isSuccess = isSuccess, message = message }, JsonRequestBehavior.AllowGet);
+            }
+            var obj = _heThongThamSoTestService.GetById(id.Value);
+            if (obj == null)
+            {
+                message = "Bản ghi đã bị xóa";
+                return Json(new { isSuccess = isSuccess, message = message }, JsonRequestBehavior.AllowGet);
+            }
+            try
+            {
+                obj.TrangThai = !obj.TrangThai;
+                if (!string.IsNullOrEmpty(obj.MaThamSo) && obj.MaThamSo.ToUpper().Trim() == Utils.Utils.Parameter.CONST_KYSO)
+                {
+                    obj.MoTa = "Tắt";
+                    if (obj.TrangThai)
+                        obj.MoTa = "Bật";
+                }
+                isSuccess = _heThongThamSoTestService.Update(obj);
+                message = isSuccess ? "Thay đổi trạng thái thành công" : "Đã có lỗi xảy ra";
+            }
+            catch (Exception)
+            {
+                isSuccess = false;
+                message = "Đã có lỗi xảy ra";
+                return Json(new { isSuccess = isSuccess, message = message }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { isSuccess = isSuccess, message = message }, JsonRequestBehavior.AllowGet);
+        }
+    }
+}
