@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-settings xmlns:con="http://eviware.com/soapui/config"><con:setting id="WsdlSettings@excluded-types">&lt;con:entry xmlns:con="http://eviware.com/soapui/config">schema@http://www.w3.org/2001/XMLSchema&lt;/con:entry></con:setting><con:setting id="WsdlSettings@name-with-binding">true</con:setting><con:setting id="HttpSettings@http_version">1.1</con:setting><con:setting id="HttpSettings@max_total_connections">2000</con:setting><con:setting id="HttpSettings@response-compression">true</con:setting><con:setting id="HttpSettings@leave_mockengine">true</con:setting><con:setting id="UISettings@auto_save_projects_on_exit">true</con:setting><con:setting id="UISettings@show_descriptions">true</con:setting><con:setting id="WsdlSettings@xml-generation-always-include-optional-elements">true</con:setting><con:setting id="WsaSettings@useDefaultRelatesTo">true</con:setting><con:setting id="WsaSettings@useDefaultRelationshipType">true</con:setting><con:setting id="UISettings@show_startup_page">true</con:setting><con:setting id="UISettings@gc_interval">60</con:setting><con:setting id="WsdlSettings@cache-wsdls">true</con:setting><con:setting id="WsdlSettings@pretty-print-response-xml">true</con:setting><con:setting id="HttpSettings@include_request_in_time_taken">true</con:setting><con:setting id="HttpSettings@include_response_in_time_taken">true</con:setting><con:setting id="HttpSettings@start_mock_service">true</con:setting><con:setting id="UISettings@auto_save_interval">0</con:setting><con:setting id="WsaSettings@soapActionOverridesWsaAction">true</con:setting><con:setting id="WsaSettings@overrideExistingHeaders">true</con:setting><con:setting id="WsaSettings@enableForOptional">true</con:setting><con:setting id="VersionUpdateSettings@auto-check-version-update">true</con:setting><con:setting id="ProxySettings@autoProxy">true</con:setting><con:setting id="ProxySettings@enableProxy">true</con:setting><con:setting id="SecuritySettings@disable_project_load_save_scripts">true</con:setting><con:setting id="WSISettings@location">C:\Program Files\SmartBear\SoapUI-5.6.0/wsi-test-tools</con:setting><con:setting id="UISettings@show_stay_tuned">false</con:setting><con:setting id="GlobalPropertySettings@properties">&lt;xml-fragment/></con:setting><con:setting id="RecentProjects"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="" value="REST Project 1"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\CongtyDetailsWsdl-soapui-project.xml" value="CongtyDetailsWsdl"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\scms-tinhvan-soapui-project.xml" value="scms.tinhvan"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\BTC-Public Copy.json" value="BTC-Public Copy.json"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\Project-1-soapui-project.xml" value="Project 1"/>
+  <con:entry key="C:\Users\BTC-Public-Copy-soapui-project.xml" value="C:\Users\BTC-Public-Copy-soapui-project.xml"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\BTC-Public Copy 2.postman_collection.json" value="BTC-Public Copy 2.postman_collection.json"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\REST-Project-4-soapui-project.xml" value="REST Project 4"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\service1-soapui-project.xml" value="service1"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\REST-Project-3-soapui-project.xml" value="REST Project 3"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\REST-Project-6-soapui-project.xml" value="REST Project 6"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\ndtnnubck-soapui-project.xml" value="ndtnnubck"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\REST-Project-2-soapui-project.xml" value="REST Project 2"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\222222222222222-soapui-project.xml" value="222222222222222"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\222-soapui-project.xml" value="222"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\111-soapui-project.xml" value="111"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\CongtyDetailsWsdl1-soapui-project.xml" value="CongtyDetailsWsdl1"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\555-soapui-project.xml" value="555"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\666-soapui-project.xml" value="666"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\444-soapui-project.xml" value="444"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\BTC-Public Copy 2.json" value="C:\Users\truongnv3.TINHVAN\Desktop\BTC-Public Copy 2.json"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\333-soapui-project.xml" value="333"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\Project-2-soapui-project.xml" value="Project 2"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\Project-1-soapui-project.xml" value="Project 1"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Desktop\BTC-Public_postman_collection.xml" value="BTC-Public_postman_collection.xml"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\datagate-soapui-project11.xml" value="datagate"/>
+  <con:entry key="C:\Users\truongnv3.TINHVAN\Documents\hello-soapui-project.xml" value="hello"/>
+</xml-fragment>]]></con:setting></con:soapui-settings>

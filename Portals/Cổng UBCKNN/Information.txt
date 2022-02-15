@@ -1,0 +1,193 @@
+http://192.168.50.237:8001/console (SSC_PORTAL)
+http://192.168.50.237:8001/console (SSC_CONTENT)
+http://192.168.50.237:16200/cs (UCM)
+http://192.168.50.237:1620/ibr (IBR)
+DB: 192.168.50.180 port 1521 SID:ubdb1
+CONTENT_OCS admin123 
+CT_OCS/admin123 // new
+SSC_DVC_DEMO sscdvcdemo
+content_ocs/admin123
+
+http://10.192.255.219:16200/cs/idcplg?IdcService=COLLECTION_DISPLAY&hasCollectionID=true&dCollectionID=284959085683000211
+
+collectionRepositoryBean.collectionInfoMenuItem
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/ubck_portal
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/AdminServer/upload
+
+
+getChildrenCollections
+
+addxmTeptindinhkemRemix
+
+[5]	xCollectionID=763566163607002482	HashMap$Node<java.lang.Object,java.lang.Object>
+
+<$ynTrueFalseLabel$>
+
+192.168.50.237
+oracle
+oracle 
+
+
+                Map<String, String> optionList =
+                    ServiceFacade.getOptionList(viewName);
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/UBCK_PORTAL/servers/AdminServer/upload
+
+/global/cms/natives_files/domains/mof_portal/fileupload/acms/ckfinder/weblogic/files/
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/UBCK_PORTAL/servers/acms1/logs/
+
+
+To enable call-by-reference, set the enable-call-by-reference element to True in the weblogic-ejb-jar.xml deployment descriptor or corresponding annotation for this EJB.>
+
+acmsds
+BTC - acms
+jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
+oracle.jdbc.xa.client.OracleXADataSource
+user=wccbtcdev
+wccbtcdev
+
+mofocsdb
+BTC - apputils
+jdbc:oracle:thin:@//192.168.50.124:1521/mofdb
+oracle.jdbc.xa.client.OracleXADataSource
+user=MOF_OCS
+Portalmof2021
+
+đây là cũ
+--------------------------------------------------
+
+dưới đây là mới
+a xem xem cài kiểu gì n ăn DB mới này a 
+
+acmsds1
+UBCK - acms
+jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
+oracle.jdbc.xa.client.OracleXADataSource
+user=wccbtcdev
+wccbtcdev
+
+mofocsdb1
+UBCK - apputils
+jdbc:oracle:thin:@//192.168.50.180:1521/ubdb1
+oracle.jdbc.xa.client.OracleXADataSource
+user=content_ocs
+admin123
+
+oracle.jdbc.OracleDriver
+
+805735171556000002
+805735171556000001
+
+
+xmChuyenmuc -> xmChuyenmuctin
+xmMuchienthi -> xmMuctinhienthi
+initNewContentUIForm
+
+xmAnhdaidien -> xmAnhmota
+xmAnhdaidienpath -> xmAnhmotapath
+
+dDocCreatedDate
+
+html = RepoUtils.getDocContent
+
+String nguoiTaoCheck = null;
+nguoiTaoCheck = (contentItem.getXmNguoitao() != null && !contentItem.getXmNguoitao().equals("")) ? contentItem.getXmNguoitao() : contentItem.getdDocCreator();
+
+params.put(DocumentAttributeDef.XM_NGUOI_TAO.getName(), contentItem.getXmNguoitao());
+
+
+	
+/ u01/ oracle/ Oracle/ Middleware/ Oracle_Home/ user_projects/ applications/ ubck_portal
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/applications/ubck_portal/
+
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/applications/ubck_portal/
+
+xmAnhmota
+
+0988694503
+
+
+chỗ hiển thị view xem thông tin tin bài này này a
+
+e muốn đổi cái th xmNgaytao kia -> ddoccreaterdate ấy a
+
+nhưng k biết thêm chỗ nào a
+alo alo
+
+
+DDOCCREATEDDATE
+dDoccreateddate
+
+<img alt="image" height="581" data-cke-saved-src="https://mof.gov.vn/webcenter/cs/groups/bientapnoidung/documents/teptailieu/njiw/mdy5/~edisp/~export/APPSSCGOVVN1620069340~1/69340.jpg" src="https://mof.gov.vn/webcenter/cs/groups/bientapnoidung/documents/teptailieu/njiw/mdy5/~edisp/~export/APPSSCGOVVN1620069340~1/69340.jpg" width="298">
+
+https://mof.gov.vn/webcenter/cs/groups/bientapnoidung/documents/teptailieu/njiw/mdy5/~edisp/~export/APPSSCGOVVN1620069340~1/69340.jpg
+
+
+http://192.168.50.237:8003/webcenter/cs/groups/bientapnoidung/documents/teptailieu/njiw/mdy5/~edisp/~export/APPSSCGOVVN1620069340~1/69340.jpg
+
+
+http://192.168.50.237:16200/
+
+http://192.168.50.237:16200/cs/groups/bientapnoidung/documents/teptailieu/njiw/mdy5/~edisp/~export/APPSSCGOVVN1620069340~1/69340.jpg
+
+
+tk oracle
+hoangthanh@mof.gov.vn
+Ttr@2021
+
+
+Content presenter 
+config Parameters Content presenter in Webcenter 12c
+
+PickerParamForContentPresenterShareLibWar
+
+Using ContentControl instead of ContentPresenter is working for me. Thanks @KaiBrummund for his comment on my question.
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+		  /oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+
+
+
+taskflow://oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+	
+/u01/oracle/Oracle/Middleware/Oracle_Home/em/archives/fmwctrl/plugins
+
+
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/btc_portal
+
+/u01/Oracle/Middleware/Oracle_Home/em/archives/fmwctrl/plugins/ 
+	
+/u01/Oracle/Middleware/Oracle_Home/wcportal/archives/applications/webcenter. ear
+
+/oracle/webcenter/doclib/view/jsf/taskflows/presenter/contentPresenter.xml#doclib-content-presenter
+
+
+/oracle/webcenter/doclib/view/jsf/taskflows/presenter/
+
+contentPresenter.xml
+
+
+237
+/u01/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/ubck_portal/servers/AdminServer/upload
+250
+/u01/Oracle/Middleware/Oracle_Home/user_projects/domains/btc_portal/servers/AdminServer/upload
+
+constraints-propertybean
+
+C:\Oracle\Middleware\Oracle_Home\jdeveloper\jdev
+
+
+/u01/metadata
+

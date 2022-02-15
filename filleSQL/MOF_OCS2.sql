@@ -1,0 +1,1 @@
+select XMANHDAIDIEN from IDCTEXT1;

@@ -36,6 +36,7 @@ Enjoy, to secure your online data with its higher security layer.
 https://www.dr-farfar.com/acunetix-premium-full/
 Dr.FarFar
 
+<<<<<<< HEAD
 1986ad8c0a5b3df4d7028d5f3c06e936c0967a1b1b56f4df1bd4081068b690d75
 
 inFo@Dr-FarFar.CoM
@@ -62,4 +63,10 @@ sau đó đón các dữ liệu trả về, lưu những dữ liệu cần dùng
 VMWARE
 truongnguyenvan
 123456
+=======
+admin/123123
+
+sa/123456a@
+
+>>>>>>> d75ec57f4b33b231644579a0a8e0e7211c4493bd
 

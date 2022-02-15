@@ -1,0 +1,2553 @@
+package view.backing.contentmanagement.repository.content;
+
+
+import com.google.common.base.Charsets;
+
+import com.itextpdf.text.DocumentException;
+
+import ejbmodel.entities.TvsRoyalty;
+
+import ejbmodel.entities.TvsUsers;
+
+import ejbmodel.entities.TvsVote;
+
+import ejbmodel.entities.TvsVoteType;
+
+import ejbmodel.remote.SessionEJB;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+import java.io.OutputStream;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import java.sql.Timestamp;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import java.io.FileInputStream;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Set;
+
+import javax.el.ELContext;
+import javax.el.ExpressionFactory;
+import javax.el.MethodExpression;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.application.NavigationHandler;
+import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlInputTextarea;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ActionListener;
+import javax.faces.event.ValueChangeEvent;
+
+import javax.faces.event.ValueChangeListener;
+
+import javax.faces.model.SelectItem;
+
+import oracle.adf.view.rich.component.rich.RichPopup;
+import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputFile;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichSelectItem;
+import oracle.adf.view.rich.component.rich.input.RichSelectManyShuttle;
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.layout.RichPanelLabelAndMessage;
+import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
+import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
+import oracle.adf.view.rich.component.rich.nav.RichGoLink;
+import oracle.adf.view.rich.component.rich.output.RichActiveImage;
+import oracle.adf.view.rich.component.rich.output.RichMessages;
+import oracle.adf.view.rich.component.rich.output.RichOutputText;
+import oracle.adf.view.rich.context.AdfFacesContext;
+
+import oracle.adf.view.rich.event.DialogEvent;
+import oracle.adf.view.rich.render.ClientEvent;
+
+import oracle.stellent.ridc.IdcClient;
+import oracle.stellent.ridc.IdcClientException;
+import oracle.stellent.ridc.IdcContext;
+import oracle.stellent.ridc.model.DataBinder;
+import oracle.stellent.ridc.model.DataObject;
+import oracle.stellent.ridc.model.DataResultSet;
+import oracle.stellent.ridc.model.TransferFile;
+
+import oracle.stellent.ridc.protocol.ServiceResponse;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.MapUtils;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import org.apache.myfaces.trinidad.event.ReturnEvent;
+
+import org.apache.myfaces.trinidad.model.UploadedFile;
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+import org.apache.myfaces.trinidad.util.Service;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.poi.POITextExtractor;
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter;
+import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
+import org.jsoup.Jsoup;
+
+import org.junit.Assert;
+
+import tvs.com.ridc.wcc.meta.CommonDefine;
+import tvs.com.ridc.wcc.meta.DocumentAttributeDef;
+import tvs.com.ridc.wcc.operation.GetFolioInforOperation;
+import tvs.com.ridc.wcc.service.ServiceFacade;
+import tvs.com.ridc.wcc.util.XmTrangThaiContentConstants;
+import tvs.com.web.FacesUtils;
+import tvs.com.web.FileValueChangeListener;
+import tvs.com.web.TextValueChangeListener;
+import tvs.com.web.UiComponentBuilder;
+import tvs.com.web.pojo.ContentItem;
+import tvs.com.web.pojo.FieldItem;
+import tvs.com.web.pojo.FileUploaded;
+import tvs.com.web.pojo.FolioItem;
+import tvs.com.web.pojo.RuleItem;
+
+import view.backing.common.JSFUtils;
+import view.backing.common.ParamUtils;
+import view.backing.common.PreferenceUtil;
+import view.backing.common.FormUtils;
+import view.backing.common.RepoUtils;
+import view.backing.common.Utils;
+import view.backing.dto.RoyaltyMap;
+import view.backing.enumtvs.IteratorEnum;
+import view.backing.factory.EjbServiceFactory;
+import view.backing.system.config.ConfigEnum;
+import view.backing.system.config.ConfigUtil;
+import view.backing.system.config.ContentFormEnum;
+import view.backing.system.logs.LogsBean;
+import view.backing.system.utils.SystemUtils;
+import view.backing.ucm.UCMConnector;
+
+
+public class CheckOutAndOpenBean {
+    public static final String ERROR = "error";
+    public static final String OK = "ok";
+
+    private Boolean isCheckedOut = false;
+
+    private RichPanelFormLayout contentForm;
+    private List<RuleItem> rules;
+    ContentItem contentItem;
+    private RichPanelFormLayout attachFilesPanel;
+    private RichPanelFormLayout attachFilesPanel2;
+    private List<ContentItem> selectedFolio = new ArrayList<ContentItem>();
+
+    private List<ContentItem> attachedFiles2Remove = new ArrayList<ContentItem>();
+    private List<ContentItem> attachedFiles;
+
+    private RichTable attachedFilesTable;
+    private RichInputFile attachFile;
+    private String attachFileHint = StringUtils.EMPTY;
+
+    private RichPopup contentLockedAlert = new RichPopup();
+    private RichPopup popupSuccess = new RichPopup();
+
+    //    private RichListView fileAttachedListView = new RichListView();
+    private RichTable fileAttachedListView = new RichTable();
+
+
+    //    private List<UploadedFile> attachFiles;
+    Map<String, Object> fileContainer = new HashMap<String, Object>();
+    private RichMessages messages = new RichMessages();
+    private Object folioID;
+    private Object rootNode;
+    private String dDocName;
+
+    private static HtmlInputTextarea contentCKEditor = new HtmlInputTextarea();
+    private String html = "";
+    private String htmlOld = "";
+    private RichPanelFormLayout formPanel;
+
+
+    private boolean showCkEditor = false;
+    private boolean showLoaiTinBai;
+    private static SessionEJB _sessionEJB = EjbServiceFactory.getSessionEJBRemote();
+    private boolean IS_EDITOR = false;
+    private boolean IS_PUBLISHER = false;
+    private TvsRoyalty objRoyalty = new TvsRoyalty();
+    private List<SelectItem> categoryList = new ArrayList<SelectItem>();
+    private RichSelectOneChoice siTinBai = new RichSelectOneChoice();
+    private List<TvsVote> lstVote = new ArrayList<>();
+    private TvsVoteType tempVoteType = new TvsVoteType();
+    private String dDocNameRemixBangCom = "";
+    private String currentUsername = "";
+//    private RichInputText ritCurrentUsername = new RichInputText();
+
+
+    public void setContentCKEditor(HtmlInputTextarea contentCKEditor) {
+        this.contentCKEditor = contentCKEditor;
+    }
+
+    public HtmlInputTextarea getContentCKEditor() {
+        return contentCKEditor;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void updateCkEditor() {
+        FacesContext facesCtx = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService service = Service.getRenderKitService(facesCtx, ExtendedRenderKitService.class);
+        service.addScript(facesCtx, "updateCKEditor();");
+    }
+
+    public void showTextNoiDung() {
+        FacesContext facesCtx = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService service = Service.getRenderKitService(facesCtx, ExtendedRenderKitService.class);
+        service.addScript(facesCtx, "showTextNoiDung();");
+    }
+
+    public void hideTextNoiDung() {
+        FacesContext facesCtx = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService service = Service.getRenderKitService(facesCtx, ExtendedRenderKitService.class);
+        service.addScript(facesCtx, "hideTextNoiDung();");
+    }
+
+
+    public void setValueCkEditor(String html) {
+        //        //System.out.println("==============================================================>  void updateCkEditor() ");
+        FacesContext facesCtx = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService service = Service.getRenderKitService(facesCtx, ExtendedRenderKitService.class);
+        service.addScript(facesCtx, "setValueCKEditorForm(" + html + ");");
+        // service.addScript(facesCtx, "CKEDITOR.instances.myckeditor.on( 'change', function( evt ) {document.getElementById(\"pt1:r1:0:r1:5:content\").value = evt.editor.getData(); });");
+        //service.addScript(facesCtx, "CKEDITOR.replace('myckeditor', {extraPlugins: 'uploadimage'});");
+    }
+
+    // menu left
+    //    private RichPanelBorderLayout pblMenuLeft = new RichPanelBorderLayout();
+
+    public CheckOutAndOpenBean() {
+        ParamUtils.putParamSessionScope("contentAction", "sua");
+        lstVote = _sessionEJB.getTvsVoteFindAll();
+        this.contentForm = new RichPanelFormLayout();
+        this.rules = new ArrayList<RuleItem>();
+        this.contentItem = null;
+        this.attachFilesPanel = new RichPanelFormLayout();
+        this.attachFilesPanel2 = new RichPanelFormLayout();
+        //        this.attachFiles = new ArrayList<UploadedFile>();
+        this.attachedFiles = new ArrayList<ContentItem>();
+        this.attachedFilesTable = new RichTable();
+        messages.setInline(true);
+        Object currentUsernameObj = ParamUtils.getParamSessionScope("currentUsername");
+        if(currentUsernameObj != null){
+            currentUsername = currentUsernameObj.toString();
+        }
+    }
+
+    public String init() {
+        SelectItem item = new SelectItem();
+        item.setLabel("Tin");
+        item.setValue(0L);
+        categoryList.add(item);
+        item = new SelectItem();
+        item.setLabel("Bài");
+        item.setValue(1L);
+        categoryList.add(item);
+        siTinBai.setValue(1L);
+        ParamUtils.putParamSessionScope("contentAction", "sua");
+        TvsUsers tvsUser = (TvsUsers) ParamUtils.getParamSessionScope("tvsUserLogin");
+
+        if (tvsUser.getIsEditor() != null) {
+            IS_EDITOR = Boolean.parseBoolean(tvsUser.getIsEditor());
+        }
+        if (tvsUser.getIsPublisher() != null) {
+            IS_PUBLISHER = Boolean.parseBoolean(tvsUser.getIsPublisher());
+        }
+        Object obj = ParamUtils.getParamRequestScope("contentItem");
+        if (obj instanceof ContentItem) {
+            this.contentItem = (ContentItem) obj;
+            try {
+                String checkoutUser = StringUtils.EMPTY;
+                //                    if(BooleanUtils.isTrue(this.contentItem.getdIsCheckedOut())){
+                //                            boolean result = false;
+                //                            if(BooleanUtils.isTrue(this.contentItem.getdAdmin())){
+                //                                result =  ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName());
+                //                            }
+                ////                            else{
+                ////                                result =  ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName(),this.contentItem.getdCheckoutUser());
+                ////                            }
+                ////                           result =  ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName(),true);
+                ////                           this.contentItem.setDIsCheckedOut(false);
+                //                          isCheckedOut = true;
+                //                        checkoutUser = this.contentItem.getdCheckoutUser();
+                //                    }
+                getListFolioItem();
+                initUIForm(this.contentItem.getdID(), this.contentItem.getdDocName(), this.contentItem.getXmBieumau());
+                dDocNameRemixBangCom = this.contentItem.getXmBieumau();
+                //                    ServiceFacade.checkOutByName(this.contentItem.getdDocName());
+                // show contentlock alert
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                if (e != null) {
+                    String expMessage = e.getMessage();
+                    FacesContext fctx = FacesContext.getCurrentInstance();
+                    FacesMessage fmessage = new FacesMessage(FacesMessage.SEVERITY_WARN, expMessage, expMessage);
+                    fctx.addMessage(null, fmessage);
+                }
+            }
+            //            if (!BooleanUtils.isTrue(this.contentItem.getdIsCheckedOut())) {
+            //                FacesContext fctx = FacesContext.getCurrentInstance();
+            //                String viewId = fctx.getViewRoot().getViewId();
+            //                FacesMessage message =
+            //                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+            //                                     JSFUtils.getMessage("CONTENT_LOCKED_ALTER"),
+            //                                     JSFUtils.getMessage("CONTENT_LOCKED_ALTER"));
+            //                fctx.addMessage(null, message);
+            //                messages.setInline(false);
+            //            }
+
+
+            return OK;
+        }
+
+        return ERROR;
+    }
+
+    /**
+     * lấy ra danh sách các dòng sự kiện mà content đang được gắn vào.
+     * @author PhuongNH
+     */
+    private void getListFolioItem() {
+        try {
+            String strFolioItems = this.contentItem.getXmDongsukien();
+            if (!StringUtils.isBlank(strFolioItems)) {
+                String[] arrFolioItems = strFolioItems.split(",");
+                ContentItem ci = null;
+                for (String folio : arrFolioItems) {
+
+                    ci = ServiceFacade.getContentItem(folio, null, false);
+
+                    if (null != ci) {
+                        boolean add = selectedFolio.add(ci);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void contentCheckinAction(boolean unlockable, String fileEdit, boolean showHide) {
+        String dID = null;
+        if (siTinBai.getValue() == null && this.contentItem.getdDocType() != null 
+            && (this.contentItem.getdDocType().equals("TinBai") || this.contentItem.getdDocType().equals("Tinbai"))) {
+            JSFUtils.addFacesErrorMessage("Chưa chọn loại tin bài");
+            return;
+        }
+
+
+        Long pageCount = 0L;
+        double wordCount = 0;
+        int extractCount = 0;
+        int imgCount = 0;
+        double i = 0;
+        Long soTienTinBai = 0L;
+        Long soTienFileDinhKem = 0L;
+        List<RoyaltyMap> listMap = new ArrayList<>();
+        if (showHide) {
+
+            File htmlPrimaryFile = new File(fileEdit);
+            FileUploaded temp = new FileUploaded();
+            if (this.fileContainer.get("primaryFile") instanceof FileUploaded) {
+                temp = (FileUploaded) this.fileContainer.get("primaryFile");
+            }
+            temp.setContentType("text/html");
+            temp.setFile(htmlPrimaryFile);
+            temp.setFileName(htmlPrimaryFile.getName());
+            temp.setFilePath(fileEdit);
+            temp.setLength(htmlPrimaryFile.length());
+            this.fileContainer.put("primaryFile", temp);
+        }
+
+        boolean hasPrimaryFile = false;
+        String primaryFileName = StringUtils.EMPTY;
+        try {
+            Map<String, Object> params = FormUtils.INSTANCE.getValuesOfUiComponent(this.contentForm.getChildren());
+            if (FormUtils.INSTANCE.hasError(FacesContext.getCurrentInstance())) {
+                updateAttachFileListView();
+                return;
+            }
+            if (this.fileContainer.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+
+                List<FileUploaded> lstFileUpload =
+                    (List<FileUploaded>) this.fileContainer.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+                for (FileUploaded obj : lstFileUpload) {
+
+//                    int extractCount1 = 0;
+                    File fileNoiDung = obj.getFile();
+                    String name = fileNoiDung.getName();
+                    String extension = name.substring(name.lastIndexOf("."));
+                    if (extension.equalsIgnoreCase(".pdf")) {
+                        RoyaltyMap rMap = new RoyaltyMap();
+                        rMap.setFileName(obj.getFile().getName());
+                        rMap.setPageNum(countPage(fileNoiDung));
+                        rMap.setFilePath(obj.getFilePath());
+                        listMap.add(rMap);
+                    } else if (extension.equalsIgnoreCase(".docx")) {
+                        try {
+//                            FileInputStream fis = new FileInputStream(fileNoiDung.getAbsolutePath());
+//                            XWPFDocument docx = new XWPFDocument(fis);
+//                            extractCount1 = docx.getProperties()
+//                                                .getExtendedProperties()
+//                                                .getUnderlyingProperties()
+//                                                .getPages();
+//                            extractCount = extractCount + extractCount1;
+                            RoyaltyMap rMap = new RoyaltyMap();
+                            rMap.setFileName(obj.getFileName());
+                            rMap.setPageNum(-1);
+                            rMap.setFilePath(obj.getFilePath());
+                            listMap.add(rMap);
+                            soTienFileDinhKem = extractCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienFileDinhKem.getName());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else if (extension.equalsIgnoreCase(".doc")) {
+//                        extractCount = extractCount + countPageDoc(fileNoiDung);
+                        RoyaltyMap rMap = new RoyaltyMap();
+                        rMap.setFileName(obj.getFile().getName());
+                        rMap.setPageNum(-1);
+                        rMap.setFilePath(obj.getFilePath());
+                        listMap.add(rMap);
+                    }
+                }
+            }
+            List<RoyaltyMap> setupMap = new ArrayList<>();
+            setupMap = FormUtils.INSTANCE.setupFileParamsWithRoyalty(params, this.fileContainer, listMap);
+            if (!this.fileContainer.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+                params.remove(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+            }
+
+            if (params.containsKey(DocumentAttributeDef.PRIMARY_FILE.getName())) {
+                Object transferFileObj = params.get(DocumentAttributeDef.PRIMARY_FILE.getName());
+                if (transferFileObj instanceof TransferFile) {
+                    TransferFile transferFile = (TransferFile) transferFileObj;
+                    primaryFileName = transferFile.getFileName();
+                    hasPrimaryFile = true;
+                }
+            }
+            // checkin attach files  - xmTeptindinhkem
+            Map<String, FieldItem> allFields = FormUtils.INSTANCE.getAllFields(rules);
+            // new attach file
+            List<RoyaltyMap> resultMap = new ArrayList<>();
+            resultMap = FormUtils.INSTANCE.setupAttachFilesParamWithRoyalty(params, setupMap);
+                if(resultMap != null){
+                    for(RoyaltyMap tempRm : resultMap){
+                        extractCount += tempRm.getPageNum();
+                    }
+                }
+            String mapDinhKem = setMapDinhKem(resultMap);
+            //merge with old attach file
+            String attachFilesParam = StringUtils.EMPTY;
+            if (params.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+                attachFilesParam = (String) params.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+            }
+            // old attach file
+            Iterator<ContentItem> iter = this.attachedFiles.iterator();
+            ContentItem conIter;
+            StringBuilder attachFilesParamBuilder = new StringBuilder(attachFilesParam);
+            if (StringUtils.isNotBlank(attachFilesParam)) {
+                attachFilesParamBuilder.append(",");
+            }
+            while (iter.hasNext()) {
+                conIter = iter.next();
+                attachFilesParamBuilder.append(conIter.getdDocName());
+                if (iter.hasNext()) {
+                    attachFilesParamBuilder.append(",");
+                }
+            }
+            attachFilesParam = attachFilesParamBuilder.toString();
+            params.put(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName(), attachFilesParam);
+
+            //PHUONG
+            FileUploaded temp = new FileUploaded();
+
+            if (this.fileContainer.get("primaryFile") instanceof FileUploaded) {
+                temp = (FileUploaded) this.fileContainer.get("primaryFile");
+                File fileNoiDung = temp.getFile();
+                String name = fileNoiDung.getName();
+                String extension = name.substring(name.lastIndexOf("."));
+                if (extension.equalsIgnoreCase(".pdf")) {
+                    pageCount = pageCount + countPage(fileNoiDung);
+                } 
+//                else if (extension.equalsIgnoreCase(".doc")) {
+//                    pageCount = pageCount + countPageDoc(fileNoiDung);
+//                    wordCount = (int) getWordCount(fileNoiDung);
+//                    if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("0")) {
+//                        if (wordCount >= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin3.getName())) {
+//                            soTienTinBai =
+//                                pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName()) * 3;
+//                        } else if (wordCount > ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin2.getName()) &&
+//                                   wordCount < ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin3.getName())) {
+//                            soTienTinBai =
+//                                pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName()) * 2;
+//                        } else if (wordCount <= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin1.getName())) {
+//                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName());
+//                        }
+//                    } else if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("1")) {
+//                        if (wordCount >= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai3.getName())) {
+//                            soTienTinBai =
+//                                pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName()) * 3;
+//                        } else if (wordCount > ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai2.getName()) &&
+//                                   wordCount < ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai3.getName())) {
+//                            soTienTinBai =
+//                                pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName()) * 2;
+//                        } else if (wordCount <= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai1.getName())) {
+//                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName());
+//                        }
+//                    }
+//                }
+            }
+
+            if(showCkEditor){
+                html = contentCKEditor.getValue().toString();
+
+
+                imgCount = (html.split("<img", -1).length) - 1;
+
+                String rawString = html2text(html);
+                byte[] bytes = rawString.getBytes(StandardCharsets.UTF_8);
+
+                String utf8EncodedString = new String(bytes, StandardCharsets.UTF_8);
+
+                Assert.assertEquals(rawString, utf8EncodedString);
+                if (utf8EncodedString != null && !utf8EncodedString.isEmpty()) {
+                    String a[] = utf8EncodedString.split(" ");
+                    wordCount = a.length;
+                    if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("0")) {
+                        i = ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTuTin.getName());
+                    } else if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("1")) {
+                        i = ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTuBai.getName());
+                    }
+                    else{
+                        i = 500L;
+                    }
+                    double soTrang = 0;
+                    if(wordCount < i){
+                        soTrang = 1;
+                    }
+                    else{
+                        soTrang = wordCount / i;
+                        pageCount = round(soTrang);
+                    }
+                }
+                if (wordCount >= i) {
+                    //                JSFUtils.addFacesErrorMessage("Chưa đủ số từ cho 1 trang tin/bài");
+                    //                return;
+
+                    if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("0")) {
+                        if (wordCount >= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin3.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName()) * 3;
+                        } else if (wordCount > ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin2.getName()) &&
+                                   wordCount < ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin3.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName()) * 2;
+                        } else if (wordCount <= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoTin1.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienTin.getName());
+                        }
+                    } else if (String.valueOf(siTinBai.getValue()).equalsIgnoreCase("1")) {
+                        if (wordCount >= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai3.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName()) * 3;
+                        } else if (wordCount > ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai2.getName()) &&
+                                   wordCount < ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai3.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName()) * 2;
+                        } else if (wordCount <= ConfigUtil.getConfigValueAsSLong(ConfigEnum.HeSoBai1.getName())) {
+                            soTienTinBai = pageCount * ConfigUtil.getConfigValueAsSLong(ConfigEnum.SoTienBai.getName());
+                        }
+                    }
+                }
+            }
+            
+            //            try {
+            //            _sessionEJB.updateTrangThai(params.get(DocumentAttributeDef.D_DOC_NAME.getName()).toString(), params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()).toString());
+            //
+            //            } catch (Exception e) {
+            //            }
+
+
+            //            FormUtils.INSTANCE.getxmAnhdaidien(params);
+            String dDocNameAnhDaiDien = FormUtils.INSTANCE.getxmAnhdaidienCapNhap(params);
+            if (StringUtils.isBlank(dDocNameAnhDaiDien)) {
+                params.remove(DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                params.put(DocumentAttributeDef.XM_ANH_DAI_DIEN.getName(), this.contentItem.getxmAnhdaidien());
+            }
+
+            // end
+            String dDocName = String.valueOf(params.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+            Object objDocNameRemix = ParamUtils.getParamSessionScope("dDocNameRemix");
+            String dDocNameRemix = null;
+            if(objDocNameRemix != null){
+                dDocNameRemix = objDocNameRemix.toString();
+                ParamUtils.putParamSessionScope("dDocNameRemix", null);
+                ParamUtils.removeParamSessionScope("dDocNameRemix");
+                params.put(DocumentAttributeDef.XM_BIEU_MAU.getName(), dDocNameRemix);
+            }
+            else if(dDocNameRemixBangCom != null && !dDocNameRemixBangCom.isEmpty()){
+                params.put(DocumentAttributeDef.XM_BIEU_MAU.getName(), dDocNameRemixBangCom);
+            }
+            String orginalCreator = StringUtils.EMPTY;
+            if (params.containsKey(DocumentAttributeDef.D_DOC_CREATOR.getName())) { //dDocCreator
+                orginalCreator = String.valueOf(params.get(DocumentAttributeDef.D_DOC_CREATOR.getName()));
+                params.put(DocumentAttributeDef.D_DOC_CREATOR.getName(), orginalCreator);
+            }
+            //         if(params.containsKey(DocumentAttributeDef.XM_NGUOI_SUA.getName())){ //dDocCreator
+            params.put(DocumentAttributeDef.XM_NGUOI_SUA.getName(), SystemUtils.getCurrentUserName());
+            params.put(DocumentAttributeDef.XM_NGAY_SUA.getName(),
+                       PreferenceUtil.encodeDate(Calendar.getInstance().getTime()));
+            //          }
+            params.put(DocumentAttributeDef.XM_DONG_SU_KIEN.getName(), selectedFolio);
+            String strerr = "";
+            if (params.containsKey(DocumentAttributeDef.D_DOC_TITLE.getName())) {
+                if (!Utils.checkOutofLength(250, params.get(DocumentAttributeDef.D_DOC_TITLE.getName()).toString())) {
+                    strerr = "Tiêu đề đã vượt quá 249 ký tự Unicode";
+                }
+            }
+            if (strerr.equalsIgnoreCase("")) {
+                RichInputText tacGia = (RichInputText) JSFUtils.findComponent(contentForm, "itTacGia");
+                RichInputText tacGiaAnh = (RichInputText) JSFUtils.findComponent(contentForm, "itTacGiaAnh");
+                String tacGiaStr = "";
+                String tacGiaAnhStr = "";
+                if (tacGia != null && tacGia.getValue() != null) {
+                    tacGiaStr = tacGia.getValue().toString();
+                }
+                if (tacGiaAnh != null && tacGiaAnh.getValue() != null) {
+                    tacGiaAnhStr = tacGiaAnh.getValue().toString();
+                }
+
+
+                if (hasPrimaryFile) { 
+                    
+                    if (BooleanUtils.isNotTrue(this.contentItem.getdIsCheckedOut())) {
+                        ServiceFacade.checkOutByDId(this.contentItem.getdID());
+                    }
+                    //                boolean result = ServiceFacade.checkInSel(params, true);
+                    params.remove(DocumentAttributeDef.D_REV_LABEL.getName());
+                    dID =
+                        params.get(DocumentAttributeDef.D_ID.getName()) == null ? null :
+                        params.get(DocumentAttributeDef.D_ID.getName()).toString();
+                    params.remove(DocumentAttributeDef.D_ID.getName());
+                    ServiceFacade.checkInUniversalAdMinContext(params);
+                    LogsBean.Update_Logs(LogsBean.ChucNang.QuanTriNoiDung, LogsBean.ThaoTac.CapNhat,
+                                         params.get(DocumentAttributeDef.D_DOC_NAME.getName()),
+                                         params.get(DocumentAttributeDef.D_DOC_TITLE.getName()), StringUtils.EMPTY,
+                                         IteratorEnum.SystemLogsView1Iterator.getIteratorName());
+                } else { // only update metadata
+                    // uncheckout truoc khi update metadata
+                    //                    RepoUtils.unlockBeforeAction(contentItem);
+                    ServiceFacade.updateContent(params);
+                    LogsBean.Update_Logs(LogsBean.ChucNang.QuanTriNoiDung, LogsBean.ThaoTac.CapNhat,
+                                         params.get(DocumentAttributeDef.D_DOC_NAME.getName()),
+                                         params.get(DocumentAttributeDef.D_DOC_TITLE.getName()), StringUtils.EMPTY,
+                                         "SystemLogsView1Iterator");
+                }
+
+                FolioItem folioItem = convertContentToFolioItem(this.contentItem);
+
+                // xóa các content trong folio trước khi add lại danh sách folio
+                GetFolioInforOperation operation;
+                for (ContentItem ci : selectedFolio) {
+                    try {
+                        operation = ServiceFacade.getFolioInfo(ci.getdID());
+                        DataResultSet folioinfo = operation.getOriginalDocInfo();
+                        this.rootNode = operation.getRootNode();
+                        List<DataObject> lstfield = folioinfo.getRows();
+                        DataObject folioitem = lstfield.get(0);
+                        this.dDocName = folioitem.get("dDocName");
+
+                        RemoveContentInExistFolio(folioItem);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                for (ContentItem contentItem : selectedFolio) {
+                    insertContentInExistFolio(folioItem, contentItem);
+                }
+//                String trangThai =
+//                    params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()) == null ? null :
+//                    params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()).toString();
+//                if (trangThai != null && trangThai.equals("2")) {
+//                    String dDocNameTemp =
+//                        params.get(DocumentAttributeDef.D_DOC_NAME.getName()) == null ? null :
+//                        params.get(DocumentAttributeDef.D_DOC_NAME.getName()).toString();
+//                    RepoUtils.getTextToSpeechFromContent(dDocNameTemp, dID, _sessionEJB, rawString);
+//                }
+
+                //                if(mapDinhKem.isEmpty())
+                //                    mapDinhKem = objRoyalty.getMapDinhKem();
+                List<TvsRoyalty> lstTemp = _sessionEJB.getAllTvsRoyaltyFindByDdocName(this.contentItem.getdDocName());
+                if (lstTemp != null && lstTemp.size() > 0) {
+                    objRoyalty = lstTemp.get(0);
+                }
+                if (this.contentItem != null) {
+                    if (objRoyalty.getMapDinhKem() != null) {
+                        if (mapDinhKem == null)
+                            mapDinhKem = "";
+                        Set<String> arrayMap =
+                            new HashSet<String>(Arrays.asList(objRoyalty.getMapDinhKem().split("//")));
+                        //                    List<String>arrayMap = new LinkedList<String>(Arrays.asList(objRoyalty.getMapDinhKem().split("//")));
+                        if (arrayMap.size() > 0) {
+                            arrayMap.remove(0);
+                            for (String strMap : arrayMap) {
+                                if (strMap.split(":").length > 1) {
+                                    if (params.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName()) != null && params.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())
+                                              .toString()
+                                              .contains(strMap.split(":")[0])) {
+                                        extractCount += Long.valueOf(strMap.split(":")[1]);
+                                        mapDinhKem += "//";
+                                        mapDinhKem += strMap.split(":")[0] + ":" + strMap.split(":")[1];
+                                    } else {
+                                        mapDinhKem = mapDinhKem.replace("//" + strMap, "");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    String mucHienThi = params.get(DocumentAttributeDef.XM_MUC_HIEN_THI.getName()) == null ? null : params.get(DocumentAttributeDef.XM_MUC_HIEN_THI.getName()).toString();               
+                    if(mucHienThi != null && !mucHienThi.isEmpty()) {
+                        mucHienThi.replaceAll("\\s+","");  
+                        mucHienThi = ","+mucHienThi+",";
+                    }   
+                    objRoyalty.setMucHienThi(mucHienThi);
+                    objRoyalty.setTieuDe(params.get(DocumentAttributeDef.D_DOC_TITLE.getName()) == null ? null : params.get(DocumentAttributeDef.D_DOC_TITLE.getName()).toString());
+                    objRoyalty.setSoTrang(Long.valueOf(pageCount));
+                    objRoyalty.setSoLuongChu((long)wordCount);
+                    objRoyalty.setSoTrangDinhKem(Long.valueOf(extractCount));
+                    objRoyalty.setSoLuongAnh(Long.valueOf(imgCount));
+                    objRoyalty.setNguoiTao(params.get(DocumentAttributeDef.D_DOC_CREATOR.getName()) == null ? null : params.get(DocumentAttributeDef.D_DOC_CREATOR.getName()).toString());
+                    objRoyalty.setTrangThai(params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()) == null ? null : params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()).toString());
+                    objRoyalty.setMapDinhKem(mapDinhKem);
+                    objRoyalty.setSoTienTinBai(soTienTinBai);
+                    objRoyalty.setSoTienFileDinhKem(soTienFileDinhKem);
+                    objRoyalty.setTongSoTien(soTienTinBai + soTienFileDinhKem);
+                    objRoyalty.setTacGiaTinBai(tacGiaStr.isEmpty() ? params.get(DocumentAttributeDef.XM_TAC_GIA.getName()) != null ? params.get(DocumentAttributeDef.XM_TAC_GIA.getName()).toString() : null : tacGiaStr);
+                    objRoyalty.setTacGiaAnh(tacGiaAnhStr);
+                    
+                    objRoyalty.setChuyenMuc(params.get(DocumentAttributeDef.XM_CHUYEN_MUC.getName()) == null ? null : Long.valueOf(params.get(DocumentAttributeDef.XM_CHUYEN_MUC.getName()).toString()));
+                    objRoyalty.setTheLoai(this.contentItem.getdDocType());
+                    if(this.contentItem.getdDocType() != null && this.contentItem.getdDocType().equals("TinBai")){
+                        objRoyalty.setLoaiTinBai((Long) siTinBai.getValue());
+                    }
+                    else if(this.contentItem.getdDocType() != null && this.contentItem.getdDocType().equals("ThongTinDauThau")){
+                        objRoyalty.setLoaiTinBai(2L);
+                        objRoyalty.setTenGoiThau(params.get("xmTengoithau") == null ? null : params.get("xmTengoithau").toString());
+                        objRoyalty.setTenDonViThau(params.get("xmTenbenmoithau") == null ? null : params.get("xmTenbenmoithau").toString());
+                    }
+                    objRoyalty.setDID(this.contentItem.getdID());
+                    objRoyalty.setDDocName(this.contentItem.getdDocName());
+//                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        if(params.get(DocumentAttributeDef.XM_NGAY_XUAT_BAN.getName()) != null && !params.get(DocumentAttributeDef.XM_NGAY_XUAT_BAN.getName()).toString().isEmpty()){
+                        //                        Date ngayXuatBan = dateFormat.parse(params.get(DocumentAttributeDef.XM_NGAY_XUAT_BAN.getName()).toString());
+                            Date ngayXuatBan = Utils.convertDate("yyyy-MM-dd HH:mm:ss", params.get(DocumentAttributeDef.XM_NGAY_XUAT_BAN.getName()).toString());
+                            Timestamp convertNgayXuatBan = new java.sql.Timestamp(ngayXuatBan.getTime());
+                            objRoyalty.setNgayXuatBan(convertNgayXuatBan);
+                        }
+                        if(params.get(DocumentAttributeDef.XM_NGAY_TAO.getName()) != null && !params.get(DocumentAttributeDef.XM_NGAY_TAO.getName()).toString().isEmpty()){
+                        //                        Date ngayTao = dateFormat.parse(params.get(DocumentAttributeDef.XM_NGAY_TAO.getName()).toString());
+                            Date ngayTao = Utils.convertDate("yyyy-MM-dd HH:mm:ss", params.get(DocumentAttributeDef.XM_NGAY_TAO.getName()).toString());
+                            Timestamp convertNgayTao = new java.sql.Timestamp(ngayTao.getTime());
+                            objRoyalty.setNgayTao(convertNgayTao);
+                        }
+                    if (lstTemp != null && lstTemp.size() > 0) {
+                        _sessionEJB.mergeTvsRoyalty(objRoyalty);
+                    }
+                    else{
+                        _sessionEJB.persistTvsRoyalty(objRoyalty);
+                    }
+
+
+                }
+                //                }
+                //                else {
+                //                    DataObject obj = ServiceFacade.checkInNew2(params);
+                //
+                //                    TvsRoyalty objNew = new TvsRoyalty();
+                //                    objNew.setTieuDe(obj.get(DocumentAttributeDef.D_DOC_TITLE.getName()));
+                //                    objNew.setNguoiTao(obj.get(DocumentAttributeDef.D_DOC_CREATOR.getName()));
+                //                    objNew.setTacGiaTinBai(tacGiaStr.isEmpty() ? params.get(DocumentAttributeDef.XM_TAC_GIA.getName()).toString() : tacGiaStr);
+                //                    objNew.setTacGiaAnh(tacGiaAnhStr);
+                //                    String today = getToday("yyyy-MM-dd");
+                //                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                //                    Date d1 = dateFormat.parse(today);
+                //
+                //                    Date ngayXuatBan =
+                //                        dateFormat.parse(params.get(DocumentAttributeDef.XM_NGAY_XUAT_BAN.getName()).toString());
+                //                    Timestamp convertNgayXuatBan = new java.sql.Timestamp(ngayXuatBan.getTime());
+                //                    objNew.setNgayXuatBan(convertNgayXuatBan);
+                //
+                //                    if (d1.compareTo(ngayXuatBan) < 0) {
+                //                        objNew.setNgayTao(convertNgayXuatBan);
+                //                    } else {
+                //                        Date ngayTao =
+                //                            dateFormat.parse(params.get(DocumentAttributeDef.XM_NGAY_TAO.getName()).toString());
+                //                        Timestamp convertNgayTao = new java.sql.Timestamp(ngayTao.getTime());
+                //                        objNew.setNgayTao(convertNgayTao);
+                //                    }
+                //
+                //                    objNew.setChuyenMuc(Long.valueOf(obj.get(DocumentAttributeDef.XM_CHUYEN_MUC.getName())));
+                //                    objNew.setTheLoai(obj.get(DocumentAttributeDef.D_DOC_TYPE.getName()));
+                //                    objNew.setDID(obj.get(DocumentAttributeDef.D_ID.getName()));
+                //                    objNew.setDDocName(obj.get(DocumentAttributeDef.D_DOC_NAME.getName()));
+                //                    objNew.setTrangThai(params.get(DocumentAttributeDef.XM_TRANG_THAI.getName()).toString());
+                //                    objNew.setSoTrang(Long.valueOf(pageCount));
+                //                    objNew.setSoLuongChu(Long.valueOf(wordCount));
+                //                    objNew.setSoTrangDinhKem(Long.valueOf(extractCount));
+                //                    objNew.setSoLuongAnh(Long.valueOf(imgCount));
+                //                    objNew.setMapDinhKem(setMapDinhKem(resultMap));
+                //                    objNew.setLoaiTinBai((Long) siTinBai.getValue());
+                //                    objNew.setSoTienTinBai(soTienTinBai);
+                //                    objNew.setSoTienFileDinhKem(soTienFileDinhKem);
+                //                    objNew.setTongSoTien(soTienTinBai + soTienFileDinhKem);
+                //                    String url = "http://mof.tinhvan.com/webcenter/portal/TVBTC/pages_r/l/tin-bo-tai-chinh?dDocName=" + obj.get(DocumentAttributeDef.D_DOC_NAME.getName());
+                //                    objNew.setUrl(url);
+                //                    _sessionEJB.persistTvsRoyalty(objNew);
+                //                }
+                RichSelectOneChoice tempComp = (RichSelectOneChoice) JSFUtils.findComponent(contentForm, "voteSoc");
+                if (tempComp != null && tempComp.getValue() != null) {
+                    Long val = Long.valueOf(tempComp.getValue().toString());
+                    if (tempVoteType != null && tempVoteType.getId() != null) {
+                        //                        tempVoteType.setDDocname(String.valueOf(params.get(DocumentAttributeDef.D_DOC_NAME.getName())));
+                        //                        tempVoteType.setType(1L);
+                        tempVoteType.setVoteId(val);
+                        _sessionEJB.mergeTvsVoteType(tempVoteType);
+                    } else {
+                        tempVoteType = new TvsVoteType();
+                        tempVoteType.setDDocname(String.valueOf(params.get(DocumentAttributeDef.D_DOC_NAME.getName())));
+                        tempVoteType.setType(1L);
+                        tempVoteType.setVoteId(val);
+                        _sessionEJB.persistTvsVoteType(tempVoteType);
+                    }
+                }
+
+
+                try {
+                    //                this.attachedFiles2Remove
+                    ServiceFacade.deleteContents(this.attachedFiles2Remove, true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            } else {
+                JSFUtils.addFacesErrorMessage(strerr);
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String message = StringUtils.EMPTY;
+            if (e.getMessage().contains("already exists in folder")) {
+                message =
+                    JSFUtils.getMessage("CAP_NHAP_NOI_DUNG_KHONG_THANH_CONG_NOI_DUNG_DA_TON_TAI", primaryFileName);
+            }
+            if (StringUtils.isBlank(message)) {
+                message = JSFUtils.getResourceBundle("CAP_NHAP_NOI_DUNG_KHONG_THANH_CONG");
+            }
+            JSFUtils.addFacesErrorMessage(message);
+            return;
+        }
+        //        JSFUtils.addFacesInformationMessage(JSFUtils.getResourceBundle("CAP_NHAP_NOI_DUNG_THANH_CONG"));
+        //        FacesUtils.navigateTo("success");
+        //        ContentRepositoryBean contentBean = new ContentRepositoryBean();
+        //        contentBean.prepare();
+        //        return "success";
+    }
+
+    public String setMapDinhKem(List<RoyaltyMap> resultMap) {
+        if (resultMap == null)
+            return "";
+        String mapDinhKem = "";
+        if (resultMap.size() > 0) {
+            for (int i = 0; i < resultMap.size(); i++) {
+                //                if(i < resultMap.size()){
+                mapDinhKem += "//";
+                mapDinhKem += resultMap.get(i).getFileName() + ":" + String.valueOf(resultMap.get(i).getPageNum());
+                //                }
+                //                else{
+                //                    mapDinhKem += resultMap.get(i).getFileName() + ":" + resultMap.get(i).getPageNum();
+                //                }
+            }
+        }
+        return mapDinhKem;
+    }
+
+    /**
+     * @creator Tuyến NT
+     * @comment Thủ tục xóa bỏ nội dung khỏi dòng sự kiện
+     * @param item
+     * @return
+     */
+    private boolean RemoveContentInExistFolio(FolioItem item) {
+        boolean result = false;
+        String newItemStr = "";
+        String[] guids = ServiceFacade.GetGUIDS();
+        String change0 = this.folioID + ":removeNode:" + item.getNodeId() + ":" + this.rootNode;
+        try {
+            result =
+                ServiceFacade.UpdateContentToFolio(this.dDocName, "LatestReleased", "1", change0, newItemStr, "", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public long getWordCount(File file) throws IOException {
+        POITextExtractor textExtractor;
+        if (file.getName().endsWith(".doc")) {
+            textExtractor = new WordExtractor(new FileInputStream(file));
+        } else {
+            throw new IllegalArgumentException("Not a MS Word file.");
+        }
+
+        return Arrays.stream(textExtractor.getText().split("\\s+"))
+                     .filter(s -> s.matches("^.*[\\p{L}\\p{N}].*$"))
+                     .count();
+    }
+
+    /**
+     * @creator Tuyến NT
+     * @editor PhuongNH
+     * @comment Thủ tục thêm mới nội dung vào dòng sự kiện
+     * @param item
+     * @return
+     */
+    private boolean insertContentInExistFolio(FolioItem item, ContentItem contentItem) {
+        GetFolioInforOperation operation;
+        boolean result = false;
+        String newItemStr = "";
+        try {
+            operation = ServiceFacade.getFolioInfo(contentItem.getdID());
+
+            String[] guids = ServiceFacade.GetGUIDS();
+            newItemStr = "xcsd^dFormat:" + item.getXcsd_dFormat() + ",";
+            newItemStr += "id:" + guids[0] + ",";
+            newItemStr += "xcsd^dDocName:" + item.getXcsd_dDocName() + ",";
+            newItemStr += "xcsd^dID:" + item.getXcsd_dID() + ",";
+            newItemStr += "xcsd^dDocTitle:" + item.getXcsd_dDocTitle() + ",";
+            newItemStr += "xcsd^dDocType:" + item.getXcsd_dDocType() + ",";
+            newItemStr += "xcsd^dRendition1:" + item.getXcsd_dRendition1() + ",";
+            newItemStr += "xcsd^dRevLabel:" + item.getXcsd_dRevLabel() + ",";
+            newItemStr += "xcsd^dOriginalName:" + item.getXcsd_dOriginalName() + ",";
+            newItemStr += "xcsd^dDocCreator:" + item.getXcsd_dDocCreator() + ",";
+            newItemStr += "xcsd^docURL:" + item.getXcsd_docURL() + ",";
+            //            newItemStr +=
+            //                    "xcsd^dDocName_encoded:" + item.getXcsd_dDocName_encoded() +
+            //                    ",";
+            newItemStr += "xcsd^dDocName_encoded:" + item.getXcsd_dDocName() + ",";
+            newItemStr += "xcsd^docURL_encoded:" + item.getXcsd_docURL_encoded() + ",";
+            newItemStr += "xcst^name:" + item.getXcsd_dDocTitle() + ",";
+            newItemStr += "xcst^description:";
+            String change0 = contentItem.getdID() + ":addItem:" + guids[0] + ":" + operation.getRootNode();
+            String change1 = contentItem.getdID() + ":addContent:" + guids[0];
+            try {
+                result =
+                    ServiceFacade.UpdateContentToFolio(contentItem.getdDocName(), "LatestReleased", "2", change0,
+                                                       newItemStr, change1, newItemStr);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * convert DataObject sang kiểu FolioItem
+     * @creater PhuongNH
+     * @param obj
+     * @return
+     */
+    private FolioItem convertContentToFolioItem(ContentItem obj) {
+        FolioItem folioContentItem = new FolioItem();
+        folioContentItem.setXcsd_dID(obj.getdID());
+        folioContentItem.setXcsd_dDocName(obj.getdDocName());
+        folioContentItem.setXcsd_dDocTitle(obj.getdDocTitle());
+        folioContentItem.setXcsd_dDocType(obj.getdDocType());
+        folioContentItem.setXcsd_dDocCreator(obj.getdDocCreator());
+        folioContentItem.setXcsd_dFormat(obj.getdDocFormats());
+        folioContentItem.setXcsd_dOriginalName(obj.getdOriginalName());
+        folioContentItem.setXcsd_dRendition1(obj.getdRendition1());
+        folioContentItem.setXcsd_dRevLabel(obj.getdRevLabel());
+        String docUrl = "";
+        if (obj.getDocUrl() != null && !obj.getDocUrl().isEmpty())
+            docUrl = obj.getDocUrl();
+        else if (obj.getdWebURL() != null && !obj.getdWebURL().isEmpty())
+            docUrl = obj.getdWebURL();
+        //            else if (obj.get(DocumentAttributeDef.D_.getName()) != null &&
+        //                     !contentitem.getURL().isEmpty())
+        //                docUrl = contentitem.getURL();
+        if (!docUrl.isEmpty()) {
+            folioContentItem.setXcsd_docURL(docUrl);
+            try {
+                folioContentItem.setXcsd_docURL_encoded(java.net
+                                                            .URLEncoder
+                                                            .encode(docUrl, "UTF-8"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return folioContentItem;
+    }
+
+//    public String backAction() {
+//                ParamUtils.putParamRequestScope("contentItems",contentItems);
+//                if(BooleanUtils.isNotTrue(this.contentItem.getdIsCheckedOut())){
+//                    try{
+//            //                ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName());
+//                        if(BooleanUtils.isTrue(this.contentItem.getdAdmin())){
+//                            ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName());
+//                        }else{
+//                            ServiceFacade.undoCheckOutByName(this.contentItem.getdDocName(),this.contentItem.getdCheckoutUser());
+//                        }
+//                    }catch(Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//        return null;
+//    }
+
+    private void initUIForm(String dID, String dDocName, String dDocNameRemix) {
+        StringBuilder message = new StringBuilder(StringUtils.EMPTY);
+        String dDocType = "";
+        String ext = "";
+        showLoaiTinBai = false;
+        if (dDocType != null && !dDocType.equals("") && !dDocType.equals("Tinbai") && !dDocType.equals("TinBai") && !dDocType.equals("ThongTinDauThau") && !dDocType.equals("NoiDungTinh")) {
+            showLoaiTinBai = true;
+        }
+        if (this.contentItem != null) {
+            dDocType = this.contentItem.getdDocType();
+            ext = this.contentItem.getdExtension();
+
+            List<TvsRoyalty> royaltyList = new ArrayList<TvsRoyalty>();
+
+            try {
+                royaltyList = _sessionEJB.searchTvsRoyalty(null, null, null, null, null, null, null, null,this.contentItem.getdDocName(), null, false, 0, 1);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if (royaltyList.size() > 0) {
+                showLoaiTinBai = true;
+                objRoyalty = royaltyList.get(0);
+                siTinBai.setValue(objRoyalty.getLoaiTinBai());
+                AdfFacesContext.getCurrentInstance().addPartialTarget(siTinBai);
+            } else {
+                siTinBai.setValue(1L);
+                AdfFacesContext.getCurrentInstance().addPartialTarget(siTinBai);
+            }
+
+        }
+        if (ext == null || dDocType == null || (ext.equals("pdf")) ||
+            (dDocType != null && !dDocType.equals("") && (!dDocType.equals("Tinbai") && !dDocType.equals("TinBai") && !dDocType.equals("ThongTinDauThau") && !dDocType.equals("NoiDungTinh")))) {
+            showCkEditor = false;
+            if (contentCKEditor != null && contentCKEditor.getParent() != null)
+                AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+        } else {
+            showCkEditor = true;
+            if (contentCKEditor != null && contentCKEditor.getParent() != null)
+                AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+        }
+        try {
+            rules = ServiceFacade.getCheckInSelForm(dID, dDocName);
+            FormUtils.INSTANCE.setHiddenBlackListContentFields(rules, ContentFormEnum.AddForm.name());
+            FormUtils.INSTANCE.setHiddenAttachFile(rules, this.attachFilesPanel, this.attachFilesPanel2);
+            //            FormUtils.INSTANCE.setHiddenAttachFile(, rules);
+            this.attachedFiles = FormUtils.INSTANCE.getAttachedFiles(rules, false);
+            this.attachedFilesTable.setValue(this.attachedFiles);
+
+            Map<String, FieldItem> allFields = FormUtils.INSTANCE.getAllFields(rules);
+            if (MapUtils.isNotEmpty(allFields) && allFields.containsKey(DocumentAttributeDef.XM_TRANG_THAI.getName())) {
+                FieldItem field = allFields.get(DocumentAttributeDef.XM_TRANG_THAI.getName());
+                if (field != null && field.getOptionList() != null && !IS_PUBLISHER) {
+                    for (Iterator<String> iterator = field.getOptionList()
+                                                          .keySet()
+                                                          .iterator(); iterator.hasNext();) {
+                        String key = iterator.next();
+                        if (key.equals("2")) {
+                            iterator.remove();
+                        }
+                    }
+                }
+            }
+            FormUtils.INSTANCE.initContentUpdateFormCommonFields(allFields);
+
+
+            FormUtils.INSTANCE.setupXCollectionIDPath(allFields);
+            //            FormUtils.INSTANCE.setdDocTypeToInfoOnly(allFields);
+            FormUtils.INSTANCE.setMucHienThiSelectManyValues(allFields);
+            this.contentForm
+                .getChildren()
+                .clear();
+            for (RuleItem ruleItem : rules) {
+                FormUtils.INSTANCE.setupAnhDaiDienWithPreviewLink(ruleItem, true);
+                if (ruleItem.getGroupFieldList().containsKey(DocumentAttributeDef.XM_ANH_DAI_DIEN.getName())) {
+                    FieldItem fieldItem =
+                        ruleItem.getGroupFieldList().get(DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                    fieldItem.setDpFieldValue(null);
+                }
+
+                //                    if(ruleItem.getGroupFieldList().containsKey("dDocType")){
+                //                        FieldItem dDocType  =  ruleItem.getGroupFieldList().get("dDocType");
+                //                        dDocType.setIsInfoOnly(true);
+                //                        dDocType.setIshidden(false);
+                //                    }
+                if (ruleItem.getGroupFieldList().containsKey("xmAnhdaidien")) {
+                    FieldItem xmAnhdaidien = ruleItem.getGroupFieldList().get("xmAnhdaidien");
+                }
+
+                if (!ruleItem.getGroupFieldList().containsKey(DocumentAttributeDef.D_ID.getName())) {
+                    FieldItem fieldItem = new FieldItem();
+                    fieldItem.setDFieldName(DocumentAttributeDef.D_ID.getName());
+                    fieldItem.setDpFieldValue(dID);
+                    fieldItem.setIshidden(true);
+                    ruleItem.getGroupFieldList().put(DocumentAttributeDef.D_ID.getName(), fieldItem);
+                }
+                if (!ruleItem.getGroupFieldList().containsKey(DocumentAttributeDef.D_DOC_NAME.getName())) {
+                    FieldItem fieldItem = new FieldItem();
+                    fieldItem.setDFieldName(DocumentAttributeDef.D_DOC_NAME.getName());
+                    fieldItem.setDpFieldValue(dDocName);
+                    fieldItem.setIshidden(true);
+                    ruleItem.getGroupFieldList().put(DocumentAttributeDef.D_DOC_NAME.getName(), fieldItem);
+                }
+                if (!ruleItem.getGroupFieldList().containsKey(DocumentAttributeDef.D_DOC_CREATOR.getName())) {
+                    FieldItem fieldItem = new FieldItem();
+                    fieldItem.setDFieldName(DocumentAttributeDef.D_DOC_CREATOR.getName());
+                    fieldItem.setDpFieldValue(SystemUtils.getCurrentUserName());
+                    fieldItem.setIshidden(true);
+                    ruleItem.getGroupFieldList().put(DocumentAttributeDef.D_DOC_CREATOR.getName(), fieldItem);
+                }
+
+                if (allFields.containsKey(DocumentAttributeDef.D_ORIGINAL_NAME.getName())) {
+                    FieldItem originalName = allFields.get(DocumentAttributeDef.D_ORIGINAL_NAME.getName());
+                    originalName.setDType("goLink");
+                    //                         originalName.setDprFieldCaption("");
+                    if (allFields.containsKey(DocumentAttributeDef.PRIMARY_FILE.getName())) {
+                        FieldItem fieldItem = allFields.get(DocumentAttributeDef.PRIMARY_FILE.getName());
+                        fieldItem.setDprFieldCaption("");
+                    }
+                }
+
+                //                List<UIComponent> comps = rule.getListUiComponent();
+                List<UIComponent> comps = UiComponentBuilder.INSTANCE.buildUiComponentList(ruleItem);
+                for (UIComponent ui : comps) {
+                    JSFUtils.addComponent(contentForm, ui);
+                    if (ui instanceof RichPanelLabelAndMessage) {
+                        RichPanelLabelAndMessage container = (RichPanelLabelAndMessage) ui;
+                        boolean isFileInputContainer = false;
+                        String fieldName = StringUtils.EMPTY;
+                        for (UIComponent child : container.getChildren()) {
+                            if (child instanceof RichInputFile) {
+                                RichInputFile inputFile = (RichInputFile) child;
+                                fieldName = inputFile.getId();
+                                FileValueChangeListener fileValueChangeHandler =
+                                    new FileValueChangeListener(this.contentForm);
+                                inputFile.addValueChangeListener(fileValueChangeHandler);
+
+                                isFileInputContainer = true;
+                            }
+                            if (DocumentAttributeDef.D_ORIGINAL_NAME
+                                                    .getName()
+                                                    .equals(child.getId())) {
+                                RichGoLink goLink = (RichGoLink) child;
+                                if (allFields.containsKey(DocumentAttributeDef.D_ORIGINAL_NAME.getName())) {
+                                    FieldItem originalName =
+                                        allFields.get(DocumentAttributeDef.D_ORIGINAL_NAME.getName());
+                                    String linkDown =
+                                        ServiceFacade.buildLinkDownload(dID, dDocName,
+                                                                        String.valueOf(originalName.getDpFieldValue()));
+                                    goLink.setDestination(linkDown);
+
+                                }
+                            }
+                            if (DocumentAttributeDef.XM_ANH_DAI_DIEN_PATH
+                                                    .getName()
+                                                    .equals(child.getId())) {
+                                if (child instanceof RichActiveImage) {
+                                    container.setLabel("");
+                                }
+                            }
+
+                        }
+
+                        if (isFileInputContainer) {
+
+                            //                                new code for remove file uploaded
+                            if (true) {
+                                RichPanelGroupLayout group = new RichPanelGroupLayout();
+                                group.setInlineStyle("font-weight: bold;");
+                                //                            group.setId(fieldName);
+                                group.setVisible(false);
+                                group.setStyleClass("file-input-hint");
+                                RichOutputText label = new RichOutputText();
+                                label.setValue("ile nme"); //StringUtils.EMPTY
+                                //                            ValueExpression expression = JSFUtils.getExpressionValue("#{pageFlowScope.checkOutAndOpenBean.fileContainer['"+ fieldName + "']}");
+                                //                            label.setValueExpression(label.getId(), expression);
+
+                                RichCommandLink rmLink = new RichCommandLink();
+                                rmLink.setText(JSFUtils.getMessage("XOA_UPLOAD_FILE"));
+                                rmLink.setImmediate(true);
+                                rmLink.setPartialSubmit(true);
+                                rmLink.setInlineStyle("padding-left: 5px;");
+                                ActionListener removeActionListener = new ActionListener() {
+                                    public void processAction(ActionEvent actionEvent) {
+                                        UIComponent richComLink = actionEvent.getComponent();
+                                        UIComponent panelGroup = richComLink.getParent();
+                                        UIComponent containerUi = panelGroup.getParent();
+                                        if (containerUi instanceof RichPanelLabelAndMessage) {
+                                            RichPanelLabelAndMessage container = (RichPanelLabelAndMessage) containerUi;
+                                            for (UIComponent child : container.getChildren()) {
+                                                if (child instanceof RichInputFile) {
+                                                    RichInputFile inputFile = (RichInputFile) child;
+                                                    inputFile.resetValue();
+                                                    if (fileContainer.containsKey(inputFile.getId())) {
+                                                        fileContainer.remove(inputFile.getId());
+                                                    }
+                                                    if (panelGroup instanceof RichPanelGroupLayout) {
+                                                        RichPanelGroupLayout grouplayout =
+                                                            (RichPanelGroupLayout) panelGroup;
+                                                        grouplayout.setVisible(false);
+                                                    }
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        AdfFacesContext.getCurrentInstance().addPartialTarget(containerUi);
+                                    }
+                                };
+
+
+                                rmLink.addActionListener(removeActionListener);
+
+
+                                group.getChildren().add(label);
+                                group.getChildren().add(rmLink);
+
+                                container.getChildren().add(group);
+                            }
+
+                            RichPanelGroupLayout group = new RichPanelGroupLayout();
+                            group.setStyleClass("file-input-hint");
+                            RichOutputText label = new RichOutputText();
+
+                            //                            RichCommandLink rmLink = new RichCommandLink();
+
+                            group.getChildren().add(label);
+                            //                            group.getChildren().add(rmLink);
+
+                            //                            label.setValue("link file");
+                            //                            rmLink.setText("remove");
+                            container.getChildren().add(group);
+                            String contenType = "";
+                            if (allFields.containsKey(DocumentAttributeDef.D_DOC_TYPE.getName())) {
+                                contenType =
+                                    String.valueOf(allFields.get(DocumentAttributeDef.D_DOC_TYPE.getName())
+                                                   .getDpFieldValue());
+                            }
+                            List<String> fileExtsAllowed = new ArrayList<String>();
+                            long maxSize = 0L;
+                            if (DocumentAttributeDef.PRIMARY_FILE
+                                                    .getName()
+                                                    .equals(fieldName)) {
+                                //                                String contenType = String.valueOf(ParamUtils.getParamPageFlowScope("contenType"));
+                                fileExtsAllowed =
+                                    ConfigUtil.getFileExtension(ConfigEnum.WhiteListFileExtension.getName(),
+                                                                contenType);
+                                maxSize =
+                                    ConfigUtil.getSizePrimaryFile(ConfigEnum.WhiteListFileExtension.getName(),
+                                                                  contenType);
+                                label.setValue(JSFUtils.getMessage("PRIMARY_FILE_HINT",
+                                                                   FileValueChangeListener.listToString(fileExtsAllowed),
+                                                                   FileUtils.byteCountToDisplaySize(maxSize)));
+                            }
+                            if (DocumentAttributeDef.XM_ANH_DAI_DIEN
+                                                    .getName()
+                                                    .equals(fieldName)) {
+                                //                                String contenType = String.valueOf(ParamUtils.getParamPageFlowScope("contenType"));
+                                fileExtsAllowed = ConfigUtil.getListValue(ConfigEnum.NewsImageAvatar.getName());
+                                maxSize = ConfigUtil.getLongValue(ConfigEnum.NewsImageFileSize);
+                                label.setValue(JSFUtils.getMessage("XM_ANH_DAI_DIEN_HINT",
+                                                                   FileValueChangeListener.listToString(fileExtsAllowed),
+                                                                   FileUtils.byteCountToDisplaySize(maxSize)));
+                            }
+                        }
+                    }
+                    if (ui instanceof RichInputText) {
+                        RichInputText iptext = (RichInputText) ui;
+                        String id = iptext.getId();
+                        iptext.setAutoSubmit(true);
+                        iptext.addValueChangeListener(new TextValueChangeListener(contentForm));
+                        if (id.equals("dDocCreator")) {
+                            UIComponent tacGia =
+                                buildRichInputText("itTacGia", "Tác giả",
+                                                   (objRoyalty != null) ? objRoyalty.getTacGiaTinBai() : null);
+                            UIComponent tacGiaAnh =
+                                buildRichInputText("itTacGiaAnh", "Tác giả ảnh",
+                                                   (objRoyalty != null) ? objRoyalty.getTacGiaAnh() : null);
+                            getContentForm().getChildren().add(tacGia);
+                            getContentForm().getChildren().add(tacGiaAnh);
+                            AdfFacesContext.getCurrentInstance().addPartialTarget(tacGia.getParent());
+                        }
+                    }
+                    if (ui instanceof RichSelectOneChoice) {
+                        RichSelectOneChoice inputUi = (RichSelectOneChoice) ui;
+
+                        String id = inputUi.getId();
+                        if (id.equals("xmChuyenmuctin")) {
+                            //                        RichSelectOneChoice tempComp = (RichSelectOneChoice)JSFUtils.findComponent(newContentUiForm,
+                            //                                             "xmChuyenmuctin");
+                            if (ParamUtils.getParamSessionScope("lstChuyenMuc") != null) {
+                                UIComponent temp = buildRichInputTextSearch();
+                                getContentForm().getChildren().add(temp);
+                            }
+                        }
+                        if (id.equals("xmBinhchon")) {
+                            UIComponent temp = buildRichSelectOneChoice();
+                            getContentForm().getChildren().add(temp);
+                            inputUi.setAutoSubmit(true);
+                            inputUi.addValueChangeListener(new ValueChangeListener() {
+                                public void processValueChange(ValueChangeEvent valueChangeEvent) {
+                                    Object newValue = valueChangeEvent.getNewValue();
+                                    RichSelectOneChoice tempComp =
+                                        (RichSelectOneChoice) JSFUtils.findComponent(contentForm, "voteSoc");
+                                    if (newValue != null) {
+                                        if (newValue.toString().equals("1")) {
+                                            ;
+                                            tempComp.setRendered(true);
+                                        } else if (newValue.toString().equals("0")) {
+                                            tempComp.setRendered(false);
+                                        }
+                                    }
+                                    AdfFacesContext.getCurrentInstance().addPartialTarget(tempComp.getParent());
+                                }
+                            });
+                        }
+                    }
+
+                }
+            }
+            // build for depend
+            FormUtils.INSTANCE.buildFieldDepend(rules, contentForm);
+
+            ParamUtils.putParamPageFlowScope("contenType", getContentType());
+            ParamUtils.putParamPageFlowScope("fileContainer", fileContainer);
+            if (allFields.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+                List<String> fileExtsAllowed =
+                    ConfigUtil.getFileExtension(ConfigEnum.AttachFilesAllowed.getName(), getContentType());
+                long maxSize = ConfigUtil.getSizeAttachFile(ConfigEnum.AttachFilesAllowed.getName(), getContentType());
+                this.attachFileHint =
+                    JSFUtils.getMessage("XM_TEP_TIN_DINH_KEM_HINT",
+                                        FileValueChangeListener.listToString(fileExtsAllowed),
+                                        FileUtils.byteCountToDisplaySize(maxSize));
+            }
+
+
+            RichPanelGroupLayout rpgFolio =
+                (RichPanelGroupLayout) JSFUtils.findComponent(contentForm,
+                                                              CommonDefine.PANEL_GROUP_PARENT_ID.getValue());
+            if (rpgFolio != null) {
+                RichTable rt = (RichTable) JSFUtils.findComponent(contentForm, CommonDefine.TABLE_FOLIO_ID.getValue());
+                rt.setValue(selectedFolio);
+                AdfFacesContext.getCurrentInstance().addPartialTarget(rt);
+                // gán sự kiện ReturnListener cho nút chọn dòng sự kiện
+                RichCommandLink btnChoiceFolio =
+                    (RichCommandLink) JSFUtils.findComponent(rpgFolio,
+                                                             CommonDefine.BUTTON_POPUP_FOLIO_FORM_ID.getValue());
+                ELContext elContext = FacesContext.getCurrentInstance().getELContext();
+                ExpressionFactory efact = FacesContext.getCurrentInstance()
+                                                      .getApplication()
+                                                      .getExpressionFactory();
+                MethodExpression methodExpr;
+                if (null != btnChoiceFolio) {
+
+                    methodExpr =
+                        efact.createMethodExpression(elContext, "#{pageFlowScope.checkOutAndOpenBean.returnListener}",
+                                                     Object.class, new Class[] { ReturnEvent.class });
+                    //        ui.setReturnListener(methodExpr);
+                    btnChoiceFolio.setReturnListener(methodExpr);
+
+
+                    methodExpr =
+                        efact.createMethodExpression(elContext, "#{pageFlowScope.checkOutAndOpenBean.openFolioPopup}",
+                                                     Object.class, new Class[] { });
+                    btnChoiceFolio.setActionExpression(methodExpr);
+                }
+
+                RichCommandLink rclDelete =
+                    (RichCommandLink) JSFUtils.findComponent(rpgFolio,
+                                                             CommonDefine.COMMAND_LINK_DELETE_FOLIO_ITEM_ID.getValue());
+                if (null != rclDelete) {
+                    methodExpr =
+                        efact.createMethodExpression(elContext, "#{pageFlowScope.checkOutAndOpenBean.deleteFolio}",
+                                                     Object.class, new Class[] { });
+                    rclDelete.setActionExpression(methodExpr);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (e.getMessage() != null &&
+                e.getMessage().contains("The selected revision is not the most recent revision")) {
+                message.append(JSFUtils.getMessage("PLEASE_SELECT_THE_MOST_RECENT_REVISION_TO_UPDATE"));
+            }
+            if (e instanceof NullPointerException) {
+                if (StringUtils.isEmpty(message)) {
+                    message.append(JSFUtils.getMessage("co loi"));
+                }
+            }
+            //            JSFUtils.addFacesErrorMessage(e.getMessage());
+        }
+        if (StringUtils.isNotBlank(message)) {
+            JSFUtils.addFacesErrorMessage(message.toString());
+            this.attachFilesPanel.setVisible(false);
+            this.attachFilesPanel2.setVisible(false);
+        }
+
+        //truyền giá trị vào ck editer
+        contentCKEditor = new HtmlInputTextarea();
+
+        try {
+            html = getDocContent(dID, dDocName, dDocNameRemix);
+            htmlOld = html;
+        } catch (IOException | IdcClientException e) {
+            e.printStackTrace();
+        }
+
+        if (html != null && !html.isEmpty()) {
+            contentCKEditor.setValue(html);
+            AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor);
+            updateCkEditor();
+            setValueCkEditor(html);
+        }
+
+        //        AdfFacesContext.getCurrentInstance().addPartialTarget(this.attachFilesPanel);
+        //        AdfFacesContext.getCurrentInstance().addPartialTarget(this.attachFilesPanel2);
+        return;
+    }
+
+    public UIComponent buildRichInputText(String id, String label, String value) {
+        RichInputText ui = new RichInputText();
+        //        ui.setLabel("Tìm kiếm");
+        ui.setLabel(label);
+        ui.setAutoSubmit(true);
+        ui.setId(id);
+        //        ui.setRequired(true);
+        //        ui.setRequiredMessageDetail(label + " không được để trống");
+        if (value != null) {
+            ui.setValue(value);
+        }
+        return ui;
+    }
+
+    public UIComponent buildRichSelectOneChoice() {
+        RichSelectOneChoice ui = new RichSelectOneChoice();
+        //        ui.setLabel("Tìm kiếm");
+        ui.setLabel("Chủ đề bình luận");
+        ui.setAutoSubmit(true);
+        ui.setId("voteSoc");
+        ui.setRequired(true);
+        ui.setRequiredMessageDetail("Chủ đề bình luận không được để trống");
+        ui.setRendered(false);
+        List<UIComponent> items = ui.getChildren();
+        for (TvsVote temp : lstVote) {
+            RichSelectItem item = new RichSelectItem();
+            item.setValue(temp.getId());
+            item.setLabel(temp.getTitle());
+            items.add(item);
+        }
+        List<TvsVoteType> temp = _sessionEJB.getAllTvsVoteTypeItemFindByDdocName(this.contentItem.getdDocName());
+        if (temp != null && temp.size() > 0) {
+            tempVoteType = temp.get(0);
+            ui.setValue(tempVoteType.getVoteId());
+        }
+        return ui;
+    }
+
+    public UIComponent buildRichInputTextSearch() {
+        RichInputText ui = new RichInputText();
+        //        ui.setLabel("Tìm kiếm");
+        ui.setPlaceholder("Tìm kiếm chuyên mục");
+        ui.setAutoSubmit(true);
+        ui.addValueChangeListener(new ValueChangeListener() {
+
+            public void processValueChange(ValueChangeEvent valueChangeEvent) {
+                Object param = ParamUtils.getParamSessionScope("lstChuyenMuc");
+                RichSelectOneChoice tempComp = (RichSelectOneChoice) JSFUtils.findComponent(contentForm, "xmChuyenmuctin");
+                Object tempCompObj = tempComp.getValue();
+                RichSelectManyShuttle tempCompShuttle =
+                    (RichSelectManyShuttle) JSFUtils.findComponent(contentForm, "xmMuctinhienthi");
+                List<Object> tempCompShuttleObj;
+                if (tempCompShuttle.getValue() == null ||
+                    (tempCompShuttle.getValue() != null &&
+                     tempCompShuttle.getValue()
+                                                                                                                .toString()
+                                                                                                                .isEmpty()))
+                    tempCompShuttleObj = new ArrayList<>();
+                else {
+                    tempCompShuttleObj = new ArrayList<>();
+                    tempCompShuttleObj = (ArrayList) tempCompShuttle.getValue();
+                }
+
+
+                List<UIComponent> items = tempComp.getChildren();
+                List<UIComponent> items2 = tempCompShuttle.getChildren();
+                items2.clear();
+                items.clear();
+                Map<String, String> map = new HashMap<String, String>();
+                if (param != null)
+                    map = (HashMap<String, String>) param;
+                RichSelectItem item;
+                RichSelectItem item2;
+                //                                          List<UIComponent> items = new ArrayList<UIComponent>();
+                for (Object key : map.keySet().toArray()) {
+                    if (map.get(key)
+                           .toString()
+                           .toLowerCase()
+                           .contains(valueChangeEvent.getNewValue()
+                                                     .toString()
+                                                     .toLowerCase()) || key.toString()
+                                                                           .toLowerCase()
+                                                                           .contains(valueChangeEvent.getNewValue()
+                                                                                                     .toString()
+                                                                                                     .toLowerCase())) {
+                        item = new RichSelectItem();
+                        item2 = new RichSelectItem();
+                        item.setValue(key);
+                        item.setLabel(map.get(key));
+                        item2.setValue(key);
+                        item2.setLabel(map.get(key));
+                        items.add(item);
+                        items2.add(item2);
+                    }
+                }
+                for (Object key : map.keySet().toArray()) {
+                    if (tempCompObj != null && tempCompObj.toString().equals(key)) {
+                        item = new RichSelectItem();
+                        item.setValue(key);
+                        item.setLabel(map.get(key));
+                        items.add(item);
+                    }
+                    if (tempCompShuttle != null && tempCompShuttleObj.contains(key)) {
+                        item2 = new RichSelectItem();
+                        item2.setValue(key);
+                        item2.setLabel(map.get(key));
+                        items2.add(item2);
+                    }
+                }
+                if (tempCompObj != null)
+                    tempComp.setValue(tempCompObj);
+                if (tempCompShuttle != null)
+                    tempCompShuttle.setValue(tempCompShuttleObj);
+                if (tempComp.getParent() != null) {
+                    AdfFacesContext.getCurrentInstance().addPartialTarget(tempComp.getParent());
+                }
+            }
+        });
+        return ui;
+    }
+
+
+    public static DataResultSet getDocInfo(IdcClient idcClient, IdcContext userContext, String dID, String dDocName) {
+        DataResultSet obj = null;
+        DataBinder binder = docInfoService(dID, dDocName, idcClient, userContext);
+        if (binder != null)
+            obj = binder.getResultSet("DOC_INFO");
+        return obj;
+    }
+
+    private static DataBinder docInfoService(String dID, String dDocName, IdcClient client, IdcContext userContext) {
+
+        DataBinder obj = null;
+        try {
+            DataBinder dataBinder = client.createBinder();
+            dataBinder.putLocal("IdcService", "DOC_INFO");
+            if (!dID.isEmpty()) {
+                dataBinder.putLocal("dID", dID);
+            }
+
+            if (!dDocName.isEmpty())
+                dataBinder.putLocal("dDocName", dDocName);
+
+            ServiceResponse ridc_response = client.sendRequest(userContext, dataBinder);
+            obj = ridc_response.getResponseAsBinder();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return obj;
+    }
+
+    public static String getDocContent(String id, String docName, String dDocNameRemix) throws IdcClientException, IOException {
+        UCMConnector ucmConnector = UCMConnector.getInstance();
+        IdcClient idcClient = ucmConnector.getIdcClient();
+        IdcContext userContext = ucmConnector.getUserContext();
+        String content = "";
+        String dID, dDocName = "";
+        if(dDocNameRemix != null && !dDocNameRemix.isEmpty()){
+            DataBinder dataBinder = idcClient.createBinder();
+            dataBinder.putLocal("IdcService", "GET_DYNAMIC_CONVERSION");
+            dataBinder.putLocal("IsJava", "0");
+            dataBinder.putLocal("dDocName", dDocNameRemix);
+            dataBinder.putLocal("RevisionSelectionMethod", "LatestReleased");
+            ServiceResponse ridc_response1 = idcClient.sendRequest(userContext, dataBinder);
+        }
+        if (id == null || docName == null) {
+            return "";
+        } else {
+            dID = id.toString();
+            dDocName = docName.toString();
+        }
+        DataResultSet drs = getDocInfo(idcClient, userContext, dID, dDocName);
+        if (drs != null) {
+            DataObject obj = drs.getRows().get(0);
+            String primaryFileFormat = obj.get("dFormat");
+            if (primaryFileFormat.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document") ||
+                primaryFileFormat.equals("application/msword")) {
+                DataBinder dataBinder = idcClient.createBinder();
+
+                dataBinder.putLocal("IdcService", "GET_DYNAMIC_CONVERSION");
+                dataBinder.putLocal("IsJava", "0");
+
+                dataBinder.putLocal("dDocName", dDocName);
+                dataBinder.putLocal("RevisionSelectionMethod", "LatestReleased");
+                ServiceResponse ridc_response = idcClient.sendRequest(userContext, dataBinder);
+                content = ridc_response.getResponseAsString();
+            } else if (primaryFileFormat.equals("text/html")) {
+
+                DataBinder dataBinder = idcClient.createBinder();
+
+                dataBinder.putLocal("IdcService", "GET_FILE");
+                //dataBinder.putLocal("IsJava", "0");
+
+                dataBinder.putLocal("dDocName", dDocName);
+                dataBinder.putLocal("RevisionSelectionMethod", "LatestReleased");
+                dataBinder.putLocal("Rendition", "Web");
+
+                ServiceResponse ridc_response = idcClient.sendRequest(userContext, dataBinder);
+                content = ridc_response.getResponseAsString();
+            } 
+//            else if (primaryFileFormat.equals("text/html")) {
+//
+//                DataBinder dataBinder = idcClient.createBinder();
+//
+//                dataBinder.putLocal("IdcService", "GET_FILE");
+//                //dataBinder.putLocal("IsJava", "0");
+//
+//                dataBinder.putLocal("dDocName", dDocName);
+//                dataBinder.putLocal("RevisionSelectionMethod", "LatestReleased");
+//                dataBinder.putLocal("Rendition", "Web");
+//
+//                ServiceResponse ridc_response;
+//                ridc_response = idcClient.sendRequest(userContext, dataBinder);
+//                content = ridc_response.getResponseAsString();
+//            }
+            //them webroot vao duong link anh co trong noi dung
+            //                            if (content.contains("/cs/groups/"))
+            //                                    content = content.replaceAll("/cs/groups/", webRoot + "/cs/groups/");
+            //                            if (content.contains("/cs/idcplg"))
+            //                                    content = content.replaceAll("/cs/idcplg", webRoot + "/cs/idcplg");
+            //                            if (content.contains("/faces/"))
+            //                                    content = content.replaceAll("/faces/", webRoot + "/faces/");
+            
+            String webRoot = ConfigUtil.getConfigValue("webRoot").toString();
+            if (content.contains("/cs/groups/"))
+                content = content.replaceAll("/cs/groups/", webRoot + "/cs/groups/");
+            if (content.contains("/cs/idcplg"))
+                content = content.replaceAll("/cs/idcplg", webRoot + "/cs/idcplg");
+            if (content.contains("/faces/"))
+                content = content.replaceAll("/faces/", webRoot + "/faces/");
+            
+            content = content.replaceAll("line-height(.*?)\\;", "");
+//            
+//            content = content.replaceAll("alt=\"(.*?)\\\"", "");
+            
+            if(content.contains("</table>")){
+                if(!content.contains("<th style=\"border: 1px solid black; "))
+                    content = content.replaceAll("<th style=\"", "<th style=\"border: 1px solid black; ");
+                if(!content.contains("<tr style=\"border: 1px solid black; "))
+                    content = content.replaceAll("<tr style=\"", "<tr style=\"border: 1px solid black; ");
+                if(!content.contains("<td style=\"border: 1px solid black; "))
+                    content = content.replaceAll("<td style=\"", "<td style=\"border: 1px solid black; ");
+                
+                content = content.replaceAll("<td(.*?)\\/>","");
+            }
+            
+//            if(content.contains("font-size: 12pt;")){
+//                content = content.replaceAll("font-size: 12pt;", "font-size: 14px;");
+//            }
+//            if(content.contains("font-size: 10pt;")){
+//                content = content.replaceAll("font-size: 10pt;", "font-size: 14px;");
+//            }
+        }
+
+        return content;
+    }
+    
+    public String backAction(){
+        ParamUtils.putParamSessionScope("dDocNameRemix", null);
+        ParamUtils.removeParamSessionScope("dDocNameRemix");
+        return "back";
+    }
+
+    public String resetFormAction() {
+        contentCKEditor.resetValue();
+        if (htmlOld != null && !htmlOld.isEmpty()) {
+            contentCKEditor.setValue(htmlOld);
+            AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor);
+            updateCkEditor();
+            setValueCkEditor(htmlOld);
+        }
+        if (contentCKEditor.getParent() != null)
+            AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+        this.attachedFiles2Remove.clear();
+        initUIForm(this.contentItem.getdID(), this.contentItem.getdDocName(), this.contentItem.getXmBieumau());
+        ContentNewBean.resetForm(this.contentForm, this.rules, this.fileContainer, this.fileAttachedListView);
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.attachedFilesTable);
+        ParamUtils.putParamSessionScope("dDocNameRemix", null);
+        ParamUtils.removeParamSessionScope("dDocNameRemix");
+        return null;
+    }
+
+
+    private int countPage(File file) {
+        try {
+            PDDocument doc = PDDocument.load(file);
+            int count = doc.getNumberOfPages();
+            return count;
+
+        } catch (IOException e) {
+        }
+
+        return 0;
+    }
+
+    public String separatorForLanguage(char unicodeChar) {
+        // Find out in which language unicodeChar falls
+        return ""; // return regex of separator of that language
+    }
+
+    public int wordCount(String sentance) {
+        char unicodeChar = sentance.charAt(0);
+        String separator = separatorForLanguage(unicodeChar);
+
+        int count = sentance.split(separator).length;
+        if (separator.isEmpty()) {
+            count--;
+        }
+
+        return count;
+    }
+
+    public static String html2text(String html) {
+        return Jsoup.parse(html).text();
+    }
+
+    public void contentUpdateAction(ClientEvent clientEvent) throws ParseException {
+        String file = "";
+        Object temp = ParamUtils.getParamSessionScope("showCkEditor");
+        boolean showHide = temp != null ? Boolean.valueOf(temp.toString()) : showCkEditor;
+        if (showHide) {
+            String value = "";
+            final List valueList = (List) clientEvent.getParameters().get("value");
+            if (valueList != null) {
+                for (final Object valObj : valueList) {
+                    if (valObj != null && valObj instanceof Map) {
+                        final Map valMap = (Map) valObj;
+                        final String id = valMap.get("id").toString();
+                        value = valMap.get("value").toString();
+                        if (id == null) {
+                            continue;
+                        }
+                        //this.libFCKeditorParams.setHtmlContent(value);
+                    }
+                }
+            }
+            
+            String webRoot = ConfigUtil.getConfigValue("webRoot").toString();
+            if (value.contains(webRoot + "/cs/groups/"))
+                value = value.replaceAll(webRoot + "/cs/groups/", "/cs/groups/");
+            if (value.contains(webRoot + "/cs/idcplg"))
+                value = value.replaceAll(webRoot + "/cs/idcplg", "/cs/idcplg");
+            if (value.contains(webRoot + "/faces/"))
+                value = value.replaceAll(webRoot + "/faces/", "/faces/");
+
+            Date date = Calendar.getInstance().getTime();
+            DateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
+            String strDate = dateFormat.format(date);
+            String unEscapedHTML = StringEscapeUtils.unescapeHtml4(value);
+
+            try {
+                file = generateHTML(unEscapedHTML, "file" + strDate);
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
+            }
+        }
+
+
+        contentCheckinAction(false, file, showHide);
+        FacesUtils.showPopup(popupSuccess, true);
+
+        //         FacesUtils.navigateTo("back");
+        //        FacesUtils.refreshCurrPage();
+    }
+
+    public static String getToday(String format) {
+        Date date = new Date();
+        return new SimpleDateFormat(format).format(date);
+    }
+
+    public void dialogListener1(DialogEvent dialogEvent) {
+        if (dialogEvent.getOutcome() == DialogEvent.Outcome.ok) {
+            FacesUtils.navigateTo("back");
+            FacesUtils.refreshCurrPage();
+        } else {
+            FacesUtils.navigateTo("back");
+            FacesUtils.refreshCurrPage();
+        }
+    }
+
+    private static String generateHTML(String html, String fileName) throws FileNotFoundException, DocumentException,
+                                                                            IOException {
+
+        //InputStream stream = new ByteArrayInputStream(html.getBytes("UTF-8"));
+        //Document document = new Document();
+        if (makeFolder("/global/cms/natives_files/domains/mof_portal/fileupload/acms/")) {
+            //System.out.println("tao moi folder!");
+        }
+
+        FileUtils.writeStringToFile(new File("/global/cms/natives_files/domains/mof_portal/fileupload/acms/" +
+                                             fileName + ".html"), html, Charsets.UTF_8);
+
+        //        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("E:/output/htmlquyenNN.pdf"));
+        //        document.open();
+        //        InputStream htmlInput = new FileInputStream(new File("E:/output/template.html"));
+        //        XMLWorkerHelper.getInstance().parseXHtml(writer, document,htmlInput);
+        //        document.close();
+
+        return "/global/cms/natives_files/domains/mof_portal/fileupload/acms/" + fileName + ".html";
+    }
+
+    private static boolean makeFolder(String str_Path) {
+        File file = new File(str_Path);
+        if (!file.exists()) {
+            try {
+                //                if(!file.mkdirs())
+                //                    file.mkdir();
+                Path dir = Paths.get(str_Path);
+                Files.createDirectories(dir);
+                return true;
+            } catch (SecurityException ex) {
+                ex.printStackTrace();
+            } catch (Exception ex1) {
+                ex1.printStackTrace();
+            }
+            return false;
+        }
+        return true;
+    }
+
+
+    public void setAttachFilesPanel(RichPanelFormLayout attachFilesPanel) {
+        this.attachFilesPanel = attachFilesPanel;
+    }
+
+    public RichPanelFormLayout getAttachFilesPanel() {
+        return attachFilesPanel;
+    }
+
+    public void setAttachedFilesTable(RichTable attachedFilesTable) {
+        this.attachedFilesTable = attachedFilesTable;
+    }
+
+    public RichTable getAttachedFilesTable() {
+        return attachedFilesTable;
+    }
+
+
+    public void setAttachedFiles(List<ContentItem> attachedFiles) {
+        this.attachedFiles = attachedFiles;
+    }
+
+    public List<ContentItem> getAttachedFiles() {
+        return attachedFiles;
+    }
+
+    public void setRules(List<RuleItem> rules) {
+        this.rules = rules;
+    }
+
+    public List<RuleItem> getRules() {
+        return rules;
+    }
+
+    public void setContentItem(ContentItem contentItem) {
+        this.contentItem = contentItem;
+    }
+
+    public ContentItem getContentItem() {
+        return contentItem;
+    }
+
+    public void setContentForm(RichPanelFormLayout contentForm) {
+        this.contentForm = contentForm;
+    }
+
+    public RichPanelFormLayout getContentForm() {
+        return contentForm;
+    }
+
+    public void setAttachFile(RichInputFile attachFile) {
+        this.attachFile = attachFile;
+    }
+
+    public RichInputFile getAttachFile() {
+        return attachFile;
+    }
+    //
+    //    public void setPblMenuLeft(RichPanelBorderLayout pblMenuLeft) {
+    //        this.pblMenuLeft = pblMenuLeft;
+    //    }
+    //
+    //    public RichPanelBorderLayout getPblMenuLeft() {
+    //        return pblMenuLeft;
+    //    }
+
+    protected void performNavigation(String outcome) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        NavigationHandler nh = context.getApplication().getNavigationHandler();
+
+        nh.handleNavigation(context, "", outcome);
+    }
+
+    public void actionListenerAction(ActionEvent actionEvent) {
+        //System.out.println("*****actionEvent.getComponent().getId():" +
+        //                           actionEvent.getComponent().getId());
+        performNavigation("back");
+    }
+
+    public void attachFilesValueChangeListener(ValueChangeEvent valueChangeEvent) {
+        FileValueChangeListener.attachFilesValueChangeHandler(valueChangeEvent, this.fileContainer, getContentType());
+        updateAttachFileListView();
+        return;
+    }
+
+
+    //    public void setFileAttachedListView(RichListView fileAttachedListView) {
+    //        this.fileAttachedListView = fileAttachedListView;
+    //    }
+    //
+    //    public RichListView getFileAttachedListView() {
+    //        return fileAttachedListView;
+    //    }
+
+    public void setFileContainer(Map<String, Object> fileContainer) {
+        this.fileContainer = fileContainer;
+    }
+
+    public Map<String, Object> getFileContainer() {
+        return fileContainer;
+    }
+
+    private void updateAttachFileListView() {
+        Object fileContainerObject = ParamUtils.getParamPageFlowScope("fileContainer");
+        if (fileContainerObject instanceof Map) {
+            Map<String, Object> fileContainerTemp = (Map<String, Object>) fileContainerObject;
+            Object obj = fileContainerTemp.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+            if (obj instanceof List) {
+                List<FileUploaded> filesUploaded = (List<FileUploaded>) obj;
+                if (CollectionUtils.isEmpty(filesUploaded)) {
+
+                    this.fileAttachedListView.setValue(new ArrayList<FileUploaded>());
+                    this.fileAttachedListView.setRendered(false);
+                } else {
+                    this.fileAttachedListView.setValue(filesUploaded);
+                    this.fileAttachedListView.setRendered(true);
+                }
+                //                        AdfFacesContext.getCurrentInstance().addPartialTarget(this.fileUploadedTable);
+                AdfFacesContext.getCurrentInstance().addPartialTarget(this.fileAttachedListView);
+
+            }
+        }
+    }
+
+    private String getContentType() {
+        String contentType = StringUtils.EMPTY;
+        Map<String, FieldItem> allFields = FormUtils.INSTANCE.getAllFields(this.rules);
+        if (allFields.containsKey(DocumentAttributeDef.D_DOC_TYPE.getName())) {
+            Object obj = allFields.get(DocumentAttributeDef.D_DOC_TYPE.getName()).getDpFieldValue();
+            if (obj != null)
+                contentType = String.valueOf(obj);
+        }
+        return contentType;
+    }
+
+    /**
+     * @creator : TanBD
+     * @comment : Danh sách menu nội dung
+     */
+    //    private void getMenuLeft() {
+    //        pblMenuLeft.getChildren().clear();
+    //        RichGoLink rcb;
+    //        RichPanelBorderLayout rpb;
+    //        for (Menu.MenuNoiDung content : Menu.MenuNoiDung.values()) {
+    //            for (Menu.PagesPath pp : Menu.PagesPath.values()) {
+    //                if (content.name().equals(pp.name())) {
+    //                    if (content.name().equals(Menu.MenuNoiDung.contentRepositoryId.toString())) {
+    //                        rpb = new RichPanelBorderLayout();
+    //                        rpb.setStyleClass("menu-left-item menu-left-active");
+    //                        rcb = new RichGoLink();
+    //                        rcb.setId(content.name());
+    //                        rcb.setText(content.getMenuNoiDung());
+    //                        rcb.setDestination(pp.getPagesPath());
+    //                        rpb.getChildren().add(rcb);
+    //                        pblMenuLeft.getChildren().add(rpb);
+    //                    } else {
+    //                        rpb = new RichPanelBorderLayout();
+    //                        rpb.setStyleClass("menu-left-item");
+    //                        rcb = new RichGoLink();
+    //                        rcb.setId(content.name());
+    //                        rcb.setText(content.getMenuNoiDung());
+    //                        rcb.setDestination(pp.getPagesPath());
+    //                        rpb.getChildren().add(rcb);
+    //                        pblMenuLeft.getChildren().add(rpb);
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+
+    public void setIsCheckedOut(Boolean isLocked) {
+        this.isCheckedOut = isLocked;
+    }
+
+    public Boolean getIsCheckedOut() {
+        return isCheckedOut;
+    }
+
+    public void setAttachFileHint(String attachFileHint) {
+        this.attachFileHint = attachFileHint;
+    }
+
+    public String getAttachFileHint() {
+        return attachFileHint;
+    }
+
+    public void setFileAttachedListView(RichTable fileAttachedListView) {
+        this.fileAttachedListView = fileAttachedListView;
+    }
+
+    public RichTable getFileAttachedListView() {
+        return fileAttachedListView;
+    }
+
+
+    public void attachFileRemoveAction(ActionEvent actionEvent) {
+        Object fileUploadedParam = actionEvent.getComponent()
+                                              .getAttributes()
+                                              .get("fileUploaded");
+        if (fileUploadedParam instanceof FileUploaded) {
+            FileUploaded fileUploaded = (FileUploaded) fileUploadedParam;
+            if (this.fileContainer != null &&
+                this.fileContainer.containsKey(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName())) {
+                List<FileUploaded> filesUploaded =
+                    (List<FileUploaded>) this.fileContainer.get(DocumentAttributeDef.XM_TEP_TIN_DINH_KEM.getName());
+                boolean b = filesUploaded.remove(fileUploaded);
+                AdfFacesContext.getCurrentInstance().addPartialTarget(this.fileAttachedListView);
+            }
+        }
+        return;
+    }
+
+    public String attachedFileRemoveAction() {
+        //        Object attachedFileObj =  actionEvent.getComponent().getAttributes().get("attachedFile");
+        Object attachedFileObj = ParamUtils.getParamRequestScope("attachedFile");
+        //        List<ContentItem> remainAttachFiles  = new ArrayList<ContentItem>();
+        if (attachedFileObj != null) {
+            if (attachedFiles.remove(attachedFileObj)) {
+                this.attachedFiles2Remove.add((ContentItem) attachedFileObj);
+            }
+        }
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.attachedFilesTable);
+        return null;
+    }
+
+
+    public void setAttachFilesPanel2(RichPanelFormLayout attachFilesPanel2) {
+        this.attachFilesPanel2 = attachFilesPanel2;
+    }
+
+    public RichPanelFormLayout getAttachFilesPanel2() {
+        return attachFilesPanel2;
+    }
+
+    public void setContentLockedAlert(RichPopup contentLockedAlert) {
+        this.contentLockedAlert = contentLockedAlert;
+    }
+
+    public RichPopup getContentLockedAlert() {
+        return contentLockedAlert;
+    }
+
+
+    public void setMessages(RichMessages messages) {
+        this.messages = messages;
+    }
+
+    public RichMessages getMessages() {
+        return messages;
+    }
+
+    public void setAttachedFiles2Remove(List<ContentItem> attachedFiles2Remove) {
+        this.attachedFiles2Remove = attachedFiles2Remove;
+    }
+
+    public List<ContentItem> getAttachedFiles2Remove() {
+        return attachedFiles2Remove;
+    }
+
+    public void returnListener(ReturnEvent returnEvent) {
+        Map returnValues = returnEvent.getReturnParameters();
+        List<ContentItem> contentItemTmp = (ArrayList<ContentItem>) returnValues.get("returnValue");
+        if (null == contentItemTmp) {
+            return;
+        }
+        for (ContentItem cTmp : contentItemTmp) {
+            if (selectedFolio.contains(cTmp)) {
+                continue;
+            }
+            selectedFolio.add(cTmp);
+            //            selectedFolioName.add(cTmp.getdDocName());
+        }
+
+        RichTable rt = (RichTable) JSFUtils.findComponent(contentForm, "rtDongsukien");
+        rt.setValue(selectedFolio);
+        AdfFacesContext.getCurrentInstance().addPartialTarget(rt);
+    }
+
+
+    public String deleteFolio() {
+        RichTable rt = (RichTable) JSFUtils.findComponent(contentForm, "rtDongsukien");
+
+        ContentItem ct = (ContentItem) rt.getSelectedRowData();
+        selectedFolio.remove(ct);
+        AdfFacesContext.getCurrentInstance().addPartialTarget(rt);
+        return null;
+    }
+
+    public String openFolioPopup() {
+        return "choicefolio";
+    }
+
+    public void hideCkeditorRemix() {
+        showCkEditor = false;
+        contentCKEditor.setRendered(showCkEditor);
+        if (contentCKEditor != null && contentCKEditor.getParent() != null) {
+            AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+        }
+        hideTextNoiDung();
+    }
+
+    public void showCkeditorRemix() {
+        showCkEditor = true;
+        contentCKEditor.setRendered(showCkEditor);
+        if (contentCKEditor != null && contentCKEditor.getParent() != null) {
+            AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+        }
+        updateCkEditor();
+        showTextNoiDung();
+    }
+
+    private int countPageDoc(File file) {
+        try {
+            String lowerFilePath = file.getPath().toLowerCase();
+            HWPFDocument wordDoc = new HWPFDocument(new FileInputStream(lowerFilePath));
+            System.out.println("page count: " + wordDoc.getSummaryInformation().getPageCount());
+            return wordDoc.getSummaryInformation().getPageCount();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return 0;
+    }
+
+    public static String listToString(Collection<String> list) {
+        if (CollectionUtils.isEmpty(list))
+            return StringUtils.EMPTY;
+        StringBuilder builder = new StringBuilder();
+        Iterator<String> iter = list.iterator();
+        while (iter.hasNext()) {
+            builder.append(iter.next());
+            if (iter.hasNext()) {
+                builder.append(",");
+            }
+        }
+        return builder.toString();
+    }
+
+    public void inValidateFileCallBack(boolean inValidate, String fieldName) {
+
+        if (!inValidate)
+            return;
+        //        if (DocumentAttributeDef.PRIMARY_FILE.getName().equals(fieldInValid)) {
+        RichPanelLabelAndMessage container = null;
+        for (UIComponent comp : formPanel.getChildren()) {
+            String id = comp.getId();
+            if (comp instanceof RichPanelLabelAndMessage) {
+                container = (RichPanelLabelAndMessage) comp;
+                UIComponent hintGroupComp = container.getChildren().get(0);
+                if (hintGroupComp != null && fieldName.equals(hintGroupComp.getId())) {
+                    break;
+                }
+            }
+        }
+        if (container == null)
+            return;
+        UIComponent hintGroupComp = container.getChildren().get(1);
+        if (hintGroupComp instanceof RichPanelGroupLayout) {
+            RichPanelGroupLayout hintGroupPanel = (RichPanelGroupLayout) hintGroupComp;
+            hintGroupPanel.setVisible(false);
+            AdfFacesContext.getCurrentInstance().addPartialTarget(hintGroupPanel);
+        }
+        //        }
+    }
+
+    public void uploadFile(ValueChangeEvent valueChangeEvent) {
+        UIComponent uiComp = valueChangeEvent.getComponent();
+        if (uiComp instanceof RichInputFile) {
+            UIComponent parent = uiComp.getParent();
+            if (parent instanceof RichPanelLabelAndMessage) {
+                RichPanelLabelAndMessage container = (RichPanelLabelAndMessage) parent;
+            }
+        }
+
+
+        String contenType = StringUtils.EMPTY;
+        Object fileContainerObject = ParamUtils.getParamPageFlowScope("fileContainer");
+        Object contenTypeObj = ParamUtils.getParamPageFlowScope("contenType");
+        if (fileContainerObject instanceof Map) {
+            this.fileContainer = (Map<String, Object>) fileContainerObject;
+        }
+        if (contenTypeObj instanceof String) {
+            contenType = String.valueOf(contenTypeObj);
+        }
+
+        UIComponent uIComponent = valueChangeEvent.getComponent();
+        Object object = valueChangeEvent.getNewValue();
+        if (!(uIComponent instanceof RichInputFile)) {
+            return;
+        }
+        RichInputFile inputFile = (RichInputFile) uIComponent;
+        String fieldName = inputFile.getId();
+        if (object instanceof UploadedFile) {
+
+            UploadedFile uploadedFile = (UploadedFile) object;
+            if (DocumentAttributeDef.XM_ANH_DAI_DIEN
+                                    .getName()
+                                    .equals(fieldName)) {
+                Set<String> invalidFiles = new HashSet<String>();
+                List<UploadedFile> filesValid = new ArrayList<UploadedFile>();
+                //                        List<String> fileExtsAllowed =  ConfigUtil.getFileExtension(ConfigEnum.NewsImageAvatar.getName(), contenType);
+                List<String> fileExtsAllowed = ConfigUtil.getListValue(ConfigEnum.NewsImageAvatar.getName());
+                String ext = StringUtils.lowerCase(FilenameUtils.getExtension(uploadedFile.getFilename()));
+                if (fileExtsAllowed == null || !fileExtsAllowed.contains(ext)) {
+                    invalidFiles.add(uploadedFile.getFilename());
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance()
+                        .addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                     JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         listToString(fileExtsAllowed)),
+                                                     JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         listToString(fileExtsAllowed))));
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                    return;
+                }
+                // check file size
+                long maxSize = ConfigUtil.getLongValue(ConfigEnum.NewsImageFileSize);
+                if (uploadedFile.getLength() > maxSize) {
+                    FacesContext.getCurrentInstance()
+                        .addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                     JSFUtils.getMessage("ANH_DAI_DIEN_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         FileUtils.byteCountToDisplaySize(maxSize)),
+                                                     JSFUtils.getMessage("ANH_DAI_DIEN_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         FileUtils.byteCountToDisplaySize(maxSize))));
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.XM_ANH_DAI_DIEN.getName());
+                    return;
+                }
+            }
+            if (DocumentAttributeDef.PRIMARY_FILE
+                                    .getName()
+                                    .equals(fieldName)) {
+                if (contenType == null || contenType.isEmpty()) {
+                    return;
+                }
+                Set<String> invalidFiles = new HashSet<String>();
+                List<UploadedFile> filesValid = new ArrayList<UploadedFile>();
+                List<String> fileExtsAllowed =
+                    ConfigUtil.getFileExtension(ConfigEnum.WhiteListFileExtension.getName(), contenType);
+                String ext = StringUtils.lowerCase(FilenameUtils.getExtension(uploadedFile.getFilename()));
+                if (fileExtsAllowed == null || !fileExtsAllowed.contains(ext)) {
+                    invalidFiles.add(uploadedFile.getFilename());
+                }
+                if (CollectionUtils.isNotEmpty(invalidFiles)) {
+                    FacesContext.getCurrentInstance()
+                        .addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                     JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         listToString(fileExtsAllowed)),
+                                                     JSFUtils.getMessage("DINH_DANG_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         listToString(fileExtsAllowed))));
+                    inputFile.resetValue();
+                    //JSFUtils.addFacesErrorMessage(JSFUtils.getResourceBundle("DU_LIEU_KHONG_HOP_LE"));
+
+                    inValidateFileCallBack(true, DocumentAttributeDef.PRIMARY_FILE.getName());
+                    return;
+                }
+                // check file size
+                long maxSize = ConfigUtil.getSizePrimaryFile(ConfigEnum.WhiteListFileExtension.getName(), contenType);
+                if (uploadedFile.getLength() > maxSize) {
+                    FacesContext.getCurrentInstance()
+                        .addMessage(inputFile.getClientId(FacesContext.getCurrentInstance()),
+                                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                                                     JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         FileUtils.byteCountToDisplaySize(maxSize)),
+                                                     JSFUtils.getMessage("KICH_THUOC_CHO_PHEP_KHONG_HOP_LE",
+                                                                         uploadedFile.getFilename(),
+                                                                         FileUtils.byteCountToDisplaySize(maxSize)))); //KICH_THUOC_CHO_PHEP_KHONG_HOP_LE
+                    inputFile.resetValue();
+                    inValidateFileCallBack(true, DocumentAttributeDef.PRIMARY_FILE.getName());
+                    return;
+                }
+            }
+
+            try {
+                Object obj = ConfigUtil.getConfigValue(ConfigEnum.UniquePrimaryFile.getName());
+                boolean unique = BooleanUtils.toBoolean(String.valueOf(obj));
+                FileUploaded fileUploaded = FileValueChangeListener.tempStore(uploadedFile, unique);
+                String fileName = "";
+                if (fileUploaded != null && fileUploaded.getFile() != null && fileUploaded.getFileName() != null) {
+                    fileName = fileUploaded.getFileName();
+                    FileInputStream fs = new FileInputStream(fileUploaded.getFile());
+                    if (getFileType(fileUploaded.getFileName()).equals("docx")) {
+                        //convert docx to html
+                        XWPFDocument document = new XWPFDocument(fs);
+                        XHTMLOptions options = XHTMLOptions.create();
+                        Base64ImageExtractor imageExtractor = new Base64ImageExtractor();
+                        options.setExtractor(imageExtractor);
+                        options.URIResolver(imageExtractor);
+                        OutputStream out = new ByteArrayOutputStream();
+                        XHTMLConverter.getInstance().convert(document, out, options);
+                        html = out.toString();
+                        //System.out.print(html);
+
+                    } else if (getFileType(fileUploaded.getFileName()).equals("html")) {
+                        InputStream ips = new FileInputStream(fileUploaded.getFile());
+                        html = IOUtils.toString(ips, Charsets.UTF_8);
+                        IOUtils.closeQuietly(ips);
+                    }
+                    if (html != null && !html.isEmpty()) {
+                        //contentCKEditor = new HtmlInputTextarea();
+                        contentCKEditor.setValue(html);
+                        AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+                        updateCkEditor();
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return;
+    }
+
+    public void returnFromNewFile(ValueChangeEvent valueChangeEvent, String ucmHtml) {
+        Object object = valueChangeEvent.getNewValue();
+        if (object instanceof UploadedFile) {
+            UploadedFile uploadFile = (UploadedFile) object;
+            try {
+                Object obj = ConfigUtil.getConfigValue(ConfigEnum.UniquePrimaryFile.getName());
+                boolean unique = BooleanUtils.toBoolean(String.valueOf(obj));
+                FileUploaded fileUploaded = FileValueChangeListener.tempStore(uploadFile, unique);
+                String fileName = "";
+                if (fileUploaded != null && fileUploaded.getFile() != null && fileUploaded.getFileName() != null) {
+                    fileName = fileUploaded.getFileName();
+                    FileInputStream fs = new FileInputStream(fileUploaded.getFile());
+                    if (getFileType(fileUploaded.getFileName()).equals("docx") || getFileType(fileUploaded.getFileName()).equals("doc")) {
+                        //convert docx to html
+//                        XWPFDocument document = new XWPFDocument(fs);
+//                        XHTMLOptions options = XHTMLOptions.create();
+//                        Base64ImageExtractor imageExtractor = new Base64ImageExtractor();
+//                        options.setExtractor(imageExtractor);
+//                        options.URIResolver(imageExtractor);
+//                        OutputStream out = new ByteArrayOutputStream();
+//                        XHTMLConverter.getInstance().convert(document, out, options);
+//                        html = out.toString();
+                        //System.out.print(html);
+                        html = ucmHtml;
+
+                    } else if (getFileType(fileUploaded.getFileName()).equals("html")) {
+//                        InputStream ips = new FileInputStream(fileUploaded.getFile());
+//                        html = IOUtils.toString(ips, Charsets.UTF_8);
+//                        IOUtils.closeQuietly(ips);
+                        html = ucmHtml;
+                    }
+
+                    if (html != null && !html.isEmpty()) {
+                        contentCKEditor.setValue(html);
+                        AdfFacesContext.getCurrentInstance().addPartialTarget(contentCKEditor.getParent());
+                        updateCkEditor();
+
+                    }
+
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.contentForm);
+    }
+
+    public String getFileType(String fileName) {
+        int index = fileName.lastIndexOf('.');
+        String duoi = "";
+        if (index > 0) {
+            duoi = fileName.substring(index + 1);
+            //System.out.println("duoi = " + duoi);
+            return duoi.toLowerCase();
+        } else
+            return "";
+    }
+    
+    public static long round(double a) {
+            if(a < 1 && a>0) {
+                return 1;
+            }
+            if (a != 0x1.fffffffffffffp-2) {
+                // a is not the greatest double value less than 0.5
+                return (long)Math.floor(a + 0.5d);
+            } else {
+                return 0;
+            }
+    }
+
+    public void setPopupSuccess(RichPopup popupSuccess) {
+        this.popupSuccess = popupSuccess;
+    }
+
+    public RichPopup getPopupSuccess() {
+        return popupSuccess;
+    }
+
+    public void setShowCkEditor(boolean showCkEditor) {
+        this.showCkEditor = showCkEditor;
+    }
+
+    public boolean isShowCkEditor() {
+        return showCkEditor;
+    }
+
+    public void setObjRoyalty(TvsRoyalty objRoyalty) {
+        this.objRoyalty = objRoyalty;
+    }
+
+    public TvsRoyalty getObjRoyalty() {
+        return objRoyalty;
+    }
+
+    public void setCategoryList(List<SelectItem> categoryList) {
+        this.categoryList = categoryList;
+    }
+
+    public List<SelectItem> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setSiTinBai(RichSelectOneChoice siTinBai) {
+        this.siTinBai = siTinBai;
+    }
+
+    public RichSelectOneChoice getSiTinBai() {
+        return siTinBai;
+    }
+
+    public void setShowLoaiTinBai(boolean showLoaiTinBai) {
+        this.showLoaiTinBai = showLoaiTinBai;
+    }
+
+    public boolean isShowLoaiTinBai() {
+        return showLoaiTinBai;
+    }
+
+    public void setDDocNameRemixBangCom(String dDocNameRemixBangCom) {
+        this.dDocNameRemixBangCom = dDocNameRemixBangCom;
+    }
+
+    public String getDDocNameRemixBangCom() {
+        return dDocNameRemixBangCom;
+    }
+
+    public void setCurrentUsername(String currentUsername) {
+        this.currentUsername = currentUsername;
+    }
+
+    public String getCurrentUsername() {
+        return currentUsername;
+    }
+}

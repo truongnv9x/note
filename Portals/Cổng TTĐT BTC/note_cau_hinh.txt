@@ -1711,6 +1711,7 @@ abcd@1234
 122160901
 abcd@1234
 
+https://118.70.204.161/webcenter/portal/btc
 ================================================================================================================
 
 spring.datasource.api.driver-class-name=oracle.jdbc.OracleDriver
@@ -1764,7 +1765,7 @@ spring.devtools.restart.exclude=static/**
 
 
 
-
+dID = `208202`
 ================================================================================================================
 C:\JDeveloper\mywork\5. Program\ContentPresenterLib\LibPortalOracle12c_AIO_test\PortalSharedLibrary\deploy
 
@@ -1781,6 +1782,9 @@ build từng cái ra file ear
 cho chắc
 cuối cùng thì build cái kia ra file war
 
+Apputil
+C:\JDeveloper\mywork\5. Program\BTCAppUtils\BTCAppUtilsBackend\ViewController\src\com\tvs\btcportal\app\view\utils
+
 
 http://10.192.255.219:7001/console/console.portal?_nfpb=true&_pageLabel=CoreClusterClusterConfigServersPage&handle=com.bea.console.handles.JMXHandle%28%22com.bea%3AName%3Ducm_cluster%2CType%3DCluster%22%29
 http://10.192.255.219:8888/webcenter/portal/admin/portals
@@ -1789,6 +1793,9 @@ http://10.192.255.219:8888/webcenter/portal/admin/portals
 /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/AdminServer/upload
 
 /global/cms/natives_files/domains/mof_content/ucm/cs/vault/
+
+ unzip acmsbtc_application.zip
+
 
 /global/cms/natives_files/domains/mof_content/ucm/cs/vault/tinvideo/@tiepnk/dwnt/mja4/
 
@@ -1804,10 +1811,22 @@ https://mof.gov.vn/webcenter/cs/groups/kbnn_all_content/@tiepnk/documents/tinvid
 
 https://mof.gov.vn/api/resource/cs/groups/kbnn_all_content/@tiepnk/documents/tinvideo/dwnt/mja4/~edisp/mofucm208720.mp4
 
+	
+
+cd /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/api_1/logs/
+tail -f api_1.out
+
+
+
+less /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/api_1/logs/api_1.out
+
+
 /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/api_1/logs/
 
 
 /RESTFulAPI_WebService.war/app
+
+BTC045568,BTC045569,BTC045570,BTC045571,BTC045572
 
 
 ID_HDSD_VI	20799
@@ -1840,6 +1859,8 @@ Ndgnud21)(@!
 
 122160901
 abcd@1234
+
+EjbServiceFactory
 
 UCM
 http://10.192.255.219:16200/cs/idcplg?IdcService=COLLECTION_DISPLAY&hasCollectionID=true&dCollectionID=284959085683000002
@@ -1946,7 +1967,6 @@ SELECT * FROM ora:t:IDC:Profile:TinBai WHERE   ANY ora:p:xmMuchienthi IN ('2004'
 
 
 10.192.243.242
- 
 cd /u01/Oracle/Middleware/Oracle_Home/user_projects/domains/mof_portal/servers/space_1/logs/
 tail -f space_1.out
 
@@ -1966,3 +1986,20 @@ C:\Users\truongnv3.TINHVAN\AppData\Roaming\JDeveloper\system12.2.1.4.42.190911.2
 
 file deploy AppUtil
 C:\JDeveloper\mywork\5. Program\BTCAppUtils\File_Deploy\BTCPortalApp.ear
+
+192.168.50.237:9001/console
+192.168.50.237:8989/webcenter/portal
+
+
+Fix search tìm kiếm dự thảo văn bản theo ngày xuất bản 
+Fix bug scms
+
+
+
+
+root like 'home/menu%' and LANGUAGE_CODE = 'en'
+
+
+
+
+
