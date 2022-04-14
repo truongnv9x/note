@@ -1999,7 +1999,28 @@ Fix bug scms
 
 root like 'home/menu%' and LANGUAGE_CODE = 'en'
 
+DataBindings.cpx
+Jazn-data.xml
+application-menu
 
 
-
+<!-- Begin EMC Tracking Code -->
+    <script type="text/javascript">
+        var _govaq = window._govaq || [];
+    _govaq.push(['trackPageView']);
+    _govaq.push(['enableLinkTracking']);
+    (function () {
+        _govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
+        _govaq.push(['setSiteId', '284']);
+        var d = document,
+            g = d.createElement('script'),
+            s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = 'https://f-emc.ngsp.gov.vn/embed/gov-tracking.min.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+    </script>
+<!-- End EMC Tracking Code -->
 
