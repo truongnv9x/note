@@ -1,0 +1,20 @@
+if(listChuyenMucDisplay != null) {
+			Map<Integer, List<ChuyenMucDTO>> maps = listChuyenMucDisplay.stream().filter(x -> x.getKhoaChaId() > 0)
+					.collect(Collectors.groupingBy(ChuyenMucDTO::getKhoaChaId));
+			Set<Integer> setPartent_ID = new LinkedHashSet<Integer>();
+			maps.forEach((k, v) -> setPartent_ID.add(k));
+			listChuyenMucDisplay.stream().forEach(x -> {
+				Integer id = x.getId();
+				listId.add(id);
+				x.setChildren(maps.get(id.intValue()) != null ? maps.get(id.intValue())
+						: new ArrayList<ChuyenMucDTO>());
+			});
+			setPartent_ID.clear();
+			listChuyenMucDisplay.stream().filter(f -> f.getKhoaChaId() > 0)
+					.forEach(x -> setPartent_ID.add(x.getKhoaChaId()));
+			setPartent_ID.removeIf(x-> !listId.contains(x));
+			if (listChuyenMucDisplay.size() > 0) {
+				listChuyenMucDisplay.removeIf(x -> setPartent_ID.contains(x.getKhoaChaId()));
+			}
+			result.setDataDisplay(listChuyenMucDisplay);
+		}
