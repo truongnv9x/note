@@ -1,0 +1,57 @@
+Download File ISO Windows 11 tu Microsoft
+https://gofatech.edu.vn/download-file-iso-windows-11.html 
+
+Upgrade Win10 lên Windows 11
+https://gofatech.edu.vn/huong-dan-upgrade-windows-10-len-windows-11.html
+
+Huong dan thiet ke website Tin tuc
+https://gofatech.edu.vn/thiet-ke-website-tin-tuc-theme-flatsome-phan-1.html
+
+Download Windows Server 2022
+https://gofatech.edu.vn/microsoft/windows-server-2022
+
+Tong hop cac bai Lab Office 365
+https://gofatech.edu.vn/tong-hop-bai-lab-microsoft-365-pdf.html
+
+Download Ebooks IT (Password: gofatech.edu.vn)
+https://gofatech.edu.vn/it-ebooks
+
+Download Phan Mem Photoshop (Da kich hoat Key)
+https://gofatech.edu.vn/phan-mem-adobe-photoshop-2021.html
+
+Download ShowKeyPlus
+https://gofatech.edu.vn/kiem-tra-key-windows-ban-quyen-bang-showkeyplus.html
+
+
+Install-WindowsFeature containers
+Restart-Computer
+Create folder :C /Program Files/ docker
+https://aka.ms/tp5/b/dockerd
+https://aka.ms/tp5/b/docker
+copy 2 file to cd/ C:/Program Files/ docker
+System -> Edit Environment
+	Edit path -> copy path docker -> system32 -> 
+	
+powershell -> Run as Administrator
+	dockerd --register-service
+	Start-service docker
+	Get-service docker
+	docker version
+	docker info
+	Install-PackageProvider ContainerImage-Force
+	Find-ContainerImage
+	Install-ContainerImage WindowsServerCore
+	Restart-Service docker
+	docker images
+	[TAG 10.0.14300.1000]
+	docker tag + IMAGE ID + REPOSITORY (windowsservercore:lastest)
+	docker images
+	docker run -it windowsservercore cmd^C
+	hostname
+	docker run -it windowsservercore cmd
+	hostname (Ctrl + PQ)
+	docker ps
+	
+docker run --name postgresql -e POSTGRES_USER=truongnv -e POSTGRES_PASSWORD=123!@# -p 5432:5432 -v /Users/truongnv/data:/var/lib/postgresql/data -d postgres:13.3
+https://topdev.vn/blog/cai-dat-nginx-su-dung-docker/
+	

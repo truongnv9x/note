@@ -1,0 +1,82 @@
+Container Orchestration la gi ? la ng dieu khien
+
+- Container deployment
+- Schedule
+- Scaling
+- Networking
+- Service discovery
+- Resource Allocation
+- Health monitoring
+
+
+=> Docker swarm
+
+
+=====================================================
+Docker
+Linux commands
+Shell scripting
+
+
+Dockerfile : 
+- FROM : chỉ định base image .. vd: python:3.7-slin
+- WORKDIR: chỉ định directory hay context để chạy các instruction tiếp theo ... vd : /app
+- COPY : instruction để copy 1 file hay directory vào 1 từ host machine vào bên trong container .. vd: app.py requirements.txt ./
+- RUN : chạy 1 số linux commands .. vd: pip install -r requirements.txt  => cài đặt các python packages mà mk đã sử dụng để chạy application
+( requirements.txt để quản lý tên các packages, cũng như là version mà mình đã sử dụng trong python)
+- CMD : => định nghĩa 1 command mà container sẽ chạy khi bắt đầu .
+
+
+===========> Build image
+$ docker image build -t <image-name> <context>
+=> $ docker image build -t demo-backend .
+
+=> kiểm tra các images layer của 1 docker images => docker inspect image <image-name>
+vd : docker inspect image demo-backend
+
+
+===========> Chạy container
+export SPOTIPY_CLIENT_ID=...
+export SPOTIPY_CLIENT_SECRET=...
+export PORT = 9000
+
+=> docker container run -it -e SPOTIPY_CLIENT_SECRET =$SPOTIPY_CLIENT_SECRET -e SPOTIPY_CLIENT_ID=$SPOTIPY_CLIENT_ID -e PORT=$PORT 
+		-p $PORT:$PORT --name demo-backend demo-backend
+		
+====> kiểm tra các container đang chạy: docker container ls
+ || docker container ls -a 
+ 
+ chạy lại : docker container start demo-backend
+ 
+ 
+ =========> Kiểm tra : 
+ curl http://localhost:9000/playlists
+ 
+ 
+ 
+ =======================> Lợi ích:
+ 
+quản lý runtime environment cùng application bằng code lấy từ dockerfile
+infrastructure as code (code : dockerfile)
+
+đóng gói các application code cùng runtime environment và configuration trong 1 object gọi là image
+
+sử dụng docker image để deploy lên các server. vì image là không thay đổi nên hệ thống sẽ chạy cực kỳ ổn định.
+
+
+khái niệm : mutable infrastructure 
+			immutable infrastructure (đóng gói trạng thái cuối cùng sau khi đã cài đặt runtime environment, configuration, application code => tạo thành 1 image, sử dụng image để deploy lên các môi trường khác)
+			
+			
+==========> DOCKER = infrastructure as code + immutable infrastructure
+
+===================================
+Dockerfile instruction
+
+FROM <image-name>:<tag>
+ARG <name>[=<default value>]
+LABEL <key>=<value> <key>=<value> <key>=<value> : cung cấp thêm 1 số metadata cho docker image
+ENV <key>=<value> : tạo environment variable container sử dụng : VD: ENV DATABASE_HOST=test
+RUN : RUN apy-get update && apt-get install -y nginx
+	  RUN apy-get install -y git
+VOLUME /data : tạo và lưu dữ liệu

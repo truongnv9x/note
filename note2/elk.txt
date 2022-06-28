@@ -1,0 +1,51 @@
+localhost:9200/
+localhost:5601/
+in resources/application.yml
+	spring:
+		application:
+		name: ELK-STACK-EXAMPLE
+	server:
+		port: 9898
+	logging:
+		file: ...\logs\elk-stack.log
+		
+
+run app -> log in elk-stack.log
+download and unzip Logstash
+	logstash.conf
+	
+	
+input{
+	file: {
+		path => "...\logs\elk-stack.log"
+		start_position => "beginning"
+	}
+}
+
+output{
+	stdout{
+		codec => rubydebug
+	}
+	#Sending properly parsed log events to elasticsearch
+	elasticsearch{
+		host => {"localhost:9200"}
+	}
+}
+
+copy logstash.conf -> bin (logstash)
+run bin/logstash -f logstash.conf
+
+
+
+=>
+localhost:9200/_cat
+	=> localhost:9200/_cat/indices
+	open log : logstash-....
+		=>localhost:9200/logstash-..../_search
+		
+localhost:5601/app/kibana#/home => Management => Index patterns => Create index patterns
+		=> logstash-* => Next step => ... => I don't want to use the time Filter => Create index patterns
+		
+		
+		
+=> Discover
